@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiMail, FiPhone, FiMapPin, FiSend } from 'react-icons/fi';
+import CallToAction from '../components/CallToAction';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -160,6 +161,8 @@ const Contact = () => {
           </motion.div>
         </div>
       </div>
+
+        <CallToAction/>
     </div>
   );
 };

@@ -1,0 +1,32 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Layout from './components/Layout';
+import Home from './pages/Home';
+import About from './pages/About';
+import Impact from './pages/Impact';
+import Contact from './pages/Contact';
+import Donate from './pages/Donate';
+
+function App() {
+  return (
+    <Router>
+      <div className="min-h-screen flex flex-col">
+        <Navbar />
+        <AnimatePresence mode="wait">
+          <Routes>
+            <Route path="/" element={<Layout><Home /></Layout>} />
+            <Route path="/about" element={<Layout><About /></Layout>} />
+            <Route path="/impact" element={<Layout><Impact /></Layout>} />
+            <Route path="/contact" element={<Layout><Contact /></Layout>} />
+            <Route path="/donate" element={<Layout><Donate /></Layout>} />
+          </Routes>
+        </AnimatePresence>
+        <Footer />
+      </div>
+    </Router>
+  );
+}
+
+export default App;

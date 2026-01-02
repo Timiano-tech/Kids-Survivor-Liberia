@@ -8,7 +8,7 @@ const CallToAction = () => {
   return (
     <>
       {/* Call to Action */}
-            <section className="py-20 bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800">
+            <section className="py-20 bg-linear-to-r from-blue-600 via-blue-700 to-blue-800">
               <div className="container mx-auto px-4 text-center">
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}

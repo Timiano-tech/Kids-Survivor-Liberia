@@ -9,9 +9,7 @@ const Footer = () => {
           {/* Logo and Description */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="bg-blue-600 text-white px-3 py-1 rounded-lg font-bold text-xl">
-                KSL
-              </div>
+              <img src="/KSL Logo.png" alt="KSL Logo" loading='lazy' className='w-15' />
               <div>
                 <h2 className="font-bold">Kids Survivor</h2>
                 <p className="text-sm text-gray-400">Liberia</p>

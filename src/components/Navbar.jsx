@@ -31,9 +31,8 @@ const Navbar = () => {
           <Link to="/" className="flex items-center space-x-2">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="bg-blue-600 text-white px-3 py-1 rounded-lg font-bold text-xl"
-            >
-              KSL
+               >
+              <img src="/KSL Logo.png" alt="KSL LOGO" className='w-15'/>
             </motion.div>
             <div>
               <h1 className="font-bold text-gray-800">Kids Survivor</h1>

@@ -16,6 +16,10 @@ import {
   FiBook,
   FiShield
 } from 'react-icons/fi';
+import SayNoToDrug from '../assets/Say no to drugs.jpeg';
+import TalkToChildren from '../assets/Talking to children.jpeg';
+import Education from '../assets/Children on the assembly.jpeg';
+import CallToAction from '../components/CallToAction';
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -29,7 +33,7 @@ const Home = () => {
       title: "Protecting Liberia's Future",
       subtitle: "Transforming Lives of Vulnerable Children",
       description: "Every child deserves safety, education, and the opportunity to thrive. Join us in our mission.",
-      imagePlaceholder: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600&h=900&fit=crop",
+      imagePlaceholder: SayNoToDrug,
       stats: "5,000+ Children Protected"
     },
     {
@@ -37,7 +41,7 @@ const Home = () => {
       title: "Education for All",
       subtitle: "Breaking Barriers Through Learning",
       description: "Providing quality education and vocational training to empower Liberia's youth.",
-      imagePlaceholder: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1600&h=900&fit=crop",
+      imagePlaceholder: Education,
       stats: "50+ Schools Supported"
     },
     {
@@ -45,7 +49,7 @@ const Home = () => {
       title: "Youth Empowerment",
       subtitle: "Building Skills, Building Futures",
       description: "Creating opportunities for young people to become self-reliant citizens.",
-      imagePlaceholder: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1600&h=900&fit=crop",
+      imagePlaceholder: TalkToChildren,
       stats: "100+ Youth Trained Annually"
     }
   ];
@@ -493,65 +497,11 @@ const Home = () => {
             ))}
           </div>
 
-          {/* How to Add Your Images Note */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            viewport={{ once: true }}
-            className="mt-16 bg-blue-50 border border-blue-100 rounded-xl p-6 max-w-2xl mx-auto"
-          >
-            <h4 className="font-bold text-blue-800 mb-2 flex items-center">
-              <FiAward className="mr-2" />
-              Add Your Own Images
-            </h4>
-            <p className="text-blue-700">
-              Replace the image placeholders with your own photos by updating the <code className="bg-white px-2 py-1 rounded">imagePlaceholder</code> URLs in the <code className="bg-white px-2 py-1 rounded">impactAreas</code> array. Add your images to show your real impact!
-            </p>
-          </motion.div>
         </div>
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800">
-        <div className="container mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="max-w-3xl mx-auto"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Join Us in Creating Lasting Change
-            </h2>
-            <p className="text-xl text-blue-100 mb-10">
-              Your support helps us implement our mission and work towards our vision for every child in Liberia.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/donate">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-bold shadow-lg"
-                >
-                  Support Our Mission
-                </motion.button>
-              </Link>
-              <Link to="/contact">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-transparent text-white border-2 border-white hover:bg-white/10 px-8 py-4 rounded-full text-lg font-semibold"
-                >
-                  Partner With Us
-                </motion.button>
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <CallToAction/>
     </div>
   );
 };

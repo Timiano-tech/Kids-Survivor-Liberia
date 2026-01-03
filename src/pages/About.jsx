@@ -2,15 +2,11 @@ import { motion } from 'framer-motion';
 import { 
   FiTarget, 
   FiEye, 
-  FiFlag, 
-  FiLayers,
   FiShield,
   FiUsers,
   FiHeart,
-  FiBriefcase,
   FiMic,
   FiTrendingUp,
-  FiActivity,
   FiBarChart2,
   FiAward,
   FiCheckCircle,
@@ -21,6 +17,14 @@ import {
   FiTwitter,
   FiMail
 } from 'react-icons/fi';
+import KSLCompany from '../assets/KSL Company.jpeg';
+import KSL_Teams from '../assets/KSL_Team.jpeg';
+import KSL_Teams2 from '../assets/KSL_Team2.jpeg';
+import CallToAction from '../components/CallToAction';
+import Mr_Steve from '../assets/Mr_Steve.jpeg';
+import Mrs_Fiona from '../assets/Mrs_Fiona.jpeg';
+import Mrs_Silvia from '../assets/Mrs_Silvia2.jpeg';
+import CEO from '../assets/CEO.jpeg'
 
 const About = () => {
   // Core Program Areas
@@ -97,21 +101,25 @@ const About = () => {
   const teamMembers = [
     {
       name: "John Doe",
+      teamImage : CEO,
       position: "Executive Director",
       bio: "Over 15 years of experience in child protection and youth development."
     },
     {
       name: "Jane Smith",
+      teamImage : Mr_Steve,
       position: "Program Manager",
       bio: "Specializes in community engagement and program development."
     },
     {
       name: "Robert Johnson",
+      teamImage : Mrs_Fiona,
       position: "Finance Director",
       bio: "Ensures financial transparency and accountability across all programs."
     },
     {
       name: "Sarah Williams",
+      teamImage : Mrs_Silvia,
       position: "Community Outreach Coordinator",
       bio: "Leads grassroots initiatives and community partnerships."
     }
@@ -149,15 +157,14 @@ const About = () => {
     <div className="min-h-screen bg-white">
       {/* Main Header Section */}
       <header className="relative">
-        {/* Background Image - You can add your own image here */}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700">
-          {/* You can replace this with your background image:
+        {/* Background Image  */}
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/100 to-purple-900/40 z-10">
+         
           <img 
-            src="/path-to-your-background-image.jpg" 
+            src={KSLCompany} 
             alt="Background" 
             className="w-full h-full object-cover opacity-20"
           />
-          */}
         </div>
 
         {/* Page Header with Breadcrumb */}
@@ -202,19 +209,15 @@ const About = () => {
             className="mb-20"
           >
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              {/* Image Section - Add your image here */}
+              {/* Image Section */}
               <div className="bg-gray-100 rounded-2xl p-8 flex items-center justify-center min-h-[400px]">
-                <div className="text-center">
-                  <div className="text-gray-400 text-4xl mb-4">📷</div>
-                  <p className="text-gray-500">Add organization image here</p>
-                </div>
-                {/* Replace with:
+               
                 <img 
-                  src="/path-to-organization-image.jpg" 
+                  src={KSL_Teams} 
                   alt="Kids Survivor Liberia" 
                   className="w-full h-full object-cover rounded-2xl"
-                />
-                */}
+                loading='lazy'/>
+  
               </div>
               
               {/* Text Content */}
@@ -267,7 +270,7 @@ const About = () => {
             </div>
           </motion.div>
 
-          {/* Core Values Section - Professional Design */}
+          {/* Core Values Section  */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -325,19 +328,15 @@ const About = () => {
                   key={index}
                   className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
                 >
-                  {/* Team Member Image - Add your image here */}
+                  {/* Team Member Image */}
                   <div className="h-64 bg-gray-100 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="text-gray-400 text-4xl mb-2">👤</div>
-                      <p className="text-gray-500 text-sm">Add team member image</p>
-                    </div>
-                    {/* Replace with:
+
                     <img 
-                      src={`/path-to-team-member-${index}.jpg`}
+                      src={member.teamImage}
                       alt={member.name}
                       className="w-full h-full object-cover"
-                    />
-                    */}
+                     loading='lazy'/>
+                  
                   </div>
                   
                   <div className="p-6">
@@ -446,17 +445,23 @@ const About = () => {
                 </div>
               </div>
               
-              {/* Image Section - Add your image here */}
+             {/* Image Section */}
               <div className="bg-gray-100 rounded-2xl p-8 flex items-center justify-center min-h-[400px]">
-                <div className="text-center">
-                  <div className="text-gray-400 text-4xl mb-4">📸</div>
-                  <p className="text-gray-500">Add impact image here</p>
-                </div>
+               
+                <img 
+                  src={KSL_Teams2} 
+                  alt="Kids Survivor Liberia" 
+                  className="w-full h-full object-cover rounded-2xl"
+                />
+  
               </div>
             </div>
           </motion.div>
         </div>
+        
       </main>
+
+      <CallToAction/>
     </div>
   );
 };

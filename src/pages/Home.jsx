@@ -24,6 +24,7 @@ import CallToAction from '../components/CallToAction';
 import StudentsInClassRoom from '../assets/Class Room.jpeg'
 import NoToDrugs from '../assets/Say no to drugs.jpeg'
 import Youth from '../assets/../assets/Youth.jpeg'
+import Children3 from '../assets/Children3.jpeg';
 import Children4 from '../assets/Children4.jpeg';
 import Community from '../assets/Community.jpeg';
 import ScrollToTopButton from '../components/ScrollToTop';
@@ -94,8 +95,8 @@ const Home = () => {
       id: 1,
       title: "Child Protection",
       description: "Safe spaces and protection systems for vulnerable children",
-      imagePlaceholder:  NoToDrugs,
-      stat: "3,200+ Children Protected"
+      imagePlaceholder:  Children3,
+      stat: "2,200+ Children Protected"
     },
     {
       id: 2,
@@ -108,7 +109,7 @@ const Home = () => {
       id: 3,
       title: "Youth Empowerment",
       description: "Skills training and vocational programs",
-      imagePlaceholder: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=600&fit=crop",
+      imagePlaceholder: NoToDrugs,
       stat: "800+ Youth Empowered"
     },
     {
@@ -116,7 +117,7 @@ const Home = () => {
       title: "Community Development",
       description: "Sustainable community support systems",
       imagePlaceholder: Children4,
-      stat: "200+ Communities Engaged"
+      stat: "100+ Communities Engaged"
     }
   ];
 

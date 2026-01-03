@@ -16,10 +16,17 @@ import {
   FiBook,
   FiShield
 } from 'react-icons/fi';
-import SayNoToDrug from '../assets/Say no to drugs.jpeg';
+
 import TalkToChildren from '../assets/Talking to children.jpeg';
 import Education from '../assets/Children on the assembly.jpeg';
+import Students from '../assets/Students.jpeg'
 import CallToAction from '../components/CallToAction';
+import StudentsInClassRoom from '../assets/Class Room.jpeg'
+import NoToDrugs from '../assets/Say no to drugs.jpeg'
+import Youth from '../assets/../assets/Youth.jpeg'
+import Children4 from '../assets/Children4.jpeg';
+import Community from '../assets/Community.jpeg';
+import ScrollToTopButton from '../components/ScrollToTop';
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -33,7 +40,7 @@ const Home = () => {
       title: "Protecting Liberia's Future",
       subtitle: "Transforming Lives of Vulnerable Children",
       description: "Every child deserves safety, education, and the opportunity to thrive. Join us in our mission.",
-      imagePlaceholder: SayNoToDrug,
+      imagePlaceholder: Students,
       stats: "5,000+ Children Protected"
     },
     {
@@ -49,7 +56,7 @@ const Home = () => {
       title: "Youth Empowerment",
       subtitle: "Building Skills, Building Futures",
       description: "Creating opportunities for young people to become self-reliant citizens.",
-      imagePlaceholder: TalkToChildren,
+      imagePlaceholder: Community,
       stats: "100+ Youth Trained Annually"
     }
   ];
@@ -87,14 +94,14 @@ const Home = () => {
       id: 1,
       title: "Child Protection",
       description: "Safe spaces and protection systems for vulnerable children",
-      imagePlaceholder: "https://images.unsplash.com/photo-1516627145497-ae69584b5d53?w=800&h=600&fit=crop",
+      imagePlaceholder:  NoToDrugs,
       stat: "3,200+ Children Protected"
     },
     {
       id: 2,
       title: "Education Support",
       description: "Scholarships and educational programs",
-      imagePlaceholder: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=600&fit=crop",
+      imagePlaceholder: StudentsInClassRoom,
       stat: "1,500+ Students Supported"
     },
     {
@@ -108,7 +115,7 @@ const Home = () => {
       id: 4,
       title: "Community Development",
       description: "Sustainable community support systems",
-      imagePlaceholder: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&h=600&fit=crop",
+      imagePlaceholder: Children4,
       stat: "200+ Communities Engaged"
     }
   ];
@@ -119,6 +126,7 @@ const Home = () => {
 
   return (
     <div className="overflow-hidden">
+      <ScrollToTopButton/>
       {/* Hero Carousel Section */}
       <section className="relative h-screen">
         <AnimatePresence mode="wait">
@@ -140,7 +148,7 @@ const Home = () => {
                   onError={() => handleImageError(`hero-${currentSlide}`)}
                 />
               ) : (
-                <div className="w-full h-full bg-gradient-to-r from-blue-800 to-purple-900"></div>
+                <div className="w-full h-full bg-blue-600"></div>
               )}
             </div>
             
@@ -160,7 +168,7 @@ const Home = () => {
                     initial={{ width: 0 }}
                     animate={{ width: "80px" }}
                     transition={{ delay: 0.5, duration: 0.8 }}
-                    className="h-1 bg-gradient-to-r from-yellow-400 to-orange-400 mb-6"
+                    className="h-1 bg-yellow-500 mb-6"
                   ></motion.div>
                   
                   <motion.h1
@@ -200,7 +208,7 @@ const Home = () => {
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="bg-gradient-to-r from-yellow-400 to-orange-400 text-gray-900 px-6 py-3 md:px-8 md:py-4 rounded-full text-lg font-bold shadow-lg hover:shadow-xl transition-shadow"
+                        className="bg-yellow-500 py-3 md:px-10 md:py-4 sm:py-5  rounded-full text-lg font-bold shadow-lg hover:shadow-xl transition-shadow"
                       >
                         Donate Now
                       </motion.button>
@@ -333,7 +341,7 @@ const Home = () => {
               viewport={{ once: true }}
               className="bg-white rounded-2xl shadow-xl overflow-hidden"
             >
-              <div className="bg-gradient-to-r from-blue-600 to-blue-800 p-8">
+              <div className="bg-blue-600 p-8">
                 <div className="flex items-center mb-4">
                   <div className="bg-white/20 p-3 rounded-xl mr-4">
                     <FiTarget className="w-8 h-8 text-white" />
@@ -377,7 +385,7 @@ const Home = () => {
               viewport={{ once: true }}
               className="bg-white rounded-2xl shadow-xl overflow-hidden"
             >
-              <div className="bg-gradient-to-r from-purple-600 to-purple-800 p-8">
+              <div className="bg-yellow-500 p-8">
                 <div className="flex items-center mb-4">
                   <div className="bg-white/20 p-3 rounded-xl mr-4">
                     <FiEye className="w-8 h-8 text-white" />
@@ -393,19 +401,19 @@ const Home = () => {
                   <h4 className="font-bold text-gray-800 mb-3">Our Vision Includes:</h4>
                   <ul className="space-y-2">
                     <li className="flex items-center text-gray-600">
-                      <div className="w-2 h-2 bg-purple-600 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
                       Children living free from abuse and neglect
                     </li>
                     <li className="flex items-center text-gray-600">
-                      <div className="w-2 h-2 bg-purple-600 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
                       Youth equipped with essential life skills
                     </li>
                     <li className="flex items-center text-gray-600">
-                      <div className="w-2 h-2 bg-purple-600 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
                       Communities supporting child development
                     </li>
                     <li className="flex items-center text-gray-600">
-                      <div className="w-2 h-2 bg-purple-600 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
                       Sustainable opportunities for all youth
                     </li>
                   </ul>

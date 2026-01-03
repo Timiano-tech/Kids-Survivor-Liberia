@@ -8,7 +8,7 @@ const CallToAction = () => {
   return (
     <>
       {/* Call to Action */}
-            <section className="py-20 bg-linear-to-r from-blue-600 via-blue-700 to-blue-800">
+            <section className="py-20 bg-blue-600">
               <div className="container mx-auto px-4 text-center">
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -29,9 +29,9 @@ const CallToAction = () => {
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-bold shadow-lg"
+                        className="bg-yellow-400 text-white hover:bg-yellow-500 px-20 py-4 rounded-full text-lg font-bold shadow-lg"
                       >
-                        Support Our Mission
+                        Donate
                       </motion.button>
                     </Link>
                     <Link to="/contact">

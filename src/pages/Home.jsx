@@ -208,7 +208,7 @@ const Home = () => {
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="bg-yellow-500 py-3 md:px-10 md:py-4 sm:py-5  rounded-full text-lg font-bold shadow-lg hover:shadow-xl transition-shadow"
+                        className="bg-yellow-500 px-6 py-3 md:px-8 md:py-4  rounded-full text-lg font-bold shadow-lg hover:shadow-xl transition-shadow"
                       >
                         Donate Now
                       </motion.button>

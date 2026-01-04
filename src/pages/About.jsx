@@ -24,7 +24,8 @@ import CallToAction from '../components/CallToAction';
 import Mr_Steve from '../assets/Mr_Steve.jpeg';
 import Mrs_Fiona from '../assets/Mrs_Fiona.jpeg';
 import Mrs_Silvia from '../assets/Mrs_Silvia2.jpeg';
-import CEO from '../assets/CEO.jpeg'
+import CEO from '../assets/CEO.jpeg';
+import ScrollToTopButton from '../components/ScrollToTop';
 
 const About = () => {
   // Core Program Areas
@@ -100,28 +101,28 @@ const About = () => {
   // Team Members
   const teamMembers = [
     {
-      name: "John Doe",
+      name: "Mr. Billy Jones",
       teamImage : CEO,
-      position: "Executive Director",
-      bio: "Over 15 years of experience in child protection and youth development."
+      position: "Chief Executive Officer (C.E.O)",
+      bio: "Billy Jones, CEO of Kids Survivor Liberia, provides strategic leadership for child-focused education, welfare, and empowerment programs, building resilience in vulnerable children."
     },
     {
-      name: "Jane Smith",
+      name: "Mr. Steve Darwin",
       teamImage : Mr_Steve,
-      position: "Program Manager",
-      bio: "Specializes in community engagement and program development."
+      position: "Director of Country Operations",
+      bio: "Mr. Steve Darwin Wald is the Director of County Operations, overseeing the implementation and management of all Kids Survivor Liberia's field programs across the country."
     },
     {
-      name: "Robert Johnson",
+      name: "Mrs. Fiona A. Etong",
       teamImage : Mrs_Fiona,
-      position: "Finance Director",
-      bio: "Ensures financial transparency and accountability across all programs."
+      position: "Nigeria Representative, Social Media Manager",
+      bio: "Mrs. Fiona A. Etong is the Nigeria Representative, Social Media Manager, and Partner for Kids Survivor Liberia, leading digital advocacy and partnerships for vulnerable children."
     },
     {
-      name: "Sarah Williams",
+      name: "Mrs. Silvia T. Willie Dongon",
       teamImage : Mrs_Silvia,
-      position: "Community Outreach Coordinator",
-      bio: "Leads grassroots initiatives and community partnerships."
+      position: "Operational Advisor",
+      bio: "Mrs. Silvia T. Willie Dongon serves as Operational Advisor for Kids Survivor Liberia, guiding teams in Bong County (Palala District), Suakoko, and Lofa County to enhance program effectiveness and community impact."
     }
   ];
 
@@ -154,11 +155,12 @@ const About = () => {
   ];
 
   return (
+    <>
     <div className="min-h-screen bg-white">
       {/* Main Header Section */}
       <header className="relative">
         {/* Background Image  */}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/100 to-purple-900/40 z-10">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/100 to-purple-900/40 z-10">
          
           <img 
             src={KSLCompany} 
@@ -168,30 +170,21 @@ const About = () => {
         </div>
 
         {/* Page Header with Breadcrumb */}
-        <div className="relative z-10 py-20">
+        <div className="relative z-10 py-30 text-center">
           <div className="container mx-auto px-4">
-            {/* Breadcrumb */}
-            <div className="flex items-center space-x-2 text-white/90 mb-6">
-              <FiHome className="w-4 h-4" />
-              <span>/</span>
-              <FiFileText className="w-4 h-4" />
-              <span>Pages</span>
-              <span>/</span>
-              <span className="text-white font-medium">About Us</span>
-            </div>
             
             {/* Main Title */}
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-5xl md:text-6xl font-bold text-white mb-4"
+              className="text-5xl md:text-6xl font-bold text-white"
             >
               About Us
             </motion.h1>
             
             {/* Breadcrumb Text */}
             <p className="text-white/80 text-lg">
-              Home / Pages / About Us
+              Where Every Child's Potential Finds Protection & Purpose.
             </p>
           </div>
         </div>
@@ -210,7 +203,7 @@ const About = () => {
           >
             <div className="grid md:grid-cols-2 gap-12 items-center">
               {/* Image Section */}
-              <div className="bg-gray-100 rounded-2xl p-8 flex items-center justify-center min-h-[400px]">
+              <div className="bg-gray-100 rounded-2xl p-8 flex items-center justify-center min-h-100">
                
                 <img 
                   src={KSL_Teams} 
@@ -244,7 +237,7 @@ const About = () => {
             className="grid md:grid-cols-2 gap-8 mb-20"
           >
             {/* Mission */}
-            <div className="bg-gradient-to-br from-blue-600 to-blue-800 text-white rounded-2xl p-8">
+            <div className="bg-blue-500 text-white rounded-2xl p-8">
               <div className="flex items-center mb-6">
                 <div className="bg-white/20 p-3 rounded-xl mr-4">
                   <FiTarget className="w-8 h-8" />
@@ -257,7 +250,7 @@ const About = () => {
             </div>
 
             {/* Vision */}
-            <div className="bg-gradient-to-br from-purple-600 to-purple-800 text-white rounded-2xl p-8">
+            <div className="bg-yellow-500 text-white rounded-2xl p-8">
               <div className="flex items-center mb-6">
                 <div className="bg-white/20 p-3 rounded-xl mr-4">
                   <FiEye className="w-8 h-8" />
@@ -463,6 +456,8 @@ const About = () => {
 
       <CallToAction/>
     </div>
+    <ScrollToTopButton/>
+    </>
   );
 };
 

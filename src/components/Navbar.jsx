@@ -169,7 +169,7 @@ const Navbar = () => {
               </div>
             ))}
             <Link to="/donate" className="mt-4 block" onClick={() => setIsOpen(false)}>
-              <button className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white py-3 rounded-lg font-semibold transition-all">
+              <button className="w-full bg-yellow-500 text-white py-3 rounded-lg font-semibold transition-all">
                 Donate Now
               </button>
             </Link>

@@ -1,18 +1,12 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  FiMail, 
-  FiPhone, 
-  FiMapPin, 
+  FiMail,  
   FiSend,
-  FiHome,
-  FiFileText,
   FiUser,
-  FiMessageSquare,
-  FiClock,
-  FiUsers,
-  FiGlobe
+  FiMessageSquare
 } from 'react-icons/fi';
+import ContactImage from '../assets/About Picture.jpeg'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -41,42 +35,32 @@ const Contact = () => {
     <div className="min-h-screen bg-white">
       {/* Main Header Section */}
       <header className="relative">
-        {/* Background Image - You can add your own image here */}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700">
-          {/* You can replace this with your background image:
-          <img 
-            src="/path-to-your-contact-background.jpg" 
-            alt="Contact Background" 
-            className="w-full h-full object-cover opacity-20"
-          />
-          */}
-        </div>
+       {/* Background Image  */}
+               <div className="absolute inset-0 bg-linear-to-r from-blue-800 to-yellow-900/70 z-10">
+                
+                 <img 
+                   src={ContactImage} 
+                   alt="Background" 
+                   className="w-full h-full object-cover opacity-20"
+                 />
+               </div>
 
-        {/* Page Header with Breadcrumb */}
-        <div className="relative z-10 py-20">
+         {/* Page Header with Breadcrumb */}
+        <div className="relative z-10 py-30 text-center">
           <div className="container mx-auto px-4">
-            {/* Breadcrumb */}
-            <div className="flex items-center space-x-2 text-white/90 mb-6">
-              <FiHome className="w-4 h-4" />
-              <span>/</span>
-              <FiFileText className="w-4 h-4" />
-              <span>Pages</span>
-              <span>/</span>
-              <span className="text-white font-medium">Contact Us</span>
-            </div>
             
             {/* Main Title */}
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-5xl md:text-6xl font-bold text-white mb-4"
+              className="text-5xl md:text-6xl font-bold text-white"
             >
               Contact Us
             </motion.h1>
             
             {/* Breadcrumb Text */}
             <p className="text-white/80 text-lg">
-              Home / Pages / Contact Us
+              Where Every Child's Potential Finds Protection & Purpose.
             </p>
           </div>
         </div>

@@ -9,11 +9,14 @@ import {
   FiGlobe,
   FiTrendingUp
 } from 'react-icons/fi';
+import CallToAction from '../components/CallToAction';
+import ScrollToTopButton from '../components/ScrollToTop';
+import HeaderImage from '../assets/Talking to children.jpeg'
 
 const Impact = () => {
   const stats = [
-    { number: '5,000+', label: 'Children Reached' },
-    { number: '200+', label: 'Communities Served' },
+    { number: '3,000+', label: 'Children Reached' },
+    { number: '100+', label: 'Communities Served' },
     { number: '50+', label: 'Schools Supported' },
     { number: '100+', label: 'Youth Trained' },
   ];
@@ -92,45 +95,37 @@ const Impact = () => {
   ];
 
   return (
+    <>
     <div className="min-h-screen bg-white">
       {/* Main Header Section */}
       <header className="relative">
-        {/* Background Image - You can add your own image here */}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700">
-          {/* You can replace this with your background image:
+        {/* Background Image  */}
+        <div className="absolute inset-0 bg-linear-to-r from-blue-800 to-yellow-900/70">
+          
           <img 
-            src="/path-to-your-impact-background.jpg" 
-            alt="Impact Background" 
+            src={HeaderImage} 
+            alt="Impact Background Image" 
             className="w-full h-full object-cover opacity-20"
           />
-          */}
+        
         </div>
 
-        {/* Page Header with Breadcrumb */}
-        <div className="relative z-10 py-20">
+          {/* Page Header with Breadcrumb */}
+        <div className="relative z-10 py-30 text-center">
           <div className="container mx-auto px-4">
-            {/* Breadcrumb */}
-            <div className="flex items-center space-x-2 text-white/90 mb-6">
-              <FiHome className="w-4 h-4" />
-              <span>/</span>
-              <FiFileText className="w-4 h-4" />
-              <span>Pages</span>
-              <span>/</span>
-              <span className="text-white font-medium">Our Impact</span>
-            </div>
             
             {/* Main Title */}
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-5xl md:text-6xl font-bold text-white mb-4"
+              className="text-5xl md:text-6xl font-bold text-white"
             >
               Our Impact
             </motion.h1>
             
             {/* Breadcrumb Text */}
             <p className="text-white/80 text-lg">
-              Home / Pages / Our Impact
+              Creating Measurable Change. Transforming Lives.
             </p>
           </div>
         </div>
@@ -282,7 +277,7 @@ const Impact = () => {
             viewport={{ once: true }}
             className="mb-20"
           >
-            <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-12 text-white">
+            <div className="bg-linear-to-r from-blue-600 to-blue-800 rounded-2xl p-12 text-white">
               <div className="max-w-3xl mx-auto">
                 <h2 className="text-3xl font-bold mb-6 text-center">Success Story</h2>
                 <div className="space-y-6">
@@ -319,7 +314,7 @@ const Impact = () => {
               
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 {/* Map/Image Placeholder */}
-                <div className="bg-gray-100 rounded-xl p-8 flex items-center justify-center min-h-[300px]">
+                <div className="bg-gray-100 rounded-xl p-8 flex items-center justify-center min-h-75">
                   <div className="text-center">
                     <div className="text-gray-400 text-4xl mb-4">🗺️</div>
                     <p className="text-gray-600 font-medium mb-2">Liberia Impact Map</p>
@@ -353,6 +348,9 @@ const Impact = () => {
         </div>
       </main>
     </div>
+    <ScrollToTopButton/>
+    <CallToAction/>
+    </>
   );
 };
 

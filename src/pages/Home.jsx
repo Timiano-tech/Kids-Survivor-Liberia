@@ -83,8 +83,8 @@ const Home = () => {
 
   // Quick Stats
   const quickStats = [
-    { icon: <FiUsers />, number: "5,000+", label: "Children Reached" },
-    { icon: <FiHome />, number: "200+", label: "Communities Served" },
+    { icon: <FiUsers />, number: "3,000+", label: "Children Reached" },
+    { icon: <FiHome />, number: "100+", label: "Communities Served" },
     { icon: <FiBook />, number: "50+", label: "Schools Supported" },
     { icon: <FiAward />, number: "100+", label: "Youth Trained" }
   ];

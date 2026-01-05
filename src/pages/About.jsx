@@ -160,7 +160,7 @@ const About = () => {
       {/* Main Header Section */}
       <header className="relative">
         {/* Background Image  */}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/100 to-purple-900/40 z-10">
+        <div className="absolute inset-0 bg-linear-to-r from-blue-800 to-yellow-900/70 z-10">
          
           <img 
             src={KSLCompany} 
@@ -393,7 +393,7 @@ const About = () => {
             viewport={{ once: true }}
             className="mb-20"
           >
-            <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8">
+            <div className="bg-blue-500 rounded-2xl p-8">
               <h2 className="text-3xl font-bold text-white mb-8 text-center">Our Impact</h2>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -439,7 +439,7 @@ const About = () => {
               </div>
               
              {/* Image Section */}
-              <div className="bg-gray-100 rounded-2xl p-8 flex items-center justify-center min-h-[400px]">
+              <div className="bg-gray-100 rounded-2xl p-8 flex items-center justify-center min-h-100">
                
                 <img 
                   src={KSL_Teams2} 

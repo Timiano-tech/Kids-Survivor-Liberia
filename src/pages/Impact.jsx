@@ -204,7 +204,7 @@ const Impact = () => {
             </div>
           </motion.div>
 
-          {/* Lives Impacted Section */}
+              {/* Lives Impacted Section */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -237,7 +237,7 @@ const Impact = () => {
                     </div>
                     {/* Replace with:
                     <img 
-                      src={`/path-to-image-${index}.jpg`}
+                      src={`/images/stories/${person.id}.jpg`}  // Add your images to public/images/stories/
                       alt={person.name}
                       className="w-full h-full object-cover"
                     />
@@ -269,6 +269,100 @@ const Impact = () => {
             </div>
           </motion.div>
 
+          {/* Video Stories Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            viewport={{ once: true }}
+            className="mb-20"
+          >
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-800 mb-4">Watch Their Stories</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Experience the transformation through our video testimonials
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Video 1 */}
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div className="relative h-64 bg-gray-900">
+                  {/* Video Placeholder - Replace with your video */}
+                
+                  
+                
+                  <video 
+                    controls 
+                    className="w-full h-full object-cover"
+                    poster={HeaderImage} // Add thumbnail image
+                  >
+                    <source src="/videos/Children_Sponsor..mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                  
+                 
+                 
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">Sarah's Journey</h3>
+                  <p className="text-gray-600 mb-4">
+                    From street child to top student - watch Sarah's inspiring transformation
+                  </p>
+                  <div className="flex items-center text-gray-500 text-sm">
+                    <span className="mr-4">🎓 Education Success</span>
+                    <span>⏱️ 3:45</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Video 2 */}
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div className="relative h-64 bg-gray-900">
+                  <div className="w-full h-full flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="text-white text-6xl mb-4">▶️</div>
+                      <p className="text-gray-300">Add impact video 2</p>
+                      <p className="text-gray-400 text-sm mt-2">Program documentary</p>
+                    </div>
+                  </div>
+                  {/* Replace with your video as shown above */}
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">Community Transformation</h3>
+                  <p className="text-gray-600 mb-4">
+                    See how our programs are changing entire communities in Liberia
+                  </p>
+                  <div className="flex items-center text-gray-500 text-sm">
+                    <span className="mr-4">🏘️ Community Impact</span>
+                    <span>⏱️ 5:20</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Video Upload Instructions */}
+            <div className="mt-8 bg-blue-50 border border-blue-200 rounded-xl p-6 max-w-3xl mx-auto">
+              <h4 className="font-bold text-blue-800 mb-3">How to Add Your Videos:</h4>
+              <div className="grid md:grid-cols-3 gap-4 text-sm">
+                <div>
+                  <p className="font-semibold text-blue-700 mb-1">Option 1: Local Files</p>
+                  <p className="text-blue-600">Add MP4 files to: <code className="bg-white px-2 py-1 rounded">public/videos/</code></p>
+                </div>
+                <div>
+                  <p className="font-semibold text-blue-700 mb-1">Option 2: YouTube</p>
+                  <p className="text-blue-600">Upload to YouTube, then embed with the video ID</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-blue-700 mb-1">Option 3: Vimeo</p>
+                  <p className="text-blue-600">Upload to Vimeo for professional hosting</p>
+                </div>
+              </div>
+              <p className="text-blue-600 text-sm mt-4">
+                <strong>Recommended:</strong> Use YouTube or Vimeo for better performance and accessibility
+              </p>
+            </div>
+          </motion.div> 
           {/* Success Story Highlight */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}

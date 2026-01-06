@@ -1,7 +1,5 @@
 import { motion } from 'framer-motion';
 import { 
-  FiHome,
-  FiFileText,
   FiUsers,
   FiBook,
   FiBriefcase,
@@ -11,7 +9,10 @@ import {
 } from 'react-icons/fi';
 import CallToAction from '../components/CallToAction';
 import ScrollToTopButton from '../components/ScrollToTop';
-import HeaderImage from '../assets/Talking to children.jpeg'
+import HeaderImage from '../assets/Talking to children.jpeg';
+import StudentsImpact from '../assets/Students Impacted.jpeg';
+import ChildrenImpact from '../assets/Helping Children.jpeg';
+import ChildrenImpact2 from '../assets/ChildrenImpact.jpeg'
 
 const Impact = () => {
   const stats = [
@@ -54,22 +55,25 @@ const Impact = () => {
     },
   ];
 
-  // Lives Impacted Images - Add your own images here
+  // Lives Impacted Images
   const livesImpacted = [
     {
       name: 'Sarah',
+      image: StudentsImpact,
       age: 19,
       story: 'Completed vocational training and now runs a tailoring business',
       location: 'Monrovia'
     },
     {
       name: 'James',
+      image: ChildrenImpact,
       age: 17,
       story: 'Returned to school with scholarship support, now excelling in studies',
       location: 'Bong County'
     },
     {
       name: 'Mary',
+      image: ChildrenImpact2,
       age: 22,
       story: 'Received agricultural training, now supports her family with farming',
       location: 'Nimba County'
@@ -77,21 +81,11 @@ const Impact = () => {
     {
       name: 'David',
       age: 16,
+      image: StudentsImpact,
       story: 'Benefited from child protection programs, now a youth advocate',
       location: 'Margibi County'
     },
-    {
-      name: 'Fatima',
-      age: 18,
-      story: 'Completed digital skills training, employed at local tech company',
-      location: 'Grand Bassa'
-    },
-    {
-      name: 'Samuel',
-      age: 20,
-      story: 'Rehabilitated from substance abuse, now mentors other youth',
-      location: 'Montserrado'
-    },
+    
   ];
 
   return (
@@ -219,7 +213,7 @@ const Impact = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
               {livesImpacted.map((person, index) => (
                 <motion.div
                   key={index}
@@ -229,19 +223,15 @@ const Impact = () => {
                   viewport={{ once: true }}
                   className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
                 >
-                  {/* Image Placeholder - Add your images here */}
+                  {/* Image*/}
                   <div className="h-64 bg-gray-100 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="text-gray-400 text-4xl mb-2">📸</div>
-                      <p className="text-gray-500 text-sm">Add image of {person.name}</p>
-                    </div>
-                    {/* Replace with:
+                  
+                   
                     <img 
-                      src={`/images/stories/${person.id}.jpg`}  // Add your images to public/images/stories/
+                      src={person.image} 
                       alt={person.name}
                       className="w-full h-full object-cover"
                     />
-                    */}
                   </div>
                   
                   <div className="p-6">
@@ -288,7 +278,6 @@ const Impact = () => {
               {/* Video 1 */}
               <div className="bg-white rounded-xl shadow-lg overflow-hidden">
                 <div className="relative h-64 bg-gray-900">
-                  {/* Video Placeholder - Replace with your video */}
                 
                   
                 
@@ -319,48 +308,32 @@ const Impact = () => {
               {/* Video 2 */}
               <div className="bg-white rounded-xl shadow-lg overflow-hidden">
                 <div className="relative h-64 bg-gray-900">
-                  <div className="w-full h-full flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="text-white text-6xl mb-4">▶️</div>
-                      <p className="text-gray-300">Add impact video 2</p>
-                      <p className="text-gray-400 text-sm mt-2">Program documentary</p>
-                    </div>
-                  </div>
-                  {/* Replace with your video as shown above */}
+                
+                  
+                
+                  <video 
+                    controls 
+                    className="w-full h-full object-cover"
+                    poster={HeaderImage} // Add thumbnail image
+                  >
+                    <source src="/videos/StudentsImpact.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                  
+                 
+                 
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">Community Transformation</h3>
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">Sarah's Journey</h3>
                   <p className="text-gray-600 mb-4">
-                    See how our programs are changing entire communities in Liberia
+                    From street child to top student - watch Sarah's inspiring transformation
                   </p>
                   <div className="flex items-center text-gray-500 text-sm">
-                    <span className="mr-4">🏘️ Community Impact</span>
-                    <span>⏱️ 5:20</span>
+                    <span className="mr-4">🎓 Education Success</span>
+                    <span>⏱️ 3:45</span>
                   </div>
                 </div>
               </div>
-            </div>
-
-            {/* Video Upload Instructions */}
-            <div className="mt-8 bg-blue-50 border border-blue-200 rounded-xl p-6 max-w-3xl mx-auto">
-              <h4 className="font-bold text-blue-800 mb-3">How to Add Your Videos:</h4>
-              <div className="grid md:grid-cols-3 gap-4 text-sm">
-                <div>
-                  <p className="font-semibold text-blue-700 mb-1">Option 1: Local Files</p>
-                  <p className="text-blue-600">Add MP4 files to: <code className="bg-white px-2 py-1 rounded">public/videos/</code></p>
-                </div>
-                <div>
-                  <p className="font-semibold text-blue-700 mb-1">Option 2: YouTube</p>
-                  <p className="text-blue-600">Upload to YouTube, then embed with the video ID</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-blue-700 mb-1">Option 3: Vimeo</p>
-                  <p className="text-blue-600">Upload to Vimeo for professional hosting</p>
-                </div>
-              </div>
-              <p className="text-blue-600 text-sm mt-4">
-                <strong>Recommended:</strong> Use YouTube or Vimeo for better performance and accessibility
-              </p>
             </div>
           </motion.div> 
           {/* Success Story Highlight */}

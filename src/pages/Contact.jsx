@@ -7,6 +7,8 @@ import {
   FiMessageSquare
 } from 'react-icons/fi';
 import ContactImage from '../assets/About Picture.jpeg'
+import CallToAction from '../components/CallToAction';
+import ScrollToTopButton from '../components/ScrollToTop';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -32,6 +34,7 @@ const Contact = () => {
   };
 
   return (
+    <>
     <div className="min-h-screen bg-white">
       {/* Main Header Section */}
       <header className="relative">
@@ -85,7 +88,7 @@ const Contact = () => {
             </p>
           </motion.div>
 
-          {/* Contact Form - Full Width */}
+          {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -168,7 +171,7 @@ const Contact = () => {
                 <div className="pt-4">
                   <button
                     type="submit"
-                    className="flex items-center justify-center space-x-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl w-full md:w-auto"
+                    className="flex items-center justify-center space-x-3 bg-linear-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl w-full md:w-auto"
                   >
                     <FiSend className="w-5 h-5" />
                     <span>Send Message</span>
@@ -181,7 +184,7 @@ const Contact = () => {
             </div>
           </motion.div>
 
-          {/* Map Section - Add your map here */}
+          {/* Map Section */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -217,6 +220,9 @@ const Contact = () => {
     
 
     </div>
+      <ScrollToTopButton/>
+      <CallToAction/>
+    </>
   );
 };
 

@@ -3,11 +3,10 @@ import { motion } from 'framer-motion';
 import { 
   FiHome,
   FiFileText,
-  FiShield,
-  FiBookOpen,
-  FiUsers,
   FiDollarSign
 } from 'react-icons/fi';
+import CallToAction from '../components/CallToAction';
+import ScrollToTopButton from '../components/ScrollToTop';
 
 const Donate = () => {
   const [donationAmount, setDonationAmount] = useState('');
@@ -51,6 +50,7 @@ const Donate = () => {
   ];
 
   return (
+    <>
     <div className="min-h-screen bg-white">
       {/* Main Header Section */}
       <header className="relative">
@@ -343,6 +343,9 @@ const Donate = () => {
         </div>
       </main>
     </div>
+    <ScrollToTopButton/>
+    <CallToAction/>
+    </>
   );
 };
 

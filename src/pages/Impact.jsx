@@ -224,7 +224,7 @@ const Impact = () => {
                   className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
                 >
                   {/* Image*/}
-                  <div className="h-64 bg-gray-100 flex items-center justify-center">
+                  <div className="h-auto bg-gray-100 flex items-center justify-center">
                   
                    
                     <img 
@@ -308,7 +308,7 @@ const Impact = () => {
 
               {/* Video 2 */}
               <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-                <div className="relative h-64 bg-gray-900">
+                <div className="relative h-65 bg-gray-900">
                 
                   
                 

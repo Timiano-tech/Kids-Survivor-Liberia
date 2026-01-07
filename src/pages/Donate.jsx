@@ -133,7 +133,7 @@ const Donate = () => {
               viewport={{ once: true }}
               className="max-w-4xl mx-auto mb-12"
             >
-              <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 text-white mb-8">
+              <div className="bg-blue-500 rounded-2xl p-8 text-white mb-8">
                 <h2 className="text-3xl font-bold mb-2">Bank Transfer Information</h2>
                 <p>Use the account details below to make your donation</p>
               </div>

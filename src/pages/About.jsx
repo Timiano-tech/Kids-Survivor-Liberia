@@ -450,8 +450,312 @@ const About = () => {
               </div>
             </div>
           </motion.div>
+
+                 {/* Our Branches Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            viewport={{ once: true }}
+            className="mb-20"
+          >
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Network Across Liberia</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Strategic locations serving vulnerable children and youth in multiple counties through our dedicated branch offices
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+              {/* Headquarters */}
+              <div className="bg-blue-500 text-white rounded-xl shadow-lg overflow-hidden">
+                <div className="p-6">
+                  <div className="flex items-center mb-4">
+                    <div className="bg-white/20 p-3 rounded-lg mr-4">
+                      <FiHome className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold">Headquarters</h3>
+                      <p className="text-blue-200 font-medium">Main Office</p>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <div>
+                      <p className="text-sm text-blue-200 mb-1">Address</p>
+                      <p className="font-medium">City of Light Community, Barclay Avenue, 15th Street</p>
+                    </div>
+                    
+                    <div>
+                      <p className="text-sm text-blue-200 mb-1">Location</p>
+                      <p>Sinkor, Monrovia, Liberia</p>
+                    </div>
+                    
+                    <div className="pt-3 border-t border-white/20">
+                      <p className="text-sm text-blue-200 mb-1">Central Operations</p>
+                      <p>Strategic leadership and coordination center</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Nimba County Branch */}
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                <div className="p-6">
+                  <div className="flex items-center mb-4">
+                    <div className="bg-blue-100 p-3 rounded-lg mr-4">
+                      <FiHome className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-800">Nimba County</h3>
+                      <p className="text-blue-600 font-medium">Gompa City Office</p>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <div>
+                      <p className="text-sm text-gray-500 mb-1">Coordinator</p>
+                      <p className="text-gray-800 font-medium">Mr. Janjay Cole</p>
+                    </div>
+                    
+                    <div>
+                      <p className="text-sm text-gray-500 mb-1">Address</p>
+                      <p className="text-gray-700">Gompa City, One Way Drive</p>
+                    </div>
+                    
+                    <div>
+                      <p className="text-sm text-gray-500 mb-1">Location</p>
+                      <p className="text-gray-700">Gompa City, Nimba County</p>
+                    </div>
+                    
+                    <div className="pt-3 border-t border-gray-100">
+                      <p className="text-sm text-gray-500 mb-1">Contact</p>
+                      <p className="text-gray-700 font-medium">+231880919921</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bong County Branch */}
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                <div className="p-6">
+                  <div className="flex items-center mb-4">
+                    <div className="bg-green-100 p-3 rounded-lg mr-4">
+                      <FiHome className="w-6 h-6 text-green-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-800">Bong County</h3>
+                      <p className="text-green-600 font-medium">Gbarnga City Office</p>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <div>
+                      <p className="text-sm text-gray-500 mb-1">Coordinator</p>
+                      <p className="text-gray-800 font-medium">Mr. Paul Bennie</p>
+                    </div>
+                    
+                    <div>
+                      <p className="text-sm text-gray-500 mb-1">Address</p>
+                      <p className="text-gray-700">Civil Compound, Gbarnga City</p>
+                    </div>
+                    
+                    <div>
+                      <p className="text-sm text-gray-500 mb-1">Location</p>
+                      <p className="text-gray-700">Bong County</p>
+                    </div>
+                    
+                    <div className="pt-3 border-t border-gray-100">
+                      <p className="text-sm text-gray-500 mb-1">Contact</p>
+                      <p className="text-gray-700 font-medium">+231880365232</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Grand Bassa County Branch */}
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                <div className="p-6">
+                  <div className="flex items-center mb-4">
+                    <div className="bg-purple-100 p-3 rounded-lg mr-4">
+                      <FiHome className="w-6 h-6 text-purple-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-800">Grand Bassa County</h3>
+                      <p className="text-purple-600 font-medium">Buchanan City Office</p>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <div>
+                      <p className="text-sm text-gray-500 mb-1">Coordinator</p>
+                      <p className="text-gray-800 font-medium">Mr. Jackson David</p>
+                    </div>
+                    
+                    <div>
+                      <p className="text-sm text-gray-500 mb-1">Address</p>
+                      <p className="text-gray-700">Fare Ground, Buchanan City</p>
+                    </div>
+                    
+                    <div>
+                      <p className="text-sm text-gray-500 mb-1">Location</p>
+                      <p className="text-gray-700">Grand Bassa County</p>
+                    </div>
+                    
+                    <div className="pt-3 border-t border-gray-100">
+                      <p className="text-sm text-gray-500 mb-1">Contact</p>
+                      <p className="text-gray-700 font-medium">+231886713662</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Montserrado County Branch */}
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                <div className="p-6">
+                  <div className="flex items-center mb-4">
+                    <div className="bg-yellow-100 p-3 rounded-lg mr-4">
+                      <FiHome className="w-6 h-6 text-yellow-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-800">Montserrado County</h3>
+                      <p className="text-yellow-600 font-medium">Sinkor Office</p>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <div>
+                      <p className="text-sm text-gray-500 mb-1">Coordinator</p>
+                      <p className="text-gray-800 font-medium">Welleh Bropleh</p>
+                    </div>
+                    
+                    <div>
+                      <p className="text-sm text-gray-500 mb-1">Address</p>
+                      <p className="text-gray-700">15 street, Barclay Avenue, Sinkor</p>
+                    </div>
+                    
+                    <div>
+                      <p className="text-sm text-gray-500 mb-1">Location</p>
+                      <p className="text-gray-700">Montserrado County</p>
+                    </div>
+                    
+                    <div className="pt-3 border-t border-gray-100">
+                      <p className="text-sm text-gray-500 mb-1">Contact</p>
+                      <p className="text-gray-700 font-medium">+231779200089</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bong County (Palala) Branch */}
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                <div className="p-6">
+                  <div className="flex items-center mb-4">
+                    <div className="bg-red-100 p-3 rounded-lg mr-4">
+                      <FiHome className="w-6 h-6 text-red-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-800">Bong County (Palala)</h3>
+                      <p className="text-red-600 font-medium">Palala City Office</p>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <div>
+                      <p className="text-sm text-gray-500 mb-1">Coordinator</p>
+                      <p className="text-gray-800 font-medium">Ferguson Z. Neyor</p>
+                    </div>
+                    
+                    <div>
+                      <p className="text-sm text-gray-500 mb-1">Address</p>
+                      <p className="text-gray-700">New PALALA City</p>
+                    </div>
+                    
+                    <div>
+                      <p className="text-sm text-gray-500 mb-1">Location</p>
+                      <p className="text-gray-700">Kpaai District, PALALA City, Bong County</p>
+                    </div>
+                    
+                    <div className="pt-3 border-t border-gray-100">
+                      <p className="text-sm text-gray-500 mb-1">Contact</p>
+                      <p className="text-gray-700 font-medium">+231880395123</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Lofa County Branch */}
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 col-span-full md:col-span-2 lg:col-span-3">
+                <div className="p-6">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                    <div className="flex items-center">
+                      <div className="bg-indigo-100 p-3 rounded-lg mr-4">
+                        <FiHome className="w-6 h-6 text-indigo-600" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-800">Lofa County</h3>
+                        <p className="text-indigo-600 font-medium">Voinjama City Office</p>
+                      </div>
+                    </div>
+                    
+                    <div className="grid md:grid-cols-3 gap-6 flex-grow">
+                      <div>
+                        <p className="text-sm text-gray-500 mb-1">Coordinator</p>
+                        <p className="text-gray-800 font-medium">Mrs. Silvia T. Willie Dongon</p>
+                      </div>
+                      
+                      <div>
+                        <p className="text-sm text-gray-500 mb-1">Address</p>
+                        <p className="text-gray-700">Voinjama City</p>
+                      </div>
+                      
+                      <div>
+                        <p className="text-sm text-gray-500 mb-1">Contact</p>
+                        <p className="text-gray-700 font-medium">+231886764940</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-6 pt-6 border-t border-gray-100">
+                    <p className="text-sm text-gray-500 mb-1">Location</p>
+                    <p className="text-gray-700">Lofa County</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Branch Network Summary */}
+            <div className="mt-12 bg-gradient-to-r from-blue-50 to-gray-50 rounded-xl p-8 border border-blue-100">
+              <div className="text-center">
+                <h3 className="text-2xl font-bold text-gray-800 mb-6">Our Branch Network Coverage</h3>
+                <div className="grid md:grid-cols-4 gap-6 mb-6">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-blue-600 mb-2">1</div>
+                    <p className="text-gray-700 font-medium">Headquarters</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-green-600 mb-2">6</div>
+                    <p className="text-gray-700 font-medium">County Branches</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-purple-600 mb-2">5+</div>
+                    <p className="text-gray-700 font-medium">Counties Served</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-yellow-600 mb-2">7</div>
+                    <p className="text-gray-700 font-medium">Dedicated Coordinators</p>
+                  </div>
+                </div>
+                <p className="text-gray-600 max-w-2xl mx-auto">
+                  Through our strategically located branches across Liberia, we're able to reach vulnerable children and youth 
+                  in both urban centers and rural communities, ensuring comprehensive coverage and localized support 
+                  for those who need it most.
+                </p>
+              </div>
+            </div>
+          </motion.div>
         </div>
-        
+           
       </main>
 
       <CallToAction/>

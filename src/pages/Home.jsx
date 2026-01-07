@@ -147,14 +147,14 @@ const Home = () => {
                   alt={heroSlides[currentSlide].title}
                   className="w-full h-full object-cover"
                   onError={() => handleImageError(`hero-${currentSlide}`)}
-                />
+                loading='lazy'/>
               ) : (
                 <div className="w-full h-full bg-blue-600"></div>
               )}
             </div>
             
             {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-purple-900/40 z-10"></div>
+            <div className="absolute inset-0 bg-linear-to-r from-blue-900/70 to-purple-900/40 z-10"></div>
 
             {/* Content */}
             <div className="relative h-full flex items-center z-20">
@@ -462,17 +462,12 @@ const Home = () => {
                         alt={area.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         onError={() => handleImageError(`impact-${area.id}`)}
-                      />
+                      loading='lazy'/>
                     ) : (
-                      <div className="w-full h-full bg-gradient-to-r from-blue-500 to-blue-700 flex items-center justify-center">
-                        <div className="text-white text-center">
-                          <div className="text-4xl mb-2">📷</div>
-                          <p>Image Placeholder</p>
-                          <p className="text-sm mt-2">Replace with your image</p>
-                        </div>
-                      </div>
+                      {/* <div className="w-full h-full bg-gradient-to-r from-blue-500 to-blue-700 flex items-center justify-center">
+                      </div> */}
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent"></div>
                     <div className="absolute bottom-4 left-4">
                       <span className="bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
                         {area.stat}

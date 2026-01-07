@@ -322,7 +322,7 @@ const About = () => {
                   className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
                 >
                   {/* Team Member Image */}
-                  <div className="h-64 bg-gray-100 flex items-center justify-center">
+                  <div className="h-auto bg-gray-100 flex items-center justify-center">
 
                     <img 
                       src={member.teamImage}

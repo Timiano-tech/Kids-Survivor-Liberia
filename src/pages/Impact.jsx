@@ -231,6 +231,7 @@ const Impact = () => {
                       src={person.image} 
                       alt={person.name}
                       className="w-full h-full object-cover"
+                      loading='lazy'
                     />
                   </div>
                   

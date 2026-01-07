@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FiMail, FiPhone, FiMapPin, FiFacebook, FiTwitter, FiInstagram } from 'react-icons/fi';
+import { FiMail, FiPhone, FiMapPin, FiFacebook, FiTwitter, FiInstagram, FiYoutube } from 'react-icons/fi';
 
 const Footer = () => {
   return (
@@ -68,6 +68,9 @@ const Footer = () => {
               </a>
               <a href="#" className="text-gray-400 hover:text-white">
                 <FiInstagram size={20} />
+              </a>
+              <a href="https://www.youtube.com/@Kidssurvivorliberia_1" className="text-gray-400 hover:text-white">
+                <FiYoutube size={20} />
               </a>
             </div>
           </div>

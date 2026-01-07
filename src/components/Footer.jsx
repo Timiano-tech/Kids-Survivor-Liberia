@@ -37,7 +37,6 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><Link to="/contact" className="text-gray-400 hover:text-white">Volunteer</Link></li>
               <li><Link to="/contact" className="text-gray-400 hover:text-white">Partnership</Link></li>
-              <li><Link to="/contact" className="text-gray-400 hover:text-white">Careers</Link></li>
             </ul>
           </div>
 
@@ -51,7 +50,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-2 text-gray-400">
                 <FiPhone />
-                <span>+231 880 123 456</span>
+                <span>+231 887 291 599</span>
               </li>
               <li className="flex items-center space-x-2 text-gray-400">
                 <FiMail />

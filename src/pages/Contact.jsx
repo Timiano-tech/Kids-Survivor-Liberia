@@ -198,19 +198,16 @@ const Contact = () => {
                 <p className="text-gray-600">Visit us at our headquarters in Monrovia</p>
               </div>
               <div className="h-96 bg-gray-100 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-gray-400 text-4xl mb-4">🗺️</div>
-                  <p className="text-gray-600 font-medium mb-2">Map Location</p>
-                  <p className="text-gray-500 text-sm">Add Google Maps or location map here</p>
-                </div>
-                {/* Replace with:
+                
+                
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=..."
+                  src="https://maps.google.com/maps?width=100%25&amp;height=500&amp;hl=en&amp;q=City%20of%20Light%20Community,%20Barclay%20Avenue,%2015th%20Street,%20Sinkor,%20Monrovia,%20Liberia+(Kids%20Survivor%20Liberia)&amp;t=&amp;z=9&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                   className="w-full h-full border-0"
                   allowFullScreen
                   loading="lazy"
                 />
-                */}
+                \
+                
               </div>
             </div>
           </motion.div>

@@ -504,11 +504,11 @@ const About = () => {
                 <div className="p-6">
                   <div className="flex items-center mb-4">
                     <div className="bg-blue-100 p-3 rounded-lg mr-4">
-                      <FiHome className="w-6 h-6 text-blue-600" />
+                      <FiHome className="w-6 h-6 text-blue-500" />
                     </div>
                     <div>
                       <h3 className="text-xl font-bold text-gray-800">Nimba County</h3>
-                      <p className="text-blue-600 font-medium">Gompa City Office</p>
+                      <p className="text-blue-500 font-medium">Gompa City Office</p>
                     </div>
                   </div>
                   
@@ -540,12 +540,12 @@ const About = () => {
               <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100">
                 <div className="p-6">
                   <div className="flex items-center mb-4">
-                    <div className="bg-green-100 p-3 rounded-lg mr-4">
-                      <FiHome className="w-6 h-6 text-green-600" />
+                    <div className="bg-blue-100 p-3 rounded-lg mr-4">
+                      <FiHome className="w-6 h-6 text-blue-500" />
                     </div>
                     <div>
                       <h3 className="text-xl font-bold text-gray-800">Bong County</h3>
-                      <p className="text-green-600 font-medium">Gbarnga City Office</p>
+                      <p className="text-blue-500 font-medium">Gbarnga City Office</p>
                     </div>
                   </div>
                   
@@ -577,12 +577,12 @@ const About = () => {
               <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100">
                 <div className="p-6">
                   <div className="flex items-center mb-4">
-                    <div className="bg-purple-100 p-3 rounded-lg mr-4">
-                      <FiHome className="w-6 h-6 text-purple-600" />
+                    <div className="bg-blue-100 p-3 rounded-lg mr-4">
+                      <FiHome className="w-6 h-6 text-blue-500" />
                     </div>
                     <div>
                       <h3 className="text-xl font-bold text-gray-800">Grand Bassa County</h3>
-                      <p className="text-purple-600 font-medium">Buchanan City Office</p>
+                      <p className="text-blue-500 font-medium">Buchanan City Office</p>
                     </div>
                   </div>
                   
@@ -614,12 +614,12 @@ const About = () => {
               <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100">
                 <div className="p-6">
                   <div className="flex items-center mb-4">
-                    <div className="bg-yellow-100 p-3 rounded-lg mr-4">
-                      <FiHome className="w-6 h-6 text-yellow-600" />
+                    <div className="bg-blue-100 p-3 rounded-lg mr-4">
+                      <FiHome className="w-6 h-6 text-blue-500" />
                     </div>
                     <div>
                       <h3 className="text-xl font-bold text-gray-800">Montserrado County</h3>
-                      <p className="text-yellow-600 font-medium">Sinkor Office</p>
+                      <p className="text-blue-500 font-medium">Sinkor Office</p>
                     </div>
                   </div>
                   
@@ -651,12 +651,12 @@ const About = () => {
               <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100">
                 <div className="p-6">
                   <div className="flex items-center mb-4">
-                    <div className="bg-red-100 p-3 rounded-lg mr-4">
-                      <FiHome className="w-6 h-6 text-red-600" />
+                    <div className="bg-blue-100 p-3 rounded-lg mr-4">
+                      <FiHome className="w-6 h-6 text-blue-500" />
                     </div>
                     <div>
                       <h3 className="text-xl font-bold text-gray-800">Bong County (Palala)</h3>
-                      <p className="text-red-600 font-medium">Palala City Office</p>
+                      <p className="text-blue-500 font-medium">Palala City Office</p>
                     </div>
                   </div>
                   
@@ -689,16 +689,16 @@ const About = () => {
                 <div className="p-6">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                     <div className="flex items-center">
-                      <div className="bg-indigo-100 p-3 rounded-lg mr-4">
-                        <FiHome className="w-6 h-6 text-indigo-600" />
+                      <div className="bg-blue-100 p-3 rounded-lg mr-4">
+                        <FiHome className="w-6 h-6 text-blue-500" />
                       </div>
                       <div>
                         <h3 className="text-xl font-bold text-gray-800">Lofa County</h3>
-                        <p className="text-indigo-600 font-medium">Voinjama City Office</p>
+                        <p className="text-blue-500 font-medium">Voinjama City Office</p>
                       </div>
                     </div>
                     
-                    <div className="grid md:grid-cols-3 gap-6 flex-grow">
+                    <div className="grid md:grid-cols-3 gap-6 grow">
                       <div>
                         <p className="text-sm text-gray-500 mb-1">Coordinator</p>
                         <p className="text-gray-800 font-medium">Mrs. Silvia T. Willie Dongon</p>
@@ -721,36 +721,6 @@ const About = () => {
                     <p className="text-gray-700">Lofa County</p>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            {/* Branch Network Summary */}
-            <div className="mt-12 bg-gradient-to-r from-blue-50 to-gray-50 rounded-xl p-8 border border-blue-100">
-              <div className="text-center">
-                <h3 className="text-2xl font-bold text-gray-800 mb-6">Our Branch Network Coverage</h3>
-                <div className="grid md:grid-cols-4 gap-6 mb-6">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-blue-600 mb-2">1</div>
-                    <p className="text-gray-700 font-medium">Headquarters</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-green-600 mb-2">6</div>
-                    <p className="text-gray-700 font-medium">County Branches</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-purple-600 mb-2">5+</div>
-                    <p className="text-gray-700 font-medium">Counties Served</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-yellow-600 mb-2">7</div>
-                    <p className="text-gray-700 font-medium">Dedicated Coordinators</p>
-                  </div>
-                </div>
-                <p className="text-gray-600 max-w-2xl mx-auto">
-                  Through our strategically located branches across Liberia, we're able to reach vulnerable children and youth 
-                  in both urban centers and rural communities, ensuring comprehensive coverage and localized support 
-                  for those who need it most.
-                </p>
               </div>
             </div>
           </motion.div>

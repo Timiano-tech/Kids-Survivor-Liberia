@@ -38,7 +38,6 @@ const Navbar = () => {
       dropdown: [
         { name: 'Volunteer', path: '/contact' },
         { name: 'Partnership', path: '/contact' },
-        { name: 'Careers', path: '/contact' }
       ]
     },
     { name: 'Contact Us', path: '/contact' },

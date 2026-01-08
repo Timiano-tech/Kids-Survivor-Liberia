@@ -12,7 +12,6 @@ import {
   FiCheckCircle,
   FiMapPin,
   FiHome,
-  FiFileText,
   FiLinkedin,
   FiTwitter,
   FiMail
@@ -336,18 +335,6 @@ const About = () => {
                     <h3 className="text-xl font-bold text-gray-800 mb-1">{member.name}</h3>
                     <p className="text-blue-600 font-medium mb-3">{member.position}</p>
                     <p className="text-gray-600 text-sm mb-4">{member.bio}</p>
-                    
-                    <div className="flex space-x-3">
-                      <a href="#" className="text-gray-400 hover:text-blue-500 transition-colors">
-                        <FiLinkedin className="w-5 h-5" />
-                      </a>
-                      <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
-                        <FiTwitter className="w-5 h-5" />
-                      </a>
-                      <a href="#" className="text-gray-400 hover:text-red-500 transition-colors">
-                        <FiMail className="w-5 h-5" />
-                      </a>
-                    </div>
                   </div>
                 </div>
               ))}

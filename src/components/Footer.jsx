@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Logo and Description */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <img src="/KSL Logo.png" alt="KSL Logo" loading='lazy' className='w-15' />
+              <img src="/KSL Logo.png" alt="KSL Logo" loading='lazy' className='w-15'/>
               <div>
                 <h2 className="font-bold">Kids Survivor</h2>
                 <p className="text-sm text-gray-400">Liberia</p>
@@ -54,7 +54,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-2 text-gray-400">
                 <FiMail />
-                <span>info@ksliberia.org</span>
+                <span>support@ksliberia.org</span>
               </li>
             </ul>
             

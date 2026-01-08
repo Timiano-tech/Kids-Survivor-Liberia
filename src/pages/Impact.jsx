@@ -12,7 +12,8 @@ import ScrollToTopButton from '../components/ScrollToTop';
 import HeaderImage from '../assets/Talking to children.jpeg';
 import StudentsImpact from '../assets/Students Impacted.jpeg';
 import ChildrenImpact from '../assets/Helping Children.jpeg';
-import ChildrenImpact2 from '../assets/ChildrenImpact.jpeg'
+import ChildrenImpact2 from '../assets/ChildrenImpact.jpeg';
+import Treatment from '../assets/Treatment.jpeg'
 
 const Impact = () => {
   const stats = [
@@ -58,32 +59,24 @@ const Impact = () => {
   // Lives Impacted Images
   const livesImpacted = [
     {
-      name: 'Sarah',
+      name: 'StudentsImpact',
       image: StudentsImpact,
-      age: 19,
-      story: 'Completed vocational training and now runs a tailoring business',
-      location: 'Monrovia'
+      story: 'Kids Survivor Liberia engaging students through structured awareness sessions, educating them on the dangers of drug abuse and encouraging responsible decision-making. The interaction empowers students with knowledge, confidence, and a clear vision for a positive future.',
     },
     {
-      name: 'James',
+      name: 'ChildImpact',
       image: ChildrenImpact,
-      age: 17,
-      story: 'Returned to school with scholarship support, now excelling in studies',
-      location: 'Bong County'
+      story: 'Kids Survivor Liberia conducting community outreach with children, offering education, care, and support in a safe environment. Through direct engagement, the organization promotes healthy living, discipline, and hope for a drug-free and productive life.',
     },
     {
-      name: 'Mary',
+      name: 'ChildImpact',
       image: ChildrenImpact2,
-      age: 22,
-      story: 'Received agricultural training, now supports her family with farming',
-      location: 'Nimba County'
+      story: 'Kids Survivor Liberia reaching children through community outreach and care initiatives, helping to meet basic needs while fostering unity and compassion. These efforts create a supportive environment where children feel valued, protected, and empowered to grow.',
     },
     {
-      name: 'David',
-      age: 16,
-      image: StudentsImpact,
-      story: 'Benefited from child protection programs, now a youth advocate',
-      location: 'Margibi County'
+      name: 'Treatment',
+      image: Treatment,
+      story: 'Kids Survivor Liberia has been structured to align its Godly mission with Liberia’s national priority goals, including the Arrest Agenda. The organization also operates a medical team that provides free health services to at-risk youth across the counties, without charging a single penny.',
     },
     
   ];
@@ -236,15 +229,6 @@ const Impact = () => {
                   </div>
                   
                   <div className="p-6">
-                    <div className="flex justify-between items-start mb-4">
-                      <div>
-                        <h3 className="text-xl font-bold text-gray-800">{person.name}</h3>
-                        <p className="text-gray-600">{person.age} years old</p>
-                      </div>
-                      <span className="bg-blue-100 text-blue-600 text-sm px-3 py-1 rounded-full">
-                        {person.location}
-                      </span>
-                    </div>
                     
                     <p className="text-gray-700 mb-4">{person.story}</p>
                     
@@ -269,7 +253,7 @@ const Impact = () => {
             className="mb-20"
           >
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">Watch Their Stories</h2>
+              <h2 className="text-3xl font-bold text-gray-800 mb-4">Watch Our Impacts</h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
                 Experience the transformation through our video testimonials
               </p>
@@ -285,23 +269,23 @@ const Impact = () => {
                   <video 
                     controls 
                     className="w-full h-full object-cover"
-                    poster={HeaderImage} // Add thumbnail image
+                    poster={HeaderImage} 
                   >
                     <source src="/videos/Children_Sponsor..mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
+                    
                   </video>
                   
                  
                  
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">Sarah's Journey</h3>
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">Children In the Community</h3>
                   <p className="text-gray-600 mb-4">
-                    From street child to top student - watch Sarah's inspiring transformation
+                    Look at this girl and these kids being sponsored by kids survivor Liberia for a free education.
                   </p>
                   <div className="flex items-center text-gray-500 text-sm">
-                    <span className="mr-4">🎓 Education Success</span>
-                    <span>⏱️ 3:45</span>
+                    <span className="mr-4">Education Sponsorship</span>
+                    <span>0:26</span>
                   </div>
                 </div>
               </div>
@@ -315,23 +299,23 @@ const Impact = () => {
                   <video 
                     controls 
                     className="w-full h-full object-cover"
-                    poster={HeaderImage} // Add thumbnail image
+                    poster={HeaderImage}
                   >
                     <source src="/videos/StudentsImpact.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
                   </video>
                   
                  
                  
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">Sarah's Journey</h3>
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">School Students</h3>
                   <p className="text-gray-600 mb-4">
-                    From street child to top student - watch Sarah's inspiring transformation
+                   Kids Survivor Liberia is enlightening students on the risks of drug abuse and how it can damage their health, future, and dreams. Staying drug-free empowers young people to make safe choices and build a brighter tomorrow.
+
                   </p>
                   <div className="flex items-center text-gray-500 text-sm">
-                    <span className="mr-4">🎓 Education Success</span>
-                    <span>⏱️ 3:45</span>
+                    <span className="mr-4">Impacting Students</span>
+                    <span> 0:38</span>
                   </div>
                 </div>
               </div>

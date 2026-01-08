@@ -8,6 +8,7 @@ import About from './pages/About';
 import Impact from './pages/Impact';
 import Contact from './pages/Contact';
 import Donate from './pages/Donate';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/impact" element={<Layout><Impact /></Layout>} />
             <Route path="/contact" element={<Layout><Contact /></Layout>} />
             <Route path="/donate" element={<Layout><Donate /></Layout>} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>
         <Footer />

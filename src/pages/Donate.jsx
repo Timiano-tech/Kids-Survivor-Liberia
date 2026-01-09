@@ -1,23 +1,16 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  FiHome,
-  FiFileText,
   FiCopy,
   FiCheck
 } from 'react-icons/fi';
 import CallToAction from '../components/CallToAction';
 import ScrollToTopButton from '../components/ScrollToTop';
-import ContactImage from '../assets/About Picture.jpeg'
+import DonateImage from '../assets/Children5.jpeg'
 
 const Donate = () => {
-  const [donationAmount, setDonationAmount] = useState('');
-  const [selectedFrequency, setSelectedFrequency] = useState('one-time');
+
   const [copied, setCopied] = useState(false);
-
-  const presetAmounts = [25, 50, 100, 250, 500];
-
-  // Bank Account Information (You'll fill this in)
   const bankAccount = {
     bankName: "Guaranty TrustBank (Liberia) Limited",
     accountName: "Kids Survivor Liberia",
@@ -25,18 +18,7 @@ const Donate = () => {
     currency: "USD"
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!donationAmount) {
-      alert('Please select or enter a donation amount');
-      return;
-    }
-    
-    const amount = donationAmount;
-    const frequency = selectedFrequency !== 'one-time' ? `every ${selectedFrequency}` : 'once';
-    
-    alert(`Thank you for choosing to donate $${amount} ${frequency}!\n\nPlease make a bank transfer using the account details provided below.\n\nAfter making your donation, please email the receipt to donations@ksliberia.org for tracking.`);
-  };
+ 
 
   const handleCopyAccountNumber = () => {
     navigator.clipboard.writeText(bankAccount.accountNumber);
@@ -44,32 +26,6 @@ const Donate = () => {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const donationOptions = [
-    {
-      title: 'Child Protection',
-      amount: '25',
-      description: 'Provides a month of protection services for vulnerable children',
-      bgColor: 'bg-blue-50',
-      textColor: 'text-blue-600',
-      borderColor: 'border-blue-200'
-    },
-    {
-      title: 'Education Support',
-      amount: '50',
-      description: 'Covers school supplies and educational materials for a year',
-      bgColor: 'bg-green-50',
-      textColor: 'text-green-600',
-      borderColor: 'border-green-200'
-    },
-    {
-      title: 'Youth Empowerment',
-      amount: '100',
-      description: 'Provides vocational training and skills development',
-      bgColor: 'bg-purple-50',
-      textColor: 'text-purple-600',
-      borderColor: 'border-purple-200'
-    }
-  ];
 
   return (
     <>
@@ -80,10 +36,10 @@ const Donate = () => {
                       <div className="absolute inset-0 bg-linear-to-r from-blue-800 to-yellow-900/70 z-10">
                        
                         <img 
-                          src={ContactImage} 
+                          src={DonateImage} 
                           alt="Background" 
                           className="w-full h-full object-cover opacity-20"
-                        />
+                        loading='lazy'/>
                       </div>
        
                 {/* Page Header with Breadcrumb */}

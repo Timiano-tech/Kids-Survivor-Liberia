@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { 
-  FiUsers,
   FiBook,
   FiBriefcase,
   FiHeart,
@@ -13,7 +12,9 @@ import HeaderImage from '../assets/Talking to children.jpeg';
 import StudentsImpact from '../assets/Students Impacted.jpeg';
 import ChildrenImpact from '../assets/Helping Children.jpeg';
 import ChildrenImpact2 from '../assets/ChildrenImpact.jpeg';
-import Treatment from '../assets/Treatment.jpeg'
+import Treatment from '../assets/Treatment.jpeg';
+import SayNoToDrugs from '../assets/Say no to drugs.jpeg';
+import Education from '../assets/Education.jpg'
 
 const Impact = () => {
   const stats = [
@@ -269,7 +270,7 @@ const Impact = () => {
                   <video 
                     controls 
                     className="w-full h-full object-cover"
-                    poster={HeaderImage} 
+                    poster={Education} 
                   >
                     <source src="/videos/Children_Sponsor..mp4" type="video/mp4" />
                     
@@ -299,7 +300,7 @@ const Impact = () => {
                   <video 
                     controls 
                     className="w-full h-full object-cover"
-                    poster={HeaderImage}
+                    poster={SayNoToDrugs}
                   >
                     <source src="/videos/StudentsImpact.mp4" type="video/mp4" />
                   </video>

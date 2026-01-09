@@ -4,8 +4,6 @@ import { FiUsers, FiHeart, FiCalendar, FiAward, FiMail } from 'react-icons/fi';
 import CallToAction from '../components/CallToAction';
 import ScrollToTopButton from '../components/ScrollToTop';
 import KSLCompany from '../assets/KSL Company.jpeg';
-import emailjs from '@emailjs/browser';
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Volunteer = () => {

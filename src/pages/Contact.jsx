@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { 
   FiMail,  
@@ -6,9 +6,12 @@ import {
   FiUser,
   FiMessageSquare
 } from 'react-icons/fi';
-import ContactImage from '../assets/About Picture.jpeg'
+import ContactImage from '../assets/About Picture.jpeg';
 import CallToAction from '../components/CallToAction';
 import ScrollToTopButton from '../components/ScrollToTop';
+import emailjs from '@emailjs/browser';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -17,13 +20,59 @@ const Contact = () => {
     subject: '',
     message: ''
   });
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const form = useRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We will get back to you soon.');
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setIsSubmitting(true);
+
+    // Show loading toast
+    const loadingToast = toast.loading('Sending your message...');
+
+    emailjs.sendForm(
+      "service_26jvker", 
+      "template_y85dbsh", 
+      form.current, 
+      "r8RYuqmA8zRYhp25P"
+    ).then(
+      () => {
+        // Success toast
+        toast.update(loadingToast, {
+          render: 'Message sent successfully! 🎉',
+          type: 'success',
+          isLoading: false,
+          autoClose: 5000,
+          closeButton: true,
+        });
+        
+        // Reset form
+        form.current.reset();
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+        
+        setIsSubmitting(false);
+      },
+      (error) => {
+        // Error toast
+        toast.update(loadingToast, {
+          render: 'Failed to send message. Please try again.',
+          type: 'error',
+          isLoading: false,
+          autoClose: 5000,
+          closeButton: true,
+        });
+        
+        console.error('EmailJS Error:', error.text);
+        setIsSubmitting(false);
+      }
+    );
   };
 
   const handleChange = (e) => {
@@ -36,22 +85,34 @@ const Contact = () => {
   return (
     <>
     <div className="min-h-screen bg-white">
+      {/* Toast Container */}
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
+
       {/* Main Header Section */}
       <header className="relative">
-       {/* Background Image  */}
-               <div className="absolute inset-0 bg-linear-to-r from-blue-800 to-yellow-900/70 z-10">
-                
-                 <img 
-                   src={ContactImage} 
-                   alt="Background" 
-                   className="w-full h-full object-cover opacity-20"
-                 />
-               </div>
+        {/* Background Image */}
+        <div className="absolute inset-0 bg-linear-to-r from-blue-800 to-yellow-900/70 z-10">
+          <img 
+            src={ContactImage} 
+            alt="Background" 
+            className="w-full h-full object-cover opacity-20"
+          />
+        </div>
 
-         {/* Page Header with Breadcrumb */}
+        {/* Page Header with Breadcrumb */}
         <div className="relative z-10 py-30 text-center">
           <div className="container mx-auto px-4">
-            
             {/* Main Title */}
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
@@ -107,7 +168,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} ref={form} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-gray-700 mb-2 font-medium">Name *</label>
@@ -119,7 +180,8 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+                        disabled={isSubmitting}
+                        className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all disabled:bg-gray-100 disabled:cursor-not-allowed"
                         placeholder="Your full name"
                       />
                     </div>
@@ -135,7 +197,8 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+                        disabled={isSubmitting}
+                        className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all disabled:bg-gray-100 disabled:cursor-not-allowed"
                         placeholder="your@email.com"
                       />
                     </div>
@@ -150,7 +213,8 @@ const Contact = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all disabled:bg-gray-100 disabled:cursor-not-allowed"
                     placeholder="How can we help you?"
                   />
                 </div>
@@ -163,7 +227,8 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     rows="6"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all resize-none"
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all resize-none disabled:bg-gray-100 disabled:cursor-not-allowed"
                     placeholder="Please provide details about your inquiry..."
                   ></textarea>
                 </div>
@@ -171,10 +236,24 @@ const Contact = () => {
                 <div className="pt-4">
                   <button
                     type="submit"
-                    className="flex items-center justify-center space-x-3 bg-linear-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl w-full md:w-auto"
+                    disabled={isSubmitting}
+                    className={`flex items-center justify-center space-x-3 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl w-full md:w-auto ${
+                      isSubmitting 
+                        ? 'bg-gray-400 cursor-not-allowed' 
+                        : '`bg-linear-to-r to-blue-700 hover:from-blue-700 hover:to-blue-800'
+                    }`}
                   >
-                    <FiSend className="w-5 h-5" />
-                    <span>Send Message</span>
+                    {isSubmitting ? (
+                      <>
+                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                        <span>Sending...</span>
+                      </>
+                    ) : (
+                      <>
+                        <FiSend className="w-5 h-5" />
+                        <span>Send Message</span>
+                      </>
+                    )}
                   </button>
                   <p className="text-gray-500 text-sm mt-3">
                     By submitting this form, you agree to our privacy policy and terms of service.
@@ -197,28 +276,22 @@ const Contact = () => {
                 <h2 className="text-2xl font-bold text-gray-800 mb-2">Find Our Office</h2>
                 <p className="text-gray-600">Visit us at our headquarters in Monrovia</p>
               </div>
-              <div className="h-96 bg-gray-100 flex items-center justify-center">
-                
-                
+              <div className="h-96 bg-gray-100">
                 <iframe 
                   src="https://maps.google.com/maps?width=100%25&amp;height=500&amp;hl=en&amp;q=City%20of%20Light%20Community,%20Barclay%20Avenue,%2015th%20Street,%20Sinkor,%20Monrovia,%20Liberia+(Kids%20Survivor%20Liberia)&amp;t=&amp;z=9&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                   className="w-full h-full border-0"
                   allowFullScreen
                   loading="lazy"
+                  title="Kids Survivor Liberia Location"
                 />
-                \
-                
               </div>
             </div>
           </motion.div>
         </div>
       </main>
-
-    
-
     </div>
-      <ScrollToTopButton/>
-      <CallToAction/>
+    <ScrollToTopButton/>
+    <CallToAction/>
     </>
   );
 };

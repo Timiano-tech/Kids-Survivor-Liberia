@@ -36,7 +36,7 @@ const Navbar = () => {
       name: 'Get Involved', 
       path: '#',
       dropdown: [
-        { name: 'Volunteer', path: '/contact' },
+        { name: 'Volunteer', path: '/volunteer' },
         { name: 'Partnership', path: '/contact' },
       ]
     },

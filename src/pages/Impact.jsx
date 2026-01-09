@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   FiBook,
@@ -17,6 +18,9 @@ import SayNoToDrugs from '../assets/Say no to drugs.jpeg';
 import Education from '../assets/Education.jpg'
 
 const Impact = () => {
+   useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   const stats = [
     { number: '3,000+', label: 'Children Reached' },
     { number: '100+', label: 'Communities Served' },

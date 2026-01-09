@@ -9,6 +9,7 @@ import Impact from './pages/Impact';
 import Contact from './pages/Contact';
 import Donate from './pages/Donate';
 import NotFound from './pages/NotFound';
+import Volunteer from './pages/Volunteer';
 
 function App() {
   return (
@@ -16,10 +17,12 @@ function App() {
       <div className="min-h-screen flex flex-col">
         <Navbar />
         <AnimatePresence mode="wait">
+         
           <Routes>
             <Route path="/" element={<Layout><Home /></Layout>} />
             <Route path="/about" element={<Layout><About /></Layout>} />
             <Route path="/impact" element={<Layout><Impact /></Layout>} />
+            <Route path="/volunteer" element={<Layout><Volunteer /></Layout>} />  
             <Route path="/contact" element={<Layout><Contact /></Layout>} />
             <Route path="/donate" element={<Layout><Donate /></Layout>} />
             <Route path="*" element={<NotFound />} />

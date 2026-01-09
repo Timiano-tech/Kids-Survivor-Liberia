@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   FiTarget, 
@@ -11,10 +12,7 @@ import {
   FiAward,
   FiCheckCircle,
   FiMapPin,
-  FiHome,
-  FiLinkedin,
-  FiTwitter,
-  FiMail
+  FiHome
 } from 'react-icons/fi';
 import KSLCompany from '../assets/KSL Company.jpeg';
 import KSL_Teams from '../assets/KSL_Team.jpeg';
@@ -27,6 +25,10 @@ import CEO from '../assets/CEO.jpeg';
 import ScrollToTopButton from '../components/ScrollToTop';
 
 const About = () => {
+
+   useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   // Core Program Areas
   const programAreas = [
     {

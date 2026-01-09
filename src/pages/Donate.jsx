@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   FiCopy,
@@ -9,6 +9,11 @@ import ScrollToTopButton from '../components/ScrollToTop';
 import DonateImage from '../assets/Children5.jpeg'
 
 const Donate = () => {
+
+
+      useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const [copied, setCopied] = useState(false);
   const bankAccount = {

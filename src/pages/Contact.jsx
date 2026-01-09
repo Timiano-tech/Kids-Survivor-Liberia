@@ -240,7 +240,7 @@ const Contact = () => {
                     className={`flex items-center justify-center space-x-3 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl w-full md:w-auto ${
                       isSubmitting 
                         ? 'bg-gray-400 cursor-not-allowed' 
-                        : '`bg-linear-to-r to-blue-700 hover:from-blue-700 hover:to-blue-800'
+                        : 'bg-blue-500 hover:bg-blue-700'
                     }`}
                   >
                     {isSubmitting ? (

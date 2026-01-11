@@ -171,7 +171,7 @@ const Donate = () => {
                     </li>
                     <li className="flex items-start">
                       <span className="text-blue-600 mr-2">3.</span>
-                      Email your transfer receipt to: <strong className="ml-1"><a href="donation@ksliberia.org">donation@ksliberia.org</a></strong>
+                      Email your transfer receipt to: <strong className="ml-1"><a href="donation@ksliberia.org">donate@ksliberia.org</a></strong>
                     </li>
                     <li className="flex items-start">
                       <span className="text-blue-600 mr-2">4.</span>

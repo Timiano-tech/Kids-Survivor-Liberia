@@ -5,7 +5,7 @@ import { FiMenu, FiX, FiChevronDown } from 'react-icons/fi';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState({});
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -28,10 +28,22 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
+  const handleDropdownHover = (name, isOpen) => {
+    setDropdownOpen(prev => ({ ...prev, [name]: isOpen }));
+  };
+
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
-    { name: 'Our Impact', path: '/impact' },
+    { 
+      name: 'Our Impact', 
+      path: '#',
+      dropdown: [
+        { name: 'Impact', path: '/impact' },
+        { name: 'Our Projects', path: '/projects' },
+        { name: 'Photo Gallery', path: '/gallery' },
+      ]
+    },
     { 
       name: 'Get Involved', 
       path: '#',
@@ -70,15 +82,15 @@ const Navbar = () => {
                 {item.dropdown ? (
                   <div 
                     className="relative"
-                    onMouseEnter={() => setDropdownOpen(true)}
-                    onMouseLeave={() => setDropdownOpen(false)}
+                    onMouseEnter={() => handleDropdownHover(item.name, true)}
+                    onMouseLeave={() => handleDropdownHover(item.name, false)}
                   >
                     <button className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 font-medium transition-colors">
                       <span>{item.name}</span>
                       <FiChevronDown />
                     </button>
                     
-                    {dropdownOpen && (
+                    {dropdownOpen[item.name] && (
                       <motion.div
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}

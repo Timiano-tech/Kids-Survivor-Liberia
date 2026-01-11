@@ -26,6 +26,8 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><Link to="/about" className="text-gray-400 hover:text-white">About Us</Link></li>
               <li><Link to="/impact" className="text-gray-400 hover:text-white">Our Impact</Link></li>
+              <li><Link to="/projects" className="text-gray-400 hover:text-white">Our Projects</Link></li> {/* Added */}
+              <li><Link to="/gallery" className="text-gray-400 hover:text-white">Photo Gallery</Link></li> {/* Added */}
               <li><Link to="/contact" className="text-gray-400 hover:text-white">Contact Us</Link></li>
               <li><Link to="/donate" className="text-gray-400 hover:text-white">Donate</Link></li>
             </ul>
@@ -38,6 +40,7 @@ const Footer = () => {
               <li><Link to="/volunteer" className="text-gray-400 hover:text-white">Volunteer</Link></li>
               <li><Link to="/contact" className="text-gray-400 hover:text-white">Partnership</Link></li>
             </ul>
+        
           </div>
 
           {/* Contact Info */}

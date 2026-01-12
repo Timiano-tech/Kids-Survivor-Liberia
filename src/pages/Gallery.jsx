@@ -4,6 +4,29 @@ import { FiChevronLeft, FiChevronRight, FiX, FiDownload } from 'react-icons/fi';
 import HeaderImage from '../assets/Talking to children.jpeg';
 import ScrollToTopButton from '../components/ScrollToTop';
 import CallToAction from '../components/CallToAction';
+import Education1 from '../assets/Students2.jpeg';
+import Community from '../assets/Treatment_of_wounds.jpeg';
+import Education2 from '../assets/Students.jpeg';
+import Education3 from '../assets/Students Impacted.jpeg';
+import Education4 from '../assets/Children on the assembly.jpeg';
+import Community2 from '../assets/Community_Outreach_Children.jpeg';
+import Community3 from '../assets/Feeding_CHildren.jpeg';
+import Community4 from '../assets/Community_Outreach.jpeg';
+import CommunityLeaders from '../assets/Community Leaders.jpeg';
+import Community5 from '../assets/Community_Children_outreach.jpeg';
+import KSL from '../assets/KSL_Team3.jpeg';
+import Campeign from '../assets/Campeign.jpeg';
+import Campeign2 from '../assets/Against_drug_abuse.jpeg';
+import KSL_Team from '../assets/KSL_Team2.jpeg';
+import Youth_Barbing from '../assets/Youth_Barbing.jpeg';
+import Youth2 from '../assets/Youth2.jpeg';
+import Youth3 from '../assets/Youth_Community_Outreach.jpeg';
+import Team_Discussion from '../assets/Team_discussion.jpeg';
+import Sharing_Food from '../assets/Children.jpeg';
+import Sharing_Food2 from '../assets/Food_sharing2.jpeg';
+
+
+
 
 const Gallery = () => {
   useEffect(() => {
@@ -19,31 +42,31 @@ const Gallery = () => {
     { id: 'all', name: 'All Photos' },
     { id: 'education', name: 'Education' },
     { id: 'community', name: 'Community Outreach' },
-    { id: 'events', name: 'Events' },
-    { id: 'volunteer', name: 'Volunteer Activities' },
-    { id: 'impact', name: 'Impact Stories' },
+    { id: 'teams', name: 'Teams' },
   ];
 
   // Sample gallery images - Replace these with your actual images
   const galleryImages = [
-    { id: 1, src: '/gallery/education1.jpg', category: 'education', title: 'School Support Program', description: 'Providing educational materials to local schools' },
-    { id: 2, src: '/gallery/community1.jpg', category: 'community', title: 'Community Health Day', description: 'Free health checkups in rural communities' },
-    { id: 3, src: '/gallery/events1.jpg', category: 'events', title: 'Annual Charity Walk', description: 'Raising awareness for children rights' },
-    { id: 4, src: '/gallery/volunteer1.jpg', category: 'volunteer', title: 'Volunteer Training', description: 'Training new volunteers for field work' },
-    { id: 5, src: '/gallery/impact1.jpg', category: 'impact', title: 'Child Success Story', description: 'From street child to school graduate' },
-    { id: 6, src: '/gallery/education2.jpg', category: 'education', title: 'School Construction', description: 'Building new classrooms for underserved areas' },
-    { id: 7, src: '/gallery/community2.jpg', category: 'community', title: 'Food Distribution', description: 'Providing nutritious meals to families' },
-    { id: 8, src: '/gallery/events2.jpg', category: 'events', title: 'Cultural Day', description: 'Celebrating local culture and traditions' },
-    { id: 9, src: '/gallery/volunteer2.jpg', category: 'volunteer', title: 'Field Work', description: 'Volunteers engaging with community members' },
-    { id: 10, src: '/gallery/impact2.jpg', category: 'impact', title: 'Success Story', description: 'Youth empowerment program graduate' },
-    { id: 11, src: '/gallery/education3.jpg', category: 'education', title: 'Digital Learning', description: 'Introducing technology to classrooms' },
-    { id: 12, src: '/gallery/community3.jpg', category: 'community', title: 'Clean Water Project', description: 'Providing access to clean drinking water' },
-    { id: 13, src: '/gallery/events3.jpg', category: 'events', title: 'Award Ceremony', description: 'Recognizing outstanding volunteers' },
-    { id: 14, src: '/gallery/volunteer3.jpg', category: 'volunteer', title: 'Team Building', description: 'Volunteers working together on projects' },
-    { id: 15, src: '/gallery/impact3.jpg', category: 'impact', title: 'Transformation Story', description: 'Life-changing impact on a family' },
-    { id: 16, src: '/gallery/education4.jpg', category: 'education', title: 'Library Opening', description: 'New community library inauguration' },
-    { id: 17, src: '/gallery/community4.jpg', category: 'community', title: 'Skills Training', description: 'Vocational training for youth' },
-    { id: 18, src: '/gallery/events4.jpg', category: 'events', title: 'Fundraising Gala', description: 'Annual fundraising event' },
+    { id: 1, src: Education1, category: 'education', title: 'School Support Program', description: 'Providing educational materials to local schools' },
+    { id: 2, src: Community, category: 'community', title: 'Community Health Day', description: 'Free health checkups in rural communities' },
+    { id: 3, src: KSL, category: 'teams', title: 'Kids Survivor Liberia Team', description: 'Raising awareness for children rights' },
+    { id: 4, src: Community5, category: 'community', title: 'Feeding Children', description: 'Providing Meals for all the children in the Community' },
+    { id: 5, src: CommunityLeaders, category: 'community', title: 'Community Leaders', description: 'Meeting with the Community Leaders' },
+    { id: 6, src: Education2, category: 'education', title: 'Enlightening Students', description: 'Enlightening Students on the Danger of Drug Abuse' },
+    { id: 7, src: Community2, category: 'community', title: 'Food Distribution', description: 'Providing nutritious meals to families' },
+    { id: 8, src: Youth2, category: 'events', title: 'Cultural Day', description: 'Celebrating local culture and traditions' },
+    { id: 9, src: Youth3, category: 'community', title: 'Youth Encouragement', description: 'Encouraging youth in the community' },
+    { id: 10, src: Youth_Barbing, category: 'community', title: 'Youth', description: 'Barbing Youth' },
+    { id: 11, src: Education4, category: 'education', title: 'Encouraging Students', description: 'Encouraging Students to focus on their studies' },
+    { id: 12, src: Community3, category: 'community', title: 'Food Distribution', description: 'Providing nutritious meals to families' },
+    { id: 13, src: Campeign2, category: 'community', title: 'Campaign', description: 'A Larger Campaign' },
+    { id: 14, src: Team_Discussion, category: 'teams', title: 'Project Planning', description: 'Team working together on how to execute projects' },
+    { id: 15, src: Sharing_Food2, category: 'community', title: 'Food Distribution', description: 'Providing nutritious meals to families' },
+    { id: 16, src: Education3, category: 'education', title: 'Encouraging Students', description: 'Encouraging Students to focus on their studies' },
+    { id: 17, src: Community4 , category: 'community', title: 'Feeding Children', description: 'Providing Meals for all the children in the Community' },
+    { id: 18, src: Sharing_Food, category: 'community', title: 'Food Distribution', description: 'Providing nutritious meals to families' },
+    { id: 19, src: KSL_Team, category: 'teams', title: 'Kids Survivor Liberia Team', description: 'Gathering of the KSL Team' },
+    { id: 20, src: Campeign, category: 'community', title: 'Fundraising and Community Outreach', description: 'Raising of awareness in the Community' },
   ];
 
   const filteredImages = activeCategory === 'all' 

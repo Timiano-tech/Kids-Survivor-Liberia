@@ -13,6 +13,7 @@ import Volunteer from './pages/Volunteer';
 import Gallery from './pages/Gallery'; 
 import Projects from './pages/Projects'; 
 
+
 function App() {
   return (
     <Router>
@@ -25,7 +26,7 @@ function App() {
             <Route path="/impact" element={<Layout><Impact /></Layout>} />
             <Route path="/projects" element={<Layout><Projects /></Layout>} />
             <Route path="/gallery" element={<Layout><Gallery /></Layout>} /> 
-            <Route path="/volunteer" element={<Layout><Volunteer /></Layout>} />  
+            <Route path="/volunteer" element={<Layout><Volunteer /></Layout>} />   
             <Route path="/contact" element={<Layout><Contact /></Layout>} />
             <Route path="/donate" element={<Layout><Donate /></Layout>} />
             <Route path="*" element={<NotFound />} />

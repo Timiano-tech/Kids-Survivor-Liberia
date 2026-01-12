@@ -54,7 +54,7 @@ const Gallery = () => {
     { id: 5, src: CommunityLeaders, category: 'community', title: 'Community Leaders', description: 'Meeting with the Community Leaders' },
     { id: 6, src: Education2, category: 'education', title: 'Enlightening Students', description: 'Enlightening Students on the Danger of Drug Abuse' },
     { id: 7, src: Community2, category: 'community', title: 'Food Distribution', description: 'Providing nutritious meals to families' },
-    { id: 8, src: Youth2, category: 'events', title: 'Cultural Day', description: 'Celebrating local culture and traditions' },
+    { id: 8, src: Youth2, category: 'community', title: 'Community Youth', description: 'Encouraging youth in the community' },
     { id: 9, src: Youth3, category: 'community', title: 'Youth Encouragement', description: 'Encouraging youth in the community' },
     { id: 10, src: Youth_Barbing, category: 'community', title: 'Youth', description: 'Barbing Youth' },
     { id: 11, src: Education4, category: 'education', title: 'Encouraging Students', description: 'Encouraging Students to focus on their studies' },

@@ -49,7 +49,7 @@ const Navbar = () => {
       path: '#',
       dropdown: [
         { name: 'Volunteer', path: '/volunteer' },
-        { name: 'Partnership', path: '/contact' },
+        { name: 'Partnership', path: '/partnership' },
       ]
     },
     { name: 'Contact Us', path: '/contact' },

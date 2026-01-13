@@ -260,7 +260,7 @@ const Impact = () => {
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-800 mb-4">Watch Our Impacts</h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
-                Experience the transformation through our video testimonials
+                Experience the impact we've made, through our video
               </p>
             </div>
 

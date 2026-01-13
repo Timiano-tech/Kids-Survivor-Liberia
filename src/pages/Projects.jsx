@@ -1,15 +1,13 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  FiBookOpen, 
   FiUsers, 
   FiHeart, 
-  FiHome, 
   FiAward,
   FiCheckCircle,
   FiBook
 } from 'react-icons/fi';
-import HeaderImage from '../assets/Talking to children.jpeg';
+import HeaderImage from '../assets/Team_discussion.jpeg';
 import CallToAction from '../components/CallToAction';
 import ScrollToTopButton from '../components/ScrollToTop';
 

@@ -57,7 +57,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-2 text-gray-400">
                 <FiMail />
-                <span>support@ksliberia.org</span>
+                <span><a href="mailto:support@ksliberia.org">support@ksliberia.org</a></span>
               </li>
             </ul>
             

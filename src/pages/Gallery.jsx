@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiChevronLeft, FiChevronRight, FiX, FiDownload } from 'react-icons/fi';
-import HeaderImage from '../assets/Talking to children.jpeg';
 import ScrollToTopButton from '../components/ScrollToTop';
 import CallToAction from '../components/CallToAction';
 import Education1 from '../assets/Students2.jpeg';
@@ -110,7 +109,7 @@ const Gallery = () => {
         {/* Background Image */}
         <div className="absolute inset-0 bg-linear-to-r from-blue-800 to-yellow-900/70">
           <img 
-            src={HeaderImage} 
+            src={Youth3} 
             alt="Gallery Background" 
             className="w-full h-full object-cover opacity-20"
           />

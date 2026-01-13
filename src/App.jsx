@@ -12,6 +12,7 @@ import NotFound from './pages/NotFound';
 import Volunteer from './pages/Volunteer';
 import Gallery from './pages/Gallery'; 
 import Projects from './pages/Projects'; 
+import Partnership from './pages/Partnership';
 
 
 function App() {
@@ -26,7 +27,8 @@ function App() {
             <Route path="/impact" element={<Layout><Impact /></Layout>} />
             <Route path="/projects" element={<Layout><Projects /></Layout>} />
             <Route path="/gallery" element={<Layout><Gallery /></Layout>} /> 
-            <Route path="/volunteer" element={<Layout><Volunteer /></Layout>} />   
+            <Route path="/volunteer" element={<Layout><Volunteer /></Layout>} />  
+            <Route path="/partnership" element={<Layout><Partnership /></Layout>} />  
             <Route path="/contact" element={<Layout><Contact /></Layout>} />
             <Route path="/donate" element={<Layout><Donate /></Layout>} />
             <Route path="*" element={<NotFound />} />

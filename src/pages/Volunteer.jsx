@@ -1,18 +1,17 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FiUsers, FiHeart, FiCalendar, FiAward, FiMail } from 'react-icons/fi';
+import { FiUsers, FiHeart, FiCalendar, FiAward, FiMail, FiMessageSquare } from 'react-icons/fi';
 import CallToAction from '../components/CallToAction';
 import ScrollToTopButton from '../components/ScrollToTop';
 import KSLCompany from '../assets/KSL Company.jpeg';
+import { Link } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Volunteer = () => {
- 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-     useEffect(() => {
-          window.scrollTo(0, 0);
-        }, []);
-        
   const volunteerRoles = [
     {
       title: "Teaching Support",
@@ -40,38 +39,35 @@ const Volunteer = () => {
     <>
       <div className="min-h-screen bg-white">
         {/* Header */}
-
         <header className="relative">
-                {/* Background Image  */}
-                <div className="absolute inset-0 bg-linear-to-r from-blue-800 to-yellow-900/70 z-10">
-                 
-                  <img 
-                    src={KSLCompany} 
-                    alt="Background" 
-                    className="w-full h-full object-cover opacity-20"
-                  />
-                </div>
-        
-                {/* Page Header with Breadcrumb */}
-                <div className="relative z-10 py-30 text-center">
-                  <div className="container mx-auto px-4">
-                    
-                    {/* Main Title */}
-                    <motion.h1 
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className="text-5xl md:text-6xl font-bold text-white"
-                    >
-                      Volunteer With Us
-                    </motion.h1>
-                    
-                    {/* Breadcrumb Text */}
-                    <p className="text-white/80 text-lg">
-                      Join our mission to protect and empower Liberia's children
-                    </p>
-                  </div>
-                </div>
-              </header>
+          {/* Background Image */}
+          <div className="absolute inset-0 bg-linear-to-r from-blue-800 to-yellow-900/70 z-10">
+            <img 
+              src={KSLCompany} 
+              alt="Background" 
+              className="w-full h-full object-cover opacity-20"
+            />
+          </div>
+
+          {/* Page Header with Breadcrumb */}
+          <div className="relative z-10 py-30 text-center">
+            <div className="container mx-auto px-4">
+              {/* Main Title */}
+              <motion.h1 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-5xl md:text-6xl font-bold text-white"
+              >
+                Volunteer With Us
+              </motion.h1>
+              
+              {/* Breadcrumb Text */}
+              <p className="text-white/80 text-lg">
+                Join our mission to protect and empower Liberia's children
+              </p>
+            </div>
+          </div>
+        </header>
 
         {/* Main Content */}
         <main className="py-16">
@@ -107,10 +103,8 @@ const Volunteer = () => {
               ))}
             </div>
 
-
-
             {/* FAQ */}
-            <div className="max-w-3xl mx-auto">
+            <div className="max-w-3xl mx-auto mb-16">
               <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
                 Frequently Asked Questions
               </h2>
@@ -140,6 +134,33 @@ const Volunteer = () => {
                   </p>
                 </div>
               </div>
+            </div>
+
+            {/* Contact Section */}
+            <div className="max-w-2xl mx-auto bg-blue-50 rounded-2xl p-8 text-center shadow-sm">
+              <div className="bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <FiMessageSquare className="w-8 h-8" />
+              </div>
+              
+              <h2 className="text-2xl font-bold text-gray-800 mb-4">
+                Ready to Volunteer?
+              </h2>
+              
+              <p className="text-gray-600 mb-8">
+                Start your journey with us today. Contact our volunteer coordinator 
+                to learn more about opportunities and how you can make a difference.
+              </p>
+
+              <Link 
+                to="/contact" 
+                className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg transition-colors shadow-md hover:shadow-lg"
+              >
+                Contact Volunteer Coordinator
+              </Link>
+              
+              <p className="text-gray-500 text-sm mt-4">
+                Or email us at: <span className="font-medium">support@ksliberia.org</span>
+              </p>
             </div>
           </div>
         </main>

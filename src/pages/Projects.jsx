@@ -311,7 +311,7 @@ const Projects = () => {
                       <ul className="space-y-2">
                         {project.highlights.map((highlight, idx) => (
                           <li key={idx} className="flex items-center text-gray-600">
-                            <FiCheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                            <FiCheckCircle className="w-4 h-4 text-green-500 mr-2 shrink-0" />
                             <span className="text-sm">{highlight}</span>
                           </li>
                         ))}
@@ -334,7 +334,7 @@ const Projects = () => {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-r from-blue-50 to-yellow-50 rounded-2xl p-8 md:p-12 mb-20 shadow-lg"
+              className="bg-blue-50 rounded-2xl p-8 md:p-12 mb-20 shadow-lg"
             >
               <h2 className="text-3xl font-bold text-gray-800 text-center mb-10">Project Impact Summary</h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8">

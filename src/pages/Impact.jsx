@@ -15,7 +15,8 @@ import ChildrenImpact from '../assets/Helping Children.jpeg';
 import ChildrenImpact2 from '../assets/ChildrenImpact.jpeg';
 import Treatment from '../assets/Treatment.jpeg';
 import SayNoToDrugs from '../assets/Say no to drugs.jpeg';
-import Education from '../assets/Education.jpg'
+import Education from '../assets/Education.jpg';
+import Sharing_Food from '../assets/Sharing_Food.jpg'
 
 const Impact = () => {
    useEffect(() => {
@@ -264,7 +265,7 @@ const Impact = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-3 gap-8">
               {/* Video 1 */}
               <div className="bg-white rounded-xl shadow-lg overflow-hidden">
                 <div className="relative h-64 bg-gray-900">
@@ -320,6 +321,35 @@ const Impact = () => {
                   </p>
                   <div className="flex items-center text-gray-500 text-sm">
                     <span className="mr-4">Impacting Students</span>
+                    <span> 0:38</span>
+                  </div>
+                </div>
+              </div>
+              {/* Video 3 */}
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div className="relative h-65 bg-gray-900">
+                
+                  
+                
+                  <video 
+                    controls 
+                    className="w-full h-full object-cover"
+                    poster={Sharing_Food}
+                  >
+                    <source src="/videos/Sharing_food_To_Children.mp4" type="video/mp4" />
+                  </video>
+                  
+                 
+                 
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">Sharing Food to Children in the Community</h3>
+                  <p className="text-gray-600 mb-4">
+                  Kids Survivor Liberia shares meals with children in the community, providing the nourishment they need to grow, learn, and build a brighter future.
+
+                  </p>
+                  <div className="flex items-center text-gray-500 text-sm">
+                    <span className="mr-4">Sharing Food</span>
                     <span> 0:38</span>
                   </div>
                 </div>

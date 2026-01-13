@@ -6,7 +6,8 @@ import {
   FiHeart, 
   FiHome, 
   FiAward,
-  FiCheckCircle
+  FiCheckCircle,
+  FiBook
 } from 'react-icons/fi';
 import HeaderImage from '../assets/Talking to children.jpeg';
 import CallToAction from '../components/CallToAction';
@@ -23,8 +24,7 @@ const Projects = () => {
     { id: 'all', name: 'All Projects' },
     { id: 'education', name: 'Education' },
     { id: 'health', name: 'Health & Nutrition' },
-    { id: 'community', name: 'Community Development' },
-    { id: 'protection', name: 'Child Protection' },
+    { id: 'community', name: 'Community Development' }
   ];
 
   const projects = [
@@ -35,9 +35,8 @@ const Projects = () => {
       description: 'Providing access to quality education for underprivileged children in rural communities.',
       status: 'ongoing',
       progress: 75,
-      beneficiaries: '500+ children',
-      location: 'Montserrado County',
-      icon: <FiBookOpen className="w-6 h-6" />,
+      beneficiaries: '100+ children',
+      icon: <FiBook className="w-6 h-6" />,
       highlights: [
         'School supplies distribution',
         'Teacher training programs',
@@ -46,37 +45,19 @@ const Projects = () => {
       ]
     },
     {
-      id: 2,
-      title: 'Child Protection Centers',
-      category: 'protection',
-      description: 'Establishing safe spaces for vulnerable children offering counseling and protection services.',
-      status: 'completed',
-      progress: 100,
-      beneficiaries: '300+ children',
-      location: 'Bomi County',
-      icon: <FiHome className="w-6 h-6" />,
-      highlights: [
-        '3 protection centers established',
-        '24/7 counseling services',
-        'Legal support for abused children',
-        'Family reunification programs'
-      ]
-    },
-    {
       id: 3,
-      title: 'Youth Skills Training Program',
+      title: 'Youth Empowerment & Drug Abuse Prevention',
       category: 'community',
-      description: 'Vocational training for youth in carpentry, tailoring, and computer skills.',
+      description: 'Empowering youth through skills training and preventing drug abuse among Liberian youth.',
       status: 'ongoing',
       progress: 60,
-      beneficiaries: '150+ youth',
-      location: 'Grand Bassa County',
+      beneficiaries: '100+ youth',
       icon: <FiUsers className="w-6 h-6" />,
       highlights: [
-        '6-month vocational training',
-        'Apprenticeship placements',
-        'Startup kits for graduates',
-        'Business mentorship'
+      'Life skills and leadership training',
+      'Drug abuse prevention workshops',
+      'Counseling and rehabilitation support',
+      'Community awareness campaigns'
       ]
     },
     {
@@ -86,8 +67,7 @@ const Projects = () => {
       description: 'Mobile health clinics providing free medical checkups and nutrition support.',
       status: 'ongoing',
       progress: 80,
-      beneficiaries: '1000+ community members',
-      location: 'Multiple Counties',
+      beneficiaries: '300+ community members',
       icon: <FiHeart className="w-6 h-6" />,
       highlights: [
         'Monthly mobile clinics',
@@ -98,38 +78,20 @@ const Projects = () => {
     },
     {
       id: 5,
-      title: 'School Feeding Program',
-      category: 'health',
-      description: 'Daily nutritious meals for school children to improve attendance and concentration.',
-      status: 'completed',
-      progress: 100,
-      beneficiaries: '800+ students',
-      location: 'Margibi County',
+      title: 'Children Feeding Program',
+      category: 'community',
+      description: 'Daily nutritious meals for children in the community to improve good growth.',
+      status: 'ongoing',
+      progress: 70,
+      beneficiaries: '200+ children',
       icon: <FiHeart className="w-6 h-6" />,
       highlights: [
-        'Daily meals for 5 schools',
+        'Meals for all community Children',
         'Local farmer partnerships',
         'Nutrition education',
-        'Parent volunteer program'
+        'Healthy Eating'
       ]
-    },
-    {
-      id: 6,
-      title: 'Digital Literacy Project',
-      category: 'education',
-      description: 'Introducing computer skills and digital education to rural school children.',
-      status: 'upcoming',
-      progress: 20,
-      beneficiaries: '200+ students targeted',
-      location: 'Gbarpolu County',
-      icon: <FiBookOpen className="w-6 h-6" />,
-      highlights: [
-        'Computer lab setup',
-        'Basic IT training',
-        'Internet access provision',
-        'Digital safety education'
-      ]
-    },
+    }
   ];
 
   const filteredProjects = activeFilter === 'all' 
@@ -299,10 +261,6 @@ const Projects = () => {
                         <FiUsers className="w-4 h-4 text-blue-600 mr-2" />
                         <span className="text-sm">{project.beneficiaries}</span>
                       </div>
-                      <div className="flex items-center text-gray-700">
-                        <FiHome className="w-4 h-4 text-blue-600 mr-2" />
-                        <span className="text-sm">{project.location}</span>
-                      </div>
                     </div>
 
                     {/* Project Highlights */}
@@ -328,34 +286,6 @@ const Projects = () => {
                 </motion.div>
               ))}
             </div>
-
-            {/* Impact Statistics */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-blue-50 rounded-2xl p-8 md:p-12 mb-20 shadow-lg"
-            >
-              <h2 className="text-3xl font-bold text-gray-800 text-center mb-10">Project Impact Summary</h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-blue-600 mb-2">15+</div>
-                  <div className="text-gray-700 font-medium">Projects Completed</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-blue-600 mb-2">5,000+</div>
-                  <div className="text-gray-700 font-medium">Direct Beneficiaries</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-blue-600 mb-2">50+</div>
-                  <div className="text-gray-700 font-medium">Communities Reached</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-blue-600 mb-2">30+</div>
-                  <div className="text-gray-700 font-medium">Partner Organizations</div>
-                </div>
-              </div>
-            </motion.div>
           </div>
         </main>
       </div>

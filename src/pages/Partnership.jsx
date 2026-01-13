@@ -9,7 +9,7 @@ import {
   FiShare2
 } from 'react-icons/fi';
 import ScrollToTopButton from '../components/ScrollToTop';
-import KSLCompany from '../assets/KSL Company.jpeg';
+import HeaderImage from '../assets/Partner_Header.jpeg';
 import { Link } from 'react-router-dom';
 import CallToAction from '../components/CallToAction';
 
@@ -58,7 +58,7 @@ const Partnership = () => {
                            <div className="absolute inset-0 bg-linear-to-r from-blue-800 to-yellow-900/70 z-10">
                             
                              <img 
-                               src={KSLCompany} 
+                               src={HeaderImage} 
                                alt="Background" 
                                className="w-full h-full object-cover opacity-20"
                              loading='lazy'/>

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FiMail, FiPhone, FiMapPin, FiFacebook, FiTwitter, FiInstagram, FiYoutube } from 'react-icons/fi';
+import { FiMail, FiPhone, FiMapPin, FiFacebook, FiTwitter, FiInstagram, FiYoutube, FiLinkedin } from 'react-icons/fi';
 
 const Footer = () => {
   return (
@@ -66,10 +66,13 @@ const Footer = () => {
               <a href="#" className="text-gray-400 hover:text-white">
                 <FiFacebook size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a href="https://www.linkedin.com/company/kids-survivor-liberia/" className="text-gray-400 hover:text-white">
+                <FiLinkedin size={20} />
+              </a>
+              <a href="https://x.com/Kidssurvivor123" className="text-gray-400 hover:text-white">
                 <FiTwitter size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a href="instagram.com/kids_survivorliberia?utm_source=qr&igsh=MW83NzR1YnM2cmQxcw==" className="text-gray-400 hover:text-white">
                 <FiInstagram size={20} />
               </a>
               <a href="https://www.youtube.com/@Kidssurvivorliberia_1" className="text-gray-400 hover:text-white">

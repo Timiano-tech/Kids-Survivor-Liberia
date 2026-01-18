@@ -13,6 +13,8 @@ import Volunteer from './pages/Volunteer';
 import Gallery from './pages/Gallery'; 
 import Projects from './pages/Projects'; 
 import Partnership from './pages/Partnership';
+import Programs from './pages/Programs';
+import Blog from './pages/Blog';
 
 
 function App() {
@@ -29,6 +31,8 @@ function App() {
             <Route path="/gallery" element={<Layout><Gallery /></Layout>} /> 
             <Route path="/volunteer" element={<Layout><Volunteer /></Layout>} />  
             <Route path="/partnership" element={<Layout><Partnership /></Layout>} />  
+            <Route path="/programs" element={<Layout><Programs /></Layout>} />  
+            <Route path="/blog" element={<Layout><Blog /></Layout>} />  
             <Route path="/contact" element={<Layout><Contact /></Layout>} />
             <Route path="/donate" element={<Layout><Donate /></Layout>} />
             <Route path="*" element={<NotFound />} />

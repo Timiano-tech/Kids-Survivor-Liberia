@@ -29,38 +29,160 @@ const Impact = () => {
     { number: '100+', label: 'Youth Trained' },
   ];
 
-  const programs = [
-    {
-      title: 'Child Protection',
-      description: 'Establishing safe spaces and protection systems for vulnerable children',
-      icon: <FiHeart className="w-6 h-6" />
-    },
-    {
-      title: 'Education Support',
-      description: 'Providing scholarships, school supplies, and educational programs',
-      icon: <FiBook className="w-6 h-6" />
-    },
-    {
-      title: 'Youth Empowerment',
-      description: 'Skills training and vocational programs for youth employment',
-      icon: <FiBriefcase className="w-6 h-6" />
-    },
-    {
-      title: 'Health & Nutrition',
-      description: 'Healthcare access and nutrition programs for children',
-      icon: <FiHeart className="w-6 h-6" />
-    },
-    {
-      title: 'Community Development',
-      description: 'Building sustainable community support systems',
-      icon: <FiGlobe className="w-6 h-6" />
-    },
-    {
-      title: 'Advocacy',
-      description: 'Promoting children rights and policy change',
-      icon: <FiTrendingUp className="w-6 h-6" />
-    },
-  ];
+ 
+      const programs = [
+        {
+          title: 'Child Protection',
+          description: 'Comprehensive child safeguarding systems aligned with UNICEF standards and NADAP Pillar 2',
+          icon: <FiHeart className="w-6 h-6" />,
+          nadapPillar: 'NADAP Pillar 2'
+        },
+        {
+          title: 'Education Support',
+          description: 'Access to quality education and life skills development for vulnerable youth',
+          icon: <FiBook className="w-6 h-6" />,
+          nadapPillar: 'NADAP Pillar 1'
+        },
+        {
+          title: 'Youth Empowerment',
+          description: 'Skills training and economic opportunities supporting reintegration and livelihoods',
+          icon: <FiBriefcase className="w-6 h-6" />,
+          nadapPillar: 'NADAP Pillar 3'
+        },
+        {
+          title: 'Health & Nutrition',
+          description: 'Integrated health services supporting recovery and well-being',
+          icon: <FiHeart className="w-6 h-6" />,
+          nadapPillar: 'NADAP Pillar 2'
+        },
+        {
+          title: 'Community Development',
+          description: 'Building resilient communities to prevent drug abuse and support reintegration',
+          icon: <FiGlobe className="w-6 h-6" />,
+          nadapPillar: 'NADAP Pillar 1 & 3'
+        },
+        {
+          title: 'Advocacy',
+          description: 'Policy engagement and rights promotion for systemic change',
+          icon: <FiTrendingUp className="w-6 h-6" />
+        },
+        {
+          title: 'Drug Victims Support',
+          description: 'Comprehensive rehabilitation and reintegration for at-risk youth',
+          icon: <FiTrendingUp className="w-6 h-6" />,
+          nadapPillar: 'NADAP Pillar 2 & 3'
+        },
+        {
+          title: 'Governmental Engagement',
+          description: 'Strategic collaboration with national security and governance institutions',
+          icon: <FiTrendingUp className="w-6 h-6" />
+        },
+        {
+          title: 'Traditional Engagement',
+          description: 'Community leadership engagement for sustainable prevention',
+          icon: <FiTrendingUp className="w-6 h-6" />,
+          nadapPillar: 'NADAP Pillar 1'
+        },
+      ];
+
+      // Helper function to get sub-menus for each program
+      const getSubMenus = (programTitle) => {
+        switch(programTitle) {
+          case 'Child Protection':
+            return [
+              'Child Safeguarding Policy Implementation',
+              'Safe Spaces & Protection Networks',
+              'Psychosocial Support Services',
+              'Case Management Systems'
+            ];
+          case 'Education Support':
+            return [
+              'School-Based Prevention Education',
+              'Scholarships & Educational Materials',
+              'Life Skills Curriculum Development',
+              'Teacher Capacity Building'
+            ];
+          case 'Youth Empowerment':
+            return [
+              'Vocational Skills Training',
+              'Entrepreneurship Development',
+              'Job Placement & Linkages',
+              'Leadership & Civic Education'
+            ];
+          case 'Health & Nutrition':
+            return [
+              'Medical Screening & Treatment',
+              'Nutritional Support Programs',
+              'Mental Health Counseling',
+              'Health Education Campaigns'
+            ];
+          case 'Community Development':
+            return [
+              'Community-Based Prevention',
+              'Social Cohesion Activities',
+              'Economic Resilience Building',
+              'Community Monitoring Systems'
+            ];
+          case 'Advocacy':
+            return [
+              'Policy Dialogue & Reform',
+              'Rights Awareness Campaigns',
+              'Stakeholder Coordination',
+              'Media & Public Education'
+            ];
+          case 'Drug Victims Support':
+            return [
+              'Street Kids Rehabilitation',
+              'Ghetto Youth Reintegration',
+              'Recovery & Aftercare Programs',
+              'Family Reunification Support'
+            ];
+          case 'Governmental Engagement':
+            return [
+              'AFL Collaboration (Armed Forces of Liberia)',
+              'LNP Partnership (Liberia National Police)',
+              'LIS Coordination (Liberia Immigration Services)',
+              'Inter-Agency Task Forces'
+            ];
+          case 'Traditional Engagement':
+            return [
+              'District Leadership Engagement',
+              'Chiefs & Elders Collaboration',
+              'Village-Based Prevention',
+              'Clan Governance Integration'
+            ];
+          default:
+            return [];
+        }
+      };
+
+      // Helper function to get strategic alignment for each program
+      const getStrategicAlignment = (programTitle) => {
+        const baseAlignments = ['NADAP 2025–2030', 'Liberia National Priorities'];
+        
+        switch(programTitle) {
+          case 'Child Protection':
+            return [...baseAlignments, 'UNICEF Standards', 'ECOWAS Child Protection'];
+          case 'Education Support':
+            return [...baseAlignments, 'AU Agenda 2063 (Education)', 'ECOWAS Youth Development'];
+          case 'Youth Empowerment':
+            return [...baseAlignments, 'AU Agenda 2063 (Economy)', 'ECOWAS Skills Development'];
+          case 'Health & Nutrition':
+            return [...baseAlignments, 'WHO Guidelines', 'ECOWAS Health Framework'];
+          case 'Community Development':
+            return [...baseAlignments, 'AU Agenda 2063 (Communities)', 'ECOWAS Social Cohesion'];
+          case 'Advocacy':
+            return [...baseAlignments, 'AU Governance Agenda', 'ECOWAS Policy Harmonization'];
+          case 'Drug Victims Support':
+            return [...baseAlignments, 'UNODC Guidelines', 'ECOWAS Drug Control'];
+          case 'Governmental Engagement':
+            return [...baseAlignments, 'National Security Strategy', 'ECOWAS Governance'];
+          case 'Traditional Engagement':
+            return [...baseAlignments, 'Cultural Preservation', 'Community Resilience'];
+          default:
+            return baseAlignments;
+        }
+      };
 
   // Lives Impacted Images
   const livesImpacted = [
@@ -159,6 +281,7 @@ const Impact = () => {
             </div>
           </motion.div>
 
+          
           {/* Programs Section */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -168,9 +291,12 @@ const Impact = () => {
             className="mb-20"
           >
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Programs</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Comprehensive initiatives creating lasting change
+              <div className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium mb-4">
+                Aligned with NADAP 2025–2030, ECOWAS, & AU Agenda 2063
+              </div>
+              <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Strategic Programs</h2>
+              <p className="text-gray-600 max-w-3xl mx-auto">
+                Comprehensive initiatives aligned with national and regional frameworks for youth development and drug prevention
               </p>
             </div>
 
@@ -189,14 +315,45 @@ const Impact = () => {
                     <div className="bg-blue-100 text-blue-600 p-3 rounded-lg mr-4">
                       {program.icon}
                     </div>
-                    <h3 className="text-xl font-bold text-gray-800">{program.title}</h3>
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-800">{program.title}</h3>
+                      {program.nadapPillar && (
+                        <span className="text-xs font-semibold text-blue-700 bg-blue-50 px-2 py-1 rounded-full mt-1 inline-block">
+                          {program.nadapPillar}
+                        </span>
+                      )}
+                    </div>
                   </div>
-                  <p className="text-gray-600">{program.description}</p>
+                  <p className="text-gray-600 mb-6">{program.description}</p>
+                  
+                  {/* Sub-menus */}
+                  <div className="mt-6 pt-6 border-t border-gray-100">
+                    <h4 className="font-semibold text-gray-700 mb-3 text-sm uppercase tracking-wide">Key Focus Areas:</h4>
+                    <ul className="space-y-3 mb-6">
+                      {getSubMenus(program.title).map((subMenu, idx) => (
+                        <li key={idx} className="flex items-start text-gray-600 text-sm">
+                          <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-3 mt-1.5"></div>
+                          <span>{subMenu}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* Strategic Alignment */}
+                    <div className="bg-blue-50 rounded-lg p-4">
+                      <h4 className="font-semibold text-blue-800 mb-2 text-sm">Strategic Alignment:</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {getStrategicAlignment(program.title).map((alignment, idx) => (
+                          <span key={idx} className="px-2 py-1 bg-white text-blue-700 rounded-full text-xs font-medium border border-blue-200">
+                            {alignment}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </div>
           </motion.div>
-
               {/* Lives Impacted Section */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}

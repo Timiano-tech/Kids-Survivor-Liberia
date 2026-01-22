@@ -2,15 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiArrowRight, FiHeart } from 'react-icons/fi';
-
-// Placeholder for your images - you can replace these with your actual imports
-// import Image1 from '../assets/Image1.jpeg';
-// ... etc
+import scrollImage1 from '../assets/Scroll3.jpeg'
+import scrollImage2 from '../assets/Youth2.jpeg'
+import scrollImage3 from '../assets/Scroll4.jpeg'
+import scrollImage4 from '../assets/KSL_Team3.jpeg'
+import scrollImage5 from '../assets/Scroll5.jpeg'
 
 const CallToAction = () => {
-  // Array of your images (Adding 4 images)
-  // We double the array content to create the seamless infinite loop effect
-  const images = [null, null, null, null]; // Replace null with your image imports
+
+  const images = [scrollImage1, scrollImage2, scrollImage3, scrollImage4, scrollImage5]; 
 
   return (
     <section className="py-20 bg-gray-50 overflow-hidden">
@@ -61,17 +61,16 @@ const CallToAction = () => {
             >
               <div className="flex items-center gap-2 mb-4 text-blue-600 font-bold uppercase tracking-wider text-sm">
                 <div className="w-6 h-px bg-blue-600"></div>
-                Empower a Child's Future
+                Invest in a Drug-Free, Empowered Liberia
               </div>
 
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Every donation <span className="text-blue-600">counts</span>
+                Invest in a <span className="text-blue-600">Drug-Free, Empowered</span> Liberia
               </h2>
 
               <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-xl">
-                Join KSL in <strong>sponsoring the lives</strong> of vulnerable children in Liberia. 
-                Your contribution helps provide <strong>safe homes, education, and nutrition</strong>. 
-                Together, we break the cycle of poverty, one child at a time.
+                Your contribution directly supports our <strong>NADAP 2025-2030 aligned programs </strong> 
+                 for drug abuse prevention, rehabilitation, and youth empowerment. 
               </p>
               
               <div className="flex flex-wrap items-center gap-6">
@@ -87,18 +86,6 @@ const CallToAction = () => {
                     Give Today
                   </motion.button>
                 </Link>
-
-                {/* Optional Social Proof Avatars (As seen in your image) */}
-                <div className="flex -space-x-3">
-                  {[1, 2, 3].map((i) => (
-                    <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-gray-300 overflow-hidden shadow-sm">
-                      {/* <img src={`/avatar${i}.jpg`} alt="donor" /> */}
-                    </div>
-                  ))}
-                  <div className="pl-5 text-sm text-gray-500 font-medium">
-                    Joined by 500+ supporters
-                  </div>
-                </div>
               </div>
             </motion.div>
           </div>

@@ -19,7 +19,11 @@ import {
   FiCalendar,
   FiUser,
   FiMessageSquare,
-  FiArrowRight
+  FiArrowRight,
+  FiBriefcase,
+  FiCrosshair,
+  FiActivity,
+  FiCheckCircle
 } from 'react-icons/fi';
 
 import Education from '../assets/Children on the assembly.jpeg';
@@ -56,7 +60,6 @@ const Counter = ({ end, duration = 2, label, icon }) => {
         const progress = timestamp - startTime;
         const percentage = Math.min(progress / (duration * 1000), 1);
         
-        // Easing function for smooth animation
         const easeOutQuad = (t) => t * (2 - t);
         const currentCount = Math.floor(easeOutQuad(percentage) * end);
         
@@ -91,31 +94,31 @@ const Home = () => {
   const [autoPlay, setAutoPlay] = useState(true);
   const [imageError, setImageError] = useState({});
 
-  // Hero slides data with image placeholders
+  // Hero slides data aligned with organizational focus
   const heroSlides = [
     {
       id: 1,
-      title: "Protecting Liberia's Future",
-      subtitle: "Transforming Lives of Vulnerable Children",
-      description: "Every child deserves safety, education, and the opportunity to thrive. Join us in our mission.",
-      imagePlaceholder: Students,
-      stats: "5,000+ Children Protected"
+      title: "Building a Drug-Free Liberia",
+      subtitle: "Prevention, Protection & Empowerment",
+      description: "Aligned with NADAP 2025-2030, we work to prevent drug abuse and empower vulnerable populations through community-driven interventions.",
+      imagePlaceholder: NoToDrugs,
+      stats: "Aligned with NADAP 2025-2030 & YTEI"
     },
     {
       id: 2,
-      title: "Education for All",
-      subtitle: "Breaking Barriers Through Learning",
-      description: "Providing quality education and vocational training to empower Liberia's youth.",
+      title: "Youth Transformation & Empowerment",
+      subtitle: "Creating Pathways to Sustainable Development",
+      description: "Strengthening youth leadership, expanding education access, and supporting psychosocial well-being for positive youth development.",
       imagePlaceholder: Education,
-      stats: "50+ Schools Supported"
+      stats: "Supporting YTEI Priorities"
     },
     {
       id: 3,
-      title: "Youth Empowerment",
-      subtitle: "Building Skills, Building Futures",
-      description: "Creating opportunities for young people to become self-reliant citizens.",
+      title: "Inclusive Community Resilience",
+      subtitle: "Protecting Children, Adolescent Girls, Youth & Vulnerable Elderly",
+      description: "Implementing rights-based interventions that promote social reintegration, peacebuilding, and community resilience.",
       imagePlaceholder: Community,
-      stats: "100+ Youth Trained Annually"
+      stats: "Community-Driven Interventions"
     }
   ];
 
@@ -125,135 +128,171 @@ const Home = () => {
       name: "Mr. Billy Jones",
       teamImage: CEO,
       position: "Chief Executive Officer (C.E.O)",
-      bio: "Billy Jones, CEO of Kids Survivor Liberia, provides strategic leadership for child-focused education, welfare, and empowerment programs, building resilience in vulnerable children."
+      bio: "Provides strategic leadership for KSL's NADAP-aligned drug abuse prevention and youth empowerment programs across Liberia."
     },
     {
       name: "Mr. Steve Darwin",
       teamImage: Mr_Steve,
       position: "Director of Country Operations",
-      bio: "Mr. Steve Darwin Wald is the Director of County Operations, overseeing the implementation and management of all Kids Survivor Liberia's field programs across the country."
+      bio: "Oversees implementation of community-based drug demand reduction and rehabilitation programs aligned with national frameworks."
     },
     {
       name: "Mrs. Fiona A. Etong",
       teamImage: Mrs_Fiona,
       position: "Nigeria Representative, Social Media Manager",
-      bio: "Mrs. Fiona A. Etong is the Nigeria Representative, Social Media Manager, and Partner for Kids Survivor Liberia, leading digital advocacy and partnerships for vulnerable children."
+      bio: "Leads digital advocacy for drug prevention and youth empowerment, fostering regional partnerships for vulnerable populations."
     },
     {
       name: "Mrs. Silvia T. Willie Dongon",
       teamImage: Mrs_Silvia,
       position: "Operational Advisor",
-      bio: "Mrs. Silvia T. Willie Dongon serves as Operational Advisor for Kids Survivor Liberia, guiding teams in Bong County (Palala District), Suakoko, and Lofa County to enhance program effectiveness and community impact."
+      bio: "Guides implementation of gender-inclusive protection programs for adolescent girls, widows, and vulnerable elderly men."
     }
   ];
 
-  // Latest News / Blog Posts
+  // Latest News / Blog Posts aligned with program pillars
   const latestNews = [
     {
       id: 1,
-      title: "Empowering Youth Through Drug Prevention Education",
-      excerpt: "How our school-based programs are transforming young lives and building resilience against substance abuse in Liberia.",
-      category: "Education",
+      title: "NADAP 2025-2030: Community-Based Drug Prevention Initiatives",
+      excerpt: "How KSL's school and community programs align with Liberia's National Anti-Drugs Action Plan for comprehensive drug demand reduction.",
+      category: "Drug Prevention",
       date: "Jan 15, 2024",
-      author: "John Doe",
+      author: "KSL Team",
       readTime: "5 min read",
       image: BlogImage1,
-      link: "/blog/youth-drug-prevention"
+      link: "/blog/nadap-initiatives"
     },
     {
       id: 2,
-      title: "Building Child Protection Systems in Vulnerable Communities",
-      excerpt: "A look at our comprehensive approach to safeguarding children and providing psychosocial support across Liberia.",
-      category: "Child Protection",
+      title: "Youth Leadership Development Through YTEI Framework",
+      excerpt: "Empowering young people as agents of change through life skills training, civic engagement, and positive youth development programs.",
+      category: "Youth Empowerment",
       date: "Jan 10, 2024",
-      author: "Jane Smith",
+      author: "KSL Team",
       readTime: "4 min read",
       image: BlogImage2,
-      link: "/blog/child-protection-systems"
+      link: "/blog/ytei-youth-leadership"
     },
     {
       id: 3,
-      title: "Skills Training: The Pathway to Sustainable Reintegration",
-      excerpt: "How vocational training programs are helping youth transition to productive, drug-free lives in West Africa.",
-      category: "Empowerment",
+      title: "Gender-Inclusive Protection Systems for Vulnerable Populations",
+      excerpt: "Implementing targeted empowerment programs for adolescent girls, widows, and elderly men through social inclusion initiatives.",
+      category: "Protection",
       date: "Jan 5, 2024",
-      author: "Robert Johnson",
+      author: "KSL Team",
       readTime: "6 min read",
       image: BlogImage3,
-      link: "/blog/skills-training-reintegration"
+      link: "/blog/gender-protection"
     }
   ];
 
-  // FAQ Data
+  // FAQ Data updated to reflect organizational focus
   const [faqItems, setFaqItems] = useState([
     {
       id: 1,
-      question: "What is Kids Survivor Liberia's main focus?",
-      answer: "Kids Survivor Liberia focuses on preventing drug abuse, protecting vulnerable children and youth, and empowering them through education, skills training, and economic opportunities. Our programs are aligned with Liberia's National Drug Abuse Prevention Strategy (NADAP) 2025-2030 and regional frameworks.",
+      question: "How is KSL aligned with Liberia's National Anti-Drugs Action Plan (NADAP)?",
+      answer: "KSL implements NADAP 2025-2030 through community-based drug use prevention, early intervention, rehabilitation, and reintegration programs. Our work focuses on drug demand reduction, stigma reduction, and promoting public health approaches to substance abuse.",
       open: false,
       links: [
-        { text: "Learn about our programs", path: "/programs" },
-        { text: "Read our mission", path: "/about" }
+        { text: "Learn about our NADAP alignment", path: "/programs/drug-prevention" },
+        { text: "View NADAP 2025-2030 framework", path: "/about#nadap" }
       ]
     },
     {
       id: 2,
-      question: "How can I volunteer with Kids Survivor Liberia?",
-      answer: "We welcome volunteers with various skills! You can volunteer in areas like education, counseling, community outreach, administration, or fundraising. All volunteers undergo orientation and training to ensure they can contribute effectively to our mission.",
+      question: "What populations does KSL specifically serve?",
+      answer: "KSL focuses on vulnerable populations including children, adolescents, youth, adolescent girls, widows, and vulnerable elderly men. Our interventions are inclusive, rights-based, and community-driven, addressing intersecting challenges of drug abuse, poverty, and gender vulnerability.",
       open: false,
       links: [
-        { text: "Apply to volunteer", path: "/volunteer" },
-        { text: "See current opportunities", path: "/get-involved" }
+        { text: "See our target populations", path: "/programs" },
+        { text: "Learn about our GESI approach", path: "/about#gesi" }
       ]
     },
     {
       id: 3,
-      question: "Where does Kids Survivor Liberia operate?",
-      answer: "We operate across multiple counties in Liberia including Montserrado, Bong, Nimba, Grand Bassa, and Lofa Counties. Our headquarters is in Monrovia, with branch offices in strategic locations to serve vulnerable communities effectively.",
+      question: "How does KSL contribute to the Youth Transformation & Empowerment Initiative (YTEI)?",
+      answer: "KSL advances YTEI priorities by strengthening youth leadership and civic engagement, expanding education and vocational pathways, supporting psychosocial well-being, and positioning young people as agents of change and community role models.",
       open: false,
       links: [
-        { text: "See our locations", path: "/about#branches" },
-        { text: "View our impact map", path: "/impact" }
+        { text: "Explore our youth programs", path: "/programs/youth-empowerment" },
+        { text: "Learn about YTEI alignment", path: "/about#ytei" }
       ]
     },
     {
       id: 4,
-      question: "How are donations used?",
-      answer: "Donations directly support our programs: 85% goes to program implementation (education, child protection, skills training), 10% to operational costs, and 5% to fundraising. We maintain transparent financial reporting and are accountable to our donors and stakeholders.",
+      question: "What are KSL's core programmatic pillars?",
+      answer: "Our work is organized around five pillars: 1) Drug Abuse Prevention & Public Awareness, 2) Rehabilitation & Social Reintegration, 3) Education & Skills Development, 4) Gender, Protection & Social Inclusion, and 5) Community Engagement & Peacebuilding.",
       open: false,
       links: [
-        { text: "Make a donation", path: "/donate" },
-        { text: "View financial reports", path: "/transparency" }
+        { text: "Explore all program pillars", path: "/programs" },
+        { text: "View our strategic framework", path: "/about#strategy" }
       ]
     },
     {
       id: 5,
-      question: "How can my organization partner with KSL?",
-      answer: "We collaborate with various organizations including government agencies, NGOs, corporate partners, and community groups. Partnerships can include program implementation, funding, capacity building, or advocacy. We customize partnerships to create maximum impact.",
+      question: "How does KSL ensure community ownership of programs?",
+      answer: "We implement community-driven interventions through partnerships with traditional leaders, local authorities, and civil society. Our programs emphasize volunteer training, community ownership, and social cohesion initiatives that contribute to crime reduction and peacebuilding.",
       open: false,
       links: [
-        { text: "Learn about partnerships", path: "/partnership" },
-        { text: "Contact our team", path: "/contact" }
+        { text: "Learn about community partnerships", path: "/partnerships" },
+        { text: "See our community impact", path: "/impact" }
       ]
     },
     {
       id: 6,
-      question: "What makes KSL different from other organizations?",
-      answer: "KSL combines comprehensive drug abuse prevention with child protection and youth economic empowerment. Our NADAP-aligned approach, multi-county reach, and focus on sustainable reintegration make us unique. We work closely with both government and traditional community structures.",
+      question: "What cross-cutting themes guide KSL's work?",
+      answer: "Our programs integrate: Child & Youth Safeguarding, Gender Equality & Social Inclusion (GESI), Human Rights & Dignity, Community Ownership & Sustainability, and Accountability & Transparency. These ensure comprehensive, rights-based approaches to all interventions.",
       open: false,
       links: [
-        { text: "See our impact", path: "/impact" },
-        { text: "Learn about our approach", path: "/about" }
+        { text: "Learn about our values", path: "/about#values" },
+        { text: "View our safeguarding policy", path: "/policies" }
       ]
     }
   ]);
 
-  // Impact Statistics Data (used for counters)
+  // Impact Statistics Data aligned with organizational focus
   const impactStats = [
-    { end: 3000, label: "Children Reached", icon: <FiUsers />, duration: 2.5 },
-    { end: 100, label: "Communities Served", icon: <FiHome />, duration: 2 },
-    { end: 50, label: "Schools Supported", icon: <FiBook />, duration: 1.5 },
-    { end: 100, label: "Youth Trained", icon: <FiAward />, duration: 2 }
+    { end: 5000, label: "Vulnerable Individuals Reached", icon: <FiUsers />, duration: 2.5 },
+    { end: 50, label: "Communities Engaged", icon: <FiHome />, duration: 2 },
+    { end: 1000, label: "Youth in Prevention Programs", icon: <FiShield />, duration: 1.5 },
+    { end: 500, label: "Individuals in Rehabilitation", icon: <FiActivity />, duration: 2 }
+  ];
+
+  // Program Pillars Data
+  const programPillars = [
+    {
+      id: 1,
+      title: "Drug Abuse Prevention & Public Awareness",
+      description: "Community and school-based prevention campaigns, youth-led advocacy, and 'Say No to Drugs' initiatives aligned with national frameworks.",
+      imagePlaceholder: NoToDrugs,
+      icon: <FiShield className="w-8 h-8" />,
+      color: "bg-blue-500"
+    },
+    {
+      id: 2,
+      title: "Rehabilitation & Social Reintegration",
+      description: "Psychosocial support, skills development, and reintegration pathways for drug-affected individuals with stigma reduction initiatives.",
+      imagePlaceholder: Children3,
+      icon: <FiHeart className="w-8 h-8" />,
+      color: "bg-yellow-500"
+    },
+    {
+      id: 3,
+      title: "Education & Skills Development",
+      description: "Education support, vocational training, and digital skills for youth, adolescent girls, widows, and vulnerable elderly men.",
+      imagePlaceholder: Students,
+      icon: <FiBook className="w-8 h-8" />,
+      color: "bg-blue-500"
+    },
+    {
+      id: 4,
+      title: "Gender, Protection & Social Inclusion",
+      description: "Targeted empowerment of adolescent girls, economic inclusion of widows, and social support for vulnerable elderly men.",
+      imagePlaceholder: Children4,
+      icon: <FiUsers className="w-8 h-8" />,
+      color: "bg-green-500"
+    }
   ];
 
   // Auto-slide functionality
@@ -286,45 +325,12 @@ const Home = () => {
   useEffect(() => {
     const openCount = faqItems.filter(item => item.open).length;
     if (openCount > 1) {
-      // Find the first open FAQ and keep it open
       const firstOpenId = faqItems.find(item => item.open)?.id;
       setFaqItems(faqItems.map(item => 
         item.id === firstOpenId ? { ...item, open: true } : { ...item, open: false }
       ));
     }
   }, [faqItems]);
-
-  // Impact Areas (with image placeholders)
-  const impactAreas = [
-    {
-      id: 1,
-      title: "Child Protection",
-      description: "Safe spaces and protection systems for vulnerable children",
-      imagePlaceholder: Children3,
-      stat: "2,200+ Children Protected"
-    },
-    {
-      id: 2,
-      title: "Education Support",
-      description: "Scholarships and educational programs",
-      imagePlaceholder: StudentsInClassRoom,
-      stat: "1,500+ Students Supported"
-    },
-    {
-      id: 3,
-      title: "Youth Empowerment",
-      description: "Skills training and vocational programs",
-      imagePlaceholder: NoToDrugs,
-      stat: "800+ Youth Empowered"
-    },
-    {
-      id: 4,
-      title: "Community Development",
-      description: "Sustainable community support systems",
-      imagePlaceholder: Children4,
-      stat: "100+ Communities Engaged"
-    }
-  ];
 
   const handleImageError = (id) => {
     setImageError(prev => ({ ...prev, [id]: true }));
@@ -333,6 +339,7 @@ const Home = () => {
   return (
     <div className="overflow-hidden">
       <ScrollToTopButton />
+      
       {/* Hero Carousel Section */}
       <section className="relative h-screen">
         <AnimatePresence mode="wait">
@@ -417,16 +424,16 @@ const Home = () => {
                         whileTap={{ scale: 0.95 }}
                         className="bg-yellow-500 px-6 py-3 md:px-8 md:py-4 rounded-full text-lg font-bold shadow-lg hover:shadow-xl transition-shadow"
                       >
-                        Donate Now
+                        Support Our Mission
                       </motion.button>
                     </Link>
-                    <Link to="/about">
+                    <Link to="/programs">
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         className="bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-6 py-3 md:px-8 md:py-4 rounded-full text-lg font-semibold hover:bg-white/20 transition-all"
                       >
-                        Learn More
+                        View Programs
                       </motion.button>
                     </Link>
                   </motion.div>
@@ -497,7 +504,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Quick Stats Section with Dynamic Counters */}
+      {/* Quick Stats Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
@@ -508,10 +515,10 @@ const Home = () => {
             className="text-center mb-12"
           >
             <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-              Our Impact in Numbers
+              Impact Aligned with National Frameworks
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Real-time impact tracking of our programs across Liberia
+              Tracking progress towards NADAP 2025-2030 and YTEI goals through community-driven interventions
             </p>
           </motion.div>
 
@@ -534,7 +541,6 @@ const Home = () => {
             ))}
           </div>
 
-          {/* Additional Impact Stats */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -543,14 +549,14 @@ const Home = () => {
             className="mt-12 text-center"
           >
             <div className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">
-              <FiTrendingUp className="mr-2" />
-              Growing impact across 7+ counties in Liberia
+              <FiCheckCircle className="mr-2" />
+              Operating across multiple counties with NADAP-aligned programs
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* About Section - Mission & Vision */}
+      {/* Mission & Vision Section - Updated to match organizational documents */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.div
@@ -561,10 +567,10 @@ const Home = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-              Our Purpose & Promise
+              Our Strategic Framework
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Guided by our mission and vision to create lasting change for Liberia's children and youth
+              Aligned with YTEI and NADAP 2025–2030 for comprehensive impact
             </p>
           </motion.div>
 
@@ -577,36 +583,36 @@ const Home = () => {
               viewport={{ once: true }}
               className="bg-white rounded-2xl shadow-xl overflow-hidden"
             >
-              <div className="bg-blue-600 p-8">
+              <div className="bg-blue-500 p-8">
                 <div className="flex items-center mb-4">
                   <div className="bg-white/20 p-3 rounded-xl mr-4">
                     <FiTarget className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white">Our Mission</h3>
+                  <h3 className="text-2xl font-bold text-white">Organizational Mission</h3>
                 </div>
               </div>
               <div className="p-8">
                 <p className="text-gray-700 text-lg leading-relaxed">
-                  To restore hope, dignity, and opportunity to vulnerable children and youth in Liberia by providing prevention, rehabilitation, empowerment, and reintegration services that foster self-reliance and positive citizenship.
+                  Kids Survivor Liberia (KSL) is a community-based, non-profit organization dedicated to the prevention of drug abuse and the protection, rehabilitation, and empowerment of vulnerable populations, particularly children, adolescents, youth, adolescent girls, widows, and vulnerable elderly men.
                 </p>
                 <div className="mt-8 pt-8 border-t border-gray-100">
-                  <h4 className="font-bold text-gray-800 mb-3">Key Focus Areas:</h4>
+                  <h4 className="font-bold text-gray-800 mb-3">Key Interventions:</h4>
                   <ul className="space-y-2">
                     <li className="flex items-center text-gray-600">
-                      <FiShield className="w-5 h-5 text-blue-600 mr-3" />
-                      Prevention & Protection
+                      <FiCheckCircle className="w-5 h-5 text-blue-500 mr-3" />
+                      Drug Abuse Prevention & Awareness
                     </li>
                     <li className="flex items-center text-gray-600">
-                      <FiHeart className="w-5 h-5 text-blue-600 mr-3" />
-                      Rehabilitation Services
+                      <FiCheckCircle className="w-5 h-5 text-blue-500 mr-3" />
+                      Rehabilitation & Social Reintegration
                     </li>
                     <li className="flex items-center text-gray-600">
-                      <FiTrendingUp className="w-5 h-5 text-blue-600 mr-3" />
-                      Youth Empowerment
+                      <FiCheckCircle className="w-5 h-5 text-blue-500 mr-3" />
+                      Education & Life Skills Development
                     </li>
                     <li className="flex items-center text-gray-600">
-                      <FiUsers className="w-5 h-5 text-blue-600 mr-3" />
-                      Community Reintegration
+                      <FiCheckCircle className="w-5 h-5 text-blue-500 mr-3" />
+                      Gender-Inclusive Protection Systems
                     </li>
                   </ul>
                 </div>
@@ -626,31 +632,31 @@ const Home = () => {
                   <div className="bg-white/20 p-3 rounded-xl mr-4">
                     <FiEye className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white">Our Vision</h3>
+                  <h3 className="text-2xl font-bold text-white">Organizational Vision</h3>
                 </div>
               </div>
               <div className="p-8">
                 <p className="text-gray-700 text-lg leading-relaxed">
-                  A Liberia where every child and young person lives free from abuse, drugs, and neglect and is equipped with the skills, knowledge, and opportunities to reach their full potential.
+                  A drug-free, safe, inclusive, and resilient Liberia, where children, adolescent girls, youth, widows, and elderly men live in dignity, have equitable access to education and economic opportunities, are protected from drugs, violence, and exploitation, and actively contribute to sustainable development and social cohesion.
                 </p>
                 <div className="mt-8 pt-8 border-t border-gray-100">
-                  <h4 className="font-bold text-gray-800 mb-3">Our Vision Includes:</h4>
+                  <h4 className="font-bold text-gray-800 mb-3">Vision Elements:</h4>
                   <ul className="space-y-2">
                     <li className="flex items-center text-gray-600">
                       <div className="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
-                      Children living free from abuse and neglect
+                      Drug-free and safe communities
                     </li>
                     <li className="flex items-center text-gray-600">
                       <div className="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
-                      Youth equipped with essential life skills
+                      Equitable access to opportunities
                     </li>
                     <li className="flex items-center text-gray-600">
                       <div className="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
-                      Communities supporting child development
+                      Protection from exploitation
                     </li>
                     <li className="flex items-center text-gray-600">
                       <div className="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
-                      Sustainable opportunities for all youth
+                      Active community participation
                     </li>
                   </ul>
                 </div>
@@ -660,7 +666,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Impact Section with Image Placeholders */}
+      {/* Program Pillars Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
@@ -671,71 +677,200 @@ const Home = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-              Our Impact Areas
+              Our Programmatic Pillars
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              See how we're making a difference across Liberia through targeted programs and initiatives
+              Comprehensive approaches aligned with national strategies and community needs
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-12">
-            {impactAreas.map((area, index) => (
+          <div className="grid md:grid-cols-2 gap-8">
+            {programPillars.map((pillar, index) => (
               <motion.div
-                key={area.id}
+                key={pillar.id}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group cursor-pointer"
+                className="group"
               >
-                <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
-                  {/* Image Placeholder */}
-                  <div className="relative h-64 md:h-80 overflow-hidden">
-                    {!imageError[`impact-${area.id}`] ? (
-                      <img
-                        src={area.imagePlaceholder}
-                        alt={area.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        onError={() => handleImageError(`impact-${area.id}`)}
-                        loading='lazy'
-                      />
-                    ) : (
-                      <div className="w-full h-full bg-blue-500 flex items-center justify-center">
-                        <span className="text-white text-lg font-semibold">{area.title}</span>
+                <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 h-full">
+                  <div className={`${pillar.color} p-6 text-white`}>
+                    <div className="flex items-center">
+                      <div className="bg-white/20 p-3 rounded-xl mr-4">
+                        {pillar.icon}
                       </div>
-                    )}
-                    <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent"></div>
-                    <div className="absolute bottom-4 left-4">
-                      <span className="bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
-                        {area.stat}
-                      </span>
+                      <h3 className="text-2xl font-bold">{pillar.title}</h3>
                     </div>
                   </div>
-
-                  {/* Content */}
-                  <div className="p-6 md:p-8">
-                    <h3 className="text-2xl font-bold text-gray-800 mb-3">
-                      {area.title}
-                    </h3>
+                  
+                  <div className="p-6">
                     <p className="text-gray-600 mb-6">
-                      {area.description}
+                      {pillar.description}
                     </p>
-                    <Link to="/impact">
-                      <button className="text-blue-600 font-semibold hover:text-blue-700 flex items-center group">
-                        Learn more about this program
-                        <motion.span
-                          animate={{ x: [0, 5, 0] }}
-                          transition={{ repeat: Infinity, duration: 1.5 }}
-                          className="ml-2 group-hover:ml-3 transition-all"
-                        >
-                          →
-                        </motion.span>
+                    
+                    {/* Image Placeholder */}
+                    <div className="relative h-100 overflow-hidden rounded-lg mb-6">
+                      {!imageError[`pillar-${pillar.id}`] ? (
+                        <img
+                          src={pillar.imagePlaceholder}
+                          alt={pillar.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          onError={() => handleImageError(`pillar-${pillar.id}`)}
+                          loading='lazy'
+                        />
+                      ) : (
+                        <div className={`w-full h-full ${pillar.color} flex items-center justify-center`}>
+                          <span className="text-white text-lg font-semibold">{pillar.title.split(' ')[0]}</span>
+                        </div>
+                      )}
+                    </div>
+                    
+                    <Link to={`/programs#pillar-${pillar.id}`}>
+                      <button className="w-full text-center bg-gray-50 hover:bg-gray-100 text-gray-800 font-semibold py-3 rounded-lg transition-colors duration-300">
+                        Explore This Pillar
                       </button>
                     </Link>
                   </div>
                 </div>
               </motion.div>
             ))}
+          </div>
+
+          {/* Fifth Pillar - Community Engagement */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            viewport={{ once: true }}
+            className="mt-8"
+          >
+            <div className="bg-blue-500 rounded-2xl shadow-xl overflow-hidden">
+              <div className="p-8 text-white">
+                <div className="flex items-center mb-6">
+                  <div className="bg-white/20 p-3 rounded-xl mr-4">
+                    <FiBriefcase className="w-8 h-8" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold">Pillar 5: Community Engagement, Peacebuilding & Partnerships</h3>
+                    <p className="text-blue-100 mt-2">Collaboration with traditional leaders, local authorities, and civil society for sustainable impact</p>
+                  </div>
+                </div>
+                
+                <div className="grid md:grid-cols-3 gap-4">
+                  <div className="bg-white/10 p-4 rounded-lg backdrop-blur-sm">
+                    <h4 className="font-bold mb-2">Community Ownership</h4>
+                    <p className="text-sm text-blue-100">Volunteer training and community-driven program implementation</p>
+                  </div>
+                  <div className="bg-white/10 p-4 rounded-lg backdrop-blur-sm">
+                    <h4 className="font-bold mb-2">Peacebuilding</h4>
+                    <p className="text-sm text-blue-100">Crime and violence prevention through social cohesion initiatives</p>
+                  </div>
+                  <div className="bg-white/10 p-4 rounded-lg backdrop-blur-sm">
+                    <h4 className="font-bold mb-2">Strategic Partnerships</h4>
+                    <p className="text-sm text-blue-100">Multi-stakeholder collaboration for comprehensive impact</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Policy Alignment Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+              National & Strategic Alignment
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Contributing to Liberia's development frameworks through targeted interventions
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* YTEI Alignment */}
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="bg-white p-8 rounded-2xl shadow-lg"
+            >
+              <div className="flex items-center mb-6">
+                <div className="bg-green-100 p-3 rounded-xl mr-4">
+                  <FiTrendingUp className="w-8 h-8 text-green-600" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-800">YTEI Alignment</h3>
+                  <p className="text-gray-600 text-sm">Youth Transformation & Empowerment Initiative</p>
+                </div>
+              </div>
+              
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <FiCheckCircle className="w-5 h-5 text-green-500 mr-3 mt-1 shrink-0" />
+                  <span>Strengthening youth leadership and civic engagement</span>
+                </li>
+                <li className="flex items-start">
+                  <FiCheckCircle className="w-5 h-5 text-green-500 mr-3 mt-1 shrink-0" />
+                  <span>Expanding education access and vocational pathways</span>
+                </li>
+                <li className="flex items-start">
+                  <FiCheckCircle className="w-5 h-5 text-green-500 mr-3 mt-1 shrink-0" />
+                  <span>Supporting psychosocial well-being and positive development</span>
+                </li>
+                <li className="flex items-start">
+                  <FiCheckCircle className="w-5 h-5 text-green-500 mr-3 mt-1 shrink-0" />
+                  <span>Positioning youth as agents of change</span>
+                </li>
+              </ul>
+            </motion.div>
+
+            {/* NADAP Alignment */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="bg-white p-8 rounded-2xl shadow-lg"
+            >
+              <div className="flex items-center mb-6">
+                <div className="bg-blue-100 p-3 rounded-xl mr-4">
+                  <FiCrosshair className="w-8 h-8 text-blue-600" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-800">NADAP 2025-2030</h3>
+                  <p className="text-gray-600 text-sm">National Anti-Drugs Action Plan</p>
+                </div>
+              </div>
+              
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <FiCheckCircle className="w-5 h-5 text-blue-500 mr-3 mt-1 shrink-0" />
+                  <span>Community and school-based drug prevention</span>
+                </li>
+                <li className="flex items-start">
+                  <FiCheckCircle className="w-5 h-5 text-blue-500 mr-3 mt-1 shrink-0" />
+                  <span>Early intervention and rehabilitation services</span>
+                </li>
+                <li className="flex items-start">
+                  <FiCheckCircle className="w-5 h-5 text-blue-500 mr-3 mt-1 shrink-0" />
+                  <span>Drug demand reduction and relapse prevention</span>
+                </li>
+                <li className="flex items-start">
+                  <FiCheckCircle className="w-5 h-5 text-blue-500 mr-3 mt-1 shrink-0" />
+                  <span>Advocacy for public health and social reintegration</span>
+                </li>
+              </ul>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -750,9 +885,9 @@ const Home = () => {
           className="mb-20"
         >
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Meet Our Team</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Leadership & Team</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Dedicated professionals committed to making a difference
+              Committed professionals driving NADAP and YTEI-aligned interventions
             </p>
           </div>
 
@@ -762,7 +897,6 @@ const Home = () => {
                 key={index}
                 className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
               >
-                {/* Team Member Image */}
                 <div className="h-auto bg-gray-100 flex items-center justify-center">
                   <img 
                     src={member.teamImage}
@@ -783,7 +917,7 @@ const Home = () => {
         </motion.div>
       </section>
 
-      {/* Latest News / Blog Preview Section */}
+      {/* Latest News Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.div
@@ -795,13 +929,13 @@ const Home = () => {
           >
             <div className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium mb-4">
               <FiMessageSquare className="mr-2" />
-              INSIGHTS & UPDATES
+              PROGRAM UPDATES & INSIGHTS
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-              Latest News & Stories
+              Latest from Our Programs
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Stay updated with our latest work, success stories, and insights on youth development
+              Updates on our NADAP and YTEI-aligned initiatives and their impact
             </p>
           </motion.div>
 
@@ -816,7 +950,6 @@ const Home = () => {
                 className="group"
               >
                 <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 h-full flex flex-col">
-                  {/* News Image */}
                   <div className="relative h-56 overflow-hidden">
                     <img
                       src={news.image}
@@ -830,7 +963,6 @@ const Home = () => {
                     </div>
                   </div>
 
-                  {/* News Content */}
                   <div className="p-6 flex-1 flex flex-col">
                     <div className="flex items-center text-sm text-gray-500 mb-3">
                       <FiCalendar className="mr-2" />
@@ -858,13 +990,11 @@ const Home = () => {
                       </Link>
                     </div>
                   </div>
-               
                 </div>
               </motion.div>
             ))}
           </div>
 
-          {/* View All Blog Posts Button */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -874,7 +1004,7 @@ const Home = () => {
           >
             <Link to="/blog">
               <button className="inline-flex items-center px-6 py-3 bg-white text-blue-600 border-2 border-blue-600 rounded-full font-semibold hover:bg-blue-50 transition-all duration-300 hover:scale-105">
-                <span>View All Blog Posts</span>
+                <span>View All Program Updates</span>
                 <FiArrowRight className="ml-2" />
               </button>
             </Link>
@@ -882,7 +1012,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* FAQ Section - Updated */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
@@ -896,7 +1026,7 @@ const Home = () => {
               Frequently Asked Questions
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Find answers to common questions about our work and how you can get involved
+              Learn more about our NADAP and YTEI-aligned approach to drug prevention and youth empowerment
             </p>
           </motion.div>
 
@@ -957,7 +1087,7 @@ const Home = () => {
             ))}
           </div>
 
-          {/* Still have questions? */}
+          {/* Partnership Callout */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -965,20 +1095,31 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mt-12"
           >
-            <div className="bg-blue-500 from-blue-600 to-blue-800 rounded-2xl p-8 text-white max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold mb-4">Still have questions?</h3>
+            <div className="bg-blue-500 rounded-2xl p-8 text-white max-w-2xl mx-auto">
+              <h3 className="text-2xl font-bold mb-4">Partner with Us for Impact</h3>
               <p className="mb-6 text-blue-100">
-                We're here to help! Contact our team for more information.
+                Join us in implementing NADAP 2025-2030 and YTEI-aligned programs for a drug-free, empowered Liberia.
               </p>
-              <Link to="/contact">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors"
-                >
-                  Contact Us
-                </motion.button>
-              </Link>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link to="/partnership">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors"
+                  >
+                    Explore Partnerships
+                  </motion.button>
+                </Link>
+                <Link to="/contact">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors"
+                  >
+                    Contact Our Team
+                  </motion.button>
+                </Link>
+              </div>
             </div>
           </motion.div>
         </div>

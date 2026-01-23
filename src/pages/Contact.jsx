@@ -104,35 +104,30 @@ const Contact = () => {
       />
 
       {/* Main Header Section */}
-      <header className="relative">
-        {/* Background Image */}
-        <div className="absolute inset-0 bg-linear-to-r from-blue-800 to-yellow-900/70 z-10">
-          <img 
-            src={ContactImage} 
-            alt="Background" 
-            className="w-full h-full object-cover opacity-20"
-          />
-        </div>
-
-        {/* Page Header with Breadcrumb */}
-        <div className="relative z-10 py-30 text-center">
-          <div className="container mx-auto px-4">
-            {/* Main Title */}
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-5xl md:text-6xl font-bold text-white"
-            >
-              Contact Us
-            </motion.h1>
-            
-            {/* Breadcrumb Text */}
-            <p className="text-white/80 text-lg">
-              Where Every Child's Potential Finds Protection & Purpose.
-            </p>
-          </div>
-        </div>
-      </header>
+              <header className="relative">
+                <div className="absolute inset-0 bg-linear-to-r from-blue-800 to-blue-900/70 z-10">
+                  <img 
+                    src={ContactImage} 
+                    alt="Contact_Image" 
+                    className="w-full h-full object-cover opacity-20"
+                  />
+                </div>
+      
+                <div className="relative z-10 py-30 text-center">
+                  <div className="container mx-auto px-4">
+                    <motion.h1 
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="text-5xl md:text-6xl font-bold text-white"
+                    >
+                      Contact Kids Survivor Liberia
+                    </motion.h1>
+                    <p className="text-white/80 text-lg mt-4 max-w-3xl mx-auto">
+                      We're here to assist you. Reach out with any questions, partnership inquiries, or support needs.
+                    </p>
+                  </div>
+                </div>
+              </header>
 
       {/* Main Content */}
       <main className="py-16">
@@ -175,7 +170,7 @@ const Contact = () => {
               <form onSubmit={handleSubmit} ref={form} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-gray-700 mb-2 font-medium">Name *</label>
+                    <label className="block text-gray-700 mb-2 font-medium">Name</label>
                     <div className="relative">
                       <FiUser className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
                       <input
@@ -192,7 +187,7 @@ const Contact = () => {
                   </div>
                   
                   <div>
-                    <label className="block text-gray-700 mb-2 font-medium">Email *</label>
+                    <label className="block text-gray-700 mb-2 font-medium">Email</label>
                     <div className="relative">
                       <FiMail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
                       <input
@@ -210,7 +205,7 @@ const Contact = () => {
                 </div>
                 
                 <div>
-                  <label className="block text-gray-700 mb-2 font-medium">Subject *</label>
+                  <label className="block text-gray-700 mb-2 font-medium">Subject</label>
                   <input
                     type="text"
                     name="subject"
@@ -224,7 +219,7 @@ const Contact = () => {
                 </div>
                 
                 <div>
-                  <label className="block text-gray-700 mb-2 font-medium">Message *</label>
+                  <label className="block text-gray-700 mb-2 font-medium">Message </label>
                   <textarea
                     name="message"
                     value={formData.message}

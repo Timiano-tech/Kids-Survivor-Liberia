@@ -36,7 +36,7 @@ const Gallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [activeCategory, setActiveCategory] = useState('all');
 
-  // Sample gallery categories and images - Replace with your actual images
+  // Sample gallery categories and images 
   const galleryCategories = [
     { id: 'all', name: 'All Photos' },
     { id: 'education', name: 'Education' },
@@ -44,7 +44,7 @@ const Gallery = () => {
     { id: 'teams', name: 'Teams' },
   ];
 
-  // Sample gallery images - Replace these with your actual images
+  // Sample gallery images 
   const galleryImages = [
     { id: 1, src: Education1, category: 'education', title: 'School Support Program', description: 'Providing educational materials to local schools' },
     { id: 2, src: Community, category: 'community', title: 'Community Health Day', description: 'Free health checkups in rural communities' },
@@ -104,33 +104,31 @@ const Gallery = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header Section */}
-      <header className="relative">
-        {/* Background Image */}
-        <div className="absolute inset-0 bg-linear-to-r from-blue-800 to-yellow-900/70">
-          <img 
-            src={Youth3} 
-            alt="Gallery Background" 
-            className="w-full h-full object-cover opacity-20"
-          />
-        </div>
-
-        {/* Page Header */}
-        <div className="relative z-10 py-30 text-center">
-          <div className="container mx-auto px-4">
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-5xl md:text-6xl font-bold text-white"
-            >
-              Photo Gallery
-            </motion.h1>
-            <p className="text-white/80 text-lg mt-4 max-w-2xl mx-auto">
-              Capturing moments of hope, transformation, and impact
-            </p>
-          </div>
-        </div>
-      </header>
+      {/* Main Header Section */}
+              <header className="relative">
+                <div className="absolute inset-0 bg-linear-to-r from-blue-800 to-blue-900/70 z-10">
+                  <img 
+                    src={KSL} 
+                    alt="KSL Background" 
+                    className="w-full h-full object-cover opacity-20"
+                  />
+                </div>
+      
+                <div className="relative z-10 py-30 text-center">
+                  <div className="container mx-auto px-4">
+                    <motion.h1 
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="text-5xl md:text-6xl font-bold text-white"
+                    >
+                     Photo Gallery 
+                    </motion.h1>
+                    <p className="text-white/80 text-lg mt-4 max-w-3xl mx-auto">
+                      A collection of moments capturing our journey and impact.
+                    </p>
+                  </div>
+                </div>
+              </header>
 
       {/* Main Content */}
       <main className="py-16">

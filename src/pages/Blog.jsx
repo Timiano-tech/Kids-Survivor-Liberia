@@ -95,30 +95,31 @@ const Blog = () => {
   return (
     <>
       <div className="min-h-screen bg-white">
-        <header className="relative">
-          <div className="absolute inset-0 bg-blue-900/80 z-10">
-            <img 
-              src={HeaderImage} 
-              alt="Background" 
-              className="w-full h-full object-cover opacity-20"
-            />
-          </div>
-
-          <div className="relative z-10 py-24 text-center">
-            <div className="container mx-auto px-4">
-              <motion.h1 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="text-5xl md:text-6xl font-bold text-white"
-              >
-                Our Blog & Videos
-              </motion.h1>
-              <p className="text-white/80 text-lg mt-4 max-w-3xl mx-auto">
-                Stay updated with the latest articles and videos on our drug prevention and youth empowerment work.
-              </p>
-            </div>
-          </div>
-        </header>
+        {/* Main Header Section */}
+                <header className="relative">
+                  <div className="absolute inset-0 bg-linear-to-r from-blue-800 to-blue-900/70 z-10">
+                    <img 
+                      src={HeaderImage} 
+                      alt="KSL_Background" 
+                      className="w-full h-full object-cover opacity-20"
+                    />
+                  </div>
+        
+                  <div className="relative z-10 py-30 text-center">
+                    <div className="container mx-auto px-4">
+                      <motion.h1 
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="text-5xl md:text-6xl font-bold text-white"
+                      >
+                        Blog & Media
+                      </motion.h1>
+                      <p className="text-white/80 text-lg mt-4 max-w-3xl mx-auto">
+                        Stay updated with the latest articles and videos on our drug prevention and youth empowerment initiatives.
+                      </p>
+                    </div>
+                  </div>
+                </header>
 
         <main className="py-12">
           <div className="container mx-auto px-4 max-w-6xl">

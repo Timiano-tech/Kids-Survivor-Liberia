@@ -29,7 +29,7 @@ import Education from '../assets/Children on the assembly.jpeg';
 import Students from '../assets/Students.jpeg'
 import CallToAction from '../components/CallToAction';
 import NoToDrugs from '../assets/Say no to drugs.jpeg'
-import Children3 from '../assets/Children3.jpeg';
+import Children3 from '../assets/Drug_Recovered.jpeg';
 import Children4 from '../assets/Children4.jpeg';
 import Community from '../assets/Community.jpeg';
 import Mr_Steve from '../assets/Mr_Steve.jpeg';
@@ -88,7 +88,7 @@ const Counter = ({ end, duration = 2, label, icon }) => {
 };
 
 const Home = () => {
-  
+
    useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -160,22 +160,20 @@ const Home = () => {
       title: "NADAP 2025-2030: Community-Based Drug Prevention Initiatives",
       excerpt: "Educating Students on the dangers of drug abuse through school and community programs aligned with Liberia's National Anti-Drugs Action Plan.",
       category: "Drug Prevention",
-      date: "Jan 15, 2024",
+      date: "Jan 19, 2026",
       author: "KSL Team",
-      readTime: "5 min read",
       image: BlogImage1,
-      link: "/blog/nadap-initiatives"
+      link: "/blog"
     },
     {
       id: 2,
       title: "Youth Leadership Development Through YTEI Framework",
       excerpt: "Empowering young people as agents of change through life skills training, civic engagement, and positive youth development programs.",
       category: "Youth Empowerment",
-      date: "Jan 10, 2024",
+      date: "Jan 19, 2026",
       author: "KSL Team",
-      readTime: "4 min read",
       image: BlogImage3,
-      link: "/blog/ytei-youth-leadership"
+      link: "/blog"
     },
     {
       id: 3,
@@ -184,9 +182,8 @@ const Home = () => {
       category: "Community Engagement",
       date: "Jan 5, 2024",
       author: "KSL Team",
-      readTime: "6 min read",
       image: BlogImage2,
-      link: "/blog/gender-protection"
+      link: "/blog"
     }
   ];
 
@@ -198,8 +195,8 @@ const Home = () => {
       answer: "KSL implements NADAP 2025-2030 through community-based drug use prevention, early intervention, rehabilitation, and reintegration programs. Our work focuses on drug demand reduction, stigma reduction, and promoting public health approaches to substance abuse.",
       open: false,
       links: [
-        { text: "Learn about our NADAP alignment", path: "/programs/drug-prevention" },
-        { text: "View NADAP 2025-2030 framework", path: "/about#nadap" }
+        { text: "Learn about our NADAP alignment", path: "/programs" },
+        { text: "View NADAP 2025-2030 framework", path: "/programs" }
       ]
     },
     {
@@ -209,7 +206,7 @@ const Home = () => {
       open: false,
       links: [
         { text: "See our target populations", path: "/programs" },
-        { text: "Learn about our GESI approach", path: "/about#gesi" }
+        { text: "Learn about our GESI approach", path: "/programs" }
       ]
     },
     {
@@ -218,8 +215,8 @@ const Home = () => {
       answer: "KSL advances YTEI priorities by strengthening youth leadership and civic engagement, expanding education and vocational pathways, supporting psychosocial well-being, and positioning young people as agents of change and community role models.",
       open: false,
       links: [
-        { text: "Explore our youth programs", path: "/programs/youth-empowerment" },
-        { text: "Learn about YTEI alignment", path: "/about#ytei" }
+        { text: "Explore our youth programs", path: "/programs" },
+        { text: "Learn about YTEI alignment", path: "/Programs" }
       ]
     },
     {
@@ -229,7 +226,7 @@ const Home = () => {
       open: false,
       links: [
         { text: "Explore all program pillars", path: "/programs" },
-        { text: "View our strategic framework", path: "/about#strategy" }
+        { text: "View our strategic framework", path: "/about" }
       ]
     },
     {
@@ -248,18 +245,18 @@ const Home = () => {
       answer: "Our programs integrate: Child & Youth Safeguarding, Gender Equality & Social Inclusion (GESI), Human Rights & Dignity, Community Ownership & Sustainability, and Accountability & Transparency. These ensure comprehensive, rights-based approaches to all interventions.",
       open: false,
       links: [
-        { text: "Learn about our values", path: "/about#values" },
-        { text: "View our safeguarding policy", path: "/policies" }
+        { text: "Learn about our values", path: "/about" },
+        { text: "View our safeguarding policy", path: "/programs" }
       ]
     }
   ]);
 
   // Impact Statistics Data aligned with organizational focus
   const impactStats = [
-    { end: 5000, label: "Vulnerable Individuals Reached", icon: <FiUsers />, duration: 2.5 },
+    { end: 3000, label: "Vulnerable Individuals Reached", icon: <FiUsers />, duration: 2.5 },
     { end: 50, label: "Communities Engaged", icon: <FiHome />, duration: 2 },
     { end: 1000, label: "Youth in Prevention Programs", icon: <FiShield />, duration: 1.5 },
-    { end: 500, label: "Individuals in Rehabilitation", icon: <FiActivity />, duration: 2 }
+    { end: 200, label: "Individuals in Rehabilitation", icon: <FiActivity />, duration: 2 }
   ];
 
   // Program Pillars Data
@@ -370,7 +367,7 @@ const Home = () => {
             </div>
             
             {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-linear-to-r from-blue-900/70 to-purple-900/40 z-10"></div>
+            <div className="absolute inset-0 bg-linear-to-r from-blue-800/80 to-blue-900/40 z-10"></div>
 
             {/* Content */}
             <div className="relative h-full flex items-center z-20">

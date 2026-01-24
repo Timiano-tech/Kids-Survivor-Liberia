@@ -36,37 +36,31 @@ const Donate = () => {
     <>
       <div className="min-h-screen bg-white">
          {/* Main Header Section */}
-             <header className="relative">
-              {/* Background Image  */}
-                      <div className="absolute inset-0 bg-linear-to-r from-blue-800 to-yellow-900/70 z-10">
-                       
-                        <img 
-                          src={DonateImage} 
-                          alt="Background" 
-                          className="w-full h-full object-cover opacity-20"
-                        loading='lazy'/>
-                      </div>
-       
-                {/* Page Header with Breadcrumb */}
-               <div className="relative z-10 py-30 text-center">
-                 <div className="container mx-auto px-4">
-                   
-                   {/* Main Title */}
-                   <motion.h1 
-                     initial={{ opacity: 0, y: 20 }}
-                     animate={{ opacity: 1, y: 0 }}
-                     className="text-5xl md:text-6xl font-bold text-white"
-                   >
-                     Donate
-                   </motion.h1>
-                   
-                   {/* Breadcrumb Text */}
-                   <p className="text-white/80 text-lg">
-                     Transform Lives with a Single Transfer. Bank to Bank. Hope to Hope.
-                   </p>
-                 </div>
-               </div>
-             </header>
+                 <header className="relative">
+                   <div className="absolute inset-0 bg-linear-to-r from-blue-800 to-blue-900/70 z-10">
+                     <img 
+                       src={DonateImage} 
+                       alt="Image_Background" 
+                       className="w-full h-full object-cover opacity-20"
+                     />
+                   </div>
+         
+                   <div className="relative z-10 py-30 text-center">
+                     <div className="container mx-auto px-4">
+                       <motion.h1 
+                         initial={{ opacity: 0, y: 20 }}
+                         animate={{ opacity: 1, y: 0 }}
+                         className="text-5xl md:text-6xl font-bold text-white"
+                       >
+                         Donate to Kids Survivor Liberia
+                       </motion.h1>
+                       <p className="text-white/80 text-lg mt-4 max-w-3xl mx-auto">
+                          Your generous support helps us protect vulnerable children, provide education, 
+                          and empower youth across Liberia.
+                       </p>
+                     </div>
+                   </div>
+                 </header>
 
         {/* Main Content */}
         <main className="py-16">

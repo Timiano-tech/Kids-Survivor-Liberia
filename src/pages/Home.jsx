@@ -11,7 +11,6 @@ import {
   FiTrendingUp,
   FiUsers,
   FiHeart,
-  FiAward,
   FiHome,
   FiBook,
   FiShield,
@@ -29,7 +28,6 @@ import {
 import Education from '../assets/Children on the assembly.jpeg';
 import Students from '../assets/Students.jpeg'
 import CallToAction from '../components/CallToAction';
-import StudentsInClassRoom from '../assets/Class Room.jpeg'
 import NoToDrugs from '../assets/Say no to drugs.jpeg'
 import Children3 from '../assets/Children3.jpeg';
 import Children4 from '../assets/Children4.jpeg';
@@ -40,7 +38,7 @@ import Mrs_Silvia from '../assets/Mrs_Silvia2.jpeg';
 import CEO from '../assets/CEO.jpeg';
 import BlogImage1 from '../assets/Students Impacted.jpeg';
 import BlogImage2 from '../assets/Helping Children.jpeg';
-import BlogImage3 from '../assets/ChildrenImpact.jpeg';
+import BlogImage3 from '../assets/Youth_Community_Outreach.jpeg';
 import ScrollToTopButton from '../components/ScrollToTop';
 
 // Counter Component
@@ -90,6 +88,11 @@ const Counter = ({ end, duration = 2, label, icon }) => {
 };
 
 const Home = () => {
+  
+   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const [currentSlide, setCurrentSlide] = useState(0);
   const [autoPlay, setAutoPlay] = useState(true);
   const [imageError, setImageError] = useState({});
@@ -155,7 +158,7 @@ const Home = () => {
     {
       id: 1,
       title: "NADAP 2025-2030: Community-Based Drug Prevention Initiatives",
-      excerpt: "How KSL's school and community programs align with Liberia's National Anti-Drugs Action Plan for comprehensive drug demand reduction.",
+      excerpt: "Educating Students on the dangers of drug abuse through school and community programs aligned with Liberia's National Anti-Drugs Action Plan.",
       category: "Drug Prevention",
       date: "Jan 15, 2024",
       author: "KSL Team",
@@ -171,18 +174,18 @@ const Home = () => {
       date: "Jan 10, 2024",
       author: "KSL Team",
       readTime: "4 min read",
-      image: BlogImage2,
+      image: BlogImage3,
       link: "/blog/ytei-youth-leadership"
     },
     {
       id: 3,
-      title: "Gender-Inclusive Protection Systems for Vulnerable Populations",
-      excerpt: "Implementing targeted empowerment programs for adolescent girls, widows, and elderly men through social inclusion initiatives.",
-      category: "Protection",
+      title: "Community Engagement for Gender Protection & Social Inclusion",
+      excerpt: "Feeding children and supporting vulnerable groups through targeted interventions that promote social reintegration and community resilience.",
+      category: "Community Engagement",
       date: "Jan 5, 2024",
       author: "KSL Team",
       readTime: "6 min read",
-      image: BlogImage3,
+      image: BlogImage2,
       link: "/blog/gender-protection"
     }
   ];

@@ -3,428 +3,450 @@ import { motion } from 'framer-motion';
 import { 
   FiShield,
   FiHeart,
-  FiBriefcase,
-  FiTarget,
-  FiCheckCircle,
   FiUsers,
+  FiBook,
+  FiHome,
+  FiCheckCircle,
   FiTrendingUp,
-  FiGlobe,
-  FiAward,
-  FiBarChart2
+  FiCrosshair,
+  FiActivity,
+  FiAward
 } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
 import CallToAction from '../components/CallToAction';
 import ScrollToTopButton from '../components/ScrollToTop';
 import HeaderImage from '../assets/Talking to children.jpeg';
+import PreventionImage from '../assets/Say no to drugs.jpeg';
+import RehabImage from '../assets/Children3.jpeg';
+import EducationImage from '../assets/Children on the assembly.jpeg';
+import GenderImage from '../assets/Children4.jpeg';
+import CommunityImage from '../assets/Community.jpeg';
 
 const Programs = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Program Boxes Data
-  const programBoxes = [
+  const programPillars = [
     {
       id: 1,
-      title: 'Prevention, Education & Early Intervention',
-      icon: <FiShield className="w-8 h-8" />,
-      color: 'green',
-      subMenus: [
-        'School-Based Drug Prevention',
-        'Community Awareness & Outreach',
-        'Life Skills & Resilience Education',
-        'Youth Peer Education & Leadership',
-        'Media, Advocacy & Behavior Change'
+      title: 'Drug Abuse Prevention & Public Awareness',
+      icon: <FiShield className="w-6 h-6" />,
+      color: 'blue',
+      image: PreventionImage,
+      description: 'Community and school-based prevention campaigns aligned with NADAP 2025-2030.',
+      components: [
+        'School-Based Prevention Programs',
+        'Youth-Led Advocacy Campaigns',
+        'Peer Education Networks',
+        'Community Awareness Sessions'
       ],
-      indicators: [
-        'Number of schools implementing prevention programs',
-        'Number of children and adolescents reached with prevention education (disaggregated by age and sex)',
-        '% increase in knowledge of drug risks among participating youth',
-        'Number of community awareness sessions conducted',
-        'Number of trained youth peer educators'
-      ],
-      yteiAlignment: [
-        'Youth empowerment',
-        'Life skills development',
-        'Leadership and civic engagement'
-      ],
-      unicefAlignment: [
-        'Adolescent development and participation',
-        'Prevention-focused, rights-based programming',
-        'Behavior change communication (BCC)'
-      ]
+      alignment: 'NADAP Pillar 1: Prevention'
     },
     {
       id: 2,
-      title: 'Treatment Referral, Psychosocial Support & Child Protection',
-      icon: <FiHeart className="w-8 h-8" />,
+      title: 'Rehabilitation & Social Reintegration',
+      icon: <FiHeart className="w-6 h-6" />,
       color: 'blue',
-      subMenus: [
-        'Screening & Early Identification',
-        'Referral Pathways & Case Management',
-        'Psychosocial Support & Counseling',
-        'Child Protection & Safeguarding',
-        'Family & Caregiver Support'
+      image: RehabImage,
+      description: 'Comprehensive psychosocial support and reintegration pathways.',
+      components: [
+        'Psychosocial Support Services',
+        'Skills Development Training',
+        'Family Reintegration Support',
+        'Stigma Reduction Programs'
       ],
-      indicators: [
-        'Number of at-risk children and youth screened',
-        'Number of referrals successfully linked to services',
-        'Number of children receiving psychosocial support',
-        '% of cases managed using child safeguarding protocols',
-        'Number of families receiving caregiver support services'
-      ],
-      yteiAlignment: [
-        'Youth protection and well-being',
-        'Social support systems',
-        'Trauma-informed interventions'
-      ],
-      unicefAlignment: [
-        'Child protection systems strengthening',
-        'Case management standards',
-        'Do No Harm and safeguarding principles'
-      ]
+      alignment: 'NADAP Pillar 2: Treatment'
     },
     {
       id: 3,
-      title: 'Reintegration, Skills Development & Economic Empowerment',
-      icon: <FiBriefcase className="w-8 h-8" />,
-      color: 'purple',
-      subMenus: [
-        'Vocational & Life Skills Training',
-        'Youth Employment & Entrepreneurship',
-        'Community Reintegration Programs',
-        'Economic Empowerment for Vulnerable Youth',
-        'Private Sector & Cooperative Partnerships'
+      title: 'Education & Skills Development',
+      icon: <FiBook className="w-6 h-6" />,
+      color: 'blue',
+      image: EducationImage,
+      description: 'Education support and vocational training for vulnerable populations.',
+      components: [
+        'Scholarship Programs',
+        'Vocational Skills Training',
+        'Digital Literacy Programs',
+        'Entrepreneurship Training'
       ],
-      indicators: [
-        'Number of youth enrolled in vocational or skills training',
-        '% of trained youth engaged in employment or self-employment',
-        'Number of reintegrated youth completing recovery support plans',
-        'Number of partnerships with private sector/cooperatives',
-        '% reduction in relapse risk among supported beneficiaries'
+      alignment: 'YTEI Priority'
+    },
+    {
+      id: 4,
+      title: 'Gender & Social Inclusion',
+      icon: <FiUsers className="w-6 h-6" />,
+      color: 'blue',
+      image: GenderImage,
+      description: 'Targeted empowerment for adolescent girls, widows, and elderly.',
+      components: [
+        'Adolescent Girls Empowerment',
+        'Widows Economic Inclusion',
+        'Elderly Support Programs',
+        'Social Protection Systems'
       ],
-      yteiAlignment: [
-        'Economic empowerment',
-        'Sustainable livelihoods',
-        'Youth-led entrepreneurship'
+      alignment: 'GESI Integration'
+    },
+    {
+      id: 5,
+      title: 'Community Engagement & Peacebuilding',
+      icon: <FiHome className="w-6 h-6" />,
+      color: 'blue',
+      image: CommunityImage,
+      description: 'Collaborative approaches with community leaders and partners.',
+      components: [
+        'Community Leadership Training',
+        'Peacebuilding Initiatives',
+        'Multi-Stakeholder Partnerships',
+        'Crime Prevention Programs'
       ],
-      unicefAlignment: [
-        'Youth economic participation',
-        'Transition from protection to self-reliance',
-        'Resilience and recovery programming'
+      alignment: 'Community-Driven'
+    }
+  ];
+
+  const policyAlignment = [
+    {
+      title: 'National Anti-Drugs Action Plan (NADAP) 2025-2030',
+      description: 'KSL contributes to NADAP implementation through comprehensive drug demand reduction strategies',
+      icon: <FiCrosshair className="w-5 h-5" />,
+      color: 'blue',
+      details: [
+        'Drug use prevention and awareness at community and school levels',
+        'Early intervention, rehabilitation, and reintegration for drug-affected individuals',
+        'Community-based approaches to drug demand reduction and relapse prevention',
+        'Advocacy that promotes public health, dignity, and social reintegration'
+      ],
+      keyFocus: [
+        'Prevention Education',
+        'Treatment Services',
+        'Reintegration Support',
+        'Policy Advocacy'
+      ]
+    },
+    {
+      title: 'Youth Transformation & Empowerment Initiative (YTEI)',
+      description: 'KSL advances YTEI priorities through youth-centered development programs',
+      icon: <FiTrendingUp className="w-5 h-5" />,
+      color: 'yellow',
+      details: [
+        'Strengthening youth leadership, civic engagement, and life skills',
+        'Expanding education access, vocational training, and entrepreneurship pathways',
+        'Supporting psychosocial well-being and positive youth development',
+        'Positioning young people as agents of change and community role models'
+      ],
+      keyFocus: [
+        'Leadership Development',
+        'Skills Training',
+        'Youth Advocacy',
+        'Community Engagement'
       ]
     }
   ];
 
-  // Cross-Cutting Standards
-  const crossCutting = [
-    {
-      title: 'YTEI Core Principles',
-      items: [
-        'Youth-centered and youth-led design',
-        'Skills for employability and resilience',
-        'Inclusion of vulnerable and marginalized youth'
-      ]
-    },
-    {
-      title: 'UNICEF Core Standards',
-      items: [
-        'Child rights-based approach',
-        'Gender-responsive programming',
-        'Safeguarding and accountability',
-        'Evidence-based design and results monitoring'
-      ]
-    },
-    {
-      title: 'Regional & Policy Alignment',
-      items: [
-        'NADAP 2025–2030 (Prevention, Care, Reintegration)',
-        'ECOWAS regional drug and youth frameworks',
-        'AU Agenda 2063 (Aspiration 1 & 6)',
-        'Liberia–Nigeria regional partnership and scale'
-      ]
-    }
+  const crossCuttingThemes = [
+    'Child & Youth Safeguarding',
+    'Gender Equality & Social Inclusion',
+    'Community Ownership & Sustainability',
+    'Accountability & Transparency'
   ];
 
   return (
     <>
       <div className="min-h-screen bg-white">
-        {/* Header Section */}
-        <header className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-800 to-blue-600">
-            <img 
-              src={HeaderImage} 
-              alt="Programs Background" 
-              className="w-full h-full object-cover opacity-10"
-            />
-          </div>
-
-          <div className="relative z-10 py-24 text-center">
-            <div className="container mx-auto px-4">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-              >
-                <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
-                  Our Programs
-                </h1>
-                <p className="text-white/90 text-lg max-w-3xl mx-auto">
-                  Strategically aligned with NADAP 2025–2030, YTEI, and UNICEF frameworks
-                </p>
-              </motion.div>
-            </div>
-          </div>
-        </header>
+        {/* Main Header Section */}
+                <header className="relative">
+                  <div className="absolute inset-0 bg-linear-to-r from-blue-800 to-blue-900/70 z-10">
+                    <img 
+                      src={HeaderImage} 
+                      alt="KSL Background" 
+                      className="w-full h-full object-cover opacity-20"
+                    />
+                  </div>
+        
+                  <div className="relative z-10 py-30 text-center">
+                    <div className="container mx-auto px-4">
+                      <motion.h1 
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="text-5xl md:text-6xl font-bold text-white"
+                      >
+                        Our Strategic Programs & National Alignment
+                      </motion.h1>
+                      <p className="text-white/80 text-lg mt-4 max-w-3xl mx-auto">
+                        Implementing NADAP 2025-2030 & YTEI-Aligned Interventions for Sustainable Impact
+                      </p>
+                    </div>
+                  </div>
+                </header>
 
         {/* Main Content */}
-        <main className="py-16">
+        <main className="py-16 md:py-24">
           <div className="container mx-auto px-4 max-w-6xl">
-            {/* Introduction */}
+            {/* Policy Alignment Section - EXPANDED */}
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <div className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium mb-6">
-                <FiTarget className="mr-2" />
-                NADAP-ALIGNED STRATEGIC PROGRAMS
-              </div>
-              <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-                Our comprehensive program portfolio addresses prevention, treatment, and reintegration through 
-                evidence-based interventions aligned with national and international standards.
-              </p>
-            </motion.div>
-
-            {/* Program Boxes */}
-            <div className="space-y-16 mb-20">
-              {programBoxes.map((program, index) => (
-                <motion.div
-                  key={program.id}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  {/* Program Header */}
-                  <div className={`flex items-start mb-8 p-6 rounded-xl ${
-                    program.color === 'green' ? 'bg-green-50 border-l-4 border-green-500' :
-                    program.color === 'blue' ? 'bg-blue-50 border-l-4 border-blue-500' :
-                    'bg-purple-50 border-l-4 border-purple-500'
-                  }`}>
-                    <div className={`p-3 rounded-lg ${
-                      program.color === 'green' ? 'bg-green-100 text-green-600' :
-                      program.color === 'blue' ? 'bg-blue-100 text-blue-600' :
-                      'bg-purple-100 text-purple-600'
-                    } mr-4`}>
-                      {program.icon}
-                    </div>
-                    <div>
-                      <div className="flex items-center mb-2">
-                        <span className={`text-sm font-semibold ${
-                          program.color === 'green' ? 'text-green-700' :
-                          program.color === 'blue' ? 'text-blue-700' :
-                          'text-purple-700'
-                        }`}>
-                          BOX {program.id}
-                        </span>
-                      </div>
-                      <h2 className="text-2xl font-bold text-gray-800">{program.title}</h2>
-                    </div>
-                  </div>
-
-                  {/* Sub-Menu Items */}
-                  <div className="mb-10">
-                    <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
-                      <FiCheckCircle className="mr-2 text-gray-400" />
-                      Program Components
-                    </h3>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                      {program.subMenus.map((item, idx) => (
-                        <div key={idx} className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
-                          <div className="text-gray-800 font-medium">{item}</div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Monitoring & Evaluation Indicators */}
-                  <div className="grid md:grid-cols-3 gap-8 mb-10">
-                    {/* Key Indicators */}
-                    <div className="bg-white rounded-lg border border-gray-200 p-6">
-                      <div className="flex items-center mb-4">
-                        <FiBarChart2 className={`w-5 h-5 ${
-                          program.color === 'green' ? 'text-green-600' :
-                          program.color === 'blue' ? 'text-blue-600' :
-                          'text-purple-600'
-                        } mr-2`} />
-                        <h3 className="font-semibold text-gray-800">Key Indicators</h3>
-                      </div>
-                      <ul className="space-y-3">
-                        {program.indicators.map((indicator, idx) => (
-                          <li key={idx} className="flex items-start text-sm text-gray-600">
-                            <div className={`w-1.5 h-1.5 rounded-full mt-1.5 mr-3 ${
-                              program.color === 'green' ? 'bg-green-500' :
-                              program.color === 'blue' ? 'bg-blue-500' :
-                              'bg-purple-500'
-                            }`}></div>
-                            <span>{indicator}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* YTEI Alignment */}
-                    <div className="bg-white rounded-lg border border-gray-200 p-6">
-                      <div className="flex items-center mb-4">
-                        <FiUsers className="w-5 h-5 text-green-600 mr-2" />
-                        <h3 className="font-semibold text-gray-800">YTEI Alignment</h3>
-                      </div>
-                      <ul className="space-y-3">
-                        {program.yteiAlignment.map((item, idx) => (
-                          <li key={idx} className="flex items-start text-sm text-gray-600">
-                            <div className="w-1.5 h-1.5 rounded-full mt-1.5 mr-3 bg-green-500"></div>
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* UNICEF Alignment */}
-                    <div className="bg-white rounded-lg border border-gray-200 p-6">
-                      <div className="flex items-center mb-4">
-                        <FiAward className="w-5 h-5 text-blue-600 mr-2" />
-                        <h3 className="font-semibold text-gray-800">UNICEF Alignment</h3>
-                      </div>
-                      <ul className="space-y-3">
-                        {program.unicefAlignment.map((item, idx) => (
-                          <li key={idx} className="flex items-start text-sm text-gray-600">
-                            <div className="w-1.5 h-1.5 rounded-full mt-1.5 mr-3 bg-blue-500"></div>
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Cross-Cutting Standards */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
               className="mb-20"
             >
               <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-gray-800 mb-4">Cross-Cutting Standards</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                  National Policy Alignment
+                </h2>
                 <p className="text-gray-600 max-w-2xl mx-auto">
-                  Applied consistently across all program boxes for comprehensive impact
+                  Our programs are strategically designed to contribute to Liberia's national development frameworks
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-8">
-                {crossCutting.map((section, index) => (
-                  <div key={index} className="bg-white rounded-xl shadow-lg p-8 border border-gray-100">
-                    <div className="flex items-center mb-6">
-                      <div className="p-2 bg-blue-100 text-blue-600 rounded-lg mr-3">
-                        {section.title.includes('YTEI') ? <FiUsers className="w-5 h-5" /> :
-                         section.title.includes('UNICEF') ? <FiAward className="w-5 h-5" /> :
-                         <FiGlobe className="w-5 h-5" />}
+              <div className="space-y-8">
+                {policyAlignment.map((policy, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className={`rounded-xl shadow-lg border-l-4 ${
+                      policy.color === 'blue' 
+                        ? 'border-blue-500 bg-linear-to-r from-blue-50 to-white' 
+                        : 'border-yellow-500 bg-linear-to-r from-green-50 to-white'
+                    } overflow-hidden`}
+                  >
+                    <div className="p-8">
+                      <div className="flex flex-col md:flex-row md:items-start gap-6">
+                        {/* Policy Header */}
+                        <div className="md:w-1/3">
+                          <div className="flex items-center mb-4">
+                            <div className={`p-3 rounded-lg ${
+                              policy.color === 'blue' ? 'bg-blue-100' : 'bg-yellow-100'
+                            } mr-4`}>
+                              <div className={policy.color === 'blue' ? 'text-blue-600' : 'text-yellow-500'}>
+                                {policy.icon}
+                              </div>
+                            </div>
+                            <div>
+                              <h3 className="text-xl font-bold text-gray-800">{policy.title}</h3>
+                              <div className={`text-sm font-semibold ${
+                                policy.color === 'blue' ? 'text-blue-700' : 'text-yellow-500'
+                              } mt-1`}>
+                                National Framework
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <p className="text-gray-600 mb-6">
+                            {policy.description}
+                          </p>
+
+                          {/* Key Focus Areas */}
+                          <div className="mb-6">
+                            <h4 className="font-semibold text-gray-800 mb-3 flex items-center">
+                              <FiAward className={`mr-2 ${
+                                policy.color === 'blue' ? 'text-blue-500' : 'text-yellow-500'
+                              }`} />
+                              Key Focus Areas
+                            </h4>
+                            <div className="flex flex-wrap gap-2">
+                              {policy.keyFocus.map((focus, idx) => (
+                                <span 
+                                  key={idx}
+                                  className={`px-3 py-1 rounded-full text-sm font-medium ${
+                                    policy.color === 'blue'
+                                      ? 'bg-blue-100 text-blue-700'
+                                      : 'bg-yellow-100 text-yellow-700'
+                                  }`}
+                                >
+                                  {focus}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Policy Details */}
+                        <div className="md:w-2/3">
+                          <h4 className="font-semibold text-gray-800 mb-4 flex items-center">
+                            <FiCheckCircle className="mr-2 text-gray-400" />
+                            KSL Contribution & Implementation
+                          </h4>
+                          
+                          <div className="space-y-4">
+                            {policy.details.map((detail, idx) => (
+                              <div 
+                                key={idx}
+                                className="flex items-start p-4 bg-white rounded-lg border border-gray-100 hover:shadow-sm transition-shadow"
+                              >
+                                <div className={`w-2 h-2 rounded-full mt-2 mr-4 ${
+                                  policy.color === 'blue' ? 'bg-blue-500' : 'bg-yellow-500'
+                                }`}></div>
+                                <p className="text-gray-700">{detail}</p>
+                              </div>
+                            ))}
+                          </div>
+
+                          {/* Additional Info */}
+                          <div className="mt-6 p-4 bg-white/50 rounded-lg border border-gray-100">
+                            <div className="flex items-center text-sm text-gray-600">
+                              <FiActivity className="mr-2" />
+                              <span>
+                                <span className="font-semibold">Implementation Status:</span> Active across all program pillars
+                              </span>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      <h3 className="text-lg font-bold text-gray-800">{section.title}</h3>
                     </div>
-                    <ul className="space-y-3">
-                      {section.items.map((item, idx) => (
-                        <li key={idx} className="flex items-start text-gray-600">
-                          <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-1.5 mr-3"></div>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Alignment Summary */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="mt-12 bg-blue-500 rounded-xl p-8 text-white"
+              >
+                <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                  <div>
+                    <h3 className="text-xl font-bold mb-2">Comprehensive Alignment</h3>
+                    <p className="text-blue-100">
+                      Our programs integrate both NADAP and YTEI frameworks for holistic impact
+                    </p>
                   </div>
+                  <div className="flex items-center gap-4">
+                    <div className="text-center">
+                      <div className="text-2xl font-bold">2</div>
+                      <div className="text-sm text-blue-200">National Frameworks</div>
+                    </div>
+                    <div className="h-12 w-px bg-white/30"></div>
+                    <div className="text-center">
+                      <div className="text-2xl font-bold">5</div>
+                      <div className="text-sm text-blue-200">Program Pillars</div>
+                    </div>
+                    <div className="h-12 w-px bg-white/30"></div>
+                    <div className="text-center">
+                      <div className="text-2xl font-bold">100%</div>
+                      <div className="text-sm text-blue-200">Aligned Programs</div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+
+            {/* Program Pillars Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="mb-20"
+            >
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                  Our Programmatic Pillars
+                </h2>
+                <p className="text-gray-600 max-w-2xl mx-auto">
+                  Five comprehensive pillars implementing NADAP and YTEI-aligned interventions
+                </p>
+              </div>
+
+              <div className="space-y-16">
+                {programPillars.map((pillar, index) => (
+                  <motion.div
+                    key={pillar.id}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 items-center`}
+                  >
+                    {/* Image Section */}
+                    <div className="w-full lg:w-1/2">
+                      <div className="relative rounded-xl overflow-hidden shadow-lg">
+                        <img 
+                          src={pillar.image} 
+                          alt={pillar.title}
+                          className="w-full h-64 md:h-80 object-cover"
+                        />
+                        <div className="absolute top-4 left-4">
+                          <div className={`inline-flex items-center gap-2 px-3 py-2 ${
+                            pillar.color = 'bg-blue-500'
+                          } text-white rounded-lg text-sm font-semibold`}>
+                            {pillar.icon}
+                            <span>Pillar {pillar.id}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Content Section */}
+                    <div className="w-full lg:w-1/2">
+                      <div>
+                        <span className={`text-sm font-semibold ${
+                          pillar.color = 'text-blue-500'
+                        } mb-2 block`}>
+                          {pillar.alignment}
+                        </span>
+                        <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+                          {pillar.title}
+                        </h3>
+                        <p className="text-gray-600 mb-6">
+                          {pillar.description}
+                        </p>
+                      </div>
+
+                      {/* Components */}
+                      <div>
+                        <h4 className="font-semibold text-gray-800 mb-3 flex items-center">
+                          <FiCheckCircle className="mr-2 text-gray-400" />
+                          Key Components
+                        </h4>
+                        <div className="grid grid-cols-2 gap-3">
+                          {pillar.components.map((component, idx) => (
+                            <div 
+                              key={idx}
+                              className="bg-gray-50 rounded-lg p-3 border border-gray-100"
+                            >
+                              <span className="text-sm font-medium text-gray-700">{component}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>
 
-            {/* Implementation Approach */}
+            {/* Cross-Cutting Themes */}
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-r from-blue-50 to-gray-50 rounded-2xl p-8 mb-12"
+              className="mb-20"
             >
-              <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-gray-800 mb-3">Implementation Framework</h3>
+              <div className="text-center mb-12">
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+                  Cross-Cutting Themes
+                </h3>
                 <p className="text-gray-600 max-w-2xl mx-auto">
-                  Our structured approach ensures quality, accountability, and measurable results
+                  Integrated across all program pillars for comprehensive impact
                 </p>
               </div>
-              
-              <div className="grid md:grid-cols-2 gap-8">
-                <div>
-                  <h4 className="font-semibold text-gray-800 mb-4 flex items-center">
-                    <FiTrendingUp className="mr-2 text-green-600" />
-                    Quality Assurance
-                  </h4>
-                  <ul className="space-y-2">
-                    <li className="text-gray-700">• Regular monitoring against M&E indicators</li>
-                    <li className="text-gray-700">• Quarterly program reviews</li>
-                    <li className="text-gray-700">• Annual impact assessments</li>
-                    <li className="text-gray-700">• Independent third-party evaluations</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-800 mb-4 flex items-center">
-                    <FiCheckCircle className="mr-2 text-blue-600" />
-                    Accountability Measures
-                  </h4>
-                  <ul className="space-y-2">
-                    <li className="text-gray-700">• Transparent reporting to stakeholders</li>
-                    <li className="text-gray-700">• Community feedback mechanisms</li>
-                    <li className="text-gray-700">• Child safeguarding protocols</li>
-                    <li className="text-gray-700">• Data protection and privacy compliance</li>
-                  </ul>
-                </div>
-              </div>
-            </motion.div>
 
-            {/* Call to Action */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">Partner With Our Strategic Programs</h3>
-              <p className="text-gray-600 max-w-2xl mx-auto mb-8">
-                Join us in implementing evidence-based interventions that create sustainable impact 
-                across prevention, treatment, and reintegration pathways.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Link 
-                  to="/partnership" 
-                  className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
-                >
-                  Become a Partner
-                </Link>
-                <Link 
-                  to="/contact" 
-                  className="px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg border border-blue-600 hover:bg-blue-50 transition-colors"
-                >
-                  Request Program Details
-                </Link>
-                <Link 
-                  to="/donate" 
-                  className="px-8 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors"
-                >
-                  Support Our Programs
-                </Link>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                {crossCuttingThemes.map((theme, index) => (
+                  <div 
+                    key={index}
+                    className="bg-white border border-gray-200 rounded-lg p-4 text-center hover:border-blue-300 hover:shadow-sm transition-all"
+                  >
+                    <div className="text-sm font-medium text-gray-800">{theme}</div>
+                  </div>
+                ))}
               </div>
             </motion.div>
           </div>

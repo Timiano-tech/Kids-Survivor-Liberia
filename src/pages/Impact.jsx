@@ -1,12 +1,18 @@
-import { useEffect } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { useInView } from 'framer-motion';
 import { 
-  FiBook,
-  FiBriefcase,
+  FiTrendingUp,
+  FiTarget,
+  FiMap,
+  FiBarChart2,
+  FiPlay,
+  FiUsers,
   FiHeart,
-  FiGlobe,
-  FiTrendingUp
+  FiAward,
+  FiCheckCircle
 } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 import CallToAction from '../components/CallToAction';
 import ScrollToTopButton from '../components/ScrollToTop';
 import HeaderImage from '../assets/Talking to children.jpeg';
@@ -14,510 +20,484 @@ import StudentsImpact from '../assets/Students Impacted.jpeg';
 import ChildrenImpact from '../assets/Helping Children.jpeg';
 import ChildrenImpact2 from '../assets/ChildrenImpact.jpeg';
 import Treatment from '../assets/Treatment.jpeg';
-import SayNoToDrugs from '../assets/Say no to drugs.jpeg';
 import Education from '../assets/Education.jpg';
-import Sharing_Food from '../assets/Sharing_Food.jpg'
+import SayNoToDrugs from '../assets/Say no to drugs.jpeg';
+import Sharing_Food from '../assets/Sharing_Food.jpg';
+
+// Animated Counter Component
+const AnimatedCounter = ({ end, duration = 2, prefix = '', suffix = '' }) => {
+  const [count, setCount] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
+
+  useEffect(() => {
+    if (isInView && !hasAnimated) {
+      setHasAnimated(true);
+      
+      let startTime;
+      const animateCount = (timestamp) => {
+        if (!startTime) startTime = timestamp;
+        const progress = timestamp - startTime;
+        const percentage = Math.min(progress / (duration * 1000), 1);
+        
+        // Easing function for smooth animation
+        const easeOutQuad = (t) => t * (2 - t);
+        const currentCount = Math.floor(easeOutQuad(percentage) * end);
+        
+        setCount(currentCount);
+        
+        if (percentage < 1) {
+          requestAnimationFrame(animateCount);
+        } else {
+          setCount(end);
+        }
+      };
+      
+      requestAnimationFrame(animateCount);
+    }
+  }, [isInView, hasAnimated, end, duration]);
+
+  return (
+    <div ref={ref} className="inline-block">
+      {prefix}{count.toLocaleString()}{suffix}
+    </div>
+  );
+};
 
 const Impact = () => {
-   useEffect(() => {
-      window.scrollTo(0, 0);
-    }, []);
-  const stats = [
-    { number: '3,000+', label: 'Children Reached' },
-    { number: '100+', label: 'Communities Served' },
-    { number: '50+', label: 'Schools Supported' },
-    { number: '100+', label: 'Youth Trained' },
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const [activeVideo, setActiveVideo] = useState(0);
+
+  // Impact Statistics - updated to use numbers instead of strings
+  const impactStats = [
+    { 
+      number: 5000, 
+      label: 'Vulnerable Individuals Reached', 
+      icon: <FiUsers className="w-8 h-8" />,
+      description: 'Children, youth, and vulnerable elderly supported',
+      suffix: '+'
+    },
+    { 
+      number: 50, 
+      label: 'Communities Engaged', 
+      icon: <FiMap className="w-8 h-8" />,
+      description: 'Across 7+ counties in Liberia',
+      suffix: '+'
+    },
+    { 
+      number: 1000, 
+      label: 'Youth in Prevention Programs', 
+      icon: <FiTarget className="w-8 h-8" />,
+      description: 'NADAP-aligned drug prevention',
+      suffix: '+'
+    },
+    { 
+      number: 500, 
+      label: 'Individuals in Rehabilitation', 
+      icon: <FiHeart className="w-8 h-8" />,
+      description: 'Comprehensive recovery support',
+      suffix: '+'
+    }
   ];
 
- 
-      const programs = [
-        {
-          title: 'Child Protection',
-          description: 'Comprehensive child safeguarding systems aligned with UNICEF standards and NADAP Pillar 2',
-          icon: <FiHeart className="w-6 h-6" />,
-          nadapPillar: 'NADAP Pillar 2'
-        },
-        {
-          title: 'Education Support',
-          description: 'Access to quality education and life skills development for vulnerable youth',
-          icon: <FiBook className="w-6 h-6" />,
-          nadapPillar: 'NADAP Pillar 1'
-        },
-        {
-          title: 'Youth Empowerment',
-          description: 'Skills training and economic opportunities supporting reintegration and livelihoods',
-          icon: <FiBriefcase className="w-6 h-6" />,
-          nadapPillar: 'NADAP Pillar 3'
-        },
-        {
-          title: 'Health & Nutrition',
-          description: 'Integrated health services supporting recovery and well-being',
-          icon: <FiHeart className="w-6 h-6" />,
-          nadapPillar: 'NADAP Pillar 2'
-        },
-        {
-          title: 'Community Development',
-          description: 'Building resilient communities to prevent drug abuse and support reintegration',
-          icon: <FiGlobe className="w-6 h-6" />,
-          nadapPillar: 'NADAP Pillar 1 & 3'
-        },
-        {
-          title: 'Advocacy',
-          description: 'Policy engagement and rights promotion for systemic change',
-          icon: <FiTrendingUp className="w-6 h-6" />
-        },
-        {
-          title: 'Drug Victims Support',
-          description: 'Comprehensive rehabilitation and reintegration for at-risk youth',
-          icon: <FiTrendingUp className="w-6 h-6" />,
-          nadapPillar: 'NADAP Pillar 2 & 3'
-        },
-        {
-          title: 'Governmental Engagement',
-          description: 'Strategic collaboration with national security and governance institutions',
-          icon: <FiTrendingUp className="w-6 h-6" />
-        },
-        {
-          title: 'Traditional Engagement',
-          description: 'Community leadership engagement for sustainable prevention',
-          icon: <FiTrendingUp className="w-6 h-6" />,
-          nadapPillar: 'NADAP Pillar 1'
-        },
-      ];
-
-      // Helper function to get sub-menus for each program
-      const getSubMenus = (programTitle) => {
-        switch(programTitle) {
-          case 'Child Protection':
-            return [
-              'Child Safeguarding Policy Implementation',
-              'Safe Spaces & Protection Networks',
-              'Psychosocial Support Services',
-              'Case Management Systems'
-            ];
-          case 'Education Support':
-            return [
-              'School-Based Prevention Education',
-              'Scholarships & Educational Materials',
-              'Life Skills Curriculum Development',
-              'Teacher Capacity Building'
-            ];
-          case 'Youth Empowerment':
-            return [
-              'Vocational Skills Training',
-              'Entrepreneurship Development',
-              'Job Placement & Linkages',
-              'Leadership & Civic Education'
-            ];
-          case 'Health & Nutrition':
-            return [
-              'Medical Screening & Treatment',
-              'Nutritional Support Programs',
-              'Mental Health Counseling',
-              'Health Education Campaigns'
-            ];
-          case 'Community Development':
-            return [
-              'Community-Based Prevention',
-              'Social Cohesion Activities',
-              'Economic Resilience Building',
-              'Community Monitoring Systems'
-            ];
-          case 'Advocacy':
-            return [
-              'Policy Dialogue & Reform',
-              'Rights Awareness Campaigns',
-              'Stakeholder Coordination',
-              'Media & Public Education'
-            ];
-          case 'Drug Victims Support':
-            return [
-              'Street Kids Rehabilitation',
-              'Ghetto Youth Reintegration',
-              'Recovery & Aftercare Programs',
-              'Family Reunification Support'
-            ];
-          case 'Governmental Engagement':
-            return [
-              'AFL Collaboration (Armed Forces of Liberia)',
-              'LNP Partnership (Liberia National Police)',
-              'LIS Coordination (Liberia Immigration Services)',
-              'Inter-Agency Task Forces'
-            ];
-          case 'Traditional Engagement':
-            return [
-              'District Leadership Engagement',
-              'Chiefs & Elders Collaboration',
-              'Village-Based Prevention',
-              'Clan Governance Integration'
-            ];
-          default:
-            return [];
-        }
-      };
-
-      // Helper function to get strategic alignment for each program
-      const getStrategicAlignment = (programTitle) => {
-        const baseAlignments = ['NADAP 2025–2030', 'Liberia National Priorities'];
-        
-        switch(programTitle) {
-          case 'Child Protection':
-            return [...baseAlignments, 'UNICEF Standards', 'ECOWAS Child Protection'];
-          case 'Education Support':
-            return [...baseAlignments, 'AU Agenda 2063 (Education)', 'ECOWAS Youth Development'];
-          case 'Youth Empowerment':
-            return [...baseAlignments, 'AU Agenda 2063 (Economy)', 'ECOWAS Skills Development'];
-          case 'Health & Nutrition':
-            return [...baseAlignments, 'WHO Guidelines', 'ECOWAS Health Framework'];
-          case 'Community Development':
-            return [...baseAlignments, 'AU Agenda 2063 (Communities)', 'ECOWAS Social Cohesion'];
-          case 'Advocacy':
-            return [...baseAlignments, 'AU Governance Agenda', 'ECOWAS Policy Harmonization'];
-          case 'Drug Victims Support':
-            return [...baseAlignments, 'UNODC Guidelines', 'ECOWAS Drug Control'];
-          case 'Governmental Engagement':
-            return [...baseAlignments, 'National Security Strategy', 'ECOWAS Governance'];
-          case 'Traditional Engagement':
-            return [...baseAlignments, 'Cultural Preservation', 'Community Resilience'];
-          default:
-            return baseAlignments;
-        }
-      };
-
-  // Lives Impacted Images
+  // Lives Impacted Stories
   const livesImpacted = [
     {
-      name: 'StudentsImpact',
+      name: 'Students Impact',
       image: StudentsImpact,
       story: 'Kids Survivor Liberia engaging students through structured awareness sessions, educating them on the dangers of drug abuse and encouraging responsible decision-making. The interaction empowers students with knowledge, confidence, and a clear vision for a positive future.',
+      category: 'Education & Prevention',
+      location: 'School Programs'
     },
     {
-      name: 'ChildImpact',
+      name: 'Community Outreach',
       image: ChildrenImpact,
       story: 'Kids Survivor Liberia conducting community outreach with children, offering education, care, and support in a safe environment. Through direct engagement, the organization promotes healthy living, discipline, and hope for a drug-free and productive life.',
+      category: 'Community Development',
+      location: 'Urban Communities'
     },
     {
-      name: 'ChildImpact',
+      name: 'Child Support',
       image: ChildrenImpact2,
       story: 'Kids Survivor Liberia reaching children through community outreach and care initiatives, helping to meet basic needs while fostering unity and compassion. These efforts create a supportive environment where children feel valued, protected, and empowered to grow.',
+      category: 'Child Protection',
+      location: 'Rural Communities'
     },
     {
-      name: 'Treatment',
+      name: 'Medical Support',
       image: Treatment,
-      story: 'Kids Survivor Liberia has been structured to align its Godly mission with Liberia’s national priority goals, including the Arrest Agenda. The organization also operates a medical team that provides free health services to at-risk youth across the counties, without charging a single penny.',
+      story: 'Kids Survivor Liberia operates a medical team that provides free health services to at-risk youth across multiple counties. These services are offered completely free, supporting the recovery and well-being of vulnerable individuals in alignment with NADAP objectives.',
+      category: 'Health Services',
+      location: 'Multiple Counties'
     },
-    
+  ];
+
+  // Video Stories
+  const videoStories = [
+    {
+      title: 'Education Sponsorship',
+      description: 'Look at this girl and these kids being sponsored by Kids Survivor Liberia for free education, providing access to learning opportunities.',
+      duration: '0:26',
+      category: 'Education',
+      poster: Education,
+      videoSrc: '/videos/Children_Sponsor..mp4'
+    },
+    {
+      title: 'Drug Prevention Awareness',
+      description: 'Kids Survivor Liberia is enlightening students on the risks of drug abuse and how it can damage their health, future, and dreams.',
+      duration: '0:38',
+      category: 'Prevention',
+      poster: SayNoToDrugs,
+      videoSrc: '/videos/StudentsImpact.mp4'
+    },
+    {
+      title: 'Community Nutrition Support',
+      description: 'Kids Survivor Liberia shares meals with children in the community, providing the nourishment they need to grow, learn, and build a brighter future.',
+      duration: '0:38',
+      category: 'Nutrition',
+      poster: Sharing_Food,
+      videoSrc: '/videos/Sharing_food_To_Children.mp4'
+    }
+  ];
+
+  // Strategic Impact Areas
+  const impactAreas = [
+    {
+      title: 'NADAP 2025-2030 Implementation',
+      description: 'Direct contribution to National Anti-Drugs Action Plan goals through community-based interventions',
+      icon: <FiTarget className="w-6 h-6" />,
+      stats: '3 Pillars Addressed'
+    },
+    {
+      title: 'Multi-County Reach',
+      description: 'Strategic presence across Liberia ensuring comprehensive coverage of vulnerable populations',
+      icon: <FiMap className="w-6 h-6" />,
+      stats: '7+ Counties'
+    },
+    {
+      title: 'Youth Transformation',
+      description: 'Comprehensive programs addressing prevention, rehabilitation, and empowerment',
+      icon: <FiTrendingUp className="w-6 h-6" />,
+      stats: '1,500+ Youth'
+    },
+    {
+      title: 'Community Resilience',
+      description: 'Building sustainable support systems for long-term impact and recovery',
+      icon: <FiUsers className="w-6 h-6" />,
+      stats: '50+ Communities'
+    }
   ];
 
   return (
     <>
-    <div className="min-h-screen bg-white">
-      {/* Main Header Section */}
-      <header className="relative">
-        {/* Background Image  */}
-        <div className="absolute inset-0 bg-linear-to-r from-blue-800 to-yellow-900/70">
-          
-          <img 
-            src={HeaderImage} 
-            alt="Impact Background Image" 
-            className="w-full h-full object-cover opacity-20"
-          />
-        
-        </div>
-
-          {/* Page Header with Breadcrumb */}
-        <div className="relative z-10 py-30 text-center">
-          <div className="container mx-auto px-4">
-            
-            {/* Main Title */}
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-5xl md:text-6xl font-bold text-white"
-            >
-              Our Impact
-            </motion.h1>
-            
-            {/* Breadcrumb Text */}
-            <p className="text-white/80 text-lg">
-              Creating Measurable Change. Transforming Lives.
-            </p>
-          </div>
-        </div>
-      </header>
-
-      {/* Main Content */}
-      <main className="py-16">
-        <div className="container mx-auto px-4">
-          {/* Statistics Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="mb-20"
-          >
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">By The Numbers</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Measuring our progress and reach across Liberia
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow"
-                >
-                  <div className="text-4xl font-bold text-blue-600 mb-3">{stat.number}</div>
-                  <div className="text-gray-700 font-medium">{stat.label}</div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          
-          {/* Programs Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="mb-20"
-          >
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium mb-4">
-                Aligned with NADAP 2025–2030, ECOWAS, & AU Agenda 2063
-              </div>
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Strategic Programs</h2>
-              <p className="text-gray-600 max-w-3xl mx-auto">
-                Comprehensive initiatives aligned with national and regional frameworks for youth development and drug prevention
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {programs.map((program, index) => (
-                <motion.div
-                  key={program.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -5 }}
-                  className="bg-white rounded-xl shadow-lg p-8 border-l-4 border-blue-600 hover:shadow-xl transition-all"
-                >
-                  <div className="flex items-center mb-4">
-                    <div className="bg-blue-100 text-blue-600 p-3 rounded-lg mr-4">
-                      {program.icon}
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-gray-800">{program.title}</h3>
-                      {program.nadapPillar && (
-                        <span className="text-xs font-semibold text-blue-700 bg-blue-50 px-2 py-1 rounded-full mt-1 inline-block">
-                          {program.nadapPillar}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                  <p className="text-gray-600 mb-6">{program.description}</p>
-                  
-                  {/* Sub-menus */}
-                  <div className="mt-6 pt-6 border-t border-gray-100">
-                    <h4 className="font-semibold text-gray-700 mb-3 text-sm uppercase tracking-wide">Key Focus Areas:</h4>
-                    <ul className="space-y-3 mb-6">
-                      {getSubMenus(program.title).map((subMenu, idx) => (
-                        <li key={idx} className="flex items-start text-gray-600 text-sm">
-                          <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-3 mt-1.5"></div>
-                          <span>{subMenu}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    {/* Strategic Alignment */}
-                    <div className="bg-blue-50 rounded-lg p-4">
-                      <h4 className="font-semibold text-blue-800 mb-2 text-sm">Strategic Alignment:</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {getStrategicAlignment(program.title).map((alignment, idx) => (
-                          <span key={idx} className="px-2 py-1 bg-white text-blue-700 rounded-full text-xs font-medium border border-blue-200">
-                            {alignment}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-              {/* Lives Impacted Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ once: true }}
-            className="mb-20"
-          >
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">Lives We've Impacted</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Real stories of transformation and hope
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-              {livesImpacted.map((person, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-                >
-                  {/* Image*/}
-                  <div className="h-auto bg-gray-100 flex items-center justify-center">
-                  
-                   
+      <div className="min-h-screen bg-white">
+        {/* Main Header Section */}
+                <header className="relative">
+                  <div className="absolute inset-0 bg-linear-to-r from-blue-800 to-blue-900/70 z-10">
                     <img 
-                      src={person.image} 
-                      alt={person.name}
-                      className="w-full h-full object-cover"
-                      loading='lazy'
+                      src={HeaderImage} 
+                      alt="Header_Image" 
+                      className="w-full h-full object-cover opacity-20"
                     />
                   </div>
-                  
-                  <div className="p-6">
-                    
-                    <p className="text-gray-700 mb-4">{person.story}</p>
-                    
-                    <div className="pt-4 border-t border-gray-100">
-                      <div className="flex items-center text-gray-500 text-sm">
-                        <div className="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
-                        <span>Success Story</span>
-                      </div>
+        
+                  <div className="relative z-10 py-30 text-center">
+                    <div className="container mx-auto px-4">
+                      <motion.h1 
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="text-5xl md:text-6xl font-bold text-white"
+                      >
+                        Our Impact & Results
+                      </motion.h1>
+                      <p className="text-white/80 text-lg mt-4 max-w-3xl mx-auto">
+                        Transforming lives and communities through NADAP and YTEI-aligned interventions
+                      </p>
                     </div>
                   </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+                </header>
 
-          {/* Video Stories Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            viewport={{ once: true }}
-            className="mb-20"
-          >
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">Watch Our Impacts</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Experience the impact we've made, through our video
-              </p>
-            </div>
+        {/* Main Content */}
+        <main className="py-16 md:py-24">
+          <div className="container mx-auto px-4">
+            {/* Impact Statistics with Counting Animation */}
+            <section className="mb-20">
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="text-center mb-12"
+              >
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                  Impact by Numbers
+                </h2>
+                <p className="text-gray-600 max-w-2xl mx-auto">
+                  Tracking progress and measuring success across our strategic interventions
+                </p>
+              </motion.div>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              {/* Video 1 */}
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-                <div className="relative h-64 bg-gray-900">
-                
-                  
-                
-                  <video 
-                    controls 
-                    className="w-full h-full object-cover"
-                    poster={Education} 
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {impactStats.map((stat, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-all duration-300 group"
                   >
-                    <source src="/videos/Children_Sponsor..mp4" type="video/mp4" />
+                    <div className="flex justify-center mb-4">
+                      <div className="p-3 bg-blue-100 text-blue-600 rounded-xl group-hover:scale-110 transition-transform duration-300">
+                        {stat.icon}
+                      </div>
+                    </div>
                     
-                  </video>
-                  
-                 
-                 
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">Children In the Community</h3>
-                  <p className="text-gray-600 mb-4">
-                    Look at this girl and these kids being sponsored by kids survivor Liberia for a free education.
-                  </p>
-                  <div className="flex items-center text-gray-500 text-sm">
-                    <span className="mr-4">Education Sponsorship</span>
-                    <span>0:26</span>
-                  </div>
-                </div>
+                    <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2 min-h-[3.5rem] flex items-center justify-center">
+                      <AnimatedCounter 
+                        end={stat.number} 
+                        duration={2 + (index * 0.3)}
+                        suffix={stat.suffix}
+                      />
+                    </div>
+                    
+                    <div className="text-gray-800 font-semibold mb-2">
+                      {stat.label}
+                    </div>
+                    
+                    <div className="text-gray-500 text-sm">
+                      {stat.description}
+                    </div>
+                    
+                    {/* Animated progress indicator */}
+                    <motion.div 
+                      initial={{ width: 0 }}
+                      whileInView={{ width: "80%" }}
+                      transition={{ delay: 2 + (index * 0.3), duration: 1 }}
+                      viewport={{ once: true }}
+                      className="h-1 bg-gradient-to-r from-blue-500 to-blue-300 rounded-full mx-auto mt-4"
+                    />
+                  </motion.div>
+                ))}
               </div>
 
-              {/* Video 2 */}
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-                <div className="relative h-65 bg-gray-900">
-                
-                  
-                
-                  <video 
-                    controls 
-                    className="w-full h-full object-cover"
-                    poster={SayNoToDrugs}
+              {/* Additional Impact Metrics */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+                viewport={{ once: true }}
+                className="mt-12 text-center"
+              >
+                <div className="inline-flex items-center px-6 py-3 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">
+                  <FiCheckCircle className="mr-2" />
+                  <span>
+                    Growing impact across <span className="font-bold">7+ counties</span> in Liberia
+                  </span>
+                </div>
+              </motion.div>
+            </section>
+
+            {/* Strategic Impact Areas */}
+            <section className="mb-20">
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="text-center mb-12"
+              >
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                  Strategic Impact Areas
+                </h2>
+                <p className="text-gray-600 max-w-2xl mx-auto">
+                  Focused interventions creating sustainable change across Liberia
+                </p>
+              </motion.div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {impactAreas.map((area, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="bg-white rounded-xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all duration-300"
                   >
-                    <source src="/videos/StudentsImpact.mp4" type="video/mp4" />
-                  </video>
-                  
-                 
-                 
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">School Students</h3>
-                  <p className="text-gray-600 mb-4">
-                   Kids Survivor Liberia is enlightening students on the risks of drug abuse and how it can damage their health, future, and dreams. Staying drug-free empowers young people to make safe choices and build a brighter tomorrow.
-
-                  </p>
-                  <div className="flex items-center text-gray-500 text-sm">
-                    <span className="mr-4">Impacting Students</span>
-                    <span> 0:38</span>
-                  </div>
-                </div>
+                    <div className="flex items-center mb-4">
+                      <div className="p-2 bg-blue-100 text-blue-600 rounded-lg mr-3">
+                        {area.icon}
+                      </div>
+                      <h3 className="text-lg font-bold text-gray-800">{area.title}</h3>
+                    </div>
+                    <p className="text-gray-600 text-sm mb-4">
+                      {area.description}
+                    </p>
+                    <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-100">
+                      <span className="text-blue-600 font-semibold">{area.stats}</span>
+                      <Link to="/programs" className="text-blue-500 hover:text-blue-600 text-sm font-medium">
+                        Learn more →
+                      </Link>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
-              {/* Video 3 */}
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-                <div className="relative h-65 bg-gray-900">
-                
-                  
-                
-                  <video 
-                    controls 
-                    className="w-full h-full object-cover"
-                    poster={Sharing_Food}
+            </section>
+
+            {/* Lives Impacted Stories */}
+            <section className="mb-20">
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="text-center mb-12"
+              >
+                <div className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium mb-4">
+                  <FiHeart className="mr-2" />
+                  SUCCESS STORIES
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                  Lives We've Transformed
+                </h2>
+                <p className="text-gray-600 max-w-2xl mx-auto">
+                  Real stories of hope, recovery, and empowerment from communities across Liberia
+                </p>
+              </motion.div>
+
+              <div className="grid md:grid-cols-2 gap-8">
+                {livesImpacted.map((story, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
                   >
-                    <source src="/videos/Sharing_food_To_Children.mp4" type="video/mp4" />
-                  </video>
-                  
-                 
-                 
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">Sharing Food to Children in the Community</h3>
-                  <p className="text-gray-600 mb-4">
-                  Kids Survivor Liberia shares meals with children in the community, providing the nourishment they need to grow, learn, and build a brighter future.
-
-                  </p>
-                  <div className="flex items-center text-gray-500 text-sm">
-                    <span className="mr-4">Sharing Food</span>
-                    <span> 0:38</span>
-                  </div>
-                </div>
+                    <div className="relative h-64">
+                      <img 
+                        src={story.image} 
+                        alt={story.name}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute bottom-4 left-4">
+                        <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                          {story.category}
+                        </span>
+                      </div>
+                    </div>
+                    
+                    <div className="p-6">
+                      <div className="flex items-center text-sm text-gray-500 mb-3">
+                        <FiMap className="mr-2" />
+                        {story.location}
+                      </div>
+                      
+                      <h3 className="text-xl font-bold text-gray-800 mb-4">
+                        {story.name}
+                      </h3>
+                      
+                      <p className="text-gray-600 mb-6">
+                        {story.story}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
-            </div>
-          </motion.div> 
-        </div>
-      </main>
-    </div>
-    <ScrollToTopButton/>
-    <CallToAction/>
+
+            
+            </section>
+
+            {/* Video Impact Stories */}
+            <section className="mb-20">
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="text-center mb-12"
+              >
+                <div className="inline-flex items-center px-4 py-2 bg-red-50 text-red-700 rounded-full text-sm font-medium mb-4">
+                  <FiPlay className="mr-2" />
+                  VIDEO IMPACT STORIES
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                  Impact in Action
+                </h2>
+                <p className="text-gray-600 max-w-2xl mx-auto">
+                  Watch our programs transforming lives and communities across Liberia
+                </p>
+              </motion.div>
+
+              <div className="grid md:grid-cols-3 gap-8">
+                {videoStories.map((video, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
+                  >
+                    <div className="relative h-48 bg-gray-900">
+                      <video 
+                        controls 
+                        className="w-full h-full object-cover"
+                        poster={video.poster}
+                      >
+                        <source src={video.videoSrc} type="video/mp4" />
+                      </video>
+                      <div className="absolute top-4 right-4">
+                        <span className="bg-black/50 text-white px-2 py-1 rounded text-xs">
+                          {video.duration}
+                        </span>
+                      </div>
+                    </div>
+                    
+                    <div className="p-6">
+                      <div className="flex items-center text-sm text-gray-500 mb-3">
+                        <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs font-medium">
+                          {video.category}
+                        </span>
+                      </div>
+                      
+                      <h3 className="text-lg font-bold text-gray-800 mb-3">
+                        {video.title}
+                      </h3>
+                      
+                      <p className="text-gray-600 text-sm mb-4">
+                        {video.description}
+                      </p>
+                      
+                      <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                        <button 
+                          onClick={() => setActiveVideo(index)}
+                          className="text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center"
+                        >
+                          <FiPlay className="mr-1" />
+                          Play Video
+                        </button>
+                        <span className="text-gray-500 text-xs">
+                          {video.duration}
+                        </span>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+      
+      <ScrollToTopButton />
+      <CallToAction />
     </>
   );
 };

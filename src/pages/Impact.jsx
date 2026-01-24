@@ -75,7 +75,7 @@ const Impact = () => {
   // Impact Statistics - updated to use numbers instead of strings
   const impactStats = [
     { 
-      number: 5000, 
+      number: 3000, 
       label: 'Vulnerable Individuals Reached', 
       icon: <FiUsers className="w-8 h-8" />,
       description: 'Children, youth, and vulnerable elderly supported',
@@ -96,7 +96,7 @@ const Impact = () => {
       suffix: '+'
     },
     { 
-      number: 500, 
+      number: 200, 
       label: 'Individuals in Rehabilitation', 
       icon: <FiHeart className="w-8 h-8" />,
       description: 'Comprehensive recovery support',
@@ -257,7 +257,7 @@ const Impact = () => {
                       </div>
                     </div>
                     
-                    <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2 min-h-[3.5rem] flex items-center justify-center">
+                    <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2 min-h-14 flex items-center justify-center">
                       <AnimatedCounter 
                         end={stat.number} 
                         duration={2 + (index * 0.3)}
@@ -279,7 +279,7 @@ const Impact = () => {
                       whileInView={{ width: "80%" }}
                       transition={{ delay: 2 + (index * 0.3), duration: 1 }}
                       viewport={{ once: true }}
-                      className="h-1 bg-gradient-to-r from-blue-500 to-blue-300 rounded-full mx-auto mt-4"
+                      className="h-1 bg-blue-500 rounded-full mx-auto mt-4"
                     />
                   </motion.div>
                 ))}
@@ -476,13 +476,6 @@ const Impact = () => {
                       </p>
                       
                       <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                        <button 
-                          onClick={() => setActiveVideo(index)}
-                          className="text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center"
-                        >
-                          <FiPlay className="mr-1" />
-                          Play Video
-                        </button>
                         <span className="text-gray-500 text-xs">
                           {video.duration}
                         </span>

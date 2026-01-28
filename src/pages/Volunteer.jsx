@@ -310,7 +310,7 @@ const Volunteer = () => {
                 </Link>
                 
                 <a 
-                  href="mailto:volunteer@ksliberia.org"
+                  href="mailto:support@ksliberia.org"
                   className="inline-block bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold py-4 px-10 rounded-lg transition-colors"
                 >
                   Email: support@ksliberia.org

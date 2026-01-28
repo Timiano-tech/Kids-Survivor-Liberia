@@ -15,6 +15,8 @@ import BlogImage1 from '../assets/Students Impacted.jpeg';
 import BlogImage2 from '../assets/Youth_Community_Outreach.jpeg';
 import BlogImage3 from '../assets/Helping Children.jpeg';
 import BlogImage4 from '../assets/Students_Latest.jpeg';
+import Thumbnail from '../assets/Campaign_Thumbnail.png';
+import THumbnail2 from '../assets/Thumbnail2.png';
 
 const Blog = () => {
   const [playingVideoId, setPlayingVideoId] = useState(null);
@@ -80,6 +82,24 @@ const Blog = () => {
       duration: '2:27',
       thumbnail: BlogImage2,
       videoSrc: '/videos/Succes_story.mp4',
+    },
+    {
+      id: 'video3',
+      title: 'Say No to Drugs Campaign Highlights',
+      description: 'Kids Survivor Liberia leads a powerful "Say No to Drugs" campaign in schools and communities.',
+      date: 'Jan 19, 2026',
+      duration: '0:51',
+      thumbnail: Thumbnail,
+      videoSrc: '/videos/Blog_Video_4.mp4',
+    },
+    {
+      id: 'video4',
+      title: 'Kids Survivor Liberia Sensitization Drive 2026',
+      description: 'Highlights from our 2026 sensitization drive educating people of liberia on drug abuse prevention and healthy living.',
+      date: 'Jan 19, 2026',
+      duration: '2:27',
+      thumbnail: THumbnail2,
+      videoSrc: '/videos/Blog_Video_5.mp4',
     }
   ];
 

@@ -136,7 +136,7 @@ const Home = () => {
     {
       name: "Mr. Steve Darwin",
       teamImage: Mr_Steve,
-      position: "Director of Country Operations",
+      position: "Director of Countries Operations",
       bio: "Oversees implementation of community-based drug demand reduction and rehabilitation programs aligned with national frameworks."
     },
     {
@@ -157,7 +157,7 @@ const Home = () => {
   const latestNews = [
     {
       id: 1,
-      title: "NADAP 2025-2030: Community-Based Drug Prevention Initiatives",
+      title: "NADAP 2025-2030: national-based Drug Prevention Initiatives",
       excerpt: "Educating Students on the dangers of drug abuse through school and community programs aligned with Liberia's National Anti-Drugs Action Plan.",
       category: "Drug Prevention",
       date: "Jan 19, 2026",
@@ -180,7 +180,7 @@ const Home = () => {
       title: "Community Engagement for Gender Protection & Social Inclusion",
       excerpt: "Feeding children and supporting vulnerable groups through targeted interventions that promote social reintegration and community resilience.",
       category: "Community Engagement",
-      date: "Jan 5, 2024",
+      date: "Jan 19, 2026",
       author: "KSL Team",
       image: BlogImage2,
       link: "/blog"
@@ -192,7 +192,7 @@ const Home = () => {
     {
       id: 1,
       question: "How is KSL aligned with Liberia's National Anti-Drugs Action Plan (NADAP)?",
-      answer: "KSL implements NADAP 2025-2030 through community-based drug use prevention, early intervention, rehabilitation, and reintegration programs. Our work focuses on drug demand reduction, stigma reduction, and promoting public health approaches to substance abuse.",
+      answer: "KSL implements NADAP 2025-2030 through national-based drug use prevention, early intervention, rehabilitation, and reintegration programs. Our work focuses on drug demand reduction, stigma reduction, and promoting public health approaches to substance abuse.",
       open: false,
       links: [
         { text: "Learn about our NADAP alignment", path: "/programs" },
@@ -593,7 +593,7 @@ const Home = () => {
               </div>
               <div className="p-8">
                 <p className="text-gray-700 text-lg leading-relaxed">
-                  Kids Survivor Liberia (KSL) is a community-based, non-profit organization dedicated to the prevention of drug abuse and the protection, rehabilitation, and empowerment of vulnerable populations, particularly children, adolescents, youth, adolescent girls, widows, and vulnerable elderly men.
+                  Kids Survivor Liberia (KSL) is a national-based, non-profit organization dedicated to the prevention of drug abuse and the protection, rehabilitation, and empowerment of vulnerable populations, particularly children, adolescents, youth, adolescent girls, widows, and vulnerable elderly men.
                 </p>
                 <div className="mt-8 pt-8 border-t border-gray-100">
                   <h4 className="font-bold text-gray-800 mb-3">Key Interventions:</h4>

@@ -134,7 +134,7 @@ const About = () => {
     {
       name: "Mr. Steve Darwin",
       teamImage: Mr_Steve,
-      position: "Director of Country Operations",
+      position: "Director of Countries Operations",
       bio: "Oversees implementation of community-based drug demand reduction and rehabilitation programs aligned with national frameworks."
     },
     {
@@ -198,7 +198,7 @@ const About = () => {
                 About Kids Survivor Liberia
               </motion.h1>
               <p className="text-white/80 text-lg mt-4 max-w-3xl mx-auto">
-                A community-based organization dedicated to preventing drug abuse and protecting vulnerable populations through YTEI and NADAP-aligned interventions
+                A national-based organization dedicated to preventing drug abuse and protecting vulnerable populations through YTEI and NADAP-aligned interventions
               </p>
             </div>
           </div>
@@ -229,7 +229,7 @@ const About = () => {
                   <h2 className="text-3xl font-bold text-gray-800 mb-6">Kids Survivor Liberia (KSL)</h2>
                   <div className="space-y-4 text-gray-600">
                     <p>
-                      <strong>Kids Survivor Liberia (KSL)</strong> is a community-based, non-profit organization dedicated to the prevention of drug abuse and the protection, rehabilitation, and empowerment of vulnerable populations, particularly children, adolescents, youth, adolescent girls, widows, and vulnerable elderly men.
+                      <strong>Kids Survivor Liberia (KSL)</strong> is a national-based, non-profit organization dedicated to the prevention of drug abuse and the protection, rehabilitation, and empowerment of vulnerable populations, particularly children, adolescents, youth, adolescent girls, widows, and vulnerable elderly men.
                     </p>
                     <p>
                       We implement inclusive, rights-based, and community-driven interventions that promote education, life skills, psychosocial recovery, livelihood development, and social reintegration, while contributing to crime reduction, peacebuilding, and community resilience.
@@ -259,7 +259,7 @@ const About = () => {
                   <h3 className="text-2xl font-bold">Our Mission</h3>
                 </div>
                 <p className="text-lg leading-relaxed">
-                  Kids Survivor Liberia (KSL) is a community-based, non-profit organization dedicated to the prevention of drug abuse and the protection, rehabilitation, and empowerment of vulnerable populations, particularly children, adolescents, youth, adolescent girls, widows, and vulnerable elderly men.
+                  Kids Survivor Liberia (KSL) is a national-based, non-profit organization dedicated to the prevention of drug abuse and the protection, rehabilitation, and empowerment of vulnerable populations, particularly children, adolescents, youth, adolescent girls, widows, and vulnerable elderly men.
                 </p>
                 <div className="mt-6 pt-6 border-t border-white/20">
                   <p className="text-sm text-blue-100">
@@ -530,7 +530,7 @@ const About = () => {
                     <div>
                       <h3 className="text-xl font-bold text-green-600 mb-2">National Anti-Drugs Action Plan (NADAP) 2025–2030</h3>
                       <p className="text-gray-600">
-                        KSL contributes to NADAP implementation through drug use prevention and awareness, early intervention and rehabilitation, community-based approaches to drug demand reduction, and advocacy promoting public health and social reintegration.
+                        KSL contributes to NADAP implementation through drug use prevention and awareness, early intervention and rehabilitation, national-based approaches to drug demand reduction, and advocacy promoting public health and social reintegration.
                       </p>
                     </div>
                   </div>

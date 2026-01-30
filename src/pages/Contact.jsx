@@ -276,14 +276,7 @@ const Contact = () => {
                 <p className="text-gray-600">Visit us at our headquarters in Monrovia</p>
               </div>
               <div className="h-96 bg-gray-100">
-                <iframe 
-                  src="https://maps.google.com/maps?width=100%25&amp;height=500&amp;hl=en&amp;q=City%20of%20Light%20Community,%20Barclay%20Avenue,%2015th%20Street,%20Sinkor,%20Monrovia,%20Liberia+(Kids%20Survivor%20Liberia)&amp;t=&amp;z=9&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-                  className="w-full h-full border-0"
-                  allowFullScreen
-                  loading="lazy"
-                  title="Kids Survivor Liberia Location"
-                />
-              </div>
+                <iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=15TH%20STREET,%20BARCLAY%20AVENUE,%20SINKOR,%20MONTSERRADO%20COUNTRY+(Kids%20Survivor%20Liberia)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.mapsdirections.info/de/evolkerung-auf-einer-karte-berechnen/">Bevölkerung visualisieren Karte</a></iframe></div>
             </div>
           </motion.div>
         </div>

@@ -421,34 +421,6 @@ const Programs = () => {
               </div>
             </motion.div>
 
-            {/* Cross-Cutting Themes */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="mb-20"
-            >
-              <div className="text-center mb-12">
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-                  Cross-Cutting Themes
-                </h3>
-                <p className="text-gray-600 max-w-2xl mx-auto">
-                  Integrated across all program pillars for comprehensive impact
-                </p>
-              </div>
-
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-                {crossCuttingThemes.map((theme, index) => (
-                  <div 
-                    key={index}
-                    className="bg-white border border-gray-200 rounded-lg p-4 text-center hover:border-blue-300 hover:shadow-sm transition-all"
-                  >
-                    <div className="text-sm font-medium text-gray-800">{theme}</div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
           </div>
         </main>
       </div>

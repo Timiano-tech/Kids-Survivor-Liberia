@@ -48,7 +48,7 @@ const Footer = () => {
   ];
 
   const socialMedia = [
-    { icon: <FiFacebook />, href: '#', label: 'Facebook' },
+    { icon: <FiFacebook />, href: 'https://www.facebook.com/profile.php?id=61573527237699', label: 'Facebook' },
     { icon: <FiLinkedin />, href: 'https://www.linkedin.com/company/kids-survivor-liberia/', label: 'LinkedIn' },
     { icon: <FiTwitter />, href: 'https://x.com/Kidssurvivor123', label: 'Twitter' },
     { icon: <FiInstagram />, href: 'https://instagram.com/kids_survivorliberia', label: 'Instagram' },

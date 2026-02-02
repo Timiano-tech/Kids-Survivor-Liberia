@@ -97,7 +97,7 @@ const Blog = () => {
       title: 'Kids Survivor Liberia Sensitization Drive 2026',
       description: 'Highlights from our 2026 sensitization drive educating people of liberia on drug abuse prevention and healthy living.',
       date: 'Jan 19, 2026',
-      duration: '2:27',
+      duration: '2:16',
       thumbnail: THumbnail2,
       videoSrc: '/videos/Blog_Video_5.mp4',
     }
@@ -239,7 +239,7 @@ const Blog = () => {
                     key={post.id} 
                     className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
                   >
-                    <div className="h-48 overflow-hidden">
+                    <div className="h-62 overflow-hidden">
                       <img 
                         src={post.image} 
                         alt={post.title}

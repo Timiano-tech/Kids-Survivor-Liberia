@@ -710,7 +710,7 @@ const Home = () => {
                     </p>
                     
                     {/* Image Placeholder */}
-                    <div className="relative h-100 overflow-hidden rounded-lg mb-6">
+                    <div className="relative h-62 overflow-hidden rounded-lg mb-6">
                       {!imageError[`pillar-${pillar.id}`] ? (
                         <img
                           src={pillar.imagePlaceholder}

@@ -253,10 +253,10 @@ const Home = () => {
 
   // Impact Statistics Data aligned with organizational focus
   const impactStats = [
-    { end: 3000, label: "Vulnerable Individuals Reached", icon: <FiUsers />, duration: 2.5 },
-    { end: 50, label: "Communities Engaged", icon: <FiHome />, duration: 2 },
-    { end: 1000, label: "Youth in Prevention Programs", icon: <FiShield />, duration: 1.5 },
-    { end: 200, label: "Individuals in Rehabilitation", icon: <FiActivity />, duration: 2 }
+    { end: 12000, label: "Vulnerable Individuals Reached", icon: <FiUsers />, duration: 2.5 },
+    { end: 120, label: "Communities Engaged", icon: <FiHome />, duration: 2 },
+    { end: 10000, label: "Youth in Prevention Programs", icon: <FiShield />, duration: 1.5 },
+    { end: 8000, label: "Individuals in Rehabilitation", icon: <FiActivity />, duration: 2 }
   ];
 
   // Program Pillars Data

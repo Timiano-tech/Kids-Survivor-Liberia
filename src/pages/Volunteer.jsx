@@ -227,27 +227,7 @@ const Volunteer = () => {
               </div>
             </div>
 
-            {/* Cross-Cutting Themes */}
-            <div className="bg-gray-50 rounded-2xl p-8 mb-16">
-              <h2 className="text-2xl font-bold text-center text-gray-800 mb-8">
-                Cross-Cutting Themes in All Volunteer Work
-              </h2>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {[
-                  "Child and Youth Safeguarding",
-                  "Gender Equality and Social Inclusion (GESI)",
-                  "Human Rights and Dignity",
-                  "Community Ownership",
-                  "Sustainability Focus",
-                  "Impact Measurement"
-                ].map((theme, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    <span className="text-gray-700">{theme}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+           
 
             {/* FAQ Section */}
             <div className="max-w-3xl mx-auto mb-16">
@@ -316,11 +296,6 @@ const Volunteer = () => {
                   Email: support@ksliberia.org
                 </a>
               </div>
-              
-              <p className="text-white/80 text-sm mt-8">
-                All volunteers undergo orientation on YTEI & NADAP alignment, child safeguarding, 
-                and community engagement protocols.
-              </p>
             </div>
           </div>
         </main>

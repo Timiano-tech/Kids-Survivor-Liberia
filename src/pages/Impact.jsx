@@ -75,28 +75,28 @@ const Impact = () => {
   // Impact Statistics - updated to use numbers instead of strings
   const impactStats = [
     { 
-      number: 3000, 
+      number: 12000, 
       label: 'Vulnerable Individuals Reached', 
       icon: <FiUsers className="w-8 h-8" />,
       description: 'Children, youth, and vulnerable elderly supported',
       suffix: '+'
     },
     { 
-      number: 50, 
+      number: 120, 
       label: 'Communities Engaged', 
       icon: <FiMap className="w-8 h-8" />,
       description: 'Across 7+ counties in Liberia',
       suffix: '+'
     },
     { 
-      number: 1000, 
+      number: 10000, 
       label: 'Youth in Prevention Programs', 
       icon: <FiTarget className="w-8 h-8" />,
       description: 'NADAP-aligned drug prevention',
       suffix: '+'
     },
     { 
-      number: 200, 
+      number: 8000, 
       label: 'Individuals in Rehabilitation', 
       icon: <FiHeart className="w-8 h-8" />,
       description: 'Comprehensive recovery support',
@@ -182,13 +182,13 @@ const Impact = () => {
       title: 'Youth Transformation',
       description: 'Comprehensive programs addressing prevention, rehabilitation, and empowerment',
       icon: <FiTrendingUp className="w-6 h-6" />,
-      stats: '1,500+ Youth'
+      stats: '10000+ Youth'
     },
     {
       title: 'Community Resilience',
       description: 'Building sustainable support systems for long-term impact and recovery',
       icon: <FiUsers className="w-6 h-6" />,
-      stats: '50+ Communities'
+      stats: '120+ Communities'
     }
   ];
 

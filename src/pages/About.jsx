@@ -75,29 +75,6 @@ const About = () => {
     "Advance national commitments under NADAP 2025-2030 and YTEI frameworks."
   ];
 
-  // Cross-Cutting Themes
-  const crossCuttingThemes = [
-    {
-      title: "Child & Youth Safeguarding",
-      description: "Implementing comprehensive protection policies and systems for vulnerable children and youth."
-    },
-    {
-      title: "Gender Equality & Social Inclusion (GESI)",
-      description: "Ensuring equitable access and participation for all genders and marginalized groups."
-    },
-    {
-      title: "Human Rights & Dignity",
-      description: "Upholding the rights and dignity of every individual in all our interventions."
-    },
-    {
-      title: "Community Ownership & Sustainability",
-      description: "Building local capacity and ensuring long-term impact through community leadership."
-    },
-    {
-      title: "Accountability & Transparency",
-      description: "Maintaining rigorous monitoring, evaluation, and transparent reporting systems."
-    }
-  ];
 
   // Impact Highlights aligned with strategic mandate
   const impactHighlights = [
@@ -346,36 +323,7 @@ const About = () => {
               </div>
             </motion.div>
 
-            {/* Cross-Cutting Themes */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              viewport={{ once: true }}
-              className="mb-20"
-            >
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-gray-800 mb-4">Cross-Cutting Themes</h2>
-                <p className="text-gray-600 max-w-2xl mx-auto">
-                  Fundamental principles integrated across all our programs and interventions
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {crossCuttingThemes.map((theme, index) => (
-                  <div 
-                    key={index}
-                    className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow border border-gray-100"
-                  >
-                    <div className="bg-blue-100 text-blue-600 w-14 h-14 rounded-xl flex items-center justify-center mb-4">
-                      <FiActivity className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-800 mb-3">{theme.title}</h3>
-                    <p className="text-gray-600">{theme.description}</p>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
+         
 
             {/* Guiding Values */}
             <motion.div

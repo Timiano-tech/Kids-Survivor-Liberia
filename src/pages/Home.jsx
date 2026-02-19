@@ -131,7 +131,7 @@ const Home = () => {
       name: "Mr. Billy Jones",
       teamImage: CEO,
       position: "Chief Executive Officer (C.E.O)",
-      bio: "Provides strategic leadership for KSL's NADAP-aligned drug abuse prevention and youth empowerment programs across Liberia."
+      bio: "Mr. Billy Jones serves ast the Chief Executive Office"
     },
     {
       name: "Mr. Steve Darwin",
@@ -684,7 +684,8 @@ const Home = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          {/* Four main pillars - responsive grid */}
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
             {programPillars.map((pillar, index) => (
               <motion.div
                 key={pillar.id}
@@ -692,42 +693,48 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group"
+                className="group h-full"
               >
-                <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 h-full">
-                  <div className={`${pillar.color} p-6 text-white`}>
-                    <div className="flex items-center">
-                      <div className="bg-white/20 p-3 rounded-xl mr-4">
-                        {pillar.icon}
+                <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden h-full flex flex-col">
+                  {/* Image area with overlay and icon */}
+                  <div className="relative h-56 overflow-hidden">
+                    {!imageError[`pillar-${pillar.id}`] ? (
+                      <img
+                        src={pillar.imagePlaceholder}
+                        alt={pillar.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        onError={() => handleImageError(`pillar-${pillar.id}`)}
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div
+                        className={`w-full h-full ${pillar.color} flex items-center justify-center`}
+                      >
+                        <span className="text-white text-lg font-semibold">
+                          {pillar.title.split(' ')[0]}
+                        </span>
                       </div>
-                      <h3 className="text-2xl font-bold">{pillar.title}</h3>
+                    )}
+                    {/* Gradient overlay */}
+                    <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent"></div>
+                    {/* Icon floating at bottom left */}
+                    <div
+                      className={`absolute bottom-4 left-4 ${pillar.color} p-3 rounded-xl text-white shadow-lg`}
+                    >
+                      {pillar.icon}
                     </div>
                   </div>
-                  
-                  <div className="p-6">
-                    <p className="text-gray-600 mb-6">
+
+                  {/* Content */}
+                  <div className="p-6 flex-1 flex flex-col">
+                    <h3 className="text-xl font-bold text-gray-800 mb-3">
+                      {pillar.title}
+                    </h3>
+                    <p className="text-gray-600 mb-6 flex-1">
                       {pillar.description}
                     </p>
-                    
-                    {/* Image Placeholder */}
-                    <div className="relative h-62 overflow-hidden rounded-lg mb-6">
-                      {!imageError[`pillar-${pillar.id}`] ? (
-                        <img
-                          src={pillar.imagePlaceholder}
-                          alt={pillar.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                          onError={() => handleImageError(`pillar-${pillar.id}`)}
-                          loading='lazy'
-                        />
-                      ) : (
-                        <div className={`w-full h-full ${pillar.color} flex items-center justify-center`}>
-                          <span className="text-white text-lg font-semibold">{pillar.title.split(' ')[0]}</span>
-                        </div>
-                      )}
-                    </div>
-                    
                     <Link to={`/programs#pillar-${pillar.id}`}>
-                      <button className="w-full text-center bg-gray-50 hover:bg-gray-100 text-gray-800 font-semibold py-3 rounded-lg transition-colors duration-300">
+                      <button className="w-full text-center bg-gray-50 hover:bg-gray-100 text-gray-800 font-semibold py-3 rounded-lg transition-colors duration-300 border border-gray-200">
                         Explore This Pillar
                       </button>
                     </Link>
@@ -737,7 +744,7 @@ const Home = () => {
             ))}
           </div>
 
-          {/* Fifth Pillar - Community Engagement */}
+          {/* Fifth Pillar - Community Engagement (full-width card) */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -745,41 +752,76 @@ const Home = () => {
             viewport={{ once: true }}
             className="mt-8"
           >
-            <div className="bg-blue-500 rounded-2xl shadow-xl overflow-hidden">
+            <div className="bg-linear-to-br from-blue-600 to-blue-700 rounded-2xl shadow-xl overflow-hidden">
               <div className="p-8 text-white">
-                <div className="flex items-center mb-6">
-                  <div className="bg-white/20 p-3 rounded-xl mr-4">
+                <div className="flex flex-col md:flex-row md:items-center gap-6 mb-6">
+                  <div className="bg-white/20 p-4 rounded-xl inline-flex self-start">
                     <FiBriefcase className="w-8 h-8" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold">Pillar 5: Community Engagement, Peacebuilding & Partnerships</h3>
-                    <p className="text-blue-100 mt-2">Collaboration with traditional leaders, local authorities, and civil society for sustainable impact</p>
+                    <h3 className="text-2xl font-bold">
+                      Pillar 5: Community Engagement, Peacebuilding & Partnerships
+                    </h3>
+                    <p className="text-blue-100 mt-2">
+                      Collaboration with traditional leaders, local authorities, and civil society for sustainable impact
+                    </p>
                   </div>
                 </div>
-                
+
                 <div className="grid md:grid-cols-3 gap-4">
-                  <div className="bg-white/10 p-4 rounded-lg backdrop-blur-sm">
-                    <h4 className="font-bold mb-2">Community Ownership</h4>
-                    <p className="text-sm text-blue-100">Volunteer training and community-driven program implementation</p>
+                  <div className="bg-white/10 p-5 rounded-xl backdrop-blur-sm hover:bg-white/20 transition-colors">
+                    <h4 className="font-bold text-lg mb-2">Community Ownership</h4>
+                    <p className="text-sm text-blue-100">
+                      Volunteer training and community-driven program implementation
+                    </p>
                   </div>
-                  <div className="bg-white/10 p-4 rounded-lg backdrop-blur-sm">
-                    <h4 className="font-bold mb-2">Peacebuilding</h4>
-                    <p className="text-sm text-blue-100">Crime and violence prevention through social cohesion initiatives</p>
+                  <div className="bg-white/10 p-5 rounded-xl backdrop-blur-sm hover:bg-white/20 transition-colors">
+                    <h4 className="font-bold text-lg mb-2">Peacebuilding</h4>
+                    <p className="text-sm text-blue-100">
+                      Crime and violence prevention through social cohesion initiatives
+                    </p>
                   </div>
-                  <div className="bg-white/10 p-4 rounded-lg backdrop-blur-sm">
-                    <h4 className="font-bold mb-2">Strategic Partnerships</h4>
-                    <p className="text-sm text-blue-100">Multi-stakeholder collaboration for comprehensive impact</p>
+                  <div className="bg-white/10 p-5 rounded-xl backdrop-blur-sm hover:bg-white/20 transition-colors">
+                    <h4 className="font-bold text-lg mb-2">Strategic Partnerships</h4>
+                    <p className="text-sm text-blue-100">
+                      Multi-stakeholder collaboration for comprehensive impact
+                    </p>
                   </div>
+                </div>
+
+                <div className="mt-8 flex flex-wrap gap-4">
+                  <Link to="/partnership">
+                    <button className="bg-white text-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition-colors shadow-md">
+                      Partner With Us
+                    </button>
+                  </Link>
+                  <Link to="/programs#community">
+                    <button className="border border-white text-white px-6 py-2 rounded-full font-semibold hover:bg-white/10 transition-colors">
+                      Learn More
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
           </motion.div>
         </div>
       </section>
+      {/* National & Strategic Alignment Section */}
+      <section className="py-20 relative overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: `url(${Children4})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed'
+          }}
+        >
+          <div className="absolute inset-0 bg-blue-900/70"></div> {/* Dark overlay */}
+        </div>
 
-      {/* Policy Alignment Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -787,22 +829,22 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               National & Strategic Alignment
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-200 max-w-2xl mx-auto">
               Contributing to Liberia's development frameworks through targeted interventions
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* YTEI Alignment */}
+            {/* YTEI Alignment Card */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="bg-white p-8 rounded-2xl shadow-lg"
+              className="bg-white/95 backdrop-blur-sm p-8 rounded-2xl shadow-xl"
             >
               <div className="flex items-center mb-6">
                 <div className="bg-green-100 p-3 rounded-xl mr-4">
@@ -813,7 +855,7 @@ const Home = () => {
                   <p className="text-gray-600 text-sm">Youth Transformation & Empowerment Initiative</p>
                 </div>
               </div>
-              
+
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <FiCheckCircle className="w-5 h-5 text-green-500 mr-3 mt-1 shrink-0" />
@@ -834,13 +876,13 @@ const Home = () => {
               </ul>
             </motion.div>
 
-            {/* NADAP Alignment */}
+            {/* NADAP Alignment Card */}
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="bg-white p-8 rounded-2xl shadow-lg"
+              className="bg-white/95 backdrop-blur-sm p-8 rounded-2xl shadow-xl"
             >
               <div className="flex items-center mb-6">
                 <div className="bg-blue-100 p-3 rounded-xl mr-4">
@@ -851,7 +893,7 @@ const Home = () => {
                   <p className="text-gray-600 text-sm">National Anti-Drugs Action Plan</p>
                 </div>
               </div>
-              
+
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <FiCheckCircle className="w-5 h-5 text-blue-500 mr-3 mt-1 shrink-0" />

@@ -125,6 +125,18 @@ const About = () => {
       teamImage: Mrs_Silvia,
       position: "Operational Advisor",
       bio: "Guides implementation of gender-inclusive protection programs for adolescent girls, widows, and vulnerable elderly men."
+    },
+    {
+      name: "Mrs. Silvia T. Willie Dongon",
+      teamImage: Mrs_Silvia,
+      position: "Operational Advisor",
+      bio: "Guides implementation of gender-inclusive protection programs for adolescent girls, widows, and vulnerable elderly men."
+    },
+    {
+      name: "Mrs. Silvia T. Willie Dongon",
+      teamImage: Mrs_Silvia,
+      position: "Operational Advisor",
+      bio: "Guides implementation of gender-inclusive protection programs for adolescent girls, widows, and vulnerable elderly men."
     }
   ];
 
@@ -402,7 +414,6 @@ const About = () => {
                   Dedicated professionals driving NADAP and YTEI-aligned interventions
                 </p>
               </div>
-
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {teamMembers.map((member, index) => (
                   <div 

@@ -83,7 +83,8 @@ const CallToAction = () => {
                     <div className="bg-white text-blue-900 rounded-full p-1 group-hover:translate-x-1 transition-transform">
                       <FiArrowRight />
                     </div>
-                    Give Today
+                    
+                    Donate Today
                   </motion.button>
                 </Link>
               </div>

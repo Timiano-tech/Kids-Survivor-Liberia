@@ -32,10 +32,10 @@ import NoToDrugs from '../assets/Say no to drugs.jpeg'
 import Children3 from '../assets/Drug_Recovered.jpeg';
 import Children4 from '../assets/Children4.jpeg';
 import Community from '../assets/Community.jpeg';
-import Mr_Steve from '../assets/Mr_Steve.jpeg';
-import Mrs_Fiona from '../assets/Mrs_Fiona.jpeg';
-import Mrs_Silvia from '../assets/Mrs_Silvia2.jpeg';
-import CEO from '../assets/CEO.jpeg';
+import Mr_Steve from '../assets/Mr_Steve.png';
+import Mrs_Fiona from '../assets/Mrs_Fiona.png';
+import Mrs_Silvia from '../assets/Mrs_Silvia2.png';
+import CEO from '../assets/CEO.png';
 import BlogImage1 from '../assets/Students Impacted.jpeg';
 import BlogImage2 from '../assets/Helping Children.jpeg';
 import BlogImage3 from '../assets/Youth_Community_Outreach.jpeg';
@@ -125,31 +125,31 @@ const Home = () => {
     }
   ];
 
-  // Team Members
+ // Team Members
   const teamMembers = [
     {
       name: "Mr. Billy Jones",
       teamImage: CEO,
-      position: "Chief Executive Officer (C.E.O)",
-      bio: "Mr. Billy Jones serves ast the Chief Executive Office"
+      position: "Chief Executive Officer (CEO)",
+      bio: "Provides visionary leadership and strategic oversight for KSL's national initiatives, including NADAP-aligned drug abuse prevention, child protection, and youth empowerment programs. Champions child safeguarding, ethical governance, and inclusive development across Liberia."
     },
     {
-      name: "Mr. Steve Darwin",
+      name: "Mr. Steve Darwin Wald",
       teamImage: Mr_Steve,
       position: "Director of Countries Operations",
-      bio: "Oversees implementation of community-based drug demand reduction and rehabilitation programs aligned with national frameworks."
+      bio: "Leads operational coordination and implementation oversight across KSL's areas of intervention. Translates strategic objectives into effective community-responsive programs, ensuring consistent delivery of drug demand reduction, prevention, and rehabilitation initiatives."
     },
     {
       name: "Mrs. Fiona A. Etong",
       teamImage: Mrs_Fiona,
-      position: "Nigeria Representative, Social Media Manager",
-      bio: "Leads digital advocacy for drug prevention and youth empowerment, fostering regional partnerships for vulnerable populations."
+      position: "Nigeria Representative & Social Media Manager",
+      bio: "Leads digital communications and regional representation, amplifying KSL's mission through innovative online outreach. Strengthens public engagement for drug abuse prevention, youth empowerment, and child protection across borders."
     },
     {
       name: "Mrs. Silvia T. Willie Dongon",
       teamImage: Mrs_Silvia,
       position: "Operational Advisor",
-      bio: "Guides implementation of gender-inclusive protection programs for adolescent girls, widows, and vulnerable elderly men."
+      bio: "Provides strategic guidance for gender-sensitive protection programs targeting adolescent girls, widows, and vulnerable elderly men. Supports operational planning and integration of best practices in social inclusion and community engagement."
     }
   ];
 
@@ -955,6 +955,31 @@ const Home = () => {
                 </div>
               </div>
             ))}
+          </div>
+          
+          {/* Team Page Navigation Button */}
+          <div className="flex justify-center mt-12">
+            <motion.a
+              href="/team"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              viewport={{ once: true }}
+              className="group relative inline-flex items-center justify-center px-12 py-4 bg-blue-500 text-white font-semibold rounded-full overflow-hidden transition-all duration-300 hover:bg-blue-600 hover:shadow-lg min-w-45"
+            >
+              {/* Default text */}
+              <span className="block group-hover:hidden transition-all duration-300">
+                See Board
+              </span>
+              
+              {/* Hover text */}
+              <span className="hidden group-hover:block transition-all duration-300">
+                All Members →
+              </span>
+              
+              {/* Optional: Add a subtle animation effect */}
+              <span className="absolute inset-0 bg-white/20 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></span>
+            </motion.a>
           </div>
         </motion.div>
       </section>

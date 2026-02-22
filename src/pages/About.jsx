@@ -11,7 +11,6 @@ import {
   FiCheckCircle,
   FiHome,
   FiCrosshair,
-  FiActivity,
   FiBook,
   FiBriefcase,
   FiGlobe
@@ -20,10 +19,10 @@ import KSLCompany from '../assets/KSL Company.jpeg';
 import KSL_Teams from '../assets/KSL_Team.jpeg';
 import KSL_Teams2 from '../assets/KSL_Team2.jpeg';
 import CallToAction from '../components/CallToAction';
-import Mr_Steve from '../assets/Mr_Steve.jpeg';
-import Mrs_Fiona from '../assets/Mrs_Fiona.jpeg';
-import Mrs_Silvia from '../assets/Mrs_Silvia2.jpeg';
-import CEO from '../assets/CEO.jpeg';
+import Mr_Steve from '../assets/Mr_Steve.png';
+import Mrs_Fiona from '../assets/Mrs_Fiona.png';
+import Mrs_Silvia from '../assets/Mrs_Silvia2.png';
+import CEO from '../assets/CEO.png';
 import ScrollToTopButton from '../components/ScrollToTop';
 
 const About = () => {
@@ -119,18 +118,6 @@ const About = () => {
       teamImage: Mrs_Fiona,
       position: "Nigeria Representative, Social Media Manager",
       bio: "Leads digital advocacy for drug prevention and youth empowerment, fostering regional partnerships for vulnerable populations."
-    },
-    {
-      name: "Mrs. Silvia T. Willie Dongon",
-      teamImage: Mrs_Silvia,
-      position: "Operational Advisor",
-      bio: "Guides implementation of gender-inclusive protection programs for adolescent girls, widows, and vulnerable elderly men."
-    },
-    {
-      name: "Mrs. Silvia T. Willie Dongon",
-      teamImage: Mrs_Silvia,
-      position: "Operational Advisor",
-      bio: "Guides implementation of gender-inclusive protection programs for adolescent girls, widows, and vulnerable elderly men."
     },
     {
       name: "Mrs. Silvia T. Willie Dongon",
@@ -401,19 +388,21 @@ const About = () => {
             </motion.div>
 
             {/* Meet Our Team Section */}
+          <section className='px-8 mx-auto bg-white py-20'>
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
               className="mb-20"
             >
               <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Leadership Team</h2>
+                <h2 className="text-3xl font-bold text-gray-800 mb-4">Leadership & Team</h2>
                 <p className="text-gray-600 max-w-2xl mx-auto">
-                  Dedicated professionals driving NADAP and YTEI-aligned interventions
+                  Committed professionals driving NADAP and YTEI-aligned interventions
                 </p>
               </div>
+
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {teamMembers.map((member, index) => (
                   <div 
@@ -437,8 +426,33 @@ const About = () => {
                   </div>
                 ))}
               </div>
+              
+              {/* Team Page Navigation Button */}
+              <div className="flex justify-center mt-12">
+                <motion.a
+                  href="/team"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                  viewport={{ once: true }}
+                  className="group relative inline-flex items-center justify-center px-12 py-4 bg-blue-500 text-white font-semibold rounded-full overflow-hidden transition-all duration-300 hover:bg-blue-600 hover:shadow-lg min-w-45"
+                >
+                  {/* Default text */}
+                  <span className="block group-hover:hidden transition-all duration-300">
+                    See Board
+                  </span>
+                  
+                  {/* Hover text */}
+                  <span className="hidden group-hover:block transition-all duration-300">
+                    All Members →
+                  </span>
+                  
+                  {/* Optional: Add a subtle animation effect */}
+                  <span className="absolute inset-0 bg-white/20 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></span>
+                </motion.a>
+              </div>
             </motion.div>
-
+          </section>
             {/* Our Impact Section */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}

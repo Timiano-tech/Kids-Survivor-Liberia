@@ -15,6 +15,7 @@ import Projects from './pages/Projects';
 import Partnership from './pages/Partnership';
 import Programs from './pages/Programs';
 import Blog from './pages/Blog';
+import OurTeam from './pages/OurTeam';
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
             <Route path="/blog" element={<Layout><Blog /></Layout>} />  
             <Route path="/contact" element={<Layout><Contact /></Layout>} />
             <Route path="/donate" element={<Layout><Donate /></Layout>} />
+            <Route path="/team" element={<Layout><OurTeam /></Layout>} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>

@@ -15,6 +15,7 @@ const Footer = () => {
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
     { name: 'Our Programs', path: '/programs' },
+
     { 
       name: 'Our Impact', 
       dropdown: [
@@ -24,6 +25,7 @@ const Footer = () => {
       ]
     },
     { name: 'Blog', path: '/blog' },
+    { name: 'Our Teams', path: '/team' },
     { 
       name: 'Get Involved', 
       dropdown: [

@@ -57,11 +57,6 @@ const OurTeam = () => {
       department: 'Operations & Administration',
       bio: 'Leads operational coordination and implementation oversight across KSL\'s areas of intervention. Translates strategic objectives into effective community-responsive programs, ensuring consistent delivery of drug demand reduction, prevention, and rehabilitation initiatives.',
       expertise: ['Operations Management', 'Program Coordination', 'Community Response'],
-      social: {
-        linkedin: '#',
-        twitter: '#',
-        email: 'steve.wald@ksl.org'
-      },
       image: Mr_Steve,
       icon: <FiBriefcase className="w-6 h-6" />,
       color: 'purple'
@@ -73,11 +68,6 @@ const OurTeam = () => {
       department: 'Communications',
       bio: 'Leads digital communications and regional representation, amplifying KSL\'s mission through innovative online outreach. Strengthens public engagement for drug abuse prevention, youth empowerment, and child protection across borders.',
       expertise: ['Digital Communications', 'Social Media Strategy', 'Regional Advocacy'],
-      social: {
-        linkedin: '#',
-        twitter: '#',
-        email: 'fiona.etong@ksl.org'
-      },
       image: Mrs_Fiona,
       icon: <FiUsers className="w-6 h-6" />,
       color: 'teal'
@@ -89,11 +79,6 @@ const OurTeam = () => {
       department: 'Programs',
       bio: 'Provides strategic guidance for gender-sensitive protection programs targeting adolescent girls, widows, and vulnerable elderly men. Supports operational planning and integration of best practices in social inclusion and community engagement.',
       expertise: ['Gender-Sensitive Programming', 'Social Inclusion', 'Community Engagement'],
-      social: {
-        linkedin: '#',
-        twitter: '#',
-        email: 'silvia.dongon@ksl.org'
-      },
       image: Mrs_Silvia,
       icon: <FiTarget className="w-6 h-6" />,
       color: 'green'
@@ -105,11 +90,6 @@ const OurTeam = () => {
       department: 'Programs',
       bio: 'Leads initiatives promoting dignity, resilience, and socio-economic empowerment for widows and vulnerable women. Successfully organized 125 widows (ages 50-68) into structured livelihood programs including agriculture, soap making, tie-dye, and handicraft production.',
       expertise: ['Women Empowerment', 'Livelihood Development', 'Community Mobilization'],
-      social: {
-        linkedin: '#',
-        twitter: '#',
-        email: 'david.williams@ksl.org'
-      },
       image: Mrs_Tawah,
       icon: <FiShield className="w-6 h-6" />,
       color: 'blue'
@@ -121,11 +101,6 @@ const OurTeam = () => {
       department: 'Programs',
       bio: 'Provides mentorship and leadership to adolescent girls across Liberia, focusing on empowerment, life skills, personal agency, and protection awareness. Guides activities that address social, economic, and protection-related vulnerabilities affecting young girls.',
       expertise: ['Girls Empowerment', 'Life Skills Training', 'Youth Protection'],
-      social: {
-        linkedin: '#',
-        twitter: '#',
-        email: 'grace.thompson@ksl.org'
-      },
       image: Mrs_julie,
       icon: <FiHeart className="w-6 h-6" />,
       color: 'pink'
@@ -137,11 +112,6 @@ const OurTeam = () => {
       department: 'Programs',
       bio: 'Provides strategic guidance on community outreach, stakeholder engagement, and youth-centered educational initiatives. Supports partnerships with communities and schools while promoting awareness and preventive education for youth empowerment and drug abuse prevention.',
       expertise: ['Community Outreach', 'Educational Initiatives', 'Stakeholder Engagement'],
-      social: {
-        linkedin: '#',
-        twitter: '#',
-        email: 'peter.anderson@ksl.org'
-      },
       image: Mr_Sebastian,
       icon: <FiAward className="w-6 h-6" />,
       color: 'orange'
@@ -153,11 +123,6 @@ const OurTeam = () => {
       department: 'Programs',
       bio: 'Leads programs promoting the protection, empowerment, and personal development of vulnerable girls. Focuses on life skills development, mentorship, confidence building, and awareness initiatives addressing risks affecting adolescent girls.',
       expertise: ['Girls Protection', 'Mentorship', 'Life Skills Development'],
-      social: {
-        linkedin: '#',
-        twitter: '#',
-        email: 'rebecca.cooper@ksl.org'
-      },
       image: Mrs_Josephine,
       icon: <FiUsers className="w-6 h-6" />,
       color: 'teal'
@@ -169,11 +134,6 @@ const OurTeam = () => {
       department: 'Programs',
       bio: 'Oversees free educational support for vulnerable children aged 4-17, providing learning materials, uniforms, and feeding support. Also advises on financial oversight, accountability, and institutional strengthening for organizational sustainability.',
       expertise: ['Educational Programs', 'Financial Oversight', 'Governance'],
-      social: {
-        linkedin: '#',
-        twitter: '#',
-        email: 'thomas.freeman@ksl.org'
-      },
       image: Mr_Moses, 
       icon: <FiBookOpen className="w-6 h-6" />,
       color: 'blue'
@@ -185,11 +145,6 @@ const OurTeam = () => {
       department: 'Field Operations',
       bio: 'Coordinates all KSL program activities in Gbarnga, Bong County, overseeing implementation, monitoring, and alignment with organizational objectives. Supports community engagement, local partnerships, and operational oversight for youth protection and education programs.',
       expertise: ['Program Coordination', 'Community Engagement', 'Field Operations'],
-      social: {
-        linkedin: '#',
-        twitter: '#',
-        email: 'patricia.mensah@ksl.org'
-      },
       image: Mr_Paul, 
       icon: <FiUsers className="w-6 h-6" />,
       color: 'purple'
@@ -332,14 +287,14 @@ const OurTeam = () => {
                           loading='lazy'
                         />
                       ) : (
-                        <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-200">
+                        <div className="w-full h-full flex items-center justify-center bg-linear-to-br from-gray-50 to-gray-200">
                           <FiUser className="w-20 h-20 text-gray-300" />
                         </div>
                       )}
                     </div>
 
                     {/* Member Info - flex-grow ensures all cards in a row have equal height if descriptions vary */}
-                    <div className="p-5 flex-grow flex flex-col">
+                    <div className="p-5 grow flex flex-col">
                       <div className="mb-3">
                         <h3 className="text-lg font-bold text-gray-800 leading-tight">{member.name}</h3>
                         <p className="text-blue-600 text-sm font-semibold mt-1 leading-snug">{member.position}</p>
@@ -360,16 +315,6 @@ const OurTeam = () => {
                               {skill}
                             </span>
                           ))}
-                        </div>
-
-                        {/* Social Links */}
-                        <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                          <div className="flex gap-4">
-                            <a href={member.social.linkedin} className="text-gray-400 hover:text-blue-600"><FiLinkedin /></a>
-                            <a href={member.social.twitter} className="text-gray-400 hover:text-blue-400"><FiTwitter /></a>
-                            <a href={`mailto:${member.social.email}`} className="text-gray-400 hover:text-red-500"><FiMail /></a>
-                          </div>
-                          <span className="text-[10px] font-mono text-gray-300">#{String(member.id).padStart(3, '0')}</span>
                         </div>
                       </div>
                     </div>

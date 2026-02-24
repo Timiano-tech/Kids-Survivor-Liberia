@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
   FiTarget, 
@@ -12,6 +13,7 @@ import {
   FiHome,
   FiCrosshair,
   FiBook,
+  FiArrowRight,
   FiBriefcase,
   FiGlobe
 } from 'react-icons/fi';
@@ -99,33 +101,33 @@ const About = () => {
     }
   ];
 
-  // Team Members updated with strategic focus
-  const teamMembers = [
-    {
-      name: "Mr. Billy Jones",
-      teamImage: CEO,
-      position: "Chief Executive Officer (C.E.O)",
-      bio: "Provides strategic leadership for KSL's NADAP-aligned drug abuse prevention and youth empowerment programs across Liberia."
-    },
-    {
-      name: "Mr. Steve Darwin",
-      teamImage: Mr_Steve,
-      position: "Director of Countries Operations",
-      bio: "Oversees implementation of community-based drug demand reduction and rehabilitation programs aligned with national frameworks."
-    },
-    {
-      name: "Mrs. Fiona A. Etong",
-      teamImage: Mrs_Fiona,
-      position: "Nigeria Representative, Social Media Manager",
-      bio: "Leads digital advocacy for drug prevention and youth empowerment, fostering regional partnerships for vulnerable populations."
-    },
-    {
-      name: "Mrs. Silvia T. Willie Dongon",
-      teamImage: Mrs_Silvia,
-      position: "Operational Advisor",
-      bio: "Guides implementation of gender-inclusive protection programs for adolescent girls, widows, and vulnerable elderly men."
-    }
-  ];
+  // Team Members
+    const teamMembers = [
+      {
+        name: "Mr. Billy Jones",
+        teamImage: CEO,
+        position: "Chief Executive Officer (CEO)",
+        bio: "Provides visionary leadership and strategic oversight for KSL's national initiatives, including NADAP-aligned drug abuse prevention, child protection, and youth empowerment programs. Champions child safeguarding, ethical governance, and inclusive development across Liberia."
+      },
+      {
+        name: "Mr. Steve Darwin Wald",
+        teamImage: Mr_Steve,
+        position: "Director of Countries Operations",
+        bio: "Leads operational coordination and implementation oversight across KSL's areas of intervention. Translates strategic objectives into effective community-responsive programs, ensuring consistent delivery of drug demand reduction, prevention, and rehabilitation initiatives."
+      },
+      {
+        name: "Mrs. Fiona A. Etong",
+        teamImage: Mrs_Fiona,
+        position: "Nigeria Representative & Social Media Manager",
+        bio: "Leads digital communications and regional representation, amplifying KSL's mission through innovative online outreach. Strengthens public engagement for drug abuse prevention, youth empowerment, and child protection across borders."
+      },
+      {
+        name: "Mrs. Silvia T. Willie Dongon",
+        teamImage: Mrs_Silvia,
+        position: "Operational Advisor",
+        bio: "Provides strategic guidance for gender-sensitive protection programs targeting adolescent girls, widows, and vulnerable elderly men. Supports operational planning and integration of best practices in social inclusion and community engagement."
+      }
+    ];
 
   // Guiding Values from organizational document
   const guidingValues = [
@@ -211,7 +213,7 @@ const About = () => {
                       We implement inclusive, rights-based, and community-driven interventions that promote education, life skills, psychosocial recovery, livelihood development, and social reintegration, while contributing to crime reduction, peacebuilding, and community resilience.
                     </p>
                     <p>
-                      Our work is fully aligned with the Youth Transformation & Empowerment Initiative (YTEI) and the National Anti-Drugs Action Plan (NADAP) 2025–2030, supporting national and global commitments to youth development, drug demand reduction, gender equality, and social protection.
+                      Our work is fully aligned with the Youth Transformation & Empowerment Initiative (YTEI) and the National Anti-Drugs Action Plan (NADAP) 2025-2030, supporting national and global commitments to youth development, drug demand reduction, gender equality, and social protection.
                     </p>
                   </div>
                 </div>
@@ -429,27 +431,20 @@ const About = () => {
               
               {/* Team Page Navigation Button */}
               <div className="flex justify-center mt-12">
-                <motion.a
-                  href="/team"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.6 }}
-                  viewport={{ once: true }}
-                  className="group relative inline-flex items-center justify-center px-12 py-4 bg-blue-500 text-white font-semibold rounded-full overflow-hidden transition-all duration-300 hover:bg-blue-600 hover:shadow-lg min-w-45"
-                >
-                  {/* Default text */}
-                  <span className="block group-hover:hidden transition-all duration-300">
-                    See Board
-                  </span>
-                  
-                  {/* Hover text */}
-                  <span className="hidden group-hover:block transition-all duration-300">
-                    All Members →
-                  </span>
-                  
-                  {/* Optional: Add a subtle animation effect */}
-                  <span className="absolute inset-0 bg-white/20 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></span>
-                </motion.a>
+                 <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <Link to="/team">
+              <button className="inline-flex items-center px-6 py-3 bg-white text-blue-600 border-2 border-blue-600 rounded-full font-semibold hover:bg-blue-50 transition-all duration-300 hover:scale-105">
+                <span>View All Members</span>
+                <FiArrowRight className="ml-2" />
+              </button>
+            </Link>
+          </motion.div>
               </div>
             </motion.div>
           </section>

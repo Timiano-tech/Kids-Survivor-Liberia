@@ -216,7 +216,7 @@ const Footer = () => {
                 &copy; {currentYear} Kids Survivor Liberia. All rights reserved.
               </p>
               <p className="text-gray-500 text-sm mt-1">
-              Developed by <a href="https://www.linkedin.com/in/oluwatimieyin-ajayi-140350277" className="hover:text-white transition">Timiano.dev</a>
+              Developed by <a href="https://www.linkedin.com/in/oluwatimileyin-ajayi-140350277" className="hover:text-white transition">Timiano.dev</a>
               </p>
             </div>
           </div>

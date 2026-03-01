@@ -54,6 +54,7 @@ const Navbar = () => {
         { name: 'Impact', path: '/impact' },
         { name: 'Our Projects', path: '/projects' },
         { name: 'Photo Gallery', path: '/gallery' },
+        { name: 'Counties', path: '/counties' },
       ]
     },
     { name: 'Blog', path: '/blog' },

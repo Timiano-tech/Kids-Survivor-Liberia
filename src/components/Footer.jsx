@@ -1,30 +1,30 @@
 import { Link } from 'react-router-dom';
-import { 
-  FiMail, 
-  FiPhone, 
-  FiMapPin, 
-  FiFacebook, 
-  FiTwitter, 
-  FiInstagram, 
-  FiYoutube, 
-  FiLinkedin 
+import {
+  FiMail,
+  FiPhone,
+  FiMapPin,
+  FiFacebook,
+  FiTwitter,
+  FiInstagram,
+  FiYoutube,
+  FiLinkedin
 } from 'react-icons/fi';
 import { COUNTIES } from '../data/counties';
 
 const Footer = () => {
   const navItems = [
     { name: 'Home', path: '/' },
-    { 
-      name: 'About Us', 
+    {
+      name: 'About Us',
       dropdown: [
         { name: 'About KSL', path: '/about' },
         { name: 'Transparency & Accountability', path: '/transparency' },
       ]
-    },    
+    },
     { name: 'Our Programs', path: '/programs' },
 
-    { 
-      name: 'Our Impact', 
+    {
+      name: 'Our Impact',
       dropdown: [
         { name: 'Impact', path: '/impact' },
         { name: 'Our Projects', path: '/projects' },
@@ -33,8 +33,8 @@ const Footer = () => {
     },
     { name: 'Blog', path: '/blog' },
     { name: 'Our Teams', path: '/team' },
-    { 
-      name: 'Get Involved', 
+    {
+      name: 'Get Involved',
       dropdown: [
         { name: 'Volunteer', path: '/volunteer' },
         { name: 'Partnership', path: '/partnership' },
@@ -46,8 +46,8 @@ const Footer = () => {
   const contactInfo = [
     { icon: <FiMapPin />, content: 'Monrovia, Liberia' },
     { icon: <FiPhone />, content: '+231 887 291 599' },
-    { 
-      icon: <FiMail />, 
+    {
+      icon: <FiMail />,
       content: (
         <a href="mailto:support@ksliberia.org" className="hover:text-white transition">
           support@ksliberia.org
@@ -67,38 +67,44 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="container mx-auto px-4 py-12">
+    <footer className="bg-slate-900 border-t border-slate-800 text-slate-300 relative overflow-hidden">
+      {/* Subtle background glow */}
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl translate-y-[-50%] pointer-events-none"></div>
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-yellow-500/5 rounded-full blur-3xl translate-y-[50%] pointer-events-none"></div>
+
+      <div className="container mx-auto px-4 py-16 lg:py-20 relative z-10">
         {/* Main Footer Content */}
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
-          
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+
           {/* Column 1: Organization Info */}
-          <div className="space-y-6">
+          <div className="space-y-6 lg:col-span-2 xl:col-span-1">
             {/* Logo and Organization Name */}
             <div className="flex items-center space-x-3">
-              <img 
-                src="/KSL Logo.png" 
-                alt="Kids Survivor Liberia Logo" 
-                loading="lazy" 
-                className="w-12 h-12"
-              />
+              <div className="bg-white p-1.5 rounded-xl shadow-sm shrink-0">
+                <img
+                  src="/KSL Logo.png"
+                  alt="Kids Survivor Liberia Logo"
+                  loading="lazy"
+                  className="w-10 h-10 object-contain"
+                />
+              </div>
               <div>
-                <h2 className="text-xl font-bold tracking-tight">Kids Survivor</h2>
-                <p className="text-sm text-gray-400 mt-1">Liberia</p>
+                <h2 className="text-xl font-extrabold text-white tracking-tight leading-none">Kids Survivor</h2>
+                <p className="text-[11px] text-blue-400 font-bold uppercase tracking-widest mt-1 leading-none">Liberia</p>
               </div>
             </div>
 
             {/* Mission Statement */}
-            <p className="text-gray-300 leading-relaxed">
-              Transforming lives of Liberia's most vulnerable children through 
-              protection, education, and empowerment.
+            <p className="text-slate-400 leading-relaxed text-sm md:text-base max-w-sm">
+              Transforming lives of Liberia's most vulnerable populations through
+              protection, education, and empowerment aligned with national goals.
             </p>
 
             {/* Donate Button */}
-            <div className="pt-2">
-              <Link 
-                to="/donate" 
-                className="inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 transform hover:-translate-y-1"
+            <div className="pt-4">
+              <Link
+                to="/donate"
+                className="inline-flex items-center justify-center bg-yellow-500 hover:bg-yellow-400 text-slate-900 font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-[0_4px_14px_rgba(234,179,8,0.3)] hover:shadow-[0_6px_20px_rgba(234,179,8,0.5)] transform hover:-translate-y-1"
               >
                 Support Our Mission
               </Link>
@@ -106,8 +112,8 @@ const Footer = () => {
           </div>
 
           {/* Column 2: Navigation Links */}
-          <div>
-            <h3 className="text-lg font-bold mb-6 pb-2 border-b border-gray-700">Quick Links</h3>
+          <div className="lg:col-span-1">
+            <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-wider text-sm">Quick Links</h3>
             <div className="grid grid-cols-2 gap-4">
               {/* Column 1: Main Pages */}
               <ul className="space-y-3">
@@ -118,8 +124,8 @@ const Footer = () => {
                       <ul className="ml-3 space-y-1 border-l border-gray-700 pl-3">
                         {item.dropdown.map((subItem) => (
                           <li key={subItem.name}>
-                            <Link 
-                              to={subItem.path} 
+                            <Link
+                              to={subItem.path}
                               className="text-gray-400 hover:text-white text-sm transition hover:pl-1"
                             >
                               {subItem.name}
@@ -130,8 +136,8 @@ const Footer = () => {
                     </li>
                   ) : (
                     <li key={item.name}>
-                      <Link 
-                        to={item.path} 
+                      <Link
+                        to={item.path}
                         className="text-gray-400 hover:text-white transition flex items-center group"
                       >
                         <span className="group-hover:pl-1 transition-all">{item.name}</span>
@@ -150,8 +156,8 @@ const Footer = () => {
                       <ul className="ml-3 space-y-1 border-l border-gray-700 pl-3">
                         {item.dropdown.map((subItem) => (
                           <li key={subItem.name}>
-                            <Link 
-                              to={subItem.path} 
+                            <Link
+                              to={subItem.path}
                               className="text-gray-400 hover:text-white text-sm transition hover:pl-1"
                             >
                               {subItem.name}
@@ -162,8 +168,8 @@ const Footer = () => {
                     </li>
                   ) : (
                     <li key={item.name}>
-                      <Link 
-                        to={item.path} 
+                      <Link
+                        to={item.path}
                         className="text-gray-400 hover:text-white transition flex items-center group"
                       >
                         <span className="group-hover:pl-1 transition-all">{item.name}</span>
@@ -178,7 +184,7 @@ const Footer = () => {
           {/* Column 3: Contact & Social */}
           <div>
             <h3 className="text-lg font-bold mb-6 pb-2 border-b border-gray-700">Get In Touch</h3>
-            
+
             {/* Contact Information */}
             <ul className="space-y-4 mb-8">
               {contactInfo.map((contact, index) => (

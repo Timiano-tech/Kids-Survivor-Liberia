@@ -1,8 +1,6 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FiShield, FiHeart, FiTarget, FiUsers, FiAward, FiCalendar, FiMail, FiMessageSquare, FiGlobe, FiHome } from 'react-icons/fi';
-import CallToAction from '../components/CallToAction';
-import ScrollToTopButton from '../components/ScrollToTop';
+import { FiShield, FiHeart, FiTarget, FiUsers, FiAward, FiMessageSquare, FiGlobe } from 'react-icons/fi';
 import KSLCompany from '../assets/KSL Company.jpeg';
 import { Link } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
@@ -74,7 +72,7 @@ const Volunteer = () => {
 
   const values = [
     "Inclusion & Equity",
-    "Dignity & Protection", 
+    "Dignity & Protection",
     "Prevention & Empowerment",
     "Partnership & Participation",
     "Integrity & Accountability"
@@ -83,97 +81,134 @@ const Volunteer = () => {
   return (
     <>
       <div className="min-h-screen bg-white">
-        {/* Main Header Section */}
-                <header className="relative">
-                  <div className="absolute inset-0 bg-linear-to-r from-blue-800 to-blue-900/70 z-10">
-                    <img 
-                      src={KSLCompany} 
-                      alt="KSL_Background" 
-                      className="w-full h-full object-cover opacity-20"
-                    />
-                  </div>
-        
-                  <div className="relative z-10 py-30 text-center">
-                    <div className="container mx-auto px-4">
-                      <motion.h1 
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="text-5xl md:text-6xl font-bold text-white"
-                      >
-                        Volunteer With KSL
-                      </motion.h1>
-                      <p className="text-white/80 text-lg mt-4 max-w-3xl mx-auto">
-                        Join us in transforming lives and building a drug-free, empowered Liberia through strategic volunteerism aligned with national initiatives.
-                      </p>
-                    </div>
-                  </div>
-                </header>
+        {/* Main Header Section - Premium Redesign */}
+        <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[3rem] shadow-xl">
+          <div className="absolute inset-0 z-0">
+            <img
+              src={KSLCompany}
+              alt="KSL Background"
+              className="w-full h-full object-cover"
+              fetchPriority="high"
+            />
+            <div className="absolute inset-0 bg-blue-900/80 mix-blend-multiply"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-blue-900 via-blue-900/60 to-transparent"></div>
+          </div>
+
+          <div className="relative z-10 container mx-auto px-6 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="max-w-4xl mx-auto"
+            >
+              <span className="text-yellow-400 font-bold tracking-widest uppercase text-sm mb-4 block drop-shadow-md">Join Our Team</span>
+              <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight drop-shadow-xl">
+                Volunteer With KSL
+              </h1>
+              <p className="text-xl md:text-2xl text-blue-100 font-light leading-relaxed max-w-3xl mx-auto border-l-4 border-yellow-400 pl-6 text-left md:text-center md:border-l-0 md:pl-0">
+                Join us in transforming lives and building a drug-free, empowered Liberia through strategic volunteerism aligned with national initiatives.
+              </p>
+            </motion.div>
+          </div>
+        </header>
 
         {/* Main Content */}
-        <main className="py-16 sm:py-20">
-          <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
-            {/* Strategic Mandate */}
-            <section className="mb-20">
-              <div className="bg-gradient-to-br from-blue-50 to-slate-50 rounded-2xl p-8 sm:p-10 border border-blue-100/80 shadow-sm">
-                <p className="text-xs font-semibold uppercase tracking-wider text-blue-600 mb-3">Our Mandate</p>
-                <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-5">
-                  Strategic Mandate
-                </h2>
-                <p className="text-gray-700 text-lg leading-relaxed max-w-4xl">
-                  Kids Survivor Liberia (KSL) exists to address intersecting challenges of drug abuse,
-                  poverty, gender vulnerability, youth marginalization, and age-related neglect through
-                  integrated prevention, protection, rehabilitation, and empowerment strategies rooted
-                  in community partnership and national policy alignment.
-                </p>
-              </div>
-            </section>
+        <main className="py-20 relative">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-50/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+          <div className="container mx-auto px-4 sm:px-6 max-w-6xl relative z-10">
+            {/* Split Section: Strategic Mandate & Vision - Premium */}
+            <div className="grid md:grid-cols-2 gap-10 mb-24">
+              {/* Strategic Mandate */}
+              <motion.section
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="h-full"
+              >
+                <div className="bg-gradient-to-br from-white to-slate-50 rounded-[2.5rem] p-10 lg:p-12 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] h-full flex flex-col relative overflow-hidden group hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-shadow duration-500">
+                  <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none">
+                    <FiShield className="w-32 h-32 text-blue-600" />
+                  </div>
+                  <p className="text-xs font-bold tracking-widest uppercase text-blue-600 mb-4 flex items-center">
+                    <span className="w-8 h-px bg-blue-600 mr-3"></span>
+                    Our Mandate
+                  </p>
+                  <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6 tracking-tight relative z-10">
+                    Strategic Focus
+                  </h2>
+                  <p className="text-slate-600 text-lg leading-relaxed relative z-10 flex-grow">
+                    Kids Survivor Liberia (KSL) exists to address intersecting challenges of drug abuse,
+                    poverty, gender vulnerability, youth marginalization, and age-related neglect through
+                    integrated prevention, protection, rehabilitation, and empowerment strategies rooted
+                    in community partnership and national policy alignment.
+                  </p>
+                </div>
+              </motion.section>
 
-            {/* Vision */}
-            <section className="mb-20">
-              <div className="text-center max-w-3xl mx-auto">
-                <p className="text-xs font-semibold uppercase tracking-wider text-blue-600 mb-3">Our Vision</p>
-                <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-5">
-                  A Drug-Free, Resilient Liberia
-                </h2>
-                <p className="text-gray-600 text-lg leading-relaxed">
-                  We envision a Liberia where children, adolescent girls, youth, widows, and elderly men
-                  live in dignity, have equitable access to education and economic opportunities, are
-                  protected from drugs, violence, and exploitation, and actively contribute to sustainable
-                  development and social cohesion.
-                </p>
-              </div>
-            </section>
+              {/* Vision */}
+              <motion.section
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="h-full"
+              >
+                <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-[2.5rem] p-10 lg:p-12 border border-blue-500 shadow-[0_8px_30px_rgb(37,99,235,0.2)] h-full flex flex-col relative overflow-hidden group hover:shadow-[0_20px_40px_rgb(37,99,235,0.3)] transition-shadow duration-500">
+                  <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
+                    <FiGlobe className="w-32 h-32 text-white" />
+                  </div>
+                  <p className="text-xs font-bold tracking-widest uppercase text-blue-200 mb-4 flex items-center">
+                    <span className="w-8 h-px bg-blue-200 mr-3"></span>
+                    Our Vision
+                  </p>
+                  <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 tracking-tight relative z-10">
+                    A Resilient Liberia
+                  </h2>
+                  <p className="text-blue-50 text-lg leading-relaxed relative z-10 flex-grow">
+                    We envision a Liberia where children, adolescent girls, youth, widows, and elderly men
+                    live in dignity, have equitable access to education and economic opportunities, are
+                    protected from drugs, violence, and exploitation, and actively contribute to sustainable
+                    development and social cohesion.
+                  </p>
+                </div>
+              </motion.section>
+            </div>
 
-            {/* Programmatic Pillars */}
-            <section className="mb-20">
-              <div className="text-center mb-12">
-                <p className="text-xs font-semibold uppercase tracking-wider text-blue-600 mb-2">What We Focus On</p>
-                <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">
+            {/* Programmatic Pillars - Premium */}
+            <section className="mb-24">
+              <div className="text-center mb-16">
+                <span className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-3 block">What We Focus On</span>
+                <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
                   Core Programmatic Pillars
                 </h2>
+                <p className="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
+                  Our strategic areas of intervention where volunteers can make the most significant impact on communities.
+                </p>
               </div>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {volunteerPillars.map((pillar, index) => (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, y: 16 }}
+                    initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: index * 0.06 }}
-                    className="group bg-white rounded-2xl border border-gray-200/80 p-6 sm:p-7 shadow-sm hover:shadow-lg hover:border-blue-100 transition-all duration-300"
+                    transition={{ delay: index * 0.1, duration: 0.5 }}
+                    className="group bg-white rounded-[2rem] border border-slate-100 p-8 shadow-[0_4px_20px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.1)] hover:-translate-y-2 transition-all duration-500 relative overflow-hidden"
                   >
-                    <div className="flex items-start justify-between gap-4 mb-4">
-                      <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 group-hover:bg-blue-100 transition-colors">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50/50 rounded-bl-full -z-10 group-hover:bg-blue-100/50 transition-colors duration-500"></div>
+                    <div className="flex flex-col mb-6">
+                      <div className="w-14 h-14 rounded-2xl bg-slate-50 text-blue-600 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500 shadow-sm mb-4">
                         {pillar.icon}
                       </div>
-                      <span className="text-xs font-semibold text-blue-600 bg-blue-50 px-3 py-1.5 rounded-full shrink-0">
+                      <span className="text-xs font-bold tracking-widest uppercase text-blue-600 max-w-fit">
                         {pillar.pillar}
                       </span>
                     </div>
-                    <h3 className="text-lg font-bold text-gray-800 mb-3 leading-tight">
+                    <h3 className="text-xl font-bold text-slate-900 mb-4 leading-snug group-hover:text-blue-600 transition-colors duration-300">
                       {pillar.title}
                     </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-slate-600 leading-relaxed group-hover:text-slate-700">
                       {pillar.description}
                     </p>
                   </motion.div>
@@ -181,132 +216,175 @@ const Volunteer = () => {
               </div>
             </section>
 
-            {/* Volunteer Opportunities */}
-            <section className="mb-20">
-              <div className="text-center mb-12">
-                <p className="text-xs font-semibold uppercase tracking-wider text-blue-600 mb-2">Get Involved</p>
-                <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">
-                  Volunteer Opportunities
-                </h2>
-                <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
-                  Roles aligned with Youth Transformation & Empowerment Initiative (YTEI) and NADAP 2025–2030.
-                </p>
-              </div>
-              <div className="grid sm:grid-cols-2 gap-6">
-                {volunteerRoles.map((role, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 12 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.05 }}
-                    className="bg-white rounded-2xl border border-gray-200/80 p-6 sm:p-7 shadow-sm hover:shadow-md hover:border-blue-100 transition-all duration-300"
-                  >
-                    <div className="flex items-start justify-between gap-3 mb-4">
-                      <span className="text-xs font-semibold text-blue-600 bg-blue-50 px-3 py-1.5 rounded-full">
-                        {role.category}
-                      </span>
-                      <span className="text-blue-500 shrink-0">{role.icon}</span>
-                    </div>
-                    <h3 className="text-lg font-bold text-gray-800 mb-3">
-                      {role.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-5">
-                      {role.description}
+            {/* Volunteer Opportunities - Premium */}
+            <section className="mb-24">
+              <div className="bg-slate-900 rounded-[3rem] p-10 lg:p-16 relative overflow-hidden">
+                {/* Decorative background elements */}
+                <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+                <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-600/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+
+                <div className="relative z-10">
+                  <div className="text-center mb-16">
+                    <span className="inline-block px-4 py-2 bg-white/10 text-blue-300 rounded-full text-xs font-bold tracking-widest uppercase mb-6 backdrop-blur-sm border border-white/10">
+                      Get Involved
+                    </span>
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+                      Volunteer Opportunities
+                    </h2>
+                    <p className="text-slate-300 mt-3 max-w-2xl mx-auto text-lg leading-relaxed">
+                      Discover roles aligned with the Youth Transformation & Empowerment Initiative (YTEI) and NADAP 2025–2030.
                     </p>
-                    <ul className="text-xs text-gray-500 space-y-2 border-t border-gray-100 pt-4">
-                      <li className="flex items-center gap-2">• Minimum commitment: 3 months</li>
-                      <li className="flex items-center gap-2">• Training provided</li>
-                      <li className="flex items-center gap-2">• Community-based approach</li>
-                    </ul>
-                  </motion.div>
-                ))}
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-8">
+                    {volunteerRoles.map((role, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: index * 0.1, duration: 0.5 }}
+                        className="bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 p-8 hover:bg-white/10 transition-colors duration-300 group"
+                      >
+                        <div className="flex items-start justify-between gap-4 mb-6">
+                          <span className="text-xs font-bold tracking-widest uppercase text-blue-300 bg-blue-900/50 px-4 py-2 rounded-lg border border-blue-500/30">
+                            {role.category}
+                          </span>
+                          <div className="p-3 bg-white/10 text-blue-300 rounded-xl group-hover:scale-110 transition-transform duration-300">
+                            {role.icon}
+                          </div>
+                        </div>
+                        <h3 className="text-2xl font-bold text-white mb-4 tracking-tight">
+                          {role.title}
+                        </h3>
+                        <p className="text-slate-300 leading-relaxed mb-8">
+                          {role.description}
+                        </p>
+                        <div className="bg-black/20 rounded-2xl p-6 border border-white/5">
+                          <ul className="text-sm font-medium text-slate-300 space-y-3">
+                            <li className="flex items-center gap-3">
+                              <FiTarget className="text-blue-400 w-5 h-5 shrink-0" />
+                              Minimum commitment: 3 months
+                            </li>
+                            <li className="flex items-center gap-3">
+                              <FiShield className="text-emerald-400 w-5 h-5 shrink-0" />
+                              Comprehensive training provided
+                            </li>
+                            <li className="flex items-center gap-3">
+                              <FiUsers className="text-purple-400 w-5 h-5 shrink-0" />
+                              Community-based approach
+                            </li>
+                          </ul>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </section>
 
-            {/* Guiding Values */}
-            <section className="mb-20">
-              <div className="text-center mb-8">
-                <p className="text-xs font-semibold uppercase tracking-wider text-blue-600 mb-2">Our Principles</p>
-                <h2 className="text-2xl font-bold text-gray-800">
+            {/* Guiding Values - Premium */}
+            <section className="mb-24">
+              <div className="text-center mb-10">
+                <span className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-3 block">Our Principles</span>
+                <h2 className="text-3xl font-bold text-slate-900">
                   Guiding Values
                 </h2>
               </div>
-              <div className="flex flex-wrap justify-center gap-3">
+              <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
                 {values.map((value, index) => (
-                  <span
+                  <motion.span
                     key={index}
-                    className="inline-flex items-center px-5 py-2.5 rounded-full bg-blue-50/80 border border-blue-100 text-gray-700 text-sm font-medium hover:bg-blue-100/80 hover:border-blue-200 transition-colors"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.05 }}
+                    className="inline-flex items-center px-6 py-3 rounded-full bg-white border border-slate-200 text-slate-700 font-medium shadow-sm hover:shadow-md hover:border-blue-300 hover:text-blue-600 transition-all cursor-default"
                   >
+                    <div className="w-2 h-2 rounded-full bg-blue-500 mr-3"></div>
                     {value}
-                  </span>
+                  </motion.span>
                 ))}
               </div>
             </section>
 
-            {/* FAQ */}
-            <section className="mb-20">
-              <div className="text-center mb-10">
-                <p className="text-xs font-semibold uppercase tracking-wider text-blue-600 mb-2">Support</p>
-                <h2 className="text-2xl font-bold text-gray-800">
+            {/* FAQ - Premium */}
+            <section className="mb-24">
+              <div className="text-center mb-12">
+                <span className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-3 block">Support</span>
+                <h2 className="text-3xl font-bold text-slate-900">
                   Frequently Asked Questions
                 </h2>
               </div>
-              <div className="max-w-3xl mx-auto space-y-4">
+              <div className="max-w-3xl mx-auto space-y-6">
                 {[
                   { q: "How does KSL align with national initiatives?", a: "All volunteer work supports Youth Transformation & Empowerment Initiative (YTEI) and National Anti-Drugs Action Plan (NADAP) 2025-2030 priorities through community-driven interventions." },
                   { q: "What training is provided to volunteers?", a: "We provide comprehensive training in drug prevention, psychosocial support, child protection, and community engagement methodologies aligned with our strategic pillars." },
                   { q: "Can I volunteer remotely?", a: "Most roles require community presence, but some advocacy and awareness campaign support can be done remotely. Contact us to discuss options." },
                   { q: "What's the impact measurement process?", a: "We use participatory monitoring systems tracking outcomes aligned with YTEI and NADAP indicators, with regular feedback from community stakeholders." }
                 ].map((faq, index) => (
-                  <div key={index} className="bg-white rounded-xl border border-gray-200/80 p-5 sm:p-6 shadow-sm hover:border-blue-100 transition-colors">
-                    <h3 className="font-bold text-gray-800 mb-2 text-base">
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    className="bg-white rounded-2xl border border-slate-100 p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow group"
+                  >
+                    <h3 className="font-bold text-slate-900 mb-3 text-lg group-hover:text-blue-600 transition-colors flex items-start gap-3">
+                      <span className="text-blue-400 mt-1 flex-shrink-0">Q.</span>
                       {faq.q}
                     </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-slate-600 leading-relaxed pl-7">
+                      <span className="text-slate-400 font-bold mr-2 hidden sm:inline">A.</span>
                       {faq.a}
                     </p>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </section>
 
-            {/* CTA */}
-            <section>
-              <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-8 sm:p-12 text-center text-white shadow-xl border border-blue-500/20">
-                <div className="w-16 h-16 rounded-2xl bg-white/15 flex items-center justify-center mx-auto mb-6">
-                  <FiMessageSquare className="w-8 h-8" />
+            {/* CTA - Premium */}
+            <section className="pb-10">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-r from-blue-700 to-indigo-800 rounded-[3rem] p-10 sm:p-16 text-center text-white shadow-2xl relative overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-10 mix-blend-overlay"></div>
+                <div className="relative z-10">
+                  <div className="w-20 h-20 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-8 backdrop-blur-md border border-white/20">
+                    <FiMessageSquare className="w-10 h-10 text-white" />
+                  </div>
+                  <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">
+                    Join Our Strategic Mission
+                  </h2>
+                  <p className="text-blue-100 text-xl max-w-3xl mx-auto mb-10 leading-relaxed font-light">
+                    Become part of a movement creating lasting change. Your contribution supports
+                    national priorities for youth development, drug demand reduction, gender equality,
+                    and social protection in Liberia.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-5 justify-center">
+                    <Link
+                      to="/contact"
+                      className="inline-flex items-center justify-center bg-yellow-400 text-blue-900 hover:bg-yellow-300 font-bold py-4 px-10 rounded-full transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+                    >
+                      Contact Volunteer Coordinator
+                    </Link>
+                    <a
+                      href="mailto:support@ksliberia.org"
+                      className="inline-flex items-center justify-center bg-white/10 border border-white/30 text-white hover:bg-white/20 font-semibold py-4 px-10 rounded-full transition-all backdrop-blur-sm hover:-translate-y-1"
+                    >
+                      support@ksliberia.org
+                    </a>
+                  </div>
                 </div>
-                <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-                  Join Our Strategic Mission
-                </h2>
-                <p className="text-blue-100 text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
-                  Become part of a movement creating lasting change. Your contribution supports
-                  national priorities for youth development, drug demand reduction, gender equality,
-                  and social protection in Liberia.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link
-                    to="/contact"
-                    className="inline-flex items-center justify-center bg-white text-blue-700 hover:bg-blue-50 font-semibold py-3.5 px-8 rounded-xl transition-colors shadow-lg"
-                  >
-                    Contact Volunteer Coordinator
-                  </Link>
-                  <a
-                    href="mailto:support@ksliberia.org"
-                    className="inline-flex items-center justify-center border-2 border-white/80 text-white hover:bg-white/10 font-semibold py-3.5 px-8 rounded-xl transition-colors"
-                  >
-                    support@ksliberia.org
-                  </a>
-                </div>
-              </div>
+              </motion.div>
             </section>
           </div>
         </main>
-
-        <CallToAction />
       </div>
-      <ScrollToTopButton />
     </>
   );
 };

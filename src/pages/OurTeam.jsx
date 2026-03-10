@@ -217,6 +217,7 @@ const OurTeam = () => {
               src={HeaderImage}
               alt="KSL Team Background"
               className="w-full h-full object-cover"
+              fetchPriority="high"
             />
             <div className="absolute inset-0 bg-blue-900/85 mix-blend-multiply"></div>
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent"></div>

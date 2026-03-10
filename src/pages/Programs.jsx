@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { 
+import {
   FiShield,
   FiHeart,
   FiUsers,
@@ -12,8 +12,6 @@ import {
   FiActivity,
   FiAward
 } from 'react-icons/fi';
-import CallToAction from '../components/CallToAction';
-import ScrollToTopButton from '../components/ScrollToTop';
 import HeaderImage from '../assets/Talking to children.jpeg';
 import PreventionImage from '../assets/Say no to drugs.jpeg';
 import RehabImage from '../assets/Children3.jpeg';
@@ -153,147 +151,111 @@ const Programs = () => {
   return (
     <>
       <div className="min-h-screen bg-white">
-        {/* Main Header Section */}
-                <header className="relative">
-                  <div className="absolute inset-0 bg-linear-to-r from-blue-800 to-blue-900/70 z-10">
-                    <img 
-                      src={HeaderImage} 
-                      alt="KSL Background" 
-                      className="w-full h-full object-cover opacity-20"
-                    />
-                  </div>
-        
-                  <div className="relative z-10 py-30 text-center">
-                    <div className="container mx-auto px-4">
-                      <motion.h1 
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="text-5xl md:text-6xl font-bold text-white"
-                      >
-                        Our Strategic Programs & National Alignment
-                      </motion.h1>
-                      <p className="text-white/80 text-lg mt-4 max-w-3xl mx-auto">
-                        Implementing NADAP 2025-2030 & YTEI-Aligned Interventions for Sustainable Impact
-                      </p>
-                    </div>
-                  </div>
-                </header>
+        {/* Premium Header */}
+        <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[3rem] shadow-2xl">
+          <div className="absolute inset-0 z-0">
+            <img
+              src={HeaderImage}
+              alt="KSL Programs Background"
+              className="w-full h-full object-cover"
+              fetchPriority="high"
+            />
+            <div className="absolute inset-0 bg-slate-900/80 mix-blend-multiply"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent"></div>
+          </div>
+          <div className="relative z-10 container mx-auto px-6 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="max-w-4xl mx-auto"
+            >
+              <span className="text-yellow-400 font-bold tracking-widest uppercase text-sm mb-4 block drop-shadow-md">Core Initiatives</span>
+              <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight drop-shadow-xl">
+                Our Strategic Programs
+              </h1>
+              <p className="text-xl md:text-2xl text-blue-100 font-light leading-relaxed max-w-3xl mx-auto border-l-4 border-yellow-400 pl-6 text-left md:text-center md:border-l-0 md:pl-0">
+                Implementing NADAP 2025-2030 & YTEI-Aligned Interventions for Sustainable, Transformative Impact
+              </p>
+            </motion.div>
+          </div>
+        </header>
 
         {/* Main Content */}
         <main className="py-16 md:py-24">
           <div className="container mx-auto px-4 max-w-6xl">
-            {/* Policy Alignment Section - EXPANDED */}
+            {/* Policy Alignment Section - Premium */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="mb-20"
+              className="mb-32 mt-12"
             >
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+              <div className="text-center mb-16">
+                <span className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-3 block">National Frameworks</span>
+                <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
                   National Policy Alignment
                 </h2>
-                <p className="text-gray-600 max-w-2xl mx-auto">
-                  Our programs are strategically designed to contribute to Liberia's national development frameworks
+                <p className="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
+                  Our programs are strategically designed to actively contribute to Liberia's core national development frameworks.
                 </p>
               </div>
 
-              <div className="space-y-8">
+              <div className="grid lg:grid-cols-2 gap-10">
                 {policyAlignment.map((policy, index) => (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className={`rounded-xl shadow-lg border-l-4 ${
-                      policy.color === 'blue' 
-                        ? 'border-blue-500 bg-linear-to-r from-blue-50 to-white' 
-                        : 'border-yellow-500 bg-linear-to-r from-green-50 to-white'
-                    } overflow-hidden`}
+                    className="bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] border border-slate-100 transition-all duration-500 overflow-hidden group flex flex-col h-full"
                   >
-                    <div className="p-8">
-                      <div className="flex flex-col md:flex-row md:items-start gap-6">
-                        {/* Policy Header */}
-                        <div className="md:w-1/3">
-                          <div className="flex items-center mb-4">
-                            <div className={`p-3 rounded-lg ${
-                              policy.color === 'blue' ? 'bg-blue-100' : 'bg-yellow-100'
-                            } mr-4`}>
-                              <div className={policy.color === 'blue' ? 'text-blue-600' : 'text-yellow-500'}>
-                                {policy.icon}
-                              </div>
-                            </div>
-                            <div>
-                              <h3 className="text-xl font-bold text-gray-800">{policy.title}</h3>
-                              <div className={`text-sm font-semibold ${
-                                policy.color === 'blue' ? 'text-blue-700' : 'text-yellow-500'
-                              } mt-1`}>
-                                National Framework
-                              </div>
-                            </div>
-                          </div>
-                          
-                          <p className="text-gray-600 mb-6">
-                            {policy.description}
-                          </p>
+                    <div className={`p-8 lg:p-10 border-b-4 ${policy.color === 'blue' ? 'border-blue-500' : 'border-yellow-400'} flex-1 relative overflow-hidden`}>
+                      <div className={`absolute top-0 right-0 w-48 h-48 ${policy.color === 'blue' ? 'bg-blue-50' : 'bg-yellow-50'} rounded-bl-full -mr-10 -mt-10 transition-transform duration-700 group-hover:scale-110`}></div>
 
-                          {/* Key Focus Areas */}
-                          <div className="mb-6">
-                            <h4 className="font-semibold text-gray-800 mb-3 flex items-center">
-                              <FiAward className={`mr-2 ${
-                                policy.color === 'blue' ? 'text-blue-500' : 'text-yellow-500'
-                              }`} />
-                              Key Focus Areas
-                            </h4>
-                            <div className="flex flex-wrap gap-2">
-                              {policy.keyFocus.map((focus, idx) => (
-                                <span 
-                                  key={idx}
-                                  className={`px-3 py-1 rounded-full text-sm font-medium ${
-                                    policy.color === 'blue'
-                                      ? 'bg-blue-100 text-blue-700'
-                                      : 'bg-yellow-100 text-yellow-700'
-                                  }`}
-                                >
-                                  {focus}
-                                </span>
-                              ))}
-                            </div>
+                      <div className="relative z-10">
+                        <div className="flex items-center gap-5 mb-8">
+                          <div className={`p-4 rounded-2xl ${policy.color === 'blue' ? 'bg-blue-100 text-blue-600' : 'bg-yellow-100 text-yellow-600'} shadow-sm`}>
+                            {policy.icon}
+                          </div>
+                          <div>
+                            <h3 className="text-2xl font-bold text-slate-900 tracking-tight">{policy.title}</h3>
+                            <span className={`text-sm font-bold uppercase tracking-wider ${policy.color === 'blue' ? 'text-blue-600' : 'text-yellow-600'} mt-1 block`}>National Framework</span>
+                          </div>
+                        </div>
+                        <p className="text-slate-600 leading-relaxed mb-8 text-lg">
+                          {policy.description}
+                        </p>
+
+                        <div className="mb-8 p-6 rounded-2xl bg-slate-50 border border-slate-100">
+                          <h4 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                            <FiAward className={policy.color === 'blue' ? 'text-blue-500' : 'text-yellow-500'} />
+                            Key Focus Areas
+                          </h4>
+                          <div className="flex flex-wrap gap-2">
+                            {policy.keyFocus.map((focus, idx) => (
+                              <span key={idx} className={`px-4 py-2 rounded-xl text-sm font-bold shadow-sm ${policy.color === 'blue' ? 'bg-white text-blue-700 border border-blue-100' : 'bg-white text-yellow-700 border border-yellow-100'}`}>
+                                {focus}
+                              </span>
+                            ))}
                           </div>
                         </div>
 
-                        {/* Policy Details */}
-                        <div className="md:w-2/3">
-                          <h4 className="font-semibold text-gray-800 mb-4 flex items-center">
-                            <FiCheckCircle className="mr-2 text-gray-400" />
-                            KSL Contribution & Implementation
+                        <div>
+                          <h4 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                            <FiCheckCircle className="text-slate-400" />
+                            Implementation Strategy
                           </h4>
-                          
-                          <div className="space-y-4">
+                          <ul className="space-y-4">
                             {policy.details.map((detail, idx) => (
-                              <div 
-                                key={idx}
-                                className="flex items-start p-4 bg-white rounded-lg border border-gray-100 hover:shadow-sm transition-shadow"
-                              >
-                                <div className={`w-2 h-2 rounded-full mt-2 mr-4 ${
-                                  policy.color === 'blue' ? 'bg-blue-500' : 'bg-yellow-500'
-                                }`}></div>
-                                <p className="text-gray-700">{detail}</p>
-                              </div>
+                              <li key={idx} className="flex items-start gap-4">
+                                <div className={`w-2 h-2 rounded-full mt-2.5 shrink-0 ${policy.color === 'blue' ? 'bg-blue-500' : 'bg-yellow-500'}`}></div>
+                                <span className="text-slate-700 leading-relaxed">{detail}</span>
+                              </li>
                             ))}
-                          </div>
-
-                          {/* Additional Info */}
-                          <div className="mt-6 p-4 bg-white/50 rounded-lg border border-gray-100">
-                            <div className="flex items-center text-sm text-gray-600">
-                              <FiActivity className="mr-2" />
-                              <span>
-                                <span className="font-semibold">Implementation Status:</span> Active across all program pillars
-                              </span>
-                            </div>
-                          </div>
+                          </ul>
                         </div>
                       </div>
                     </div>
@@ -301,35 +263,38 @@ const Programs = () => {
                 ))}
               </div>
 
-              {/* Alignment Summary */}
+              {/* Alignment Summary - Premium */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
-                className="mt-12 bg-blue-500 rounded-xl p-8 text-white"
+                className="mt-16 bg-gradient-to-br from-blue-700 to-blue-900 rounded-[2.5rem] p-10 md:p-14 text-white shadow-2xl relative overflow-hidden"
               >
-                <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">Comprehensive Alignment</h3>
-                    <p className="text-blue-100">
-                      Our programs integrate both NADAP and YTEI frameworks for holistic impact
+                <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+                <div className="absolute inset-0 bg-[url('/assets/pattern-bg.png')] opacity-10 mix-blend-overlay"></div>
+
+                <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10">
+                  <div className="md:w-1/2 text-center md:text-left">
+                    <h3 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight drop-shadow-sm">Comprehensive Alignment</h3>
+                    <p className="text-blue-100 text-lg leading-relaxed font-light">
+                      Our programs intricately weave NADAP and YTEI frameworks into a cohesive, holistic impact strategy for Liberia.
                     </p>
                   </div>
-                  <div className="flex items-center gap-4">
-                    <div className="text-center">
-                      <div className="text-2xl font-bold">2</div>
-                      <div className="text-sm text-blue-200">National Frameworks</div>
+                  <div className="md:w-1/2 flex items-center justify-center md:justify-end gap-6 sm:gap-10">
+                    <div className="text-center group">
+                      <div className="text-4xl sm:text-5xl font-black text-yellow-400 mb-2 drop-shadow-md group-hover:scale-110 transition-transform">2</div>
+                      <div className="text-xs sm:text-sm text-blue-200 font-bold tracking-widest uppercase">Frameworks</div>
                     </div>
-                    <div className="h-12 w-px bg-white/30"></div>
-                    <div className="text-center">
-                      <div className="text-2xl font-bold">5</div>
-                      <div className="text-sm text-blue-200">Program Pillars</div>
+                    <div className="h-20 w-px bg-white/20"></div>
+                    <div className="text-center group">
+                      <div className="text-4xl sm:text-5xl font-black text-yellow-400 mb-2 drop-shadow-md group-hover:scale-110 transition-transform">5</div>
+                      <div className="text-xs sm:text-sm text-blue-200 font-bold tracking-widest uppercase">Pillars</div>
                     </div>
-                    <div className="h-12 w-px bg-white/30"></div>
-                    <div className="text-center">
-                      <div className="text-2xl font-bold">100%</div>
-                      <div className="text-sm text-blue-200">Aligned Programs</div>
+                    <div className="h-20 w-px bg-white/20"></div>
+                    <div className="text-center group">
+                      <div className="text-4xl sm:text-5xl font-black text-yellow-400 mb-2 drop-shadow-md group-hover:scale-110 transition-transform">100%</div>
+                      <div className="text-xs sm:text-sm text-blue-200 font-bold tracking-widest uppercase">Aligned</div>
                     </div>
                   </div>
                 </div>
@@ -342,18 +307,19 @@ const Programs = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="mb-20"
+              className="mb-32 mt-20"
             >
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+              <div className="text-center mb-16">
+                <span className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-3 block">Our Approach</span>
+                <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
                   Our Programmatic Pillars
                 </h2>
-                <p className="text-gray-600 max-w-2xl mx-auto">
+                <p className="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
                   Five comprehensive pillars implementing NADAP and YTEI-aligned interventions
                 </p>
               </div>
 
-              <div className="space-y-16">
+              <div className="space-y-24">
                 {programPillars.map((pillar, index) => (
                   <motion.div
                     key={pillar.id}
@@ -361,22 +327,23 @@ const Programs = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 items-center`}
+                    className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-16 items-center group`}
                   >
                     {/* Image Section */}
-                    <div className="w-full lg:w-1/2">
-                      <div className="relative rounded-xl overflow-hidden shadow-lg">
-                        <img 
-                          src={pillar.image} 
+                    <div className="w-full lg:w-1/2 relative">
+                      <div className="absolute inset-0 bg-blue-600 rounded-[2rem] -translate-x-4 translate-y-4 opacity-10 group-hover:-translate-x-6 group-hover:translate-y-6 transition-transform duration-500"></div>
+                      <div className="relative rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
+                        <img
+                          src={pillar.image}
                           alt={pillar.title}
-                          className="w-full h-64 md:h-80 object-cover"
+                          className="w-full h-80 md:h-96 object-cover group-hover:scale-105 transition-transform duration-700"
                         />
-                        <div className="absolute top-4 left-4">
-                          <div className={`inline-flex items-center gap-2 px-3 py-2 ${
-                            pillar.color = 'bg-blue-500'
-                          } text-white rounded-lg text-sm font-semibold`}>
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                        <div className="absolute bottom-6 left-6">
+                          <div className={`inline-flex items-center gap-3 px-5 py-2.5 ${index % 2 === 0 ? 'bg-blue-600' : 'bg-yellow-500'
+                            } text-white rounded-full text-sm font-bold tracking-wider shadow-lg backdrop-blur-sm`}>
                             {pillar.icon}
-                            <span>Pillar {pillar.id}</span>
+                            <span className="uppercase">Pillar {pillar.id}</span>
                           </div>
                         </div>
                       </div>
@@ -384,33 +351,35 @@ const Programs = () => {
 
                     {/* Content Section */}
                     <div className="w-full lg:w-1/2">
-                      <div>
-                        <span className={`text-sm font-semibold ${
-                          pillar.color = 'text-blue-500'
-                        } mb-2 block`}>
+                      <div className="mb-8">
+                        <span className={`inline-block px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-4 ${index % 2 === 0 ? 'bg-blue-50 text-blue-600 border border-blue-100' : 'bg-yellow-50 text-yellow-600 border border-yellow-100'
+                          }`}>
                           {pillar.alignment}
                         </span>
-                        <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+                        <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 tracking-tight line-clamp-2">
                           {pillar.title}
                         </h3>
-                        <p className="text-gray-600 mb-6">
+                        <p className="text-slate-600 text-lg leading-relaxed">
                           {pillar.description}
                         </p>
                       </div>
 
                       {/* Components */}
-                      <div>
-                        <h4 className="font-semibold text-gray-800 mb-3 flex items-center">
-                          <FiCheckCircle className="mr-2 text-gray-400" />
+                      <div className="bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-100">
+                        <h4 className="font-bold text-slate-900 mb-5 flex items-center text-lg">
+                          <div className={`p-2 rounded-xl mr-3 ${index % 2 === 0 ? 'bg-blue-100 text-blue-600' : 'bg-yellow-100 text-yellow-600'}`}>
+                            <FiCheckCircle className="w-5 h-5" />
+                          </div>
                           Key Components
                         </h4>
-                        <div className="grid grid-cols-2 gap-3">
+                        <div className="grid sm:grid-cols-2 gap-4">
                           {pillar.components.map((component, idx) => (
-                            <div 
+                            <div
                               key={idx}
-                              className="bg-gray-50 rounded-lg p-3 border border-gray-100"
+                              className="bg-white rounded-xl p-4 border border-slate-100 shadow-sm hover:shadow-md transition-shadow group/comp flex items-start"
                             >
-                              <span className="text-sm font-medium text-gray-700">{component}</span>
+                              <div className={`w-1.5 h-1.5 rounded-full mt-2 mr-3 shrink-0 ${index % 2 === 0 ? 'bg-blue-400' : 'bg-yellow-400'}`}></div>
+                              <span className="text-slate-700 font-medium">{component}</span>
                             </div>
                           ))}
                         </div>
@@ -424,9 +393,6 @@ const Programs = () => {
           </div>
         </main>
       </div>
-      
-      <ScrollToTopButton />
-      <CallToAction />
     </>
   );
 };

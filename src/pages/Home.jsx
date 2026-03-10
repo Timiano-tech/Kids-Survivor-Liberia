@@ -358,7 +358,8 @@ const Home = () => {
                   alt={heroSlides[currentSlide].title}
                   className="w-full h-full object-cover"
                   onError={() => handleImageError(`hero-${currentSlide}`)}
-                  loading='lazy'
+                  loading={currentSlide === 0 ? "eager" : "lazy"}
+                  fetchPriority={currentSlide === 0 ? "high" : "auto"}
                 />
               ) : (
                 <div className="w-full h-full bg-blue-600"></div>

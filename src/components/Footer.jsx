@@ -9,11 +9,18 @@ import {
   FiYoutube, 
   FiLinkedin 
 } from 'react-icons/fi';
+import { COUNTIES } from '../data/counties';
 
 const Footer = () => {
   const navItems = [
     { name: 'Home', path: '/' },
-    { name: 'About Us', path: '/about' },
+    { 
+      name: 'About Us', 
+      dropdown: [
+        { name: 'About KSL', path: '/about' },
+        { name: 'Transparency & Accountability', path: '/transparency' },
+      ]
+    },    
     { name: 'Our Programs', path: '/programs' },
 
     { 
@@ -207,16 +214,39 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Footer Bottom */}
-        <div className="border-t border-gray-800 mt-12 pt-8">
-          <div className=" space-y-4 md:space-y-0">
-            {/* Copyright */}
+        {/* Counties list */}
+        <div className="border-t border-gray-800 mt-10 pt-8">
+          <div className="mb-6">
+            <h3 className="text-sm font-semibold text-gray-300 mb-3 uppercase tracking-wide">
+              Counties We Work In
+            </h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 text-sm">
+              {COUNTIES.map((county) => (
+                <Link
+                  key={county.id}
+                  to={`/counties/${county.id}`}
+                  className="text-gray-400 hover:text-white transition"
+                >
+                  {county.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Footer Bottom */}
+          <div className="border-t border-gray-800 pt-6">
             <div className="text-center">
               <p className="text-gray-400">
                 &copy; {currentYear} Kids Survivor Liberia. All rights reserved.
               </p>
               <p className="text-gray-500 text-sm mt-1">
-              Developed by <a href="https://www.linkedin.com/in/oluwatimileyin-ajayi-140350277" className="hover:text-white transition">Timiano.dev</a>
+                Developed by{' '}
+                <a
+                  href="https://www.linkedin.com/in/oluwatimileyin-ajayi-140350277"
+                  className="hover:text-white transition"
+                >
+                  Timiano.dev
+                </a>
               </p>
             </div>
           </div>

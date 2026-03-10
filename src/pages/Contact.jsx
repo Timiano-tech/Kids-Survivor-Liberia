@@ -7,8 +7,6 @@ import {
   FiMessageSquare
 } from 'react-icons/fi';
 import ContactImage from '../assets/About Picture.jpeg';
-import CallToAction from '../components/CallToAction';
-import ScrollToTopButton from '../components/ScrollToTop';
 import emailjs from '@emailjs/browser';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -282,8 +280,6 @@ const Contact = () => {
         </div>
       </main>
     </div>
-    <ScrollToTopButton/>
-    <CallToAction/>
     </>
   );
 };

@@ -20,12 +20,10 @@ import {
 import KSLCompany from '../assets/KSL Company.jpeg';
 import KSL_Teams from '../assets/KSL_Team.jpeg';
 import KSL_Teams2 from '../assets/KSL_Team2.jpeg';
-import CallToAction from '../components/CallToAction';
 import Mr_Steve from '../assets/Mr_Steve.png';
 import Mrs_Fiona from '../assets/Mrs_Fiona.png';
 import Mrs_Silvia from '../assets/Mrs_Silvia2.png';
 import CEO from '../assets/CEO.png';
-import ScrollToTopButton from '../components/ScrollToTop';
 
 const About = () => {
   useEffect(() => {
@@ -759,10 +757,7 @@ const About = () => {
             </motion.div>
           </div>
         </main>
-
-        <CallToAction />
       </div>
-      <ScrollToTopButton />
     </>
   );
 };

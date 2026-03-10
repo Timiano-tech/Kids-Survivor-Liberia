@@ -45,7 +45,14 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'Home', path: '/' },
-    { name: 'About Us', path: '/about' },
+    { 
+      name: 'About Us', 
+      path: '#',
+      dropdown: [
+        { name: 'About KSL', path: '/about' },
+        { name: 'Transparency & Accountability', path: '/transparency' },
+      ]
+    },    
     { name: 'Our Programs', path: '/programs' },
     { 
       name: 'Our Impact', 
@@ -78,10 +85,10 @@ const Navbar = () => {
       onClick={closeAllDropdowns}
     >
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
-        <div className="flex justify-between items-center h-14 sm:h-16 min-h-[3.5rem]">
+        <div className="flex justify-between items-center h-14 sm:h-16 `min-h-14">
           {/* Logo - responsive */}
-          <Link to="/" className="flex items-center gap-2 min-w-0 flex-shrink-0" onClick={closeAllDropdowns}>
-            <motion.div whileHover={{ scale: 1.05 }} className="flex-shrink-0">
+          <Link to="/" className="flex items-center gap-2 min-w-0 shrink-0" onClick={closeAllDropdowns}>
+            <motion.div whileHover={{ scale: 1.05 }} className="shrink-0">
               <img src="/KSL Logo.png" alt="KSL LOGO" className="w-10 h-10 sm:w-12 sm:h-12 object-contain" />
             </motion.div>
             <div className="min-w-0">
@@ -155,7 +162,7 @@ const Navbar = () => {
           <button
             type="button"
             aria-label={isOpen ? 'Close menu' : 'Open menu'}
-            className="md:hidden p-2.5 -mr-2 text-gray-700 hover:text-blue-600 hover:bg-gray-100 rounded-lg transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
+            className="md:hidden p-2.5 -mr-2 text-gray-700 hover:text-blue-600 hover:bg-gray-100 rounded-lg transition-colors min-w-11 min-h-11 flex items-center justify-center"
             onClick={(e) => {
               e.stopPropagation();
               setIsOpen(!isOpen);
@@ -185,9 +192,9 @@ const Navbar = () => {
                   <div key={item.name}>
                     {item.dropdown ? (
                       <details className="group">
-                        <summary className="flex justify-between items-center text-gray-800 font-medium py-3 px-3 rounded-lg hover:bg-gray-50 hover:text-blue-600 transition-colors cursor-pointer list-none touch-manipulation min-h-[44px] [&::-webkit-details-marker]:hidden">
+                        <summary className="flex justify-between items-center text-gray-800 font-medium py-3 px-3 rounded-lg hover:bg-gray-50 hover:text-blue-600 transition-colors cursor-pointer list-none touch-manipulation min-h-11 [&::-webkit-details-marker]:hidden">
                           {item.name}
-                          <FiChevronDown className="w-5 h-5 flex-shrink-0 text-gray-500 group-open:rotate-180 transition-transform" />
+                          <FiChevronDown className="w-5 h-5 shrink-0 text-gray-500 group-open:rotate-180 transition-transform" />
                         </summary>
                         <div className="pl-4 pb-2 pt-1 space-y-0.5">
                           {item.dropdown.map((subItem) => (
@@ -208,7 +215,7 @@ const Navbar = () => {
                     ) : (
                       <Link
                         to={item.path}
-                        className="block text-gray-800 font-medium py-3 px-3 rounded-lg hover:bg-gray-50 hover:text-blue-600 transition-colors touch-manipulation min-h-[44px] flex items-center"
+                        className="flex text-gray-800 font-medium py-3 px-3 rounded-lg hover:bg-gray-50 hover:text-blue-600 transition-colors touch-manipulation min-h-11 items-center"
                         onClick={() => {
                           setIsOpen(false);
                           closeAllDropdowns();

@@ -1,17 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { 
+import {
   FiCalendar,
   FiUser,
   FiArrowRight,
   FiPlay,
   FiX
 } from 'react-icons/fi';
-import CallToAction from '../components/CallToAction';
-import ScrollToTopButton from '../components/ScrollToTop';
 import NoToDrugs from '../assets/Say no to drugs.jpeg'
 import HeaderImage from '../assets/Talking to children.jpeg';
-import BlogImage1 from '../assets/Students Impacted.jpeg'; 
+import BlogImage1 from '../assets/Students Impacted.jpeg';
 import BlogImage2 from '../assets/Youth_Community_Outreach.jpeg';
 import BlogImage3 from '../assets/Helping Children.jpeg';
 import BlogImage4 from '../assets/Students_Latest.jpeg';
@@ -103,7 +101,7 @@ const Blog = () => {
     }
   ];
 
- 
+
   const handleVideoPlay = (videoId) => {
     setPlayingVideoId(videoId);
   };
@@ -115,47 +113,57 @@ const Blog = () => {
   return (
     <>
       <div className="min-h-screen bg-white">
-        {/* Main Header Section */}
-                <header className="relative">
-                  <div className="absolute inset-0 bg-linear-to-r from-blue-800 to-blue-900/70 z-10">
-                    <img 
-                      src={HeaderImage} 
-                      alt="KSL_Background" 
-                      className="w-full h-full object-cover opacity-20"
-                    />
-                  </div>
-        
-                  <div className="relative z-10 py-30 text-center">
-                    <div className="container mx-auto px-4">
-                      <motion.h1 
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="text-5xl md:text-6xl font-bold text-white"
-                      >
-                        Blog & Media
-                      </motion.h1>
-                      <p className="text-white/80 text-lg mt-4 max-w-3xl mx-auto">
-                        Stay updated with the latest articles and videos on our drug prevention and youth empowerment initiatives.
-                      </p>
-                    </div>
-                  </div>
-                </header>
+        {/* Main Header Section - Premium Redesign */}
+        <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[3rem] shadow-xl border-b border-slate-100">
+          <div className="absolute inset-0 z-0">
+            <img
+              src={HeaderImage}
+              alt="Media & Resources"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-blue-900/80 mix-blend-multiply"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent"></div>
+          </div>
+
+          <div className="relative z-10 container mx-auto px-6 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="max-w-4xl mx-auto"
+            >
+              <span className="text-yellow-400 font-bold tracking-widest uppercase text-sm mb-4 block drop-shadow-md">Media & Resources</span>
+              <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight drop-shadow-xl">
+                Blog & Media
+              </h1>
+              <p className="text-xl md:text-2xl text-blue-100 font-light leading-relaxed max-w-3xl mx-auto border-l-4 border-yellow-400 pl-6 text-left md:text-center md:border-l-0 md:pl-0">
+                Stay updated with the latest articles and videos on our drug prevention and youth empowerment initiatives.
+              </p>
+            </motion.div>
+          </div>
+        </header>
 
         <main className="py-12">
           <div className="container mx-auto px-4 max-w-6xl">
-            
-            {/* Videos Section */}
-            <div className="mb-16">
-              <h2 className="text-2xl font-bold text-gray-800 mb-8 text-center">
-                Featured Videos
-              </h2>
-              <div className="grid md:grid-cols-2 gap-8">
+
+            {/* Videos Section - Premium */}
+            <div className="mb-24">
+              <div className="text-center mb-16">
+                <span className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-3 block">Media Updates</span>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">
+                  Featured Videos
+                </h2>
+              </div>
+              <div className="grid md:grid-cols-2 gap-10">
                 {videoPosts.map((video) => (
-                  <div 
-                    key={video.id} 
-                    className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300"
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    key={video.id}
+                    className="bg-white rounded-[2rem] border border-slate-100 overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.1)] transition-all duration-500 group"
                   >
-                    <div className="relative h-64 overflow-hidden bg-black">
+                    <div className="relative h-72 overflow-hidden bg-slate-900">
                       {playingVideoId === video.id ? (
                         <div className="relative w-full h-full">
                           <video
@@ -170,7 +178,7 @@ const Blog = () => {
                           </video>
                           <button
                             onClick={handleVideoClose}
-                            className="absolute top-3 right-3 bg-black/70 text-white p-2 rounded-full hover:bg-red-600 transition-colors z-20"
+                            className="absolute top-4 right-4 bg-black/60 backdrop-blur-md text-white p-2 rounded-full hover:bg-red-500 transition-colors z-20 border border-white/20"
                             aria-label="Close video"
                           >
                             <FiX size={20} />
@@ -178,132 +186,155 @@ const Blog = () => {
                         </div>
                       ) : (
                         <>
-                          <img 
-                            src={video.thumbnail} 
+                          <img
+                            src={video.thumbnail}
                             alt={video.title}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                           />
-                          <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent flex items-center justify-center">
                             <button
                               onClick={() => handleVideoPlay(video.id)}
-                              className="bg-red-600 hover:bg-red-700 text-white p-5 rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg"
+                              className="w-20 h-20 bg-white/20 backdrop-blur-md hover:bg-yellow-400 hover:text-blue-900 text-white rounded-full flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 shadow-[0_8px_30px_rgb(0,0,0,0.2)] border border-white/30"
                               aria-label="Play video"
                             >
-                              <FiPlay size={28} />
+                              <FiPlay size={32} className="ml-1" />
                             </button>
                           </div>
-                          <div className="absolute bottom-3 right-3 bg-black/80 text-white text-xs px-3 py-1.5 rounded">
+                          <div className="absolute bottom-4 right-4 bg-slate-900/70 backdrop-blur-md text-white font-medium text-xs px-3 py-1.5 rounded-lg border border-white/10">
                             {video.duration}
                           </div>
                         </>
                       )}
                     </div>
-                    
-                    <div className="p-6">
-                      <div className="flex items-center text-sm text-gray-500 mb-3">
-                        <FiCalendar className="mr-2" size={14} />
+
+                    <div className="p-8">
+                      <div className="flex items-center text-sm font-semibold text-blue-600 mb-4 tracking-wide">
+                        <FiCalendar className="mr-2" size={16} />
                         {video.date}
                       </div>
-                      <h3 className="text-xl font-semibold text-gray-800 mb-3">
+                      <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight group-hover:text-blue-600 transition-colors duration-300 line-clamp-2">
                         {video.title}
                       </h3>
-                      <p className="text-gray-600 text-sm mb-5">
+                      <p className="text-slate-600 text-lg mb-6 leading-relaxed line-clamp-2">
                         {video.description}
                       </p>
                       <button
                         onClick={() => handleVideoPlay(video.id)}
-                        className={`flex items-center font-medium text-sm group ${
-                          playingVideoId === video.id ? 'text-green-600' : 'text-red-600 hover:text-red-800'
-                        }`}
+                        className={`inline-flex items-center font-bold text-sm uppercase tracking-wider group/btn ${playingVideoId === video.id ? 'text-emerald-500' : 'text-slate-900 hover:text-blue-600'
+                          } transition-colors duration-300`}
                         disabled={playingVideoId === video.id}
                       >
                         {playingVideoId === video.id ? 'Now Playing' : 'Watch Video'}
                         {playingVideoId !== video.id && (
-                          <FiArrowRight className="ml-2 group-hover:translate-x-2 transition-transform duration-300" />
+                          <FiArrowRight className="ml-2 group-hover/btn:translate-x-2 transition-transform duration-300" />
                         )}
                       </button>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
 
-            {/* Articles Section */}
-            <div className="mb-16">
-              <h2 className="text-2xl font-bold text-gray-800 mb-8 text-center">
-                Latest Articles
-              </h2>
-              <div className="grid md:grid-cols-2 gap-8">
-                {blogPosts.map((post) => (
-                  <article 
-                    key={post.id} 
-                    className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+            {/* Articles Section - Premium */}
+            <div className="mb-24">
+              <div className="text-center mb-16">
+                <span className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-3 block">Latest Insights</span>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">
+                  Recent Articles
+                </h2>
+              </div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-10">
+                {blogPosts.map((post, index) => (
+                  <motion.article
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1, duration: 0.5 }}
+                    key={post.id}
+                    className="bg-white rounded-[2rem] border border-slate-100 overflow-hidden shadow-[0_4px_20px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2 group flex flex-col h-full"
                   >
-                    <div className="h-62 overflow-hidden">
-                      <img 
-                        src={post.image} 
+                    <div className="h-72 overflow-hidden relative">
+                      <img
+                        src={post.image}
                         alt={post.title}
-                        className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         loading="lazy"
                       />
-                    </div>
-                    <div className="p-6">
-                      <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                        <div className="flex items-center">
-                          <FiCalendar className="mr-2" size={14} />
-                          {post.date}
-                          <span className="mx-3">•</span>
-                          <FiUser className="mr-2" size={14} />
-                          {post.author}
-                        </div>
-                        <span className="text-gray-400">{post.readTime}</span>
-                      </div>
-                      <h3 className="text-xl font-semibold text-gray-800 mb-3">
-                        {post.title}
-                      </h3>
-                      <p className="text-gray-600 text-sm mb-4 line-clamp-3">
-                        {post.excerpt}
-                      </p>
-                      <div className="mb-5">
-                        <span className="inline-block px-4 py-1.5 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">
+                      <div className="absolute top-4 left-4">
+                        <span className="inline-block px-4 py-1.5 bg-white/90 backdrop-blur-sm text-blue-700 rounded-full text-xs font-bold tracking-widest uppercase shadow-sm">
                           {post.category}
                         </span>
                       </div>
                     </div>
-                  </article>
+                    <div className="p-8 flex flex-col flex-grow">
+                      <div className="flex flex-wrap items-center justify-between text-sm font-medium text-slate-500 mb-4 gap-2">
+                        <div className="flex items-center gap-4">
+                          <div className="flex items-center">
+                            <FiCalendar className="mr-2 text-blue-500" size={16} />
+                            {post.date}
+                          </div>
+                          <div className="flex items-center">
+                            <FiUser className="mr-2 text-blue-500" size={16} />
+                            {post.author}
+                          </div>
+                        </div>
+                        <span className="text-slate-400 bg-slate-50 px-2 py-1 rounded-md">{post.readTime}</span>
+                      </div>
+                      <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight group-hover:text-blue-600 transition-colors duration-300 line-clamp-2">
+                        {post.title}
+                      </h3>
+                      <p className="text-slate-600 text-lg mb-8 leading-relaxed line-clamp-3 flex-grow">
+                        {post.excerpt}
+                      </p>
+                      <button className="inline-flex items-center font-bold text-sm uppercase tracking-wider text-slate-900 group-hover:text-blue-600 transition-colors duration-300 self-start mt-auto">
+                        Read Article
+                        <FiArrowRight className="ml-2 group-hover:translate-x-2 transition-transform duration-300" />
+                      </button>
+                    </div>
+                  </motion.article>
                 ))}
               </div>
             </div>
 
-            {/* Newsletter */}
-            <div className="bg-blue-50 rounded-xl p-8 text-center border border-blue-100">
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">Stay Informed</h3>
-              <p className="text-gray-600 mb-8 max-w-md mx-auto">
-                Subscribe to receive updates on our drug prevention and youth empowerment work.
-              </p>
-              <form className="max-w-md mx-auto" onSubmit={(e) => e.preventDefault()}>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="flex-1 px-5 py-3.5 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 text-sm"
-                    required
-                  />
-                  <button
-                    type="submit"
-                    className="px-8 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-300"
-                  >
-                    Subscribe
-                  </button>
-                </div>
-              </form>
-            </div>
+            {/* Newsletter - Premium */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-blue-700 to-indigo-800 rounded-[3rem] p-10 sm:p-16 text-center text-white shadow-2xl relative overflow-hidden mb-10"
+            >
+              <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-10 mix-blend-overlay"></div>
+              <div className="absolute top-0 right-0 w-64 h-64 bg-yellow-400/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+              <div className="relative z-10">
+                <span className="inline-block px-4 py-1.5 bg-white/10 text-yellow-300 rounded-full text-xs font-bold tracking-widest uppercase mb-6 backdrop-blur-sm border border-white/10">
+                  Stay Informed
+                </span>
+                <h3 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">Subscribe for Updates</h3>
+                <p className="text-blue-100 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                  Join our newsletter to receive the latest news on our drug prevention and youth empowerment work across Liberia.
+                </p>
+                <form className="max-w-xl mx-auto" onSubmit={(e) => e.preventDefault()}>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <input
+                      type="email"
+                      placeholder="Your email address..."
+                      className="flex-1 px-6 py-4 bg-white/10 border border-white/20 rounded-full focus:outline-none focus:bg-white/20 focus:border-white/40 text-white placeholder-blue-200 transition-all font-medium"
+                      required
+                    />
+                    <button
+                      type="submit"
+                      className="px-8 py-4 bg-yellow-400 hover:bg-yellow-300 text-blue-900 font-bold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 whitespace-nowrap"
+                    >
+                      Subscribe Now
+                    </button>
+                  </div>
+                  <p className="text-blue-200/60 text-xs mt-4 font-medium">We respect your privacy. Unsubscribe at any time.</p>
+                </form>
+              </div>
+            </motion.div>
           </div>
         </main>
       </div>
-      
-      <ScrollToTopButton />
-      <CallToAction />
     </>
   );
 };

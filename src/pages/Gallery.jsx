@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiChevronLeft, FiChevronRight, FiX, FiDownload } from 'react-icons/fi';
-import ScrollToTopButton from '../components/ScrollToTop';
-import CallToAction from '../components/CallToAction';
 import Education1 from '../assets/Students2.jpeg';
 import Community from '../assets/Treatment_of_wounds.jpeg';
 import Education2 from '../assets/Students.jpeg';
@@ -62,14 +60,14 @@ const Gallery = () => {
     { id: 14, src: Team_Discussion, category: 'teams', title: 'Project Planning', description: 'Team working together on how to execute projects' },
     { id: 15, src: Sharing_Food2, category: 'community', title: 'Food Distribution', description: 'Providing nutritious meals to families' },
     { id: 16, src: Education3, category: 'education', title: 'Encouraging Students', description: 'Encouraging Students to focus on their studies' },
-    { id: 17, src: Community4 , category: 'community', title: 'Feeding Children', description: 'Providing Meals for all the children in the Community' },
+    { id: 17, src: Community4, category: 'community', title: 'Feeding Children', description: 'Providing Meals for all the children in the Community' },
     { id: 18, src: Sharing_Food, category: 'community', title: 'Food Distribution', description: 'Providing nutritious meals to families' },
     { id: 19, src: KSL_Team, category: 'teams', title: 'Kids Survivor Liberia Team', description: 'Gathering of the KSL Team' },
     { id: 20, src: Campeign, category: 'community', title: 'Fundraising and Community Outreach', description: 'Raising of awareness in the Community' },
   ];
 
-  const filteredImages = activeCategory === 'all' 
-    ? galleryImages 
+  const filteredImages = activeCategory === 'all'
+    ? galleryImages
     : galleryImages.filter(img => img.category === activeCategory);
 
   const handleImageClick = (image, index) => {
@@ -104,51 +102,54 @@ const Gallery = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Main Header Section */}
-      <header className="relative">
-        <div className="absolute inset-0 bg-linear-to-r from-blue-800 to-blue-900/70 z-10">
-          <img 
-            src={KSL} 
-            alt="KSL Background" 
-            className="w-full h-full object-cover opacity-20"
+      {/* Main Header Section - Premium Redesign */}
+      <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[3rem] shadow-xl border-b border-slate-100">
+        <div className="absolute inset-0 z-0">
+          <img
+            src={KSL}
+            alt="KSL Background"
+            className="w-full h-full object-cover"
           />
+          <div className="absolute inset-0 bg-blue-900/85 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent"></div>
         </div>
 
-        <div className="relative z-10 py-30 text-center">
-          <div className="container mx-auto px-4">
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-5xl md:text-6xl font-bold text-white"
-            >
-              Photo Gallery 
-            </motion.h1>
-            <p className="text-white/80 text-lg mt-4 max-w-3xl mx-auto">
-              A collection of moments capturing our journey and impact.
+        <div className="relative z-10 container mx-auto px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl mx-auto"
+          >
+            <span className="text-yellow-400 font-bold tracking-widest uppercase text-sm mb-4 block drop-shadow-md">Our Visual Journey</span>
+            <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight drop-shadow-xl">
+              Photo Gallery
+            </h1>
+            <p className="text-xl md:text-2xl text-blue-100 font-light leading-relaxed max-w-3xl mx-auto border-l-4 border-yellow-400 pl-6 text-left md:text-center md:border-l-0 md:pl-0">
+              A collection of moments capturing our impact on children and communities in Liberia.
             </p>
-          </div>
+          </motion.div>
         </div>
       </header>
 
       {/* Main Content */}
       <main className="py-16">
         <div className="container mx-auto px-4">
-          {/* Category Filter */}
+          {/* Category Filter - Premium Redesign */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-12"
+            className="mb-16 flex justify-center"
           >
-            <div className="flex flex-wrap justify-center gap-2 md:gap-4">
+            <div className="inline-flex flex-wrap justify-center gap-3 bg-slate-50 p-2 rounded-3xl border border-slate-200 shadow-sm max-w-full">
               {galleryCategories.map((category) => (
                 <button
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
-                  className={`px-4 py-2 rounded-full text-sm md:text-base font-medium transition-all ${
-                    activeCategory === category.id
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                  }`}
+                  className={`px-6 py-3 rounded-full text-sm font-bold tracking-wide transition-all duration-300 whitespace-nowrap ${activeCategory === category.id
+                    ? 'bg-blue-600 text-white shadow-md shadow-blue-500/30 -translate-y-0.5'
+                    : 'bg-transparent text-slate-600 hover:bg-white hover:text-blue-600 hover:shadow-sm'
+                    }`}
                 >
                   {category.name}
                 </button>
@@ -156,12 +157,12 @@ const Gallery = () => {
             </div>
           </motion.div>
 
-          {/* Gallery Grid */}
+          {/* Gallery Grid - Premium */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8"
           >
             {filteredImages.map((image, index) => (
               <motion.div
@@ -169,31 +170,31 @@ const Gallery = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.05 }}
-                whileHover={{ y: -5, scale: 1.02 }}
-                className="relative group cursor-pointer overflow-hidden rounded-xl shadow-lg"
+                whileHover={{ y: -8 }}
+                className="relative group cursor-pointer overflow-hidden rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] bg-white border border-slate-100"
                 onClick={() => handleImageClick(image, index)}
               >
                 {/* Image Container */}
-                <div className="aspect-square bg-gray-100 overflow-hidden">
+                <div className="aspect-[4/5] bg-slate-100 overflow-hidden relative">
                   <img
                     src={image.src}
                     alt={image.title}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     loading="lazy"
                   />
+                  {/* Premium Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
 
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 className="font-bold text-lg mb-1">{image.title}</h3>
-                    <p className="text-sm text-gray-200">{image.description}</p>
-                  </div>
+                {/* Content Reveal Overlay */}
+                <div className="absolute inset-x-0 bottom-0 p-6 text-white transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 z-20">
+                  <h3 className="font-bold text-xl mb-2 tracking-tight drop-shadow-md">{image.title}</h3>
+                  <p className="text-sm text-blue-100 font-medium line-clamp-2">{image.description}</p>
                 </div>
 
                 {/* Category Badge */}
-                <div className="absolute top-3 left-3">
-                  <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-xs font-medium rounded-full text-gray-800">
+                <div className="absolute top-4 left-4 z-20">
+                  <span className="px-4 py-1.5 bg-white/90 backdrop-blur-md shadow-sm text-xs font-bold tracking-widest uppercase rounded-full text-blue-900 border border-white/20">
                     {galleryCategories.find(c => c.id === image.category)?.name}
                   </span>
                 </div>
@@ -210,72 +211,98 @@ const Gallery = () => {
         </div>
       </main>
 
-      {/* Lightbox Modal */}
+      {/* Lightbox Modal - Premium */}
       {selectedImage && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/95 backdrop-blur-xl p-4 sm:p-8"
         >
-          <div className="relative w-full max-w-6xl mx-4">
-            {/* Close Button */}
-            <button
-              onClick={handleCloseModal}
-              className="absolute top-4 right-4 z-10 p-2 bg-black/50 text-white rounded-full hover:bg-black/70 transition-colors"
-            >
-              <FiX size={24} />
-            </button>
-
-            {/* Download Button */}
-            <button
-              onClick={() => handleDownload(selectedImage.src)}
-              className="absolute top-4 left-4 z-10 p-2 bg-black/50 text-white rounded-full hover:bg-black/70 transition-colors"
-            >
-              <FiDownload size={24} />
-            </button>
+          <div className="relative w-full max-w-6xl mx-auto flex flex-col items-center">
+            {/* Top Bar Navigation */}
+            <div className="absolute top-0 right-0 left-0 flex justify-between items-center p-4 z-20 pointer-events-none">
+              <button
+                onClick={() => handleDownload(selectedImage.src)}
+                className="p-3 bg-white/10 hover:bg-white/20 text-white rounded-full backdrop-blur-md transition-all duration-300 pointer-events-auto border border-white/10 hover:scale-110"
+                aria-label="Download image"
+              >
+                <FiDownload size={22} />
+              </button>
+              <button
+                onClick={handleCloseModal}
+                className="p-3 bg-white/10 hover:bg-red-500/80 text-white rounded-full backdrop-blur-md transition-all duration-300 pointer-events-auto border border-white/10 hover:scale-110"
+                aria-label="Close modal"
+              >
+                <FiX size={24} />
+              </button>
+            </div>
 
             {/* Navigation Buttons */}
             <button
-              onClick={handlePrev}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 p-2 bg-black/50 text-white rounded-full hover:bg-black/70 transition-colors"
+              onClick={(e) => { e.stopPropagation(); handlePrev(); }}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 p-4 bg-white/5 hover:bg-white/20 text-white rounded-full backdrop-blur-md transition-all duration-300 z-20 border border-white/10 hover:scale-110 group hidden sm:flex"
             >
-              <FiChevronLeft size={24} />
+              <FiChevronLeft size={32} className="group-hover:-translate-x-1 transition-transform" />
             </button>
             <button
-              onClick={handleNext}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 p-2 bg-black/50 text-white rounded-full hover:bg-black/70 transition-colors"
+              onClick={(e) => { e.stopPropagation(); handleNext(); }}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 p-4 bg-white/5 hover:bg-white/20 text-white rounded-full backdrop-blur-md transition-all duration-300 z-20 border border-white/10 hover:scale-110 group hidden sm:flex"
             >
-              <FiChevronRight size={24} />
+              <FiChevronRight size={32} className="group-hover:translate-x-1 transition-transform" />
             </button>
 
             {/* Image Display */}
-            <div className="relative">
-              <img
+            <div className="relative mt-16 sm:mt-0 max-h-[75vh] w-full flex justify-center items-center">
+              <motion.img
+                key={selectedImage.id}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4 }}
                 src={selectedImage.src}
                 alt={selectedImage.title}
-                className="w-full max-h-[80vh] object-contain rounded-lg"
+                className="max-w-full max-h-[75vh] object-contain rounded-xl shadow-2xl ring-1 ring-white/10"
               />
             </div>
 
-            {/* Image Info */}
-            <div className="mt-4 text-white">
-              <h3 className="text-2xl font-bold mb-2">{selectedImage.title}</h3>
-              <p className="text-gray-200 mb-2">{selectedImage.description}</p>
-              <div className="flex justify-between items-center">
-                <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm">
+            {/* Image Info Panel */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="mt-8 text-center w-full max-w-2xl bg-slate-800/50 backdrop-blur-md rounded-2xl p-6 border border-white/10"
+            >
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-3 tracking-tight">{selectedImage.title}</h3>
+              <p className="text-blue-100 text-lg mb-4 font-light leading-relaxed">{selectedImage.description}</p>
+
+              <div className="flex justify-center items-center space-x-6">
+                <span className="px-4 py-1.5 bg-yellow-400/20 text-yellow-300 border border-yellow-400/30 backdrop-blur-sm rounded-full text-sm font-bold uppercase tracking-widest">
                   {galleryCategories.find(c => c.id === selectedImage.category)?.name}
                 </span>
-                <span className="text-sm text-gray-300">
-                  {currentIndex + 1} / {filteredImages.length}
+                <span className="text-sm font-medium text-slate-400 tracking-widest">
+                  {currentIndex + 1} <span className="text-slate-600 mx-1">/</span> {filteredImages.length}
                 </span>
               </div>
-            </div>
+
+              {/* Mobile Navigation */}
+              <div className="flex justify-center gap-6 mt-6 sm:hidden">
+                <button
+                  onClick={handlePrev}
+                  className="p-3 bg-white/10 text-white rounded-full"
+                >
+                  <FiChevronLeft size={24} />
+                </button>
+                <button
+                  onClick={handleNext}
+                  className="p-3 bg-white/10 text-white rounded-full"
+                >
+                  <FiChevronRight size={24} />
+                </button>
+              </div>
+            </motion.div>
           </div>
         </motion.div>
       )}
-
-      <ScrollToTopButton />
-      <CallToAction/>
     </div>
   );
 };

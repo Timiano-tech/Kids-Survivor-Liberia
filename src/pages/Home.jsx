@@ -1107,6 +1107,7 @@ const Home = () => {
                       src={news.image}
                       alt={news.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
                     <div className="absolute top-4 left-4">

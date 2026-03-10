@@ -538,6 +538,7 @@ const About = () => {
                     src={KSL_Teams2}
                     alt="KSL Team in Action"
                     className="w-full h-full object-cover rounded-3xl shadow-2xl relative z-10"
+                    loading="lazy"
                   />
                 </div>
               </div>

@@ -396,6 +396,7 @@ const Impact = () => {
                         src={story.image}
                         alt={story.name}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
+                        loading="lazy"
                       />
                       <div className="absolute bottom-6 left-6 z-20">
                         <span className="bg-blue-600 text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase shadow-md backdrop-blur-sm">

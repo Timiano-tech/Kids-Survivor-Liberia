@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { 
+import {
   FiUser,
   FiMail,
   FiLinkedin,
@@ -14,8 +14,6 @@ import {
   FiShield,
   FiStar
 } from 'react-icons/fi';
-import CallToAction from '../components/CallToAction';
-import ScrollToTopButton from '../components/ScrollToTop';
 import HeaderImage from '../assets/Talking to children.jpeg';
 import Mr_Steve from '../assets/Mr_Steve.png';
 import Mrs_Fiona from '../assets/Mrs_Fiona.png';
@@ -134,7 +132,7 @@ const OurTeam = () => {
       department: 'Programs',
       bio: 'Oversees free educational support for vulnerable children aged 4-17, providing learning materials, uniforms, and feeding support. Also advises on financial oversight, accountability, and institutional strengthening for organizational sustainability.',
       expertise: ['Educational Programs', 'Financial Oversight', 'Governance'],
-      image: Mr_Moses, 
+      image: Mr_Moses,
       icon: <FiBookOpen className="w-6 h-6" />,
       color: 'blue'
     },
@@ -145,7 +143,7 @@ const OurTeam = () => {
       department: 'Field Operations',
       bio: 'Coordinates all KSL program activities in Gbarnga, Bong County, overseeing implementation, monitoring, and alignment with organizational objectives. Supports community engagement, local partnerships, and operational oversight for youth protection and education programs.',
       expertise: ['Program Coordination', 'Community Engagement', 'Field Operations'],
-      image: Mr_Paul, 
+      image: Mr_Paul,
       icon: <FiUsers className="w-6 h-6" />,
       color: 'purple'
     }
@@ -212,105 +210,116 @@ const OurTeam = () => {
   return (
     <>
       <div className="min-h-screen bg-white">
-        {/* Main Header Section */}
-        <header className="relative">
-          <div className="absolute inset-0 bg-linear-to-r from-blue-800 to-blue-900/70 z-10">
-            <img 
-              src={HeaderImage} 
-              alt="KSL Team Background" 
-              className="w-full h-full object-cover opacity-20"
+        {/* Main Header Section - Premium Redesign */}
+        <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[3rem] shadow-xl border-b border-slate-100">
+          <div className="absolute inset-0 z-0">
+            <img
+              src={HeaderImage}
+              alt="KSL Team Background"
+              className="w-full h-full object-cover"
             />
+            <div className="absolute inset-0 bg-blue-900/85 mix-blend-multiply"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent"></div>
           </div>
 
-          <div className="relative z-10 py-30 text-center">
-            <div className="container mx-auto px-4">
-              <motion.h1 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="text-5xl md:text-6xl font-bold text-white"
-              >
+          <div className="relative z-10 container mx-auto px-6 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="max-w-4xl mx-auto"
+            >
+              <span className="text-yellow-400 font-bold tracking-widest uppercase text-sm mb-4 block drop-shadow-md">The People Behind KSL</span>
+              <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight drop-shadow-xl">
                 Our Dedicated Team
-              </motion.h1>
-              <p className="text-white/80 text-lg mt-4 max-w-3xl mx-auto">
-                Passionate professionals committed to transforming lives and building resilient communities
+              </h1>
+              <p className="text-xl md:text-2xl text-blue-100 font-light leading-relaxed max-w-3xl mx-auto border-l-4 border-yellow-400 pl-6 text-left md:text-center md:border-l-0 md:pl-0">
+                Passionate professionals committed to transforming lives and building resilient communities across Liberia.
               </p>
-            </div>
+            </motion.div>
           </div>
         </header>
 
         {/* Main Content */}
-        <main className="py-16 md:py-24">
-          <div className="container mx-auto px-4 max-w-6xl">   
+        <main className="py-20 lg:py-32 relative">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-50/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+          <div className="container mx-auto px-4 sm:px-6 relative z-10">
 
-            {/* Team Members Grid */}
+            {/* Team Members Grid - Premium */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
               className="mb-20"
             >
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-                  Meet Our Team
+              <div className="text-center mb-16 max-w-4xl mx-auto">
+                <span className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-3 block">Leadership & Staff</span>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
+                  Meet Our Experts
                 </h2>
-                <p className="text-gray-600 max-w-2xl mx-auto">
-                  Experienced professionals dedicated to creating positive change in Liberian communities
+                <p className="text-slate-600 text-lg leading-relaxed">
+                  Experienced professionals dedicated to creating positive change, advocating for child protection, and educating communities in Liberia.
                 </p>
               </div>
 
-              {/* RESPONSIVE GRID: 1 col on mobile, 2 on tablet, 3 on small desktop, 4 on large screens */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+              {/* RESPONSIVE GRID */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 xl:gap-10">
                 {teamMembers.map((member, index) => (
                   <motion.div
                     key={member.id}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="flex flex-col bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300"
+                    className="flex flex-col bg-white rounded-[2rem] shadow-[0_4px_20px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] overflow-hidden border border-slate-100 hover:border-blue-100 transition-all duration-500 hover:-translate-y-2 group"
                   >
-                    {/* RESPONSIVE IMAGE CONTAINER */}
-                    {/* Using aspect-square ensures the image area scales perfectly with the width of the card */}
-                    <div className="relative aspect-square bg-gray-100 overflow-hidden">
-                      <div className="absolute top-3 right-3 z-10">
-                        <span className={`inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider shadow-sm ${getColorClasses(getDepartmentColor(member.department))}`}>
+                    {/* Image Container */}
+                    <div className="relative aspect-[4/5] bg-slate-50 overflow-hidden">
+                      <div className="absolute top-4 right-4 z-20">
+                        <span className={`inline-flex items-center px-4 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-widest shadow-sm border backdrop-blur-sm ${getColorClasses(getDepartmentColor(member.department))}`}>
                           <span className="mr-1">{member.department.split(' ')[0]}</span>
                         </span>
                       </div>
-                      
+
                       {member.image ? (
-                        <img 
-                          src={member.image}
-                          alt={member.name}
-                          className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
-                          loading='lazy'
-                        />
+                        <div className="w-full h-full relative">
+                          <img
+                            src={member.image}
+                            alt={member.name}
+                            className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+                            loading='lazy'
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
                       ) : (
-                        <div className="w-full h-full flex items-center justify-center bg-linear-to-br from-gray-50 to-gray-200">
-                          <FiUser className="w-20 h-20 text-gray-300" />
+                        <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200">
+                          <FiUser className="w-24 h-24 text-slate-300" />
                         </div>
                       )}
                     </div>
 
-                    {/* Member Info - flex-grow ensures all cards in a row have equal height if descriptions vary */}
-                    <div className="p-5 grow flex flex-col">
-                      <div className="mb-3">
-                        <h3 className="text-lg font-bold text-gray-800 leading-tight">{member.name}</h3>
-                        <p className="text-blue-600 text-sm font-semibold mt-1 leading-snug">{member.position}</p>
+                    {/* Member Info */}
+                    <div className="p-8 flex flex-col flex-grow relative">
+                      <div className="absolute -top-6 right-6 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-blue-600 border border-slate-50 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 z-10">
+                        {member.icon}
                       </div>
-                      
-                      <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+
+                      <div className="mb-4 pr-10">
+                        <h3 className="text-xl font-bold text-slate-900 leading-tight mb-1 group-hover:text-blue-600 transition-colors duration-300">{member.name}</h3>
+                        <p className="text-blue-600 text-sm font-bold uppercase tracking-wide leading-snug">{member.position}</p>
+                      </div>
+
+                      <p className="text-slate-600 text-[15px] mb-6 line-clamp-4 leading-relaxed flex-grow">
                         {member.bio}
                       </p>
 
-                      <div className="mt-auto">
-                        {/* Expertise Tags */}
-                        <div className="flex flex-wrap gap-1.5 mb-4">
+                      <div className="mt-auto border-t border-slate-100 pt-5">
+                        <div className="flex flex-wrap gap-2">
                           {member.expertise.slice(0, 2).map((skill, idx) => (
-                            <span 
+                            <span
                               key={idx}
-                              className="px-2 py-0.5 bg-gray-50 border border-gray-200 rounded text-[11px] text-gray-500"
+                              className="px-3 py-1 bg-slate-50 border border-slate-200 rounded-lg text-[11px] font-semibold tracking-wider uppercase text-slate-500 truncate max-w-full"
                             >
                               {skill}
                             </span>
@@ -325,9 +334,6 @@ const OurTeam = () => {
           </div>
         </main>
       </div>
-      
-      <ScrollToTopButton />
-      <CallToAction />
     </>
   );
 };

@@ -10,17 +10,17 @@ import scrollImage5 from '../assets/Scroll5.jpeg'
 
 const CallToAction = () => {
 
-  const images = [scrollImage1, scrollImage2, scrollImage3, scrollImage4, scrollImage5]; 
+  const images = [scrollImage1, scrollImage2, scrollImage3, scrollImage4, scrollImage5];
 
   return (
     <section className="py-20 bg-gray-50 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center gap-12">
-          
+
           {/* LEFT SIDE: Infinite Image Slider */}
           <div className="w-full lg:w-1/2 relative">
             <div className="flex gap-4 overflow-hidden mask-[linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-              <motion.div 
+              <motion.div
                 className="flex gap-4 flex-none pr-4"
                 animate={{ x: ["0%", "-50%"] }}
                 transition={{
@@ -34,7 +34,7 @@ const CallToAction = () => {
               >
                 {/* Render images twice for seamless loop */}
                 {[...images, ...images].map((img, index) => (
-                  <div 
+                  <div
                     key={index}
                     className="w-48 h-64 md:w-60 md:h-80 flex-none rounded-2xl bg-blue-100 overflow-hidden shadow-md"
                   >
@@ -59,37 +59,39 @@ const CallToAction = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <div className="flex items-center gap-2 mb-4 text-blue-600 font-bold uppercase tracking-wider text-sm">
-                <div className="w-6 h-px bg-blue-600"></div>
-                Invest in a Drug-Free, Empowered Liberia
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-8 h-1 bg-blue-600 rounded-full"></div>
+                <span className="text-blue-600 font-extrabold uppercase tracking-widest text-sm md:text-xs lg:text-sm">
+                  Invest in the Future
+                </span>
               </div>
 
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Invest in a <span className="text-blue-600">Drug-Free, Empowered</span> Liberia
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-6 leading-[1.15] tracking-tight">
+                Empower a <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">Drug-Free</span> Liberia
               </h2>
 
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-xl">
-                Your contribution directly supports our <strong>NADAP 2025-2030 aligned programs </strong> 
-                 for drug abuse prevention, rehabilitation, and youth empowerment. 
+              <p className="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed max-w-xl font-medium">
+                Your contribution directly supports our <strong className="text-slate-800">NADAP 2025-2030 aligned programs</strong>
+                for drug abuse prevention, rehabilitation, and youth empowerment.
               </p>
-              
+
               <div className="flex flex-wrap items-center gap-6">
                 <Link to="/donate">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="group bg-blue-500 text-white px-8 py-4 rounded-full text-lg font-bold shadow-xl flex items-center gap-3 hover:bg-blue-600 transition-colors"
+                    className="group bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 md:px-10 md:py-5 rounded-full text-lg font-bold shadow-[0_8px_25px_rgba(37,99,235,0.35)] hover:shadow-[0_12px_35px_rgba(37,99,235,0.5)] flex items-center gap-4 transition-all"
                   >
-                    <div className="bg-white text-blue-900 rounded-full p-1 group-hover:translate-x-1 transition-transform">
-                      <FiArrowRight />
+                    <span className="tracking-wide">Donate Today</span>
+                    <div className="bg-white/20 text-white rounded-full p-1.5 group-hover:bg-white group-hover:text-blue-600 transition-colors">
+                      <FiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </div>
-                    
-                    Donate Today
                   </motion.button>
                 </Link>
               </div>
             </motion.div>
           </div>
+
 
         </div>
       </div>

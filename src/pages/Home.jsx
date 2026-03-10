@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
-import { 
-  FiChevronLeft, 
-  FiChevronRight, 
-  FiPlay, 
-  FiPause, 
+import {
+  FiChevronLeft,
+  FiChevronRight,
+  FiPlay,
+  FiPause,
   FiTarget,
   FiEye,
   FiTrendingUp,
@@ -22,12 +22,12 @@ import {
   FiBriefcase,
   FiCrosshair,
   FiActivity,
-  FiCheckCircle
+  FiCheckCircle,
+  FiMapPin
 } from 'react-icons/fi';
 
 import Education from '../assets/Children on the assembly.jpeg';
 import Students from '../assets/Students.jpeg'
-import CallToAction from '../components/CallToAction';
 import NoToDrugs from '../assets/Say no to drugs.jpeg'
 import Children3 from '../assets/Drug_Recovered.jpeg';
 import Children4 from '../assets/Children4.jpeg';
@@ -39,7 +39,7 @@ import CEO from '../assets/CEO.png';
 import BlogImage1 from '../assets/Students Impacted.jpeg';
 import BlogImage2 from '../assets/Helping Children.jpeg';
 import BlogImage3 from '../assets/Youth_Community_Outreach.jpeg';
-import ScrollToTopButton from '../components/ScrollToTop';
+
 
 // Counter Component
 const Counter = ({ end, duration = 2, label, icon }) => {
@@ -51,25 +51,25 @@ const Counter = ({ end, duration = 2, label, icon }) => {
   useEffect(() => {
     if (isInView && !hasAnimated) {
       setHasAnimated(true);
-      
+
       let startTime;
       const animateCount = (timestamp) => {
         if (!startTime) startTime = timestamp;
         const progress = timestamp - startTime;
         const percentage = Math.min(progress / (duration * 1000), 1);
-        
+
         const easeOutQuad = (t) => t * (2 - t);
         const currentCount = Math.floor(easeOutQuad(percentage) * end);
-        
+
         setCount(currentCount);
-        
+
         if (percentage < 1) {
           requestAnimationFrame(animateCount);
         } else {
           setCount(end);
         }
       };
-      
+
       requestAnimationFrame(animateCount);
     }
   }, [isInView, hasAnimated, end, duration]);
@@ -89,7 +89,7 @@ const Counter = ({ end, duration = 2, label, icon }) => {
 
 const Home = () => {
 
-   useEffect(() => {
+  useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
@@ -97,15 +97,15 @@ const Home = () => {
   const [autoPlay, setAutoPlay] = useState(true);
   const [imageError, setImageError] = useState({});
 
-  // Hero slides data aligned with organizational focus
+  // Hero slides data aligned with international NGO standards and user requirements
   const heroSlides = [
     {
       id: 1,
-      title: "Building a Drug-Free Liberia",
-      subtitle: "Prevention, Protection & Empowerment",
-      description: "Aligned with NADAP 2025-2030, we work to prevent drug abuse and empower vulnerable populations through community-driven interventions.",
+      title: "Building a Brighter Future",
+      subtitle: "For Liberia's Vulnerable Communities",
+      description: "Kids Survivor Liberia is commited to protecting vulnerable children, promoting education, and empowering young people to build a brighter future across communities in Liberia.",
       imagePlaceholder: NoToDrugs,
-      stats: "Aligned with NADAP 2025-2030 & YTEI"
+      stats: "Protecting, Educating, Empowering"
     },
     {
       id: 2,
@@ -125,33 +125,33 @@ const Home = () => {
     }
   ];
 
- // Team Members
-     const teamMembers = [
-       {
-         name: "Mr. Billy Jones",
-         teamImage: CEO,
-         position: "Chief Executive Officer (CEO)",
-         bio: "Provides visionary leadership and strategic oversight for KSL's national initiatives, including NADAP-aligned drug abuse prevention, child protection, and youth empowerment programs. Champions child safeguarding, ethical governance, and inclusive development across Liberia."
-       },
-       {
-         name: "Mr. Steve Darwin Wald",
-         teamImage: Mr_Steve,
-         position: "Director of Countries Operations",
-         bio: "Leads operational coordination and implementation oversight across KSL's areas of intervention. Translates strategic objectives into effective community-responsive programs, ensuring consistent delivery of drug demand reduction, prevention, and rehabilitation initiatives."
-       },
-       {
-         name: "Mrs. Fiona A. Etong",
-         teamImage: Mrs_Fiona,
-         position: "Nigeria Representative & Social Media Manager",
-         bio: "Leads digital communications and regional representation, amplifying KSL's mission through innovative online outreach. Strengthens public engagement for drug abuse prevention, youth empowerment, and child protection across borders."
-       },
-       {
-         name: "Mrs. Silvia T. Willie Dongon",
-         teamImage: Mrs_Silvia,
-         position: "Operational Advisor",
-         bio: "Provides strategic guidance for gender-sensitive protection programs targeting adolescent girls, widows, and vulnerable elderly men. Supports operational planning and integration of best practices in social inclusion and community engagement."
-       }
-     ];
+  // Team Members
+  const teamMembers = [
+    {
+      name: "Mr. Billy Jones",
+      teamImage: CEO,
+      position: "Chief Executive Officer (CEO)",
+      bio: "Provides visionary leadership and strategic oversight for KSL's national initiatives, including NADAP-aligned drug abuse prevention, child protection, and youth empowerment programs. Champions child safeguarding, ethical governance, and inclusive development across Liberia."
+    },
+    {
+      name: "Mr. Steve Darwin Wald",
+      teamImage: Mr_Steve,
+      position: "Director of Countries Operations",
+      bio: "Leads operational coordination and implementation oversight across KSL's areas of intervention. Translates strategic objectives into effective community-responsive programs, ensuring consistent delivery of drug demand reduction, prevention, and rehabilitation initiatives."
+    },
+    {
+      name: "Mrs. Fiona A. Etong",
+      teamImage: Mrs_Fiona,
+      position: "Nigeria Representative & Social Media Manager",
+      bio: "Leads digital communications and regional representation, amplifying KSL's mission through innovative online outreach. Strengthens public engagement for drug abuse prevention, youth empowerment, and child protection across borders."
+    },
+    {
+      name: "Mrs. Silvia T. Willie Dongon",
+      teamImage: Mrs_Silvia,
+      position: "Operational Advisor",
+      bio: "Provides strategic guidance for gender-sensitive protection programs targeting adolescent girls, widows, and vulnerable elderly men. Supports operational planning and integration of best practices in social inclusion and community engagement."
+    }
+  ];
 
   // Latest News / Blog Posts aligned with program pillars
   const latestNews = [
@@ -316,7 +316,7 @@ const Home = () => {
 
   // Toggle FAQ function
   const toggleFAQ = (id) => {
-    setFaqItems(faqItems.map(item => 
+    setFaqItems(faqItems.map(item =>
       item.id === id ? { ...item, open: !item.open } : { ...item, open: false }
     ));
   };
@@ -326,7 +326,7 @@ const Home = () => {
     const openCount = faqItems.filter(item => item.open).length;
     if (openCount > 1) {
       const firstOpenId = faqItems.find(item => item.open)?.id;
-      setFaqItems(faqItems.map(item => 
+      setFaqItems(faqItems.map(item =>
         item.id === firstOpenId ? { ...item, open: true } : { ...item, open: false }
       ));
     }
@@ -338,10 +338,9 @@ const Home = () => {
 
   return (
     <div className="overflow-hidden">
-      <ScrollToTopButton />
-      
+
       {/* Hero Carousel Section */}
-      <section className="relative h-screen">
+      <section className="relative h-[calc(100vh-64px)]">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
@@ -365,87 +364,87 @@ const Home = () => {
                 <div className="w-full h-full bg-blue-600"></div>
               )}
             </div>
-            
+
             {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-linear-to-r from-blue-800/80 to-blue-900/40 z-10"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/60 to-slate-900/30 z-10"></div>
 
             {/* Content */}
             <div className="relative h-full flex items-center z-20">
-              <div className="container mx-auto px-4">
+              <div className="container mx-auto px-4 sm:px-6 md:px-12 max-w-7xl">
                 <motion.div
                   initial={{ y: 30, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.2, duration: 0.8 }}
-                  className="max-w-2xl text-white"
+                  className="max-w-3xl text-white"
                 >
                   <motion.div
                     initial={{ width: 0 }}
                     animate={{ width: "80px" }}
                     transition={{ delay: 0.5, duration: 0.8 }}
-                    className="h-1 bg-yellow-500 mb-6"
+                    className="h-1.5 bg-yellow-400 mb-8 rounded-full"
                   ></motion.div>
-                  
+
                   <motion.h1
                     initial={{ y: 30, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.3, duration: 0.8 }}
-                    className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight"
+                    className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-[1.1] tracking-tight text-white drop-shadow-md"
                   >
                     {heroSlides[currentSlide].title}
                   </motion.h1>
-                  
+
                   <motion.h2
                     initial={{ y: 30, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.4, duration: 0.8 }}
-                    className="text-xl md:text-2xl mb-6 text-blue-100"
+                    className="text-2xl md:text-3xl mb-6 text-blue-100 font-medium tracking-wide drop-shadow-sm"
                   >
                     {heroSlides[currentSlide].subtitle}
                   </motion.h2>
-                  
+
                   <motion.p
                     initial={{ y: 30, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.5, duration: 0.8 }}
-                    className="text-lg mb-8 text-gray-100"
+                    className="text-lg md:text-xl mb-10 text-slate-100 leading-relaxed max-w-2xl drop-shadow"
                   >
                     {heroSlides[currentSlide].description}
                   </motion.p>
-                  
+
                   <motion.div
                     initial={{ y: 30, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.6, duration: 0.8 }}
-                    className="flex flex-col sm:flex-row gap-4 mb-8"
+                    className="flex flex-col sm:flex-row gap-5 mb-10"
                   >
                     <Link to="/donate">
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="bg-yellow-500 px-6 py-3 md:px-8 md:py-4 rounded-full text-lg font-bold shadow-lg hover:shadow-xl transition-shadow"
+                        className="bg-yellow-400 text-slate-900 px-8 py-4 md:px-10 md:py-5 rounded-full text-lg font-bold shadow-[0_8px_30px_rgba(250,204,21,0.4)] hover:shadow-[0_12px_40px_rgba(250,204,21,0.6)] transition-all flex items-center justify-center gap-3"
                       >
-                        Support Our Mission
+                        Support Our Mission <FiArrowRight />
                       </motion.button>
                     </Link>
                     <Link to="/programs">
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-6 py-3 md:px-8 md:py-4 rounded-full text-lg font-semibold hover:bg-white/20 transition-all"
+                        className="bg-white/10 backdrop-blur-md text-white border border-white/30 px-8 py-4 md:px-10 md:py-5 rounded-full text-lg font-semibold hover:bg-white/20 hover:border-white/50 transition-all"
                       >
-                        View Programs
+                        Explore Programs
                       </motion.button>
                     </Link>
                   </motion.div>
-                  
+
                   <motion.div
                     initial={{ y: 30, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.7, duration: 0.8 }}
-                    className="inline-flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 md:px-6 md:py-3 rounded-full"
+                    className="inline-flex items-center bg-slate-900/60 backdrop-blur-md border border-slate-700/50 px-5 py-3 md:px-6 md:py-3.5 rounded-full shadow-xl"
                   >
-                    <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse mr-3"></div>
-                    <span className="font-semibold text-sm md:text-base">{heroSlides[currentSlide].stats}</span>
+                    <div className="w-3 h-3 bg-emerald-400 rounded-full animate-pulse mr-3 shadow-[0_0_10px_rgba(52,211,153,0.8)]"></div>
+                    <span className="font-medium text-sm md:text-base text-slate-200 tracking-wide uppercase">{heroSlides[currentSlide].stats}</span>
                   </motion.div>
                 </motion.div>
               </div>
@@ -460,11 +459,10 @@ const Home = () => {
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all ${
-                  index === currentSlide 
-                    ? 'bg-white w-8' 
-                    : 'bg-white/50 hover:bg-white/80'
-                }`}
+                className={`w-3 h-3 rounded-full transition-all ${index === currentSlide
+                  ? 'bg-white w-8'
+                  : 'bg-white/50 hover:bg-white/80'
+                  }`}
               />
             ))}
           </div>
@@ -478,7 +476,7 @@ const Home = () => {
             >
               <FiChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-white" />
             </motion.button>
-            
+
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
@@ -491,7 +489,7 @@ const Home = () => {
                 <FiPlay className="w-5 h-5 md:w-6 md:h-6 text-white" />
               )}
             </motion.button>
-            
+
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
@@ -504,39 +502,51 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Quick Stats Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
+      {/* Quick Stats Section - Premium Redesign */}
+      <section className="py-24 bg-slate-900 relative">
+        {/* Subtle dot pattern overlay */}
+        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '24px 24px' }}></div>
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-16"
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-              Impact Aligned with National Frameworks
+            <span className="text-yellow-500 font-semibold tracking-wider uppercase text-sm mb-3 block">Measurable Impact</span>
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+              Driven by Data, Defined by <span className="text-blue-400">Impact</span>
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Tracking progress towards NADAP 2025-2030 and YTEI goals through community-driven interventions
+            <p className="text-slate-400 max-w-2xl mx-auto text-lg">
+              Tracking our progress towards achieving NADAP 2025-2030 and YTEI goals through targeted, community-driven interventions.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-6xl mx-auto">
             {impactStats.map((stat, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
+                className="text-center group"
               >
-                <Counter 
-                  end={stat.end}
-                  duration={stat.duration}
-                  label={stat.label}
-                  icon={stat.icon}
-                />
+                <div className="flex justify-center mb-6">
+                  <div className="bg-slate-800/50 p-5 rounded-2xl text-blue-400 border border-slate-700/50 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-500 transition-all duration-300">
+                    {stat.icon}
+                  </div>
+                </div>
+                <div className="text-4xl md:text-5xl font-extrabold text-white mb-3 tracking-tight">
+                  <Counter
+                    end={stat.end}
+                    duration={stat.duration}
+                    label=""
+                    icon={null}
+                  />
+                </div>
+                <p className="text-slate-400 font-medium uppercase tracking-wider text-sm mt-2">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -546,119 +556,108 @@ const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
             viewport={{ once: true }}
-            className="mt-12 text-center"
+            className="mt-16 text-center"
           >
-            <div className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">
-              <FiCheckCircle className="mr-2" />
+            <div className="inline-flex items-center px-6 py-3 bg-blue-900/50 text-blue-300 border border-blue-800/50 rounded-full text-sm font-medium backdrop-blur-sm">
+              <FiCheckCircle className="mr-3 w-5 h-5 text-blue-400" />
               Operating across multiple counties with NADAP-aligned programs
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Mission & Vision Section - Updated to match organizational documents */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
+      {/* Mission & Vision Section - Premium Redesign */}
+      <section className="py-24 bg-slate-50 relative overflow-hidden">
+        {/* Decorative background element */}
+        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-blue-100/50 blur-3xl mix-blend-multiply"></div>
+        <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 rounded-full bg-yellow-100/50 blur-3xl mix-blend-multiply"></div>
+
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-16 md:mb-20"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-              Our Strategic Framework
+            <span className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-3 block">Our Purpose</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
+              Strategic Framework
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Aligned with YTEI and NADAP 2025–2030 for comprehensive impact
+            <p className="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
+              Aligned with YTEI and NADAP 2025–2030, we deploy comprehensive, evidence-based approaches to maximize our operational impact.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 max-w-6xl mx-auto">
             {/* Mission Card */}
             <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="bg-white rounded-2xl shadow-xl overflow-hidden"
+              className="bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] overflow-hidden group hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] transition-all duration-500 border border-slate-100"
             >
-              <div className="bg-blue-500 p-8">
-                <div className="flex items-center mb-4">
-                  <div className="bg-white/20 p-3 rounded-xl mr-4">
-                    <FiTarget className="w-8 h-8 text-white" />
+              <div className="p-10 md:p-12 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110 duration-500"></div>
+                <div className="relative z-10">
+                  <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-blue-500/30 text-white transform group-hover:-translate-y-2 transition-transform duration-500">
+                    <FiTarget className="w-8 h-8" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white">Organizational Mission</h3>
-                </div>
-              </div>
-              <div className="p-8">
-                <p className="text-gray-700 text-lg leading-relaxed">
-                  Kids Survivor Liberia (KSL) is a national-based, non-profit organization dedicated to the prevention of drug abuse and the protection, rehabilitation, and empowerment of vulnerable populations, particularly children, adolescents, youth, adolescent girls, widows, and vulnerable elderly men.
-                </p>
-                <div className="mt-8 pt-8 border-t border-gray-100">
-                  <h4 className="font-bold text-gray-800 mb-3">Key Interventions:</h4>
-                  <ul className="space-y-2">
-                    <li className="flex items-center text-gray-600">
-                      <FiCheckCircle className="w-5 h-5 text-blue-500 mr-3" />
-                      Drug Abuse Prevention & Awareness
-                    </li>
-                    <li className="flex items-center text-gray-600">
-                      <FiCheckCircle className="w-5 h-5 text-blue-500 mr-3" />
-                      Rehabilitation & Social Reintegration
-                    </li>
-                    <li className="flex items-center text-gray-600">
-                      <FiCheckCircle className="w-5 h-5 text-blue-500 mr-3" />
-                      Education & Life Skills Development
-                    </li>
-                    <li className="flex items-center text-gray-600">
-                      <FiCheckCircle className="w-5 h-5 text-blue-500 mr-3" />
-                      Gender-Inclusive Protection Systems
-                    </li>
-                  </ul>
+                  <h3 className="text-3xl font-bold text-slate-900 mb-6 tracking-tight">Mission</h3>
+                  <p className="text-slate-600 text-lg leading-relaxed mb-8">
+                    Kids Survivor Liberia (KSL) is a national-based, non-profit organization dedicated to the prevention of drug abuse and the protection, rehabilitation, and empowerment of vulnerable populations, particularly children, adolescents, youth, adolescent girls, widows, and vulnerable elderly men.
+                  </p>
+                  <div className="space-y-4">
+                    <h4 className="font-semibold text-slate-900 text-sm uppercase tracking-wider mb-2">Pillars of Action</h4>
+                    {[
+                      "Drug Abuse Prevention & Awareness",
+                      "Rehabilitation & Social Reintegration",
+                      "Education & Life Skills Development",
+                      "Gender-Inclusive Protection Systems"
+                    ].map((item, i) => (
+                      <div key={i} className="flex items-center text-slate-700 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                        <FiCheckCircle className="w-5 h-5 text-blue-500 mr-3 shrink-0" />
+                        <span className="font-medium">{item}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </motion.div>
 
             {/* Vision Card */}
             <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-white rounded-2xl shadow-xl overflow-hidden"
+              className="bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] overflow-hidden group hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] transition-all duration-500 border border-slate-100"
             >
-              <div className="bg-yellow-500 p-8">
-                <div className="flex items-center mb-4">
-                  <div className="bg-white/20 p-3 rounded-xl mr-4">
-                    <FiEye className="w-8 h-8 text-white" />
+              <div className="p-10 md:p-12 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-50 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110 duration-500"></div>
+                <div className="relative z-10">
+                  <div className="w-16 h-16 bg-yellow-500 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-yellow-500/30 text-white transform group-hover:-translate-y-2 transition-transform duration-500">
+                    <FiEye className="w-8 h-8" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white">Organizational Vision</h3>
-                </div>
-              </div>
-              <div className="p-8">
-                <p className="text-gray-700 text-lg leading-relaxed">
-                  A drug-free, safe, inclusive, and resilient Liberia, where children, adolescent girls, youth, widows, and elderly men live in dignity, have equitable access to education and economic opportunities, are protected from drugs, violence, and exploitation, and actively contribute to sustainable development and social cohesion.
-                </p>
-                <div className="mt-8 pt-8 border-t border-gray-100">
-                  <h4 className="font-bold text-gray-800 mb-3">Vision Elements:</h4>
-                  <ul className="space-y-2">
-                    <li className="flex items-center text-gray-600">
-                      <div className="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
-                      Drug-free and safe communities
-                    </li>
-                    <li className="flex items-center text-gray-600">
-                      <div className="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
-                      Equitable access to opportunities
-                    </li>
-                    <li className="flex items-center text-gray-600">
-                      <div className="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
-                      Protection from exploitation
-                    </li>
-                    <li className="flex items-center text-gray-600">
-                      <div className="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
-                      Active community participation
-                    </li>
-                  </ul>
+                  <h3 className="text-3xl font-bold text-slate-900 mb-6 tracking-tight">Vision</h3>
+                  <p className="text-slate-600 text-lg leading-relaxed mb-8">
+                    A drug-free, safe, inclusive, and resilient Liberia, where children, adolescent girls, youth, widows, and elderly men live in dignity, have equitable access to education and economic opportunities, are protected from drugs, violence, and exploitation, and actively contribute to sustainable development and social cohesion.
+                  </p>
+                  <div className="space-y-4">
+                    <h4 className="font-semibold text-slate-900 text-sm uppercase tracking-wider mb-2">Core Outcomes</h4>
+                    {[
+                      "Drug-free and safe communities",
+                      "Equitable access to opportunities",
+                      "Protection from exploitation",
+                      "Active community participation"
+                    ].map((item, i) => (
+                      <div key={i} className="flex items-center text-slate-700 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                        <div className="w-2.5 h-2.5 bg-yellow-400 rounded-full mr-4 shrink-0 shadow-sm"></div>
+                        <span className="font-medium">{item}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -666,26 +665,27 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Program Pillars Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
+      {/* Program Pillars Section - Premium Redesign */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            <span className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-3 block">Areas of Action</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
               Our Programmatic Pillars
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Comprehensive approaches aligned with national strategies and community needs
+            <p className="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
+              Comprehensive, rights-based approaches aligned with national strategies to address the root causes of vulnerability and empower communities.
             </p>
           </motion.div>
 
-          {/* Four main pillars - responsive grid */}
-          <div className="grid md:grid-cols-2 gap-8 mb-8">
+          {/* Four main pillars - premium responsive grid */}
+          <div className="grid md:grid-cols-2 gap-10 mb-12">
             {programPillars.map((pillar, index) => (
               <motion.div
                 key={pillar.id}
@@ -695,14 +695,14 @@ const Home = () => {
                 viewport={{ once: true }}
                 className="group h-full"
               >
-                <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden h-full flex flex-col">
-                  {/* Image area with overlay and icon */}
-                  <div className="relative h-56 overflow-hidden">
+                <div className="bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] group-hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] transition-all duration-500 overflow-hidden h-full flex flex-col border border-slate-100">
+                  {/* Image area with subtle zoom and overlay */}
+                  <div className="relative h-64 overflow-hidden">
                     {!imageError[`pillar-${pillar.id}`] ? (
                       <img
                         src={pillar.imagePlaceholder}
                         alt={pillar.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
                         onError={() => handleImageError(`pillar-${pillar.id}`)}
                         loading="lazy"
                       />
@@ -715,27 +715,30 @@ const Home = () => {
                         </span>
                       </div>
                     )}
-                    {/* Gradient overlay */}
-                    <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent"></div>
-                    {/* Icon floating at bottom left */}
-                    <div
-                      className={`absolute bottom-4 left-4 ${pillar.color} p-3 rounded-xl text-white shadow-lg`}
-                    >
-                      {pillar.icon}
+                    {/* Refined Gradient overlay */}
+                    <div className="absolute inset-0 bg-linear-to-t from-slate-900/90 via-slate-900/40 to-transparent"></div>
+
+                    {/* Content integrated into image bottom */}
+                    <div className="absolute bottom-0 left-0 w-full p-8">
+                      <div className="flex items-center gap-4 mb-3">
+                        <div className={`p-3 rounded-2xl text-white shadow-lg backdrop-blur-md bg-white/20 border border-white/20`}>
+                          {pillar.icon}
+                        </div>
+                        <h3 className="text-2xl font-bold text-white tracking-tight">
+                          {pillar.title}
+                        </h3>
+                      </div>
                     </div>
                   </div>
 
-                  {/* Content */}
-                  <div className="p-6 flex-1 flex flex-col">
-                    <h3 className="text-xl font-bold text-gray-800 mb-3">
-                      {pillar.title}
-                    </h3>
-                    <p className="text-gray-600 mb-6 flex-1">
+                  {/* Content below */}
+                  <div className="p-8 flex-1 flex flex-col bg-white">
+                    <p className="text-slate-600 mb-8 flex-1 text-lg leading-relaxed">
                       {pillar.description}
                     </p>
                     <Link to={`/programs#pillar-${pillar.id}`}>
-                      <button className="w-full text-center bg-gray-50 hover:bg-gray-100 text-gray-800 font-semibold py-3 rounded-lg transition-colors duration-300 border border-gray-200">
-                        Explore This Pillar
+                      <button className="w-full text-center bg-slate-50 hover:bg-blue-50 text-blue-600 hover:text-blue-700 font-bold py-4 rounded-xl transition-all duration-300 group-hover:ring-1 group-hover:ring-blue-100">
+                        Explore This Pillar &rarr;
                       </button>
                     </Link>
                   </div>
@@ -744,60 +747,65 @@ const Home = () => {
             ))}
           </div>
 
-          {/* Fifth Pillar - Community Engagement (full-width card) */}
+          {/* Fifth Pillar - Community Engagement (premium full-width) */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
             viewport={{ once: true }}
-            className="mt-8"
+            className="mt-12"
           >
-            <div className="bg-linear-to-br from-blue-600 to-blue-700 rounded-2xl shadow-xl overflow-hidden">
-              <div className="p-8 text-white">
-                <div className="flex flex-col md:flex-row md:items-center gap-6 mb-6">
-                  <div className="bg-white/20 p-4 rounded-xl inline-flex self-start">
-                    <FiBriefcase className="w-8 h-8" />
+            <div className="bg-slate-900 rounded-3xl shadow-2xl overflow-hidden relative">
+              <div className="absolute inset-0 bg-[url('/assets/pattern-bg.png')] opacity-10 mix-blend-overlay"></div>
+              {/* Abstract decorative blobs */}
+              <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+              <div className="absolute bottom-0 left-0 w-96 h-96 bg-yellow-500/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+
+              <div className="p-10 md:p-14 text-white relative z-10">
+                <div className="flex flex-col md:flex-row md:items-start gap-8 mb-10">
+                  <div className="bg-white/10 p-5 rounded-2xl inline-flex self-start backdrop-blur-md border border-white/10 shadow-xl">
+                    <FiBriefcase className="w-8 h-8 text-blue-300" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold">
-                      Pillar 5: Community Engagement, Peacebuilding & Partnerships
+                    <h3 className="text-3xl font-bold mb-3 tracking-tight">
+                      Pillar 5: Community Engagement & Partnerships
                     </h3>
-                    <p className="text-blue-100 mt-2">
-                      Collaboration with traditional leaders, local authorities, and civil society for sustainable impact
+                    <p className="text-slate-300 text-lg max-w-2xl leading-relaxed">
+                      Transformative cross-sector collaboration with traditional leaders, local authorities, and civil society for truly sustainable grassroots impact.
                     </p>
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-4">
-                  <div className="bg-white/10 p-5 rounded-xl backdrop-blur-sm hover:bg-white/20 transition-colors">
-                    <h4 className="font-bold text-lg mb-2">Community Ownership</h4>
-                    <p className="text-sm text-blue-100">
-                      Volunteer training and community-driven program implementation
+                <div className="grid md:grid-cols-3 gap-6">
+                  <div className="bg-white/5 p-6 rounded-2xl backdrop-blur-sm border border-white/5 hover:bg-white/10 transition-colors group">
+                    <h4 className="font-bold text-xl mb-3 text-white">Community Ownership</h4>
+                    <p className="text-slate-400 group-hover:text-slate-300 transition-colors">
+                      Empowering local actors through intensive volunteer training and community-driven program implementation.
                     </p>
                   </div>
-                  <div className="bg-white/10 p-5 rounded-xl backdrop-blur-sm hover:bg-white/20 transition-colors">
-                    <h4 className="font-bold text-lg mb-2">Peacebuilding</h4>
-                    <p className="text-sm text-blue-100">
-                      Crime and violence prevention through social cohesion initiatives
+                  <div className="bg-white/5 p-6 rounded-2xl backdrop-blur-sm border border-white/5 hover:bg-white/10 transition-colors group">
+                    <h4 className="font-bold text-xl mb-3 text-white">Peacebuilding</h4>
+                    <p className="text-slate-400 group-hover:text-slate-300 transition-colors">
+                      Proactive crime and violence prevention cultivated through dynamic social cohesion initiatives.
                     </p>
                   </div>
-                  <div className="bg-white/10 p-5 rounded-xl backdrop-blur-sm hover:bg-white/20 transition-colors">
-                    <h4 className="font-bold text-lg mb-2">Strategic Partnerships</h4>
-                    <p className="text-sm text-blue-100">
-                      Multi-stakeholder collaboration for comprehensive impact
+                  <div className="bg-white/5 p-6 rounded-2xl backdrop-blur-sm border border-white/5 hover:bg-white/10 transition-colors group">
+                    <h4 className="font-bold text-xl mb-3 text-white">Strategic Partnerships</h4>
+                    <p className="text-slate-400 group-hover:text-slate-300 transition-colors">
+                      Fostering multi-stakeholder collaboration for comprehensive, scalable developmental impact.
                     </p>
                   </div>
                 </div>
 
-                <div className="mt-8 flex flex-wrap gap-4">
+                <div className="mt-12 flex flex-wrap gap-5">
                   <Link to="/partnership">
-                    <button className="bg-white text-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition-colors shadow-md">
+                    <button className="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-500 transition-all shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.6)]">
                       Partner With Us
                     </button>
                   </Link>
                   <Link to="/programs#community">
-                    <button className="border border-white text-white px-6 py-2 rounded-full font-semibold hover:bg-white/10 transition-colors">
-                      Learn More
+                    <button className="bg-white/10 border border-white/20 text-white px-8 py-4 rounded-xl font-bold hover:bg-white/20 transition-all backdrop-blur-sm">
+                      Learn More Details
                     </button>
                   </Link>
                 </div>
@@ -807,8 +815,8 @@ const Home = () => {
         </div>
       </section>
       {/* National & Strategic Alignment Section */}
-      <section className="py-20 relative overflow-hidden">
-        {/* Background Image with Overlay */}
+      <section className="py-24 relative overflow-hidden">
+        {/* Background Image with Premium Overlay */}
         <div
           className="absolute inset-0 z-0"
           style={{
@@ -818,7 +826,7 @@ const Home = () => {
             backgroundAttachment: 'fixed'
           }}
         >
-          <div className="absolute inset-0 bg-blue-900/70"></div> {/* Dark overlay */}
+          <div className="absolute inset-0 bg-slate-900/80 backdrop-blur-[2px]"></div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -837,14 +845,14 @@ const Home = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
             {/* YTEI Alignment Card */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="bg-white/95 backdrop-blur-sm p-8 rounded-2xl shadow-xl"
+              className="glass-effect p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.2)] transition-shadow duration-500"
             >
               <div className="flex items-center mb-6">
                 <div className="bg-green-100 p-3 rounded-xl mr-4">
@@ -882,7 +890,7 @@ const Home = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="bg-white/95 backdrop-blur-sm p-8 rounded-2xl shadow-xl"
+              className="glass-effect p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.2)] transition-shadow duration-500"
             >
               <div className="flex items-center mb-6">
                 <div className="bg-blue-100 p-3 rounded-xl mr-4">
@@ -917,69 +925,152 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Meet Our Team Section */}
-          <section className='px-8 mx-auto bg-white py-20'>
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="mb-20"
-            >
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-gray-800 mb-4">Leadership & Team</h2>
-                <p className="text-gray-600 max-w-2xl mx-auto">
-                  Committed professionals driving NADAP and YTEI-aligned interventions
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {teamMembers.map((member, index) => (
-                  <div 
-                    key={index}
-                    className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
-                  >
-                    <div className="h-auto bg-gray-100 flex items-center justify-center">
-                      <img 
-                        src={member.teamImage}
-                        alt={member.name}
-                        className="w-full h-full object-cover"
-                        loading='lazy'
-                      />
-                    </div>
-                    
-                    <div className="p-6">
-                      <h3 className="text-xl font-bold text-gray-800 mb-1">{member.name}</h3>
-                      <p className="text-blue-600 font-medium mb-3">{member.position}</p>
-                      <p className="text-gray-600 text-sm mb-4">{member.bio}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              
-              {/* Team Page Navigation Button */}
-              <div className="flex justify-center mt-12">
-                 <motion.div
-            initial={{ opacity: 0, y: 20 }}
+      {/* About & Counties CTA Section */}
+      <section className="py-24 bg-slate-50 relative">
+        <div className="absolute inset-0 bg-[url('/assets/pattern-bg.png')] opacity-5 mix-blend-multiply"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center"
+            className="text-center mb-16"
           >
-            <Link to="/team">
-              <button className="inline-flex items-center px-6 py-3 bg-white text-blue-600 border-2 border-blue-600 rounded-full font-semibold hover:bg-blue-50 transition-all duration-300 hover:scale-105">
-                <span>View All Members</span>
-                <FiArrowRight className="ml-2" />
-              </button>
-            </Link>
+            <span className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-3 block">Discover More</span>
+            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
+              Learn More About KSL & Where We Work
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">
+              Explore our organizational story and see how Kids Survivor Liberia operates across all
+              15 counties through prevention, protection, and empowerment programs.
+            </p>
           </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* About Us card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] border border-slate-100 p-8 sm:p-10 flex flex-col sm:flex-row items-start gap-6 transition-all duration-300 group"
+            >
+              <div className="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+                <FiHome className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-800 mb-1.5">About Kids Survivor Liberia</h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  Read more about our mandate, strategic pillars, and how we align with NADAP and YTEI
+                  to serve vulnerable populations across Liberia.
+                </p>
+                <Link
+                  to="/about"
+                  className="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-700"
+                >
+                  Go to About Us
+                  <FiArrowRight className="ml-1.5 w-4 h-4" />
+                </Link>
               </div>
             </motion.div>
-          </section>
+
+            {/* Counties card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] border border-slate-100 p-8 sm:p-10 flex flex-col sm:flex-row items-start gap-6 transition-all duration-300 group"
+            >
+              <div className="w-14 h-14 rounded-2xl bg-yellow-50 text-yellow-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+                <FiMapPin className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-800 mb-1.5">
+                  Our Presence in 15 Counties
+                </h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  Visit our counties section to see how KSL&apos;s programs are implemented across
+                  Liberia, with dedicated pages for each county&apos;s activities.
+                </p>
+                <Link
+                  to="/counties"
+                  className="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-700"
+                >
+                  View Counties & Activities
+                  <FiArrowRight className="ml-1.5 w-4 h-4" />
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Meet Our Team Section */}
+      <section className='px-8 mx-auto bg-white py-24'>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="max-w-7xl mx-auto"
+        >
+          <div className="text-center mb-16">
+            <span className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-3 block">Who We Are</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">Leadership & Team</h2>
+            <p className="text-slate-600 max-w-2xl mx-auto text-lg">
+              Committed professionals driving NADAP and YTEI-aligned interventions
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {teamMembers.map((member, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] border border-slate-100 overflow-hidden transition-all duration-300 group"
+              >
+                <div className="h-auto bg-gray-100 flex items-center justify-center">
+                  <img
+                    src={member.teamImage}
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                    loading='lazy'
+                  />
+                </div>
+
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-800 mb-1">{member.name}</h3>
+                  <p className="text-blue-600 font-medium mb-3">{member.position}</p>
+                  <p className="text-gray-600 text-sm mb-4">{member.bio}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Team Page Navigation Button */}
+          <div className="flex justify-center mt-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <Link to="/team">
+                <button className="inline-flex items-center px-6 py-3 bg-white text-blue-600 border-2 border-blue-600 rounded-full font-semibold hover:bg-blue-50 transition-all duration-300 hover:scale-105">
+                  <span>View All Members</span>
+                  <FiArrowRight className="ml-2" />
+                </button>
+              </Link>
+            </motion.div>
+          </div>
+        </motion.div>
+      </section>
 
       {/* Latest News Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
+      <section className="py-24 bg-slate-50 relative">
+        <div className="absolute inset-0 bg-[url('/assets/pattern-bg.png')] opacity-5 mix-blend-multiply"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -987,19 +1078,19 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium mb-4">
+            <div className="inline-flex items-center px-4 py-2 bg-blue-100/50 text-blue-700 rounded-full text-sm font-bold tracking-wide uppercase mb-4 shadow-sm border border-blue-100">
               <FiMessageSquare className="mr-2" />
               PROGRAM UPDATES & INSIGHTS
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
               Latest from Our Programs
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-slate-600 max-w-2xl mx-auto text-lg">
               Updates on our NADAP and YTEI-aligned initiatives and their impact
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="grid md:grid-cols-3 gap-8 mb-16 max-w-6xl mx-auto">
             {latestNews.map((news, index) => (
               <motion.div
                 key={news.id}
@@ -1009,44 +1100,42 @@ const Home = () => {
                 viewport={{ once: true }}
                 className="group"
               >
-                <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 h-full flex flex-col">
-                  <div className="relative h-56 overflow-hidden">
+                <div className="bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] border border-slate-100 overflow-hidden transition-all duration-300 h-full flex flex-col">
+                  <div className="relative h-60 overflow-hidden">
                     <img
                       src={news.image}
                       alt={news.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
                     <div className="absolute top-4 left-4">
-                      <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                      <span className="bg-blue-600/90 backdrop-blur-sm text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase shadow-sm">
                         {news.category}
                       </span>
                     </div>
                   </div>
 
-                  <div className="p-6 flex-1 flex flex-col">
-                    <div className="flex items-center text-sm text-gray-500 mb-3">
-                      <FiCalendar className="mr-2" />
+                  <div className="p-8 flex-1 flex flex-col">
+                    <div className="flex items-center text-xs font-semibold uppercase tracking-wider text-slate-500 mb-4">
+                      <FiCalendar className="mr-2 shrink-0 text-blue-500" />
                       {news.date}
-                      <span className="mx-2">•</span>
-                      <FiUser className="mr-2" />
+                      <span className="mx-3 text-slate-300">•</span>
+                      <FiUser className="mr-2 shrink-0 text-blue-500" />
                       {news.author}
                     </div>
-                    
-                    <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors line-clamp-2">
+
+                    <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors line-clamp-3 leading-snug">
                       {news.title}
                     </h3>
-                    
-                    <p className="text-gray-600 mb-4 flex-1 line-clamp-3">
+
+                    <p className="text-slate-600 mb-6 flex-1 line-clamp-3 leading-relaxed">
                       {news.excerpt}
                     </p>
-                    
-                    <div className="flex justify-between items-center mt-4 pt-4 border-t border-gray-100">
-                      <span className="text-sm text-gray-500">
-                        {news.readTime}
-                      </span>
-                      <Link to={news.link} className="flex items-center text-blue-600 hover:text-blue-700 font-medium group">
-                        Read More
-                        <FiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+
+                    <div className="flex justify-start items-center pt-6 border-t border-slate-100">
+                      <Link to={news.link} className="inline-flex items-center text-blue-600 hover:text-blue-700 font-bold group/link">
+                        Read Story
+                        <FiArrowRight className="ml-2 group-hover/link:translate-x-1 transition-transform" />
                       </Link>
                     </div>
                   </div>
@@ -1072,9 +1161,10 @@ const Home = () => {
         </div>
       </section>
 
-      {/* FAQ Section - Updated */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
+      {/* FAQ Section - Premium */}
+      <section className="py-24 bg-white relative">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-50/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1082,15 +1172,16 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            <span className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-3 block">Got Questions?</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
               Frequently Asked Questions
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-slate-600 max-w-2xl mx-auto text-lg">
               Learn more about our NADAP and YTEI-aligned approach to drug prevention and youth empowerment
             </p>
           </motion.div>
 
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             {faqItems.map((faq, index) => (
               <motion.div
                 key={faq.id}
@@ -1098,44 +1189,49 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="mb-4"
+                className="mb-6"
               >
                 <div
-                  className={`bg-white rounded-xl shadow-md overflow-hidden cursor-pointer transition-all duration-300 ${
-                    faq.open ? 'shadow-lg' : 'hover:shadow-lg'
-                  }`}
+                  className={`bg-white rounded-2xl border transition-all duration-300 ${faq.open
+                    ? 'border-blue-100 shadow-[0_8px_30px_rgb(37,99,235,0.08)] ring-1 ring-blue-50'
+                    : 'border-slate-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:border-blue-50'
+                    } overflow-hidden cursor-pointer`}
                   onClick={() => toggleFAQ(faq.id)}
                 >
-                  <div className="flex justify-between items-center p-6">
-                    <h3 className="text-lg font-semibold text-gray-800">{faq.question}</h3>
+                  <div className="flex justify-between items-center p-6 md:p-8">
+                    <h3 className={`text-xl font-bold pr-8 transition-colors ${faq.open ? 'text-blue-600' : 'text-slate-800'}`}>
+                      {faq.question}
+                    </h3>
                     <motion.div
                       animate={{ rotate: faq.open ? 180 : 0 }}
                       transition={{ duration: 0.3 }}
-                      className="text-blue-600"
+                      className={`shrink-0 flex items-center justify-center w-10 h-10 rounded-full ${faq.open ? 'bg-blue-100 text-blue-600' : 'bg-slate-50 text-slate-400'}`}
                     >
                       <FiChevronDown className="w-5 h-5" />
                     </motion.div>
                   </div>
-                  
+
                   <motion.div
                     initial={false}
                     animate={{ height: faq.open ? 'auto' : 0 }}
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <div className="px-6 pb-6 pt-2 border-t border-gray-100">
-                      <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
-                      
+                    <div className="px-6 md:px-8 pb-8 pt-2">
+                      <p className="text-slate-600 leading-relaxed text-lg mb-6">{faq.answer}</p>
+
                       {faq.links && (
-                        <div className="mt-4 flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-4 pt-6 border-t border-slate-100">
                           {faq.links.map((link, linkIndex) => (
                             <Link
                               key={linkIndex}
                               to={link.path}
-                              className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium text-sm"
+                              className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold group"
                             >
-                              {link.text}
-                              <FiChevronRight className="ml-1 w-4 h-4" />
+                              <span className="relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-blue-600 after:scale-x-0 group-hover:after:scale-x-100 after:transition-transform after:origin-left">
+                                {link.text}
+                              </span>
+                              <FiChevronRight className="ml-1.5 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             </Link>
                           ))}
                         </div>
@@ -1146,47 +1242,8 @@ const Home = () => {
               </motion.div>
             ))}
           </div>
-
-          {/* Partnership Callout */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            viewport={{ once: true }}
-            className="text-center mt-12"
-          >
-            <div className="bg-blue-500 rounded-2xl p-8 text-white max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold mb-4">Partner with Us for Impact</h3>
-              <p className="mb-6 text-blue-100">
-                Join us in implementing NADAP 2025-2030 and YTEI-aligned programs for a drug-free, empowered Liberia.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/partnership">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors"
-                  >
-                    Explore Partnerships
-                  </motion.button>
-                </Link>
-                <Link to="/contact">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors"
-                  >
-                    Contact Our Team
-                  </motion.button>
-                </Link>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </section>
-
-      {/* Call to Action */}
-      <CallToAction />
     </div>
   );
 };

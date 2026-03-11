@@ -122,7 +122,7 @@ const Contact = () => {
               className="max-w-4xl mx-auto"
             >
               <span className="text-yellow-400 font-bold tracking-widest uppercase text-sm mb-4 block drop-shadow-md">Get In Touch</span>
-              <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight drop-shadow-xl">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 tracking-tight drop-shadow-xl">
                 Contact Us
               </h1>
               <p className="text-xl md:text-2xl text-blue-100 font-light leading-relaxed max-w-3xl mx-auto border-l-4 border-yellow-400 pl-6 text-left md:text-center md:border-l-0 md:pl-0">
@@ -144,8 +144,12 @@ const Contact = () => {
               viewport={{ once: true }}
               className="text-center mb-16 max-w-4xl mx-auto"
             >
-              <span className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-3 block">Reach Out</span>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">Let's Connect</h2>
+              <div className="flex items-center justify-center gap-3 mb-4">
+                 <div className="w-8 h-1 bg-yellow-400 rounded-full"></div>
+                 <span className="text-blue-600 font-extrabold tracking-widest uppercase text-sm">Reach Out</span>
+                 <div className="w-8 h-1 bg-yellow-400 rounded-full"></div>
+              </div>
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight">Let's Connect</h2>
               <p className="text-slate-600 text-lg leading-relaxed">
                 We're here to help and answer any questions you might have.
                 Whether you want to volunteer, partner with us, or learn more about our programs,

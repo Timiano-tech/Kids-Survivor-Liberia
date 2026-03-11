@@ -263,7 +263,7 @@ const Programs = () => {
                 ))}
               </div>
 
-              {/* Alignment Summary - Premium */}
+              {/* Alignment Summary  */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -337,7 +337,6 @@ const Programs = () => {
                           src={pillar.image}
                           alt={pillar.title}
                           className="w-full h-80 md:h-96 object-cover group-hover:scale-105 transition-transform duration-700"
-                          loading="lazy"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
                         <div className="absolute bottom-6 left-6">

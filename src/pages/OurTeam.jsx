@@ -231,7 +231,7 @@ const OurTeam = () => {
               className="max-w-4xl mx-auto"
             >
               <span className="text-yellow-400 font-bold tracking-widest uppercase text-sm mb-4 block drop-shadow-md">The People Behind KSL</span>
-              <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight drop-shadow-xl">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 tracking-tight drop-shadow-xl">
                 Our Dedicated Team
               </h1>
               <p className="text-xl md:text-2xl text-blue-100 font-light leading-relaxed max-w-3xl mx-auto border-l-4 border-yellow-400 pl-6 text-left md:text-center md:border-l-0 md:pl-0">
@@ -255,8 +255,12 @@ const OurTeam = () => {
               className="mb-20"
             >
               <div className="text-center mb-16 max-w-4xl mx-auto">
-                <span className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-3 block">Leadership & Staff</span>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
+                <div className="flex items-center justify-center gap-3 mb-4">
+                  <div className="w-8 h-1 bg-yellow-400 rounded-full"></div>
+                  <span className="text-blue-600 font-extrabold tracking-widest uppercase text-sm">Leadership & Staff</span>
+                  <div className="w-8 h-1 bg-yellow-400 rounded-full"></div>
+                </div>
+                <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight">
                   Meet Our Experts
                 </h2>
                 <p className="text-slate-600 text-lg leading-relaxed">

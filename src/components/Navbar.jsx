@@ -90,7 +90,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center lg:space-x-8 md:space-x-5">
+          <div className="hidden lg:flex items-center lg:space-x-8 md:space-x-5">
             {navItems.map((item) => (
               <div key={item.name} className="relative">
                 {item.dropdown ? (
@@ -159,7 +159,7 @@ const Navbar = () => {
           <button
             type="button"
             aria-label={isOpen ? 'Close menu' : 'Open menu'}
-            className="md:hidden p-2.5 -mr-2 text-gray-700 hover:text-blue-600 hover:bg-gray-100 rounded-lg transition-colors min-w-11 min-h-11 flex items-center justify-center"
+            className="lg:hidden p-2.5 -mr-2 text-gray-700 hover:text-blue-600 hover:bg-gray-100 rounded-lg transition-colors min-w-11 min-h-11 flex items-center justify-center"
             onClick={(e) => {
               e.stopPropagation();
               setIsOpen(!isOpen);
@@ -178,7 +178,7 @@ const Navbar = () => {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.2 }}
-              className="md:hidden border-t border-gray-200 overflow-hidden"
+              className="lg:hidden border-t border-gray-200 overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
               <div

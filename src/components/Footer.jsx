@@ -120,13 +120,13 @@ const Footer = () => {
                 {navItems.slice(0, 4).map((item) => (
                   item.dropdown ? (
                     <li key={item.name} className="space-y-2">
-                      <p className="font-medium text-gray-300">{item.name}</p>
-                      <ul className="ml-3 space-y-1 border-l border-gray-700 pl-3">
+                      <p className="font-medium text-slate-200">{item.name}</p>
+                      <ul className="ml-3 space-y-2 border-l border-slate-700 pl-4 mt-2">
                         {item.dropdown.map((subItem) => (
                           <li key={subItem.name}>
                             <Link
                               to={subItem.path}
-                              className="text-gray-400 hover:text-white text-sm transition hover:pl-1"
+                              className="text-slate-400 hover:text-yellow-400 text-sm transition-colors duration-300 inline-block hover:translate-x-1 transform"
                             >
                               {subItem.name}
                             </Link>
@@ -138,9 +138,9 @@ const Footer = () => {
                     <li key={item.name}>
                       <Link
                         to={item.path}
-                        className="text-gray-400 hover:text-white transition flex items-center group"
+                        className="text-slate-400 hover:text-yellow-400 transition-colors duration-300 flex items-center group font-medium"
                       >
-                        <span className="group-hover:pl-1 transition-all">{item.name}</span>
+                        <span className="group-hover:translate-x-1 transform transition-transform duration-300">{item.name}</span>
                       </Link>
                     </li>
                   )
@@ -152,13 +152,13 @@ const Footer = () => {
                 {navItems.slice(4).map((item) => (
                   item.dropdown ? (
                     <li key={item.name} className="space-y-2">
-                      <p className="font-medium text-gray-300">{item.name}</p>
-                      <ul className="ml-3 space-y-1 border-l border-gray-700 pl-3">
+                      <p className="font-medium text-slate-200">{item.name}</p>
+                      <ul className="ml-3 space-y-2 border-l border-slate-700 pl-4 mt-2">
                         {item.dropdown.map((subItem) => (
                           <li key={subItem.name}>
                             <Link
                               to={subItem.path}
-                              className="text-gray-400 hover:text-white text-sm transition hover:pl-1"
+                              className="text-slate-400 hover:text-yellow-400 text-sm transition-colors duration-300 inline-block hover:translate-x-1 transform"
                             >
                               {subItem.name}
                             </Link>
@@ -170,9 +170,9 @@ const Footer = () => {
                     <li key={item.name}>
                       <Link
                         to={item.path}
-                        className="text-gray-400 hover:text-white transition flex items-center group"
+                        className="text-slate-400 hover:text-yellow-400 transition-colors duration-300 flex items-center group font-medium"
                       >
-                        <span className="group-hover:pl-1 transition-all">{item.name}</span>
+                        <span className="group-hover:translate-x-1 transform transition-transform duration-300">{item.name}</span>
                       </Link>
                     </li>
                   )

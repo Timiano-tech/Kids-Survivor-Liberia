@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiMenu, FiX, FiChevronDown } from 'react-icons/fi';
@@ -6,11 +6,20 @@ import { FiMenu, FiX, FiChevronDown } from 'react-icons/fi';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState({});
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
+  const [scrolled, setScrolled] = useState(false);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setLastScrollY(window.scrollY);
+      const currentScrollY = window.scrollY;
+      setScrolled(currentScrollY > 20);
+      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+        setIsVisible(false);
+      } else if (currentScrollY < lastScrollY.current) {
+        setIsVisible(true);
+      }
+      lastScrollY.current = currentScrollY;
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -26,8 +35,8 @@ const Navbar = () => {
   }, []);
 
   const toggleDropdown = (name) => {
-    setDropdownOpen(prev => ({
-      ...prev,
+    setDropdownOpen(prev => ({ 
+      ...prev, 
       [name]: !prev[name]
     }));
   };
@@ -38,18 +47,17 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'Home', path: '/' },
-    {
-      name: 'About Us',
+    { 
+      name: 'About Us', 
       path: '#',
       dropdown: [
         { name: 'About KSL', path: '/about' },
-        { name: 'Our Team', path: '/team' },
         { name: 'Transparency & Accountability', path: '/transparency' },
       ]
-    },
+    },    
     { name: 'Our Programs', path: '/programs' },
-    {
-      name: 'Our Impact',
+    { 
+      name: 'Our Impact', 
       path: '#',
       dropdown: [
         { name: 'Impact', path: '/impact' },
@@ -59,8 +67,8 @@ const Navbar = () => {
       ]
     },
     { name: 'Blog', path: '/blog' },
-    {
-      name: 'Get Involved',
+    { 
+      name: 'Get Involved', 
       path: '#',
       dropdown: [
         { name: 'Volunteer', path: '/volunteer' },
@@ -71,70 +79,67 @@ const Navbar = () => {
   ];
 
   return (
-    <nav
-      className={`sticky top-0 z-50 transition-all duration-300 w-full ${lastScrollY > 10 ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200/50' : 'bg-white border-b border-transparent'
-        }`}
+    <motion.nav
+      initial={{ y: 0 }}
+      animate={{ y: isVisible ? 0 : -100 }}
+      transition={{ duration: 0.3 }}
+      className="bg-white shadow-lg fixed top-0 left-0 right-0 z-50 transition-transform duration-300"
       onClick={closeAllDropdowns}
     >
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-14 sm:h-16 `min-h-14">
           {/* Logo - responsive */}
-          <Link to="/" className="flex items-center gap-3 min-w-0 shrink-0" onClick={closeAllDropdowns}>
-            <motion.div whileHover={{ scale: 1.05 }} className="shrink-0 bg-slate-50 p-1.5 rounded-xl border border-slate-100 shadow-sm">
-              <img src="/KSL Logo.png" alt="KSL LOGO" className="w-10 h-10 sm:w-11 sm:h-11 object-contain" />
+          <Link to="/" className="flex items-center gap-2 min-w-0 shrink-0" onClick={closeAllDropdowns}>
+            <motion.div whileHover={{ scale: 1.05 }} className="shrink-0">
+              <img src="/KSL Logo.png" alt="KSL LOGO" className="w-10 h-10 sm:w-12 sm:h-12 object-contain" />
             </motion.div>
-            <div className="min-w-0 flex flex-col justify-center">
-              <h1 className="font-extrabold text-slate-900 text-base sm:text-lg lg:text-xl truncate tracking-tight leading-none mb-1">Kids Survivor</h1>
-              <p className="text-[10px] sm:text-[11px] text-blue-600 font-bold uppercase tracking-widest truncate leading-none">Liberia</p>
+            <div className="min-w-0">
+              <h1 className="font-bold text-gray-800 text-base sm:text-lg truncate">Kids Survivor</h1>
+              <p className="text-[10px] sm:text-xs text-gray-600 truncate">Liberia</p>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center lg:space-x-8 md:space-x-5">
+          <div className="hidden md:flex items-center lg:space-x-8 md:space-x-5">
             {navItems.map((item) => (
               <div key={item.name} className="relative">
                 {item.dropdown ? (
-                  <div className="relative group">
-                    <button
-                      className={`flex items-center space-x-1 text-sm lg:text-base font-semibold transition-colors duration-200 ${dropdownOpen[item.name] ? 'text-blue-600' : 'text-slate-600 hover:text-blue-600'
-                        }`}
+                  <div className="relative">
+                    <button 
+                      className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 font-medium transition-colors"
                       onClick={(e) => {
                         e.stopPropagation();
                         toggleDropdown(item.name);
                       }}
                     >
                       <span>{item.name}</span>
-                      <FiChevronDown className={`transition-transform duration-300 w-4 h-4 ${dropdownOpen[item.name] ? 'rotate-180' : ''}`} />
+                      <FiChevronDown className={`transition-transform ${dropdownOpen[item.name] ? 'rotate-180' : ''}`} />
                     </button>
-
-                    <AnimatePresence>
-                      {dropdownOpen[item.name] && (
-                        <motion.div
-                          initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                          animate={{ opacity: 1, y: 0, scale: 1 }}
-                          exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                          transition={{ duration: 0.15 }}
-                          className="absolute top-full left-0 mt-3 w-56 bg-white shadow-[0_10px_40px_rgba(0,0,0,0.08)] rounded-2xl py-3 border border-slate-100 z-50 overflow-hidden"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          {item.dropdown.map((subItem) => (
-                            <Link
-                              key={subItem.name}
-                              to={subItem.path}
-                              className="block px-5 py-2.5 text-sm font-medium text-slate-600 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200"
-                              onClick={closeAllDropdowns}
-                            >
-                              {subItem.name}
-                            </Link>
-                          ))}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
+                    
+                    {dropdownOpen[item.name] && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-lg py-2 border border-gray-100 z-50"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        {item.dropdown.map((subItem) => (
+                          <Link
+                            key={subItem.name}
+                            to={subItem.path}
+                            className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                            onClick={closeAllDropdowns}
+                          >
+                            {subItem.name}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
                   </div>
                 ) : (
                   <Link
                     to={item.path}
-                    className="text-sm lg:text-base text-slate-600 hover:text-blue-600 font-semibold transition-colors duration-200"
+                    className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
                     onClick={closeAllDropdowns}
                   >
                     {item.name}
@@ -142,13 +147,13 @@ const Navbar = () => {
                 )}
               </div>
             ))}
-
+            
             {/* Donate Button */}
             <Link to="/donate" onClick={closeAllDropdowns}>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-yellow-400 hover:bg-yellow-500 text-slate-900 px-7 py-2.5 rounded-full text-sm lg:text-base font-bold shadow-[0_4px_14px_rgba(250,204,21,0.4)] hover:shadow-[0_6px_20px_rgba(250,204,21,0.6)] transition-all ml-2"
+                className="bg-yellow-400 text-white px-8 py-2 rounded-full font-semibold shadow-md transition-all"
               >
                 Donate
               </motion.button>
@@ -159,7 +164,7 @@ const Navbar = () => {
           <button
             type="button"
             aria-label={isOpen ? 'Close menu' : 'Open menu'}
-            className="lg:hidden p-2.5 -mr-2 text-gray-700 hover:text-blue-600 hover:bg-gray-100 rounded-lg transition-colors min-w-11 min-h-11 flex items-center justify-center"
+            className="md:hidden p-2.5 -mr-2 text-gray-700 hover:text-blue-600 hover:bg-gray-100 rounded-lg transition-colors min-w-11 min-h-11 flex items-center justify-center"
             onClick={(e) => {
               e.stopPropagation();
               setIsOpen(!isOpen);
@@ -178,7 +183,7 @@ const Navbar = () => {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.2 }}
-              className="lg:hidden border-t border-gray-200 overflow-hidden"
+              className="md:hidden border-t border-gray-200 overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
               <div
@@ -233,7 +238,7 @@ const Navbar = () => {
                   >
                     <button
                       type="button"
-                      className="w-full bg-yellow-400 hover:bg-yellow-500 text-white py-3 rounded-xl font-semibold transition-colors touch-manipulation min-h-[48px]"
+                      className="w-full bg-yellow-400 hover:bg-yellow-500 text-white py-3 rounded-xl font-semibold transition-colors touch-manipulation min-h-12"
                     >
                       Donate Now
                     </button>
@@ -244,7 +249,7 @@ const Navbar = () => {
           )}
         </AnimatePresence>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 

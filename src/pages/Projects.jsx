@@ -2,6 +2,12 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiShield, FiHeart, FiUsers, FiBook, FiGlobe } from 'react-icons/fi';
 import HeaderImage from '../assets/Team_discussion.jpeg';
+import DrugPreventionImg from '../assets/Say no to drugs.jpeg';
+import RehabilitationImg from '../assets/Drug_Recovered.jpeg';
+import YouthEmpowermentImg from '../assets/Youth_Community_Outreach.jpeg';
+import WidowsSupportImg from '../assets/Community_Outreach.jpeg';
+import PeacebuildingImg from '../assets/Community Leaders.jpeg';
+import ChildProtectionImg from '../assets/Children on the assembly.jpeg';
 
 const Projects = () => {
   useEffect(() => {
@@ -29,7 +35,8 @@ const Projects = () => {
       progress: 85,
       beneficiaries: '1,200+',
       icon: <FiShield />,
-      target: 'Youth & Adolescents'
+      target: 'Youth & Adolescents',
+      image: DrugPreventionImg
     },
     {
       id: 2,
@@ -40,7 +47,8 @@ const Projects = () => {
       progress: 70,
       beneficiaries: '80+',
       icon: <FiHeart />,
-      target: 'Individuals & Families'
+      target: 'Individuals & Families',
+      image: RehabilitationImg
     },
     {
       id: 3,
@@ -51,7 +59,8 @@ const Projects = () => {
       progress: 75,
       beneficiaries: '150+',
       icon: <FiUsers />,
-      target: 'Youth & Adolescent Girls'
+      target: 'Youth & Adolescent Girls',
+      image: YouthEmpowermentImg
     },
     {
       id: 4,
@@ -62,7 +71,8 @@ const Projects = () => {
       progress: 65,
       beneficiaries: '50+',
       icon: <FiHeart />,
-      target: 'Widows & Elderly'
+      target: 'Widows & Elderly',
+      image: WidowsSupportImg
     },
     {
       id: 5,
@@ -73,7 +83,8 @@ const Projects = () => {
       progress: 80,
       beneficiaries: '5+',
       icon: <FiGlobe />,
-      target: 'Communities'
+      target: 'Communities',
+      image: PeacebuildingImg
     },
     {
       id: 6,
@@ -84,7 +95,8 @@ const Projects = () => {
       progress: 90,
       beneficiaries: '300+',
       icon: <FiBook />,
-      target: 'Children'
+      target: 'Children',
+      image: ChildProtectionImg
     }
   ];
 
@@ -157,7 +169,7 @@ const Projects = () => {
               </div>
             </div>
 
-            {/* Projects Grid - Premium */}
+            {/* Projects Grid - Premium with Images */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
               {filteredProjects.map((project, index) => (
                 <motion.div
@@ -165,51 +177,65 @@ const Projects = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
-                  className="bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 p-8 hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] transition-all duration-500 group relative overflow-hidden"
+                  className="bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] transition-all duration-500 group relative overflow-hidden"
                 >
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-[4rem] -mx-8 -my-8 transition-transform group-hover:scale-110 duration-500 ease-in-out z-0"></div>
-
-                  {/* Header */}
-                  <div className="flex items-start mb-6 relative z-10">
-                    <div className="bg-blue-50 text-blue-600 p-4 rounded-2xl mr-5 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 shadow-sm">
+                  {/* Project Image */}
+                  <div className="relative h-52 overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/30 to-transparent"></div>
+                    {/* Category badge on image */}
+                    <div className="absolute top-4 left-4">
+                      <span className="px-3 py-1.5 bg-white/20 backdrop-blur-md text-white text-xs font-bold uppercase tracking-wider rounded-full border border-white/20">
+                        {project.category}
+                      </span>
+                    </div>
+                    {/* Icon overlay on image */}
+                    <div className="absolute bottom-4 right-4 bg-white/20 backdrop-blur-md text-white p-3 rounded-2xl border border-white/20 shadow-lg">
                       {project.icon}
                     </div>
-                    <div>
-                      <div className="text-xs font-bold tracking-widest uppercase text-blue-600 mb-1.5">
-                        {project.category}
-                      </div>
+                  </div>
+
+                  {/* Card Content */}
+                  <div className="p-8">
+                    {/* Header */}
+                    <div className="mb-4">
                       <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-tight">{project.title}</h3>
                     </div>
-                  </div>
 
-                  <p className="text-slate-600 text-sm leading-relaxed mb-6 h-12 line-clamp-2 relative z-10">{project.description}</p>
+                    <p className="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-2">{project.description}</p>
 
-                  {/* Target */}
-                  <div className="mb-6 relative z-10 bg-slate-50 p-4 rounded-2xl border border-slate-100">
-                    <div className="text-xs font-bold tracking-wider uppercase text-slate-400 mb-1">Target Group</div>
-                    <div className="text-sm font-bold text-slate-800">{project.target}</div>
-                  </div>
-
-                  {/* Progress */}
-                  <div className="mb-6 relative z-10">
-                    <div className="flex justify-between text-xs font-bold tracking-wider uppercase text-slate-500 mb-2">
-                      <span>Progress</span>
-                      <span className="text-blue-600">{project.progress}%</span>
+                    {/* Target */}
+                    <div className="mb-6 bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                      <div className="text-xs font-bold tracking-wider uppercase text-slate-400 mb-1">Target Group</div>
+                      <div className="text-sm font-bold text-slate-800">{project.target}</div>
                     </div>
-                    <div className="h-2.5 bg-slate-100 rounded-full overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        animate={{ width: `${project.progress}%` }}
-                        transition={{ duration: 1, delay: 0.2 }}
-                        className="h-full bg-blue-600 rounded-full"
-                      />
-                    </div>
-                  </div>
 
-                  {/* Footer */}
-                  <div className="flex justify-between items-center text-sm relative z-10 pt-4 border-t border-slate-100">
-                    <div className="text-slate-600">
-                      <span className="font-bold text-lg text-slate-900">{project.beneficiaries}</span> beneficiaries
+                    {/* Progress */}
+                    <div className="mb-6">
+                      <div className="flex justify-between text-xs font-bold tracking-wider uppercase text-slate-500 mb-2">
+                        <span>Progress</span>
+                        <span className="text-blue-600">{project.progress}%</span>
+                      </div>
+                      <div className="h-2.5 bg-slate-100 rounded-full overflow-hidden">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          animate={{ width: `${project.progress}%` }}
+                          transition={{ duration: 1, delay: 0.2 }}
+                          className="h-full bg-blue-600 rounded-full"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Footer */}
+                    <div className="flex justify-between items-center text-sm pt-4 border-t border-slate-100">
+                      <div className="text-slate-600">
+                        <span className="font-bold text-lg text-slate-900">{project.beneficiaries}</span> beneficiaries
+                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -222,4 +248,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default Projects;

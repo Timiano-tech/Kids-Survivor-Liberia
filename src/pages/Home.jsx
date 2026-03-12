@@ -337,10 +337,10 @@ const Home = () => {
   };
 
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden pt-14 sm:pt-16">
 
       {/* Hero Carousel Section */}
-      <section className="relative h-[calc(100vh-64px)]">
+      <section className="relative h-[calc(100vh-56px)] sm:h-[calc(100vh-64px)]">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}

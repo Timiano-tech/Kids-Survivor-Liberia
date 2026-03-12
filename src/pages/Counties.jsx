@@ -68,40 +68,70 @@ const Counties = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  className="group bg-white rounded-[2rem] border border-slate-100 p-8 shadow-[0_4px_20px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] hover:border-blue-100 transition-all duration-500 hover:-translate-y-2 flex flex-col relative overflow-hidden"
+                  className="group bg-white rounded-[2rem] border border-slate-100 shadow-[0_4px_20px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] hover:border-blue-100 transition-all duration-500 hover:-translate-y-2 flex flex-col relative overflow-hidden"
                 >
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 group-hover:bg-blue-100 transition-colors duration-500 pointer-events-none"></div>
-
-                  <div className="flex items-center justify-between gap-3 mb-6 relative z-10">
-                    <div className="flex items-center gap-4">
-                      <span className="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center border border-blue-100 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm group-hover:scale-110">
-                        <FiMapPin className="w-6 h-6" />
-                      </span>
-                      <div>
-                        <h2 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight group-hover:text-blue-600 transition-colors duration-300">
-                          {county.name}
-                        </h2>
-                        <p className="text-xs text-blue-600 font-bold uppercase tracking-widest mt-1">
-                          KSL Region
-                        </p>
+                  {/* Map Image Area */}
+                  <div className="relative h-44 overflow-hidden">
+                    {county.mapImage ? (
+                      <img
+                        src={county.mapImage}
+                        alt={`${county.name} map`}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 flex flex-col items-center justify-center relative">
+                        {/* Decorative dots pattern */}
+                        <div
+                          className="absolute inset-0 opacity-[0.06]"
+                          style={{
+                            backgroundImage: 'radial-gradient(circle at 2px 2px, #3b82f6 1px, transparent 0)',
+                            backgroundSize: '20px 20px',
+                          }}
+                        />
+                        <div className="relative z-10 flex flex-col items-center">
+                          <div className="w-14 h-14 rounded-2xl bg-blue-100 text-blue-500 flex items-center justify-center mb-3 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                            <FiMapPin className="w-7 h-7" />
+                          </div>
+                          <span className="text-xs font-bold text-blue-400 uppercase tracking-widest">Map Coming Soon</span>
+                        </div>
                       </div>
-                    </div>
+                    )}
+                    {/* Gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent" />
                   </div>
 
-                  <p className="text-slate-600 text-base mb-8 flex-1 leading-relaxed relative z-10 font-medium">
-                    {county.tagline}
-                  </p>
+                  <div className="p-8 flex-1 flex flex-col">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 group-hover:bg-blue-100 transition-colors duration-500 pointer-events-none"></div>
 
-                  <div className="mt-auto relative z-10 border-t border-slate-100 pt-6">
-                    <Link
-                      to={`/counties/${county.id}`}
-                      className="inline-flex items-center justify-center w-full px-6 py-3 bg-slate-50 text-blue-600 font-bold rounded-xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
-                    >
-                      Explore Programs
-                      <span className="ml-2 group-hover:translate-x-1 transition-transform">
-                        →
-                      </span>
-                    </Link>
+                    <div className="flex items-center justify-between gap-3 mb-6 relative z-10">
+                      <div className="flex items-center gap-4">
+                        <div>
+                          <h2 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight group-hover:text-blue-600 transition-colors duration-300">
+                            {county.name}
+                          </h2>
+                          <p className="text-xs text-blue-600 font-bold uppercase tracking-widest mt-1">
+                            KSL Region
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <p className="text-slate-600 text-base mb-8 flex-1 leading-relaxed relative z-10 font-medium">
+                      {county.tagline}
+                    </p>
+
+                    <div className="mt-auto relative z-10 border-t border-slate-100 pt-6">
+                      <Link
+                        to={`/counties/${county.id}`}
+                        className="inline-flex items-center justify-center w-full px-6 py-3 bg-slate-50 text-blue-600 font-bold rounded-xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+                      >
+                        Explore Programs
+                        <span className="ml-2 group-hover:translate-x-1 transition-transform">
+                          →
+                        </span>
+                      </Link>
+                    </div>
                   </div>
                 </motion.article>
               ))}

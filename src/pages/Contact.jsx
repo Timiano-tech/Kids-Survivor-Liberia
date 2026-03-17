@@ -111,7 +111,7 @@ const Contact = () => {
               fetchPriority="high"
             />
             <div className="absolute inset-0 bg-blue-900/80 mix-blend-multiply"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent"></div>
+            <div className="absolute inset-0 bg-linear-to-t from-slate-900 via-slate-900/60 to-transparent"></div>
           </div>
 
           <div className="relative z-10 container mx-auto px-6 text-center">
@@ -169,7 +169,7 @@ const Contact = () => {
                 <div className="absolute top-0 right-0 w-64 h-64 bg-blue-50/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
 
                 <div className="flex flex-col sm:flex-row items-start sm:items-center mb-10 gap-6 relative z-10">
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100/50 p-4 rounded-2xl border border-blue-100 text-blue-600 shadow-sm">
+                  <div className="bg-linear-to-br from-blue-50 to-blue-100/50 p-4 rounded-2xl border border-blue-100 text-blue-600 shadow-sm">
                     <FiMessageSquare className="w-8 h-8" />
                   </div>
                   <div>
@@ -249,7 +249,7 @@ const Contact = () => {
                       disabled={isSubmitting}
                       className={`flex items-center justify-center space-x-3 text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl w-full sm:w-auto ${isSubmitting
                         ? 'bg-slate-400 cursor-not-allowed'
-                        : 'bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 hover:-translate-y-1'
+                        : 'bg-linear-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 hover:-translate-y-1'
                         }`}
                     >
                       {isSubmitting ? (
@@ -287,7 +287,7 @@ const Contact = () => {
                     <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2 tracking-tight">Visit Our Headquarters</h2>
                     <p className="text-slate-600 font-medium">15th Street, Barclay Avenue, Sinkor, Monrovia, Liberia</p>
                   </div>
-                  <div className="flex-shrink-0">
+                  <div className="shrink-0">
                     <a
                       href="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=15TH%20STREET,%20BARCLAY%20AVENUE,%20SINKOR,%20MONTSERRADO%20COUNTRY+(Kids%20Survivor%20Liberia)"
                       target="_blank"
@@ -298,7 +298,7 @@ const Contact = () => {
                     </a>
                   </div>
                 </div>
-                <div className="h-[28rem] w-full bg-slate-100 relative grayscale hover:grayscale-0 transition-all duration-700">
+                <div className="h-112 w-full bg-slate-100 relative grayscale hover:grayscale-0 transition-all duration-700">
                   <iframe
                     width="100%"
                     height="100%"

@@ -4,6 +4,8 @@ import {
   FiArrowLeft,
   FiActivity,
   FiGlobe,
+  FiHome,
+  FiPhone,
 } from 'react-icons/fi';
 import { useCountyDetail } from '../hooks/useCountyDetail';
 
@@ -279,6 +281,85 @@ const CountyDetail = () => {
                 ))
               )}
             </div>
+          </section>
+
+          {/* County Office & Operations */}
+          <section className="mb-24 lg:mb-32">
+            <div className="mb-16 text-center max-w-3xl mx-auto">
+              <span className="text-emerald-500 font-semibold tracking-wider uppercase text-sm mb-3 block">
+                County Operations
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6 tracking-tight">
+                Local Office & Coordination
+              </h2>
+              <p className="text-slate-600 text-lg leading-relaxed">
+                {county.office
+                  ? `Our operational presence in ${county.name} enables localized, NADAP and YTEI-aligned program delivery.`
+                  : `${county.name} is part of our planned expansion strategy to strengthen localized program delivery across Liberia.`}
+              </p>
+            </div>
+
+            {county.office ? (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="max-w-2xl mx-auto"
+              >
+                <div className="bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 p-8 lg:p-10 relative overflow-hidden group hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] transition-all duration-500">
+                  <div className="absolute top-0 right-0 w-40 h-40 bg-blue-50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+
+                  <div className="relative z-10 flex items-center gap-5 mb-8 pb-6 border-b border-slate-100">
+                    <div className="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center shadow-sm border border-blue-100 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                      <FiHome className="w-7 h-7" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-slate-900 tracking-tight">{county.office.name}</h3>
+                      <span className="bg-emerald-50 text-emerald-700 text-xs font-bold px-3 py-1 rounded-full border border-emerald-100 mt-1 inline-block">Active Office</span>
+                    </div>
+                  </div>
+
+                  <dl className="relative z-10 grid sm:grid-cols-2 gap-6">
+                    <div className="bg-slate-50 rounded-xl p-5 border border-slate-100">
+                      <dt className="text-xs text-slate-400 mb-1 uppercase tracking-wider font-bold">Focus Area</dt>
+                      <dd className="text-slate-800 font-semibold text-lg">{county.office.focusArea}</dd>
+                    </div>
+                    <div className="bg-slate-50 rounded-xl p-5 border border-slate-100">
+                      <dt className="text-xs text-slate-400 mb-1 uppercase tracking-wider font-bold">County Coordinator</dt>
+                      <dd className="text-slate-800 font-semibold">{county.office.coordinator}</dd>
+                    </div>
+                    <div className="bg-slate-50 rounded-xl p-5 border border-slate-100 sm:col-span-2">
+                      <dt className="text-xs text-slate-400 mb-1 uppercase tracking-wider font-bold">Contact</dt>
+                      <dd className="flex items-center gap-2">
+                        <FiPhone className="w-4 h-4 text-blue-600" />
+                        <a href={`tel:${county.office.phone}`} className="text-blue-600 font-bold text-lg hover:text-blue-700 transition-colors">
+                          {county.office.phone}
+                        </a>
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+              </motion.div>
+            ) : (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="max-w-2xl mx-auto"
+              >
+                <div className="bg-slate-50 rounded-[2rem] border-2 border-dashed border-slate-200 p-10 text-center">
+                  <div className="w-14 h-14 rounded-2xl bg-white text-slate-400 flex items-center justify-center shadow-sm border border-slate-200 mx-auto mb-6">
+                    <FiHome className="w-7 h-7" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-700 mb-3">Planned Expansion</h3>
+                  <p className="text-slate-500 leading-relaxed max-w-md mx-auto">
+                    A dedicated county office for <strong className="text-slate-700">{county.name}</strong> is part of our strategic expansion plan. Programs are currently coordinated through our national headquarters.
+                  </p>
+                </div>
+              </motion.div>
+            )}
           </section>
 
           {/* Partnerships section - Premium */}

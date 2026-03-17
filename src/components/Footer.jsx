@@ -221,19 +221,20 @@ const Footer = () => {
         </div>
 
         {/* Counties list */}
-        <div className="border-t border-gray-800 mt-10 pt-8">
+        <div className="border-t border-slate-800 mt-12 pt-10">
           <div className="mb-6">
-            <h3 className="text-sm font-semibold text-gray-300 mb-3 uppercase tracking-wide">
-              Counties We Work In
+            <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-wider text-sm text-center lg:text-left">
+              Counties We Work In (15)
             </h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 text-sm">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-y-4 gap-x-6 text-sm">
               {COUNTIES.map((county) => (
                 <Link
                   key={county.id}
                   to={`/counties/${county.id}`}
-                  className="text-gray-400 hover:text-white transition"
+                  className="text-slate-400 hover:text-yellow-400 transition-colors duration-300 flex items-center group font-medium"
                 >
-                  {county.name}
+                  <span className="w-1.5 h-1.5 rounded-full bg-slate-700 mr-2 group-hover:bg-yellow-400 transition-colors"></span>
+                  <span className="group-hover:translate-x-1 transform transition-transform duration-300">{county.name}</span>
                 </Link>
               ))}
             </div>

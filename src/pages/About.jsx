@@ -10,12 +10,10 @@ import {
   FiTrendingUp,
   FiAward,
   FiCheckCircle,
-  FiHome,
   FiCrosshair,
   FiBook,
   FiArrowRight,
-  FiBriefcase,
-  FiGlobe
+  FiBriefcase
 } from 'react-icons/fi';
 import KSLCompany from '../assets/KSL Company.jpeg';
 import KSL_Teams from '../assets/KSL_Team.jpeg';
@@ -154,29 +152,31 @@ const About = () => {
   return (
     <>
       <div className="min-h-screen bg-white">
-        {/* Main Header Section - Premium Redesign */}
-        <header className="relative py-32 md:py-40 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 z-10"></div>
+        {/* Main Header Section */}
+        <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[3rem] shadow-xl border-b border-slate-100">
           <div className="absolute inset-0 z-0">
             <img
               src={KSLCompany}
-              alt="KSL Background"
-              className="w-full h-full object-cover opacity-20 mix-blend-overlay"
+              alt="Media & Resources"
+              className="w-full h-full object-cover"
               fetchPriority="high"
             />
+            <div className="absolute inset-0 bg-blue-900/80 mix-blend-multiply"></div>
+            <div className="absolute inset-0 bg-linear-to-t from-slate-900 via-slate-900/60 to-transparent"></div>
           </div>
 
-          <div className="relative z-20 text-center container mx-auto px-4 sm:px-6 max-w-5xl">
+          <div className="relative z-10 container mx-auto px-6 text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              className="max-w-4xl mx-auto"
             >
-              <span className="text-yellow-400 font-semibold tracking-wider uppercase text-sm md:text-base mb-4 block drop-shadow-md">Discover Our Story</span>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 tracking-tight drop-shadow-md">
+              <span className="text-yellow-400 font-bold tracking-widest uppercase text-sm mb-4 block drop-shadow-md">Discover Our Story</span>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 tracking-tight drop-shadow-xl">
                 About Kids Survivor Liberia
               </h1>
-              <p className="text-slate-200 text-lg md:text-xl md:leading-relaxed max-w-3xl mx-auto drop-shadow">
+              <p className="text-xl md:text-2xl text-blue-100 font-light leading-relaxed max-w-3xl mx-auto border-l-4 border-yellow-400 pl-6 text-left md:text-center md:border-l-0 md:pl-0">
                 A national-based organization dedicated to preventing drug abuse and protecting vulnerable populations through incredibly impactful YTEI and NADAP-aligned interventions.
               </p>
             </motion.div>
@@ -202,7 +202,7 @@ const About = () => {
                     <img
                       src={KSL_Teams}
                       alt="Kids Survivor Liberia Team"
-                      className="w-full h-[500px] object-cover rounded-2xl group-hover:scale-105 transition-transform duration-700"
+                      className="w-full h-125 object-cover rounded-2xl group-hover:scale-105 transition-transform duration-700"
                       loading='lazy'
                     />
                   </div>
@@ -281,7 +281,7 @@ const About = () => {
               className="mb-24 max-w-7xl mx-auto"
             >
               <div className="bg-slate-900 rounded-[2.5rem] p-10 md:p-16 text-white relative overflow-hidden shadow-2xl">
-                <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-700/20 via-slate-900/5 to-transparent rounded-full -translate-y-1/2 translate-x-1/3"></div>
+                <div className="absolute top-0 right-0 w-200 h-200 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-blue-700/20 via-slate-900/5 to-transparent rounded-full -translate-y-1/2 translate-x-1/3"></div>
                 <div className="relative z-10 grid md:grid-cols-12 gap-10 items-center">
                   <div className="md:col-span-5">
                     <div className="flex items-center gap-5 mb-4">
@@ -396,7 +396,7 @@ const About = () => {
             >
               <div className="bg-slate-900 rounded-[2.5rem] p-10 md:p-16 shadow-2xl relative overflow-hidden">
                 <div className="absolute inset-0 bg-[url('/assets/pattern-bg.png')] opacity-5 mix-blend-overlay"></div>
-                <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-3xl translate-y-1/2 translate-x-1/2"></div>
+                <div className="absolute bottom-0 right-0 w-125 h-125 bg-blue-600/20 rounded-full blur-3xl translate-y-1/2 translate-x-1/2"></div>
 
                 <div className="relative z-10">
                   <span className="text-blue-400 font-semibold tracking-wider uppercase text-sm mb-3 block text-center">Our Goals</span>
@@ -438,7 +438,7 @@ const About = () => {
                 {teamMembers.map((member, index) => (
                   <div
                     key={index}
-                    className="group bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.06)] overflow-hidden hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] border border-slate-100 transition-all duration-500"
+                    className="group bg-white rounded-4xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] overflow-hidden hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] border border-slate-100 transition-all duration-500"
                   >
                     <div className="h-64 md:h-72 bg-slate-100 overflow-hidden relative">
                       <div className="absolute inset-0 bg-blue-900/10 group-hover:bg-transparent transition-colors z-10 duration-500"></div>
@@ -478,7 +478,7 @@ const About = () => {
               viewport={{ once: true }}
               className="mb-24 max-w-7xl mx-auto"
             >
-              <div className="bg-gradient-to-br from-blue-700 to-blue-900 rounded-[2.5rem] p-10 md:p-14 shadow-2xl relative overflow-hidden">
+              <div className="bg-linear-to-t from-blue-700 to-blue-900 rounded-[2.5rem] p-10 md:p-14 shadow-2xl relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
                 <div className="absolute inset-0 bg-[url('/assets/pattern-bg.png')] opacity-10 mix-blend-overlay"></div>
 
@@ -532,7 +532,7 @@ const About = () => {
                   </div>
                 </div>
 
-                <div className="order-1 lg:order-2 h-[500px] w-full relative group">
+                <div className="order-1 lg:order-2 h-125 w-full relative group">
                   <div className="absolute inset-0 bg-blue-600 rounded-3xl translate-x-4 translate-y-4 opacity-10 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform duration-500"></div>
                   <img
                     src={KSL_Teams2}
@@ -544,207 +544,7 @@ const About = () => {
               </div>
             </motion.div>
 
-            {/* Strategic Network Section - Premium */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.1 }}
-              viewport={{ once: true }}
-              className="mb-32 max-w-7xl mx-auto"
-            >
-              <div className="text-center mb-16">
-                <span className="text-emerald-500 font-semibold tracking-wider uppercase text-sm mb-3 block">Where We Work</span>
-                <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">Strategic Network for Impact</h2>
-                <p className="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
-                  A multi-county operational presence enabling robust, localized NADAP and YTEI-aligned program implementation across Liberia.
-                </p>
-              </div>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
-                {/* Headquarters - Featured Card */}
-                <div className="bg-slate-900 text-white rounded-[2rem] shadow-xl overflow-hidden relative group">
-                  <div className="absolute inset-0 bg-blue-600/10 group-hover:bg-blue-600/20 transition-colors duration-500"></div>
-                  <div className="absolute top-0 right-0 w-48 h-48 bg-blue-500/20 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
-                  <div className="p-8 relative z-10">
-                    <div className="flex items-center gap-5 mb-8">
-                      <div className="bg-white/10 p-4 rounded-2xl backdrop-blur-md border border-white/10 shadow-lg">
-                        <FiGlobe className="w-8 h-8 text-blue-300" />
-                      </div>
-                      <div>
-                        <h3 className="text-2xl font-bold tracking-tight">Strategic Headquarters</h3>
-                        <p className="text-blue-300 font-medium text-sm tracking-wide uppercase mt-1">National Coordination</p>
-                      </div>
-                    </div>
-
-                    <div className="space-y-6">
-                      <div className="bg-white/5 p-4 rounded-2xl border border-white/10">
-                        <p className="text-sm text-slate-400 mb-1 uppercase tracking-wider font-semibold">Address & Location</p>
-                        <p className="text-slate-200">City of Light Community, Barclay Avenue, 15th Street<br />Sinkor, Monrovia, Montserrado</p>
-                      </div>
-                      <div className="bg-white/5 p-4 rounded-2xl border border-white/10">
-                        <p className="text-sm text-slate-400 mb-1 uppercase tracking-wider font-semibold">Key Functions</p>
-                        <p className="text-slate-200">National program coordination, policy alignment, and strategic leadership.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Nimba County */}
-                <div className="bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] border border-slate-100 transition-all duration-300 p-8 group overflow-hidden relative">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-slate-50 rounded-bl-[4rem] -mx-8 -my-8 transition-transform group-hover:scale-110 duration-500 ease-in-out"></div>
-                  <div className="relative z-10 border-b border-slate-100 pb-6 mb-6">
-                    <div className="flex justify-between items-start mb-4">
-                      <div className="bg-slate-50 p-3 rounded-xl border border-slate-100 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
-                        <FiHome className="w-6 h-6" />
-                      </div>
-                      <span className="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1 rounded-full">Active</span>
-                    </div>
-                    <h3 className="text-2xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">Nimba County</h3>
-                    <p className="text-slate-500 font-medium">Gompa City Office</p>
-                  </div>
-                  <div className="space-y-4 relative z-10">
-                    <div>
-                      <p className="text-xs text-slate-400 mb-1 uppercase tracking-wider font-bold">Focus Area</p>
-                      <p className="text-slate-700 font-medium">Drug Prevention & Youth Empowerment</p>
-                    </div>
-                    <div>
-                      <p className="text-xs text-slate-400 mb-1 uppercase tracking-wider font-bold">Coordinator</p>
-                      <p className="text-slate-700">Mr. Janjay Cole &bull; <span className="text-blue-600">+231880919921</span></p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Bong County */}
-                <div className="bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] border border-slate-100 transition-all duration-300 p-8 group overflow-hidden relative">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-slate-50 rounded-bl-[4rem] -mx-8 -my-8 transition-transform group-hover:scale-110 duration-500 ease-in-out"></div>
-                  <div className="relative z-10 border-b border-slate-100 pb-6 mb-6">
-                    <div className="flex justify-between items-start mb-4">
-                      <div className="bg-slate-50 p-3 rounded-xl border border-slate-100 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
-                        <FiHome className="w-6 h-6" />
-                      </div>
-                      <span className="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1 rounded-full">Active</span>
-                    </div>
-                    <h3 className="text-2xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">Bong County</h3>
-                    <p className="text-slate-500 font-medium">Gbarnga City Office</p>
-                  </div>
-                  <div className="space-y-4 relative z-10">
-                    <div>
-                      <p className="text-xs text-slate-400 mb-1 uppercase tracking-wider font-bold">Focus Area</p>
-                      <p className="text-slate-700 font-medium">Rehabilitation & Reintegration</p>
-                    </div>
-                    <div>
-                      <p className="text-xs text-slate-400 mb-1 uppercase tracking-wider font-bold">Coordinator</p>
-                      <p className="text-slate-700">Mr. Paul Bennie &bull; <span className="text-blue-600">+231880365232</span></p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Grand Bassa County */}
-                <div className="bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] border border-slate-100 transition-all duration-300 p-8 group overflow-hidden relative">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-slate-50 rounded-bl-[4rem] -mx-8 -my-8 transition-transform group-hover:scale-110 duration-500 ease-in-out"></div>
-                  <div className="relative z-10 border-b border-slate-100 pb-6 mb-6">
-                    <div className="flex justify-between items-start mb-4">
-                      <div className="bg-slate-50 p-3 rounded-xl border border-slate-100 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
-                        <FiHome className="w-6 h-6" />
-                      </div>
-                      <span className="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1 rounded-full">Active</span>
-                    </div>
-                    <h3 className="text-2xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">Grand Bassa</h3>
-                    <p className="text-slate-500 font-medium">Buchanan City Office</p>
-                  </div>
-                  <div className="space-y-4 relative z-10">
-                    <div>
-                      <p className="text-xs text-slate-400 mb-1 uppercase tracking-wider font-bold">Focus Area</p>
-                      <p className="text-slate-700 font-medium">Gender & Social Inclusion</p>
-                    </div>
-                    <div>
-                      <p className="text-xs text-slate-400 mb-1 uppercase tracking-wider font-bold">Coordinator</p>
-                      <p className="text-slate-700">Mr. Jackson David &bull; <span className="text-blue-600">+231886713662</span></p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Montserrado County */}
-                <div className="bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] border border-slate-100 transition-all duration-300 p-8 group overflow-hidden relative">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-slate-50 rounded-bl-[4rem] -mx-8 -my-8 transition-transform group-hover:scale-110 duration-500 ease-in-out"></div>
-                  <div className="relative z-10 border-b border-slate-100 pb-6 mb-6">
-                    <div className="flex justify-between items-start mb-4">
-                      <div className="bg-slate-50 p-3 rounded-xl border border-slate-100 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
-                        <FiHome className="w-6 h-6" />
-                      </div>
-                      <span className="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1 rounded-full">Active</span>
-                    </div>
-                    <h3 className="text-2xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">Montserrado</h3>
-                    <p className="text-slate-500 font-medium">Sinkor Office</p>
-                  </div>
-                  <div className="space-y-4 relative z-10">
-                    <div>
-                      <p className="text-xs text-slate-400 mb-1 uppercase tracking-wider font-bold">Focus Area</p>
-                      <p className="text-slate-700 font-medium">Education & Skills</p>
-                    </div>
-                    <div>
-                      <p className="text-xs text-slate-400 mb-1 uppercase tracking-wider font-bold">Coordinator</p>
-                      <p className="text-slate-700">Welleh Bropleh &bull; <span className="text-blue-600">+231779200089</span></p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Bong County (Palala) */}
-                <div className="bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] border border-slate-100 transition-all duration-300 p-8 group overflow-hidden relative">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-slate-50 rounded-bl-[4rem] -mx-8 -my-8 transition-transform group-hover:scale-110 duration-500 ease-in-out"></div>
-                  <div className="relative z-10 border-b border-slate-100 pb-6 mb-6">
-                    <div className="flex justify-between items-start mb-4">
-                      <div className="bg-slate-50 p-3 rounded-xl border border-slate-100 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
-                        <FiHome className="w-6 h-6" />
-                      </div>
-                      <span className="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1 rounded-full">Active</span>
-                    </div>
-                    <h3 className="text-2xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">Bong (Palala)</h3>
-                    <p className="text-slate-500 font-medium">Palala City Office</p>
-                  </div>
-                  <div className="space-y-4 relative z-10">
-                    <div>
-                      <p className="text-xs text-slate-400 mb-1 uppercase tracking-wider font-bold">Focus Area</p>
-                      <p className="text-slate-700 font-medium">Community Engagement</p>
-                    </div>
-                    <div>
-                      <p className="text-xs text-slate-400 mb-1 uppercase tracking-wider font-bold">Coordinator</p>
-                      <p className="text-slate-700">Ferguson Z. Neyor &bull; <span className="text-blue-600">+231880395123</span></p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Lofa County (Wide Card) */}
-                <div className="bg-slate-50 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.1)] border border-slate-200 transition-all duration-300 p-8 group overflow-hidden relative col-span-full xl:col-span-3">
-                  <div className="relative z-10 flex flex-col md:flex-row gap-8 items-center justify-between">
-                    <div className="flex items-center gap-6 w-full md:w-auto md:border-r border-slate-200 md:pr-8">
-                      <div className="bg-white p-4 rounded-2xl border border-slate-200 text-emerald-600 shadow-sm group-hover:scale-110 transition-transform duration-300">
-                        <FiHome className="w-8 h-8" />
-                      </div>
-                      <div>
-                        <h3 className="text-3xl font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Lofa County</h3>
-                        <p className="text-slate-500 font-medium">Voinjama City Office</p>
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 flex-1 w-full">
-                      <div className="bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
-                        <p className="text-xs text-slate-400 mb-1 uppercase tracking-wider font-bold">Focus Area</p>
-                        <p className="text-slate-700 font-medium">Peacebuilding & Partnerships</p>
-                      </div>
-                      <div className="bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
-                        <p className="text-xs text-slate-400 mb-1 uppercase tracking-wider font-bold">Operational Advisor</p>
-                        <p className="text-slate-700 font-medium">Mrs. Silvia T. Willie Dongon</p>
-                      </div>
-                      <div className="bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
-                        <p className="text-xs text-slate-400 mb-1 uppercase tracking-wider font-bold">Contact</p>
-                        <p className="text-blue-600 font-bold">+231886764940</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
           </div>
         </main>
       </div>

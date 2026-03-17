@@ -337,7 +337,7 @@ const Home = () => {
   };
 
   return (
-    <div className="overflow-hidden pt-14 sm:pt-16">
+    <div className="overflow-hidden">
 
       {/* Hero Carousel Section */}
       <section className="relative h-[calc(100vh-56px)] sm:h-[calc(100vh-64px)]">

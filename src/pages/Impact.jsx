@@ -83,7 +83,7 @@ const Impact = () => {
       number: 120,
       label: 'Communities Engaged',
       icon: <FiMap className="w-8 h-8" />,
-      description: 'Across 7+ counties in Liberia',
+      description: 'Across 15 counties in Liberia',
       suffix: '+'
     },
     {
@@ -174,7 +174,7 @@ const Impact = () => {
       title: 'Multi-County Reach',
       description: 'Strategic presence across Liberia ensuring comprehensive coverage of vulnerable populations',
       icon: <FiMap className="w-6 h-6" />,
-      stats: '7+ Counties'
+      stats: '15 Counties'
     },
     {
       title: 'Youth Transformation',
@@ -305,7 +305,7 @@ const Impact = () => {
                     <FiCheckCircle className="w-5 h-5" />
                   </div>
                   <span>
-                    Growing impact across <span className="font-bold text-blue-600">7+ counties</span> in Liberia
+                    Growing impact across <span className="font-bold text-blue-600">15 counties</span> in Liberia
                   </span>
                 </div>
               </motion.div>

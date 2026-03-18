@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiMenu, FiX, FiChevronDown } from 'react-icons/fi';
 
@@ -9,6 +9,10 @@ const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [scrolled, setScrolled] = useState(false);
   const lastScrollY = useRef(0);
+  const location = useLocation();
+
+  const isHome = location.pathname === '/';
+  const isTransparent = isHome && !scrolled && !isOpen;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -83,7 +87,7 @@ const Navbar = () => {
       initial={{ y: 0 }}
       animate={{ y: isVisible ? 0 : -100 }}
       transition={{ duration: 0.3 }}
-      className="bg-white shadow-lg fixed top-0 left-0 right-0 z-50 transition-transform duration-300"
+      className={`${isTransparent ? 'bg-black/20 backdrop-blur-md border-b border-white/10' : 'bg-white shadow-lg'} fixed top-0 left-0 right-0 z-50 transition-all duration-300`}
       onClick={closeAllDropdowns}
     >
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
@@ -94,8 +98,8 @@ const Navbar = () => {
               <img src="/KSL Logo.png" alt="KSL LOGO" className="w-10 h-10 sm:w-12 sm:h-12 object-contain" />
             </motion.div>
             <div className="min-w-0">
-              <h1 className="font-bold text-gray-800 text-base sm:text-lg truncate">Kids Survivor</h1>
-              <p className="text-[10px] sm:text-xs text-gray-600 truncate">Liberia</p>
+              <h1 className={`font-bold text-base sm:text-lg truncate tracking-tight transition-colors ${isTransparent ? 'text-white' : 'text-gray-800'}`}>Kids Survivor</h1>
+              <p className={`text-[10px] sm:text-xs truncate transition-colors ${isTransparent ? 'text-yellow-400' : 'text-gray-600'}`}>Liberia</p>
             </div>
           </Link>
 
@@ -106,7 +110,7 @@ const Navbar = () => {
                 {item.dropdown ? (
                   <div className="relative">
                     <button 
-                      className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                      className={`flex items-center space-x-1 font-medium transition-colors ${isTransparent ? 'text-white hover:text-yellow-400' : 'text-gray-700 hover:text-blue-600'}`}
                       onClick={(e) => {
                         e.stopPropagation();
                         toggleDropdown(item.name);
@@ -139,7 +143,7 @@ const Navbar = () => {
                 ) : (
                   <Link
                     to={item.path}
-                    className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                    className={`font-medium transition-colors ${isTransparent ? 'text-white hover:text-yellow-400' : 'text-gray-700 hover:text-blue-600'}`}
                     onClick={closeAllDropdowns}
                   >
                     {item.name}
@@ -164,7 +168,7 @@ const Navbar = () => {
           <button
             type="button"
             aria-label={isOpen ? 'Close menu' : 'Open menu'}
-            className="md:hidden p-2.5 -mr-2 text-gray-700 hover:text-blue-600 hover:bg-gray-100 rounded-lg transition-colors min-w-11 min-h-11 flex items-center justify-center"
+            className={`md:hidden p-2.5 -mr-2 rounded-lg transition-colors min-w-11 min-h-11 flex items-center justify-center ${isTransparent ? 'text-white hover:bg-white/10' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-100'}`}
             onClick={(e) => {
               e.stopPropagation();
               setIsOpen(!isOpen);
@@ -183,7 +187,7 @@ const Navbar = () => {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.2 }}
-              className="md:hidden border-t border-gray-200 overflow-hidden"
+              className="md:hidden border-t border-gray-200 overflow-hidden bg-white shadow-xl"
               onClick={(e) => e.stopPropagation()}
             >
               <div

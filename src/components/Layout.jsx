@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.3 }}
-      className="grow relative pt-14 sm:pt-16"
+      className="grow relative"
     >
       {children}
       <DonateNotification />

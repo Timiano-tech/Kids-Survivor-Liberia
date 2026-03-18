@@ -339,19 +339,24 @@ const Home = () => {
   return (
     <div className="overflow-hidden">
 
-      {/* Hero Carousel Section */}
-      <section className="relative h-[calc(100vh-56px)] sm:h-[calc(100vh-64px)]">
+      {/* Hero Carousel Section - Premium NGO Redesign */}
+      <section className="relative h-screen w-full bg-slate-900 overflow-hidden">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1.2, ease: "easeInOut" }}
             className="absolute inset-0"
           >
-            {/* Background Image with Overlay */}
-            <div className="absolute inset-0 bg-black/40 z-0">
+            {/* Background Image with Cinematic Slow Zoom (Ken Burns Effect) */}
+            <motion.div 
+              initial={{ scale: 1.15 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 12, ease: "easeOut" }}
+              className="absolute inset-0 z-0"
+            >
               {!imageError[`hero-${currentSlide}`] ? (
                 <img
                   src={heroSlides[currentSlide].imagePlaceholder}
@@ -362,90 +367,119 @@ const Home = () => {
                   fetchPriority={currentSlide === 0 ? "high" : "auto"}
                 />
               ) : (
-                <div className="w-full h-full bg-blue-600"></div>
+                <div className="w-full h-full bg-slate-800"></div>
               )}
-            </div>
+            </motion.div>
 
-            {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/60 to-slate-900/30 z-10"></div>
-
-            {/* Content */}
-            <div className="relative h-full flex items-center z-20">
-              <div className="container mx-auto px-4 sm:px-6 md:px-12 max-w-7xl">
+            {/* Premium Multi-layer Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/80 to-transparent z-10 w-[85%] sm:w-[70%] lg:w-[60%]"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-slate-900/40 z-10"></div>
+            
+            {/* Content Area */}
+            <div className="relative h-full flex items-center pt-20 sm:pt-24 z-20">
+              <div className="container mx-auto px-6 sm:px-8 md:px-12 lg:px-16 max-w-7xl">
                 <motion.div
-                  initial={{ y: 30, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.2, duration: 0.8 }}
-                  className="max-w-3xl text-white"
+                  initial="hidden"
+                  animate="visible"
+                  variants={{
+                    hidden: { opacity: 0 },
+                    visible: {
+                      opacity: 1,
+                      transition: {
+                        staggerChildren: 0.15,
+                        delayChildren: 0.4
+                      }
+                    }
+                  }}
+                  className="max-w-3xl"
                 >
+                  {/* Subtle Kicker / Pre-Title */}
                   <motion.div
-                    initial={{ width: 0 }}
-                    animate={{ width: "80px" }}
-                    transition={{ delay: 0.5, duration: 0.8 }}
-                    className="h-1.5 bg-yellow-400 mb-8 rounded-full"
-                  ></motion.div>
+                    variants={{
+                      hidden: { opacity: 0, x: -30 },
+                      visible: { opacity: 1, x: 0, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } }
+                    }}
+                    className="flex items-center mb-6"
+                  >
+                    <div className="h-[2px] w-12 bg-yellow-400 mr-4"></div>
+                    <span className="text-yellow-400 uppercase tracking-[0.2em] text-xs sm:text-sm font-bold">
+                      Making an Impact
+                    </span>
+                  </motion.div>
 
+                  {/* Main Headline */}
                   <motion.h1
-                    initial={{ y: 30, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.3, duration: 0.8 }}
-                    className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-[1.1] tracking-tight text-white drop-shadow-md"
+                    variants={{
+                      hidden: { opacity: 0, y: 40 },
+                      visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] } }
+                    }}
+                    className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-[1.05] tracking-tight drop-shadow-2xl"
                   >
                     {heroSlides[currentSlide].title}
                   </motion.h1>
 
+                  {/* Subtitle / Objective */}
                   <motion.h2
-                    initial={{ y: 30, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.4, duration: 0.8 }}
-                    className="text-2xl md:text-3xl mb-6 text-blue-100 font-medium tracking-wide drop-shadow-sm"
+                    variants={{
+                      hidden: { opacity: 0, y: 30 },
+                      visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] } }
+                    }}
+                    className="text-xl sm:text-2xl lg:text-3xl text-blue-100 font-light tracking-wide mb-8 drop-shadow-lg max-w-2xl border-l-4 border-blue-500 pl-4 py-1"
                   >
                     {heroSlides[currentSlide].subtitle}
                   </motion.h2>
 
+                  {/* Description Paragraph */}
                   <motion.p
-                    initial={{ y: 30, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.5, duration: 0.8 }}
-                    className="text-lg md:text-xl mb-10 text-slate-100 leading-relaxed max-w-2xl drop-shadow"
+                    variants={{
+                      hidden: { opacity: 0, y: 30 },
+                      visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] } }
+                    }}
+                    className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl mb-10 font-medium drop-shadow-md"
                   >
                     {heroSlides[currentSlide].description}
                   </motion.p>
 
+                  {/* Call to Actions (CTAs) */}
                   <motion.div
-                    initial={{ y: 30, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.6, duration: 0.8 }}
-                    className="flex flex-col sm:flex-row gap-5 mb-10"
+                    variants={{
+                      hidden: { opacity: 0, y: 30 },
+                      visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] } }
+                    }}
+                    className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 mb-12"
                   >
-                    <Link to="/donate">
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="bg-yellow-400 text-slate-900 px-8 py-4 md:px-10 md:py-5 rounded-full text-lg font-bold shadow-[0_8px_30px_rgba(250,204,21,0.4)] hover:shadow-[0_12px_40px_rgba(250,204,21,0.6)] transition-all flex items-center justify-center gap-3"
-                      >
-                        Support Our Mission <FiArrowRight />
-                      </motion.button>
+                    <Link to="/donate" className="w-full sm:w-auto">
+                      <button className="group relative w-full sm:w-auto overflow-hidden rounded-full bg-yellow-500 px-8 py-4 sm:px-10 sm:py-4 transition-all duration-300 hover:bg-yellow-400 hover:shadow-[0_0_40px_rgba(234,179,8,0.4)] hover:-translate-y-1">
+                        <span className="relative z-10 flex items-center justify-center gap-2 text-slate-900 font-bold text-base sm:text-lg tracking-wide">
+                          Support Our Mission 
+                          <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
+                        </span>
+                      </button>
                     </Link>
-                    <Link to="/programs">
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="bg-white/10 backdrop-blur-md text-white border border-white/30 px-8 py-4 md:px-10 md:py-5 rounded-full text-lg font-semibold hover:bg-white/20 hover:border-white/50 transition-all"
-                      >
-                        Explore Programs
-                      </motion.button>
+                    <Link to="/programs" className="w-full sm:w-auto">
+                      <button className="group w-full sm:w-auto rounded-full bg-white/5 border border-white/20 px-8 py-4 sm:px-10 sm:py-4 backdrop-blur-md transition-all duration-300 hover:bg-white/10 hover:border-white/40">
+                        <span className="text-white font-semibold text-base sm:text-lg tracking-wide">
+                          Explore Programs
+                        </span>
+                      </button>
                     </Link>
                   </motion.div>
 
+                  {/* Status Indicator Pill */}
                   <motion.div
-                    initial={{ y: 30, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.7, duration: 0.8 }}
-                    className="inline-flex items-center bg-slate-900/60 backdrop-blur-md border border-slate-700/50 px-5 py-3 md:px-6 md:py-3.5 rounded-full shadow-xl"
+                    variants={{
+                      hidden: { opacity: 0, scale: 0.8 },
+                      visible: { opacity: 1, scale: 1, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } }
+                    }}
+                    className="inline-flex items-center bg-black/40 backdrop-blur-md border border-white/10 px-5 py-2.5 rounded-full"
                   >
-                    <div className="w-3 h-3 bg-emerald-400 rounded-full animate-pulse mr-3 shadow-[0_0_10px_rgba(52,211,153,0.8)]"></div>
-                    <span className="font-medium text-sm md:text-base text-slate-200 tracking-wide uppercase">{heroSlides[currentSlide].stats}</span>
+                    <div className="relative flex h-3 w-3 mr-3">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                    </div>
+                    <span className="text-xs sm:text-sm font-semibold text-slate-200 tracking-wider uppercase">
+                      {heroSlides[currentSlide].stats}
+                    </span>
                   </motion.div>
                 </motion.div>
               </div>
@@ -453,52 +487,43 @@ const Home = () => {
           </motion.div>
         </AnimatePresence>
 
-        {/* Carousel Controls */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex items-center space-x-4 z-30">
-          <div className="flex space-x-2">
+        {/* Floating Carousel Controls - Premium Aesthetic */}
+        <div className="absolute bottom-6 right-6 sm:bottom-10 sm:right-10 z-30 flex items-center gap-6">
+          <div className="hidden sm:flex items-center gap-3 bg-black/30 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
             {heroSlides.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all ${index === currentSlide
-                  ? 'bg-white w-8'
-                  : 'bg-white/50 hover:bg-white/80'
-                  }`}
+                aria-label={`Go to slide ${index + 1}`}
+                className={`transition-all duration-500 h-1.5 rounded-full ${
+                  index === currentSlide ? 'w-8 bg-yellow-400' : 'w-4 bg-white/40 hover:bg-white/70'
+                }`}
               />
             ))}
           </div>
 
-          <div className="flex items-center space-x-2 ml-4">
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+          <div className="flex items-center gap-2 bg-black/30 backdrop-blur-md p-1.5 rounded-full border border-white/10">
+            <button
               onClick={prevSlide}
-              className="bg-white/20 backdrop-blur-sm hover:bg-white/30 p-2 rounded-full"
+              aria-label="Previous slide"
+              className="p-3 sm:p-4 rounded-full text-white hover:bg-white/10 transition-colors"
             >
-              <FiChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-white" />
-            </motion.button>
-
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+              <FiChevronLeft className="w-5 h-5" />
+            </button>
+            <button
               onClick={() => setAutoPlay(!autoPlay)}
-              className="bg-white/20 backdrop-blur-sm hover:bg-white/30 p-2 rounded-full"
+              aria-label={autoPlay ? "Pause slideshow" : "Play slideshow"}
+              className="p-3 sm:p-4 rounded-full text-white hover:bg-white/10 transition-colors"
             >
-              {autoPlay ? (
-                <FiPause className="w-5 h-5 md:w-6 md:h-6 text-white" />
-              ) : (
-                <FiPlay className="w-5 h-5 md:w-6 md:h-6 text-white" />
-              )}
-            </motion.button>
-
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+              {autoPlay ? <FiPause className="w-5 h-5" /> : <FiPlay className="w-5 h-5" />}
+            </button>
+            <button
               onClick={nextSlide}
-              className="bg-white/20 backdrop-blur-sm hover:bg-white/30 p-2 rounded-full"
+              aria-label="Next slide"
+              className="p-3 sm:p-4 rounded-full text-white hover:bg-white/10 transition-colors"
             >
-              <FiChevronRight className="w-5 h-5 md:w-6 md:h-6 text-white" />
-            </motion.button>
+              <FiChevronRight className="w-5 h-5" />
+            </button>
           </div>
         </div>
       </section>

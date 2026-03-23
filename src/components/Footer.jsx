@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import {
   FiMail,
   FiPhone,
@@ -12,6 +13,7 @@ import {
 import { COUNTIES } from '../data/counties';
 
 const Footer = () => {
+
   const navItems = [
     { name: 'Home', path: '/' },
     {
@@ -66,18 +68,41 @@ const Footer = () => {
 
   const currentYear = new Date().getFullYear();
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+  };
+
   return (
     <footer className="bg-slate-900 border-t border-slate-800 text-slate-300 relative overflow-hidden">
       {/* Subtle background glow */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl translate-y-[-50%] pointer-events-none"></div>
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-yellow-500/5 rounded-full blur-3xl translate-y-[50%] pointer-events-none"></div>
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl translate-y-[-50%] pointer-events-none animate-float-slow"></div>
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-yellow-500/10 rounded-full blur-3xl translate-y-[50%] pointer-events-none animate-float-slow" style={{ animationDelay: '2s' }}></div>
 
       <div className="container mx-auto px-4 py-16 lg:py-20 relative z-10">
         {/* Main Footer Content */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        <motion.div 
+          className="grid md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
 
           {/* Column 1: Organization Info */}
-          <div className="space-y-6 lg:col-span-2 xl:col-span-1">
+          <motion.div variants={itemVariants} className="space-y-6 lg:col-span-4">
+
             {/* Logo and Organization Name */}
             <div className="flex items-center space-x-3">
               <div className="bg-white p-1.5 rounded-xl shadow-sm shrink-0">
@@ -109,10 +134,11 @@ const Footer = () => {
                 Support Our Mission
               </Link>
             </div>
-          </div>
+          </motion.div>
 
           {/* Column 2: Navigation Links */}
-          <div className="lg:col-span-1">
+          <motion.div variants={itemVariants} className="lg:col-span-5 lg:mx-auto">
+
             <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-wider text-sm">Quick Links</h3>
             <div className="grid grid-cols-2 gap-4">
               {/* Column 1: Main Pages */}
@@ -179,10 +205,10 @@ const Footer = () => {
                 ))}
               </ul>
             </div>
-          </div>
+          </motion.div>
 
           {/* Column 3: Contact & Social */}
-          <div>
+          <motion.div variants={itemVariants} className="lg:col-span-3">
             <h3 className="text-lg font-bold mb-6 pb-2 border-b border-gray-700">Get In Touch</h3>
 
             {/* Contact Information */}
@@ -217,11 +243,17 @@ const Footer = () => {
                 ))}
               </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Counties list */}
-        <div className="border-t border-slate-800 mt-12 pt-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="border-t border-slate-800 mt-12 pt-10"
+        >
           <div className="mb-6">
             <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-wider text-sm text-center lg:text-left">
               Counties We Work In (15)
@@ -257,7 +289,7 @@ const Footer = () => {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );

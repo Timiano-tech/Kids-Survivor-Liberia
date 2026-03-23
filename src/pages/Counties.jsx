@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import { FiMapPin } from 'react-icons/fi';
 import { COUNTIES } from '../data/counties';
 import ScrollToTopButton from '../components/ScrollToTop';
+import HeaderImage from '../assets/map.jpg';
+
 
 const Counties = () => {
   useEffect(() => {
@@ -13,10 +15,17 @@ const Counties = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Page Header - Premium Redesign */}
-      <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[3rem] shadow-xl border-b border-slate-100 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-950">
-        <div className="absolute inset-0 bg-[url('/assets/pattern-bg.png')] opacity-5 mix-blend-overlay"></div>
-        <div className="absolute top-0 left-0 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
-        <div className="absolute bottom-0 right-0 w-64 h-64 bg-yellow-400/10 rounded-full blur-3xl translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+      <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[3rem] shadow-xl border-b border-slate-100">
+        <div className="absolute inset-0 z-0">
+          <img
+            src={HeaderImage}
+            alt="Counties Background"
+            className="w-full h-full object-cover"
+            fetchPriority="high"
+          />
+          <div className="absolute inset-0 bg-slate-900/80 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent"></div>
+        </div>
 
         <div className="container mx-auto px-6 relative z-10 text-center max-w-4xl">
           <motion.div

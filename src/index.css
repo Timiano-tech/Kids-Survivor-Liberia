@@ -64,4 +64,36 @@ h5,
 h6 {
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   letter-spacing: -0.02em;
+}
+
+/* Custom premium animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float-slow {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -20px) scale(1.05); }
+  66% { transform: translate(-20px, 10px) scale(0.95); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-float-slow {
+  animation: float-slow 15s ease-in-out infinite;
+}
+
+@keyframes soft-glow {
+  0% { box-shadow: 0 0 15px rgba(234, 179, 8, 0.2); }
+  50% { box-shadow: 0 0 30px rgba(234, 179, 8, 0.6); }
+  100% { box-shadow: 0 0 15px rgba(234, 179, 8, 0.2); }
+}
+
+.animate-soft-glow {
+  animation: soft-glow 3s ease-in-out infinite;
 }

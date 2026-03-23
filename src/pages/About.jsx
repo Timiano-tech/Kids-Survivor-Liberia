@@ -18,10 +18,10 @@ import {
 import KSLCompany from '../assets/KSL Company.jpeg';
 import KSL_Teams from '../assets/KSL_Team.jpeg';
 import KSL_Teams2 from '../assets/KSL_Team2.jpeg';
-import Mr_Steve from '../assets/Mr_Steve.png';
-import Mrs_Fiona from '../assets/Mrs_Fiona.png';
-import Mrs_Silvia from '../assets/Mrs_Silvia2.png';
-import CEO from '../assets/CEO.png';
+import Mr_Steve from '../assets/team/Mr_Steve.png';
+import Mrs_Fiona from '../assets/team/Mrs_Fiona.png';
+import Mrs_Silvia from '../assets/team/Mrs_Silvia2.png';
+import CEO from '../assets/team/CEO.png';
 
 const About = () => {
   useEffect(() => {

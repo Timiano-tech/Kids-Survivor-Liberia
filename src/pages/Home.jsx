@@ -32,10 +32,10 @@ import NoToDrugs from '../assets/Say no to drugs.jpeg'
 import Children3 from '../assets/Drug_Recovered.jpeg';
 import Children4 from '../assets/Children4.jpeg';
 import Community from '../assets/Community.jpeg';
-import Mr_Steve from '../assets/Mr_Steve.png';
-import Mrs_Fiona from '../assets/Mrs_Fiona.png';
-import Mrs_Silvia from '../assets/Mrs_Silvia2.png';
-import CEO from '../assets/CEO.png';
+import Mr_Steve from '../assets/team/Mr_Steve.png';
+import Mrs_Fiona from '../assets/team/Mrs_Fiona.png';
+import Mrs_Silvia from '../assets/team/Mrs_Silvia2.png';
+import CEO from '../assets/team/CEO.png';
 import BlogImage1 from '../assets/Students Impacted.jpeg';
 import BlogImage2 from '../assets/Helping Children.jpeg';
 import BlogImage3 from '../assets/Youth_Community_Outreach.jpeg';

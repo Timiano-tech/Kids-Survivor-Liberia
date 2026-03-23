@@ -15,16 +15,16 @@ import {
   FiStar
 } from 'react-icons/fi';
 import HeaderImage from '../assets/Talking to children.jpeg';
-import Mr_Steve from '../assets/Mr_Steve.png';
-import Mrs_Fiona from '../assets/Mrs_Fiona.png';
-import Mrs_Silvia from '../assets/Mrs_Silvia2.png';
-import CEO from '../assets/CEO.png';
-import Mrs_Tawah from '../assets/Mrs. Tawah B. John.png';
-import Mrs_julie from '../assets/Julie Hennings.png';
-import Mr_Sebastian from '../assets/Mr. Sebastian Stephney.png';
-import Mrs_Josephine from '../assets/Ms. Josephine P. Wreyou.png';
-import Mr_Moses from '../assets/Mr. Moses Dahn.png';
-import Mr_Paul from '../assets/Mr. Paul Bennie.png';
+import Mr_Steve from '../assets/team/Mr_Steve.png';
+import Mrs_Fiona from '../assets/team/Mrs_Fiona.png';
+import Mrs_Silvia from '../assets/team/Mrs_Silvia2.png';
+import CEO from '../assets/team/CEO.png';
+import Mrs_Tawah from '../assets/team/Mrs. Tawah B. John.png';
+import Mrs_julie from '../assets/team/Julie Hennings.png';
+import Mr_Sebastian from '../assets/team/Mr. Sebastian Stephney.png';
+import Mrs_Josephine from '../assets/team/Ms. Josephine P. Wreyou.png';
+import Mr_Moses from '../assets/team/Mr. Moses Dahn.png';
+import Mr_Paul from '../assets/team/Mr. Paul Bennie.png';
 
 const OurTeam = () => {
   useEffect(() => {

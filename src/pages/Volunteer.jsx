@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiShield, FiHeart, FiTarget, FiUsers, FiAward, FiMessageSquare, FiGlobe } from 'react-icons/fi';
 import KSLCompany from '../assets/KSL Company.jpeg';
@@ -9,6 +9,9 @@ const Volunteer = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const [openFaq, setOpenFaq] = useState(null);
+  const toggleFaq = (index) => setOpenFaq(openFaq === index ? null : index);
 
   const volunteerPillars = [
     {
@@ -329,16 +332,27 @@ const Volunteer = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="bg-white rounded-2xl border border-slate-100 p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow group"
+                    className="bg-white rounded-2xl border border-slate-100 p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow group cursor-pointer"
+                    onClick={() => toggleFaq(index)}
                   >
-                    <h3 className="font-bold text-slate-900 mb-3 text-lg group-hover:text-blue-600 transition-colors flex items-start gap-3">
-                      <span className="text-blue-400 mt-1 flex-shrink-0">Q.</span>
-                      {faq.q}
-                    </h3>
-                    <p className="text-slate-600 leading-relaxed pl-7">
-                      <span className="text-slate-400 font-bold mr-2 hidden sm:inline">A.</span>
-                      {faq.a}
-                    </p>
+                    <div className="flex justify-between items-center">
+                      <h3 className="font-bold text-slate-900 text-lg group-hover:text-blue-600 transition-colors flex items-start gap-3">
+                        <span className="text-blue-400 mt-1 flex-shrink-0">Q.</span>
+                        {faq.q}
+                      </h3>
+                      <span className="text-blue-600 font-bold ml-4">{openFaq === index ? '−' : '+'}</span>
+                    </div>
+                    
+                    <motion.div 
+                      initial={false}
+                      animate={{ height: openFaq === index ? "auto" : 0, opacity: openFaq === index ? 1 : 0 }}
+                      className="overflow-hidden"
+                    >
+                      <p className="text-slate-600 leading-relaxed pl-7 mt-3">
+                        <span className="text-slate-400 font-bold mr-2 hidden sm:inline">A.</span>
+                        {faq.a}
+                      </p>
+                    </motion.div>
                   </motion.div>
                 ))}
               </div>

@@ -1208,64 +1208,55 @@ const Home = () => {
             </p>
           </motion.div>
 
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-3xl mx-auto space-y-6">
             {faqItems.map((faq, index) => (
               <motion.div
                 key={faq.id}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="mb-6"
+                transition={{ delay: index * 0.1 }}
+                className="bg-white rounded-2xl border border-slate-100 p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow group cursor-pointer"
+                onClick={() => toggleFAQ(faq.id)}
               >
-                <div
-                  className={`bg-white rounded-2xl border transition-all duration-300 ${faq.open
-                    ? 'border-blue-100 shadow-[0_8px_30px_rgb(37,99,235,0.08)] ring-1 ring-blue-50'
-                    : 'border-slate-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:border-blue-50'
-                    } overflow-hidden cursor-pointer`}
-                  onClick={() => toggleFAQ(faq.id)}
-                >
-                  <div className="flex justify-between items-center p-6 md:p-8">
-                    <h3 className={`text-xl font-bold pr-8 transition-colors ${faq.open ? 'text-blue-600' : 'text-slate-800'}`}>
-                      {faq.question}
-                    </h3>
-                    <motion.div
-                      animate={{ rotate: faq.open ? 180 : 0 }}
-                      transition={{ duration: 0.3 }}
-                      className={`shrink-0 flex items-center justify-center w-10 h-10 rounded-full ${faq.open ? 'bg-blue-100 text-blue-600' : 'bg-slate-50 text-slate-400'}`}
-                    >
-                      <FiChevronDown className="w-5 h-5" />
-                    </motion.div>
-                  </div>
-
-                  <motion.div
-                    initial={false}
-                    animate={{ height: faq.open ? 'auto' : 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="overflow-hidden"
-                  >
-                    <div className="px-6 md:px-8 pb-8 pt-2">
-                      <p className="text-slate-600 leading-relaxed text-lg mb-6">{faq.answer}</p>
-
-                      {faq.links && (
-                        <div className="flex flex-wrap gap-4 pt-6 border-t border-slate-100">
-                          {faq.links.map((link, linkIndex) => (
-                            <Link
-                              key={linkIndex}
-                              to={link.path}
-                              className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold group"
-                            >
-                              <span className="relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-blue-600 after:scale-x-0 group-hover:after:scale-x-100 after:transition-transform after:origin-left">
-                                {link.text}
-                              </span>
-                              <FiChevronRight className="ml-1.5 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                            </Link>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  </motion.div>
+                <div className="flex justify-between items-center">
+                  <h3 className="font-bold text-slate-900 text-lg group-hover:text-blue-600 transition-colors flex items-start gap-3">
+                    <span className="text-blue-400 mt-1 flex-shrink-0">Q.</span>
+                    {faq.question}
+                  </h3>
+                  <span className="text-blue-600 font-bold ml-4">{faq.open ? '−' : '+'}</span>
                 </div>
+
+                <motion.div
+                  initial={false}
+                  animate={{ height: faq.open ? 'auto' : 0, opacity: faq.open ? 1 : 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="overflow-hidden"
+                >
+                  <div className="pl-7 mt-3">
+                    <p className="text-slate-600 leading-relaxed">
+                      <span className="text-slate-400 font-bold mr-2 hidden sm:inline">A.</span>
+                      {faq.answer}
+                    </p>
+
+                    {faq.links && (
+                      <div className="flex flex-wrap gap-4 pt-4 mt-4 border-t border-slate-100">
+                        {faq.links.map((link, linkIndex) => (
+                          <Link
+                            key={linkIndex}
+                            to={link.path}
+                            className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold group"
+                          >
+                            <span className="relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-blue-600 after:scale-x-0 group-hover:after:scale-x-100 after:transition-transform after:origin-left">
+                              {link.text}
+                            </span>
+                            <FiChevronRight className="ml-1.5 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </motion.div>
               </motion.div>
             ))}
           </div>

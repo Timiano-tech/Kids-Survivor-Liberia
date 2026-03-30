@@ -113,7 +113,7 @@ const Blog = () => {
   return (
     <>
       <div className="min-h-screen bg-white">
-        {/* Main Header Section - Premium Redesign */}
+        {/* Main Header Section */}
         <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[3rem] shadow-xl border-b border-slate-100">
           <div className="absolute inset-0 z-0">
             <img

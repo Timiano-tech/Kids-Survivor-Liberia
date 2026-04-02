@@ -151,6 +151,18 @@ export const countySpecificData = {
       'Community resilience and peacebuilding',
       'Agricultural livelihood alternatives',
       'Support systems for elderly and widows'
+    ],
+    programs: [
+      {
+        icon: <FiShield className="w-5 h-5" />,
+        title: 'Vulnerable Groups Protection',
+        description: 'Establishing community watch teams and referral systems to protect widows, elderly, and at-risk youth.'
+      },
+      {
+        icon: <FiTarget className="w-5 h-5" />,
+        title: 'Peacebuilding Dialogues',
+        description: 'Conducting inter-community dialogues to resolve conflicts and build resilience against drug infiltration.'
+      }
     ]
   },
   'grand-bassa': {
@@ -185,6 +197,18 @@ export const countySpecificData = {
       'Post-conflict healing and psychosocial support',
       'Community cohesion and dispute resolution',
       'Protection schemes for vulnerable youth'
+    ],
+    programs: [
+      {
+        icon: <FiHeart className="w-5 h-5" />,
+        title: 'Psychosocial Support Networks',
+        description: 'Creating peer support groups for trauma healing and recovery from substance abuse.'
+      },
+      {
+        icon: <FiUsers className="w-5 h-5" />,
+        title: 'Youth Cohesion Initiative',
+        description: 'Engaging young people in sports and community service to foster unity and positive lifestyles.'
+      }
     ]
   },
   'grand-kru': {

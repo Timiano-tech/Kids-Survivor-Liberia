@@ -1,10 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiMenu, FiX, FiChevronDown } from 'react-icons/fi';
+import { FiMenu, FiX, FiChevronDown, FiSearch } from 'react-icons/fi';
+import SearchModal from './SearchModal';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState({});
   const [isVisible, setIsVisible] = useState(true);
   const [scrolled, setScrolled] = useState(false);
@@ -156,6 +158,15 @@ const Navbar = () => {
               </div>
             ))}
             
+            {/* Search Button */}
+            <button
+              onClick={() => setIsSearchOpen(true)}
+              className={`p-2 rounded-full transition-all duration-300 hover:bg-black/5 ${isTransparent ? 'text-white hover:bg-white/10' : 'text-gray-700 hover:bg-blue-50 hover:text-blue-600'}`}
+              aria-label="Search"
+            >
+              <FiSearch className="w-5 h-5" />
+            </button>
+
             {/* Donate Button */}
             <Link to="/donate" onClick={closeAllDropdowns}>
               <motion.button
@@ -169,7 +180,14 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Right Actions (Hamburger only) */}
-          <div className="flex items-center lg:hidden">
+          <div className="flex items-center lg:hidden gap-1">
+            <button
+              onClick={() => setIsSearchOpen(true)}
+              className={`p-2 rounded-lg transition-colors flex items-center justify-center min-w-[44px] min-h-[44px] ${isTransparent ? 'max-lg:text-gray-700 max-lg:hover:bg-gray-100 lg:text-white lg:hover:bg-white/10' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-100'}`}
+              aria-label="Search"
+            >
+              <FiSearch size={22} />
+            </button>
             <button
               type="button"
               aria-label={isOpen ? 'Close menu' : 'Open menu'}
@@ -260,6 +278,11 @@ const Navbar = () => {
           )}
         </AnimatePresence>
       </div>
+
+      <SearchModal 
+        isOpen={isSearchOpen} 
+        onClose={() => setIsSearchOpen(false)} 
+      />
     </motion.nav>
   );
 };

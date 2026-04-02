@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { FiMapPin } from 'react-icons/fi';
 import { COUNTIES } from '../data/counties';
 import ScrollToTopButton from '../components/ScrollToTop';
+import { showComingSoon } from '../components/ComingSoonModal';
 import HeaderImage from '../assets/map.jpg';
 
 
@@ -131,15 +132,24 @@ const Counties = () => {
                     </p>
 
                     <div className="mt-auto relative z-10 border-t border-slate-100 pt-6">
-                      <Link
-                        to={`/counties/${county.id}`}
-                        className="inline-flex items-center justify-center w-full px-6 py-3 bg-slate-50 text-blue-600 font-bold rounded-xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
-                      >
-                        Explore Programs
-                        <span className="ml-2 group-hover:translate-x-1 transition-transform">
-                          →
-                        </span>
-                      </Link>
+                      {['montserrado', 'margibi', 'bong', 'nimba', 'lofa', 'grand-bassa', 'grand-gedeh'].includes(county.id) ? (
+                        <Link
+                          to={`/counties/${county.id}`}
+                          className="inline-flex items-center justify-center w-full px-6 py-3 bg-slate-50 text-blue-600 font-bold rounded-xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+                        >
+                          Explore Programs
+                          <span className="ml-2 group-hover:translate-x-1 transition-transform">
+                            →
+                          </span>
+                        </Link>
+                      ) : (
+                        <button
+                          onClick={(e) => { e.preventDefault(); showComingSoon(county.name); }}
+                          className="inline-flex items-center justify-center w-full px-6 py-3 bg-slate-50 text-slate-400 font-bold rounded-xl hover:bg-slate-100 transition-all duration-300 shadow-sm border border-slate-100 cursor-not-allowed"
+                        >
+                          Coming Soon
+                        </button>
+                      )}
                     </div>
                   </div>
                 </motion.article>

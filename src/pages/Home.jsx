@@ -446,19 +446,19 @@ const Home = () => {
                       hidden: { opacity: 0, y: 30 },
                       visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] } }
                     }}
-                    className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 mb-12"
+                    className="flex flex-wrap items-center gap-3 sm:gap-4 mb-10"
                   >
-                    <Link to="/donate" className="w-full sm:w-auto">
-                      <button className="group relative w-full sm:w-auto overflow-hidden rounded-full bg-yellow-500 px-8 py-4 sm:px-10 sm:py-4 transition-all duration-300 hover:bg-yellow-400 hover:shadow-[0_0_40px_rgba(234,179,8,0.4)] hover:-translate-y-1">
-                        <span className="relative z-10 flex items-center justify-center gap-2 text-slate-900 font-bold text-base sm:text-lg tracking-wide">
+                    <Link to="/donate">
+                      <button className="group relative overflow-hidden rounded-full bg-yellow-500 px-6 py-3 sm:px-8 sm:py-3.5 transition-all duration-300 hover:bg-yellow-400 hover:shadow-[0_0_30px_rgba(234,179,8,0.4)] hover:-translate-y-1">
+                        <span className="relative z-10 flex items-center justify-center gap-2 text-slate-900 font-bold text-sm sm:text-base tracking-wide whitespace-nowrap">
                           Support Our Mission 
-                          <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
+                          <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1 w-4 h-4 sm:w-5 sm:h-5" />
                         </span>
                       </button>
                     </Link>
-                    <Link to="/programs" className="w-full sm:w-auto">
-                      <button className="group w-full sm:w-auto rounded-full bg-white/5 border border-white/20 px-8 py-4 sm:px-10 sm:py-4 backdrop-blur-md transition-all duration-300 hover:bg-white/10 hover:border-white/40">
-                        <span className="text-white font-semibold text-base sm:text-lg tracking-wide">
+                    <Link to="/programs">
+                      <button className="group rounded-full bg-white/5 border border-white/20 px-6 py-3 sm:px-8 sm:py-3.5 backdrop-blur-md transition-all duration-300 hover:bg-white/10 hover:border-white/40">
+                        <span className="text-white font-semibold text-sm sm:text-base tracking-wide whitespace-nowrap">
                           Explore Programs
                         </span>
                       </button>
@@ -488,41 +488,41 @@ const Home = () => {
         </AnimatePresence>
 
         {/* Floating Carousel Controls - Premium Aesthetic */}
-        <div className="absolute bottom-6 right-6 sm:bottom-10 sm:right-10 z-30 flex items-center gap-6">
-          <div className="hidden sm:flex items-center gap-3 bg-black/30 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 sm:bottom-10 sm:left-auto sm:-translate-x-0 sm:right-10 z-30 flex items-center justify-center gap-2 sm:gap-4 w-full sm:w-auto px-4">
+          <div className="flex items-center gap-2 sm:gap-3 bg-black/40 backdrop-blur-md px-3 py-2.5 sm:px-4 sm:py-3 rounded-full border border-white/10">
             {heroSlides.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
                 aria-label={`Go to slide ${index + 1}`}
-                className={`transition-all duration-500 h-1.5 rounded-full ${
-                  index === currentSlide ? 'w-8 bg-yellow-400' : 'w-4 bg-white/40 hover:bg-white/70'
+                className={`transition-all duration-500 rounded-full h-1.5 sm:h-2 ${
+                  index === currentSlide ? 'w-6 sm:w-8 bg-yellow-400' : 'w-3 sm:w-4 bg-white/40 hover:bg-white/70'
                 }`}
               />
             ))}
           </div>
 
-          <div className="flex items-center gap-2 bg-black/30 backdrop-blur-md p-1.5 rounded-full border border-white/10">
+          <div className="flex items-center gap-1 sm:gap-1.5 bg-black/40 backdrop-blur-md p-1 rounded-full border border-white/10 shrink-0">
             <button
               onClick={prevSlide}
               aria-label="Previous slide"
-              className="p-3 sm:p-4 rounded-full text-white hover:bg-white/10 transition-colors"
+              className="p-2 sm:p-2.5 rounded-full text-white hover:bg-white/20 transition-colors focus:outline-none"
             >
-              <FiChevronLeft className="w-5 h-5" />
+              <FiChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
             <button
               onClick={() => setAutoPlay(!autoPlay)}
               aria-label={autoPlay ? "Pause slideshow" : "Play slideshow"}
-              className="p-3 sm:p-4 rounded-full text-white hover:bg-white/10 transition-colors"
+              className="p-2 sm:p-2.5 rounded-full text-white hover:bg-white/20 transition-colors focus:outline-none"
             >
-              {autoPlay ? <FiPause className="w-5 h-5" /> : <FiPlay className="w-5 h-5" />}
+              {autoPlay ? <FiPause className="w-4 h-4 sm:w-5 sm:h-5" /> : <FiPlay className="w-4 h-4 sm:w-5 sm:h-5" />}
             </button>
             <button
               onClick={nextSlide}
               aria-label="Next slide"
-              className="p-3 sm:p-4 rounded-full text-white hover:bg-white/10 transition-colors"
+              className="p-2 sm:p-2.5 rounded-full text-white hover:bg-white/20 transition-colors focus:outline-none"
             >
-              <FiChevronRight className="w-5 h-5" />
+              <FiChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
           </div>
         </div>

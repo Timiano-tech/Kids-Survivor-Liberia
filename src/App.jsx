@@ -23,6 +23,7 @@ import OurTeam from './pages/OurTeam';
 import Counties from './pages/Counties';
 import CountyDetail from './pages/CountyDetail';
 import Transparency from './pages/Transparency';
+import ComingSoonModal from './components/ComingSoonModal';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -64,6 +65,7 @@ function App() {
             <ScrollToTopButton />
             <CallToAction/>
             <Footer />
+            <ComingSoonModal />
           </div>
         </Router>
       )}

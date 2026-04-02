@@ -11,6 +11,7 @@ import {
   FiLinkedin
 } from 'react-icons/fi';
 import { COUNTIES } from '../data/counties';
+import { showComingSoon } from './ComingSoonModal';
 
 const Footer = () => {
 
@@ -259,16 +260,28 @@ const Footer = () => {
               Counties We Work In (15)
             </h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-y-4 gap-x-6 text-sm">
-              {COUNTIES.map((county) => (
-                <Link
-                  key={county.id}
-                  to={`/counties/${county.id}`}
-                  className="text-slate-400 hover:text-yellow-400 transition-colors duration-300 flex items-center group font-medium"
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-slate-700 mr-2 group-hover:bg-yellow-400 transition-colors"></span>
-                  <span className="group-hover:translate-x-1 transform transition-transform duration-300">{county.name}</span>
-                </Link>
-              ))}
+              {COUNTIES.map((county) => {
+                const isActive = ['montserrado', 'margibi', 'bong', 'nimba', 'lofa', 'grand-bassa', 'grand-gedeh'].includes(county.id);
+                return isActive ? (
+                  <Link
+                    key={county.id}
+                    to={`/counties/${county.id}`}
+                    className="text-slate-400 hover:text-yellow-400 transition-colors duration-300 flex items-center group font-medium"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-slate-700 mr-2 group-hover:bg-yellow-400 transition-colors"></span>
+                    <span className="group-hover:translate-x-1 transform transition-transform duration-300">{county.name}</span>
+                  </Link>
+                ) : (
+                  <button
+                    key={county.id}
+                    onClick={(e) => { e.preventDefault(); showComingSoon(county.name); }}
+                    className="text-slate-500 hover:text-slate-400 transition-colors duration-300 flex items-center group font-medium text-left"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-slate-800 mr-2 transition-colors group-hover:bg-slate-600"></span>
+                    <span>{county.name} (Coming Soon)</span>
+                  </button>
+                );
+              })}
             </div>
           </div>
 

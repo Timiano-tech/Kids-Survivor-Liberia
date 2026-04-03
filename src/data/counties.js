@@ -1,3 +1,19 @@
+import montserradoMap from '../assets/maps/Montserrado_County_Flag__82529.jpg';
+import margibiMap from '../assets/maps/Margibi_County_Flag__96882.jpg';
+import bongMap from '../assets/maps/Bong_County_Flag__02962.jpg';
+import nimbaMap from '../assets/maps/Nimba_County_Flag__88156.jpg';
+import lofaMap from '../assets/maps/Lofa_County_Flag__05270.jpg';
+import grandBassaMap from '../assets/maps/Grand_Bassa_County_Flag__03183.jpg';
+import grandCapeMountMap from '../assets/maps/Grand_Cape_Mount_County_Flag__94537.jpg';
+import grandGedehMap from '../assets/maps/Grand_Gedeh_County_Flag__51143.jpg';
+import grandKruMap from '../assets/maps/Grand_Kru_County_Flag__87625.jpg';
+import marylandMap from '../assets/maps/Maryland_County_Flag__75756.jpg';
+import riverGeeMap from '../assets/maps/River_Gee_County_Flag__72825.jpg';
+import rivercessMap from '../assets/maps/Rivercess_County_Flag__90253.jpg';
+import sinoeMap from '../assets/maps/Sinoe_County_Flag__60253.jpg';
+import gbarpoluMap from '../assets/maps/Gbarpolu_County_Flag__71750.jpg';
+import bomiMap from '../assets/maps/Bomi_County_Flag__77534.jpg';
+
 export const HEADQUARTERS = {
   address: 'City of Light Community, Barclay Avenue, 15th Street, Sinkor, Monrovia, Montserrado',
   keyFunctions: 'National program coordination, policy alignment, and strategic leadership.',
@@ -8,7 +24,7 @@ export const COUNTIES = [
     id: 'montserrado',
     name: 'Montserrado County',
     tagline: 'Urban outreach, youth recovery, and community resilience.',
-    mapImage: null,
+    mapImage: montserradoMap,
     images: [],
     office: {
       name: 'Sinkor Office',
@@ -21,7 +37,7 @@ export const COUNTIES = [
     id: 'margibi',
     name: 'Margibi County',
     tagline: 'School-based prevention and family strengthening initiatives.',
-    mapImage: null,
+    mapImage: margibiMap,
     images: [],
     office: null,
   },
@@ -29,7 +45,7 @@ export const COUNTIES = [
     id: 'bong',
     name: 'Bong County',
     tagline: 'Rural outreach and drug abuse prevention in hard‑to‑reach communities.',
-    mapImage: null,
+    mapImage: bongMap,
     images: [],
     office: {
       name: 'Gbarnga City Office',
@@ -42,7 +58,7 @@ export const COUNTIES = [
     id: 'nimba',
     name: 'Nimba County',
     tagline: 'Cross-community youth engagement and livelihood skills.',
-    mapImage: null,
+    mapImage: nimbaMap,
     images: [],
     office: {
       name: 'Gompa City Office',
@@ -55,7 +71,7 @@ export const COUNTIES = [
     id: 'lofa',
     name: 'Lofa County',
     tagline: 'Community protection and resilience building for vulnerable groups.',
-    mapImage: null,
+    mapImage: lofaMap,
     images: [],
     office: {
       name: 'Voinjama City Office',
@@ -68,7 +84,7 @@ export const COUNTIES = [
     id: 'grand-bassa',
     name: 'Grand Bassa County',
     tagline: 'Coastal community outreach and adolescent protection initiatives.',
-    mapImage: null,
+    mapImage: grandBassaMap,
     images: [],
     office: {
       name: 'Buchanan City Office',
@@ -81,7 +97,7 @@ export const COUNTIES = [
     id: 'grand-cape-mount',
     name: 'Grand Cape Mount County',
     tagline: 'Border-area drug prevention and youth leadership support.',
-    mapImage: null,
+    mapImage: grandCapeMountMap,
     images: [],
     office: null,
   },
@@ -89,7 +105,7 @@ export const COUNTIES = [
     id: 'grand-gedeh',
     name: 'Grand Gedeh County',
     tagline: 'Post-conflict healing, protection, and community cohesion.',
-    mapImage: null,
+    mapImage: grandGedehMap,
     images: [],
     office: null,
   },
@@ -97,7 +113,7 @@ export const COUNTIES = [
     id: 'grand-kru',
     name: 'Grand Kru County',
     tagline: 'Supporting isolated communities with protection and life‑skills.',
-    mapImage: null,
+    mapImage: grandKruMap,
     images: [],
     office: null,
   },
@@ -105,7 +121,7 @@ export const COUNTIES = [
     id: 'maryland',
     name: 'Maryland County',
     tagline: "Child protection and adolescent girls' empowerment initiatives.",
-    mapImage: null,
+    mapImage: marylandMap,
     images: [],
     office: null,
   },
@@ -113,7 +129,7 @@ export const COUNTIES = [
     id: 'rivergee',
     name: 'River Gee County',
     tagline: 'Strengthening community structures for prevention and referrals.',
-    mapImage: null,
+    mapImage: riverGeeMap,
     images: [],
     office: null,
   },
@@ -121,7 +137,7 @@ export const COUNTIES = [
     id: 'rivercess',
     name: 'Rivercess County',
     tagline: 'Engaging riverine communities in prevention and livelihoods.',
-    mapImage: null,
+    mapImage: rivercessMap,
     images: [],
     office: null,
   },
@@ -129,7 +145,7 @@ export const COUNTIES = [
     id: 'sinoe',
     name: 'Sinoe County',
     tagline: 'Drug demand reduction and youth life‑skills programming.',
-    mapImage: null,
+    mapImage: sinoeMap,
     images: [],
     office: null,
   },
@@ -137,7 +153,7 @@ export const COUNTIES = [
     id: 'gbarpolu',
     name: 'Gbarpolu County',
     tagline: 'Working with mining and forest communities on prevention and care.',
-    mapImage: null,
+    mapImage: gbarpoluMap,
     images: [],
     office: null,
   },
@@ -145,7 +161,7 @@ export const COUNTIES = [
     id: 'bomi',
     name: 'Bomi County',
     tagline: 'Grassroots community mobilization and youth inclusion.',
-    mapImage: null,
+    mapImage: bomiMap,
     images: [],
     office: null,
   },

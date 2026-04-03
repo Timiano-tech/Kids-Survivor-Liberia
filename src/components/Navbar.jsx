@@ -93,7 +93,7 @@ const Navbar = () => {
         isTransparent 
           ? 'lg:bg-black/20 lg:backdrop-blur-md lg:border-b lg:border-white/10 max-lg:bg-white/95 max-lg:backdrop-blur-md max-lg:shadow-[0_8px_30px_rgb(0,0,0,0.08)] max-lg:border max-lg:border-gray-100' 
           : 'bg-white shadow-lg max-lg:border max-lg:border-gray-100'
-      } max-lg:top-2 max-lg:left-2 max-lg:right-2 max-lg:rounded-2xl lg:top-0 lg:left-0 lg:right-0 lg:w-full`}
+      } max-lg:top-2 max-lg:left-2 max-lg:right-2 max-lg:rounded-xl lg:top-0 lg:left-0 lg:right-0 lg:w-full`}
       onClick={closeAllDropdowns}
     >
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl">

@@ -140,7 +140,6 @@ const Projects = () => {
 
         {/* Main Content */}
         <main className="py-20 relative">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
           <div className="container mx-auto px-4 relative z-10">
             {/* Vision / Intro - Premium */}
             <div className="max-w-4xl mx-auto mb-16 text-center">
@@ -177,7 +176,7 @@ const Projects = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
-                  className="bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] transition-all duration-500 group relative overflow-hidden"
+                  className="bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 hover:shadow-md transition-all duration-500 group relative overflow-hidden"
                 >
                   {/* Project Image */}
                   <div className="relative h-52 overflow-hidden">
@@ -195,7 +194,7 @@ const Projects = () => {
                       </span>
                     </div>
                     {/* Icon overlay on image */}
-                    <div className="absolute bottom-4 right-4 bg-white/20 backdrop-blur-md text-white p-3 rounded-2xl border border-white/20 shadow-lg">
+                    <div className="absolute bottom-4 right-4 bg-white/20 backdrop-blur-md text-white p-3 rounded-xl border border-white/20 shadow-lg">
                       {project.icon}
                     </div>
                   </div>
@@ -210,7 +209,7 @@ const Projects = () => {
                     <p className="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-2">{project.description}</p>
 
                     {/* Target */}
-                    <div className="mb-6 bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                    <div className="mb-6 bg-slate-50 p-4 rounded-xl border border-slate-100">
                       <div className="text-xs font-bold tracking-wider uppercase text-slate-400 mb-1">Target Group</div>
                       <div className="text-sm font-bold text-slate-800">{project.target}</div>
                     </div>

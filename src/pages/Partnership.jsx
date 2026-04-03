@@ -98,7 +98,6 @@ const Partnership = () => {
 
       {/* Content */}
       <main className="py-20 relative">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-50/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
         <div className="container mx-auto px-4 sm:px-6 max-w-6xl relative z-10">
           {/* Introduction - Premium */}
           <section className="mb-24">
@@ -138,9 +137,9 @@ const Partnership = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
-                  className="group bg-white rounded-[2rem] border border-slate-100 p-8 shadow-[0_4px_20px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.1)] hover:-translate-y-2 transition-all duration-500 relative overflow-hidden text-center"
+                  className="group bg-white rounded-xl border border-slate-100 p-8 shadow-sm hover:shadow-[0_20px_40px_rgb(0,0,0,0.1)] hover:-translate-y-2 transition-all duration-500 relative overflow-hidden text-center"
                 >
-                  <div className="w-16 h-16 rounded-2xl bg-slate-50 text-blue-600 flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500 shadow-sm text-2xl">
+                  <div className="w-16 h-16 rounded-xl bg-slate-50 text-blue-600 flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500 shadow-sm text-2xl">
                     {type.icon}
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-4 tracking-tight group-hover:text-blue-600 transition-colors duration-300">
@@ -162,8 +161,7 @@ const Partnership = () => {
                 Partnership Benefits
               </h2>
             </div>
-            <div className="bg-slate-900 rounded-[3rem] p-10 lg:p-16 relative overflow-hidden shadow-2xl">
-              <div className="absolute top-0 left-0 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+            <div className="bg-slate-900 rounded-xl p-10 lg:p-16 relative overflow-hidden shadow-2xl">
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
                 {benefits.map((benefit, index) => (
                   <motion.div
@@ -197,9 +195,9 @@ const Partnership = () => {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-white to-blue-50/50 rounded-[2.5rem] border border-blue-100 p-10 shadow-sm hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] transition-all duration-300 relative overflow-hidden group"
+                className="bg-gradient-to-br from-white to-blue-50/50 rounded-xl border border-blue-100 p-10 shadow-sm hover:shadow-sm transition-all duration-300 relative overflow-hidden group"
               >
-                <div className="w-14 h-14 rounded-2xl bg-blue-100/50 text-blue-600 flex items-center justify-center mb-6">
+                <div className="w-14 h-14 rounded-xl bg-blue-100/50 text-blue-600 flex items-center justify-center mb-6">
                   <FiUsers className="w-6 h-6" />
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight group-hover:text-blue-600 transition-colors">
@@ -214,9 +212,9 @@ const Partnership = () => {
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-white to-blue-50/50 rounded-[2.5rem] border border-blue-100 p-10 shadow-sm hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] transition-all duration-300 relative overflow-hidden group"
+                className="bg-gradient-to-br from-white to-blue-50/50 rounded-xl border border-blue-100 p-10 shadow-sm hover:shadow-sm transition-all duration-300 relative overflow-hidden group"
               >
-                <div className="w-14 h-14 rounded-2xl bg-blue-100/50 text-blue-600 flex items-center justify-center mb-6">
+                <div className="w-14 h-14 rounded-xl bg-blue-100/50 text-blue-600 flex items-center justify-center mb-6">
                   <FiShield className="w-6 h-6" />
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight group-hover:text-blue-600 transition-colors">
@@ -236,7 +234,7 @@ const Partnership = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-r from-blue-700 to-indigo-800 rounded-[3rem] p-10 sm:p-16 text-center text-white shadow-2xl relative overflow-hidden"
+              className="bg-gradient-to-r from-blue-700 to-indigo-800 rounded-xl p-10 sm:p-16 text-center text-white shadow-2xl relative overflow-hidden"
             >
               <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-10 mix-blend-overlay"></div>
               <div className="relative z-10">

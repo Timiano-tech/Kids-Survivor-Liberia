@@ -7,7 +7,6 @@ import ScrollToTopButton from '../components/ScrollToTop';
 import { showComingSoon } from '../components/ComingSoonModal';
 import HeaderImage from '../assets/map.jpg';
 
-
 const Counties = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -50,7 +49,6 @@ const Counties = () => {
 
       {/* Main content - Premium*/}
       <main className="py-20 lg:py-32 relative">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
 
           <section className="mb-20 max-w-4xl mx-auto">
@@ -59,7 +57,7 @@ const Counties = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-white border text-center border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-3xl p-8 sm:p-12 text-lg sm:text-xl text-slate-600 leading-relaxed"
+              className="bg-white border text-center border-slate-100 shadow-sm rounded-xl p-8 sm:p-12 text-lg sm:text-xl text-slate-600 leading-relaxed"
             >
               <p className="mb-0 font-medium">
                 Each county page highlights key activities, focus areas, and community partnerships
@@ -78,7 +76,7 @@ const Counties = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  className="group bg-white rounded-[2rem] border border-slate-100 shadow-[0_4px_20px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] hover:border-blue-100 transition-all duration-500 hover:-translate-y-2 flex flex-col relative overflow-hidden"
+                  className="group bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-md hover:border-blue-100 transition-all duration-500 hover:-translate-y-2 flex flex-col relative overflow-hidden"
                 >
                   {/* Map Image Area */}
                   <div className="relative h-44 overflow-hidden">
@@ -100,7 +98,7 @@ const Counties = () => {
                           }}
                         />
                         <div className="relative z-10 flex flex-col items-center">
-                          <div className="w-14 h-14 rounded-2xl bg-blue-100 text-blue-500 flex items-center justify-center mb-3 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                          <div className="w-14 h-14 rounded-xl bg-blue-100 text-blue-500 flex items-center justify-center mb-3 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
                             <FiMapPin className="w-7 h-7" />
                           </div>
                           <span className="text-xs font-bold text-blue-400 uppercase tracking-widest">Map Coming Soon</span>

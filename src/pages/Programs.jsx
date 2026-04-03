@@ -210,14 +210,14 @@ const Programs = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] border border-slate-100 transition-all duration-500 overflow-hidden group flex flex-col h-full"
+                    className="bg-white rounded-xl shadow-sm hover:shadow-md border border-slate-100 transition-all duration-500 overflow-hidden group flex flex-col h-full"
                   >
                     <div className={`p-8 lg:p-10 border-b-4 ${policy.color === 'blue' ? 'border-blue-500' : 'border-yellow-400'} flex-1 relative overflow-hidden`}>
                       <div className={`absolute top-0 right-0 w-48 h-48 ${policy.color === 'blue' ? 'bg-blue-50' : 'bg-yellow-50'} rounded-bl-full -mr-10 -mt-10 transition-transform duration-700 group-hover:scale-110`}></div>
 
                       <div className="relative z-10">
                         <div className="flex items-center gap-5 mb-8">
-                          <div className={`p-4 rounded-2xl ${policy.color === 'blue' ? 'bg-blue-100 text-blue-600' : 'bg-yellow-100 text-yellow-600'} shadow-sm`}>
+                          <div className={`p-4 rounded-xl ${policy.color === 'blue' ? 'bg-blue-100 text-blue-600' : 'bg-yellow-100 text-yellow-600'} shadow-sm`}>
                             {policy.icon}
                           </div>
                           <div>
@@ -229,7 +229,7 @@ const Programs = () => {
                           {policy.description}
                         </p>
 
-                        <div className="mb-8 p-6 rounded-2xl bg-slate-50 border border-slate-100">
+                        <div className="mb-8 p-6 rounded-xl bg-slate-50 border border-slate-100">
                           <h4 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
                             <FiAward className={policy.color === 'blue' ? 'text-blue-500' : 'text-yellow-500'} />
                             Key Focus Areas
@@ -269,9 +269,8 @@ const Programs = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
-                className="mt-16 bg-gradient-to-br from-blue-700 to-blue-900 rounded-[2.5rem] p-10 md:p-14 text-white shadow-2xl relative overflow-hidden"
+                className="mt-16 bg-gradient-to-br from-blue-700 to-blue-900 rounded-xl p-10 md:p-14 text-white shadow-2xl relative overflow-hidden"
               >
-                <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
                 <div className="absolute inset-0 bg-[url('/assets/pattern-bg.png')] opacity-10 mix-blend-overlay"></div>
 
                 <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10">
@@ -331,8 +330,8 @@ const Programs = () => {
                   >
                     {/* Image Section */}
                     <div className="w-full lg:w-1/2 relative">
-                      <div className="absolute inset-0 bg-blue-600 rounded-[2rem] -translate-x-4 translate-y-4 opacity-10 group-hover:-translate-x-6 group-hover:translate-y-6 transition-transform duration-500"></div>
-                      <div className="relative rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
+                      <div className="absolute inset-0 bg-blue-600 rounded-xl -translate-x-4 translate-y-4 opacity-10 group-hover:-translate-x-6 group-hover:translate-y-6 transition-transform duration-500"></div>
+                      <div className="relative rounded-xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
                         <img
                           src={pillar.image}
                           alt={pillar.title}
@@ -365,7 +364,7 @@ const Programs = () => {
                       </div>
 
                       {/* Components */}
-                      <div className="bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-100">
+                      <div className="bg-slate-50 p-6 md:p-8 rounded-xl border border-slate-100">
                         <h4 className="font-bold text-slate-900 mb-5 flex items-center text-lg">
                           <div className={`p-2 rounded-xl mr-3 ${index % 2 === 0 ? 'bg-blue-100 text-blue-600' : 'bg-yellow-100 text-yellow-600'}`}>
                             <FiCheckCircle className="w-5 h-5" />

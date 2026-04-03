@@ -134,7 +134,6 @@ const Contact = () => {
 
         {/* Main Content */}
         <main className="py-20 relative">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-50/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
           <div className="container mx-auto px-4 sm:px-6 relative z-10">
             {/* Contact Introduction - Premium */}
             <motion.div
@@ -165,11 +164,10 @@ const Contact = () => {
               viewport={{ once: true }}
               className="max-w-4xl mx-auto"
             >
-              <div className="bg-white rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 p-8 sm:p-12 lg:p-16 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-blue-50/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+              <div className="bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 p-8 sm:p-12 lg:p-16 relative overflow-hidden">
 
                 <div className="flex flex-col sm:flex-row items-start sm:items-center mb-10 gap-6 relative z-10">
-                  <div className="bg-linear-to-br from-blue-50 to-blue-100/50 p-4 rounded-2xl border border-blue-100 text-blue-600 shadow-sm">
+                  <div className="bg-linear-to-br from-blue-50 to-blue-100/50 p-4 rounded-xl border border-blue-100 text-blue-600 shadow-sm">
                     <FiMessageSquare className="w-8 h-8" />
                   </div>
                   <div>
@@ -280,7 +278,7 @@ const Contact = () => {
               viewport={{ once: true }}
               className="mt-24 max-w-5xl mx-auto"
             >
-              <div className="bg-white rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 overflow-hidden relative group">
+              <div className="bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 overflow-hidden relative group">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-400/20 rounded-bl-full -z-10 group-hover:bg-yellow-400/30 transition-colors duration-500"></div>
                 <div className="p-10 border-b border-slate-100 flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
                   <div>

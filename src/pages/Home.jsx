@@ -40,7 +40,6 @@ import BlogImage1 from '../assets/Students Impacted.jpeg';
 import BlogImage2 from '../assets/Helping Children.jpeg';
 import BlogImage3 from '../assets/Youth_Community_Outreach.jpeg';
 
-
 // Counter Component
 const Counter = ({ end, duration = 2, label, icon }) => {
   const [count, setCount] = useState(0);
@@ -449,7 +448,7 @@ const Home = () => {
                     className="flex flex-wrap items-center gap-3 sm:gap-4 mb-10"
                   >
                     <Link to="/donate">
-                      <button className="group relative overflow-hidden rounded-full bg-yellow-500 px-6 py-3 sm:px-8 sm:py-3.5 transition-all duration-300 hover:bg-yellow-400 hover:shadow-[0_0_30px_rgba(234,179,8,0.4)] hover:-translate-y-1">
+                      <button className="group relative overflow-hidden rounded-xl bg-yellow-500 px-6 py-3 sm:px-8 sm:py-3.5 transition-all duration-300 hover:bg-yellow-400 hover:shadow-md hover:-translate-y-1">
                         <span className="relative z-10 flex items-center justify-center gap-2 text-slate-900 font-bold text-sm sm:text-base tracking-wide whitespace-nowrap">
                           Support Our Mission 
                           <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1 w-4 h-4 sm:w-5 sm:h-5" />
@@ -457,7 +456,7 @@ const Home = () => {
                       </button>
                     </Link>
                     <Link to="/programs">
-                      <button className="group rounded-full bg-white/5 border border-white/20 px-6 py-3 sm:px-8 sm:py-3.5 backdrop-blur-md transition-all duration-300 hover:bg-white/10 hover:border-white/40">
+                      <button className="group rounded-xl bg-white/5 border border-white/20 px-6 py-3 sm:px-8 sm:py-3.5 backdrop-blur-md transition-all duration-300 hover:bg-white/10 hover:border-white/40">
                         <span className="text-white font-semibold text-sm sm:text-base tracking-wide whitespace-nowrap">
                           Explore Programs
                         </span>
@@ -560,7 +559,7 @@ const Home = () => {
                 className="text-center group"
               >
                 <div className="flex justify-center mb-6">
-                  <div className="bg-slate-800/50 p-5 rounded-2xl text-blue-400 border border-slate-700/50 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-500 transition-all duration-300">
+                  <div className="bg-slate-800/50 p-5 rounded-xl text-blue-400 border border-slate-700/50 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-500 transition-all duration-300">
                     {stat.icon}
                   </div>
                 </div>
@@ -594,10 +593,6 @@ const Home = () => {
 
       {/* Mission & Vision Section - Premium Redesign */}
       <section className="py-24 bg-slate-50 relative overflow-hidden">
-        {/* Decorative background element */}
-        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-blue-100/50 blur-3xl mix-blend-multiply"></div>
-        <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 rounded-full bg-yellow-100/50 blur-3xl mix-blend-multiply"></div>
-
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -622,12 +617,11 @@ const Home = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] overflow-hidden group hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] transition-all duration-500 border border-slate-100"
+              className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-500 border border-slate-200"
             >
               <div className="p-10 md:p-12 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110 duration-500"></div>
                 <div className="relative z-10">
-                  <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-blue-500/30 text-white transform group-hover:-translate-y-2 transition-transform duration-500">
+                  <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mb-8 shadow-lg shadow-blue-500/30 text-white transform group-hover:-translate-y-2 transition-transform duration-500">
                     <FiTarget className="w-8 h-8" />
                   </div>
                   <h3 className="text-3xl font-bold text-slate-900 mb-6 tracking-tight">Mission</h3>
@@ -658,12 +652,11 @@ const Home = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] overflow-hidden group hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] transition-all duration-500 border border-slate-100"
+              className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-500 border border-slate-200"
             >
               <div className="p-10 md:p-12 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-50 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110 duration-500"></div>
                 <div className="relative z-10">
-                  <div className="w-16 h-16 bg-yellow-500 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-yellow-500/30 text-white transform group-hover:-translate-y-2 transition-transform duration-500">
+                  <div className="w-16 h-16 bg-yellow-500 rounded-xl flex items-center justify-center mb-8 shadow-lg shadow-yellow-500/30 text-white transform group-hover:-translate-y-2 transition-transform duration-500">
                     <FiEye className="w-8 h-8" />
                   </div>
                   <h3 className="text-3xl font-bold text-slate-900 mb-6 tracking-tight">Vision</h3>
@@ -721,7 +714,7 @@ const Home = () => {
                 viewport={{ once: true }}
                 className="group h-full"
               >
-                <div className="bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] group-hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] transition-all duration-500 overflow-hidden h-full flex flex-col border border-slate-100">
+                <div className="bg-white rounded-xl shadow-md transition-all duration-500 overflow-hidden h-full flex flex-col border border-slate-200">
                   {/* Image area with subtle zoom and overlay */}
                   <div className="relative h-64 overflow-hidden">
                     {!imageError[`pillar-${pillar.id}`] ? (
@@ -747,7 +740,7 @@ const Home = () => {
                     {/* Content integrated into image bottom */}
                     <div className="absolute bottom-0 left-0 w-full p-8">
                       <div className="flex items-center gap-4 mb-3">
-                        <div className={`p-3 rounded-2xl text-white shadow-lg backdrop-blur-md bg-white/20 border border-white/20`}>
+                        <div className={`p-3 rounded-xl text-white shadow-lg backdrop-blur-md bg-white/20 border border-white/20`}>
                           {pillar.icon}
                         </div>
                         <h3 className="text-2xl font-bold text-white tracking-tight">
@@ -781,15 +774,12 @@ const Home = () => {
             viewport={{ once: true }}
             className="mt-12"
           >
-            <div className="bg-slate-900 rounded-3xl shadow-2xl overflow-hidden relative">
+            <div className="bg-slate-900 rounded-xl shadow-md overflow-hidden relative">
               <div className="absolute inset-0 bg-[url('/assets/pattern-bg.png')] opacity-10 mix-blend-overlay"></div>
-              {/* Abstract decorative blobs */}
-              <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-              <div className="absolute bottom-0 left-0 w-96 h-96 bg-yellow-500/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
 
               <div className="p-10 md:p-14 text-white relative z-10">
                 <div className="flex flex-col md:flex-row md:items-start gap-8 mb-10">
-                  <div className="bg-white/10 p-5 rounded-2xl inline-flex self-start backdrop-blur-md border border-white/10 shadow-xl">
+                  <div className="bg-white/10 p-5 rounded-xl inline-flex self-start backdrop-blur-md border border-white/10 shadow-xl">
                     <FiBriefcase className="w-8 h-8 text-blue-300" />
                   </div>
                   <div>
@@ -803,19 +793,19 @@ const Home = () => {
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-6">
-                  <div className="bg-white/5 p-6 rounded-2xl backdrop-blur-sm border border-white/5 hover:bg-white/10 transition-colors group">
+                  <div className="bg-white/5 p-6 rounded-xl backdrop-blur-sm border border-white/5 hover:bg-white/10 transition-colors group">
                     <h4 className="font-bold text-xl mb-3 text-white">Community Ownership</h4>
                     <p className="text-slate-400 group-hover:text-slate-300 transition-colors">
                       Empowering local actors through intensive volunteer training and community-driven program implementation.
                     </p>
                   </div>
-                  <div className="bg-white/5 p-6 rounded-2xl backdrop-blur-sm border border-white/5 hover:bg-white/10 transition-colors group">
+                  <div className="bg-white/5 p-6 rounded-xl backdrop-blur-sm border border-white/5 hover:bg-white/10 transition-colors group">
                     <h4 className="font-bold text-xl mb-3 text-white">Peacebuilding</h4>
                     <p className="text-slate-400 group-hover:text-slate-300 transition-colors">
                       Proactive crime and violence prevention cultivated through dynamic social cohesion initiatives.
                     </p>
                   </div>
-                  <div className="bg-white/5 p-6 rounded-2xl backdrop-blur-sm border border-white/5 hover:bg-white/10 transition-colors group">
+                  <div className="bg-white/5 p-6 rounded-xl backdrop-blur-sm border border-white/5 hover:bg-white/10 transition-colors group">
                     <h4 className="font-bold text-xl mb-3 text-white">Strategic Partnerships</h4>
                     <p className="text-slate-400 group-hover:text-slate-300 transition-colors">
                       Fostering multi-stakeholder collaboration for comprehensive, scalable developmental impact.
@@ -878,7 +868,7 @@ const Home = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="glass-effect p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.2)] transition-shadow duration-500"
+              className="glass-effect p-10 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.2)] transition-shadow duration-500"
             >
               <div className="flex items-center mb-6">
                 <div className="bg-green-100 p-3 rounded-xl mr-4">
@@ -916,7 +906,7 @@ const Home = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="glass-effect p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.2)] transition-shadow duration-500"
+              className="glass-effect p-10 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.2)] transition-shadow duration-500"
             >
               <div className="flex items-center mb-6">
                 <div className="bg-blue-100 p-3 rounded-xl mr-4">
@@ -979,9 +969,9 @@ const Home = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
               viewport={{ once: true }}
-              className="bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] border border-slate-100 p-8 sm:p-10 flex flex-col sm:flex-row items-start gap-6 transition-all duration-300 group"
+              className="bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-md border border-slate-100 p-8 sm:p-10 flex flex-col sm:flex-row items-start gap-6 transition-all duration-300 group"
             >
-              <div className="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-14 h-14 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
                 <FiHome className="w-5 h-5" />
               </div>
               <div>
@@ -1006,9 +996,9 @@ const Home = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] border border-slate-100 p-8 sm:p-10 flex flex-col sm:flex-row items-start gap-6 transition-all duration-300 group"
+              className="bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-md border border-slate-100 p-8 sm:p-10 flex flex-col sm:flex-row items-start gap-6 transition-all duration-300 group"
             >
-              <div className="w-14 h-14 rounded-2xl bg-yellow-50 text-yellow-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-14 h-14 rounded-xl bg-yellow-50 text-yellow-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
                 <FiMapPin className="w-5 h-5" />
               </div>
               <div>
@@ -1053,7 +1043,7 @@ const Home = () => {
             {teamMembers.map((member, index) => (
               <div
                 key={index}
-                className="bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] border border-slate-100 overflow-hidden transition-all duration-300 group"
+                className="bg-white rounded-xl shadow-sm hover:shadow-md border border-slate-100 overflow-hidden transition-all duration-300 group"
               >
                 <div className="h-auto bg-gray-100 flex items-center justify-center">
                   <img
@@ -1126,7 +1116,7 @@ const Home = () => {
                 viewport={{ once: true }}
                 className="group"
               >
-                <div className="bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] border border-slate-100 overflow-hidden transition-all duration-300 h-full flex flex-col">
+                <div className="bg-white rounded-xl shadow-sm hover:shadow-md border border-slate-100 overflow-hidden transition-all duration-300 h-full flex flex-col">
                   <div className="relative h-60 overflow-hidden">
                     <img
                       src={news.image}
@@ -1190,7 +1180,6 @@ const Home = () => {
 
       {/* FAQ Section - Premium */}
       <section className="py-24 bg-white relative">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-50/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -1216,7 +1205,7 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-2xl border border-slate-100 p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow group cursor-pointer"
+                className="bg-white rounded-xl border border-slate-100 p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow group cursor-pointer"
                 onClick={() => toggleFAQ(faq.id)}
               >
                 <div className="flex justify-between items-center">

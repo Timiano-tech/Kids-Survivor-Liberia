@@ -226,7 +226,6 @@ const Impact = () => {
 
         {/* Main Content */}
         <main className="py-20 relative">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
           <div className="container mx-auto px-4 relative z-10">
             {/* Impact Statistics with Counting Animation - Premium */}
             <section className="mb-24">
@@ -254,12 +253,12 @@ const Impact = () => {
                     whileInView={{ opacity: 1, scale: 1, y: 0 }}
                     transition={{ delay: index * 0.1, duration: 0.5 }}
                     viewport={{ once: true }}
-                    className="bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.06)] p-8 text-center hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] border border-slate-100 transition-all duration-500 group relative overflow-hidden"
+                    className="bg-white rounded-xl shadow-sm p-8 text-center hover:shadow-md border border-slate-100 transition-all duration-500 group relative overflow-hidden"
                   >
                     <div className="absolute top-0 right-0 w-24 h-24 bg-blue-50/50 rounded-bl-[3rem] -mx-4 -my-4 transition-transform group-hover:scale-125 duration-700 ease-out z-0"></div>
 
                     <div className="flex justify-center mb-6 relative z-10">
-                      <div className="p-4 bg-blue-50 text-blue-600 rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500 shadow-sm inline-flex items-center justify-center">
+                      <div className="p-4 bg-blue-50 text-blue-600 rounded-xl group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500 shadow-sm inline-flex items-center justify-center">
                         {stat.icon}
                       </div>
                     </div>
@@ -337,10 +336,10 @@ const Impact = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1, duration: 0.5 }}
                     viewport={{ once: true }}
-                    className="bg-white rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.04)] p-8 border border-slate-100 hover:shadow-[0_20px_40px_rgb(0,0,0,0.1)] transition-all duration-500 group flex flex-col h-full"
+                    className="bg-white rounded-xl shadow-sm p-8 border border-slate-100 hover:shadow-[0_20px_40px_rgb(0,0,0,0.1)] transition-all duration-500 group flex flex-col h-full"
                   >
                     <div className="flex items-center mb-6">
-                      <div className="p-3 bg-blue-50 text-blue-600 rounded-2xl mr-4 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 shadow-sm">
+                      <div className="p-3 bg-blue-50 text-blue-600 rounded-xl mr-4 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 shadow-sm">
                         {area.icon}
                       </div>
                       <h3 className="text-xl font-bold text-slate-900 leading-tight group-hover:text-blue-600 transition-colors">{area.title}</h3>
@@ -388,7 +387,7 @@ const Impact = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1, duration: 0.5 }}
                     viewport={{ once: true }}
-                    className="bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.06)] overflow-hidden hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] border border-slate-100 transition-all duration-500 group"
+                    className="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md border border-slate-100 transition-all duration-500 group"
                   >
                     <div className="relative h-72 overflow-hidden bg-slate-100">
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent z-10"></div>
@@ -456,7 +455,7 @@ const Impact = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1, duration: 0.5 }}
                     viewport={{ once: true }}
-                    className="bg-white rounded-[2rem] shadow-[0_4px_20px_rgb(0,0,0,0.06)] overflow-hidden hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] border border-slate-100 transition-all duration-500 group flex flex-col h-full"
+                    className="bg-white rounded-xl shadow-[0_4px_20px_rgb(0,0,0,0.06)] overflow-hidden hover:shadow-md border border-slate-100 transition-all duration-500 group flex flex-col h-full"
                   >
                     <div className="relative h-56 bg-slate-900 overflow-hidden">
                       <video

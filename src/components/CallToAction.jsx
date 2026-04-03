@@ -36,7 +36,7 @@ const CallToAction = () => {
                 {[...images, ...images].map((img, index) => (
                   <div
                     key={index}
-                    className="w-48 h-64 md:w-60 md:h-80 flex-none rounded-2xl bg-blue-100 overflow-hidden shadow-md"
+                    className="w-48 h-64 md:w-60 md:h-80 flex-none rounded-xl bg-blue-100 overflow-hidden shadow-md"
                   >
                     {img ? (
                       <img src={img} alt="Impact" className="w-full h-full object-cover" />

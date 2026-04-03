@@ -69,9 +69,9 @@ const Transparency = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] p-8 lg:p-10 border border-slate-100 transition-all duration-500 hover:-translate-y-2 group"
+            className="bg-white rounded-xl shadow-sm hover:shadow-md p-8 lg:p-10 border border-slate-100 transition-all duration-500 hover:-translate-y-2 group"
           >
-            <div className="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-8 border border-blue-100 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
+            <div className="w-16 h-16 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-8 border border-blue-100 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
               <FiTrendingUp className="w-8 h-8" />
             </div>
             <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight">Financial Integrity</h3>
@@ -85,9 +85,9 @@ const Transparency = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] p-8 lg:p-10 border border-slate-100 transition-all duration-500 hover:-translate-y-2 group"
+            className="bg-white rounded-xl shadow-sm hover:shadow-md p-8 lg:p-10 border border-slate-100 transition-all duration-500 hover:-translate-y-2 group"
           >
-            <div className="w-16 h-16 bg-yellow-50 text-yellow-600 rounded-2xl flex items-center justify-center mb-8 border border-yellow-100 group-hover:scale-110 group-hover:bg-yellow-500 group-hover:text-white transition-all duration-300 shadow-sm">
+            <div className="w-16 h-16 bg-yellow-50 text-yellow-600 rounded-xl flex items-center justify-center mb-8 border border-yellow-100 group-hover:scale-110 group-hover:bg-yellow-500 group-hover:text-white transition-all duration-300 shadow-sm">
               <FiCheckCircle className="w-8 h-8" />
             </div>
             <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight">Ethical Governance</h3>
@@ -101,9 +101,9 @@ const Transparency = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] p-8 lg:p-10 border border-slate-100 transition-all duration-500 hover:-translate-y-2 group"
+            className="bg-white rounded-xl shadow-sm hover:shadow-md p-8 lg:p-10 border border-slate-100 transition-all duration-500 hover:-translate-y-2 group"
           >
-            <div className="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mb-8 border border-emerald-100 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300 shadow-sm">
+            <div className="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center mb-8 border border-emerald-100 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300 shadow-sm">
               <FiShield className="w-8 h-8" />
             </div>
             <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight">Programmatic Rigor</h3>
@@ -128,7 +128,7 @@ const Transparency = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-slate-50 flex flex-col items-center text-center rounded-3xl p-8 hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 border border-slate-100 hover:border-blue-100 group"
+                className="bg-slate-50 flex flex-col items-center text-center rounded-xl p-8 hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 border border-slate-100 hover:border-blue-100 group"
               >
                 <div className="w-14 h-14 rounded-full bg-blue-100/50 text-blue-600 flex items-center justify-center mb-6 border border-blue-200/50 group-hover:scale-110 transition-transform duration-300 shadow-sm">
                   {policy.icon}
@@ -141,9 +141,8 @@ const Transparency = () => {
         </div>
 
         {/* Reports & Downloads - Premium */}
-        <section className="bg-gradient-to-r from-blue-900 to-indigo-900 rounded-[3rem] p-10 sm:p-16 max-w-5xl mx-auto mb-16 shadow-2xl relative overflow-hidden">
+        <section className="bg-gradient-to-r from-blue-900 to-indigo-900 rounded-xl p-10 sm:p-16 max-w-5xl mx-auto mb-16 shadow-2xl relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-10 mix-blend-overlay"></div>
-          <div className="absolute top-0 right-0 w-64 h-64 bg-yellow-400/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
 
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10">
             <div className="md:w-2/3 text-center md:text-left">

@@ -91,7 +91,6 @@ const CountyDetail = () => {
 
       {/* Main content - Premium */}
       <main className="py-20 lg:py-32 relative">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
         <div className="container mx-auto px-4 sm:px-6 max-w-6xl relative z-10">
 
           {/* Overview + key stats */}
@@ -129,7 +128,7 @@ const CountyDetail = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.06)] p-8 lg:p-10 border border-slate-100 relative overflow-hidden"
+                className="bg-white rounded-xl shadow-sm p-8 lg:p-10 border border-slate-100 relative overflow-hidden"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
 
@@ -182,7 +181,7 @@ const CountyDetail = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-slate-50 rounded-2xl p-6 lg:p-8 hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 border border-transparent hover:border-blue-100 group"
+                  className="bg-slate-50 rounded-xl p-6 lg:p-8 hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 border border-transparent hover:border-blue-100 group"
                 >
                   <div className="flex items-start gap-4">
                     <span className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center text-blue-600 shrink-0 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
@@ -217,12 +216,12 @@ const CountyDetail = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-white rounded-[2rem] border border-slate-100 p-8 shadow-[0_4px_20px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] hover:border-blue-100 transition-all duration-500 hover:-translate-y-2 flex flex-col relative overflow-hidden group"
+                  className="bg-white rounded-xl border border-slate-100 p-8 shadow-sm hover:shadow-md hover:border-blue-100 transition-all duration-500 hover:-translate-y-2 flex flex-col relative overflow-hidden group"
                 >
                   <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 group-hover:bg-blue-100 transition-colors duration-500 pointer-events-none"></div>
 
                   <div className="flex items-center gap-5 mb-6 relative z-10">
-                    <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 shrink-0 shadow-sm border border-blue-100 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 group-hover:scale-110">
+                    <div className="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 shrink-0 shadow-sm border border-blue-100 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 group-hover:scale-110">
                       {program.icon}
                     </div>
                     <h3 className="text-xl font-bold text-slate-900 tracking-tight group-hover:text-blue-600 transition-colors duration-300">
@@ -261,7 +260,7 @@ const CountyDetail = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="relative aspect-[4/3] rounded-[2rem] overflow-hidden bg-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 group"
+                    className="relative aspect-[4/3] rounded-xl overflow-hidden bg-slate-100 shadow-sm border border-slate-100 group"
                   >
                     <img
                       src={imgSrc}
@@ -280,7 +279,7 @@ const CountyDetail = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="relative aspect-[4/3] rounded-[2rem] border-2 border-dashed border-slate-300 bg-slate-50 flex items-center justify-center px-6 text-center group hover:bg-slate-100 transition-colors duration-300 cursor-pointer"
+                    className="relative aspect-[4/3] rounded-xl border-2 border-dashed border-slate-300 bg-slate-50 flex items-center justify-center px-6 text-center group hover:bg-slate-100 transition-colors duration-300 cursor-pointer"
                   >
                     <p className="text-sm font-medium text-slate-500 leading-relaxed group-hover:text-slate-700 transition-colors">
                       <span className="block mb-2 font-bold text-slate-400">Photo Slot {slot}</span>
@@ -316,11 +315,10 @@ const CountyDetail = () => {
                 transition={{ duration: 0.5 }}
                 className="max-w-2xl mx-auto"
               >
-                <div className="bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 p-8 lg:p-10 relative overflow-hidden group hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] transition-all duration-500">
-                  <div className="absolute top-0 right-0 w-40 h-40 bg-blue-50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+                <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-8 lg:p-10 relative overflow-hidden group hover:shadow-md transition-all duration-500">
 
                   <div className="relative z-10 flex items-center gap-5 mb-8 pb-6 border-b border-slate-100">
-                    <div className="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center shadow-sm border border-blue-100 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                    <div className="w-14 h-14 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shadow-sm border border-blue-100 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
                       <FiHome className="w-7 h-7" />
                     </div>
                     <div>
@@ -358,8 +356,8 @@ const CountyDetail = () => {
                 transition={{ duration: 0.5 }}
                 className="max-w-2xl mx-auto"
               >
-                <div className="bg-slate-50 rounded-[2rem] border-2 border-dashed border-slate-200 p-10 text-center">
-                  <div className="w-14 h-14 rounded-2xl bg-white text-slate-400 flex items-center justify-center shadow-sm border border-slate-200 mx-auto mb-6">
+                <div className="bg-slate-50 rounded-xl border-2 border-dashed border-slate-200 p-10 text-center">
+                  <div className="w-14 h-14 rounded-xl bg-white text-slate-400 flex items-center justify-center shadow-sm border border-slate-200 mx-auto mb-6">
                     <FiHome className="w-7 h-7" />
                   </div>
                   <h3 className="text-xl font-bold text-slate-700 mb-3">Planned Expansion</h3>
@@ -379,11 +377,10 @@ const CountyDetail = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="bg-blue-50/70 border border-blue-100 rounded-[2rem] p-8 lg:p-12 relative overflow-hidden"
+                className="bg-blue-50/70 border border-blue-100 rounded-xl p-8 lg:p-12 relative overflow-hidden"
               >
-                <div className="absolute top-0 right-0 w-64 h-64 bg-white/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
                 <div className="flex items-center gap-5 mb-8 relative z-10">
-                  <div className="w-14 h-14 rounded-2xl bg-white text-blue-700 flex items-center justify-center shadow-sm">
+                  <div className="w-14 h-14 rounded-xl bg-white text-blue-700 flex items-center justify-center shadow-sm">
                     <FiActivity className="w-7 h-7" />
                   </div>
                   <div>
@@ -415,7 +412,7 @@ const CountyDetail = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="bg-white border border-slate-100 rounded-[2rem] p-8 lg:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.06)] flex flex-col justify-center"
+                className="bg-white border border-slate-100 rounded-xl p-8 lg:p-10 shadow-sm flex flex-col justify-center"
               >
                 <span className="text-blue-600 font-bold tracking-widest uppercase text-xs mb-3 block">
                   Get in Touch

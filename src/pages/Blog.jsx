@@ -162,7 +162,7 @@ const Blog = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     key={video.id}
-                    className="bg-white rounded-[2rem] border border-slate-100 overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.1)] transition-all duration-500 group"
+                    className="bg-white rounded-xl border border-slate-100 overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.1)] transition-all duration-500 group"
                   >
                     <div className="relative h-72 overflow-hidden bg-slate-900">
                       {playingVideoId === video.id ? (
@@ -253,7 +253,7 @@ const Blog = () => {
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1, duration: 0.5 }}
                     key={post.id}
-                    className="bg-white rounded-[2rem] border border-slate-100 overflow-hidden shadow-[0_4px_20px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2 group flex flex-col h-full"
+                    className="bg-white rounded-xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2 group flex flex-col h-full"
                   >
                     <div className="h-72 overflow-hidden relative">
                       <img
@@ -303,10 +303,9 @@ const Blog = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-blue-700 to-indigo-800 rounded-[3rem] p-10 sm:p-16 text-center text-white shadow-2xl relative overflow-hidden mb-10"
+              className="bg-gradient-to-br from-blue-700 to-indigo-800 rounded-xl p-10 sm:p-16 text-center text-white shadow-2xl relative overflow-hidden mb-10"
             >
               <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-10 mix-blend-overlay"></div>
-              <div className="absolute top-0 right-0 w-64 h-64 bg-yellow-400/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
               <div className="relative z-10">
                 <span className="inline-block px-4 py-1.5 bg-white/10 text-yellow-300 rounded-full text-xs font-bold tracking-widest uppercase mb-6 backdrop-blur-sm border border-white/10">
                   Stay Informed

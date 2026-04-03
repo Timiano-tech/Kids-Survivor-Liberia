@@ -243,7 +243,6 @@ const OurTeam = () => {
 
         {/* Main Content */}
         <main className="py-20 lg:py-32 relative">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-50/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
           <div className="container mx-auto px-4 sm:px-6 relative z-10">
 
             {/* Team Members Grid - Premium */}
@@ -277,7 +276,7 @@ const OurTeam = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="flex flex-col bg-white rounded-[2rem] shadow-[0_4px_20px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] overflow-hidden border border-slate-100 hover:border-blue-100 transition-all duration-500 hover:-translate-y-2 group"
+                    className="flex flex-col bg-white rounded-xl shadow-sm hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] overflow-hidden border border-slate-100 hover:border-blue-100 transition-all duration-500 hover:-translate-y-2 group"
                   >
                     {/* Image Container */}
                     <div className="relative aspect-[4/5] bg-slate-50 overflow-hidden">

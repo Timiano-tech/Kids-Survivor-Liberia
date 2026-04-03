@@ -46,7 +46,7 @@ const ComingSoonModal = () => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.2 }}
-            className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-sm bg-white rounded-[2rem] shadow-2xl z-[201] overflow-hidden flex flex-col p-8 items-center text-center border border-slate-100"
+            className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-sm bg-white rounded-xl shadow-2xl z-[201] overflow-hidden flex flex-col p-8 items-center text-center border border-slate-100"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
 
@@ -57,7 +57,7 @@ const ComingSoonModal = () => {
               <FiX className="w-5 h-5" />
             </button>
 
-            <div className="w-16 h-16 bg-blue-50 text-blue-500 rounded-2xl flex items-center justify-center shadow-sm mb-6 relative z-10 border border-blue-100">
+            <div className="w-16 h-16 bg-blue-50 text-blue-500 rounded-xl flex items-center justify-center shadow-sm mb-6 relative z-10 border border-blue-100">
               <FiClock className="w-8 h-8" />
             </div>
 

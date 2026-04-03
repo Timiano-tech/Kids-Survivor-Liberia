@@ -140,7 +140,6 @@ const Donate = () => {
 
         {/* Main Content */}
         <main className="py-20 relative">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
           <div className="container mx-auto px-4 relative z-10">
             {/* Introduction - Premium */}
             <motion.div
@@ -167,7 +166,7 @@ const Donate = () => {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden h-full">
+                <div className="bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden h-full">
                   {/* Sleek header */}
                   <div className="bg-gradient-to-br from-blue-600 to-blue-700 px-6 py-5">
                     <div className="flex items-center gap-3">
@@ -255,7 +254,7 @@ const Donate = () => {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden h-full">
+                <div className="bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden h-full">
                   {/* Sleek header */}
                   <div className="bg-gradient-to-br from-emerald-600 to-teal-600 px-6 py-5">
                     <div className="flex items-center gap-3">
@@ -438,7 +437,7 @@ const Donate = () => {
                     icon: '📦'
                   }
                 ].map((item, index) => (
-                  <div key={index} className="bg-white p-8 rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.04)] border border-slate-100 hover:shadow-[0_10px_30px_rgb(0,0,0,0.08)] transition-all duration-300 group">
+                  <div key={index} className="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-[0_10px_30px_rgb(0,0,0,0.08)] transition-all duration-300 group">
                     <div className="text-4xl mb-6 group-hover:scale-110 transition-transform duration-300 inline-block">{item.icon}</div>
                     <h4 className="font-bold text-slate-900 mb-3 text-lg">{item.title}</h4>
                     <p className="text-slate-600 text-sm leading-relaxed">{item.description}</p>

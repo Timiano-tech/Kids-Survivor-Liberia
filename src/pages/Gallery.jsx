@@ -142,7 +142,7 @@ const Gallery = () => {
             animate={{ opacity: 1, y: 0 }}
             className="mb-16 flex justify-center"
           >
-            <div className="inline-flex flex-wrap justify-center gap-3 bg-slate-50 p-2 rounded-3xl border border-slate-200 shadow-sm max-w-full">
+            <div className="inline-flex flex-wrap justify-center gap-3 bg-slate-50 p-2 rounded-xl border border-slate-200 shadow-sm max-w-full">
               {galleryCategories.map((category) => (
                 <button
                   key={category.id}
@@ -172,7 +172,7 @@ const Gallery = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.05 }}
                 whileHover={{ y: -8 }}
-                className="relative group cursor-pointer overflow-hidden rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] bg-white border border-slate-100"
+                className="relative group cursor-pointer overflow-hidden rounded-xl shadow-sm hover:shadow-md bg-white border border-slate-100"
                 onClick={() => handleImageClick(image, index)}
               >
                 {/* Image Container */}
@@ -271,7 +271,7 @@ const Gallery = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="mt-8 text-center w-full max-w-2xl bg-slate-800/50 backdrop-blur-md rounded-2xl p-6 border border-white/10"
+              className="mt-8 text-center w-full max-w-2xl bg-slate-800/50 backdrop-blur-md rounded-xl p-6 border border-white/10"
             >
               <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-3 tracking-tight">{selectedImage.title}</h3>
               <p className="text-blue-100 text-lg mb-4 font-light leading-relaxed">{selectedImage.description}</p>

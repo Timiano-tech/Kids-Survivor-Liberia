@@ -88,8 +88,6 @@ const Footer = () => {
   return (
     <footer className="bg-slate-900 border-t border-slate-800 text-slate-300 relative overflow-hidden">
       {/* Subtle background glow */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl translate-y-[-50%] pointer-events-none animate-float-slow"></div>
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-yellow-500/10 rounded-full blur-3xl translate-y-[50%] pointer-events-none animate-float-slow" style={{ animationDelay: '2s' }}></div>
 
       <div className="container mx-auto px-4 py-16 lg:py-20 relative z-10">
         {/* Main Footer Content */}

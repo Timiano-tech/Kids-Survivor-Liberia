@@ -8,7 +8,7 @@ import {
   FiPhone,
 } from 'react-icons/fi';
 import { useCountyDetail } from '../hooks/useCountyDetail';
-import HeaderImage from '../assets/Talking to children.jpeg';
+
 
 const CountyDetail = () => {
   const { county, focusAreas, programs, stats, partners } = useCountyDetail();
@@ -42,16 +42,20 @@ const CountyDetail = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Header area for the specific county - Premium */}
-      <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[3rem] shadow-xl border-b border-slate-100">
+      <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-xl shadow-xl border-b border-slate-100">
         <div className="absolute inset-0 z-0">
-          <img
-            src={HeaderImage}
-            alt="County Detail Background"
-            className="w-full h-full object-cover"
-            fetchPriority="high"
-          />
-          <div className="absolute inset-0 bg-slate-900/80 mix-blend-multiply"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent"></div>
+          {county.mapImage ? (
+            <img
+              src={county.mapImage}
+              alt={`${county.name} map`}
+              className="w-full h-full object-cover"
+              fetchPriority="high"
+            />
+          ) : (
+            <div className="w-full h-full bg-slate-800"></div>
+          )}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/85 via-slate-900/75 to-indigo-900/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent"></div>
         </div>
 
         <div className="container mx-auto px-6 max-w-6xl relative z-10 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">

@@ -15,7 +15,7 @@ const Counties = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Page Header - Premium Redesign */}
-      <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[3rem] shadow-xl border-b border-slate-100">
+      <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-xl shadow-xl border-b border-slate-100">
         <div className="absolute inset-0 z-0">
           <img
             src={HeaderImage}
@@ -23,8 +23,8 @@ const Counties = () => {
             className="w-full h-full object-cover"
             fetchPriority="high"
           />
-          <div className="absolute inset-0 bg-slate-900/80 mix-blend-multiply"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/85 via-slate-900/75 to-indigo-900/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent"></div>
         </div>
 
         <div className="container mx-auto px-6 relative z-10 text-center max-w-4xl">
@@ -106,7 +106,7 @@ const Counties = () => {
                       </div>
                     )}
                     {/* Gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-white via-blue-900/10 to-transparent" />
                   </div>
 
                   <div className="p-8 flex-1 flex flex-col">

@@ -6,19 +6,19 @@ import { COUNTIES } from '../data/counties';
 import { showComingSoon } from './ComingSoonModal';
 
 const searchablePages = [
-  { name: 'Home', path: '/' },
-  { name: 'About KSL', path: '/about' },
-  { name: 'Transparency & Accountability', path: '/transparency' },
-  { name: 'Our Programs', path: '/programs' },
-  { name: 'Impact', path: '/impact' },
-  { name: 'Our Projects', path: '/projects' },
-  { name: 'Photo Gallery', path: '/gallery' },
-  { name: 'Counties', path: '/counties' },
-  { name: 'Blog', path: '/blog' },
-  { name: 'Volunteer', path: '/volunteer' },
-  { name: 'Partnership', path: '/partnership' },
-  { name: 'Contact Us', path: '/contact' },
-  { name: 'Donate', path: '/donate' },
+  { name: 'Home', path: '/', keywords: ['welcome', 'index', 'start', 'mission', 'vision', 'overview'] },
+  { name: 'About KSL', path: '/about', keywords: ['who we are', 'history', 'team', 'staff', 'background', 'leadership', 'board'] },
+  { name: 'Transparency & Accountability', path: '/transparency', keywords: ['financials', 'reports', 'trust', 'audit', 'governance', 'documents'] },
+  { name: 'Our Programs', path: '/programs', keywords: ['what we do', 'activities', 'education', 'rehabilitation', 'prevention', 'drug abuse', 'youth', 'empowerment'] },
+  { name: 'Impact', path: '/impact', keywords: ['results', 'statistics', 'success stories', 'outcomes', 'numbers', 'reach'] },
+  { name: 'Our Projects', path: '/projects', keywords: ['initiatives', 'current work', 'ongoing', 'interventions'] },
+  { name: 'Photo Gallery', path: '/gallery', keywords: ['pictures', 'images', 'photos', 'media', 'visuals', 'albums'] },
+  { name: 'Counties', path: '/counties', keywords: ['locations', 'places', 'regions', 'where we work', 'map', 'areas'] },
+  { name: 'Blog', path: '/blog', keywords: ['news', 'articles', 'updates', 'stories', 'press', 'announcements'] },
+  { name: 'Volunteer', path: '/volunteer', keywords: ['help out', 'join us', 'participate', 'get involved', 'support', 'time'] },
+  { name: 'Partnership', path: '/partnership', keywords: ['collaborate', 'sponsor', 'partner', 'allies', 'organizations', 'work with us'] },
+  { name: 'Contact Us', path: '/contact', keywords: ['email', 'phone', 'address', 'reach out', 'message', 'visit'] },
+  { name: 'Donate', path: '/donate', keywords: ['give', 'financial support', 'contribute', 'payment', 'donation', 'fundraise', 'money'] },
 ];
 
 const SearchModal = ({ isOpen, onClose }) => {
@@ -45,12 +45,14 @@ const SearchModal = ({ isOpen, onClose }) => {
     const lowerQuery = query.toLowerCase();
 
     const pageResults = searchablePages.filter(page => 
-      page.name.toLowerCase().includes(lowerQuery)
+      page.name.toLowerCase().includes(lowerQuery) ||
+      (page.keywords && page.keywords.some(keyword => keyword.toLowerCase().includes(lowerQuery)))
     );
 
     const countyResults = COUNTIES.filter(county => 
       county.name.toLowerCase().includes(lowerQuery) ||
-      (county.tagline && county.tagline.toLowerCase().includes(lowerQuery))
+      (county.tagline && county.tagline.toLowerCase().includes(lowerQuery)) ||
+      (county.keywords && county.keywords.some(keyword => keyword.toLowerCase().includes(lowerQuery)))
     );
 
     return { pages: pageResults, counties: countyResults };
@@ -86,7 +88,7 @@ const SearchModal = ({ isOpen, onClose }) => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed top-[10%] left-1/2 -translate-x-1/2 w-[90%] max-w-2xl bg-white rounded-2xl shadow-2xl z-[101] overflow-hidden flex flex-col max-h-[80vh]"
+            className="fixed top-[10%] left-1/2 -translate-x-1/2 w-[90%] max-w-2xl bg-white rounded-xl shadow-2xl z-[101] overflow-hidden flex flex-col max-h-[80vh]"
           >
             {/* Search Input */}
             <div className="relative flex items-center p-4 border-b border-slate-100">

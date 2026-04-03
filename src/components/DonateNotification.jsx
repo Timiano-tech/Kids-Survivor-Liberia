@@ -35,7 +35,7 @@ const DonateNotification = () => {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 50, scale: 0.9 }}
           transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-          className="fixed bottom-6 right-6 z-50 max-w-sm w-[calc(100%-3rem)] bg-white/95 backdrop-blur-xl rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.15)] border border-white/40 overflow-hidden"
+          className="fixed bottom-6 right-6 z-50 max-w-sm w-[calc(100%-3rem)] bg-white/95 backdrop-blur-xl rounded-xl shadow-[0_20px_40px_rgba(0,0,0,0.15)] border border-white/40 overflow-hidden"
         >
           {/* Subtle gradient accent */}
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500"></div>

@@ -1,4 +1,7 @@
-import React from 'react'
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { FiArrowRight } from 'react-icons/fi';
 import Mr_Steve from '../assets/team/Mr_Steve.png';
 import Mrs_Fiona from '../assets/team/Mrs_Fiona.png';
 import Mrs_Silvia from '../assets/team/Mrs_Silvia2.png';

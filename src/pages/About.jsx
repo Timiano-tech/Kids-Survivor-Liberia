@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import Team from '../components/Teams';
 import { motion } from 'framer-motion';
 import {
   FiTarget,
@@ -12,16 +12,11 @@ import {
   FiCheckCircle,
   FiCrosshair,
   FiBook,
-  FiArrowRight,
   FiBriefcase
 } from 'react-icons/fi';
 import KSLCompany from '../assets/KSL Company.jpeg';
 import KSL_Teams from '../assets/KSL_Team.jpeg';
 import KSL_Teams2 from '../assets/KSL_Team2.jpeg';
-import Mr_Steve from '../assets/team/Mr_Steve.png';
-import Mrs_Fiona from '../assets/team/Mrs_Fiona.png';
-import Mrs_Silvia from '../assets/team/Mrs_Silvia2.png';
-import CEO from '../assets/team/CEO.png';
 
 const About = () => {
   useEffect(() => {
@@ -97,33 +92,6 @@ const About = () => {
     }
   ];
 
-  // Team Members
-  const teamMembers = [
-    {
-      name: "Mr. Billy Jones",
-      teamImage: CEO,
-      position: "Chief Executive Officer (CEO)",
-      bio: "Provides visionary leadership and strategic oversight for KSL's national initiatives, including NADAP-aligned drug abuse prevention, child protection, and youth empowerment programs. Champions child safeguarding, ethical governance, and inclusive development across Liberia."
-    },
-    {
-      name: "Mr. Steve Darwin Wald",
-      teamImage: Mr_Steve,
-      position: "Director of Countries Operations",
-      bio: "Leads operational coordination and implementation oversight across KSL's areas of intervention. Translates strategic objectives into effective community-responsive programs, ensuring consistent delivery of drug demand reduction, prevention, and rehabilitation initiatives."
-    },
-    {
-      name: "Mrs. Fiona A. Etong",
-      teamImage: Mrs_Fiona,
-      position: "Nigeria Representative & Social Media Manager",
-      bio: "Leads digital communications and regional representation, amplifying KSL's mission through innovative online outreach. Strengthens public engagement for drug abuse prevention, youth empowerment, and child protection across borders."
-    },
-    {
-      name: "Mrs. Silvia T. Willie Dongon",
-      teamImage: Mrs_Silvia,
-      position: "Operational Advisor",
-      bio: "Provides strategic guidance for gender-sensitive protection programs targeting adolescent girls, widows, and vulnerable elderly men. Supports operational planning and integration of best practices in social inclusion and community engagement."
-    }
-  ];
 
   // Guiding Values from organizational document
   const guidingValues = [
@@ -162,7 +130,7 @@ const About = () => {
               fetchPriority="high"
             />
             <div className="absolute inset-0 bg-blue-900/80 mix-blend-multiply"></div>
-            <div className="absolute inset-0 bg-linear-to-t from-slate-900 via-slate-900/60 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent"></div>
           </div>
 
           <div className="relative z-10 container mx-auto px-6 text-center">
@@ -201,7 +169,7 @@ const About = () => {
                     <img
                       src={KSL_Teams}
                       alt="Kids Survivor Liberia Team"
-                      className="w-full h-125 object-cover rounded-xl group-hover:scale-105 transition-transform duration-700"
+                      className="w-full h-[31.25rem] object-cover rounded-xl group-hover:scale-105 transition-transform duration-700"
                       loading='lazy'
                     />
                   </div>
@@ -278,7 +246,7 @@ const About = () => {
               className="mb-24 max-w-7xl mx-auto"
             >
               <div className="bg-slate-900 rounded-xl p-10 md:p-16 text-white relative overflow-hidden shadow-2xl">
-                <div className="absolute top-0 right-0 w-200 h-200 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-blue-700/20 via-slate-900/5 to-transparent rounded-full -translate-y-1/2 translate-x-1/3"></div>
+                <div className="absolute top-0 right-0 w-[50rem] h-[50rem] bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-blue-700/20 via-slate-900/5 to-transparent rounded-full -translate-y-1/2 translate-x-1/3"></div>
                 <div className="relative z-10 grid md:grid-cols-12 gap-10 items-center">
                   <div className="md:col-span-5">
                     <div className="flex items-center gap-5 mb-4">
@@ -415,57 +383,7 @@ const About = () => {
             </motion.div>
 
             {/* Meet Our Team Section - Premium Redesign */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="mb-24 mt-32 max-w-7xl mx-auto"
-            >
-              <div className="text-center mb-16">
-                <span className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-3 block">Who We Are</span>
-                <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">Leadership & Team</h2>
-                <p className="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
-                  Committed professionals driving NADAP and YTEI-aligned interventions and sustainable community development.
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {teamMembers.map((member, index) => (
-                  <div
-                    key={index}
-                    className="group bg-white rounded-4xl shadow-sm overflow-hidden hover:shadow-md border border-slate-100 transition-all duration-500"
-                  >
-                    <div className="h-64 md:h-72 bg-slate-100 overflow-hidden relative">
-                      <div className="absolute inset-0 bg-blue-900/10 group-hover:bg-transparent transition-colors z-10 duration-500"></div>
-                      <img
-                        src={member.teamImage}
-                        alt={member.name}
-                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
-                        loading='lazy'
-                      />
-                    </div>
-
-                    <div className="p-8 relative bg-white">
-                      <div className="absolute top-0 right-8 -translate-y-1/2 w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg transform group-hover:rotate-45 transition-transform duration-300">
-                        <FiArrowRight className="text-slate-900" />
-                      </div>
-                      <h3 className="text-xl font-bold text-slate-900 mb-2 truncate" title={member.name}>{member.name}</h3>
-                      <p className="text-blue-600 font-medium mb-4 text-sm tracking-wide uppercase">{member.position}</p>
-                      <p className="text-slate-600 text-sm leading-relaxed line-clamp-4">{member.bio}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex justify-center mt-16 text-center">
-                <Link to="/team">
-                  <button className="bg-slate-900 text-white px-8 py-4 rounded-xl font-bold hover:bg-slate-800 transition-all shadow-xl hover:shadow-2xl flex items-center justify-center gap-3">
-                    Meet the Entire Team <FiArrowRight className="w-5 h-5" />
-                  </button>
-                </Link>
-              </div>
-            </motion.div>
+            <Team />
             {/* Our Impact Section - Premium Redesign */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -474,7 +392,7 @@ const About = () => {
               viewport={{ once: true }}
               className="mb-24 max-w-7xl mx-auto"
             >
-              <div className="bg-linear-to-t from-blue-700 to-blue-900 rounded-xl p-10 md:p-14 shadow-2xl relative overflow-hidden">
+              <div className="bg-gradient-to-t from-blue-700 to-blue-900 rounded-xl p-10 md:p-14 shadow-2xl relative overflow-hidden">
                 <div className="absolute inset-0 bg-[url('/assets/pattern-bg.png')] opacity-10 mix-blend-overlay"></div>
 
                 <h2 className="text-3xl md:text-5xl font-bold text-white mb-12 text-center tracking-tight drop-shadow-sm relative z-10">Strategic Impact & Alignment</h2>
@@ -527,7 +445,7 @@ const About = () => {
                   </div>
                 </div>
 
-                <div className="order-1 lg:order-2 h-125 w-full relative group">
+                <div className="order-1 lg:order-2 h-[31.25rem] w-full relative group">
                   <div className="absolute inset-0 bg-blue-600 rounded-xl translate-x-4 translate-y-4 opacity-10 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform duration-500"></div>
                   <img
                     src={KSL_Teams2}

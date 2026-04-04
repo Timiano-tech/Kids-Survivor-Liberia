@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import Team from '../components/Teams';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import {
   FiChevronLeft,
@@ -14,7 +15,6 @@ import {
   FiHome,
   FiBook,
   FiShield,
-  FiChevronDown,
   FiCalendar,
   FiUser,
   FiMessageSquare,
@@ -31,13 +31,9 @@ import Students from '../assets/Students.jpeg'
 import NoToDrugs from '../assets/Say no to drugs.jpeg'
 import Children3 from '../assets/Drug_Recovered.jpeg';
 import Children4 from '../assets/Children4.jpeg';
+import KSL_School from '../assets/KSL_School.jpeg';
 import Community from '../assets/Community.jpeg';
-import Mr_Steve from '../assets/team/Mr_Steve.png';
-import Mrs_Fiona from '../assets/team/Mrs_Fiona.png';
-import Mrs_Silvia from '../assets/team/Mrs_Silvia2.png';
-import CEO from '../assets/team/CEO.png';
 import BlogImage1 from '../assets/Students Impacted.jpeg';
-import BlogImage2 from '../assets/Helping Children.jpeg';
 import BlogImage3 from '../assets/Youth_Community_Outreach.jpeg';
 
 // Counter Component
@@ -124,34 +120,6 @@ const Home = () => {
     }
   ];
 
-  // Team Members
-  const teamMembers = [
-    {
-      name: "Mr. Billy Jones",
-      teamImage: CEO,
-      position: "Chief Executive Officer (CEO)",
-      bio: "Provides visionary leadership and strategic oversight for KSL's national initiatives, including NADAP-aligned drug abuse prevention, child protection, and youth empowerment programs. Champions child safeguarding, ethical governance, and inclusive development across Liberia."
-    },
-    {
-      name: "Mr. Steve Darwin Wald",
-      teamImage: Mr_Steve,
-      position: "Director of Countries Operations",
-      bio: "Leads operational coordination and implementation oversight across KSL's areas of intervention. Translates strategic objectives into effective community-responsive programs, ensuring consistent delivery of drug demand reduction, prevention, and rehabilitation initiatives."
-    },
-    {
-      name: "Mrs. Fiona A. Etong",
-      teamImage: Mrs_Fiona,
-      position: "Nigeria Representative & Social Media Manager",
-      bio: "Leads digital communications and regional representation, amplifying KSL's mission through innovative online outreach. Strengthens public engagement for drug abuse prevention, youth empowerment, and child protection across borders."
-    },
-    {
-      name: "Mrs. Silvia T. Willie Dongon",
-      teamImage: Mrs_Silvia,
-      position: "Operational Advisor",
-      bio: "Provides strategic guidance for gender-sensitive protection programs targeting adolescent girls, widows, and vulnerable elderly men. Supports operational planning and integration of best practices in social inclusion and community engagement."
-    }
-  ];
-
   // Latest News / Blog Posts aligned with program pillars
   const latestNews = [
     {
@@ -176,12 +144,12 @@ const Home = () => {
     },
     {
       id: 3,
-      title: "Community Engagement for Gender Protection & Social Inclusion",
-      excerpt: "Feeding children and supporting vulnerable groups through targeted interventions that promote social reintegration and community resilience.",
-      category: "Community Engagement",
-      date: "Jan 19, 2026",
+      title: "KIDS SURVIVOR LIBERIA PRIMARY & ELEMENTARY SCHOOL (KSL)",
+      excerpt: "KIDS SURVIVOR LIBERIA Primary & Elementary School (KSL) is located in Wee Statutory District, Compound #3, Grand Bassa County, Liberia. In alignment with our mission, KSL provides free educational opportunities for children from marginalized communities, especially those from low-income families who cannot afford the high cost of school fees. Many of these children are left without access to education due to financial hardship. Through our program, we aim to bridge this gap by offering free learning opportunities, giving every child a chance to learn, grow, and build a better future. We are committed to empowering the next generation through education, regardless of their background or economic status.",
+      category: "Education",
+      date: "Apr 04, 2026",
       author: "KSL Team",
-      image: BlogImage2,
+      image: KSL_School,
       link: "/blog"
     }
   ];
@@ -294,6 +262,46 @@ const Home = () => {
     }
   ];
 
+  const [currentStory, setCurrentStory] = useState(0);
+
+  const successStories = [
+    {
+      id: 1,
+      name: "Marcus Tamba",
+      role: "Youth Transformation Graduate",
+      quote: "Before joining KSL, I was completely lost and struggling. Their rehabilitation and skills training didn't just give me a second chance; it gave me the purpose I needed to rebuild my life.",
+      image: Children3,
+      program: "Rehabilitation & Social Reintegration"
+    },
+    {
+      id: 2,
+      name: "Grace Kollie",
+      role: "Scholarship Recipient",
+      quote: "My family couldn't afford secondary school fees, and I was on the verge of dropping out. The KSL education initiative stepped in. Now, I am a proud high school graduate pursuing a degree.",
+      image: Students,
+      program: "Education Support"
+    },
+    {
+      id: 3,
+      name: "David Sumo",
+      role: "Community Peace Ambassador",
+      quote: "Through KSL's community peacebuilding workshops, I learned that true leadership means bringing people together. I now volunteer to mentor adolescent boys, steering them away from crime.",
+      image: Community,
+      program: "Community Engagement"
+    }
+  ];
+
+  const nextStory = () => setCurrentStory((prev) => (prev + 1) % successStories.length);
+  const prevStory = () => setCurrentStory((prev) => (prev - 1 + successStories.length) % successStories.length);
+
+  // Auto-slide for Success Stories (8s interval for comfortable reading)
+  useEffect(() => {
+    const storyInterval = setInterval(() => {
+      setCurrentStory((prev) => (prev + 1) % successStories.length);
+    }, 8000);
+    return () => clearInterval(storyInterval);
+  }, [successStories.length]);
+
   // Auto-slide functionality
   useEffect(() => {
     if (!autoPlay) return;
@@ -400,7 +408,7 @@ const Home = () => {
                     }}
                     className="flex items-center mb-6"
                   >
-                    <div className="h-[2px] w-12 bg-yellow-400 mr-4"></div>
+                    <div className="h-0.5 w-12 bg-yellow-400 mr-4"></div>
                     <span className="text-yellow-400 uppercase tracking-[0.2em] text-xs sm:text-sm font-bold">
                       Making an Impact
                     </span>
@@ -836,13 +844,13 @@ const Home = () => {
         <div
           className="absolute inset-0 z-0"
           style={{
-            backgroundImage: `url(${Children4})`,
+            backgroundImage: `url(${KSL_School})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundAttachment: 'fixed'
           }}
         >
-          <div className="absolute inset-0 bg-slate-900/80 backdrop-blur-[2px]"></div>
+          <div className="absolute inset-0 bg-slate-900/50 backdrop-blur-[1px]"></div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -1023,64 +1031,99 @@ const Home = () => {
       </section>
 
       {/* Meet Our Team Section */}
-      <section className='px-8 mx-auto bg-white py-24'>
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="max-w-7xl mx-auto"
-        >
-          <div className="text-center mb-16">
-            <span className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-3 block">Who We Are</span>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">Leadership & Team</h2>
+      <Team/>
+
+      {/* Success Stories Section - Animated Carousel */}
+      <section className="py-24 bg-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/assets/pattern-bg.png')] opacity-5 mix-blend-multiply"></div>
+        <div className="container mx-auto px-4 relative z-10 max-w-6xl">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-3 block">Real Impact</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
+              Success Stories
+            </h2>
             <p className="text-slate-600 max-w-2xl mx-auto text-lg">
-              Committed professionals driving NADAP and YTEI-aligned interventions
+              Hear directly from the individuals and communities whose lives have been transformed.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {teamMembers.map((member, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl shadow-sm hover:shadow-md border border-slate-100 overflow-hidden transition-all duration-300 group"
+          <div className="relative">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentStory}
+                initial={{ opacity: 0, x: 50, scale: 0.95 }}
+                animate={{ opacity: 1, x: 0, scale: 1 }}
+                exit={{ opacity: 0, x: -50, scale: 0.95 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+                className="bg-slate-900 rounded-3xl overflow-hidden shadow-2xl relative"
               >
-                <div className="h-auto bg-gray-100 flex items-center justify-center">
-                  <img
-                    src={member.teamImage}
-                    alt={member.name}
-                    className="w-full h-full object-cover"
-                    loading='lazy'
+                <div className="grid md:grid-cols-2">
+                  <div className="relative h-64 md:h-auto">
+                    <img 
+                      src={successStories[currentStory].image} 
+                      alt={successStories[currentStory].name} 
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-slate-900 via-slate-900/40 to-transparent"></div>
+                  </div>
+                  <div className="p-8 md:p-14 flex flex-col justify-center relative">
+                    <div className="text-yellow-400 mb-6 flex space-x-1">
+                      {[...Array(5)].map((_, i) => (
+                        <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                      ))}
+                    </div>
+                    <blockquote className="text-xl md:text-2xl text-slate-300 font-light italic leading-relaxed mb-8">
+                      "{successStories[currentStory].quote}"
+                    </blockquote>
+                    <div>
+                      <h4 className="text-2xl font-bold text-white mb-1">{successStories[currentStory].name}</h4>
+                      <p className="text-blue-400 font-medium">{successStories[currentStory].role}</p>
+                      <div className="inline-flex mt-4 items-center px-3 py-1 bg-white/10 text-slate-300 rounded-full text-xs font-semibold tracking-wider uppercase border border-white/10">
+                        {successStories[currentStory].program}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Navigation Controls */}
+            <div className="flex justify-center items-center mt-12 gap-8">
+              <button 
+                onClick={prevStory}
+                className="w-12 h-12 rounded-full border border-slate-300 text-slate-500 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 shadow-sm transition-all duration-300"
+                aria-label="Previous story"
+              >
+                <FiChevronLeft className="w-6 h-6" />
+              </button>
+              
+              <div className="flex gap-3">
+                {successStories.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentStory(idx)}
+                    className={`h-2.5 rounded-full transition-all duration-300 ${currentStory === idx ? 'w-8 bg-blue-600' : 'w-2.5 bg-slate-300 hover:bg-slate-400'}`}
+                    aria-label={`Go to story ${idx + 1}`}
                   />
-                </div>
-
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-800 mb-1">{member.name}</h3>
-                  <p className="text-blue-600 font-medium mb-3">{member.position}</p>
-                  <p className="text-gray-600 text-sm mb-4">{member.bio}</p>
-                </div>
+                ))}
               </div>
-            ))}
-          </div>
 
-          {/* Team Page Navigation Button */}
-          <div className="flex justify-center mt-12">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <Link to="/team">
-                <button className="inline-flex items-center px-6 py-3 bg-white text-blue-600 border-2 border-blue-600 rounded-full font-semibold hover:bg-blue-50 transition-all duration-300 hover:scale-105">
-                  <span>View All Members</span>
-                  <FiArrowRight className="ml-2" />
-                </button>
-              </Link>
-            </motion.div>
+              <button 
+                onClick={nextStory}
+                className="w-12 h-12 rounded-full border border-slate-300 text-slate-500 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 shadow-sm transition-all duration-300"
+                aria-label="Next story"
+              >
+                <FiChevronRight className="w-6 h-6" />
+              </button>
+            </div>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Latest News Section */}

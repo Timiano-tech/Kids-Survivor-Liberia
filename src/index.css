@@ -12,6 +12,7 @@ body {
 }
 
 html {
+  font-size: 15px;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
@@ -68,9 +69,17 @@ h6 {
 
 /* Custom premium animations */
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .animate-float {
@@ -78,10 +87,21 @@ h6 {
 }
 
 @keyframes float-slow {
-  0% { transform: translate(0px, 0px) scale(1); }
-  33% { transform: translate(30px, -20px) scale(1.05); }
-  66% { transform: translate(-20px, 10px) scale(0.95); }
-  100% { transform: translate(0px, 0px) scale(1); }
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+
+  33% {
+    transform: translate(30px, -20px) scale(1.05);
+  }
+
+  66% {
+    transform: translate(-20px, 10px) scale(0.95);
+  }
+
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
 }
 
 .animate-float-slow {
@@ -89,11 +109,19 @@ h6 {
 }
 
 @keyframes soft-glow {
-  0% { box-shadow: 0 0 15px rgba(234, 179, 8, 0.2); }
-  50% { box-shadow: 0 0 30px rgba(234, 179, 8, 0.6); }
-  100% { box-shadow: 0 0 15px rgba(234, 179, 8, 0.2); }
+  0% {
+    box-shadow: 0 0 15px rgba(234, 179, 8, 0.2);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(234, 179, 8, 0.6);
+  }
+
+  100% {
+    box-shadow: 0 0 15px rgba(234, 179, 8, 0.2);
+  }
 }
 
 .animate-soft-glow {
   animation: soft-glow 3s ease-in-out infinite;
-}
+}

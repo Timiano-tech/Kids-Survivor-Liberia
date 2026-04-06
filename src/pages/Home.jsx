@@ -35,6 +35,7 @@ import KSL_School from '../assets/KSL_School.jpeg';
 import Community from '../assets/Community.jpeg';
 import BlogImage1 from '../assets/Students Impacted.jpeg';
 import BlogImage3 from '../assets/Youth_Community_Outreach.jpeg';
+import JohnHoward from '../assets/Success_Story.jpeg';
 
 // Counter Component
 const Counter = ({ end, duration = 2, label, icon }) => {
@@ -98,7 +99,7 @@ const Home = () => {
       id: 1,
       title: "Building a Brighter Future",
       subtitle: "For Liberia's Vulnerable Communities",
-      description: "Kids Survivor Liberia is commited to protecting vulnerable children, promoting education, and empowering young people to build a brighter future across communities in Liberia.",
+      description: "Kids Survivor Liberia is committed to protecting vulnerable children, promoting education, and empowering young people to build a brighter future across communities in Liberia.",
       imagePlaceholder: NoToDrugs,
       stats: "Protecting, Educating, Empowering"
     },
@@ -266,6 +267,14 @@ const Home = () => {
 
   const successStories = [
     {
+      id: 4,
+      name: "John Howard",
+      role: "Living Testimony of Transformation",
+      quote: "John Howard, once a homeless drug user and criminal in Lofa County, was reached by KSL in July 2025. Though initially resistant, he joined their support network. Of the 15 youths in his original group, two died from drugs, but John survived. Now the sole survivor, he is a living example of transformation and is actively rebuilding his life.",
+      image: JohnHoward,
+      program: "Rehabilitation & Social Reintegration"
+    },
+    {
       id: 1,
       name: "Marcus Tamba",
       role: "Youth Transformation Graduate",
@@ -358,7 +367,7 @@ const Home = () => {
             className="absolute inset-0"
           >
             {/* Background Image with Cinematic Slow Zoom (Ken Burns Effect) */}
-            <motion.div 
+            <motion.div
               initial={{ scale: 1.15 }}
               animate={{ scale: 1 }}
               transition={{ duration: 12, ease: "easeOut" }}
@@ -381,7 +390,7 @@ const Home = () => {
             {/* Premium Multi-layer Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/80 to-transparent z-10 w-[85%] sm:w-[70%] lg:w-[60%]"></div>
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-slate-900/40 z-10"></div>
-            
+
             {/* Content Area */}
             <div className="relative h-full flex items-center pt-20 sm:pt-24 z-20">
               <div className="container mx-auto px-6 sm:px-8 md:px-12 lg:px-16 max-w-7xl">
@@ -456,9 +465,9 @@ const Home = () => {
                     className="flex flex-wrap items-center gap-3 sm:gap-4 mb-10"
                   >
                     <Link to="/donate">
-                      <button className="group relative overflow-hidden rounded-xl bg-yellow-500 px-6 py-3 sm:px-8 sm:py-3.5 transition-all duration-300 hover:bg-yellow-400 hover:shadow-md hover:-translate-y-1">
+                      <button className="group relative overflow-hidden rounded-full bg-yellow-500 px-6 py-3 sm:px-8 sm:py-3.5 transition-all duration-300 hover:bg-yellow-400 hover:shadow-md hover:-translate-y-1">
                         <span className="relative z-10 flex items-center justify-center gap-2 text-slate-900 font-bold text-sm sm:text-base tracking-wide whitespace-nowrap">
-                          Support Our Mission 
+                          Support Our Mission
                           <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1 w-4 h-4 sm:w-5 sm:h-5" />
                         </span>
                       </button>
@@ -502,9 +511,8 @@ const Home = () => {
                 key={index}
                 onClick={() => setCurrentSlide(index)}
                 aria-label={`Go to slide ${index + 1}`}
-                className={`transition-all duration-500 rounded-full h-1.5 sm:h-2 ${
-                  index === currentSlide ? 'w-6 sm:w-8 bg-yellow-400' : 'w-3 sm:w-4 bg-white/40 hover:bg-white/70'
-                }`}
+                className={`transition-all duration-500 rounded-full h-1.5 sm:h-2 ${index === currentSlide ? 'w-6 sm:w-8 bg-yellow-400' : 'w-3 sm:w-4 bg-white/40 hover:bg-white/70'
+                  }`}
               />
             ))}
           </div>
@@ -764,7 +772,7 @@ const Home = () => {
                       {pillar.description}
                     </p>
                     <Link to={`/programs#pillar-${pillar.id}`}>
-                      <button className="w-full text-center bg-slate-50 hover:bg-blue-50 text-blue-600 hover:text-blue-700 font-bold py-4 rounded-xl transition-all duration-300 group-hover:ring-1 group-hover:ring-blue-100">
+                      <button className="w-full text-center bg-blue-50 hover:bg-blue-100 text-blue-600 font-bold py-4 rounded-full transition-all duration-300 shadow-sm">
                         Explore This Pillar &rarr;
                       </button>
                     </Link>
@@ -1031,7 +1039,7 @@ const Home = () => {
       </section>
 
       {/* Meet Our Team Section */}
-      <Team/>
+      <Team />
 
       {/* Success Stories Section - Animated Carousel */}
       <section className="py-24 bg-white relative overflow-hidden">
@@ -1065,9 +1073,9 @@ const Home = () => {
               >
                 <div className="grid md:grid-cols-2">
                   <div className="relative h-64 md:h-auto">
-                    <img 
-                      src={successStories[currentStory].image} 
-                      alt={successStories[currentStory].name} 
+                    <img
+                      src={successStories[currentStory].image}
+                      alt={successStories[currentStory].name}
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-slate-900 via-slate-900/40 to-transparent"></div>
@@ -1095,14 +1103,14 @@ const Home = () => {
 
             {/* Navigation Controls */}
             <div className="flex justify-center items-center mt-12 gap-8">
-              <button 
+              <button
                 onClick={prevStory}
                 className="w-12 h-12 rounded-full border border-slate-300 text-slate-500 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 shadow-sm transition-all duration-300"
                 aria-label="Previous story"
               >
                 <FiChevronLeft className="w-6 h-6" />
               </button>
-              
+
               <div className="flex gap-3">
                 {successStories.map((_, idx) => (
                   <button
@@ -1114,7 +1122,7 @@ const Home = () => {
                 ))}
               </div>
 
-              <button 
+              <button
                 onClick={nextStory}
                 className="w-12 h-12 rounded-full border border-slate-300 text-slate-500 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 shadow-sm transition-all duration-300"
                 aria-label="Next story"

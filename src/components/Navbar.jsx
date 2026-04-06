@@ -103,9 +103,11 @@ const Navbar = () => {
             <motion.div whileHover={{ scale: 1.05 }} className="shrink-0">
               <img src="/KSL Logo.png" alt="KSL LOGO" className="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 object-contain" />
             </motion.div>
-            <div className="min-w-0">
-              <h1 className={`font-bold text-sm sm:text-base md:text-lg truncate tracking-tight transition-colors ${isTransparent ? 'max-lg:text-gray-800 lg:text-white' : 'text-gray-800'}`}>Kids Survivor</h1>
-              <p className={`text-[9px] sm:text-[10px] md:text-xs truncate transition-colors ${isTransparent ? 'max-lg:text-yellow-600 lg:text-yellow-400' : 'text-gray-600'}`}>Liberia</p>
+            <div className="min-w-0 flex items-center">
+              <h1 className={`font-extrabold text-base sm:text-lg md:text-xl truncate tracking-tight transition-colors flex gap-1 ${isTransparent ? 'max-lg:text-gray-800 lg:text-white' : 'text-gray-800'}`}>
+                Kids Survivor 
+                <span className={`transition-colors font-bold ${isTransparent ? 'max-lg:text-yellow-600 lg:text-yellow-400' : 'text-yellow-500'}`}>Liberia</span>
+              </h1>
             </div>
           </Link>
 
@@ -172,7 +174,7 @@ const Navbar = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-yellow-400 text-white px-6 py-2 rounded-full font-medium shadow-md transition-all text-sm xl:text-base"
+                className="bg-yellow-500 hover:bg-yellow-400 text-slate-900 px-6 py-2 rounded-full font-bold shadow-md transition-all text-sm xl:text-base"
               >
                 Donate
               </motion.button>
@@ -267,7 +269,7 @@ const Navbar = () => {
                   >
                     <button
                       type="button"
-                      className="w-full bg-yellow-400 hover:bg-yellow-500 text-white py-3.5 rounded-xl font-bold shadow-sm transition-colors touch-manipulation min-h-12"
+                      className="w-full bg-yellow-500 hover:bg-yellow-400 text-slate-900 py-3.5 rounded-full font-bold shadow-sm transition-colors touch-manipulation min-h-12"
                     >
                       Donate Now
                     </button>

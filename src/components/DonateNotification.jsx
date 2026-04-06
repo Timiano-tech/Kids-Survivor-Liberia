@@ -55,7 +55,7 @@ const DonateNotification = () => {
                 <Link
                   to="/donate"
                   onClick={handleClose}
-                  className="bg-yellow-400 hover:bg-yellow-500 text-slate-900 text-sm font-bold px-5 py-2 rounded-lg transition-colors shadow-sm"
+                  className="bg-yellow-500 hover:bg-yellow-400 text-slate-900 text-sm font-bold px-5 py-2 rounded-full transition-colors shadow-sm"
                 >
                   Donate Now
                 </Link>

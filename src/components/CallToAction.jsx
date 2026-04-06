@@ -80,10 +80,10 @@ const CallToAction = () => {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="group bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 md:px-10 md:py-5 rounded-full text-lg font-bold shadow-[0_8px_25px_rgba(37,99,235,0.35)] hover:shadow-[0_12px_35px_rgba(37,99,235,0.5)] flex items-center gap-4 transition-all"
+                    className="group bg-yellow-500 hover:bg-yellow-400 text-slate-900 px-8 py-4 md:px-10 md:py-5 rounded-full text-lg font-bold shadow-[0_8px_25px_rgba(234,179,8,0.35)] hover:shadow-[0_12px_35px_rgba(234,179,8,0.5)] flex items-center gap-4 transition-all"
                   >
                     <span className="tracking-wide">Donate Today</span>
-                    <div className="bg-white/20 text-white rounded-full p-1.5 group-hover:bg-white group-hover:text-blue-600 transition-colors">
+                    <div className="bg-slate-900/10 text-slate-900 rounded-full p-1.5 group-hover:bg-slate-900 group-hover:text-yellow-400 transition-colors">
                       <FiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </motion.button>

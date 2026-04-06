@@ -2,7 +2,9 @@ import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiMenu, FiX, FiChevronDown, FiSearch } from 'react-icons/fi';
-import SearchModal from './SearchModal';
+import React, { Suspense } from 'react';
+
+const SearchModal = React.lazy(() => import('./SearchModal'));
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,6 +31,20 @@ const Navbar = () => {
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Global keyboard shortcut for Search (Ctrl+K or Cmd+K)
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      // Check for Cmd+K (Mac) or Ctrl+K (Windows/Linux)
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        setIsSearchOpen(true);
+      }
+    };
+    
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
   // Close mobile menu on resize to lg desktop
@@ -112,13 +128,13 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center lg:space-x-5 xl:space-x-8">
+          <div className="hidden lg:flex items-center lg:space-x-3 xl:space-x-5">
             {navItems.map((item) => (
               <div key={item.name} className="relative">
                 {item.dropdown ? (
                   <div className="relative">
                     <button 
-                      className={`flex items-center space-x-1 font-medium text-sm xl:text-base transition-colors ${isTransparent ? 'text-white hover:text-yellow-400' : 'text-gray-700 hover:text-blue-600'}`}
+                      className={`flex items-center space-x-1 font-medium text-[13px] xl:text-sm transition-colors ${isTransparent ? 'text-white hover:text-yellow-400' : 'text-gray-700 hover:text-blue-600'}`}
                       onClick={(e) => {
                         e.stopPropagation();
                         toggleDropdown(item.name);
@@ -139,7 +155,7 @@ const Navbar = () => {
                           <Link
                             key={subItem.name}
                             to={subItem.path}
-                            className="block px-4 py-2 text-sm xl:text-base text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
                             onClick={closeAllDropdowns}
                           >
                             {subItem.name}
@@ -151,7 +167,7 @@ const Navbar = () => {
                 ) : (
                   <Link
                     to={item.path}
-                    className={`font-medium text-sm xl:text-base transition-colors ${isTransparent ? 'text-white hover:text-yellow-400' : 'text-gray-700 hover:text-blue-600'}`}
+                    className={`font-medium text-[13px] xl:text-sm transition-colors ${isTransparent ? 'text-white hover:text-yellow-400' : 'text-gray-700 hover:text-blue-600'}`}
                     onClick={closeAllDropdowns}
                   >
                     {item.name}
@@ -160,13 +176,16 @@ const Navbar = () => {
               </div>
             ))}
             
-            {/* Search Button */}
+            {/* Search Button (with Shortcut Hint) */}
             <button
               onClick={() => setIsSearchOpen(true)}
-              className={`p-2 rounded-full transition-all duration-300 hover:bg-black/5 ${isTransparent ? 'text-white hover:bg-white/10' : 'text-gray-700 hover:bg-blue-50 hover:text-blue-600'}`}
+              className={`flex items-center gap-2 px-3 py-2 rounded-full transition-all duration-300 border ${isTransparent 
+                ? 'border-white/20 text-white bg-white/5 hover:bg-white/10' 
+                : 'border-slate-200 text-slate-500 bg-slate-50 hover:bg-slate-100 hover:text-blue-600'}`}
               aria-label="Search"
             >
-              <FiSearch className="w-5 h-5" />
+              <FiSearch className="w-4 h-4" />
+              <span className="text-sm font-medium pr-1">Search...</span>
             </button>
 
             {/* Donate Button */}
@@ -174,7 +193,7 @@ const Navbar = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-yellow-500 hover:bg-yellow-400 text-slate-900 px-6 py-2 rounded-full font-bold shadow-md transition-all text-sm xl:text-base"
+                className="bg-yellow-500 hover:bg-yellow-400 text-slate-900 px-5 py-2 rounded-full font-bold shadow-md transition-all text-sm"
               >
                 Donate
               </motion.button>
@@ -281,10 +300,14 @@ const Navbar = () => {
         </AnimatePresence>
       </div>
 
-      <SearchModal 
-        isOpen={isSearchOpen} 
-        onClose={() => setIsSearchOpen(false)} 
-      />
+      <Suspense fallback={null}>
+        {isSearchOpen && (
+          <SearchModal 
+            isOpen={isSearchOpen} 
+            onClose={() => setIsSearchOpen(false)} 
+          />
+        )}
+      </Suspense>
     </motion.nav>
   );
 };

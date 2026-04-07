@@ -219,8 +219,8 @@ const OurTeam = () => {
               className="w-full h-full object-cover"
               fetchPriority="high"
             />
-            <div className="absolute inset-0 bg-blue-900/85 mix-blend-multiply"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent"></div>
+            <div className="absolute inset-0 bg-blue-900/50 mix-blend-multiply"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent"></div>
           </div>
 
           <div className="relative z-10 container mx-auto px-6 text-center">

@@ -13,14 +13,14 @@ import {
   FiCheckCircle
 } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
-import HeaderImage from '../assets/Talking to children.jpeg';
+import HeaderImage from '../assets/Our_Impact_Cover.png';
 import StudentsImpact from '../assets/Students Impacted.jpeg';
-import ChildrenImpact from '../assets/Helping Children.jpeg';
-import ChildrenImpact2 from '../assets/ChildrenImpact.jpeg';
+import ChildrenImpact2 from '../assets/ChildrenImpact.jpg';
 import Treatment from '../assets/Treatment.jpeg';
 import Education from '../assets/Education.jpg';
 import SayNoToDrugs from '../assets/Say no to drugs.jpeg';
 import Sharing_Food from '../assets/Sharing_Food.jpg';
+import JohnHoward from '../assets/Success_Story.jpeg';
 
 // Animated Counter Component
 const AnimatedCounter = ({ end, duration = 2, prefix = '', suffix = '' }) => {
@@ -112,11 +112,11 @@ const Impact = () => {
       location: 'School Programs'
     },
     {
-      name: 'Community Outreach',
-      image: ChildrenImpact,
-      story: 'Kids Survivor Liberia conducting community outreach with children, offering education, care, and support in a safe environment. Through direct engagement, the organization promotes healthy living, discipline, and hope for a drug-free and productive life.',
-      category: 'Community Development',
-      location: 'Urban Communities'
+      name: 'John Howard',
+      image: JohnHoward,
+      story: 'John Howard, once a homeless drug user and criminal in Lofa County, was reached by KSL in July 2025. Though initially resistant, he joined their support network. Of the 15 youths in his original group, two died from drugs, but John survived. Now the sole survivor, he is a living example of transformation and is actively rebuilding his life.',
+      category: 'Rehabilitation & Social Reintegration',
+      location: 'Lofa County'
     },
     {
       name: 'Child Support',
@@ -193,7 +193,7 @@ const Impact = () => {
   return (
     <>
       <div className="min-h-screen bg-slate-50">
-        {/* Main Header Section - Premium Redesign */}
+        {/* Main Header Section -  Redesign */}
         <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[3rem] shadow-xl">
           <div className="absolute inset-0 z-0">
             <img
@@ -202,8 +202,8 @@ const Impact = () => {
               className="w-full h-full object-cover"
               fetchPriority="high"
             />
-            <div className="absolute inset-0 bg-slate-900/80 mix-blend-multiply"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent"></div>
+            <div className="absolute inset-0 bg-slate-900/50 mix-blend-multiply"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent"></div>
           </div>
 
           <div className="relative z-10 container mx-auto px-6 text-center">
@@ -227,7 +227,7 @@ const Impact = () => {
         {/* Main Content */}
         <main className="py-20 relative">
           <div className="container mx-auto px-4 relative z-10">
-            {/* Impact Statistics with Counting Animation - Premium */}
+            {/* Impact Statistics with Counting Animation -  */}
             <section className="mb-24">
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
@@ -310,7 +310,7 @@ const Impact = () => {
               </motion.div>
             </section>
 
-            {/* Strategic Impact Areas - Premium */}
+            {/* Strategic Impact Areas -  */}
             <section className="mb-24">
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
@@ -358,7 +358,7 @@ const Impact = () => {
               </div>
             </section>
 
-            {/* Lives Impacted Stories - Premium */}
+            {/* Lives Impacted Stories */}
             <section className="mb-24">
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
@@ -405,9 +405,6 @@ const Impact = () => {
                     </div>
 
                     <div className="p-8 lg:p-10 relative">
-                      <div className="absolute top-0 right-10 -translate-y-1/2 p-4 bg-white rounded-full shadow-lg border border-slate-100 text-blue-600 group-hover:text-white group-hover:bg-blue-600 transition-colors duration-300">
-                        <FiUsers className="w-6 h-6" />
-                      </div>
                       <div className="flex items-center text-sm font-bold tracking-wider uppercase text-slate-400 mb-4">
                         <FiMap className="mr-2 text-blue-400" />
                         {story.location}
@@ -426,7 +423,7 @@ const Impact = () => {
               </div>
             </section>
 
-            {/* Video Impact Stories - Premium */}
+            {/* Video Impact Stories -  */}
             <section className="mb-20">
               <motion.div
                 initial={{ opacity: 0, y: 40 }}

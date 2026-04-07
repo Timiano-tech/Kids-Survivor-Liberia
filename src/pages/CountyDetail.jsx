@@ -41,54 +41,48 @@ const CountyDetail = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header area for the specific county - Premium */}
-      <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-xl shadow-xl border-b border-slate-100">
+      {/* Main Header Section - matches all other pages */}
+      <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[3rem] shadow-xl border-b border-slate-100">
         <div className="absolute inset-0 z-0">
           {county.mapImage ? (
             <img
               src={county.mapImage}
-              alt={`${county.name} map`}
+              alt={`${county.name} Background`}
               className="w-full h-full object-cover"
               fetchPriority="high"
             />
           ) : (
             <div className="w-full h-full bg-slate-800"></div>
           )}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/85 via-slate-900/75 to-indigo-900/80"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-blue-900/50 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent"></div>
         </div>
 
-        <div className="container mx-auto px-6 max-w-6xl relative z-10 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="relative z-10 container mx-auto px-6 text-center">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="flex-1"
+            className="max-w-4xl mx-auto"
           >
             <span className="text-yellow-400 font-bold tracking-widest uppercase text-sm mb-4 block drop-shadow-md">
               County Operations
             </span>
-            <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-4 tracking-tight drop-shadow-xl">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 tracking-tight drop-shadow-xl">
               {county.name}
             </h1>
-            <p className="text-xl md:text-2xl text-blue-100 font-light leading-relaxed max-w-2xl border-l-4 border-yellow-400 pl-6">
+            <p className="text-xl md:text-2xl text-blue-100 font-light leading-relaxed max-w-3xl mx-auto border-l-4 border-yellow-400 pl-6 text-left md:text-center md:border-l-0 md:pl-0">
               {county.tagline}
             </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="mt-6 sm:mt-0"
-          >
-            <Link
-              to="/counties"
-              className="inline-flex items-center text-sm font-bold tracking-wide uppercase text-blue-100 hover:text-white border border-blue-400/30 hover:border-yellow-400 rounded-full px-6 py-3 bg-white/5 backdrop-blur-md transition-all duration-300 hover:bg-white/10 hover:shadow-[0_0_20px_rgba(250,204,21,0.2)] group"
-            >
-              <FiArrowLeft className="w-5 h-5 mr-3 group-hover:-translate-x-1 transition-transform" />
-              Back to all counties
-            </Link>
+            <div className="mt-8">
+              <Link
+                to="/counties"
+                className="inline-flex items-center text-sm font-bold tracking-wide uppercase text-blue-200 hover:text-white border border-blue-400/40 hover:border-yellow-400 rounded-full px-6 py-3 bg-white/5 backdrop-blur-md transition-all duration-300 hover:bg-white/10 group"
+              >
+                <FiArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
+                Back to All Counties
+              </Link>
+            </div>
           </motion.div>
         </div>
       </header>

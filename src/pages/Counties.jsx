@@ -14,28 +14,27 @@ const Counties = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Page Header - Premium Redesign */}
-      <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-xl shadow-xl border-b border-slate-100">
+      {/* Main Header Section */}
+      <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[3rem] shadow-xl border-b border-slate-100">
         <div className="absolute inset-0 z-0">
           <img
             src={HeaderImage}
-            alt="Counties Background"
+            alt="Media & Resources"
             className="w-full h-full object-cover"
             fetchPriority="high"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/85 via-slate-900/75 to-indigo-900/80"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-blue-900/50 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent"></div>
         </div>
 
-        <div className="container mx-auto px-6 relative z-10 text-center max-w-4xl">
+        <div className="relative z-10 container mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="max-w-4xl mx-auto"
           >
-            <span className="text-yellow-400 font-bold tracking-widest uppercase text-sm mb-4 block drop-shadow-md">
-              Our Presence in Liberia
-            </span>
+            <span className="text-yellow-400 font-bold tracking-widest uppercase text-sm mb-4 block drop-shadow-md">Our Presence in Liberia</span>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 tracking-tight drop-shadow-xl">
               County Operations
             </h1>

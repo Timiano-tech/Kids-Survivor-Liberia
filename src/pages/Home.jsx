@@ -36,6 +36,7 @@ import Community from '../assets/Community.jpeg';
 import BlogImage1 from '../assets/Students Impacted.jpeg';
 import BlogImage3 from '../assets/Youth_Community_Outreach.jpeg';
 import JohnHoward from '../assets/Success_Story.jpeg';
+import Franklin_Mondor from '../assets/Success_story2.jpeg';
 
 // Counter Component
 const Counter = ({ end, duration = 2, label, icon }) => {
@@ -269,17 +270,17 @@ const Home = () => {
     {
       id: 4,
       name: "John Howard",
-      role: "Living Testimony of Transformation",
+      role: "Living Testimony",
       quote: "John Howard, once a homeless drug user and criminal in Lofa County, was reached by KSL in July 2025. Though initially resistant, he joined their support network. Of the 15 youths in his original group, two died from drugs, but John survived. Now the sole survivor, he is a living example of transformation and is actively rebuilding his life.",
       image: JohnHoward,
       program: "Rehabilitation & Social Reintegration"
     },
     {
       id: 1,
-      name: "Marcus Tamba",
-      role: "Youth Transformation Graduate",
-      quote: "Before joining KSL, I was completely lost and struggling. Their rehabilitation and skills training didn't just give me a second chance; it gave me the purpose I needed to rebuild my life.",
-      image: Children3,
+      name: "Franklin Mondor",
+      role: "Transformation Graduate",
+      quote: "Franklin Mondor, a 41-year-old former drug dealer from Nimba County, spent over 13 years dealing drugs and opposing outreach programs like Kids Survivor Liberia. On January 2, 2026, he converted to Christianity during a prayer session, was taken in by the organization... seeks funding to learn a trade for reintegration.",
+      image: Franklin_Mondor,
       program: "Rehabilitation & Social Reintegration"
     },
     {
@@ -293,21 +294,17 @@ const Home = () => {
     {
       id: 3,
       name: "David Sumo",
-      role: "Community Peace Ambassador",
+      role: "Peace Ambassador",
       quote: "Through KSL's community peacebuilding workshops, I learned that true leadership means bringing people together. I now volunteer to mentor adolescent boys, steering them away from crime.",
       image: Community,
       program: "Community Engagement"
     }
   ];
 
-  const nextStory = () => setCurrentStory((prev) => (prev + 1) % successStories.length);
-  const prevStory = () => setCurrentStory((prev) => (prev - 1 + successStories.length) % successStories.length);
-
-  // Auto-slide for Success Stories (8s interval for comfortable reading)
   useEffect(() => {
     const storyInterval = setInterval(() => {
       setCurrentStory((prev) => (prev + 1) % successStories.length);
-    }, 8000);
+    }, 6000);
     return () => clearInterval(storyInterval);
   }, [successStories.length]);
 
@@ -1041,95 +1038,89 @@ const Home = () => {
       {/* Meet Our Team Section */}
       <Team />
 
-      {/* Success Stories Section - Animated Carousel */}
-      <section className="py-24 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/assets/pattern-bg.png')] opacity-5 mix-blend-multiply"></div>
-        <div className="container mx-auto px-4 relative z-10 max-w-6xl">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <span className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-3 block">Real Impact</span>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
-              Success Stories
-            </h2>
-            <p className="text-slate-600 max-w-2xl mx-auto text-lg">
-              Hear directly from the individuals and communities whose lives have been transformed.
-            </p>
-          </motion.div>
+      {/* Success Stories CTA Section */}
+      <section className="py-24 bg-slate-800 relative overflow-hidden flex items-center justify-center min-h-[700px]">
+        {/* Static Background Pattern */}
+        <div className="absolute inset-0 bg-[url('/assets/pattern-bg.png')] opacity-15 mix-blend-overlay"></div>
+        
 
-          <div className="relative">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentStory}
-                initial={{ opacity: 0, x: 50, scale: 0.95 }}
-                animate={{ opacity: 1, x: 0, scale: 1 }}
-                exit={{ opacity: 0, x: -50, scale: 0.95 }}
-                transition={{ duration: 0.6, ease: "easeInOut" }}
-                className="bg-slate-900 rounded-3xl overflow-hidden shadow-2xl relative"
-              >
-                <div className="grid md:grid-cols-2">
-                  <div className="relative h-64 md:h-auto">
-                    <img
-                      src={successStories[currentStory].image}
-                      alt={successStories[currentStory].name}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-slate-900 via-slate-900/40 to-transparent"></div>
-                  </div>
-                  <div className="p-8 md:p-14 flex flex-col justify-center relative">
-                    <div className="text-yellow-400 mb-6 flex space-x-1">
+        <div className="container mx-auto px-4 relative z-10 max-w-7xl">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            
+            {/* Auto-rotating Image Side */}
+            <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl border border-white/20 ring-4 ring-white/5">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentStory}
+                  initial={{ opacity: 0, scale: 1.05 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 1.05 }}
+                  transition={{ duration: 0.8, ease: "easeInOut" }}
+                  className="absolute inset-0"
+                >
+                  <img 
+                    src={successStories[currentStory].image} 
+                    alt="Verifiable Success Story" 
+                    className="w-full h-full object-cover"
+                  />
+                  {/* Lighter Gradient Overlay so picture is clearer */}
+                  <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent"></div>
+                  
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <div className="flex gap-1 mb-3">
                       {[...Array(5)].map((_, i) => (
-                        <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg key={i} className="w-5 h-5 text-yellow-400 fill-current drop-shadow-md" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
                       ))}
                     </div>
-                    <blockquote className="text-xl md:text-2xl text-slate-300 font-light italic leading-relaxed mb-8">
-                      "{successStories[currentStory].quote}"
-                    </blockquote>
-                    <div>
-                      <h4 className="text-2xl font-bold text-white mb-1">{successStories[currentStory].name}</h4>
-                      <p className="text-blue-400 font-medium">{successStories[currentStory].role}</p>
-                      <div className="inline-flex mt-4 items-center px-3 py-1 bg-white/10 text-slate-300 rounded-full text-xs font-semibold tracking-wider uppercase border border-white/10">
-                        {successStories[currentStory].program}
-                      </div>
-                    </div>
+                    <h4 className="text-2xl font-bold text-white mb-2 drop-shadow-md">{successStories[currentStory].name}</h4>
+                    <p className="text-blue-200 font-semibold bg-slate-900/60 inline-block px-3 py-1 rounded backdrop-blur-sm border border-blue-400/30 text-sm drop-shadow-md">{successStories[currentStory].program}</p>
                   </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-
-            {/* Navigation Controls */}
-            <div className="flex justify-center items-center mt-12 gap-8">
-              <button
-                onClick={prevStory}
-                className="w-12 h-12 rounded-full border border-slate-300 text-slate-500 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 shadow-sm transition-all duration-300"
-                aria-label="Previous story"
-              >
-                <FiChevronLeft className="w-6 h-6" />
-              </button>
-
-              <div className="flex gap-3">
-                {successStories.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setCurrentStory(idx)}
-                    className={`h-2.5 rounded-full transition-all duration-300 ${currentStory === idx ? 'w-8 bg-blue-600' : 'w-2.5 bg-slate-300 hover:bg-slate-400'}`}
-                    aria-label={`Go to story ${idx + 1}`}
-                  />
-                ))}
-              </div>
-
-              <button
-                onClick={nextStory}
-                className="w-12 h-12 rounded-full border border-slate-300 text-slate-500 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 shadow-sm transition-all duration-300"
-                aria-label="Next story"
-              >
-                <FiChevronRight className="w-6 h-6" />
-              </button>
+                </motion.div>
+              </AnimatePresence>
             </div>
+
+            {/* Content Side */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="lg:pl-8 text-center lg:text-left drop-shadow-lg"
+            >
+              <div className="inline-flex items-center px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full text-xs font-bold tracking-widest uppercase mb-6 border border-blue-400/30 shadow-inner backdrop-blur-sm">
+                <FiHeart className="mr-2" /> Verified Impact
+              </div>
+              <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight leading-tight">
+                Voices of Transformation
+              </h2>
+              <p className="text-slate-200 text-lg leading-relaxed mb-8">
+                Through our targeted, community-driven interventions aligned with NADAP and YTEI, we are changing lives across Liberia. Read the powerful testimonies of individuals who have overcome tremendous odds and are now building brighter futures.
+              </p>
+              
+              <AnimatePresence mode="wait">
+                <motion.blockquote 
+                  key={currentStory}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.5 }}
+                  className="border-l-4 border-blue-400 pl-6 mb-10 text-left h-32 flex items-center bg-slate-900/40 rounded-r-2xl py-4 pr-6 border-y border-r border-slate-700/50 shadow-inner backdrop-blur-sm"
+                >
+                  <p className="text-xl text-white font-light italic leading-relaxed line-clamp-4">
+                    "{successStories[currentStory].quote}"
+                  </p>
+                </motion.blockquote>
+              </AnimatePresence>
+
+              <Link to="/impact">
+                <button className="group relative overflow-hidden rounded-xl bg-blue-600 px-8 py-4 transition-all duration-300 hover:bg-blue-500 hover:shadow-[0_0_30px_rgba(37,99,235,0.6)] w-full sm:w-auto border border-blue-400/50">
+                  <span className="relative z-10 flex items-center justify-center gap-2 text-white font-bold tracking-wider uppercase text-sm">
+                    View Our Impact
+                    <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1.5 w-5 h-5" />
+                  </span>
+                </button>
+              </Link>
+            </motion.div>
           </div>
         </div>
       </section>

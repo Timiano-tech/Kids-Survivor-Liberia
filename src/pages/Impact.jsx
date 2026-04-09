@@ -5,15 +5,13 @@ import {
   FiTrendingUp,
   FiTarget,
   FiMap,
-  FiBarChart2,
   FiPlay,
   FiUsers,
   FiHeart,
-  FiAward,
   FiCheckCircle
 } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
-import HeaderImage from '../assets/Our_Impact_Cover.png';
+import HeaderImage from '../assets/School_Students.jpeg';
 import StudentsImpact from '../assets/Students Impacted.jpeg';
 import ChildrenImpact2 from '../assets/ChildrenImpact.jpg';
 import Treatment from '../assets/Treatment.jpeg';

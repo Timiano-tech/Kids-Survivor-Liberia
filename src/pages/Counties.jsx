@@ -65,92 +65,120 @@ const Counties = () => {
             </motion.div>
           </section>
 
-          {/* Counties grid */}
-          <section>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-10">
-              {COUNTIES.map((county, index) => (
-                <motion.article
-                  key={county.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.05 }}
-                  className="group bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-md hover:border-blue-100 transition-all duration-500 hover:-translate-y-2 flex flex-col relative overflow-hidden"
-                >
-                  {/* Map Image Area */}
-                  <div className="relative h-44 overflow-hidden">
-                    {county.mapImage ? (
-                      <img
-                        src={county.mapImage}
-                        alt={`${county.name} map`}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
-                        loading="lazy"
-                      />
-                    ) : (
-                      <div className="w-full h-full bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 flex flex-col items-center justify-center relative">
-                        {/* Decorative dots pattern */}
-                        <div
-                          className="absolute inset-0 opacity-[0.06]"
-                          style={{
-                            backgroundImage: 'radial-gradient(circle at 2px 2px, #3b82f6 1px, transparent 0)',
-                            backgroundSize: '20px 20px',
-                          }}
-                        />
-                        <div className="relative z-10 flex flex-col items-center">
-                          <div className="w-14 h-14 rounded-xl bg-blue-100 text-blue-500 flex items-center justify-center mb-3 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
-                            <FiMapPin className="w-7 h-7" />
-                          </div>
-                          <span className="text-xs font-bold text-blue-400 uppercase tracking-widest">Map Coming Soon</span>
+          {/* Counties grid - Redesigned Premium Layout */}
+          <section className="relative">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 xl:gap-8">
+              {COUNTIES.map((county, index) => {
+                const isActive = ['montserrado', 'margibi', 'bong', 'nimba', 'lofa', 'grand-bassa', 'grand-gedeh'].includes(county.id);
+                
+                return (
+                  <motion.article
+                    key={county.id}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.05, duration: 0.5 }}
+                    className={`group relative overflow-hidden rounded-2xl border transition-all duration-500 hover:-translate-y-2 h-[380px] flex flex-col ${
+                      isActive 
+                        ? 'bg-white border-slate-200 shadow-sm hover:shadow-2xl hover:border-blue-200' 
+                        : 'bg-slate-50 border-slate-100 opacity-90'
+                    }`}
+                  >
+                    {/* Background Map/Flag Watermark */}
+                    <div className="absolute inset-0 z-0 overflow-hidden">
+                      {county.mapImage ? (
+                        <div className="relative w-full h-full">
+                          <img
+                            src={county.mapImage}
+                            alt={`${county.name} map`}
+                            className={`w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-125 ${
+                              isActive ? 'opacity-40 grayscale group-hover:grayscale-0' : 'opacity-20 grayscale'
+                            }`}
+                            loading="lazy"
+                          />
+                          <div className={`absolute inset-0 bg-gradient-to-b ${
+                            isActive 
+                              ? 'from-transparent via-white/40 to-white/95' 
+                              : 'from-slate-50/50 via-slate-50/80 to-slate-50'
+                          }`} />
                         </div>
-                      </div>
-                    )}
-                    {/* Gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-white via-blue-900/10 to-transparent" />
-                  </div>
-
-                  <div className="p-8 flex-1 flex flex-col">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 group-hover:bg-blue-100 transition-colors duration-500 pointer-events-none"></div>
-
-                    <div className="flex items-center justify-between gap-3 mb-6 relative z-10">
-                      <div className="flex items-center gap-4">
-                        <div>
-                          <h2 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight group-hover:text-blue-600 transition-colors duration-300">
-                            {county.name}
-                          </h2>
-                          <p className="text-xs text-blue-600 font-bold uppercase tracking-widest mt-1">
-                            KSL Region
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <p className="text-slate-600 text-base mb-8 flex-1 leading-relaxed relative z-10 font-medium">
-                      {county.tagline}
-                    </p>
-
-                    <div className="mt-auto relative z-10 border-t border-slate-100 pt-6">
-                      {['montserrado', 'margibi', 'bong', 'nimba', 'lofa', 'grand-bassa', 'grand-gedeh'].includes(county.id) ? (
-                        <Link
-                          to={`/counties/${county.id}`}
-                          className="inline-flex items-center justify-center w-full px-6 py-3 bg-slate-50 text-blue-600 font-bold rounded-xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
-                        >
-                          Explore Programs
-                          <span className="ml-2 group-hover:translate-x-1 transition-transform">
-                            →
-                          </span>
-                        </Link>
                       ) : (
-                        <button
-                          onClick={(e) => { e.preventDefault(); showComingSoon(county.name); }}
-                          className="inline-flex items-center justify-center w-full px-6 py-3 bg-slate-50 text-slate-400 font-bold rounded-xl hover:bg-slate-100 transition-all duration-300 shadow-sm border border-slate-100 cursor-not-allowed"
-                        >
-                          Coming Soon
-                        </button>
+                        <div className="w-full h-full bg-slate-100/50" />
                       )}
                     </div>
-                  </div>
-                </motion.article>
-              ))}
+
+                    {/* Content Layer */}
+                    <div className="relative z-10 p-6 flex flex-col h-full">
+                      {/* Top Header */}
+                      <div className="flex justify-between items-start mb-4">
+                        <div className={`p-3 rounded-xl backdrop-blur-md border transition-all duration-300 ${
+                          isActive 
+                            ? 'bg-blue-600/10 border-blue-600/20 text-blue-600 group-hover:bg-blue-600 group-hover:text-white' 
+                            : 'bg-slate-200/50 border-slate-300/50 text-slate-400'
+                        }`}>
+                          <FiMapPin className="w-5 h-5" />
+                        </div>
+                        
+                        {isActive && (
+                          <span className="text-[10px] font-black uppercase tracking-[0.2em] px-3 py-1 bg-green-500/10 text-green-600 rounded-full border border-green-500/20">
+                            Active
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Main Info */}
+                      <div className="mt-auto">
+                        <div className="mb-2">
+                          <span className="text-[10px] font-bold text-blue-500 uppercase tracking-widest block mb-1">
+                            Liberia Region
+                          </span>
+                          <h2 className={`text-2xl font-black tracking-tighter transition-colors duration-300 ${
+                            isActive ? 'text-slate-900 group-hover:text-blue-700' : 'text-slate-400'
+                          }`}>
+                            {county.name}
+                          </h2>
+                        </div>
+
+                        <p className={`text-sm leading-relaxed mb-6 font-medium line-clamp-3 transition-opacity duration-300 ${
+                          isActive ? 'text-slate-600 opacity-90 group-hover:opacity-100' : 'text-slate-400'
+                        }`}>
+                          {county.tagline}
+                        </p>
+
+                        {/* Action Area */}
+                        <div className="pt-4 border-t border-slate-200/50">
+                          {isActive ? (
+                            <Link
+                              to={`/counties/${county.id}`}
+                              className="inline-flex items-center gap-2 text-sm font-black text-blue-600 group-hover:text-blue-800 transition-all duration-300"
+                            >
+                              EXPLORE PROGRAMS
+                              <motion.span
+                                animate={{ x: [0, 5, 0] }}
+                                transition={{ repeat: Infinity, duration: 1.5 }}
+                              >
+                                →
+                              </motion.span>
+                            </Link>
+                          ) : (
+                            <button
+                              onClick={(e) => { e.preventDefault(); showComingSoon(county.name); }}
+                              className="text-[10px] font-black text-slate-400 uppercase tracking-widest cursor-default"
+                            >
+                              Expanding Soon
+                            </button>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Decorative Hover Effect - Subtle Glow */}
+                    {isActive && (
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                    )}
+                  </motion.article>
+                );
+              })}
             </div>
             <ScrollToTopButton />
           </section>

@@ -21,6 +21,57 @@ import Youth3 from '../assets/Youth_Community_Outreach.jpeg';
 import Team_Discussion from '../assets/Team_discussion.jpeg';
 import Sharing_Food from '../assets/Children.jpeg';
 import Sharing_Food2 from '../assets/Food_sharing2.jpeg';
+import The_CEO from '../assets/The_Ceo2.jpeg';
+import CEO2 from '../assets/The_Ceo.jpeg';
+import CEO3 from '../assets/The_Ceo3.jpeg';
+import CEO4 from '../assets/The_Ceo4.jpeg';
+import CEO_IN_ANOTHER_COUNTY from '../assets/CEO_IN_ANOTHER_COUNTY.jpeg';
+import CEO_IN_ANOTHER_COUNTY2 from '../assets/CEO_IN_ANOTHER_COUNTY2.jpeg';
+import Zwedru from '../assets/Zwedru_City.jpeg';
+import Community_Children from '../assets/Community_Children.jpeg';
+import Community_Children2 from '../assets/Community_Children2.jpeg';
+
+import Women_in_community from '../assets/Women_in_community.jpeg';
+import Women_in_community2 from '../assets/Women_in_community2.jpeg';
+import Women_in_community3 from '../assets/Women_in_community3.jpeg';
+import Women_in_community4 from '../assets/Women_in_community4.jpeg';
+import Women_in_community5 from '../assets/Women_in_community5.jpeg';
+import KSL_School from '../assets/KSL_School.jpeg';
+import KSL_School2 from '../assets/KSL_School2.jpeg';
+import KSL_School3 from '../assets/KSL_School3.jpeg';
+import KSL_School4 from '../assets/KSL_School4.jpeg';
+import KSL_School5 from '../assets/KSL_School5.jpeg';
+import KSL_School6 from '../assets/KSL_School6.jpeg';
+import KSL_School7 from '../assets/KSL_School7.jpeg';
+import KSL_School8 from '../assets/KSL_School8.jpeg';
+import KSL_School9 from '../assets/KSL_School9.jpeg';
+import KSL_School10 from '../assets/KSL_School10.jpeg';
+import KSL_School11 from '../assets/KSL_School11.jpeg';
+import KSL_School12 from '../assets/KSL_School12.jpeg';
+import KSL_Team1 from '../assets/KSL_Team.jpeg';
+import KSL_Company from '../assets/KSL Company.jpeg';
+import KSL_Company2 from '../assets/KSL Company 2.jpeg';
+import Team_Discussion2 from '../assets/Team_discussion2.jpeg';
+import Team_Meeting from '../assets/Team_meeting.jpeg';
+import Team_Full from '../assets/Team.jpeg';
+import Children2 from '../assets/Children2.jpeg';
+import Children3 from '../assets/Children3.jpeg';
+import Children4 from '../assets/Children4.jpeg';
+import Children5 from '../assets/Children5.jpeg';
+import ClassRoom from '../assets/Class Room.jpeg';
+import Community_Speech from '../assets/Community_Speech.jpeg';
+import Community_Speech2 from '../assets/Community_Speech2.jpeg';
+import Community_Speech3 from '../assets/Community_Speech3.jpeg';
+import Community_Speech4 from '../assets/Community_Speech4.jpeg';
+import Community_Speech5 from '../assets/Community_Speech5.jpeg';
+import Drug_Recovered from '../assets/Drug_Recovered.jpeg';
+import Feedin_Children from "../assets/Feedin Children.jpeg";
+import Helping_Children from "../assets/Helping Children.jpeg";
+import SayNoDrugs from "../assets/Say no to drugs.jpeg";
+import SchoolAssembly from "../assets/School assembly.jpeg";
+import Students3 from '../assets/Students3.jpeg';
+import TalkingToChildren from "../assets/Talking to children.jpeg";
+import Treatment from '../assets/Treatment.jpeg';
 
 
 
@@ -42,28 +93,83 @@ const Gallery = () => {
     { id: 'teams', name: 'Teams' },
   ];
 
-  // Sample gallery images 
+  // Gallery images
   const galleryImages = [
+    // --- Education ---
     { id: 1, src: Education1, category: 'education', title: 'School Support Program', description: 'Providing educational materials to local schools' },
+    { id: 6, src: Education2, category: 'education', title: 'Enlightening Students', description: 'Enlightening Students on the Danger of Drug Abuse' },
+    { id: 11, src: Education4, category: 'education', title: 'Encouraging Students', description: 'Encouraging Students to focus on their studies' },
+    { id: 16, src: Education3, category: 'education', title: 'Students Impacted', description: 'Encouraging Students to focus on their studies' },
+    { id: 21, src: KSL_School, category: 'education', title: 'KSL School', description: 'Kids Survivor Liberia Primary & Elementary School' },
+    { id: 22, src: KSL_School2, category: 'education', title: 'KSL School', description: 'Kids Survivor Liberia Primary & Elementary School' },
+    { id: 23, src: KSL_School3, category: 'education', title: 'KSL School', description: 'Kids Survivor Liberia Primary & Elementary School' },
+    { id: 24, src: KSL_School4, category: 'education', title: 'KSL School', description: 'Kids Survivor Liberia Primary & Elementary School' },
+    { id: 25, src: KSL_School5, category: 'education', title: 'KSL School', description: 'Kids Survivor Liberia Primary & Elementary School' },
+    { id: 26, src: KSL_School6, category: 'education', title: 'KSL School', description: 'Kids Survivor Liberia Primary & Elementary School' },
+    { id: 27, src: KSL_School7, category: 'education', title: 'KSL School', description: 'Kids Survivor Liberia Primary & Elementary School' },
+    { id: 28, src: KSL_School8, category: 'education', title: 'KSL School', description: 'Kids Survivor Liberia Primary & Elementary School' },
+    { id: 29, src: KSL_School9, category: 'education', title: 'KSL School', description: 'Kids Survivor Liberia Primary & Elementary School' },
+    { id: 30, src: KSL_School10, category: 'education', title: 'KSL School', description: 'Kids Survivor Liberia Primary & Elementary School' },
+    { id: 31, src: KSL_School11, category: 'education', title: 'KSL School', description: 'Kids Survivor Liberia Primary & Elementary School' },
+    { id: 32, src: KSL_School12, category: 'education', title: 'KSL School', description: 'Kids Survivor Liberia Primary & Elementary School' },
+    { id: 33, src: ClassRoom, category: 'education', title: 'Classroom', description: 'Students learning in a KSL classroom' },
+    { id: 34, src: SchoolAssembly, category: 'education', title: 'School Assembly', description: 'Students gathered for morning assembly' },
+    { id: 35, src: Students3, category: 'education', title: 'Students', description: 'Students at the KSL school program' },
+    { id: 36, src: TalkingToChildren, category: 'education', title: 'Talking to Children', description: 'Educators engaging with young children' },
+    { id: 37, src: SayNoDrugs, category: 'education', title: 'Say No to Drugs', description: 'Awareness campaign on the dangers of drug abuse' },
+
+    // --- Community ---
     { id: 2, src: Community, category: 'community', title: 'Community Health Day', description: 'Free health checkups in rural communities' },
-    { id: 3, src: KSL, category: 'teams', title: 'Kids Survivor Liberia Team', description: 'Raising awareness for children rights' },
     { id: 4, src: Community5, category: 'community', title: 'Feeding Children', description: 'Providing Meals for all the children in the Community' },
     { id: 5, src: CommunityLeaders, category: 'community', title: 'Community Leaders', description: 'Meeting with the Community Leaders' },
-    { id: 6, src: Education2, category: 'education', title: 'Enlightening Students', description: 'Enlightening Students on the Danger of Drug Abuse' },
     { id: 7, src: Community2, category: 'community', title: 'Food Distribution', description: 'Providing nutritious meals to families' },
     { id: 8, src: Youth2, category: 'community', title: 'Community Youth', description: 'Encouraging youth in the community' },
     { id: 9, src: Youth3, category: 'community', title: 'Youth Encouragement', description: 'Encouraging youth in the community' },
-    { id: 10, src: Youth_Barbing, category: 'community', title: 'Youth', description: 'Barbing Youth' },
-    { id: 11, src: Education4, category: 'education', title: 'Encouraging Students', description: 'Encouraging Students to focus on their studies' },
+    { id: 10, src: Youth_Barbing, category: 'community', title: 'Youth Barbing', description: 'Barbing Youth in the community' },
     { id: 12, src: Community3, category: 'community', title: 'Food Distribution', description: 'Providing nutritious meals to families' },
-    { id: 13, src: Campeign2, category: 'community', title: 'Campaign', description: 'A Larger Campaign' },
-    { id: 14, src: Team_Discussion, category: 'teams', title: 'Project Planning', description: 'Team working together on how to execute projects' },
-    { id: 15, src: Sharing_Food2, category: 'community', title: 'Food Distribution', description: 'Providing nutritious meals to families' },
-    { id: 16, src: Education3, category: 'education', title: 'Encouraging Students', description: 'Encouraging Students to focus on their studies' },
-    { id: 17, src: Community4, category: 'community', title: 'Feeding Children', description: 'Providing Meals for all the children in the Community' },
+    { id: 13, src: Campeign2, category: 'community', title: 'Anti-Drug Campaign', description: 'Campaign against drug abuse' },
+    { id: 15, src: Sharing_Food2, category: 'community', title: 'Food Sharing', description: 'Providing nutritious meals to families' },
+    { id: 17, src: Community4, category: 'community', title: 'Community Outreach', description: 'Outreach activities in the community' },
     { id: 18, src: Sharing_Food, category: 'community', title: 'Food Distribution', description: 'Providing nutritious meals to families' },
+    { id: 20, src: Campeign, category: 'community', title: 'Fundraising & Community Outreach', description: 'Raising awareness in the Community' },
+    { id: 38, src: Community_Children, category: 'community', title: 'Community Children', description: 'Children in community outreach' },
+    { id: 39, src: Community_Children2, category: 'community', title: 'Community Children', description: 'Children in community outreach' },
+    { id: 43, src: Women_in_community, category: 'community', title: 'Women in Community', description: 'Empowering women in the community' },
+    { id: 44, src: Women_in_community2, category: 'community', title: 'Women in Community', description: 'Empowering women in the community' },
+    { id: 45, src: Women_in_community3, category: 'community', title: 'Women in Community', description: 'Empowering women in the community' },
+    { id: 46, src: Women_in_community4, category: 'community', title: 'Women in Community', description: 'Empowering women in the community' },
+    { id: 47, src: Women_in_community5, category: 'community', title: 'Women in Community', description: 'Empowering women in the community' },
+    { id: 48, src: Community_Speech, category: 'community', title: 'Community Speech', description: 'Addressing community members during outreach' },
+    { id: 49, src: Community_Speech2, category: 'community', title: 'Community Speech', description: 'Addressing community members during outreach' },
+    { id: 50, src: Community_Speech3, category: 'community', title: 'Community Speech', description: 'Addressing community members during outreach' },
+    { id: 51, src: Community_Speech4, category: 'community', title: 'Community Speech', description: 'Addressing community members during outreach' },
+    { id: 52, src: Community_Speech5, category: 'community', title: 'Community Speech', description: 'Addressing community members during outreach' },
+    { id: 53, src: Drug_Recovered, category: 'community', title: 'Drug Recovery', description: 'Recovered drugs from anti-abuse campaigns' },
+    { id: 54, src: Feedin_Children, category: 'community', title: 'Feeding Children', description: 'Providing nutritious meals to children in the community' },
+    { id: 55, src: Helping_Children, category: 'community', title: 'Helping Children', description: 'Supporting children in need' },
+    { id: 56, src: Children2, category: 'community', title: 'Community Children', description: 'Children benefitting from KSL programs' },
+    { id: 57, src: Children3, category: 'community', title: 'Community Children', description: 'Children benefitting from KSL programs' },
+    { id: 58, src: Children4, category: 'community', title: 'Community Children', description: 'Children benefitting from KSL programs' },
+    { id: 59, src: Children5, category: 'community', title: 'Community Children', description: 'Children benefitting from KSL programs' },
+    { id: 60, src: Treatment, category: 'community', title: 'Medical Treatment', description: 'Providing medical care to community members' },
+    { id: 61, src: Zwedru, category: 'community', title: 'Zwedru City', description: 'Outreach activities in Zwedru, Grand Gedeh County' },
+
+    // --- Teams ---
+    { id: 3, src: KSL, category: 'teams', title: 'KSL Team', description: 'Raising awareness for children rights' },
+    { id: 14, src: Team_Discussion, category: 'teams', title: 'Project Planning', description: 'Team working together on how to execute projects' },
     { id: 19, src: KSL_Team, category: 'teams', title: 'Kids Survivor Liberia Team', description: 'Gathering of the KSL Team' },
-    { id: 20, src: Campeign, category: 'community', title: 'Fundraising and Community Outreach', description: 'Raising of awareness in the Community' },
+    { id: 62, src: KSL_Team1, category: 'teams', title: 'KSL Team', description: 'The Kids Survivor Liberia team in action' },
+    { id: 63, src: KSL_Company, category: 'teams', title: 'KSL Company', description: 'The KSL team together' },
+    { id: 64, src: KSL_Company2, category: 'teams', title: 'KSL Company', description: 'The KSL team together' },
+    { id: 65, src: Team_Discussion2, category: 'teams', title: 'Team Discussion', description: 'KSL team members in a planning discussion' },
+    { id: 66, src: Team_Meeting, category: 'teams', title: 'Team Meeting', description: 'Full team meeting to plan upcoming activities' },
+    { id: 67, src: Team_Full, category: 'teams', title: 'Full Team', description: 'The complete KSL team gathered together' },
+    { id: 68, src: The_CEO, category: 'teams', title: 'The CEO', description: 'Kids Survivor Liberia CEO leading by example' },
+    { id: 69, src: CEO2, category: 'teams', title: 'The CEO', description: 'Kids Survivor Liberia CEO' },
+    { id: 70, src: CEO3, category: 'teams', title: 'The CEO', description: 'Kids Survivor Liberia CEO on field visit' },
+    { id: 71, src: CEO4, category: 'teams', title: 'The CEO', description: 'Kids Survivor Liberia CEO on outreach' },
+    { id: 72, src: CEO_IN_ANOTHER_COUNTY, category: 'teams', title: 'CEO in Another County', description: 'CEO expanding KSL reach to other counties' },
+    { id: 73, src: CEO_IN_ANOTHER_COUNTY2, category: 'teams', title: 'CEO in Another County', description: 'CEO expanding KSL reach to other counties' },
   ];
 
   const filteredImages = activeCategory === 'all'

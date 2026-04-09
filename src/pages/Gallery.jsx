@@ -30,7 +30,6 @@ import CEO_IN_ANOTHER_COUNTY2 from '../assets/CEO_IN_ANOTHER_COUNTY2.jpeg';
 import Zwedru from '../assets/Zwedru_City.jpeg';
 import Community_Children from '../assets/Community_Children.jpeg';
 import Community_Children2 from '../assets/Community_Children2.jpeg';
-
 import Women_in_community from '../assets/Women_in_community.jpeg';
 import Women_in_community2 from '../assets/Women_in_community2.jpeg';
 import Women_in_community3 from '../assets/Women_in_community3.jpeg';
@@ -72,6 +71,7 @@ import SchoolAssembly from "../assets/School assembly.jpeg";
 import Students3 from '../assets/Students3.jpeg';
 import TalkingToChildren from "../assets/Talking to children.jpeg";
 import Treatment from '../assets/Treatment.jpeg';
+import School_Student from '../assets/School_Students.jpeg';
 
 
 
@@ -114,6 +114,7 @@ const Gallery = () => {
     { id: 32, src: KSL_School12, category: 'education', title: 'KSL School', description: 'Kids Survivor Liberia Primary & Elementary School' },
     { id: 33, src: ClassRoom, category: 'education', title: 'Classroom', description: 'Students learning in a KSL classroom' },
     { id: 34, src: SchoolAssembly, category: 'education', title: 'School Assembly', description: 'Students gathered for morning assembly' },
+    { id: 38, src: School_Student, category: 'education', title: 'School Students', description: 'Students gathering together' },
     { id: 35, src: Students3, category: 'education', title: 'Students', description: 'Students at the KSL school program' },
     { id: 36, src: TalkingToChildren, category: 'education', title: 'Talking to Children', description: 'Educators engaging with young children' },
     { id: 37, src: SayNoDrugs, category: 'education', title: 'Say No to Drugs', description: 'Awareness campaign on the dangers of drug abuse' },

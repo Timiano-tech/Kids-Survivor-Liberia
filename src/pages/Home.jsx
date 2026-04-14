@@ -38,7 +38,7 @@ const Home = () => {
       {/* Latest News Section */}
       <LatestNewsSection />
 
-      {/* FAQ Section */}
+      {/* FAQ Sections */}
       <HomeFAQSection />
     </div>
   );

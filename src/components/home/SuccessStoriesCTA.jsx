@@ -5,7 +5,7 @@ import { FiHeart, FiArrowRight } from 'react-icons/fi';
 
 import JohnHoward from '../../assets/Success_Story.jpeg';
 import Franklin_Mondor from '../../assets/Success_story2.jpeg';
-import Samuel_Meaway from '../../assets/Success_story3.jpeg';
+import Samuel_Meaway from '../../assets/Success_Story3.jpeg';
 import Community from '../../assets/Community.jpeg';
 
 export const SuccessStoriesCTA = () => {

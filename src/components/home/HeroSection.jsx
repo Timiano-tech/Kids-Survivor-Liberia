@@ -6,6 +6,9 @@ import { FiChevronLeft, FiChevronRight, FiPlay, FiPause, FiArrowRight } from 're
 import Education from '../../assets/Children on the assembly.jpeg';
 import NoToDrugs from '../../assets/Say no to drugs.jpeg';
 import Community from '../../assets/Community.jpeg';
+import CommunityOutreach from '../../assets/Community_Children_outreach.jpeg';
+import WomenCommunity from '../../assets/Women_in_community.jpeg';
+import EducationSkills from '../../assets/School_Students.jpeg';
 
 export const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -37,6 +40,30 @@ export const HeroSection = () => {
       description: "Implementing rights-based interventions that promote social reintegration, peacebuilding, and community resilience.",
       imagePlaceholder: Community,
       stats: "Community-Driven Interventions"
+    },
+    {
+      id: 4,
+      title: "Reaching Every Child in Liberia",
+      subtitle: "Nationwide Drug Prevention & Protection Programs",
+      description: "Through grassroots community outreach across all 15 counties, KSL works hand-in-hand with families, schools, and local leaders to shield children from drug abuse, exploitation, and neglect — ensuring no child is left behind.",
+      imagePlaceholder: CommunityOutreach,
+      stats: "Active Across 7 Counties & Expanding"
+    },
+    {
+      id: 5,
+      title: "Empowering Women & Girls",
+      subtitle: "Education, Skills & Leadership for a Stronger Liberia",
+      description: "KSL invests in the education and empowerment of women, adolescent girls, and widows — providing skills training, psychosocial support, and safe spaces to help them lead change in their communities.",
+      imagePlaceholder: WomenCommunity,
+      stats: "Gender Equity & Inclusion"
+    },
+    {
+      id: 6,
+      title: "Education & Skills Development",
+      subtitle: "Unlocking Potential Through Learning & Vocational Training",
+      description: "KSL provides access to quality education, literacy programs, and hands-on vocational training — equipping children, youth, and young adults with the knowledge and skills they need to break the cycle of poverty and build self-sufficient livelihoods.",
+      imagePlaceholder: EducationSkills,
+      stats: "Building Future Leaders"
     }
   ];
 

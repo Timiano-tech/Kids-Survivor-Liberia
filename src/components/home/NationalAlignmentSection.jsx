@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiTrendingUp, FiCheckCircle, FiCrosshair, FiHome, FiMapPin, FiArrowRight } from 'react-icons/fi';
 
-import KSL_School from '../../assets/KSL_School.jpeg';
+import CommunitySpeech from '../../assets/Community_Speech.jpeg';
 
 export const NationalAlignmentSection = () => {
   return (
@@ -14,7 +14,7 @@ export const NationalAlignmentSection = () => {
         <div
           className="absolute inset-0 z-0"
           style={{
-            backgroundImage: `url(${KSL_School})`,
+            backgroundImage: `url(${CommunitySpeech})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundAttachment: 'fixed'

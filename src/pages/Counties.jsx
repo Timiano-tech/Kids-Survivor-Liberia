@@ -1,16 +1,22 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { FiMapPin } from 'react-icons/fi';
-import { COUNTIES } from '../data/counties';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FiMapPin, FiHome, FiUser, FiShield, FiArrowRight, FiPhone } from 'react-icons/fi';
+import { COUNTIES, HEADQUARTERS } from '../data/counties';
 import ScrollToTopButton from '../components/ScrollToTop';
 import { showComingSoon } from '../components/ComingSoonModal';
 import HeaderImage from '../assets/map.jpg';
 
 const Counties = () => {
+  const [filter, setFilter] = useState('all'); // 'all' or 'active'
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const filteredCounties = filter === 'active' 
+    ? COUNTIES.filter(c => c.isActive) 
+    : COUNTIES;
 
   return (
     <div className="min-h-screen bg-white">
@@ -46,147 +52,210 @@ const Counties = () => {
         </div>
       </header>
 
-      {/* Main content - Premium*/}
+      {/* Main content */}
       <main className="py-20 lg:py-32 relative">
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
-
-          <section className="mb-20 max-w-4xl mx-auto">
+          {/* Headquarters Section - The Hub */}
+          <section className="mb-20">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="bg-white border text-center border-slate-100 shadow-sm rounded-xl p-8 sm:p-12 text-lg sm:text-xl text-slate-600 leading-relaxed"
+              className="bg-white rounded-3xl shadow-2xl shadow-blue-900/10 border border-slate-100 overflow-hidden flex flex-col lg:flex-row"
             >
-              <p className="mb-0 font-medium">
-                Each county page highlights key activities, focus areas, and community partnerships
-                where KSL contributes to national priorities under the <span className="text-blue-600 font-bold">Youth Transformation &amp; Empowerment Initiative (YTEI)</span> and the <span className="text-blue-600 font-bold">National Anti-Drugs Action Plan (NADAP) 2025–2030</span>.
-              </p>
+              <div className="p-8 lg:p-12 lg:w-2/3">
+                <div className="flex items-center gap-2 mb-4 text-blue-600 font-bold uppercase text-xs tracking-widest">
+                  <FiHome className="w-4 h-4" />
+                  National Headquarters
+                </div>
+                <h2 className="text-3xl font-black text-slate-900 mb-6 tracking-tight">Coordination & Hub</h2>
+                <p className="text-slate-600 text-lg leading-relaxed mb-8 max-w-2xl">
+                  Our central office in Monrovia serves as the strategic heart of KSL, driving policy alignment, 
+                  resource allocation, and nationwide program monitoring under the <span className="text-blue-600 font-bold">NADAP 2025–2030</span>.
+                </p>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-8 border-t border-slate-100">
+                  <div className="flex gap-4">
+                    <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 shrink-0">
+                      <FiMapPin className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-slate-900 mb-1">Office Location</h4>
+                      <p className="text-slate-500 text-sm leading-snug">{HEADQUARTERS.address}</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <div className="w-12 h-12 bg-yellow-50 rounded-xl flex items-center justify-center text-yellow-600 shrink-0">
+                      <FiShield className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-slate-900 mb-1">Key Functions</h4>
+                      <p className="text-slate-500 text-sm leading-snug">{HEADQUARTERS.keyFunctions}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="lg:w-1/3 bg-slate-100 relative overflow-hidden group">
+                <div className="absolute inset-0 bg-blue-600/10 group-hover:bg-blue-600/5 transition-colors duration-500"></div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <FiMapPin className="w-32 h-32 text-blue-100 transform group-hover:scale-110 group-hover:rotate-12 transition-transform duration-700" />
+                </div>
+                <div className="absolute bottom-8 left-8 right-8 bg-white/90 backdrop-blur-md p-6 rounded-2xl border border-white/20 shadow-xl">
+                  <div className="text-xs font-black text-blue-600 uppercase mb-1">Center of Excellence</div>
+                  <div className="text-sm text-slate-700 font-medium italic">"Ensuring no child is left behind in the journey towards a drug-free Liberia."</div>
+                </div>
+              </div>
             </motion.div>
           </section>
 
-          {/* Counties grid - Redesigned Premium Layout */}
+          {/* Filtering & Grid Header */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+              <h3 className="text-2xl font-black text-slate-900 mb-2">Regional Directory</h3>
+              <p className="text-slate-500 font-medium">Explore our specific programs and leadership in each county.</p>
+            </div>
+            
+            <div className="flex p-1 bg-slate-200/50 rounded-2xl w-fit">
+              <button 
+                onClick={() => setFilter('all')}
+                className={`px-6 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 ${
+                  filter === 'all' 
+                    ? 'bg-white text-blue-600 shadow-sm' 
+                    : 'text-slate-500 hover:text-slate-700'
+                }`}
+              >
+                All Counties
+              </button>
+              <button 
+                onClick={() => setFilter('active')}
+                className={`px-6 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 ${
+                  filter === 'active' 
+                    ? 'bg-white text-blue-600 shadow-sm' 
+                    : 'text-slate-500 hover:text-slate-700'
+                }`}
+              >
+                Active Operations
+              </button>
+            </div>
+          </div>
+
+          {/* Counties Grid - Premium Card Arrangement */}
           <section className="relative">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 xl:gap-8">
-              {COUNTIES.map((county, index) => {
-                const isActive = ['montserrado', 'margibi', 'bong', 'nimba', 'lofa', 'grand-bassa', 'grand-gedeh'].includes(county.id);
-                
-                return (
+            <motion.div 
+              layout
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 xl:gap-8"
+            >
+              <AnimatePresence mode="popLayout">
+                {filteredCounties.map((county, index) => (
                   <motion.article
                     key={county.id}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.05, duration: 0.5 }}
-                    className={`group relative overflow-hidden rounded-2xl border transition-all duration-500 hover:-translate-y-2 h-[380px] flex flex-col ${
-                      isActive 
-                        ? 'bg-white border-slate-200 shadow-sm hover:shadow-2xl hover:border-blue-200' 
-                        : 'bg-slate-50 border-slate-100 opacity-90'
+                    layout
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    transition={{ duration: 0.4, delay: index * 0.05 }}
+                    className={`group h-full flex flex-col bg-white rounded-3xl border border-slate-100 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-blue-900/10 hover:-translate-y-2 ${
+                      !county.isActive && 'grayscale-[0.5] opacity-80'
                     }`}
                   >
-                    {/* Background Map/Flag Watermark */}
-                    <div className="absolute inset-0 z-0 overflow-hidden">
+                    {/* Visual Header */}
+                    <div className="relative h-48 overflow-hidden bg-slate-100">
                       {county.mapImage ? (
-                        <div className="relative w-full h-full">
-                          <img
-                            src={county.mapImage}
-                            alt={`${county.name} map`}
-                            className={`w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-125 ${
-                              isActive ? 'opacity-40 grayscale group-hover:grayscale-0' : 'opacity-20 grayscale'
-                            }`}
-                            loading="lazy"
-                          />
-                          <div className={`absolute inset-0 bg-gradient-to-b ${
-                            isActive 
-                              ? 'from-transparent via-white/40 to-white/95' 
-                              : 'from-slate-50/50 via-slate-50/80 to-slate-50'
-                          }`} />
-                        </div>
+                        <img
+                          src={county.mapImage}
+                          alt={`${county.name} Map`}
+                          className="w-full h-full object-cover opacity-60 mix-blend-multiply group-hover:scale-110 transition-transform duration-1000"
+                        />
                       ) : (
-                        <div className="w-full h-full bg-slate-100/50" />
-                      )}
-                    </div>
-
-                    {/* Content Layer */}
-                    <div className="relative z-10 p-6 flex flex-col h-full">
-                      {/* Top Header */}
-                      <div className="flex justify-between items-start mb-4">
-                        <div className={`p-3 rounded-xl backdrop-blur-md border transition-all duration-300 ${
-                          isActive 
-                            ? 'bg-blue-600/10 border-blue-600/20 text-blue-600 group-hover:bg-blue-600 group-hover:text-white' 
-                            : 'bg-slate-200/50 border-slate-300/50 text-slate-400'
-                        }`}>
-                          <FiMapPin className="w-5 h-5" />
+                        <div className="w-full h-full flex items-center justify-center text-slate-200">
+                          <FiMapPin className="w-16 h-16" />
                         </div>
-                        
-                        {isActive && (
-                          <span className="text-[10px] font-black uppercase tracking-[0.2em] px-3 py-1 bg-green-500/10 text-green-600 rounded-full border border-green-500/20">
-                            Active
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent"></div>
+                      
+                      {/* Status Badge */}
+                      <div className="absolute top-6 left-6">
+                        {county.isActive ? (
+                          <span className="flex items-center gap-1.5 px-3 py-1 bg-green-500/10 text-green-600 text-[10px] font-black uppercase tracking-[0.1em] rounded-full border border-green-200 backdrop-blur-sm">
+                            <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
+                            Active Area
+                          </span>
+                        ) : (
+                          <span className="px-3 py-1 bg-slate-100 text-slate-500 text-[10px] font-black uppercase tracking-[0.1em] rounded-full border border-slate-200">
+                            Planned Expansion
                           </span>
                         )}
                       </div>
-
-                      {/* Main Info */}
-                      <div className="mt-auto">
-                        <div className="mb-2">
-                          <span className="text-[10px] font-bold text-blue-500 uppercase tracking-widest block mb-1">
-                            Liberia Region
-                          </span>
-                          <h2 className={`text-2xl font-black tracking-tighter transition-colors duration-300 ${
-                            isActive ? 'text-slate-900 group-hover:text-blue-700' : 'text-slate-400'
-                          }`}>
-                            {county.name}
-                          </h2>
-                        </div>
-
-                        <p className={`text-sm leading-relaxed mb-6 font-medium line-clamp-3 transition-opacity duration-300 ${
-                          isActive ? 'text-slate-600 opacity-90 group-hover:opacity-100' : 'text-slate-400'
-                        }`}>
-                          {county.tagline}
-                        </p>
-
-                        {/* Action Area */}
-                        <div className="pt-4 border-t border-slate-200/50">
-                          {isActive ? (
-                            <Link
-                              to={`/counties/${county.id}`}
-                              className="inline-flex items-center gap-2 text-sm font-black text-blue-600 group-hover:text-blue-800 transition-all duration-300"
-                            >
-                              EXPLORE PROGRAMS
-                              <motion.span
-                                animate={{ x: [0, 5, 0] }}
-                                transition={{ repeat: Infinity, duration: 1.5 }}
-                              >
-                                →
-                              </motion.span>
-                            </Link>
-                          ) : (
-                            <button
-                              onClick={(e) => { e.preventDefault(); showComingSoon(county.name); }}
-                              className="text-[10px] font-black text-slate-400 uppercase tracking-widest cursor-default"
-                            >
-                              Expanding Soon
-                            </button>
-                          )}
-                        </div>
-                      </div>
                     </div>
 
-                    {/* Decorative Hover Effect - Subtle Glow */}
-                    {isActive && (
-                      <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-                    )}
+                    {/* Content Section */}
+                    <div className="p-8 flex flex-col flex-grow">
+                      <div className="mb-6">
+                        <span className="text-[10px] font-black text-blue-500 uppercase tracking-[0.2em] block mb-2">Regional Presence</span>
+                        <h4 className="text-xl font-black text-slate-900 group-hover:text-blue-700 transition-colors duration-300">{county.name}</h4>
+                      </div>
+                      
+                      <p className="text-slate-500 text-sm leading-relaxed mb-8 font-medium line-clamp-2">
+                        {county.tagline}
+                      </p>
+
+                      {/* Active specific info */}
+                      {county.isActive && county.office && (
+                        <div className="space-y-4 mb-8">
+                          <div className="flex items-center gap-3 text-sm">
+                            <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 shrink-0">
+                              <FiUser className="w-4 h-4" />
+                            </div>
+                            <div>
+                              <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Coordinator</div>
+                              <div className="text-slate-700 font-bold text-xs">{county.office.coordinator}</div>
+                            </div>
+                          </div>
+                          <div className="flex items-center gap-3 text-sm">
+                            <div className="w-8 h-8 rounded-lg bg-yellow-50 flex items-center justify-center text-yellow-600 shrink-0">
+                              <FiShield className="w-4 h-4" />
+                            </div>
+                            <div>
+                              <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Focus Area</div>
+                              <div className="text-slate-700 font-bold text-xs line-clamp-1">{county.office.focusArea}</div>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Action Button */}
+                      <div className="mt-auto pt-6 border-t border-slate-50">
+                        {county.isActive ? (
+                          <Link 
+                            to={`/counties/${county.id}`}
+                            className="w-full inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-black py-4 rounded-2xl transition-all duration-300 shadow-lg shadow-blue-500/20 group-hover:shadow-blue-500/30"
+                          >
+                            VIEW OPERATIONS
+                            <FiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                          </Link>
+                        ) : (
+                          <button 
+                            onClick={(e) => { e.preventDefault(); showComingSoon(county.name); }}
+                            className="w-full text-center text-[10px] font-black text-slate-400 hover:text-blue-500 uppercase tracking-[0.2em] py-4 transition-colors"
+                          >
+                            Notify Me of Launch
+                          </button>
+                        )}
+                      </div>
+                    </div>
                   </motion.article>
-                );
-              })}
-            </div>
-            <ScrollToTopButton />
+                ))}
+              </AnimatePresence>
+            </motion.div>
           </section>
         </div>
       </main>
+      
+      <ScrollToTopButton />
     </div>
   );
 };
 
 export default Counties;
+
 

@@ -15,7 +15,7 @@ export const HeroSection = () => {
   const [autoPlay, setAutoPlay] = useState(true);
   const [imageError, setImageError] = useState({});
 
-  // Hero slides data aligned with international NGO standards and user requirements
+
   const heroSlides = [
     {
       id: 1,

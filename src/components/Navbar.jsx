@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiMenu, FiX, FiChevronDown, FiSearch } from 'react-icons/fi';
+import { FiMenu, FiX, FiChevronDown, FiSearch, FiInfo, FiPieChart, FiBarChart2, FiBriefcase, FiMapPin, FiCamera, FiHeart, FiUsers } from 'react-icons/fi';
 import React, { Suspense } from 'react';
 
 const SearchModal = React.lazy(() => import('./SearchModal'));
@@ -73,8 +73,18 @@ const Navbar = () => {
       name: 'About Us', 
       path: '#',
       dropdown: [
-        { name: 'About KSL', path: '/about' },
-        { name: 'Transparency & Accountability', path: '/transparency' },
+        { 
+          name: 'Our Story', 
+          path: '/about', 
+          description: 'Learn about our mission, vision, and the children we serve.',
+          icon: <FiInfo className="w-5 h-5" />
+        },
+        { 
+          name: 'Transparency', 
+          path: '/transparency', 
+          description: 'Financial accountability and our commitment to donors.',
+          icon: <FiPieChart className="w-5 h-5" />
+        },
       ]
     },    
     { name: 'Our Programs', path: '/programs' },
@@ -82,10 +92,30 @@ const Navbar = () => {
       name: 'Our Impact', 
       path: '#',
       dropdown: [
-        { name: 'Impact', path: '/impact' },
-        { name: 'Our Projects', path: '/projects' },
-        { name: 'Photo Gallery', path: '/gallery' },
-        { name: 'Counties', path: '/counties' },
+        { 
+          name: 'Impact Overview', 
+          path: '/impact', 
+          description: 'Measuring the change we bring to lives across Liberia.',
+          icon: <FiBarChart2 className="w-5 h-5" />
+        },
+        { 
+          name: 'Ongoing Projects', 
+          path: '/projects', 
+          description: 'Detailed look at our current field initiatives.',
+          icon: <FiBriefcase className="w-5 h-5" />
+        },
+        { 
+          name: 'Active Counties', 
+          path: '/counties', 
+          description: 'Interactive map and data on our 15-county reach.',
+          icon: <FiMapPin className="w-5 h-5" />
+        },
+        { 
+          name: 'Photo Gallery', 
+          path: '/gallery', 
+          description: 'Visual journey through our programs and success stories.',
+          icon: <FiCamera className="w-5 h-5" />
+        },
       ]
     },
     { name: 'Blog', path: '/blog' },
@@ -93,8 +123,18 @@ const Navbar = () => {
       name: 'Get Involved', 
       path: '#',
       dropdown: [
-        { name: 'Volunteer', path: '/volunteer' },
-        { name: 'Partnership', path: '/partnership' },
+        { 
+          name: 'Volunteer', 
+          path: '/volunteer', 
+          description: 'Give your time and skills to support our mission.',
+          icon: <FiUsers className="w-5 h-5" />
+        },
+        { 
+          name: 'Partner With Us', 
+          path: '/partnership', 
+          description: 'Institutional collaboration for sustainable impact.',
+          icon: <FiHeart className="w-5 h-5" />
+        },
       ]
     },
     { name: 'Contact Us', path: '/contact' },
@@ -130,47 +170,67 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center lg:space-x-3 xl:space-x-5">
             {navItems.map((item) => (
-              <div key={item.name} className="relative">
+              <div key={item.name} className="relative group">
                 {item.dropdown ? (
-                  <div className="relative">
+                  <div 
+                    className="relative"
+                    onMouseEnter={() => setDropdownOpen(prev => ({ ...prev, [item.name]: true }))}
+                    onMouseLeave={() => setDropdownOpen(prev => ({ ...prev, [item.name]: false }))}
+                  >
                     <button 
-                      className={`flex items-center space-x-1 font-medium text-[13px] xl:text-sm transition-colors ${isTransparent ? 'text-white hover:text-yellow-400' : 'text-gray-700 hover:text-blue-600'}`}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        toggleDropdown(item.name);
-                      }}
+                      className={`flex items-center gap-1.5 font-medium text-[13px] xl:text-sm transition-colors py-5 ${isTransparent ? 'text-white hover:text-yellow-400' : 'text-gray-700 hover:text-blue-600'}`}
                     >
                       <span>{item.name}</span>
-                      <FiChevronDown className={`transition-transform ${dropdownOpen[item.name] ? 'rotate-180' : ''}`} />
+                      <FiChevronDown className={`transition-transform duration-300 ${dropdownOpen[item.name] ? 'rotate-180 text-blue-500' : ''}`} />
                     </button>
                     
-                    {dropdownOpen[item.name] && (
-                      <motion.div
-                        initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-lg py-2 border border-gray-100 z-50"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        {item.dropdown.map((subItem) => (
-                          <Link
-                            key={subItem.name}
-                            to={subItem.path}
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-                            onClick={closeAllDropdowns}
-                          >
-                            {subItem.name}
-                          </Link>
-                        ))}
-                      </motion.div>
-                    )}
+                    <AnimatePresence>
+                      {dropdownOpen[item.name] && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                          transition={{ duration: 0.2 }}
+                          className="absolute top-full left-1/2 -translate-x-1/2 mt-0 w-[280px] sm:w-[320px] bg-white shadow-2xl rounded-2xl p-3 border border-gray-100 z-50 overflow-hidden"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <div className="grid gap-1">
+                            {item.dropdown.map((subItem) => (
+                              <Link
+                                key={subItem.name}
+                                to={subItem.path}
+                                className="group/item flex items-start gap-3.5 p-3 rounded-xl hover:bg-slate-50 transition-all duration-300"
+                                onClick={closeAllDropdowns}
+                              >
+                                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center group-hover/item:bg-blue-600 group-hover/item:text-white transition-colors duration-300 shadow-sm">
+                                  {subItem.icon}
+                                </div>
+                                <div className="flex-grow min-w-0">
+                                  <div className="text-sm font-bold text-gray-900 group-hover/item:text-blue-600 transition-colors">
+                                    {subItem.name}
+                                  </div>
+                                  <div className="text-[12px] text-gray-500 leading-relaxed mt-0.5 line-clamp-2">
+                                    {subItem.description}
+                                  </div>
+                                </div>
+                              </Link>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
                 ) : (
                   <Link
                     to={item.path}
-                    className={`font-medium text-[13px] xl:text-sm transition-colors ${isTransparent ? 'text-white hover:text-yellow-400' : 'text-gray-700 hover:text-blue-600'}`}
+                    className={`font-semibold text-[13px] xl:text-sm transition-colors relative py-5 ${isTransparent ? 'text-white hover:text-yellow-400' : 'text-gray-700 hover:text-blue-600'}`}
                     onClick={closeAllDropdowns}
                   >
                     {item.name}
+                    <motion.span 
+                      className="absolute bottom-4 left-0 w-0 h-0.5 bg-yellow-500"
+                      whileHover={{ width: '100%' }}
+                    />
                   </Link>
                 )}
               </div>
@@ -247,18 +307,28 @@ const Navbar = () => {
                           {item.name}
                           <FiChevronDown className="w-5 h-5 shrink-0 text-gray-500 group-open:rotate-180 transition-transform" />
                         </summary>
-                        <div className="pl-4 pb-2 pt-1 space-y-0.5">
+                        <div className="pl-3 pb-2 pt-1 space-y-1">
                           {item.dropdown.map((subItem) => (
                             <Link
                               key={subItem.name}
                               to={subItem.path}
-                              className="block py-3 px-3 text-gray-600 hover:text-blue-600 hover:bg-blue-50/50 rounded-lg transition-colors text-[15px] touch-manipulation"
+                              className="flex items-start gap-3 py-3 px-3 text-gray-600 hover:text-blue-600 hover:bg-blue-50/50 rounded-xl transition-colors touch-manipulation"
                               onClick={() => {
                                 setIsOpen(false);
                                 closeAllDropdowns();
                               }}
                             >
-                              {subItem.name}
+                              <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center mt-0.5">
+                                {React.cloneElement(subItem.icon, { className: 'w-4 h-4' })}
+                              </div>
+                              <div className="flex-grow min-w-0">
+                                <div className="text-[15px] font-bold text-gray-800">
+                                  {subItem.name}
+                                </div>
+                                <div className="text-[12px] text-gray-500 leading-tight mt-0.5">
+                                  {subItem.description}
+                                </div>
+                              </div>
                             </Link>
                           ))}
                         </div>

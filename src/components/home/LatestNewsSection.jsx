@@ -3,30 +3,30 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiMessageSquare, FiCalendar, FiUser, FiArrowRight } from 'react-icons/fi';
 
-import BlogImage1 from '../../assets/Students Impacted.jpeg';
-import BlogImage3 from '../../assets/Youth_Community_Outreach.jpeg';
+import BlogImage1 from '../../assets/Campaign3.jpeg';
 import KSL_School from '../../assets/KSL_School.jpeg';
+import TreatmentImage from '../../assets/Free_Medicals9.jpeg';
 
 export const LatestNewsSection = () => {
   const latestNews = [
     {
       id: 1,
-      title: "NADAP 2025-2030: national-based Drug Prevention Initiatives",
-      excerpt: "Educating Students on the dangers of drug abuse through school and community programs aligned with Liberia's National Anti-Drugs Action Plan.",
-      category: "Drug Prevention",
-      date: "Jan 19, 2026",
+      title: "Meaningful Awareness Campaign in Gbarnga, Bong County",
+      excerpt: "Kids Survivor Liberia recently led a meaningful awareness campaign reaching children and families with vital information on child safety, education, health, and positive life choices. Through community talks and interactive youth sessions, the team created a safe space for learning, open dialogue, and empowerment.",
+      category: "Community Outreach",
+      date: "Apr 15, 2026",
       author: "KSL Team",
       image: BlogImage1,
       link: "/blog"
     },
     {
       id: 2,
-      title: "Youth Leadership Development Through YTEI Framework",
-      excerpt: "Empowering young people as agents of change through life skills training, civic engagement, and positive youth development programs.",
-      category: "Youth Empowerment",
-      date: "Jan 19, 2026",
+      title: "Free Medical Outreach Serving At-Risk Youth in Buchanan",
+      excerpt: "Kids Survivor Liberia, in partnership with The Mary Hand Organization, recently held a free medical outreach serving about 175 young people in Buchanan City, Grand Bassa County, providing vital treatments for common illnesses and conditions linked to substance abuse.",
+      category: "Health & Wellbeing",
+      date: "Apr 15, 2026",
       author: "KSL Team",
-      image: BlogImage3,
+      image: TreatmentImage,
       link: "/blog"
     },
     {

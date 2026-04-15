@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiTarget, FiUsers, FiShield, FiBookOpen, FiActivity, FiBriefcase, FiHeart, FiTrendingUp } from 'react-icons/fi';
+import { FiTarget, FiUsers, FiShield, FiBookOpen, FiActivity, FiBriefcase, FiHeart, FiTrendingUp, FiCheckCircle } from 'react-icons/fi';
 
 export const baseFocusAreas = [
   'Drug abuse prevention and public awareness campaigns',
@@ -52,234 +52,364 @@ export const basePartners = [
 export const countySpecificData = {
   'montserrado': {
     focusAreas: [
-      'Urban drug abuse prevention and rehabilitation',
-      'Slum community outreach and youth recovery',
-      'Vocational training integration for affected youth',
-      'Strengthening urban resilience networks'
+      'Urban drug abuse prevention and community rehabilitation',
+      'Outreach in high-density slum communities and youth recovery',
+      'Vocational training integration for vulnerable and street-connected youth',
+      'Strengthening urban resilience networks and institutional partnerships'
     ],
     programs: [
       {
         icon: <FiActivity className="w-5 h-5" />,
-        title: 'Urban Recovery Initiative',
-        description: 'Targeted interventions in Monrovia slums focusing on rehabilitation and safe spaces for recovering addicts.'
+        title: 'Monrovia Slum Recovery Initiative',
+        description: 'Direct health interventions and community-based safe spaces for youth in transition from substance use in Clara Town, West Point, and surrounding areas.'
       },
       {
         icon: <FiBriefcase className="w-5 h-5" />,
-        title: 'Skills for the City',
-        description: 'Vocational training and job placement services adapted for the urban job market.'
+        title: 'Urban Livelihoods & Skills',
+        description: 'Accelerated vocational training in high-demand urban trades including beauty care, tailoring, and basic computer studies.'
       }
     ],
     stats: [
-      { label: 'Urban youths supported yearly', value: '500+', helper: 'Focus on high-risk neighborhoods.' },
-      { label: 'Rehabilitation referrals', value: '85+', helper: 'Connecting individuals to care centers.' },
-      { label: 'Active urban partners', value: '25+', helper: 'Local NGOs, clinics, and government agencies.' },
+      { label: 'Urban youths supported yearly', value: '1,200+', helper: 'Focus on high-risk neighborhoods in Monrovia.' },
+      { label: 'Rehabilitation referrals', value: '150+', helper: 'Directly linked to partner medical and recovery centers.' },
+      { label: 'Active urban partners', value: '35+', helper: 'Including MCC, clinics, and grassroots organizations.' },
     ],
-    partners: ['Monrovia City Corporation', 'Urban Youth Initiatives', 'Local Health Clinics', 'National Police (Community Div)']
+    partners: ['Monrovia City Corporation (MCC)', 'Federation of Liberian Youth', 'Local Health Clinics', 'LNP Community Division'],
+    successStories: [
+      {
+        name: 'Monrovia Slum Recovery',
+        category: 'Urban Intervention',
+        story: 'Our urban outreach has successfully reintegrated over 150 youth from high-density communities back into productive life through vocational training.'
+      }
+    ]
   },
   'margibi': {
     focusAreas: [
-      'School-based drug prevention programs',
-      'Family strengthening and counseling',
-      'Adolescent peer-to-peer mentorship',
-      'Parent-teacher association mobilization'
+      'Intensive school-based drug prevention programs',
+      'Holistic family strengthening and psychosocial counseling',
+      'Adolescent peer-to-peer mentorship and leadership development',
+      'PTA mobilization for community-led prevention'
     ],
     programs: [
       {
         icon: <FiBookOpen className="w-5 h-5" />,
         title: 'Safe Schools Program',
-        description: 'Implementing anti-drug curricula and establishing peer support groups within high schools.'
+        description: 'Establishing anti-drug clubs and implementing survival-themed life skills curricula in 20+ schools across Kakata and Harbel.'
       },
       {
         icon: <FiHeart className="w-5 h-5" />,
-        title: 'Family Strengthening',
-        description: 'Workshops for parents and guardians on early detection and supporting resilient children.'
+        title: 'Family Resilience Workshops',
+        description: 'Empowering parents with early warning detection skills and communication strategies for at-risk adolescents.'
       }
     ],
     stats: [
-      { label: 'Schools engaged', value: '15+', helper: 'Partnering across the county educational system.' },
-      { label: 'Families counseled', value: '120+', helper: 'Through community town halls and direct outreach.' },
-      { label: 'Student ambassadors', value: '50+', helper: 'Trained to lead peer-to-peer dialogues.' }
-    ]
+      { label: 'Schools engaged', value: '22+', helper: 'Active partnerships across the district school system.' },
+      { label: 'Families counseled', value: '250+', helper: 'Through community engagement and home-based support.' },
+      { label: 'Student ambassadors', value: '120+', helper: 'Trained to lead peer awareness and anti-drug advocacy.' }
+    ],
+    partners: ['Margibi School Board', 'Traditional Leaders Council', 'County Health Team']
   },
   'bong': {
     focusAreas: [
-      'Rural outreach to hard-to-reach communities',
-      'Integration of substance abuse awareness in agriculture',
-      'Capacity building for rural health workers',
-      'Community-led resistance against drug trafficking'
+      'Rural outreach to underserved and hard-to-reach communities',
+      'Substance abuse awareness integrated with agricultural training',
+      'Capacity building for community health workers and local structures',
+      'Youth-led advocacy against drug trafficking in transit corridors'
     ],
     programs: [
       {
         icon: <FiTrendingUp className="w-5 h-5" />,
-        title: 'Rural Resilience Workshops',
-        description: 'Mobile teams reaching isolated villages to deliver education on the dangers of substance abuse.'
+        title: 'Rural Resilience Mobile Team',
+        description: 'Dedicated outreach teams traveling to remote villages to provide education on drug prevention and psychological first aid.'
       },
       {
         icon: <FiUsers className="w-5 h-5" />,
-        title: 'Agri-Youth Engagement',
-        description: 'Combining agricultural training with life-skills and prevention education for rural youth.'
-      }
-    ]
-  },
-  'nimba': {
-    focusAreas: [
-      'Cross-community dialogue and youth engagement',
-      'Cross-border drug trafficking awareness',
-      'Livelihood skills and trade empowerment',
-      'Inter-ethnic youth cohesion building'
-    ],
-    programs: [
-      {
-        icon: <FiUsers className="w-5 h-5" />,
-        title: 'Border Awareness Campaign',
-        description: 'Educating youth on the risks associated with cross-border illicit trade and substance abuse.'
-      },
-      {
-        icon: <FiBriefcase className="w-5 h-5" />,
-        title: 'Trade Skills for Youth',
-        description: 'Equipping young people with marketable skills in major hubs like Gompa City to deter involvement in drugs.'
+        title: 'Agri-Impact Youth Hub',
+        description: 'Linking agricultural mentorship with life-skills training to provide sustainable alternatives to negative influences.'
       }
     ],
     stats: [
-      { label: 'Cross-border campaigns', value: '12+', helper: 'Conducted annually in border towns.' },
-      { label: 'Youth engaged in trade skills', value: '300+', helper: 'Active participants in Gompa and Sanniquellie.' },
-    ]
+      { label: 'Rural communities reached', value: '45+', helper: 'Direct engagement in remote districts.' },
+      { label: 'Health workers trained', value: '60+', helper: 'Empowered with drug prevention and referral skills.' },
+      { label: 'Agri-youth participants', value: '200+', helper: 'Engaged in sustainable farming and life skills.' }
+    ],
+    partners: ['Bong County Health Team', 'Gbarnga City Corporation', 'Local Farmer Cooperatives']
+  },
+  'nimba': {
+    focusAreas: [
+      'Market-driven trade skills and vocational empowerment',
+      'Cross-border monitoring and illicit transit awareness',
+      'Inter-ethnic youth cohesion and peaceful coexistence',
+      'Integration of youth in sustainable agricultural value chains'
+    ],
+    programs: [
+      {
+        icon: <FiBriefcase className="w-5 h-5" />,
+        title: 'Gompa Skills Hub',
+        description: 'Providing market-aligned vocational training in carpentry, masonry, and mobile phone repairs for youth in commercial centers.'
+      },
+      {
+        icon: <FiUsers className="w-5 h-5" />,
+        title: 'Cross-Border Vigilance',
+        description: 'Collaborating with community structures along border points to identify and report illicit drug transit while educating youth on legal risks.'
+      }
+    ],
+    stats: [
+      { label: 'Trade skills graduates', value: '450+', helper: 'Youth certified in market-ready vocational trades.' },
+      { label: 'Border campaigns', value: '18+', helper: 'Focus on Loguatuo and other major entry points.' },
+      { label: 'Cohesion workshops', value: '25+', helper: 'Bringing together diverse youth groups for peacebuilding.' }
+    ],
+    partners: ['Nimba County Administration', 'Commerce & Industry Ministry', 'Local Youth Unions']
   },
   'lofa': {
     focusAreas: [
-      'Protection of vulnerable groups in post-conflict zones',
-      'Community resilience and peacebuilding',
-      'Agricultural livelihood alternatives',
-      'Support systems for elderly and widows'
+      'Protection and inclusion of vulnerable groups in post-conflict zones',
+      'Community resilience through grassroots peacebuilding',
+      'Sustainable agricultural livelihoods as drug-resilience strategy',
+      'Support systems for elderly, widows, and people with disabilities'
     ],
     programs: [
       {
         icon: <FiShield className="w-5 h-5" />,
-        title: 'Vulnerable Groups Protection',
-        description: 'Establishing community watch teams and referral systems to protect widows, elderly, and at-risk youth.'
+        title: 'Vulnerable Advocacy Network',
+        description: 'Establishing community-led protection circles that provide psychosocial support and referral pathways for at-risk populations.'
       },
       {
         icon: <FiTarget className="w-5 h-5" />,
-        title: 'Peacebuilding Dialogues',
-        description: 'Conducting inter-community dialogues to resolve conflicts and build resilience against drug infiltration.'
+        title: 'Peaceful Futures Dialogue',
+        description: 'Facilitating town-hall meetings to address social conflict and build community resistance to drug infiltration.'
+      },
+      {
+        icon: <FiActivity className="w-5 h-5" />,
+        title: 'KSL Medical Team Outreach',
+        description: 'Providing free health services and psychological first aid to at-risk youth and vulnerable individuals.'
       }
-    ]
+    ],
+    stats: [
+      { label: 'Protection circles active', value: '30+', helper: 'Grassroots groups monitoring vulnerable welfare.' },
+      { label: 'Dialogue participants', value: '600+', helper: 'Community members engaged in peacebuilding.' },
+      { label: 'Agri-support beneficiaries', value: '150+', helper: 'Received seeds and tools for sustainable farming.' }
+    ],
+    successStories: [
+      {
+        name: 'John Howard',
+        category: 'Rehabilitation & Reintegration',
+        story: 'John Howard, once a homeless drug user and criminal in Lofa County, was reached by KSL in July 2025. Though initially resistant, he joined our support network. Now the sole survivor of his original group, he is a living example of transformation and is actively rebuilding his life while supporting others.'
+      }
+    ],
+    partners: ['Lofa Women’s Network', 'Traditional Chiefs Council', 'Ministry of Internal Affairs']
   },
   'grand-bassa': {
     focusAreas: [
-      'Coastal community outreach and sensitization',
-      'Adolescent protection in port areas',
-      'Countering drug influx through community vigilance',
-      'Economic empowerment for coastal youth'
+      'Coastal and port-area community sensitization',
+      'Child and adolescent protection in high-transit zones',
+      'Community-led resistance against sea-borne drug influx',
+      'Empowerment and safe spaces for beachfront youth',
+      'School-based retention and protection programs'
     ],
     programs: [
       {
         icon: <FiShield className="w-5 h-5" />,
         title: 'Coastal Protection Network',
-        description: 'Mobilizing beachfront communities to identify and resist the illicit influx of substances.'
+        description: 'Mobilizing fishing and port communities in Buchanan to actively monitor and resist the entry of harmful substances.'
       },
       {
         icon: <FiTarget className="w-5 h-5" />,
-        title: 'Port-City Youth Safe Spaces',
-        description: 'Creating positive recreational environments for adolescents in Buchanan.'
-      }
-    ]
-  },
-  'grand-cape-mount': {
-    focusAreas: [
-      'Border-area drug prevention and monitoring',
-      'Youth leadership and civic engagement',
-      'Artisanal mining community sensitization'
-    ]
-  },
-  'grand-gedeh': {
-    focusAreas: [
-      'Post-conflict healing and psychosocial support',
-      'Community cohesion and dispute resolution',
-      'Protection schemes for vulnerable youth'
-    ],
-    programs: [
-      {
-        icon: <FiHeart className="w-5 h-5" />,
-        title: 'Psychosocial Support Networks',
-        description: 'Creating peer support groups for trauma healing and recovery from substance abuse.'
+        title: 'Youth Safe Haven - Buchanan',
+        description: 'Creating positive recreational and educational hubs to deter youth from engaging in drug-related activities in port environments.'
       },
-      {
-        icon: <FiUsers className="w-5 h-5" />,
-        title: 'Youth Cohesion Initiative',
-        description: 'Engaging young people in sports and community service to foster unity and positive lifestyles.'
-      }
-    ]
-  },
-  'grand-kru': {
-    focusAreas: [
-      'Support for isolated communities',
-      'Life-skills education for rural youth',
-      'Establishing basic protection referral pathways'
-    ]
-  },
-  'maryland': {
-    focusAreas: [
-      'Child protection and rights advocacy',
-      'Empowerment of adolescent girls',
-      'Border sensitization regarding drug transit',
-      'School-based retention programs'
-    ],
-    programs: [
       {
         icon: <FiHeart className="w-5 h-5" />,
         title: 'Girls Empowerment Circles',
         description: 'Safe spaces for adolescent girls focusing on reproductive health, education, and substance avoidance.'
       }
-    ]
+    ],
+    stats: [
+      { label: 'Port area outreaches', value: '35+', helper: 'Targeted awareness in Buchanan and fishing hubs.' }
+    ],
+    partners: ['Grand Bassa County Health Team', 'Buchanan City Corporation', 'Port Authority']
+  },
+  'grand-gedeh': {
+    focusAreas: [
+      'Post-conflict healing and community cohesion',
+      'Protection of children in transit and market zones',
+      'Substance abuse prevention through community dialogue',
+      'Empowerment of youth through market-aligned vocational skills'
+    ],
+    programs: [
+      {
+        icon: <FiActivity className="w-5 h-5" />,
+        title: 'Zwedru City Outreach',
+        description: 'Intensive community sensitization and drug prevention campaigns targeting youth in commercial and transport hubs.'
+      },
+      {
+        icon: <FiHeart className="w-5 h-5" />,
+        title: 'Community Healing Circles',
+        description: 'Safe spaces for dialogue and social cohesion, addressing the root causes of vulnerability and substance use.'
+      }
+    ],
+    stats: [
+      { label: 'Zwedru urban outreaches', value: '12+', helper: 'Focus on transport hubs and market places.' },
+      { label: 'Youth reached in Gedeh', value: '300+', helper: 'Through community dialogues and school talks.' }
+    ],
+    partners: ['Grand Gedeh County Health Team', 'Zwedru Local Government', 'Traditional Council']
   },
   'rivergee': {
     focusAreas: [
       'Strengthening local community protection structures',
       'Prevention education in hard-to-reach towns',
       'Establishing health referral mechanisms'
-    ]
+    ],
+    programs: [
+      {
+        icon: <FiActivity className="w-5 h-5" />,
+        title: 'Mobile Medical Outreach',
+        description: 'The KSL medical team travels to hard-to-reach towns providing free health checkups and drug prevention education.'
+      }
+    ],
+    partners: ['River Gee Health Team', 'Local Youth Council']
   },
   'rivercess': {
     focusAreas: [
-      'Engaging riverine and fishing communities',
-      'Livelihood diversification for youth',
-      'Substance abuse prevention in logging areas'
+      'Engagement with isolated riverine and fishing communities',
+      'Livelihood diversification and vocational opportunities for youth',
+      'Substance abuse prevention in logging and transit areas'
     ],
     programs: [
       {
         icon: <FiUsers className="w-5 h-5" />,
-        title: 'Riverine Outreach',
-        description: 'Using specialized mobile teams to reach fishing and logging camps with prevention education.'
+        title: 'Mobile Riverine Outreach',
+        description: 'Utilizing specialized mobile units to reach logging camps and fishing communities with essential life skills and prevention education.'
+      },
+      {
+        icon: <FiActivity className="w-5 h-5" />,
+        title: 'Coastal Health Sensitization',
+        description: 'Integrated health and anti-drug campaigns for riverine populations and fishing hubs.'
       }
-    ]
+    ],
+    stats: [
+      { label: 'Remote camps reached', value: '15+', helper: 'Outreach in hard-to-access logging and fishing zones.' }
+    ],
+    partners: ['Rivercess County Administration', 'Local Fishermen Association']
   },
   'sinoe': {
     focusAreas: [
       'Drug demand reduction in concession areas',
       'Youth life-skills and vocational programming',
       'Community-led natural resource management education'
+    ],
+    programs: [
+      {
+        icon: <FiActivity className="w-5 h-5" />,
+        title: 'Concession Area Outreach',
+        description: 'Education and prevention programs tailored for youth in various logging and mining concession areas.'
+      }
     ]
   },
   'gbarpolu': {
     focusAreas: [
-      'Working with mining communities on prevention',
-      'Health and safety education regarding substance use',
-      'Child labor and protection concerns'
+      'Targeted prevention education for artisanal mining communities',
+      'Health, safety, and substance use awareness in mining hubs',
+      'Child labor protection and educational advocacy'
     ],
     programs: [
       {
         icon: <FiShield className="w-5 h-5" />,
-        title: 'Mining Camp Sensitization',
-        description: 'Targeted dialogues in artisanal mining hubs addressing the heavy prevalence of substance use.'
+        title: 'Mining Hub Sensitization',
+        description: 'Conducting community dialogues and peer awareness sessions in major mining centers to discourage substance abuse.'
       }
     ]
   },
   'bomi': {
     focusAreas: [
-      'Grassroots community mobilization',
-      'Youth inclusion and local governance',
-      'Rebuilding post-Ebola/COVID resilience systems'
+      'Grassroots community mobilization and inclusion',
+      'Youth leadership and participation in local governance',
+      'Building resilience systems for vulnerable youth populations'
+    ],
+    programs: [
+      {
+        icon: <FiUsers className="w-5 h-5" />,
+        title: 'Bomi Youth Inclusion Project',
+        description: 'Mobilizing local youth in Tubmanburg to participate in community decision-making and lead local prevention initiatives.'
+      }
+    ],
+    stats: [
+      { label: 'Community leaders engaged', value: '40+', helper: 'Traditional and local leaders supporting youth programs.' }
     ]
+  },
+  'grand-cape-mount': {
+    focusAreas: [
+      'Border-area drug prevention and illicit transit monitoring',
+      'Coastal community sensitization in Robertsport area',
+      'Youth leadership development and civic engagement',
+      'Cross-border coordination with regional security structures'
+    ],
+    programs: [
+      {
+        icon: <FiUsers className="w-5 h-5" />,
+        title: 'Border Vigilance Network',
+        description: 'Collaborating with community structures near Bo Waterside to educate youth on the risks of drug trafficking.'
+      },
+      {
+        icon: <FiTarget className="w-5 h-5" />,
+        title: 'Robertsport Safe Haven',
+        description: 'Establishing recreational and educational safe spaces for coastal youth to promote positive life alternatives.'
+      }
+    ],
+    stats: [
+      { label: 'Border points engaged', value: '8+', helper: 'Active awareness at key entry and unofficial transit points.' },
+      { label: 'Youth ambassadors', value: '85+', helper: 'Trained in illicit transit monitoring and peer education.' }
+    ],
+    partners: ['Grand Cape Mount Administration', 'Joint Security Taskforce', 'Local Fishermen Council']
+  },
+  'grand-kru': {
+    focusAreas: [
+      'Protection of isolated and hard-to-reach rural communities',
+      'Life-skills training for community-based youth groups',
+      'Strengthening rural health referral and support mechanisms',
+      'Agricultural resilience as a foundation for youth empowerment'
+    ],
+    programs: [
+      {
+        icon: <FiActivity className="w-5 h-5" />,
+        title: 'Isolated Community Outreach',
+        description: 'Bringing essential drug prevention education and psychosocial support to remote towns in the interior.'
+      },
+      {
+        icon: <FiBriefcase className="w-5 h-5" />,
+        title: 'Rural Life Skills Initiative',
+        description: 'Empowering youth with basic entrepreneurial and survival skills tailored for the rural economy.'
+      }
+    ],
+    stats: [
+      { label: 'Remote towns reached', value: '25+', helper: 'Direct engagement in previously underserved districts.' },
+      { label: 'Health referral links', value: '12+', helper: 'Active pathways for medical and psychosocial support.' }
+    ],
+    partners: ['Grand Kru Health Team', 'Traditional Leaders Council', 'Rural Youth Front']
+  },
+  'maryland': {
+    focusAreas: [
+      'Comprehensive child protection and school safety',
+      'Empowerment circles for adolescent girls and young women',
+      'Harper City youth engagement and career mentorship',
+      'Regional cooperation on youth welfare and protection'
+    ],
+    programs: [
+      {
+        icon: <FiHeart className="w-5 h-5" />,
+        title: 'Maryland Girls Circle',
+        description: 'Dedicated safe spaces for girls focusing on reproductive health, education, and substance avoidance.'
+      },
+      {
+        icon: <FiShield className="w-5 h-5" />,
+        title: 'Harper Youth Hub',
+        description: 'Providing career mentorship and drug prevention education for youth in commercial and academic centers.'
+      }
+    ],
+    stats: [
+      { label: 'Girls in support circles', value: '180+', helper: 'Direct participants in empowerment and protection programs.' },
+      { label: 'Educational scholarship links', value: '45+', helper: 'Students supported with school materials and fees.' }
+    ],
+    partners: ['Maryland County School Board', 'Harper City Corporation', 'Maryland Women’s Association']
   }
 };

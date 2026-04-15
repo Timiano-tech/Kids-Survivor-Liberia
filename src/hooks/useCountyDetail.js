@@ -20,5 +20,6 @@ export const useCountyDetail = () => {
     programs: specificData.programs ? [...specificData.programs, ...basePrograms.slice(specificData.programs.length)] : basePrograms,
     stats: specificData.stats || baseStats,
     partners: specificData.partners || basePartners,
+    successStories: specificData.successStories || [],
   };
 };

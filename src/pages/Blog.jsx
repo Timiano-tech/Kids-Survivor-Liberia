@@ -12,9 +12,13 @@ import HeaderImage from '../assets/Talking to children.jpeg';
 import BlogImage1 from '../assets/Students Impacted.jpeg';
 import BlogImage2 from '../assets/Youth_Community_Outreach.jpeg';
 import BlogImage3 from '../assets/Helping Children.jpeg';
+import CampaignImage from '../assets/Campaign3.jpeg';
+import MedicalImage from '../assets/Free_Medicals9.jpeg';
+import KSL_School_Img from '../assets/KSL_School.jpeg';
 import BlogImage4 from '../assets/Students_Latest.jpeg';
 import Thumbnail from '../assets/Campaign_Thumbnail.png';
 import THumbnail2 from '../assets/Thumbnail2.png';
+import SuccessStoryThumb from '../assets/Success_Story.jpeg';
 
 const Blog = () => {
   const [playingVideoId, setPlayingVideoId] = useState(null);
@@ -26,30 +30,30 @@ const Blog = () => {
   const blogPosts = [
     {
       id: 1,
-      title: 'NADAP 2025-2030: Community-Based Drug Prevention Initiatives',
-      excerpt: "Educating Students on the dangers of drug abuse through school and community programs aligned with Liberia's National Anti-Drugs Action Plan.",
+      title: 'Meaningful Awareness Campaign in Gbarnga, Bong County',
+      excerpt: "Kids Survivor Liberia (KSL) recently conducted a high-impact awareness campaign in Gbarnga, Bong County, focusing on the fundamental rights and safety of children. The initiative featured a series of interactive town-hall meetings and school-based workshops that reached hundreds of families. By addressing critical issues like substance abuse, educational barriers, and community protection, the team fostered a culture of vigilance and support.",
       author: 'KSL Team',
-      date: 'Jan 19, 2026',
-      category: 'Drug Prevention',
-      image: BlogImage1,
+      date: 'Apr 15, 2026',
+      category: 'Community Outreach',
+      image: CampaignImage,
     },
     {
       id: 2,
-      title: 'Youth Leadership Development Through YTEI Framework',
-      excerpt: 'Empowering young people as agents of change through life skills training, civic engagement, and positive youth development programs.',
+      title: 'Free Medical Outreach Serving At-Risk Youth in Buchanan',
+      excerpt: "In a collaborative effort with The Mary Hand Organization, Kids Survivor Liberia successfully executed a comprehensive free medical outreach program in Buchanan City, Grand Bassa County. This vital mission targeted at-risk youth, including those residing in cemetery communities who often lack access to basic healthcare. A total of 175 young individuals received medical consultations and treatment for prevalent conditions such as malaria, typhoid, and various skin infections.",
       author: 'KSL Team',
-      date: 'Jan 19, 2026',
-      category: 'Youth Empowerment',
-      image: BlogImage2,
+      date: 'Apr 15, 2026',
+      category: 'Health & Wellbeing',
+      image: MedicalImage,
     },
     {
       id: 3,
-      title: 'Community Engagement for Gender Protection & Social Inclusion',
-      excerpt: 'Feeding children and supporting vulnerable groups through targeted interventions that promote social reintegration and community resilience.',
+      title: 'KIDS SURVIVOR LIBERIA PRIMARY & ELEMENTARY SCHOOL (KSL)',
+      excerpt: "KIDS SURVIVOR LIBERIA Primary & Elementary School (KSL) is located in Wee Statutory District, Compound #3, Grand Bassa County, Liberia. In alignment with our mission, KSL provides free educational opportunities for children from marginalized communities, especially those from low-income families who cannot afford the high cost of school fees. Through our program, we aim to bridge this gap by offering free learning opportunities, giving every child a chance to learn and grow.",
       author: 'KSL Team',
-      date: 'Jan 19, 2026',
-      category: 'Community',
-      image: BlogImage3,
+      date: 'Apr 04, 2026',
+      category: 'Education',
+      image: KSL_School_Img,
     },
     {
       id: 4,
@@ -59,6 +63,33 @@ const Blog = () => {
       date: 'Jan 19, 2026',
       category: 'Drug Prevention',
       image: BlogImage4,
+    },
+    {
+      id: 5,
+      title: 'Empowering Liberia’s Future: A Look at Our School Program',
+      excerpt: 'Discover how Kids Survivor Liberia is transforming lives through education, providing free schooling and essential support to children in need.',
+      author: 'KSL Team',
+      date: 'Jan 19, 2026',
+      category: 'Education',
+      image: BlogImage1,
+    },
+    {
+      id: 6,
+      title: 'Youth-Led Community Outreach: Making a Difference Together',
+      excerpt: 'Witness the power of youth empowerment as our dedicated team leads impactful outreach programs across communities in Liberia.',
+      author: 'KSL Team',
+      date: 'Jan 19, 2026',
+      category: 'Community Outreach',
+      image: BlogImage2,
+    },
+    {
+      id: 7,
+      title: 'Supporting Children’s Well-being: Our Ongoing Commitment',
+      excerpt: 'Learn about our continuous efforts to provide care, protection, and support to vulnerable children, ensuring their safety and brighter future.',
+      author: 'KSL Team',
+      date: 'Jan 19, 2026',
+      category: 'Health & Wellbeing',
+      image: BlogImage3,
     }
   ];
 
@@ -78,7 +109,7 @@ const Blog = () => {
       description: 'Watch this inspiring story of youth-led community outreach and empowerment in Liberia.',
       date: 'Jan 19, 2026',
       duration: '2:27',
-      thumbnail: BlogImage2,
+      thumbnail: SuccessStoryThumb,
       videoSrc: '/videos/Succes_story.mp4',
     },
     {

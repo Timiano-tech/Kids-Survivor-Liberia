@@ -6,12 +6,14 @@ import {
   FiGlobe,
   FiHome,
   FiPhone,
+  FiHeart,
+  FiMap,
 } from 'react-icons/fi';
 import { useCountyDetail } from '../hooks/useCountyDetail';
 
 
 const CountyDetail = () => {
-  const { county, focusAreas, programs, stats, partners } = useCountyDetail();
+  const { county, focusAreas, programs, stats, partners, successStories } = useCountyDetail();
 
   if (!county) {
     return (
@@ -233,6 +235,61 @@ const CountyDetail = () => {
               ))}
             </div>
           </section>
+
+          {/* Success Stories Section - Conditionally rendered */}
+          {successStories.length > 0 && (
+            <section className="mb-24 lg:mb-32">
+              <div className="mb-16 text-center max-w-3xl mx-auto">
+                <span className="text-red-600 font-semibold tracking-wider uppercase text-sm mb-3 block">
+                  Impact Stories
+                </span>
+                <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6 tracking-tight">
+                  Lives Transformed in {county.name}
+                </h2>
+                <p className="text-slate-600 text-lg leading-relaxed">
+                  Real stories of hope and recovery from our interventions in this county.
+                </p>
+              </div>
+              <div className="grid gap-10">
+                {successStories.map((story, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100 flex flex-col md:flex-row"
+                  >
+                    <div className="w-full md:w-1/3 bg-blue-600 flex items-center justify-center p-12 order-2 md:order-1">
+                      <FiHeart className="w-24 h-24 text-white/20 absolute opacity-50" />
+                      <div className="relative z-10 text-center">
+                         <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-md border border-white/20">
+                            <FiActivity className="w-10 h-10 text-white" />
+                         </div>
+                         <h4 className="text-white font-bold text-xl">{story.name}</h4>
+                         <p className="text-blue-100 text-xs uppercase tracking-widest mt-2">{story.category}</p>
+                      </div>
+                    </div>
+                    <div className="w-full md:w-2/3 p-10 lg:p-14 order-1 md:order-2">
+                       <FiMap className="text-blue-200 w-16 h-16 absolute top-4 right-4 -z-0 opacity-50" />
+                       <div className="relative z-10">
+                         <span className="inline-block px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-bold uppercase tracking-widest mb-6 border border-blue-100">
+                           {county.name} Focus
+                         </span>
+                         <p className="text-slate-700 text-lg lg:text-xl leading-relaxed italic font-medium">
+                           "{story.story}"
+                         </p>
+                         <div className="mt-8 flex items-center gap-4">
+                            <div className="h-0.5 w-12 bg-blue-600 rounded-full"></div>
+                            <span className="text-slate-400 font-bold uppercase tracking-widest text-xs">Community Impact Story</span>
+                         </div>
+                       </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* Photo gallery - Premium */}
           <section className="mb-24 lg:mb-32">

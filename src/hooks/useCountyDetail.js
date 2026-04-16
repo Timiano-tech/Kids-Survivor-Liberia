@@ -21,5 +21,6 @@ export const useCountyDetail = () => {
     stats: specificData.stats || baseStats,
     partners: specificData.partners || basePartners,
     successStories: specificData.successStories || [],
+    featuredActivities: specificData.featuredActivities || [],
   };
 };

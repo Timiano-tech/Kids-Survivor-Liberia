@@ -8,12 +8,17 @@ import {
   FiPhone,
   FiHeart,
   FiMap,
+  FiCalendar,
+  FiArrowRight,
+  FiStar,
+  FiCheckCircle,
+  FiAward
 } from 'react-icons/fi';
 import { useCountyDetail } from '../hooks/useCountyDetail';
 
 
 const CountyDetail = () => {
-  const { county, focusAreas, programs, stats, partners, successStories } = useCountyDetail();
+  const { county, focusAreas, programs, stats, partners, successStories, featuredActivities } = useCountyDetail();
 
   if (!county) {
     return (
@@ -157,6 +162,96 @@ const CountyDetail = () => {
               </motion.div>
             </div>
           </section>
+          
+          {/* Featured Field Report - NEW SECTION (Homepage Sync) */}
+          {featuredActivities.length > 0 && (
+            <section className="mb-24 lg:mb-32">
+              <div className="mb-12">
+                <span className="text-blue-600 font-bold tracking-widest uppercase text-xs mb-3 block">
+                  Latest Field Report
+                </span>
+                <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+                  Featured Activities in {county.name}
+                </h2>
+              </div>
+              
+              <div className="grid md:grid-cols-2 gap-10">
+                {featuredActivities.map((activity, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="group bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 flex flex-col h-full"
+                  >
+                    <div className="relative h-64 overflow-hidden">
+                      <img 
+                        src={activity.image} 
+                        alt={activity.title} 
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute top-4 left-4">
+                        <span className="bg-blue-600/90 backdrop-blur-sm text-white px-4 py-1.5 rounded-full text-[10px] font-black tracking-widest uppercase shadow-sm border border-white/20">
+                          {activity.category}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="p-8 flex flex-col flex-grow">
+                      <div className="flex items-center text-xs font-bold text-slate-400 mb-4 uppercase tracking-widest">
+                        <FiCalendar className="mr-2 text-blue-500" />
+                        {activity.date}
+                      </div>
+                      <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors line-clamp-2 leading-tight">
+                        {activity.title}
+                      </h3>
+                      <p className="text-slate-600 text-[17px] leading-relaxed mb-8 line-clamp-3">
+                        {activity.excerpt}
+                      </p>
+                      <div className="mt-auto pt-6 border-t border-slate-50">
+                        <span className="inline-flex items-center text-blue-600 font-bold text-sm tracking-widest uppercase group-hover:gap-3 gap-2 transition-all">
+                          Read Full Update
+                          <FiArrowRight />
+                        </span>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Strategic Impact Alignment - NEW SECTION */}
+          <section className="mb-24 lg:mb-32 bg-slate-900 rounded-[2.5rem] p-10 sm:p-16 relative overflow-hidden shadow-2xl">
+            <div className="absolute inset-0 bg-[url('/assets/pattern-bg.png')] opacity-10 mix-blend-overlay"></div>
+            <div className="relative z-10 grid lg:grid-cols-[1fr,1.5fr] gap-12 items-center">
+              <div>
+                <span className="text-yellow-400 font-bold tracking-widest uppercase text-xs mb-4 block">National Alignment</span>
+                <h2 className="text-3xl sm:text-4xl font-black text-white mb-6 tracking-tight leading-tight">
+                  {county.name} Strategic Impact
+                </h2>
+                <p className="text-blue-100 text-lg font-light leading-relaxed">
+                  Our interventions in {county.name} are precisely aligned with Liberia's national frameworks for youth transformation and drug demand reduction.
+                </p>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-6">
+                <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-colors">
+                  <FiAward className="text-yellow-400 w-10 h-10 mb-6" />
+                  <h4 className="text-white font-bold text-xl mb-3">YTEI Alignment</h4>
+                  <p className="text-blue-100/70 text-sm leading-relaxed">
+                    Contributing to the Youth Transformation & Empowerment Initiative through localized skills training.
+                  </p>
+                </div>
+                <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-colors">
+                  <FiActivity className="text-blue-400 w-10 h-10 mb-6" />
+                  <h4 className="text-white font-bold text-xl mb-3">NADAP 2025</h4>
+                  <p className="text-blue-100/70 text-sm leading-relaxed">
+                    Implementing drug demand reduction and community prevention as per the National Action Plan.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
 
           {/* Focus areas - Premium */}
           <section className="mb-24 lg:mb-32">
@@ -236,54 +331,65 @@ const CountyDetail = () => {
             </div>
           </section>
 
-          {/* Success Stories Section - Conditionally rendered */}
+          {/* Success Stories Section - Enhanced (Homepage Sync) */}
           {successStories.length > 0 && (
             <section className="mb-24 lg:mb-32">
               <div className="mb-16 text-center max-w-3xl mx-auto">
-                <span className="text-red-600 font-semibold tracking-wider uppercase text-sm mb-3 block">
+                <span className="text-red-600 font-bold tracking-widest uppercase text-xs mb-3 block">
                   Impact Stories
                 </span>
                 <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6 tracking-tight">
                   Lives Transformed in {county.name}
                 </h2>
                 <p className="text-slate-600 text-lg leading-relaxed">
-                  Real stories of hope and recovery from our interventions in this county.
+                  Direct testimonies from individuals whose lives have been positively impacted by KSL programs in this region.
                 </p>
               </div>
-              <div className="grid gap-10">
+              <div className="space-y-12">
                 {successStories.map((story, index) => (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100 flex flex-col md:flex-row"
+                    transition={{ duration: 0.8 }}
+                    className="bg-white rounded-3xl shadow-[0_20px_60px_rgb(0,0,0,0.06)] overflow-hidden border border-slate-100 flex flex-col lg:flex-row min-h-[400px]"
                   >
-                    <div className="w-full md:w-1/3 bg-blue-600 flex items-center justify-center p-12 order-2 md:order-1">
-                      <FiHeart className="w-24 h-24 text-white/20 absolute opacity-50" />
-                      <div className="relative z-10 text-center">
-                         <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-md border border-white/20">
-                            <FiActivity className="w-10 h-10 text-white" />
-                         </div>
-                         <h4 className="text-white font-bold text-xl">{story.name}</h4>
-                         <p className="text-blue-100 text-xs uppercase tracking-widest mt-2">{story.category}</p>
+                    <div className="lg:w-[40%] relative min-h-[300px] lg:min-h-full">
+                      {story.image ? (
+                        <img 
+                          src={story.image} 
+                          alt={story.name} 
+                          className="absolute inset-0 w-full h-full object-cover"
+                        />
+                      ) : (
+                        <div className="absolute inset-0 bg-blue-600 flex items-center justify-center">
+                          <FiUser className="w-24 h-24 text-white/20" />
+                        </div>
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+                      <div className="absolute bottom-8 left-8">
+                        <h4 className="text-2xl font-bold text-white mb-1">{story.name}</h4>
+                        <p className="text-blue-200 text-xs font-black tracking-widest uppercase">{story.category}</p>
                       </div>
                     </div>
-                    <div className="w-full md:w-2/3 p-10 lg:p-14 order-1 md:order-2">
-                       <FiMap className="text-blue-200 w-16 h-16 absolute top-4 right-4 -z-0 opacity-50" />
-                       <div className="relative z-10">
-                         <span className="inline-block px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-bold uppercase tracking-widest mb-6 border border-blue-100">
-                           {county.name} Focus
-                         </span>
-                         <p className="text-slate-700 text-lg lg:text-xl leading-relaxed italic font-medium">
-                           "{story.story}"
-                         </p>
-                         <div className="mt-8 flex items-center gap-4">
-                            <div className="h-0.5 w-12 bg-blue-600 rounded-full"></div>
-                            <span className="text-slate-400 font-bold uppercase tracking-widest text-xs">Community Impact Story</span>
-                         </div>
-                       </div>
+                    
+                    <div className="lg:w-[60%] p-10 lg:p-16 flex flex-col justify-center relative">
+                      <div className="absolute top-10 right-10 opacity-[0.03] pointer-events-none">
+                        <FiHeart size={200} className="text-blue-600" />
+                      </div>
+                      <div className="relative z-10">
+                        <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 mb-8 border border-blue-100 shadow-sm">
+                          {story.icon || <FiHeart className="w-6 h-6" />}
+                        </div>
+                        <p className="text-xl md:text-2xl text-slate-800 font-light italic leading-relaxed mb-8">
+                          "{story.story}"
+                        </p>
+                        <div className="flex items-center gap-4 text-slate-400">
+                          <div className="h-px w-10 bg-blue-300"></div>
+                          <span className="text-[10px] font-black tracking-[0.2em] uppercase">Verified Testimony</span>
+                        </div>
+                      </div>
                     </div>
                   </motion.div>
                 ))}

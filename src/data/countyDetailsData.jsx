@@ -1,5 +1,15 @@
-import React from 'react';
-import { FiTarget, FiUsers, FiShield, FiBookOpen, FiActivity, FiBriefcase, FiHeart, FiTrendingUp, FiCheckCircle } from 'react-icons/fi';
+import { FiTarget, FiUsers, FiShield, FiBookOpen, FiActivity, FiBriefcase, FiHeart, FiTrendingUp, FiCheckCircle, FiPlusCircle, FiStar } from 'react-icons/fi';
+
+// Asset Imports for Featured Activities
+import CampaignImage from '../assets/Campaign3.jpeg';
+import MedicalImage from '../assets/Free_Medicals9.jpeg';
+import KSL_School_Img from '../assets/KSL_School.jpeg';
+import SlumRecoveryImg from '../assets/Community_Children.jpeg';
+import StudentsImpacted from '../assets/Students Impacted.jpeg';
+import HelpingChildren from '../assets/Helping Children.jpeg';
+import SuccessStory1 from '../assets/Success_Story.jpeg';
+import SuccessStory2 from '../assets/Success_story2.jpeg';
+import SuccessStory3 from '../assets/Success_Story3.jpeg';
 
 export const baseFocusAreas = [
   'Drug abuse prevention and public awareness campaigns',
@@ -79,7 +89,17 @@ export const countySpecificData = {
       {
         name: 'Monrovia Slum Recovery',
         category: 'Urban Intervention',
-        story: 'Our urban outreach has successfully reintegrated over 150 youth from high-density communities back into productive life through vocational training.'
+        story: 'Our urban outreach has successfully reintegrated over 150 youth from high-density communities back into productive life through vocational training.',
+        icon: <FiStar className="w-6 h-6" />
+      }
+    ],
+    featuredActivities: [
+      {
+        title: 'Monrovia Slum Recovery Initiative',
+        excerpt: 'Transforming lives in Clara Town and West Point through direct health interventions and community-based support.',
+        image: SlumRecoveryImg,
+        date: 'Ongoing 2026',
+        category: 'Urban Outreach'
       }
     ]
   },
@@ -107,7 +127,16 @@ export const countySpecificData = {
       { label: 'Families counseled', value: '250+', helper: 'Through community engagement and home-based support.' },
       { label: 'Student ambassadors', value: '120+', helper: 'Trained to lead peer awareness and anti-drug advocacy.' }
     ],
-    partners: ['Margibi School Board', 'Traditional Leaders Council', 'County Health Team']
+    partners: ['Margibi School Board', 'Traditional Leaders Council', 'County Health Team'],
+    featuredActivities: [
+      {
+        title: 'Safe Schools Program Expansion',
+        excerpt: 'KSL is establishing anti-drug clubs and implementing survival-themed life skills curricula in 20+ schools across Kakata.',
+        image: StudentsImpacted,
+        date: 'Jan 2026',
+        category: 'Education'
+      }
+    ]
   },
   'bong': {
     focusAreas: [
@@ -133,7 +162,17 @@ export const countySpecificData = {
       { label: 'Health workers trained', value: '60+', helper: 'Empowered with drug prevention and referral skills.' },
       { label: 'Agri-youth participants', value: '200+', helper: 'Engaged in sustainable farming and life skills.' }
     ],
-    partners: ['Bong County Health Team', 'Gbarnga City Corporation', 'Local Farmer Cooperatives']
+    partners: ['Bong County Health Team', 'Gbarnga City Corporation', 'Local Farmer Cooperatives'],
+    featuredActivities: [
+      {
+        title: 'Awareness Campaign in Gbarnga',
+        excerpt: 'A high-impact campaign focusing on fundamental children rights and safety, reaching hundreds of families in Bong County.',
+        image: CampaignImage,
+        date: 'Apr 15, 2026',
+        category: 'Community Outreach',
+        link: '/blog'
+      }
+    ]
   },
   'nimba': {
     focusAreas: [
@@ -159,7 +198,32 @@ export const countySpecificData = {
       { label: 'Border campaigns', value: '18+', helper: 'Focus on Loguatuo and other major entry points.' },
       { label: 'Cohesion workshops', value: '25+', helper: 'Bringing together diverse youth groups for peacebuilding.' }
     ],
-    partners: ['Nimba County Administration', 'Commerce & Industry Ministry', 'Local Youth Unions']
+    partners: ['Nimba County Administration', 'Commerce & Industry Ministry', 'Local Youth Unions'],
+    successStories: [
+      {
+        name: 'Franklin Mondor',
+        category: 'Rehabilitation & Reintegration',
+        story: 'Franklin Mondor, a 41-year-old former drug dealer from Nimba County, spent over 13 years dealing drugs. After joining a KSL outreach, he has transformed his life and now seeks a trade for full community reintegration.',
+        icon: <FiHeart className="w-6 h-6" />,
+        image: SuccessStory2
+      },
+      {
+        name: 'Samuel Meaway',
+        category: 'Rehabilitation & Reintegration',
+        story: 'Formerly known as “50,” Samuel grew up in hardship and crime. A KSL outreach offered him compassion and guidance—a turning point that helped him break free from addiction and crime.',
+        icon: <FiHeart className="w-6 h-6" />,
+        image: SuccessStory3
+      }
+    ],
+    featuredActivities: [
+      {
+        title: 'Gompa Vocational Training Hub',
+        excerpt: 'Providing market-aligned vocational training in carpentry and masonry for at-risk youth in commercial centers.',
+        image: HelpingChildren,
+        date: 'Mar 2026',
+        category: 'Skills Training'
+      }
+    ]
   },
   'lofa': {
     focusAreas: [
@@ -194,7 +258,18 @@ export const countySpecificData = {
       {
         name: 'John Howard',
         category: 'Rehabilitation & Reintegration',
-        story: 'John Howard, once a homeless drug user and criminal in Lofa County, was reached by KSL in July 2025. Though initially resistant, he joined our support network. Now the sole survivor of his original group, he is a living example of transformation and is actively rebuilding his life while supporting others.'
+        story: 'John Howard, once a homeless drug user and criminal in Lofa County, was reached by KSL in July 2025. Though initially resistant, he joined our support network. Now the sole survivor of his original group, he is a living example of transformation and is actively rebuilding his life while supporting others.',
+        icon: <FiHeart className="w-6 h-6" />,
+        image: SuccessStory1
+      }
+    ],
+    featuredActivities: [
+      {
+        title: 'Vulnerable Advocacy Outreach',
+        excerpt: 'Establishing community-led protection circles to provide psychosocial support for at-risk populations in Lofa.',
+        image: HelpingChildren, // Common asset for outreach
+        date: 'Feb 2026',
+        category: 'Protection'
       }
     ],
     partners: ['Lofa Women’s Network', 'Traditional Chiefs Council', 'Ministry of Internal Affairs']
@@ -227,6 +302,26 @@ export const countySpecificData = {
     stats: [
       { label: 'Port area outreaches', value: '35+', helper: 'Targeted awareness in Buchanan and fishing hubs.' }
     ],
+    featuredActivities: [
+      {
+        id: 1,
+        title: 'Free Medical Outreach in Buchanan',
+        excerpt: 'Comprehensive free medical outreach targeted at at-risk youth in Buchanan cemetery communities.',
+        image: MedicalImage,
+        date: 'Apr 15, 2026',
+        category: 'Health & Wellbeing',
+        link: '/blog'
+      },
+      {
+        id: 2,
+        title: 'KSL Primary & Elementary School',
+        excerpt: 'Providing free educational opportunities for children from marginalized communities in Compound #3.',
+        image: KSL_School_Img,
+        date: 'Apr 04, 2026',
+        category: 'Education',
+        link: '/blog'
+      }
+    ],
     partners: ['Grand Bassa County Health Team', 'Buchanan City Corporation', 'Port Authority']
   },
   'grand-gedeh': {
@@ -252,7 +347,16 @@ export const countySpecificData = {
       { label: 'Zwedru urban outreaches', value: '12+', helper: 'Focus on transport hubs and market places.' },
       { label: 'Youth reached in Gedeh', value: '300+', helper: 'Through community dialogues and school talks.' }
     ],
-    partners: ['Grand Gedeh County Health Team', 'Zwedru Local Government', 'Traditional Council']
+    partners: ['Grand Gedeh County Health Team', 'Zwedru Local Government', 'Traditional Council'],
+    featuredActivities: [
+      {
+        title: 'Zwedru Community Healing Circles',
+        excerpt: 'Creating safe spaces for dialogue and social cohesion, addressing root causes of vulnerability in Zwedru transport hubs.',
+        image: CampaignImage, // Placeholder if specific one not available
+        date: 'Ongoing 2026',
+        category: 'Social Cohesion'
+      }
+    ]
   },
   'rivergee': {
     focusAreas: [

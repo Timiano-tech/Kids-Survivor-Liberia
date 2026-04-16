@@ -149,7 +149,7 @@ const Navbar = () => {
         isTransparent 
           ? 'lg:bg-black/20 lg:backdrop-blur-md lg:border-b lg:border-white/10 max-lg:bg-white/95 max-lg:backdrop-blur-md max-lg:shadow-[0_8px_30px_rgb(0,0,0,0.08)] max-lg:border max-lg:border-gray-100' 
           : 'bg-white shadow-lg max-lg:border max-lg:border-gray-100'
-      } max-lg:top-2 max-lg:left-2 max-lg:right-2 max-lg:rounded-xl lg:top-0 lg:left-0 lg:right-0 lg:w-full`}
+      } max-lg:top-2 max-lg:left-2 max-lg:right-2 max-lg:rounded-lg lg:top-0 lg:left-0 lg:right-0 lg:w-full`}
       onClick={closeAllDropdowns}
     >
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
@@ -191,7 +191,7 @@ const Navbar = () => {
                           animate={{ opacity: 1, y: 0, scale: 1 }}
                           exit={{ opacity: 0, y: 10, scale: 0.95 }}
                           transition={{ duration: 0.2 }}
-                          className="absolute top-full left-1/2 -translate-x-1/2 mt-0 w-[280px] sm:w-[320px] bg-white shadow-2xl rounded-2xl p-3 border border-gray-100 z-50 overflow-hidden"
+                          className="absolute top-full left-1/2 -translate-x-1/2 mt-0 w-[280px] sm:w-[320px] bg-white shadow-2xl rounded-lg p-3 border border-gray-100 z-50 overflow-hidden"
                           onClick={(e) => e.stopPropagation()}
                         >
                           <div className="grid gap-1">
@@ -199,7 +199,7 @@ const Navbar = () => {
                               <Link
                                 key={subItem.name}
                                 to={subItem.path}
-                                className="group/item flex items-start gap-3.5 p-3 rounded-xl hover:bg-slate-50 transition-all duration-300"
+                                className="group/item flex items-start gap-3.5 p-3 rounded-lg hover:bg-slate-50 transition-all duration-300"
                                 onClick={closeAllDropdowns}
                               >
                                 <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center group-hover/item:bg-blue-600 group-hover/item:text-white transition-colors duration-300 shadow-sm">
@@ -239,7 +239,7 @@ const Navbar = () => {
             {/* Search Button (with Shortcut Hint) */}
             <button
               onClick={() => setIsSearchOpen(true)}
-              className={`flex items-center gap-2 px-3 py-2 rounded-full transition-all duration-300 border ${isTransparent 
+              className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 border ${isTransparent 
                 ? 'border-white/20 text-white bg-white/5 hover:bg-white/10' 
                 : 'border-slate-200 text-slate-500 bg-slate-50 hover:bg-slate-100 hover:text-blue-600'}`}
               aria-label="Search"
@@ -253,7 +253,7 @@ const Navbar = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-yellow-500 hover:bg-yellow-400 text-slate-900 px-5 py-2 rounded-full font-bold shadow-md transition-all text-sm"
+                className="bg-yellow-500 hover:bg-yellow-400 text-slate-900 px-5 py-2 rounded-lg font-bold shadow-md transition-all text-sm"
               >
                 Donate
               </motion.button>
@@ -292,7 +292,7 @@ const Navbar = () => {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.2 }}
-              className="lg:hidden border-t border-gray-200 overflow-hidden bg-white max-lg:rounded-b-2xl shadow-xl"
+              className="lg:hidden border-t border-gray-200 overflow-hidden bg-white max-lg:rounded-b-lg shadow-xl"
               onClick={(e) => e.stopPropagation()}
             >
               <div
@@ -312,7 +312,7 @@ const Navbar = () => {
                             <Link
                               key={subItem.name}
                               to={subItem.path}
-                              className="flex items-start gap-3 py-3 px-3 text-gray-600 hover:text-blue-600 hover:bg-blue-50/50 rounded-xl transition-colors touch-manipulation"
+                              className="flex items-start gap-3 py-3 px-3 text-gray-600 hover:text-blue-600 hover:bg-blue-50/50 rounded-lg transition-colors touch-manipulation"
                               onClick={() => {
                                 setIsOpen(false);
                                 closeAllDropdowns();
@@ -358,7 +358,7 @@ const Navbar = () => {
                   >
                     <button
                       type="button"
-                      className="w-full bg-yellow-500 hover:bg-yellow-400 text-slate-900 py-3.5 rounded-full font-bold shadow-sm transition-colors touch-manipulation min-h-12"
+                      className="w-full bg-yellow-500 hover:bg-yellow-400 text-slate-900 py-3.5 rounded-lg font-bold shadow-sm transition-colors touch-manipulation min-h-12"
                     >
                       Donate Now
                     </button>

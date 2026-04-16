@@ -69,9 +69,9 @@ const Transparency = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-white rounded-xl shadow-sm hover:shadow-md p-8 lg:p-10 border border-slate-100 transition-all duration-500 hover:-translate-y-2 group"
+            className="bg-white rounded-lg shadow-sm hover:shadow-md p-8 lg:p-10 border border-slate-100 transition-all duration-500 hover:-translate-y-2 group"
           >
-            <div className="w-16 h-16 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-8 border border-blue-100 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
+            <div className="w-16 h-16 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-8 border border-blue-100 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
               <FiTrendingUp className="w-8 h-8" />
             </div>
             <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight">Financial Integrity</h3>
@@ -79,15 +79,15 @@ const Transparency = () => {
               Maintained through rigorous internal controls, transparent procurement processes, and annual independent external audits available to all partners.
             </p>
           </motion.div>
-
+ 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="bg-white rounded-xl shadow-sm hover:shadow-md p-8 lg:p-10 border border-slate-100 transition-all duration-500 hover:-translate-y-2 group"
+            className="bg-white rounded-lg shadow-sm hover:shadow-md p-8 lg:p-10 border border-slate-100 transition-all duration-500 hover:-translate-y-2 group"
           >
-            <div className="w-16 h-16 bg-yellow-50 text-yellow-600 rounded-xl flex items-center justify-center mb-8 border border-yellow-100 group-hover:scale-110 group-hover:bg-yellow-500 group-hover:text-white transition-all duration-300 shadow-sm">
+            <div className="w-16 h-16 bg-yellow-50 text-yellow-600 rounded-lg flex items-center justify-center mb-8 border border-yellow-100 group-hover:scale-110 group-hover:bg-yellow-500 group-hover:text-white transition-all duration-300 shadow-sm">
               <FiCheckCircle className="w-8 h-8" />
             </div>
             <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight">Ethical Governance</h3>
@@ -95,15 +95,15 @@ const Transparency = () => {
               Oversight provided by an independent Board of Directors ensuring strategic alignment, risk management, and compliance with national and international laws.
             </p>
           </motion.div>
-
+ 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="bg-white rounded-xl shadow-sm hover:shadow-md p-8 lg:p-10 border border-slate-100 transition-all duration-500 hover:-translate-y-2 group"
+            className="bg-white rounded-lg shadow-sm hover:shadow-md p-8 lg:p-10 border border-slate-100 transition-all duration-500 hover:-translate-y-2 group"
           >
-            <div className="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center mb-8 border border-emerald-100 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300 shadow-sm">
+            <div className="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-lg flex items-center justify-center mb-8 border border-emerald-100 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300 shadow-sm">
               <FiShield className="w-8 h-8" />
             </div>
             <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight">Programmatic Rigor</h3>
@@ -128,9 +128,9 @@ const Transparency = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-slate-50 flex flex-col items-center text-center rounded-xl p-8 hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 border border-slate-100 hover:border-blue-100 group"
+                className="bg-slate-50 flex flex-col items-center text-center rounded-lg p-8 hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 border border-slate-100 hover:border-blue-100 group"
               >
-                <div className="w-14 h-14 rounded-full bg-blue-100/50 text-blue-600 flex items-center justify-center mb-6 border border-blue-200/50 group-hover:scale-110 transition-transform duration-300 shadow-sm">
+                <div className="w-14 h-14 rounded-lg bg-blue-100/50 text-blue-600 flex items-center justify-center mb-6 border border-blue-200/50 group-hover:scale-110 transition-transform duration-300 shadow-sm">
                   {policy.icon}
                 </div>
                 <h3 className="font-bold text-slate-900 text-xl mb-4 tracking-tight">{policy.title}</h3>
@@ -141,12 +141,12 @@ const Transparency = () => {
         </div>
 
         {/* Reports & Downloads - Premium */}
-        <section className="bg-gradient-to-r from-blue-900 to-indigo-900 rounded-xl p-10 sm:p-16 max-w-5xl mx-auto mb-16 shadow-2xl relative overflow-hidden">
+        <section className="bg-gradient-to-r from-blue-900 to-indigo-900 rounded-lg p-10 sm:p-16 max-w-5xl mx-auto mb-16 shadow-2xl relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-10 mix-blend-overlay"></div>
 
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10">
             <div className="md:w-2/3 text-center md:text-left">
-              <span className="inline-block px-4 py-1.5 bg-white/10 text-yellow-300 rounded-full text-xs font-bold tracking-widest uppercase mb-4 backdrop-blur-sm border border-white/10 text-shadow-sm">
+              <span className="inline-block px-4 py-1.5 bg-white/10 text-yellow-300 rounded-md text-xs font-bold tracking-widest uppercase mb-4 backdrop-blur-sm border border-white/10 text-shadow-sm">
                 Open Records
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight">Annual Reports & Financials</h2>
@@ -155,7 +155,7 @@ const Transparency = () => {
               </p>
             </div>
             <div className="md:w-auto relative">
-              <a href="mailto:support@ksliberia.org" className="inline-flex items-center justify-center px-8 py-4 bg-yellow-400 text-blue-900 hover:bg-yellow-300 rounded-full font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 whitespace-nowrap">
+              <a href="mailto:support@ksliberia.org" className="inline-flex items-center justify-center px-8 py-4 bg-yellow-400 text-blue-900 hover:bg-yellow-300 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 whitespace-nowrap">
                 <FiFileText className="mr-3 w-5 h-5" />
                 Request Documentation
               </a>

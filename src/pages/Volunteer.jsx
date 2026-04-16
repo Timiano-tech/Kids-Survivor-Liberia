@@ -128,7 +128,7 @@ const Volunteer = () => {
                 viewport={{ once: true }}
                 className="h-full"
               >
-                <div className="bg-gradient-to-br from-white to-slate-50 rounded-xl p-10 lg:p-12 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] h-full flex flex-col relative overflow-hidden group hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-shadow duration-500">
+                <div className="bg-gradient-to-br from-white to-slate-50 rounded-lg p-10 lg:p-12 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] h-full flex flex-col relative overflow-hidden group hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-shadow duration-500">
                   <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none">
                     <FiShield className="w-32 h-32 text-blue-600" />
                   </div>
@@ -156,7 +156,7 @@ const Volunteer = () => {
                 viewport={{ once: true }}
                 className="h-full"
               >
-                <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl p-10 lg:p-12 border border-blue-500 shadow-[0_8px_30px_rgb(37,99,235,0.2)] h-full flex flex-col relative overflow-hidden group hover:shadow-[0_20px_40px_rgb(37,99,235,0.3)] transition-shadow duration-500">
+                <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg p-10 lg:p-12 border border-blue-500 shadow-[0_8px_30px_rgb(37,99,235,0.2)] h-full flex flex-col relative overflow-hidden group hover:shadow-[0_20px_40px_rgb(37,99,235,0.3)] transition-shadow duration-500">
                   <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
                     <FiGlobe className="w-32 h-32 text-white" />
                   </div>
@@ -196,11 +196,11 @@ const Volunteer = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1, duration: 0.5 }}
-                    className="group bg-white rounded-xl border border-slate-100 p-8 shadow-sm hover:shadow-[0_20px_40px_rgb(0,0,0,0.1)] hover:-translate-y-2 transition-all duration-500 relative overflow-hidden"
+                    className="group bg-white rounded-lg border border-slate-100 p-8 shadow-sm hover:shadow-[0_20px_40px_rgb(0,0,0,0.1)] hover:-translate-y-2 transition-all duration-500 relative overflow-hidden"
                   >
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50/50 rounded-bl-full -z-10 group-hover:bg-blue-100/50 transition-colors duration-500"></div>
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50/50 rounded-bl-2xl -z-10 group-hover:bg-blue-100/50 transition-colors duration-500"></div>
                     <div className="flex flex-col mb-6">
-                      <div className="w-14 h-14 rounded-xl bg-slate-50 text-blue-600 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500 shadow-sm mb-4">
+                      <div className="w-14 h-14 rounded-lg bg-slate-50 text-blue-600 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500 shadow-sm mb-4">
                         {pillar.icon}
                       </div>
                       <span className="text-xs font-bold tracking-widest uppercase text-blue-600 max-w-fit">
@@ -220,12 +220,12 @@ const Volunteer = () => {
 
             {/* Volunteer Opportunities - Premium */}
             <section className="mb-24">
-              <div className="bg-slate-900 rounded-xl p-10 lg:p-16 relative overflow-hidden">
+              <div className="bg-slate-900 rounded-lg p-10 lg:p-16 relative overflow-hidden">
                 {/* Decorative background elements */}
 
                 <div className="relative z-10">
                   <div className="text-center mb-16">
-                    <span className="inline-block px-4 py-2 bg-white/10 text-blue-300 rounded-full text-xs font-bold tracking-widest uppercase mb-6 backdrop-blur-sm border border-white/10">
+                    <span className="inline-block px-4 py-2 bg-white/10 text-blue-300 rounded-md text-xs font-bold tracking-widest uppercase mb-6 backdrop-blur-sm border border-white/10">
                       Get Involved
                     </span>
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
@@ -244,13 +244,13 @@ const Volunteer = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1, duration: 0.5 }}
-                        className="bg-white/5 backdrop-blur-md rounded-xl border border-white/10 p-8 hover:bg-white/10 transition-colors duration-300 group"
+                        className="bg-white/5 backdrop-blur-md rounded-lg border border-white/10 p-8 hover:bg-white/10 transition-colors duration-300 group"
                       >
                         <div className="flex items-start justify-between gap-4 mb-6">
                           <span className="text-xs font-bold tracking-widest uppercase text-blue-300 bg-blue-900/50 px-4 py-2 rounded-lg border border-blue-500/30">
                             {role.category}
                           </span>
-                          <div className="p-3 bg-white/10 text-blue-300 rounded-xl group-hover:scale-110 transition-transform duration-300">
+                          <div className="p-3 bg-white/10 text-blue-300 rounded-lg group-hover:scale-110 transition-transform duration-300">
                             {role.icon}
                           </div>
                         </div>
@@ -260,7 +260,7 @@ const Volunteer = () => {
                         <p className="text-slate-300 leading-relaxed mb-8">
                           {role.description}
                         </p>
-                        <div className="bg-black/20 rounded-xl p-6 border border-white/5">
+                        <div className="bg-black/20 rounded-lg p-6 border border-white/5">
                           <ul className="text-sm font-medium text-slate-300 space-y-3">
                             <li className="flex items-center gap-3">
                               <FiTarget className="text-blue-400 w-5 h-5 shrink-0" />
@@ -299,9 +299,9 @@ const Volunteer = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.05 }}
-                    className="inline-flex items-center px-6 py-3 rounded-full bg-white border border-slate-200 text-slate-700 font-medium shadow-sm hover:shadow-md hover:border-blue-300 hover:text-blue-600 transition-all cursor-default"
+                    className="inline-flex items-center px-6 py-3 rounded-lg bg-white border border-slate-200 text-slate-700 font-medium shadow-sm hover:shadow-md hover:border-blue-300 hover:text-blue-600 transition-all cursor-default"
                   >
-                    <div className="w-2 h-2 rounded-full bg-blue-500 mr-3"></div>
+                    <div className="w-2 h-2 rounded-lg bg-blue-500 mr-3"></div>
                     {value}
                   </motion.span>
                 ))}
@@ -329,7 +329,7 @@ const Volunteer = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="bg-white rounded-xl border border-slate-100 p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow group cursor-pointer"
+                    className="bg-white rounded-lg border border-slate-100 p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow group cursor-pointer"
                     onClick={() => toggleFaq(index)}
                   >
                     <div className="flex justify-between items-center">
@@ -361,11 +361,11 @@ const Volunteer = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-r from-blue-700 to-indigo-800 rounded-xl p-10 sm:p-16 text-center text-white shadow-2xl relative overflow-hidden"
+                className="bg-gradient-to-r from-blue-700 to-indigo-800 rounded-lg p-10 sm:p-16 text-center text-white shadow-2xl relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-10 mix-blend-overlay"></div>
                 <div className="relative z-10">
-                  <div className="w-20 h-20 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-8 backdrop-blur-md border border-white/20">
+                  <div className="w-20 h-20 rounded-lg bg-white/10 flex items-center justify-center mx-auto mb-8 backdrop-blur-md border border-white/20">
                     <FiMessageSquare className="w-10 h-10 text-white" />
                   </div>
                   <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">
@@ -379,13 +379,13 @@ const Volunteer = () => {
                   <div className="flex flex-col sm:flex-row gap-5 justify-center">
                     <Link
                       to="/contact"
-                      className="inline-flex items-center justify-center bg-yellow-400 text-blue-900 hover:bg-yellow-300 font-bold py-4 px-10 rounded-full transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+                      className="inline-flex items-center justify-center bg-yellow-400 text-blue-900 hover:bg-yellow-300 font-bold py-4 px-10 rounded-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
                     >
                       Contact Volunteer Coordinator
                     </Link>
                     <a
                       href="mailto:support@ksliberia.org"
-                      className="inline-flex items-center justify-center bg-white/10 border border-white/30 text-white hover:bg-white/20 font-semibold py-4 px-10 rounded-full transition-all backdrop-blur-sm hover:-translate-y-1"
+                      className="inline-flex items-center justify-center bg-white/10 border border-white/30 text-white hover:bg-white/20 font-semibold py-4 px-10 rounded-lg transition-all backdrop-blur-sm hover:-translate-y-1"
                     >
                       support@ksliberia.org
                     </a>

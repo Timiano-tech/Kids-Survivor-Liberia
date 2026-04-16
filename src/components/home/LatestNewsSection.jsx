@@ -52,7 +52,7 @@ export const LatestNewsSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center px-4 py-2 bg-blue-100/50 text-blue-700 rounded-full text-sm font-bold tracking-wide uppercase mb-4 shadow-sm border border-blue-100">
+          <div className="inline-flex items-center px-4 py-2 bg-blue-100/50 text-blue-700 rounded-lg text-sm font-bold tracking-wide uppercase mb-4 shadow-sm border border-blue-100">
             <FiMessageSquare className="mr-2" />
             PROGRAM UPDATES & INSIGHTS
           </div>
@@ -74,7 +74,7 @@ export const LatestNewsSection = () => {
               viewport={{ once: true }}
               className="group"
             >
-              <div className="bg-white rounded-xl shadow-sm hover:shadow-md border border-slate-100 overflow-hidden transition-all duration-300 h-full flex flex-col">
+              <div className="bg-white rounded-lg shadow-sm hover:shadow-md border border-slate-100 overflow-hidden transition-all duration-300 h-full flex flex-col">
                 <div className="relative h-60 overflow-hidden">
                   <img
                     src={news.image}
@@ -84,7 +84,7 @@ export const LatestNewsSection = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
                   <div className="absolute top-4 left-4">
-                    <span className="bg-blue-600/90 backdrop-blur-sm text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase shadow-sm">
+                    <span className="bg-blue-600/90 backdrop-blur-sm text-white px-4 py-1.5 rounded-lg text-xs font-bold tracking-wider uppercase shadow-sm">
                       {news.category}
                     </span>
                   </div>
@@ -127,7 +127,7 @@ export const LatestNewsSection = () => {
           className="text-center"
         >
           <Link to="/blog">
-            <button className="inline-flex items-center px-6 py-3 bg-white text-blue-600 border-2 border-blue-600 rounded-full font-semibold hover:bg-blue-50 transition-all duration-300 hover:scale-105">
+            <button className="inline-flex items-center px-6 py-3 bg-white text-blue-600 border-2 border-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-300 hover:scale-105">
               <span>View All Program Updates</span>
               <FiArrowRight className="ml-2" />
             </button>

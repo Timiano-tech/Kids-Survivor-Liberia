@@ -62,7 +62,7 @@ export const SuccessStoriesCTA = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
           {/* Auto-rotating Image Side */}
-          <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl border border-white/20 ring-4 ring-white/5">
+          <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] rounded-xl overflow-hidden shadow-2xl border border-white/20 ring-4 ring-white/5">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentStory}
@@ -87,7 +87,7 @@ export const SuccessStoriesCTA = () => {
                     ))}
                   </div>
                   <h4 className="text-2xl font-bold text-white mb-2 drop-shadow-md">{successStories[currentStory].name}</h4>
-                  <p className="text-blue-200 font-semibold bg-slate-900/60 inline-block px-3 py-1 rounded backdrop-blur-sm border border-blue-400/30 text-sm drop-shadow-md">{successStories[currentStory].program}</p>
+                  <p className="text-blue-200 font-semibold bg-slate-900/60 inline-block px-3 py-1 rounded-md backdrop-blur-sm border border-blue-400/30 text-sm drop-shadow-md">{successStories[currentStory].program}</p>
                 </div>
               </motion.div>
             </AnimatePresence>
@@ -101,7 +101,7 @@ export const SuccessStoriesCTA = () => {
             viewport={{ once: true }}
             className="lg:pl-8 text-center lg:text-left drop-shadow-lg"
           >
-            <div className="inline-flex items-center px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full text-xs font-bold tracking-widest uppercase mb-6 border border-blue-400/30 shadow-inner backdrop-blur-sm">
+            <div className="inline-flex items-center px-4 py-2 bg-blue-500/20 text-blue-300 rounded-lg text-xs font-bold tracking-widest uppercase mb-6 border border-blue-400/30 shadow-inner backdrop-blur-sm">
               <FiHeart className="mr-2" /> Verified Impact
             </div>
             <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight leading-tight">
@@ -118,7 +118,7 @@ export const SuccessStoriesCTA = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.5 }}
-                className="border-l-4 border-blue-400 pl-6 mb-10 text-left h-32 flex items-center bg-slate-900/40 rounded-r-2xl py-4 pr-6 border-y border-r border-slate-700/50 shadow-inner backdrop-blur-sm"
+                className="border-l-4 border-blue-400 pl-6 mb-10 text-left h-32 flex items-center bg-slate-900/40 rounded-r-xl py-4 pr-6 border-y border-r border-slate-700/50 shadow-inner backdrop-blur-sm"
               >
                 <p className="text-xl text-white font-light italic leading-relaxed line-clamp-4">
                   "{successStories[currentStory].quote}"
@@ -127,7 +127,7 @@ export const SuccessStoriesCTA = () => {
             </AnimatePresence>
 
             <Link to="/impact">
-              <button className="group relative overflow-hidden rounded-xl bg-blue-600 px-8 py-4 transition-all duration-300 hover:bg-blue-500 hover:shadow-[0_0_30px_rgba(37,99,235,0.6)] w-full sm:w-auto border border-blue-400/50">
+              <button className="group relative overflow-hidden rounded-lg bg-blue-600 px-8 py-4 transition-all duration-300 hover:bg-blue-500 hover:shadow-[0_0_30px_rgba(37,99,235,0.6)] w-full sm:w-auto border border-blue-400/50">
                 <span className="relative z-10 flex items-center justify-center gap-2 text-white font-bold tracking-wider uppercase text-sm">
                   View Our Impact
                   <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1.5 w-5 h-5" />

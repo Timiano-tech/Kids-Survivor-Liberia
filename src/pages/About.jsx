@@ -121,7 +121,7 @@ const About = () => {
     <>
       <div className="min-h-screen bg-white">
         {/* Main Header Section */}
-        <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[3rem] shadow-xl border-b border-slate-100">
+        <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[5rem] shadow-xl border-b border-slate-100">
           <div className="absolute inset-0 z-0">
             <img
               src={KSLCompany}
@@ -164,12 +164,12 @@ const About = () => {
             >
               <div className="grid lg:grid-cols-2 gap-16 items-center">
                 <div className="relative group">
-                  <div className="absolute inset-0 bg-blue-600 rounded-xl -translate-x-4 translate-y-4 opacity-10 group-hover:-translate-x-6 group-hover:translate-y-6 transition-transform duration-500"></div>
-                  <div className="bg-slate-100 rounded-xl p-2 relative z-10 shadow-xl overflow-hidden">
+                  <div className="absolute inset-0 bg-blue-600 rounded-lg -translate-x-4 translate-y-4 opacity-10 group-hover:-translate-x-6 group-hover:translate-y-6 transition-transform duration-500"></div>
+                  <div className="bg-slate-100 rounded-lg p-2 relative z-10 shadow-xl overflow-hidden">
                     <img
                       src={KSL_Teams}
                       alt="Kids Survivor Liberia Team"
-                      className="w-full h-[31.25rem] object-cover rounded-xl group-hover:scale-105 transition-transform duration-700"
+                      className="w-full h-[31.25rem] object-cover rounded-lg group-hover:scale-105 transition-transform duration-700"
                       loading='lazy'
                     />
                   </div>
@@ -202,10 +202,10 @@ const About = () => {
               className="grid md:grid-cols-2 gap-10 mb-24 max-w-7xl mx-auto"
             >
               {/* Mission */}
-              <div className="bg-slate-900 text-white rounded-xl p-10 md:p-14 shadow-2xl relative overflow-hidden group">
+            <div className="bg-slate-900 text-white rounded-lg p-10 md:p-14 shadow-2xl relative overflow-hidden group">
                 <div className="relative z-10">
                   <div className="flex items-center mb-8">
-                    <div className="bg-white/10 p-4 rounded-xl mr-5 backdrop-blur-md border border-white/10 shadow-xl">
+                    <div className="bg-white/10 p-4 rounded-lg mr-5 backdrop-blur-md border border-white/10 shadow-xl">
                       <FiTarget className="w-8 h-8 text-blue-300" />
                     </div>
                     <h3 className="text-3xl font-bold tracking-tight">Our Mission</h3>
@@ -222,10 +222,10 @@ const About = () => {
               </div>
 
               {/* Vision */}
-              <div className="bg-white rounded-xl p-10 md:p-14 shadow-sm border border-slate-200 relative overflow-hidden group hover:shadow-md transition-shadow duration-500">
+            <div className="bg-white rounded-lg p-10 md:p-14 shadow-sm border border-slate-200 relative overflow-hidden group hover:shadow-md transition-shadow duration-500">
                 <div className="relative z-10">
                   <div className="flex items-center mb-8">
-                    <div className="bg-yellow-50 p-4 rounded-xl mr-5 border border-yellow-100 shadow-sm">
+                    <div className="bg-yellow-50 p-4 rounded-lg mr-5 border border-yellow-100 shadow-sm">
                       <FiEye className="w-8 h-8 text-yellow-600" />
                     </div>
                     <h3 className="text-3xl font-bold text-slate-900 tracking-tight">Our Vision</h3>
@@ -245,12 +245,12 @@ const About = () => {
               viewport={{ once: true }}
               className="mb-24 max-w-7xl mx-auto"
             >
-              <div className="bg-slate-900 rounded-xl p-10 md:p-16 text-white relative overflow-hidden shadow-2xl">
+            <div className="bg-slate-900 rounded-lg p-10 md:p-16 text-white relative overflow-hidden shadow-2xl">
                 <div className="absolute top-0 right-0 w-[50rem] h-[50rem] bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-blue-700/20 via-slate-900/5 to-transparent rounded-full -translate-y-1/2 translate-x-1/3"></div>
                 <div className="relative z-10 grid md:grid-cols-12 gap-10 items-center">
                   <div className="md:col-span-5">
                     <div className="flex items-center gap-5 mb-4">
-                      <div className="bg-blue-600/20 p-4 rounded-xl backdrop-blur-md border border-blue-500/30">
+                      <div className="bg-blue-600/20 p-4 rounded-lg backdrop-blur-md border border-blue-500/30">
                         <FiCrosshair className="w-8 h-8 text-blue-400" />
                       </div>
                       <div>
@@ -288,12 +288,12 @@ const About = () => {
                 {programPillars.map((pillar, index) => (
                   <div
                     key={index}
-                    className="group bg-white rounded-xl p-8 shadow-sm hover:shadow-md border border-slate-100 transition-all duration-500 flex flex-col h-full relative overflow-hidden"
+                    className="group bg-white rounded-lg p-8 shadow-sm hover:shadow-md border border-slate-100 transition-all duration-500 flex flex-col h-full relative overflow-hidden"
                   >
                     <div className="absolute top-0 right-0 p-8 opacity-5 text-9xl font-black text-slate-900 -translate-y-8 translate-x-8 mix-blend-overlay group-hover:opacity-10 transition-opacity duration-500 pointer-events-none">
                       {index + 1}
                     </div>
-                    <div className="bg-slate-50 text-blue-600 w-16 h-16 rounded-xl flex items-center justify-center mb-6 shadow-sm border border-slate-100 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500">
+                    <div className="bg-slate-50 text-blue-600 w-16 h-16 rounded-lg flex items-center justify-center mb-6 shadow-sm border border-slate-100 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500">
                       {pillar.icon}
                     </div>
 
@@ -334,11 +334,11 @@ const About = () => {
                 {guidingValues.map((value, index) => (
                   <div
                     key={index}
-                    className="group bg-white rounded-xl p-8 shadow-sm hover:shadow-md border border-slate-100 transition-all duration-300 relative overflow-hidden"
+                    className="group bg-white rounded-lg p-8 shadow-sm hover:shadow-md border border-slate-100 transition-all duration-300 relative overflow-hidden"
                   >
                     <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-400/5 rounded-bl-full -mr-8 -mt-8 transition-transform duration-500 group-hover:scale-110"></div>
                     <div className="relative z-10">
-                      <div className="w-12 h-1 bg-yellow-400 mb-6 rounded-full group-hover:w-16 transition-all duration-300"></div>
+                      <div className="w-12 h-1 bg-yellow-400 mb-6 rounded-lg group-hover:w-16 transition-all duration-300"></div>
                       <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight group-hover:text-blue-600 transition-colors">
                         {value.title}
                       </h3>
@@ -359,18 +359,18 @@ const About = () => {
               viewport={{ once: true }}
               className="mb-24 max-w-7xl mx-auto"
             >
-              <div className="bg-slate-900 rounded-xl p-10 md:p-16 shadow-2xl relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('/assets/pattern-bg.png')] opacity-5 mix-blend-overlay"></div>
+                  <div className="bg-slate-900 rounded-lg p-10 md:p-16 shadow-2xl relative overflow-hidden">
+                    <div className="absolute inset-0 bg-[url('/assets/pattern-bg.png')] opacity-5 mix-blend-overlay"></div>
 
-                <div className="relative z-10">
-                  <span className="text-blue-400 font-semibold tracking-wider uppercase text-sm mb-3 block text-center">Our Goals</span>
-                  <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 text-center tracking-tight">Strategic Objectives</h2>
+                    <div className="relative z-10">
+                      <span className="text-blue-400 font-semibold tracking-wider uppercase text-sm mb-3 block text-center">Our Goals</span>
+                      <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 text-center tracking-tight">Strategic Objectives</h2>
 
-                  <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-                    {objectives.map((objective, index) => (
-                      <div key={index} className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10 hover:bg-white/10 transition-colors duration-300 group">
-                        <div className="flex items-start gap-5">
-                          <div className="bg-blue-600/30 p-3 rounded-xl border border-blue-500/30 shrink-0 group-hover:bg-blue-500/50 transition-colors">
+                      <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+                        {objectives.map((objective, index) => (
+                          <div key={index} className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10 hover:bg-white/10 transition-colors duration-300 group">
+                            <div className="flex items-start gap-5">
+                              <div className="bg-blue-600/30 p-3 rounded-lg border border-blue-500/30 shrink-0 group-hover:bg-blue-500/50 transition-colors">
                             <FiCheckCircle className="w-6 h-6 text-white" />
                           </div>
                           <p className="text-slate-200 leading-relaxed text-lg font-light">{objective}</p>
@@ -392,15 +392,15 @@ const About = () => {
               viewport={{ once: true }}
               className="mb-24 max-w-7xl mx-auto"
             >
-              <div className="bg-gradient-to-t from-blue-700 to-blue-900 rounded-xl p-10 md:p-14 shadow-2xl relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('/assets/pattern-bg.png')] opacity-10 mix-blend-overlay"></div>
+                <div className="bg-gradient-to-t from-blue-700 to-blue-900 rounded-lg p-10 md:p-14 shadow-2xl relative overflow-hidden">
+                  <div className="absolute inset-0 bg-[url('/assets/pattern-bg.png')] opacity-10 mix-blend-overlay"></div>
 
-                <h2 className="text-3xl md:text-5xl font-bold text-white mb-12 text-center tracking-tight drop-shadow-sm relative z-10">Strategic Impact & Alignment</h2>
+                  <h2 className="text-3xl md:text-5xl font-bold text-white mb-12 text-center tracking-tight drop-shadow-sm relative z-10">Strategic Impact & Alignment</h2>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 relative z-10">
-                  {impactHighlights.map((highlight, index) => (
-                    <div key={index} className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:-translate-y-2 group">
-                      <div className="bg-white/10 w-16 h-16 rounded-xl flex items-center justify-center mb-6 shadow-md border border-white/10 group-hover:scale-110 transition-transform duration-300">
+                  <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 relative z-10">
+                    {impactHighlights.map((highlight, index) => (
+                      <div key={index} className="bg-white/10 backdrop-blur-md rounded-lg p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:-translate-y-2 group">
+                        <div className="bg-white/10 w-16 h-16 rounded-lg flex items-center justify-center mb-6 shadow-md border border-white/10 group-hover:scale-110 transition-transform duration-300">
                         <div className="text-yellow-400 text-2xl">
                           {highlight.icon}
                         </div>
@@ -427,16 +427,16 @@ const About = () => {
                   <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 tracking-tight">National Policy Alignment</h2>
 
                   <div className="space-y-8">
-                    <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow duration-300 relative overflow-hidden group">
-                      <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-blue-500 rounded-l-2xl"></div>
+                    <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-100 hover:shadow-md transition-shadow duration-300 relative overflow-hidden group">
+                      <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-blue-500 rounded-l-xl"></div>
                       <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">Youth Transformation & Empowerment Initiative <span className="text-blue-500">(YTEI)</span></h3>
                       <p className="text-slate-600 leading-relaxed text-sm md:text-base">
                         KSL advances YTEI priorities by strengthening youth leadership and civic engagement, expanding education access and vocational pathways, supporting psychosocial well-being, and positioning young people as crucial agents of change.
                       </p>
                     </div>
 
-                    <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow duration-300 relative overflow-hidden group">
-                      <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-emerald-500 rounded-l-2xl"></div>
+                    <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-100 hover:shadow-md transition-shadow duration-300 relative overflow-hidden group">
+                      <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-emerald-500 rounded-l-xl"></div>
                       <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-emerald-600 transition-colors">National Anti-Drugs Action Plan <span className="text-emerald-500">(NADAP) 2025–2030</span></h3>
                       <p className="text-slate-600 leading-relaxed text-sm md:text-base">
                         KSL directly contributes to NADAP implementation through drug use prevention and awareness, early intervention and rehabilitation, national-based approaches to drug demand reduction, and broad advocacy promoting public health and social reintegration.
@@ -446,11 +446,11 @@ const About = () => {
                 </div>
 
                 <div className="order-1 lg:order-2 h-[31.25rem] w-full relative group">
-                  <div className="absolute inset-0 bg-blue-600 rounded-xl translate-x-4 translate-y-4 opacity-10 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform duration-500"></div>
+                  <div className="absolute inset-0 bg-blue-600 rounded-lg translate-x-4 translate-y-4 opacity-10 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform duration-500"></div>
                   <img
                     src={KSL_Teams2}
                     alt="KSL Team in Action"
-                    className="w-full h-full object-cover rounded-xl shadow-2xl relative z-10"
+                    className="w-full h-full object-cover rounded-lg shadow-2xl relative z-10"
                     loading="lazy"
                   />
                 </div>

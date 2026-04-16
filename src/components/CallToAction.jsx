@@ -36,7 +36,7 @@ const CallToAction = () => {
                 {[...images, ...images].map((img, index) => (
                   <div
                     key={index}
-                    className="w-48 h-64 md:w-60 md:h-80 flex-none rounded-xl bg-blue-100 overflow-hidden shadow-md"
+                    className="w-48 h-64 md:w-60 md:h-80 flex-none rounded-lg bg-blue-100 overflow-hidden shadow-md"
                   >
                     {img ? (
                       <img src={img} alt="Impact" className="w-full h-full object-cover" />
@@ -60,7 +60,7 @@ const CallToAction = () => {
               viewport={{ once: true }}
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-8 h-1 bg-blue-600 rounded-full"></div>
+                <div className="w-8 h-1 bg-blue-600 rounded-lg"></div>
                 <span className="text-blue-600 font-extrabold uppercase tracking-widest text-sm md:text-xs lg:text-sm">
                   Invest in the Future
                 </span>
@@ -80,10 +80,10 @@ const CallToAction = () => {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="group bg-yellow-500 hover:bg-yellow-400 text-slate-900 px-8 py-4 md:px-10 md:py-5 rounded-full text-lg font-bold shadow-[0_8px_25px_rgba(234,179,8,0.35)] hover:shadow-[0_12px_35px_rgba(234,179,8,0.5)] flex items-center gap-4 transition-all"
+                    className="group bg-yellow-500 hover:bg-yellow-400 text-slate-900 px-8 py-4 md:px-10 md:py-5 rounded-lg text-lg font-bold shadow-[0_8px_25px_rgba(234,179,8,0.35)] hover:shadow-[0_12px_35px_rgba(234,179,8,0.5)] flex items-center gap-4 transition-all"
                   >
                     <span className="tracking-wide">Donate Today</span>
-                    <div className="bg-slate-900/10 text-slate-900 rounded-full p-1.5 group-hover:bg-slate-900 group-hover:text-yellow-400 transition-colors">
+                    <div className="bg-slate-900/10 text-slate-900 rounded-lg p-1.5 group-hover:bg-slate-900 group-hover:text-yellow-400 transition-colors">
                       <FiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </motion.button>

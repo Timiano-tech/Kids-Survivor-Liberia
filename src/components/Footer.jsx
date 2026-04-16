@@ -104,7 +104,7 @@ const Footer = () => {
 
             {/* Logo and Organization Name */}
             <div className="flex items-center space-x-3">
-              <div className="bg-white p-1.5 rounded-xl shadow-sm shrink-0">
+              <div className="bg-white p-1.5 rounded-lg shadow-sm shrink-0">
                 <img
                   src="/KSL Logo.png"
                   alt="Kids Survivor Liberia Logo"
@@ -128,7 +128,7 @@ const Footer = () => {
             <div className="pt-4">
               <Link
                 to="/donate"
-                className="inline-flex items-center justify-center bg-yellow-500 hover:bg-yellow-400 text-slate-900 font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-[0_4px_14px_rgba(234,179,8,0.3)] hover:shadow-[0_6px_20px_rgba(234,179,8,0.5)] transform hover:-translate-y-1"
+                className="inline-flex items-center justify-center bg-yellow-500 hover:bg-yellow-400 text-slate-900 font-bold py-3 px-8 rounded-lg transition-all duration-300 shadow-[0_4px_14px_rgba(234,179,8,0.3)] hover:shadow-[0_6px_20px_rgba(234,179,8,0.5)] transform hover:-translate-y-1"
               >
                 Support Our Mission
               </Link>
@@ -232,7 +232,7 @@ const Footer = () => {
                   <a
                     key={index}
                     href={social.href}
-                    className="bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white p-2 rounded-full transition duration-300 transform hover:-translate-y-1"
+                    className="bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white p-2 rounded-lg transition duration-300 transform hover:-translate-y-1"
                     aria-label={social.label}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -266,7 +266,7 @@ const Footer = () => {
                     to={`/counties/${county.id}`}
                     className="text-slate-400 hover:text-yellow-400 transition-colors duration-300 flex items-center group font-medium"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-slate-700 mr-2 group-hover:bg-yellow-400 transition-colors"></span>
+                    <span className="w-1.5 h-1.5 rounded-lg bg-slate-700 mr-2 group-hover:bg-yellow-400 transition-colors"></span>
                     <span className="group-hover:translate-x-1 transform transition-transform duration-300">{county.name}</span>
                   </Link>
                 ) : (
@@ -275,7 +275,7 @@ const Footer = () => {
                     onClick={(e) => { e.preventDefault(); showComingSoon(county.name); }}
                     className="text-slate-500 hover:text-slate-400 transition-colors duration-300 flex items-center group font-medium text-left"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-slate-800 mr-2 transition-colors group-hover:bg-slate-600"></span>
+                    <span className="w-1.5 h-1.5 rounded-lg bg-slate-800 mr-2 transition-colors group-hover:bg-slate-600"></span>
                     <span>{county.name} (Coming Soon)</span>
                   </button>
                 );

@@ -46,10 +46,10 @@ export const NationalAlignmentSection = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="glass-effect p-10 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.2)] transition-shadow duration-500"
+              className="glass-effect p-10 rounded-lg shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.2)] transition-shadow duration-500"
             >
               <div className="flex items-center mb-6">
-                <div className="bg-green-100 p-3 rounded-xl mr-4">
+                <div className="bg-green-100 p-3 rounded-lg mr-4">
                   <FiTrendingUp className="w-8 h-8 text-green-600" />
                 </div>
                 <div>
@@ -84,10 +84,10 @@ export const NationalAlignmentSection = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="glass-effect p-10 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.2)] transition-shadow duration-500"
+              className="glass-effect p-10 rounded-lg shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.2)] transition-shadow duration-500"
             >
               <div className="flex items-center mb-6">
-                <div className="bg-blue-100 p-3 rounded-xl mr-4">
+                <div className="bg-blue-100 p-3 rounded-lg mr-4">
                   <FiCrosshair className="w-8 h-8 text-blue-600" />
                 </div>
                 <div>
@@ -147,9 +147,9 @@ export const NationalAlignmentSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-md border border-slate-100 p-8 sm:p-10 flex flex-col sm:flex-row items-start gap-6 transition-all duration-300 group"
+              className="bg-white rounded-lg shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-md border border-slate-100 p-8 sm:p-10 flex flex-col sm:flex-row items-start gap-6 transition-all duration-300 group"
             >
-              <div className="w-14 h-14 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-14 h-14 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
                 <FiHome className="w-5 h-5" />
               </div>
               <div>
@@ -174,9 +174,9 @@ export const NationalAlignmentSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-md border border-slate-100 p-8 sm:p-10 flex flex-col sm:flex-row items-start gap-6 transition-all duration-300 group"
+              className="bg-white rounded-lg shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-md border border-slate-100 p-8 sm:p-10 flex flex-col sm:flex-row items-start gap-6 transition-all duration-300 group"
             >
-              <div className="w-14 h-14 rounded-xl bg-yellow-50 text-yellow-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-14 h-14 rounded-lg bg-yellow-50 text-yellow-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
                 <FiMapPin className="w-5 h-5" />
               </div>
               <div>

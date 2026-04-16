@@ -88,11 +88,11 @@ export const ProgramPillarsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-500 border border-slate-200"
+              className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-500 border border-slate-200"
             >
               <div className="p-10 md:p-12 relative overflow-hidden">
                 <div className="relative z-10">
-                  <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mb-8 shadow-lg shadow-blue-500/30 text-white transform group-hover:-translate-y-2 transition-transform duration-500">
+                  <div className="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-8 shadow-lg shadow-blue-500/30 text-white transform group-hover:-translate-y-2 transition-transform duration-500">
                     <FiTarget className="w-8 h-8" />
                   </div>
                   <h3 className="text-3xl font-bold text-slate-900 mb-6 tracking-tight">Mission</h3>
@@ -107,7 +107,7 @@ export const ProgramPillarsSection = () => {
                       "Education & Life Skills Development",
                       "Gender-Inclusive Protection Systems"
                     ].map((item, i) => (
-                      <div key={i} className="flex items-center text-slate-700 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                      <div key={i} className="flex items-center text-slate-700 bg-slate-50 p-3 rounded-lg border border-slate-100">
                         <FiCheckCircle className="w-5 h-5 text-blue-500 mr-3 shrink-0" />
                         <span className="font-medium">{item}</span>
                       </div>
@@ -123,11 +123,11 @@ export const ProgramPillarsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-500 border border-slate-200"
+              className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-500 border border-slate-200"
             >
               <div className="p-10 md:p-12 relative overflow-hidden">
                 <div className="relative z-10">
-                  <div className="w-16 h-16 bg-yellow-500 rounded-xl flex items-center justify-center mb-8 shadow-lg shadow-yellow-500/30 text-white transform group-hover:-translate-y-2 transition-transform duration-500">
+                  <div className="w-16 h-16 bg-yellow-500 rounded-lg flex items-center justify-center mb-8 shadow-lg shadow-yellow-500/30 text-white transform group-hover:-translate-y-2 transition-transform duration-500">
                     <FiEye className="w-8 h-8" />
                   </div>
                   <h3 className="text-3xl font-bold text-slate-900 mb-6 tracking-tight">Vision</h3>
@@ -142,8 +142,8 @@ export const ProgramPillarsSection = () => {
                       "Protection from exploitation",
                       "Active community participation"
                     ].map((item, i) => (
-                      <div key={i} className="flex items-center text-slate-700 bg-slate-50 p-3 rounded-xl border border-slate-100">
-                        <div className="w-2.5 h-2.5 bg-yellow-400 rounded-full mr-4 shrink-0 shadow-sm"></div>
+                      <div key={i} className="flex items-center text-slate-700 bg-slate-50 p-3 rounded-lg border border-slate-100">
+                        <div className="w-2.5 h-2.5 bg-yellow-400 rounded-lg mr-4 shrink-0 shadow-sm"></div>
                         <span className="font-medium">{item}</span>
                       </div>
                     ))}
@@ -185,7 +185,7 @@ export const ProgramPillarsSection = () => {
                 viewport={{ once: true }}
                 className="group h-full"
               >
-                <div className="bg-white rounded-xl shadow-md transition-all duration-500 overflow-hidden h-full flex flex-col border border-slate-200">
+                <div className="bg-white rounded-lg shadow-md transition-all duration-500 overflow-hidden h-full flex flex-col border border-slate-200">
                   {/* Image area with subtle zoom and overlay */}
                   <div className="relative h-64 overflow-hidden">
                     {!imageError[`pillar-${pillar.id}`] ? (
@@ -211,7 +211,7 @@ export const ProgramPillarsSection = () => {
                     {/* Content integrated into image bottom */}
                     <div className="absolute bottom-0 left-0 w-full p-8">
                       <div className="flex items-center gap-4 mb-3">
-                        <div className={`p-3 rounded-xl text-white shadow-lg backdrop-blur-md bg-white/20 border border-white/20`}>
+                        <div className={`p-3 rounded-lg text-white shadow-lg backdrop-blur-md bg-white/20 border border-white/20`}>
                           {pillar.icon}
                         </div>
                         <h3 className="text-2xl font-bold text-white tracking-tight">
@@ -227,7 +227,7 @@ export const ProgramPillarsSection = () => {
                       {pillar.description}
                     </p>
                     <Link to={`/programs#pillar-${pillar.id}`}>
-                      <button className="w-full text-center bg-blue-50 hover:bg-blue-100 text-blue-600 font-bold py-4 rounded-full transition-all duration-300 shadow-sm">
+                      <button className="w-full text-center bg-blue-50 hover:bg-blue-100 text-blue-600 font-bold py-4 rounded-lg transition-all duration-300 shadow-sm">
                         Explore This Pillar &rarr;
                       </button>
                     </Link>
@@ -245,12 +245,12 @@ export const ProgramPillarsSection = () => {
             viewport={{ once: true }}
             className="mt-12"
           >
-            <div className="bg-slate-900 rounded-xl shadow-md overflow-hidden relative">
+            <div className="bg-slate-900 rounded-lg shadow-md overflow-hidden relative">
               <div className="absolute inset-0 bg-[url('/assets/pattern-bg.png')] opacity-10 mix-blend-overlay"></div>
 
               <div className="p-10 md:p-14 text-white relative z-10">
                 <div className="flex flex-col md:flex-row md:items-start gap-8 mb-10">
-                  <div className="bg-white/10 p-5 rounded-xl inline-flex self-start backdrop-blur-md border border-white/10 shadow-xl">
+                  <div className="bg-white/10 p-5 rounded-lg inline-flex self-start backdrop-blur-md border border-white/10 shadow-xl">
                     <FiBriefcase className="w-8 h-8 text-blue-300" />
                   </div>
                   <div>
@@ -264,19 +264,19 @@ export const ProgramPillarsSection = () => {
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-6">
-                  <div className="bg-white/5 p-6 rounded-xl backdrop-blur-sm border border-white/5 hover:bg-white/10 transition-colors group">
+                  <div className="bg-white/5 p-6 rounded-lg backdrop-blur-sm border border-white/5 hover:bg-white/10 transition-colors group">
                     <h4 className="font-bold text-xl mb-3 text-white">Community Ownership</h4>
                     <p className="text-slate-400 group-hover:text-slate-300 transition-colors">
                       Empowering local actors through intensive volunteer training and community-driven program implementation.
                     </p>
                   </div>
-                  <div className="bg-white/5 p-6 rounded-xl backdrop-blur-sm border border-white/5 hover:bg-white/10 transition-colors group">
+                  <div className="bg-white/5 p-6 rounded-lg backdrop-blur-sm border border-white/5 hover:bg-white/10 transition-colors group">
                     <h4 className="font-bold text-xl mb-3 text-white">Peacebuilding</h4>
                     <p className="text-slate-400 group-hover:text-slate-300 transition-colors">
                       Proactive crime and violence prevention cultivated through dynamic social cohesion initiatives.
                     </p>
                   </div>
-                  <div className="bg-white/5 p-6 rounded-xl backdrop-blur-sm border border-white/5 hover:bg-white/10 transition-colors group">
+                  <div className="bg-white/5 p-6 rounded-lg backdrop-blur-sm border border-white/5 hover:bg-white/10 transition-colors group">
                     <h4 className="font-bold text-xl mb-3 text-white">Strategic Partnerships</h4>
                     <p className="text-slate-400 group-hover:text-slate-300 transition-colors">
                       Fostering multi-stakeholder collaboration for comprehensive, scalable developmental impact.
@@ -286,12 +286,12 @@ export const ProgramPillarsSection = () => {
 
                 <div className="mt-12 flex flex-wrap gap-5">
                   <Link to="/partnership">
-                    <button className="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-500 transition-all shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.6)]">
+                    <button className="bg-blue-600 text-white px-8 py-4 rounded-lg font-bold hover:bg-blue-500 transition-all shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.6)]">
                       Partner With Us
                     </button>
                   </Link>
                   <Link to="/programs#community">
-                    <button className="bg-white/10 border border-white/20 text-white px-8 py-4 rounded-xl font-bold hover:bg-white/20 transition-all backdrop-blur-sm">
+                    <button className="bg-white/10 border border-white/20 text-white px-8 py-4 rounded-lg font-bold hover:bg-white/20 transition-all backdrop-blur-sm">
                       Learn More Details
                     </button>
                   </Link>

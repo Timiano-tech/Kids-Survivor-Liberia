@@ -247,12 +247,12 @@ const Gallery = () => {
             animate={{ opacity: 1, y: 0 }}
             className="mb-16 flex justify-center"
           >
-            <div className="inline-flex flex-wrap justify-center gap-3 bg-slate-50 p-2 rounded-xl border border-slate-200 shadow-sm max-w-full">
+            <div className="inline-flex flex-wrap justify-center gap-3 bg-slate-50 p-2 rounded-lg border border-slate-200 shadow-sm max-w-full">
               {galleryCategories.map((category) => (
                 <button
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
-                  className={`px-6 py-3 rounded-full text-sm font-bold tracking-wide transition-all duration-300 whitespace-nowrap ${activeCategory === category.id
+                  className={`px-6 py-3 rounded-lg text-sm font-bold tracking-wide transition-all duration-300 whitespace-nowrap ${activeCategory === category.id
                     ? 'bg-blue-600 text-white shadow-md shadow-blue-500/30 -translate-y-0.5'
                     : 'bg-transparent text-slate-600 hover:bg-white hover:text-blue-600 hover:shadow-sm'
                     }`}
@@ -277,7 +277,7 @@ const Gallery = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.05 }}
                 whileHover={{ y: -8 }}
-                className="relative group cursor-pointer overflow-hidden rounded-xl shadow-sm hover:shadow-md bg-white border border-slate-100"
+                className="relative group cursor-pointer overflow-hidden rounded-lg shadow-sm hover:shadow-md bg-white border border-slate-100"
                 onClick={() => handleImageClick(image, index)}
               >
                 {/* Image Container */}
@@ -300,7 +300,7 @@ const Gallery = () => {
 
                 {/* Category Badge */}
                 <div className="absolute top-4 left-4 z-20">
-                  <span className="px-4 py-1.5 bg-white/90 backdrop-blur-md shadow-sm text-xs font-bold tracking-widest uppercase rounded-full text-blue-900 border border-white/20">
+                  <span className="px-4 py-1.5 bg-white/90 backdrop-blur-md shadow-sm text-xs font-bold tracking-widest uppercase rounded-md text-blue-900 border border-white/20">
                     {galleryCategories.find(c => c.id === image.category)?.name}
                   </span>
                 </div>
@@ -330,14 +330,14 @@ const Gallery = () => {
             <div className="absolute top-0 right-0 left-0 flex justify-between items-center p-4 z-20 pointer-events-none">
               <button
                 onClick={() => handleDownload(selectedImage.src)}
-                className="p-3 bg-white/10 hover:bg-white/20 text-white rounded-full backdrop-blur-md transition-all duration-300 pointer-events-auto border border-white/10 hover:scale-110"
+                className="p-3 bg-white/10 hover:bg-white/20 text-white rounded-lg backdrop-blur-md transition-all duration-300 pointer-events-auto border border-white/10 hover:scale-110"
                 aria-label="Download image"
               >
                 <FiDownload size={22} />
               </button>
               <button
                 onClick={handleCloseModal}
-                className="p-3 bg-white/10 hover:bg-red-500/80 text-white rounded-full backdrop-blur-md transition-all duration-300 pointer-events-auto border border-white/10 hover:scale-110"
+                className="p-3 bg-white/10 hover:bg-red-500/80 text-white rounded-lg backdrop-blur-md transition-all duration-300 pointer-events-auto border border-white/10 hover:scale-110"
                 aria-label="Close modal"
               >
                 <FiX size={24} />
@@ -347,13 +347,13 @@ const Gallery = () => {
             {/* Navigation Buttons */}
             <button
               onClick={(e) => { e.stopPropagation(); handlePrev(); }}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 p-4 bg-white/5 hover:bg-white/20 text-white rounded-full backdrop-blur-md transition-all duration-300 z-20 border border-white/10 hover:scale-110 group hidden sm:flex"
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 p-4 bg-white/5 hover:bg-white/20 text-white rounded-lg backdrop-blur-md transition-all duration-300 z-20 border border-white/10 hover:scale-110 group hidden sm:flex"
             >
               <FiChevronLeft size={32} className="group-hover:-translate-x-1 transition-transform" />
             </button>
             <button
               onClick={(e) => { e.stopPropagation(); handleNext(); }}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 p-4 bg-white/5 hover:bg-white/20 text-white rounded-full backdrop-blur-md transition-all duration-300 z-20 border border-white/10 hover:scale-110 group hidden sm:flex"
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 p-4 bg-white/5 hover:bg-white/20 text-white rounded-lg backdrop-blur-md transition-all duration-300 z-20 border border-white/10 hover:scale-110 group hidden sm:flex"
             >
               <FiChevronRight size={32} className="group-hover:translate-x-1 transition-transform" />
             </button>
@@ -367,7 +367,7 @@ const Gallery = () => {
                 transition={{ duration: 0.4 }}
                 src={selectedImage.src}
                 alt={selectedImage.title}
-                className="max-w-full max-h-[75vh] object-contain rounded-xl shadow-2xl ring-1 ring-white/10"
+                className="max-w-full max-h-[75vh] object-contain rounded-lg shadow-2xl ring-1 ring-white/10"
               />
             </div>
 
@@ -376,13 +376,13 @@ const Gallery = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="mt-8 text-center w-full max-w-2xl bg-slate-800/50 backdrop-blur-md rounded-xl p-6 border border-white/10"
+              className="mt-8 text-center w-full max-w-2xl bg-slate-800/50 backdrop-blur-md rounded-lg p-6 border border-white/10"
             >
               <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-3 tracking-tight">{selectedImage.title}</h3>
               <p className="text-blue-100 text-lg mb-4 font-light leading-relaxed">{selectedImage.description}</p>
 
               <div className="flex justify-center items-center space-x-6">
-                <span className="px-4 py-1.5 bg-yellow-400/20 text-yellow-300 border border-yellow-400/30 backdrop-blur-sm rounded-full text-sm font-bold uppercase tracking-widest">
+                <span className="px-4 py-1.5 bg-yellow-400/20 text-yellow-300 border border-yellow-400/30 backdrop-blur-sm rounded-md text-sm font-bold uppercase tracking-widest">
                   {galleryCategories.find(c => c.id === selectedImage.category)?.name}
                 </span>
                 <span className="text-sm font-medium text-slate-400 tracking-widest">
@@ -394,13 +394,13 @@ const Gallery = () => {
               <div className="flex justify-center gap-6 mt-6 sm:hidden">
                 <button
                   onClick={handlePrev}
-                  className="p-3 bg-white/10 text-white rounded-full"
+                  className="p-3 bg-white/10 text-white rounded-lg"
                 >
                   <FiChevronLeft size={24} />
                 </button>
                 <button
                   onClick={handleNext}
-                  className="p-3 bg-white/10 text-white rounded-full"
+                  className="p-3 bg-white/10 text-white rounded-lg"
                 >
                   <FiChevronRight size={24} />
                 </button>

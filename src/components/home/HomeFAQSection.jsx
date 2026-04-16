@@ -113,7 +113,7 @@ export const HomeFAQSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white rounded-xl border border-slate-100 p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow group cursor-pointer"
+              className="bg-white rounded-lg border border-slate-100 p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow group cursor-pointer"
               onClick={() => toggleFAQ(faq.id)}
             >
               <div className="flex justify-between items-center">

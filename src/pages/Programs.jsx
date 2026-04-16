@@ -210,14 +210,14 @@ const Programs = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="bg-white rounded-xl shadow-sm hover:shadow-md border border-slate-100 transition-all duration-500 overflow-hidden group flex flex-col h-full"
+                    className="bg-white rounded-lg shadow-sm hover:shadow-md border border-slate-100 transition-all duration-500 overflow-hidden group flex flex-col h-full"
                   >
                     <div className={`p-8 lg:p-10 border-b-4 ${policy.color === 'blue' ? 'border-blue-500' : 'border-yellow-400'} flex-1 relative overflow-hidden`}>
-                      <div className={`absolute top-0 right-0 w-48 h-48 ${policy.color === 'blue' ? 'bg-blue-50' : 'bg-yellow-50'} rounded-bl-full -mr-10 -mt-10 transition-transform duration-700 group-hover:scale-110`}></div>
+                      <div className={`absolute top-0 right-0 w-48 h-48 ${policy.color === 'blue' ? 'bg-blue-50' : 'bg-yellow-50'} rounded-bl-2xl -mr-10 -mt-10 transition-transform duration-700 group-hover:scale-110`}></div>
 
                       <div className="relative z-10">
                         <div className="flex items-center gap-5 mb-8">
-                          <div className={`p-4 rounded-xl ${policy.color === 'blue' ? 'bg-blue-100 text-blue-600' : 'bg-yellow-100 text-yellow-600'} shadow-sm`}>
+                          <div className={`p-4 rounded-lg ${policy.color === 'blue' ? 'bg-blue-100 text-blue-600' : 'bg-yellow-100 text-yellow-600'} shadow-sm`}>
                             {policy.icon}
                           </div>
                           <div>
@@ -229,14 +229,14 @@ const Programs = () => {
                           {policy.description}
                         </p>
 
-                        <div className="mb-8 p-6 rounded-xl bg-slate-50 border border-slate-100">
+                        <div className="mb-8 p-6 rounded-lg bg-slate-50 border border-slate-100">
                           <h4 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
                             <FiAward className={policy.color === 'blue' ? 'text-blue-500' : 'text-yellow-500'} />
                             Key Focus Areas
                           </h4>
                           <div className="flex flex-wrap gap-2">
                             {policy.keyFocus.map((focus, idx) => (
-                              <span key={idx} className={`px-4 py-2 rounded-xl text-sm font-bold shadow-sm ${policy.color === 'blue' ? 'bg-white text-blue-700 border border-blue-100' : 'bg-white text-yellow-700 border border-yellow-100'}`}>
+                              <span key={idx} className={`px-4 py-2 rounded-lg text-sm font-bold shadow-sm ${policy.color === 'blue' ? 'bg-white text-blue-700 border border-blue-100' : 'bg-white text-yellow-700 border border-yellow-100'}`}>
                                 {focus}
                               </span>
                             ))}
@@ -269,7 +269,7 @@ const Programs = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
-                className="mt-16 bg-gradient-to-br from-blue-700 to-blue-900 rounded-xl p-10 md:p-14 text-white shadow-2xl relative overflow-hidden"
+                className="mt-16 bg-gradient-to-br from-blue-700 to-blue-900 rounded-lg p-10 md:p-14 text-white shadow-2xl relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-[url('/assets/pattern-bg.png')] opacity-10 mix-blend-overlay"></div>
 
@@ -330,8 +330,8 @@ const Programs = () => {
                   >
                     {/* Image Section */}
                     <div className="w-full lg:w-1/2 relative">
-                      <div className="absolute inset-0 bg-blue-600 rounded-xl -translate-x-4 translate-y-4 opacity-10 group-hover:-translate-x-6 group-hover:translate-y-6 transition-transform duration-500"></div>
-                      <div className="relative rounded-xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
+                      <div className="absolute inset-0 bg-blue-600 rounded-lg -translate-x-4 translate-y-4 opacity-10 group-hover:-translate-x-6 group-hover:translate-y-6 transition-transform duration-500"></div>
+                      <div className="relative rounded-lg overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
                         <img
                           src={pillar.image}
                           alt={pillar.title}
@@ -340,7 +340,7 @@ const Programs = () => {
                         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
                         <div className="absolute bottom-6 left-6">
                           <div className={`inline-flex items-center gap-3 px-5 py-2.5 ${index % 2 === 0 ? 'bg-blue-600' : 'bg-yellow-500'
-                            } text-white rounded-full text-sm font-bold tracking-wider shadow-lg backdrop-blur-sm`}>
+                            } text-white rounded-lg text-sm font-bold tracking-wider shadow-lg backdrop-blur-sm`}>
                             {pillar.icon}
                             <span className="uppercase">Pillar {pillar.id}</span>
                           </div>
@@ -351,7 +351,7 @@ const Programs = () => {
                     {/* Content Section */}
                     <div className="w-full lg:w-1/2">
                       <div className="mb-8">
-                        <span className={`inline-block px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-4 ${index % 2 === 0 ? 'bg-blue-50 text-blue-600 border border-blue-100' : 'bg-yellow-50 text-yellow-600 border border-yellow-100'
+                        <span className={`inline-block px-4 py-1.5 rounded-md text-xs font-bold tracking-widest uppercase mb-4 ${index % 2 === 0 ? 'bg-blue-50 text-blue-600 border border-blue-100' : 'bg-yellow-50 text-yellow-600 border border-yellow-100'
                           }`}>
                           {pillar.alignment}
                         </span>
@@ -364,9 +364,9 @@ const Programs = () => {
                       </div>
 
                       {/* Components */}
-                      <div className="bg-slate-50 p-6 md:p-8 rounded-xl border border-slate-100">
+                      <div className="bg-slate-50 p-6 md:p-8 rounded-lg border border-slate-100">
                         <h4 className="font-bold text-slate-900 mb-5 flex items-center text-lg">
-                          <div className={`p-2 rounded-xl mr-3 ${index % 2 === 0 ? 'bg-blue-100 text-blue-600' : 'bg-yellow-100 text-yellow-600'}`}>
+                          <div className={`p-2 rounded-lg mr-3 ${index % 2 === 0 ? 'bg-blue-100 text-blue-600' : 'bg-yellow-100 text-yellow-600'}`}>
                             <FiCheckCircle className="w-5 h-5" />
                           </div>
                           Key Components
@@ -375,9 +375,9 @@ const Programs = () => {
                           {pillar.components.map((component, idx) => (
                             <div
                               key={idx}
-                              className="bg-white rounded-xl p-4 border border-slate-100 shadow-sm hover:shadow-md transition-shadow group/comp flex items-start"
+                              className="bg-white rounded-lg p-4 border border-slate-100 shadow-sm hover:shadow-md transition-shadow group/comp flex items-start"
                             >
-                              <div className={`w-1.5 h-1.5 rounded-full mt-2 mr-3 shrink-0 ${index % 2 === 0 ? 'bg-blue-400' : 'bg-yellow-400'}`}></div>
+                              <div className={`w-1.5 h-1.5 rounded-lg mt-2 mr-3 shrink-0 ${index % 2 === 0 ? 'bg-blue-400' : 'bg-yellow-400'}`}></div>
                               <span className="text-slate-700 font-medium">{component}</span>
                             </div>
                           ))}

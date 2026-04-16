@@ -89,7 +89,7 @@ export const QuickStats = () => {
               className="text-center group"
             >
               <div className="flex justify-center mb-6">
-                <div className="bg-slate-800/50 p-5 rounded-xl text-blue-400 border border-slate-700/50 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-500 transition-all duration-300">
+                <div className="bg-slate-800/50 p-5 rounded-lg text-blue-400 border border-slate-700/50 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-500 transition-all duration-300">
                   {stat.icon}
                 </div>
               </div>
@@ -113,7 +113,7 @@ export const QuickStats = () => {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <div className="inline-flex items-center px-6 py-3 bg-blue-900/50 text-blue-300 border border-blue-800/50 rounded-full text-sm font-medium backdrop-blur-sm">
+          <div className="inline-flex items-center px-6 py-3 bg-blue-900/50 text-blue-300 border border-blue-800/50 rounded-lg text-sm font-medium backdrop-blur-sm">
             <FiCheckCircle className="mr-3 w-5 h-5 text-blue-400" />
             Operating across multiple counties with NADAP-aligned programs
           </div>

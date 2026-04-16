@@ -166,11 +166,11 @@ const Donate = () => {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <div className="bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden h-full">
+                <div className="bg-white rounded-lg shadow-xl border border-gray-100 overflow-hidden h-full">
                   {/* Sleek header */}
                   <div className="bg-gradient-to-br from-blue-600 to-blue-700 px-6 py-5">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
+                      <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center">
                         <FiDollarSign className="w-5 h-5 text-white" />
                       </div>
                       <div>
@@ -185,23 +185,23 @@ const Donate = () => {
                     <div className="space-y-5">
                       <div>
                         <label className="block text-gray-600 text-xs font-medium uppercase tracking-wider mb-2">Bank Name</label>
-                        <div className="bg-gray-50/80 p-3.5 rounded-xl border border-gray-200">
+                        <div className="bg-gray-50/80 p-3.5 rounded-lg border border-gray-200">
                           <p className="text-gray-800 font-medium text-sm">{bankAccount.bankName}</p>
                         </div>
                       </div>
                       <div>
                         <label className="block text-gray-600 text-xs font-medium uppercase tracking-wider mb-2">Account Name</label>
-                        <div className="bg-gray-50/80 p-3.5 rounded-xl border border-gray-200">
+                        <div className="bg-gray-50/80 p-3.5 rounded-lg border border-gray-200">
                           <p className="text-gray-800 font-medium text-sm">{bankAccount.accountName}</p>
                         </div>
                       </div>
                       <div>
                         <label className="block text-gray-600 text-xs font-medium uppercase tracking-wider mb-2">Account Number</label>
-                        <div className="flex items-center justify-between gap-3 bg-gray-50/80 p-3.5 rounded-xl border border-gray-200">
+                        <div className="flex items-center justify-between gap-3 bg-gray-50/80 p-3.5 rounded-lg border border-gray-200">
                           <p className="text-gray-800 font-medium font-mono text-sm">{bankAccount.accountNumber}</p>
                           <button
                             onClick={handleCopyAccountNumber}
-                            className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-xl transition-all text-sm font-medium shrink-0"
+                            className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-lg transition-all text-sm font-medium shrink-0"
                           >
                             {copied ? (
                               <>
@@ -219,7 +219,7 @@ const Donate = () => {
                       </div>
                       <div>
                         <label className="block text-gray-600 text-xs font-medium uppercase tracking-wider mb-2">Currency</label>
-                        <div className="bg-gray-50/80 p-3.5 rounded-xl border border-gray-200">
+                        <div className="bg-gray-50/80 p-3.5 rounded-lg border border-gray-200">
                           <p className="text-gray-800 font-medium text-sm">{bankAccount.currency}</p>
                         </div>
                       </div>
@@ -254,11 +254,11 @@ const Donate = () => {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <div className="bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden h-full">
+                <div className="bg-white rounded-lg shadow-xl border border-gray-100 overflow-hidden h-full">
                   {/* Sleek header */}
                   <div className="bg-gradient-to-br from-emerald-600 to-teal-600 px-6 py-5">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
+                      <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center">
                         <FiCreditCard className="w-5 h-5 text-white" />
                       </div>
                       <div>
@@ -271,7 +271,7 @@ const Donate = () => {
                   <div className="p-6">
                     {paymentSuccess ? (
                       <div className="text-center py-10">
-                        <div className="w-14 h-14 bg-emerald-50 rounded-full flex items-center justify-center mx-auto mb-5 ring-4 ring-emerald-100">
+                        <div className="w-14 h-14 bg-emerald-50 rounded-lg flex items-center justify-center mx-auto mb-5 ring-4 ring-emerald-100">
                           <FiCheck className="w-7 h-7 text-emerald-600" />
                         </div>
                         <h4 className="text-lg font-semibold text-gray-800 mb-2">Thank You!</h4>
@@ -400,7 +400,7 @@ const Donate = () => {
 
                         {/* Security note */}
                         <p className="text-xs text-gray-400 text-center mt-5 flex items-center justify-center gap-1.5">
-                          <span className="inline-block w-3.5 h-3.5 rounded-full bg-gray-200 flex items-center justify-center text-[10px]">🔒</span>
+                          <span className="inline-block w-3.5 h-3.5 rounded-lg bg-gray-200 flex items-center justify-center text-[10px]">🔒</span>
                           Secure payment by Flutterwave. Card details are not stored.
                         </p>
                       </form>
@@ -437,7 +437,7 @@ const Donate = () => {
                     icon: '📦'
                   }
                 ].map((item, index) => (
-                  <div key={index} className="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-[0_10px_30px_rgb(0,0,0,0.08)] transition-all duration-300 group">
+                  <div key={index} className="bg-white p-8 rounded-lg shadow-sm border border-slate-100 hover:shadow-[0_10px_30px_rgb(0,0,0,0.08)] transition-all duration-300 group">
                     <div className="text-4xl mb-6 group-hover:scale-110 transition-transform duration-300 inline-block">{item.icon}</div>
                     <h4 className="font-bold text-slate-900 mb-3 text-lg">{item.title}</h4>
                     <p className="text-slate-600 text-sm leading-relaxed">{item.description}</p>

@@ -255,9 +255,9 @@ const OurTeam = () => {
             >
               <div className="text-center mb-16 max-w-4xl mx-auto">
                 <div className="flex items-center justify-center gap-3 mb-4">
-                  <div className="w-8 h-1 bg-yellow-400 rounded-full"></div>
+                  <div className="w-8 h-1 bg-yellow-400 rounded-lg"></div>
                   <span className="text-blue-600 font-extrabold tracking-widest uppercase text-sm">Leadership & Staff</span>
-                  <div className="w-8 h-1 bg-yellow-400 rounded-full"></div>
+                  <div className="w-8 h-1 bg-yellow-400 rounded-lg"></div>
                 </div>
                 <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight">
                   Meet Our Experts
@@ -276,12 +276,12 @@ const OurTeam = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="flex flex-col bg-white rounded-xl shadow-sm hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] overflow-hidden border border-slate-100 hover:border-blue-100 transition-all duration-500 hover:-translate-y-2 group"
+                    className="flex flex-col bg-white rounded-lg shadow-sm hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] overflow-hidden border border-slate-100 hover:border-blue-100 transition-all duration-500 hover:-translate-y-2 group"
                   >
                     {/* Image Container */}
                     <div className="relative aspect-[4/5] bg-slate-50 overflow-hidden">
                       <div className="absolute top-4 right-4 z-20">
-                        <span className={`inline-flex items-center px-4 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-widest shadow-sm border backdrop-blur-sm ${getColorClasses(getDepartmentColor(member.department))}`}>
+                        <span className={`inline-flex items-center px-4 py-1.5 rounded-md text-[11px] font-bold uppercase tracking-widest shadow-sm border backdrop-blur-sm ${getColorClasses(getDepartmentColor(member.department))}`}>
                           <span className="mr-1">{member.department.split(' ')[0]}</span>
                         </span>
                       </div>
@@ -305,7 +305,7 @@ const OurTeam = () => {
 
                     {/* Member Info */}
                     <div className="p-8 flex flex-col flex-grow relative">
-                      <div className="absolute -top-6 right-6 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-blue-600 border border-slate-50 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 z-10">
+                      <div className="absolute -top-6 right-6 w-12 h-12 bg-white rounded-lg shadow-lg flex items-center justify-center text-blue-600 border border-slate-50 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 z-10">
                         {member.icon}
                       </div>
 

@@ -137,7 +137,7 @@ const SearchModal = ({ isOpen, onClose }) => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed top-[5%] md:top-[10%] left-1/2 -translate-x-1/2 w-[95%] max-w-3xl bg-white rounded-2xl shadow-2xl z-[101] overflow-hidden flex flex-col max-h-[90vh] md:max-h-[80vh]"
+            className="fixed top-[5%] md:top-[10%] left-1/2 -translate-x-1/2 w-[95%] max-w-3xl bg-white rounded-lg shadow-2xl z-[101] overflow-hidden flex flex-col max-h-[90vh] md:max-h-[80vh]"
             role="dialog"
             aria-modal="true"
             aria-labelledby="search-modal-title"
@@ -240,7 +240,7 @@ const SearchModal = ({ isOpen, onClose }) => {
                 <div className="p-4">
                   {!hasResults ? (
                     <div className="text-center py-16 text-slate-500">
-                      <div className="bg-slate-200 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <div className="bg-slate-200 w-16 h-16 rounded-lg flex items-center justify-center mx-auto mb-4">
                         <FiSearch className="w-8 h-8 text-slate-400" />
                       </div>
                       <p className="text-xl font-bold text-slate-700 mb-2">No results found</p>
@@ -252,7 +252,7 @@ const SearchModal = ({ isOpen, onClose }) => {
                         <div 
                           key={`${result.type}-${idx}`}
                           onClick={() => handleResultClick(result)}
-                          className="group bg-white p-4 rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-md cursor-pointer transition-all"
+                          className="group bg-white p-4 rounded-lg border border-slate-200 hover:border-blue-300 hover:shadow-md cursor-pointer transition-all"
                           role="button"
                           tabIndex={0}
                           onKeyDown={(e) => {
@@ -269,13 +269,13 @@ const SearchModal = ({ isOpen, onClose }) => {
                             </div>
                             <div className="flex-1 min-w-0">
                               <div className="flex items-center gap-2 mb-1">
-                                <span className={`text-[10px] uppercase tracking-wider font-bold px-2 py-0.5 rounded-full ${
+                                <span className={`text-[10px] uppercase tracking-wider font-bold px-2 py-0.5 rounded-md ${
                                   result.isCounty ? 'bg-emerald-50 text-emerald-700' : 'bg-blue-50 text-blue-700'
                                 }`}>
                                   {result.type}
                                 </span>
                                 {result.isCounty && !result.isActive && (
-                                   <span className="text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-500 px-2 py-0.5 rounded-full">Coming Soon</span>
+                                   <span className="text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-500 px-2 py-0.5 rounded-md">Coming Soon</span>
                                 )}
                               </div>
                               <h4 className="text-lg font-bold text-slate-900 mb-1 truncate group-hover:text-blue-600 transition-colors">

@@ -193,7 +193,7 @@ const Blog = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     key={video.id}
-                    className="bg-white rounded-xl border border-slate-100 overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.1)] transition-all duration-500 group"
+                    className="bg-white rounded-lg border border-slate-100 overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.1)] transition-all duration-500 group"
                   >
                     <div className="relative h-72 overflow-hidden bg-slate-900">
                       {playingVideoId === video.id ? (
@@ -210,7 +210,7 @@ const Blog = () => {
                           </video>
                           <button
                             onClick={handleVideoClose}
-                            className="absolute top-4 right-4 bg-black/60 backdrop-blur-md text-white p-2 rounded-full hover:bg-red-500 transition-colors z-20 border border-white/20"
+                            className="absolute top-4 right-4 bg-black/60 backdrop-blur-md text-white p-2 rounded-lg hover:bg-red-500 transition-colors z-20 border border-white/20"
                             aria-label="Close video"
                           >
                             <FiX size={20} />
@@ -227,13 +227,13 @@ const Blog = () => {
                           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent flex items-center justify-center">
                             <button
                               onClick={() => handleVideoPlay(video.id)}
-                              className="w-20 h-20 bg-white/20 backdrop-blur-md hover:bg-yellow-400 hover:text-blue-900 text-white rounded-full flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 shadow-[0_8px_30px_rgb(0,0,0,0.2)] border border-white/30"
+                              className="w-20 h-20 bg-white/20 backdrop-blur-md hover:bg-yellow-400 hover:text-blue-900 text-white rounded-2xl flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 shadow-[0_8px_30px_rgb(0,0,0,0.2)] border border-white/30"
                               aria-label="Play video"
                             >
                               <FiPlay size={32} className="ml-1" />
                             </button>
                           </div>
-                          <div className="absolute bottom-4 right-4 bg-slate-900/70 backdrop-blur-md text-white font-medium text-xs px-3 py-1.5 rounded-lg border border-white/10">
+                          <div className="absolute bottom-4 right-4 bg-slate-900/70 backdrop-blur-md text-white font-medium text-xs px-3 py-1.5 rounded-md border border-white/10">
                             {video.duration}
                           </div>
                         </>
@@ -284,7 +284,7 @@ const Blog = () => {
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1, duration: 0.5 }}
                     key={post.id}
-                    className="bg-white rounded-xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2 group flex flex-col h-full"
+                    className="bg-white rounded-lg border border-slate-100 overflow-hidden shadow-sm hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2 group flex flex-col h-full"
                   >
                     <div className="h-72 overflow-hidden relative">
                       <img
@@ -294,7 +294,7 @@ const Blog = () => {
                         loading="lazy"
                       />
                       <div className="absolute top-4 left-4">
-                        <span className="inline-block px-4 py-1.5 bg-white/90 backdrop-blur-sm text-blue-700 rounded-full text-xs font-bold tracking-widest uppercase shadow-sm">
+                        <span className="inline-block px-4 py-1.5 bg-white/90 backdrop-blur-sm text-blue-700 rounded-lg text-xs font-bold tracking-widest uppercase shadow-sm">
                           {post.category}
                         </span>
                       </div>
@@ -334,11 +334,11 @@ const Blog = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-blue-700 to-indigo-800 rounded-xl p-10 sm:p-16 text-center text-white shadow-2xl relative overflow-hidden mb-10"
+              className="bg-gradient-to-br from-blue-700 to-indigo-800 rounded-lg p-10 sm:p-16 text-center text-white shadow-2xl relative overflow-hidden mb-10"
             >
               <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-10 mix-blend-overlay"></div>
               <div className="relative z-10">
-                <span className="inline-block px-4 py-1.5 bg-white/10 text-yellow-300 rounded-full text-xs font-bold tracking-widest uppercase mb-6 backdrop-blur-sm border border-white/10">
+                <span className="inline-block px-4 py-1.5 bg-white/10 text-yellow-300 rounded-lg text-xs font-bold tracking-widest uppercase mb-6 backdrop-blur-sm border border-white/10">
                   Stay Informed
                 </span>
                 <h3 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">Subscribe for Updates</h3>
@@ -350,12 +350,12 @@ const Blog = () => {
                     <input
                       type="email"
                       placeholder="Your email address..."
-                      className="flex-1 px-6 py-4 bg-white/10 border border-white/20 rounded-full focus:outline-none focus:bg-white/20 focus:border-white/40 text-white placeholder-blue-200 transition-all font-medium"
+                      className="flex-1 px-6 py-4 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:bg-white/20 focus:border-white/40 text-white placeholder-blue-200 transition-all font-medium"
                       required
                     />
                     <button
                       type="submit"
-                      className="px-8 py-4 bg-yellow-400 hover:bg-yellow-300 text-blue-900 font-bold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 whitespace-nowrap"
+                      className="px-8 py-4 bg-yellow-400 hover:bg-yellow-300 text-blue-900 font-bold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 whitespace-nowrap"
                     >
                       Subscribe Now
                     </button>

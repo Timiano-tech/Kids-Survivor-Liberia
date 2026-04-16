@@ -58,7 +58,7 @@ const Teams = () => {
                 {teamMembers.map((member, index) => (
                   <div 
                     key={index}
-                    className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                    className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
                   >
                     <div className="h-auto bg-gray-100 flex items-center justify-center">
                       <img 
@@ -88,7 +88,7 @@ const Teams = () => {
             className="text-center"
           >
             <Link to="/team">
-              <button className="inline-flex items-center px-6 py-3 bg-white text-blue-600 border-2 border-blue-600 rounded-full font-semibold hover:bg-blue-50 transition-all duration-300 hover:scale-105">
+              <button className="inline-flex items-center px-6 py-3 bg-white text-blue-600 border-2 border-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-300 hover:scale-105">
                 <span>View All Members</span>
                 <FiArrowRight className="ml-2" />
               </button>

@@ -251,12 +251,12 @@ const Impact = () => {
                     whileInView={{ opacity: 1, scale: 1, y: 0 }}
                     transition={{ delay: index * 0.1, duration: 0.5 }}
                     viewport={{ once: true }}
-                    className="bg-white rounded-xl shadow-sm p-8 text-center hover:shadow-md border border-slate-100 transition-all duration-500 group relative overflow-hidden"
+                    className="bg-white rounded-lg shadow-sm p-8 text-center hover:shadow-md border border-slate-100 transition-all duration-500 group relative overflow-hidden"
                   >
-                    <div className="absolute top-0 right-0 w-24 h-24 bg-blue-50/50 rounded-bl-[3rem] -mx-4 -my-4 transition-transform group-hover:scale-125 duration-700 ease-out z-0"></div>
+                    <div className="absolute top-0 right-0 w-24 h-24 bg-blue-50/50 rounded-bl-2xl -mx-4 -my-4 transition-transform group-hover:scale-125 duration-700 ease-out z-0"></div>
 
                     <div className="flex justify-center mb-6 relative z-10">
-                      <div className="p-4 bg-blue-50 text-blue-600 rounded-xl group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500 shadow-sm inline-flex items-center justify-center">
+                      <div className="p-4 bg-blue-50 text-blue-600 rounded-lg group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500 shadow-sm inline-flex items-center justify-center">
                         {stat.icon}
                       </div>
                     </div>
@@ -283,7 +283,7 @@ const Impact = () => {
                       whileInView={{ width: "100%" }}
                       transition={{ delay: 1 + (index * 0.2), duration: 1.5, ease: "easeOut" }}
                       viewport={{ once: true }}
-                      className="h-1.5 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto mt-6 rounded-full relative z-10 opacity-50 group-hover:opacity-100"
+                      className="h-1.5 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto mt-6 rounded-lg relative z-10 opacity-50 group-hover:opacity-100"
                     />
                   </motion.div>
                 ))}
@@ -297,8 +297,8 @@ const Impact = () => {
                 viewport={{ once: true }}
                 className="mt-16 text-center"
               >
-                <div className="inline-flex items-center px-8 py-4 bg-white shadow-md border border-slate-100 text-slate-700 rounded-full text-base font-medium hover:shadow-lg transition-shadow">
-                  <div className="p-1.5 bg-blue-100 rounded-full mr-3 text-blue-600">
+                <div className="inline-flex items-center px-8 py-4 bg-white shadow-md border border-slate-100 text-slate-700 rounded-lg text-base font-medium hover:shadow-lg transition-shadow">
+                  <div className="p-1.5 bg-blue-100 rounded-lg mr-3 text-blue-600">
                     <FiCheckCircle className="w-5 h-5" />
                   </div>
                   <span>
@@ -334,10 +334,10 @@ const Impact = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1, duration: 0.5 }}
                     viewport={{ once: true }}
-                    className="bg-white rounded-xl shadow-sm p-8 border border-slate-100 hover:shadow-[0_20px_40px_rgb(0,0,0,0.1)] transition-all duration-500 group flex flex-col h-full"
+                    className="bg-white rounded-lg shadow-sm p-8 border border-slate-100 hover:shadow-[0_20px_40px_rgb(0,0,0,0.1)] transition-all duration-500 group flex flex-col h-full"
                   >
                     <div className="flex items-center mb-6">
-                      <div className="p-3 bg-blue-50 text-blue-600 rounded-xl mr-4 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 shadow-sm">
+                      <div className="p-3 bg-blue-50 text-blue-600 rounded-lg mr-4 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 shadow-sm">
                         {area.icon}
                       </div>
                       <h3 className="text-xl font-bold text-slate-900 leading-tight group-hover:text-blue-600 transition-colors">{area.title}</h3>
@@ -346,7 +346,7 @@ const Impact = () => {
                       {area.description}
                     </p>
                     <div className="flex items-center justify-between mt-auto pt-5 border-t border-slate-100">
-                      <span className="text-slate-900 font-bold text-sm bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-100">{area.stats}</span>
+                      <span className="text-slate-900 font-bold text-sm bg-slate-50 px-3 py-1.5 rounded-md border border-slate-100">{area.stats}</span>
                       <Link to="/programs" className="text-blue-600 hover:text-blue-700 text-sm font-bold flex items-center group-hover:translate-x-1 transition-transform">
                         Learn more <span className="ml-1 tracking-tighter">→</span>
                       </Link>
@@ -365,7 +365,7 @@ const Impact = () => {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <div className="inline-flex items-center px-5 py-2.5 bg-red-50 text-red-600 rounded-full text-xs font-bold tracking-widest uppercase mb-6 shadow-sm border border-red-100">
+                <div className="inline-flex items-center px-5 py-2.5 bg-red-50 text-red-600 rounded-md text-xs font-bold tracking-widest uppercase mb-6 shadow-sm border border-red-100">
                   <FiHeart className="mr-2 w-4 h-4 fill-current" />
                   Success Stories
                 </div>
@@ -385,7 +385,7 @@ const Impact = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1, duration: 0.5 }}
                     viewport={{ once: true }}
-                    className="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md border border-slate-100 transition-all duration-500 group"
+                    className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md border border-slate-100 transition-all duration-500 group"
                   >
                     <div className="relative h-72 overflow-hidden bg-slate-100">
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent z-10"></div>
@@ -396,7 +396,7 @@ const Impact = () => {
                         loading="lazy"
                       />
                       <div className="absolute bottom-6 left-6 z-20">
-                        <span className="bg-blue-600 text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase shadow-md backdrop-blur-sm">
+                        <span className="bg-blue-600 text-white px-4 py-1.5 rounded-md text-xs font-bold tracking-widest uppercase shadow-md backdrop-blur-sm">
                           {story.category}
                         </span>
                       </div>
@@ -430,7 +430,7 @@ const Impact = () => {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <div className="inline-flex items-center px-5 py-2.5 bg-slate-900 text-white rounded-full text-xs font-bold tracking-widest uppercase mb-6 shadow-md shadow-slate-900/20">
+                <div className="inline-flex items-center px-5 py-2.5 bg-slate-900 text-white rounded-lg text-xs font-bold tracking-widest uppercase mb-6 shadow-md shadow-slate-900/20">
                   <FiPlay className="mr-2 w-4 h-4 fill-current" />
                   Video Documentaries
                 </div>
@@ -450,7 +450,7 @@ const Impact = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1, duration: 0.5 }}
                     viewport={{ once: true }}
-                    className="bg-white rounded-xl shadow-[0_4px_20px_rgb(0,0,0,0.06)] overflow-hidden hover:shadow-md border border-slate-100 transition-all duration-500 group flex flex-col h-full"
+                    className="bg-white rounded-lg shadow-[0_4px_20px_rgb(0,0,0,0.06)] overflow-hidden hover:shadow-md border border-slate-100 transition-all duration-500 group flex flex-col h-full"
                   >
                     <div className="relative h-56 bg-slate-900 overflow-hidden">
                       <video
@@ -461,7 +461,7 @@ const Impact = () => {
                         <source src={video.videoSrc} type="video/mp4" />
                       </video>
                       <div className="absolute top-4 right-4 pointer-events-none">
-                        <span className="bg-black/60 backdrop-blur-md text-white px-3 py-1.5 rounded-full text-xs font-bold tracking-wider shadow-sm">
+                        <span className="bg-black/60 backdrop-blur-md text-white px-3 py-1.5 rounded-md text-xs font-bold tracking-wider shadow-sm">
                           {video.duration}
                         </span>
                       </div>
@@ -469,7 +469,7 @@ const Impact = () => {
 
                     <div className="p-8 flex-grow flex flex-col">
                       <div className="flex items-center mb-4">
-                        <span className="bg-blue-50 text-blue-600 px-3 py-1.5 rounded-lg text-xs font-bold tracking-widest uppercase border border-blue-100">
+                        <span className="bg-blue-50 text-blue-600 px-3 py-1.5 rounded-md text-xs font-bold tracking-widest uppercase border border-blue-100">
                           {video.category}
                         </span>
                       </div>

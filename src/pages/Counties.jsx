@@ -61,7 +61,7 @@ const Counties = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-white rounded-3xl shadow-2xl shadow-blue-900/10 border border-slate-100 overflow-hidden flex flex-col lg:flex-row"
+              className="bg-white rounded-xl shadow-2xl shadow-blue-900/10 border border-slate-100 overflow-hidden flex flex-col lg:flex-row"
             >
               <div className="p-8 lg:p-12 lg:w-2/3">
                 <div className="flex items-center gap-2 mb-4 text-blue-600 font-bold uppercase text-xs tracking-widest">
@@ -76,7 +76,7 @@ const Counties = () => {
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-8 border-t border-slate-100">
                   <div className="flex gap-4">
-                    <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 shrink-0">
+                    <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600 shrink-0">
                       <FiMapPin className="w-6 h-6" />
                     </div>
                     <div>
@@ -85,7 +85,7 @@ const Counties = () => {
                     </div>
                   </div>
                   <div className="flex gap-4">
-                    <div className="w-12 h-12 bg-yellow-50 rounded-xl flex items-center justify-center text-yellow-600 shrink-0">
+                    <div className="w-12 h-12 bg-yellow-50 rounded-lg flex items-center justify-center text-yellow-600 shrink-0">
                       <FiShield className="w-6 h-6" />
                     </div>
                     <div>
@@ -100,7 +100,7 @@ const Counties = () => {
                 <div className="absolute inset-0 flex items-center justify-center">
                   <FiMapPin className="w-32 h-32 text-blue-100 transform group-hover:scale-110 group-hover:rotate-12 transition-transform duration-700" />
                 </div>
-                <div className="absolute bottom-8 left-8 right-8 bg-white/90 backdrop-blur-md p-6 rounded-2xl border border-white/20 shadow-xl">
+                <div className="absolute bottom-8 left-8 right-8 bg-white/90 backdrop-blur-md p-6 rounded-xl border border-white/20 shadow-xl">
                   <div className="text-xs font-black text-blue-600 uppercase mb-1">Center of Excellence</div>
                   <div className="text-sm text-slate-700 font-medium italic">"Ensuring no child is left behind in the journey towards a drug-free Liberia."</div>
                 </div>
@@ -115,10 +115,10 @@ const Counties = () => {
               <p className="text-slate-500 font-medium">Explore our specific programs and leadership in each county.</p>
             </div>
             
-            <div className="flex p-1 bg-slate-200/50 rounded-2xl w-fit">
+            <div className="flex p-1 bg-slate-200/50 rounded-xl w-fit">
               <button 
                 onClick={() => setFilter('all')}
-                className={`px-6 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 ${
+                className={`px-6 py-2.5 rounded-lg text-sm font-bold transition-all duration-300 ${
                   filter === 'all' 
                     ? 'bg-white text-blue-600 shadow-sm' 
                     : 'text-slate-500 hover:text-slate-700'
@@ -128,7 +128,7 @@ const Counties = () => {
               </button>
               <button 
                 onClick={() => setFilter('active')}
-                className={`px-6 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 ${
+                className={`px-6 py-2.5 rounded-lg text-sm font-bold transition-all duration-300 ${
                   filter === 'active' 
                     ? 'bg-white text-blue-600 shadow-sm' 
                     : 'text-slate-500 hover:text-slate-700'
@@ -154,7 +154,7 @@ const Counties = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.9 }}
                     transition={{ duration: 0.4, delay: index * 0.05 }}
-                    className={`group h-full flex flex-col bg-white rounded-3xl border border-slate-100 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-blue-900/10 hover:-translate-y-2 ${
+                    className={`group h-full flex flex-col bg-white rounded-xl border border-slate-100 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-blue-900/10 hover:-translate-y-2 ${
                       !county.isActive && 'grayscale-[0.5] opacity-80'
                     }`}
                   >
@@ -176,12 +176,12 @@ const Counties = () => {
                       {/* Status Badge */}
                       <div className="absolute top-6 left-6">
                         {county.isActive ? (
-                          <span className="flex items-center gap-1.5 px-3 py-1 bg-green-500/10 text-green-600 text-[10px] font-black uppercase tracking-[0.1em] rounded-full border border-green-200 backdrop-blur-sm">
-                            <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
+                          <span className="flex items-center gap-1.5 px-3 py-1 bg-green-500/10 text-green-600 text-[10px] font-black uppercase tracking-[0.1em] rounded-lg border border-green-200 backdrop-blur-sm">
+                            <span className="w-1.5 h-1.5 bg-green-500 rounded-lg animate-pulse"></span>
                             Active Area
                           </span>
                         ) : (
-                          <span className="px-3 py-1 bg-slate-100 text-slate-500 text-[10px] font-black uppercase tracking-[0.1em] rounded-full border border-slate-200">
+                          <span className="px-3 py-1 bg-slate-100 text-slate-500 text-[10px] font-black uppercase tracking-[0.1em] rounded-lg border border-slate-200">
                             Planned Expansion
                           </span>
                         )}
@@ -228,7 +228,7 @@ const Counties = () => {
                         {county.isActive ? (
                           <Link 
                             to={`/counties/${county.id}`}
-                            className="w-full inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-black py-4 rounded-2xl transition-all duration-300 shadow-lg shadow-blue-500/20 group-hover:shadow-blue-500/30"
+                            className="w-full inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-black py-4 rounded-xl transition-all duration-300 shadow-lg shadow-blue-500/20 group-hover:shadow-blue-500/30"
                           >
                             VIEW OPERATIONS
                             <FiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

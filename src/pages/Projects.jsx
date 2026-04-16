@@ -157,7 +157,7 @@ const Projects = () => {
                   <button
                     key={category.id}
                     onClick={() => setActiveFilter(category.id)}
-                    className={`px-6 py-3 rounded-full text-sm font-bold tracking-wide uppercase transition-all duration-300 shadow-sm ${activeFilter === category.id
+                    className={`px-6 py-3 rounded-lg text-sm font-bold tracking-wide uppercase transition-all duration-300 shadow-sm ${activeFilter === category.id
                       ? 'bg-blue-600 text-white shadow-[0_8px_20px_rgb(37,99,235,0.3)] scale-105'
                       : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 hover:text-blue-600 hover:border-blue-200'
                       }`}
@@ -176,7 +176,7 @@ const Projects = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
-                  className="bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 hover:shadow-md transition-all duration-500 group relative overflow-hidden"
+                  className="bg-white rounded-lg shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 hover:shadow-md transition-all duration-500 group relative overflow-hidden"
                 >
                   {/* Project Image */}
                   <div className="relative h-52 overflow-hidden">
@@ -189,12 +189,12 @@ const Projects = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/30 to-transparent"></div>
                     {/* Category badge on image */}
                     <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1.5 bg-white/20 backdrop-blur-md text-white text-xs font-bold uppercase tracking-wider rounded-full border border-white/20">
+                      <span className="px-3 py-1.5 bg-white/20 backdrop-blur-md text-white text-xs font-bold uppercase tracking-wider rounded-md border border-white/20">
                         {project.category}
                       </span>
                     </div>
                     {/* Icon overlay on image */}
-                    <div className="absolute bottom-4 right-4 bg-white/20 backdrop-blur-md text-white p-3 rounded-xl border border-white/20 shadow-lg">
+                    <div className="absolute bottom-4 right-4 bg-white/20 backdrop-blur-md text-white p-3 rounded-lg border border-white/20 shadow-lg">
                       {project.icon}
                     </div>
                   </div>
@@ -209,7 +209,7 @@ const Projects = () => {
                     <p className="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-2">{project.description}</p>
 
                     {/* Target */}
-                    <div className="mb-6 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                    <div className="mb-6 bg-slate-50 p-4 rounded-lg border border-slate-100">
                       <div className="text-xs font-bold tracking-wider uppercase text-slate-400 mb-1">Target Group</div>
                       <div className="text-sm font-bold text-slate-800">{project.target}</div>
                     </div>
@@ -220,12 +220,12 @@ const Projects = () => {
                         <span>Progress</span>
                         <span className="text-blue-600">{project.progress}%</span>
                       </div>
-                      <div className="h-2.5 bg-slate-100 rounded-full overflow-hidden">
+                      <div className="h-2.5 bg-slate-100 rounded-lg overflow-hidden">
                         <motion.div
                           initial={{ width: 0 }}
                           animate={{ width: `${project.progress}%` }}
                           transition={{ duration: 1, delay: 0.2 }}
-                          className="h-full bg-blue-600 rounded-full"
+                          className="h-full bg-blue-600 rounded-lg"
                         />
                       </div>
                     </div>

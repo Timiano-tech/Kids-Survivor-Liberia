@@ -144,9 +144,9 @@ const Contact = () => {
               className="text-center mb-16 max-w-4xl mx-auto"
             >
               <div className="flex items-center justify-center gap-3 mb-4">
-                 <div className="w-8 h-1 bg-yellow-400 rounded-full"></div>
+                 <div className="w-8 h-1 bg-yellow-400 rounded-lg"></div>
                  <span className="text-blue-600 font-extrabold tracking-widest uppercase text-sm">Reach Out</span>
-                 <div className="w-8 h-1 bg-yellow-400 rounded-full"></div>
+                 <div className="w-8 h-1 bg-yellow-400 rounded-lg"></div>
               </div>
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight">Let's Connect</h2>
               <p className="text-slate-600 text-lg leading-relaxed">
@@ -164,10 +164,10 @@ const Contact = () => {
               viewport={{ once: true }}
               className="max-w-4xl mx-auto"
             >
-              <div className="bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 p-8 sm:p-12 lg:p-16 relative overflow-hidden">
+              <div className="bg-white rounded-lg shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 p-8 sm:p-12 lg:p-16 relative overflow-hidden">
 
                 <div className="flex flex-col sm:flex-row items-start sm:items-center mb-10 gap-6 relative z-10">
-                  <div className="bg-linear-to-br from-blue-50 to-blue-100/50 p-4 rounded-xl border border-blue-100 text-blue-600 shadow-sm">
+                  <div className="bg-linear-to-br from-blue-50 to-blue-100/50 p-4 rounded-lg border border-blue-100 text-blue-600 shadow-sm">
                     <FiMessageSquare className="w-8 h-8" />
                   </div>
                   <div>
@@ -189,7 +189,7 @@ const Contact = () => {
                           onChange={handleChange}
                           required
                           disabled={isSubmitting}
-                          className="w-full pl-12 pr-4 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:bg-white transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed outline-none"
+                          className="w-full pl-12 pr-4 py-4 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:bg-white transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed outline-none"
                           placeholder="Your full name"
                         />
                       </div>
@@ -206,7 +206,7 @@ const Contact = () => {
                           onChange={handleChange}
                           required
                           disabled={isSubmitting}
-                          className="w-full pl-12 pr-4 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:bg-white transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed outline-none"
+                          className="w-full pl-12 pr-4 py-4 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:bg-white transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed outline-none"
                           placeholder="your@email.com"
                         />
                       </div>
@@ -222,7 +222,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       disabled={isSubmitting}
-                      className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:bg-white transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed outline-none"
+                      className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:bg-white transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed outline-none"
                       placeholder="How can we help you?"
                     />
                   </div>
@@ -236,7 +236,7 @@ const Contact = () => {
                       required
                       rows="6"
                       disabled={isSubmitting}
-                      className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:bg-white transition-all duration-300 resize-none disabled:opacity-70 disabled:cursor-not-allowed outline-none"
+                      className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:bg-white transition-all duration-300 resize-none disabled:opacity-70 disabled:cursor-not-allowed outline-none"
                       placeholder="Please provide details about your inquiry..."
                     ></textarea>
                   </div>
@@ -245,14 +245,14 @@ const Contact = () => {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className={`flex items-center justify-center space-x-3 text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl w-full sm:w-auto ${isSubmitting
+                      className={`flex items-center justify-center space-x-3 text-white px-10 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl w-full sm:w-auto ${isSubmitting
                         ? 'bg-slate-400 cursor-not-allowed'
                         : 'bg-linear-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 hover:-translate-y-1'
                         }`}
                     >
                       {isSubmitting ? (
                         <>
-                          <div className="w-5 h-5 border-2 border-white/50 border-t-white rounded-full animate-spin"></div>
+                          <div className="w-5 h-5 border-2 border-white/50 border-t-white rounded-lg animate-spin"></div>
                           <span>Sending...</span>
                         </>
                       ) : (
@@ -278,8 +278,8 @@ const Contact = () => {
               viewport={{ once: true }}
               className="mt-24 max-w-5xl mx-auto"
             >
-              <div className="bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 overflow-hidden relative group">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-400/20 rounded-bl-full -z-10 group-hover:bg-yellow-400/30 transition-colors duration-500"></div>
+              <div className="bg-white rounded-lg shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 overflow-hidden relative group">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-400/20 rounded-bl-2xl -z-10 group-hover:bg-yellow-400/30 transition-colors duration-500"></div>
                 <div className="p-10 border-b border-slate-100 flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
                   <div>
                     <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2 tracking-tight">Visit Our Headquarters</h2>
@@ -290,7 +290,7 @@ const Contact = () => {
                       href="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=15TH%20STREET,%20BARCLAY%20AVENUE,%20SINKOR,%20MONTSERRADO%20COUNTRY+(Kids%20Survivor%20Liberia)"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center px-6 py-3 bg-slate-50 border border-slate-200 text-slate-700 hover:text-blue-600 hover:bg-white hover:border-blue-200 rounded-full font-semibold transition-all shadow-sm"
+                      className="inline-flex items-center justify-center px-6 py-3 bg-slate-50 border border-slate-200 text-slate-700 hover:text-blue-600 hover:bg-white hover:border-blue-200 rounded-lg font-semibold transition-all shadow-sm"
                     >
                       Get Directions
                     </a>

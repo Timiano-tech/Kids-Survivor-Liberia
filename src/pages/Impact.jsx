@@ -192,7 +192,7 @@ const Impact = () => {
     <>
       <div className="min-h-screen bg-slate-50">
         {/* Main Header Section -  Redesign */}
-        <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[3rem] shadow-xl">
+        <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[40px] md:rounded-b-[100px] shadow-xl">
           <div className="absolute inset-0 z-0">
             <img
               src={HeaderImage}
@@ -346,7 +346,7 @@ const Impact = () => {
                       {area.description}
                     </p>
                     <div className="flex items-center justify-between mt-auto pt-5 border-t border-slate-100">
-                      <span className="text-slate-900 font-bold text-sm bg-slate-50 px-3 py-1.5 rounded-md border border-slate-100">{area.stats}</span>
+                      <span className="text-slate-900 font-bold text-sm bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-100">{area.stats}</span>
                       <Link to="/programs" className="text-blue-600 hover:text-blue-700 text-sm font-bold flex items-center group-hover:translate-x-1 transition-transform">
                         Learn more <span className="ml-1 tracking-tighter">→</span>
                       </Link>
@@ -365,7 +365,7 @@ const Impact = () => {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <div className="inline-flex items-center px-5 py-2.5 bg-red-50 text-red-600 rounded-md text-xs font-bold tracking-widest uppercase mb-6 shadow-sm border border-red-100">
+                <div className="inline-flex items-center px-5 py-2.5 bg-red-50 text-red-600 rounded-lg text-xs font-bold tracking-widest uppercase mb-6 shadow-sm border border-red-100">
                   <FiHeart className="mr-2 w-4 h-4 fill-current" />
                   Success Stories
                 </div>
@@ -396,7 +396,7 @@ const Impact = () => {
                         loading="lazy"
                       />
                       <div className="absolute bottom-6 left-6 z-20">
-                        <span className="bg-blue-600 text-white px-4 py-1.5 rounded-md text-xs font-bold tracking-widest uppercase shadow-md backdrop-blur-sm">
+                        <span className="bg-blue-600 text-white px-4 py-1.5 rounded-lg text-xs font-bold tracking-widest uppercase shadow-md backdrop-blur-sm">
                           {story.category}
                         </span>
                       </div>
@@ -461,7 +461,7 @@ const Impact = () => {
                         <source src={video.videoSrc} type="video/mp4" />
                       </video>
                       <div className="absolute top-4 right-4 pointer-events-none">
-                        <span className="bg-black/60 backdrop-blur-md text-white px-3 py-1.5 rounded-md text-xs font-bold tracking-wider shadow-sm">
+                        <span className="bg-black/60 backdrop-blur-md text-white px-3 py-1.5 rounded-lg text-xs font-bold tracking-wider shadow-sm">
                           {video.duration}
                         </span>
                       </div>
@@ -469,7 +469,7 @@ const Impact = () => {
 
                     <div className="p-8 flex-grow flex flex-col">
                       <div className="flex items-center mb-4">
-                        <span className="bg-blue-50 text-blue-600 px-3 py-1.5 rounded-md text-xs font-bold tracking-widest uppercase border border-blue-100">
+                        <span className="bg-blue-50 text-blue-600 px-3 py-1.5 rounded-lg text-xs font-bold tracking-widest uppercase border border-blue-100">
                           {video.category}
                         </span>
                       </div>

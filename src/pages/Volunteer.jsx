@@ -85,7 +85,7 @@ const Volunteer = () => {
     <>
       <div className="min-h-screen bg-white">
         {/* Main Header Section - Premium Redesign */}
-        <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[3rem] shadow-xl">
+        <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[40px] md:rounded-b-[100px] shadow-xl">
           <div className="absolute inset-0 z-0">
             <img
               src={KSLCompany}
@@ -225,7 +225,7 @@ const Volunteer = () => {
 
                 <div className="relative z-10">
                   <div className="text-center mb-16">
-                    <span className="inline-block px-4 py-2 bg-white/10 text-blue-300 rounded-md text-xs font-bold tracking-widest uppercase mb-6 backdrop-blur-sm border border-white/10">
+                    <span className="inline-block px-4 py-2 bg-white/10 text-blue-300 rounded-lg text-xs font-bold tracking-widest uppercase mb-6 backdrop-blur-sm border border-white/10">
                       Get Involved
                     </span>
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">

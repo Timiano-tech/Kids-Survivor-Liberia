@@ -33,7 +33,7 @@ const Projects = () => {
       description: 'School and community awareness aligned with NADAP 2025-2030',
       status: 'ongoing',
       progress: 85,
-      beneficiaries: '1,200+',
+      beneficiaries: '10,000+',
       icon: <FiShield />,
       target: 'Youth & Adolescents',
       image: DrugPreventionImg
@@ -45,7 +45,7 @@ const Projects = () => {
       description: 'Counseling and reintegration for drug-affected individuals',
       status: 'ongoing',
       progress: 70,
-      beneficiaries: '80+',
+      beneficiaries: '8,000+',
       icon: <FiHeart />,
       target: 'Individuals & Families',
       image: RehabilitationImg
@@ -57,7 +57,7 @@ const Projects = () => {
       description: 'Skills training and leadership development aligned with YTEI',
       status: 'ongoing',
       progress: 75,
-      beneficiaries: '150+',
+      beneficiaries: '1,200+',
       icon: <FiUsers />,
       target: 'Youth & Adolescent Girls',
       image: YouthEmpowermentImg
@@ -69,7 +69,7 @@ const Projects = () => {
       description: 'Economic inclusion and social protection for vulnerable groups',
       status: 'ongoing',
       progress: 65,
-      beneficiaries: '50+',
+      beneficiaries: '500+',
       icon: <FiHeart />,
       target: 'Widows & Elderly',
       image: WidowsSupportImg
@@ -81,7 +81,7 @@ const Projects = () => {
       description: 'Strengthening community resilience and partnerships',
       status: 'ongoing',
       progress: 80,
-      beneficiaries: '5+',
+      beneficiaries: '120+',
       icon: <FiGlobe />,
       target: 'Communities',
       image: PeacebuildingImg
@@ -93,7 +93,7 @@ const Projects = () => {
       description: 'Integrated education support and child safeguarding',
       status: 'ongoing',
       progress: 90,
-      beneficiaries: '300+',
+      beneficiaries: '3,000+',
       icon: <FiBook />,
       target: 'Children',
       image: ChildProtectionImg
@@ -108,7 +108,7 @@ const Projects = () => {
     <>
       <div className="min-h-screen bg-slate-50">
         {/* Main Header Section - Premium Redesign */}
-        <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[3rem] shadow-xl">
+        <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[40px] md:rounded-b-[100px] shadow-xl">
           <div className="absolute inset-0 z-0">
             <img
               src={HeaderImage}

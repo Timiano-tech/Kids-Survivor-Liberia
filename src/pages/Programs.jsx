@@ -152,7 +152,7 @@ const Programs = () => {
     <>
       <div className="min-h-screen bg-white">
         {/* Premium Header */}
-        <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[3rem] shadow-2xl">
+        <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[40px] md:rounded-b-[100px] shadow-2xl">
           <div className="absolute inset-0 z-0">
             <img
               src={HeaderImage}

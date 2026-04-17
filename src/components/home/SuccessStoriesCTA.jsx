@@ -6,7 +6,7 @@ import { FiHeart, FiArrowRight } from 'react-icons/fi';
 import JohnHoward from '../../assets/Success_Story.jpeg';
 import Franklin_Mondor from '../../assets/Success_story2.jpeg';
 import Samuel_Meaway from '../../assets/Success_Story3.jpeg';
-import Community from '../../assets/Community.jpeg';
+import Community from '../../assets/Success_Story4.jpeg';
 
 export const SuccessStoriesCTA = () => {
   const [currentStory, setCurrentStory] = useState(0);
@@ -62,7 +62,7 @@ export const SuccessStoriesCTA = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
           {/* Auto-rotating Image Side */}
-          <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] rounded-xl overflow-hidden shadow-2xl border border-white/20 ring-4 ring-white/5">
+          <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] rounded-lg overflow-hidden shadow-2xl border border-white/20 ring-4 ring-white/5">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentStory}
@@ -87,7 +87,7 @@ export const SuccessStoriesCTA = () => {
                     ))}
                   </div>
                   <h4 className="text-2xl font-bold text-white mb-2 drop-shadow-md">{successStories[currentStory].name}</h4>
-                  <p className="text-blue-200 font-semibold bg-slate-900/60 inline-block px-3 py-1 rounded-md backdrop-blur-sm border border-blue-400/30 text-sm drop-shadow-md">{successStories[currentStory].program}</p>
+                  <p className="text-blue-200 font-semibold bg-slate-900/60 inline-block px-3 py-1 rounded-lg backdrop-blur-sm border border-blue-400/30 text-sm drop-shadow-md">{successStories[currentStory].program}</p>
                 </div>
               </motion.div>
             </AnimatePresence>
@@ -118,7 +118,7 @@ export const SuccessStoriesCTA = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.5 }}
-                className="border-l-4 border-blue-400 pl-6 mb-10 text-left h-32 flex items-center bg-slate-900/40 rounded-r-xl py-4 pr-6 border-y border-r border-slate-700/50 shadow-inner backdrop-blur-sm"
+                className="border-l-4 border-blue-400 pl-6 mb-10 text-left h-32 flex items-center bg-slate-900/40 rounded-r-lg py-4 pr-6 border-y border-r border-slate-700/50 shadow-inner backdrop-blur-sm"
               >
                 <p className="text-xl text-white font-light italic leading-relaxed line-clamp-4">
                   "{successStories[currentStory].quote}"

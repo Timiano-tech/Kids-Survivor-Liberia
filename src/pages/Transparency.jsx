@@ -29,7 +29,7 @@ const Transparency = () => {
   return (
     <div className="min-h-screen bg-white pb-20">
       {/* Header - Premium Redesign */}
-      <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[3rem] shadow-xl border-b border-slate-100">
+      <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[40px] md:rounded-b-[100px] shadow-xl border-b border-slate-100">
         <div className="absolute inset-0 z-0">
           <img
             src={HeaderImage}
@@ -146,7 +146,7 @@ const Transparency = () => {
 
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10">
             <div className="md:w-2/3 text-center md:text-left">
-              <span className="inline-block px-4 py-1.5 bg-white/10 text-yellow-300 rounded-md text-xs font-bold tracking-widest uppercase mb-4 backdrop-blur-sm border border-white/10 text-shadow-sm">
+              <span className="inline-block px-4 py-1.5 bg-white/10 text-yellow-300 rounded-lg text-xs font-bold tracking-widest uppercase mb-4 backdrop-blur-sm border border-white/10 text-shadow-sm">
                 Open Records
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight">Annual Reports & Financials</h2>

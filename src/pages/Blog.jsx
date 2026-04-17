@@ -145,7 +145,8 @@ const Blog = () => {
     <>
       <div className="min-h-screen bg-white">
         {/* Main Header Section */}
-        <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[3rem] shadow-xl border-b border-slate-100">
+        {/* Main Header Section */}
+        <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[40px] md:rounded-b-[100px] shadow-xl border-b border-slate-100">
           <div className="absolute inset-0 z-0">
             <img
               src={HeaderImage}
@@ -227,13 +228,13 @@ const Blog = () => {
                           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent flex items-center justify-center">
                             <button
                               onClick={() => handleVideoPlay(video.id)}
-                              className="w-20 h-20 bg-white/20 backdrop-blur-md hover:bg-yellow-400 hover:text-blue-900 text-white rounded-2xl flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 shadow-[0_8px_30px_rgb(0,0,0,0.2)] border border-white/30"
+                              className="w-20 h-20 bg-white/20 backdrop-blur-md hover:bg-yellow-400 hover:text-blue-900 text-white rounded-lg flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 shadow-[0_8px_30px_rgb(0,0,0,0.2)] border border-white/30"
                               aria-label="Play video"
                             >
                               <FiPlay size={32} className="ml-1" />
                             </button>
                           </div>
-                          <div className="absolute bottom-4 right-4 bg-slate-900/70 backdrop-blur-md text-white font-medium text-xs px-3 py-1.5 rounded-md border border-white/10">
+                          <div className="absolute bottom-4 right-4 bg-slate-900/70 backdrop-blur-md text-white font-medium text-xs px-3 py-1.5 rounded-lg border border-white/10">
                             {video.duration}
                           </div>
                         </>
@@ -311,7 +312,7 @@ const Blog = () => {
                             {post.author}
                           </div>
                         </div>
-                        <span className="text-slate-400 bg-slate-50 px-2 py-1 rounded-md">{post.readTime}</span>
+                        <span className="text-slate-400 bg-slate-50 px-2 py-1 rounded-lg">{post.readTime}</span>
                       </div>
                       <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight group-hover:text-blue-600 transition-colors duration-300 line-clamp-2">
                         {post.title}

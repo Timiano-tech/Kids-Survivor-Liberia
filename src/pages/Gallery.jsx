@@ -208,7 +208,7 @@ const Gallery = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Main Header Section - Premium Redesign */}
-      <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[3rem] shadow-xl border-b border-slate-100">
+      <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[40px] md:rounded-b-[100px] shadow-xl border-b border-slate-100">
         <div className="absolute inset-0 z-0">
           <img
             src={KSL}
@@ -300,7 +300,7 @@ const Gallery = () => {
 
                 {/* Category Badge */}
                 <div className="absolute top-4 left-4 z-20">
-                  <span className="px-4 py-1.5 bg-white/90 backdrop-blur-md shadow-sm text-xs font-bold tracking-widest uppercase rounded-md text-blue-900 border border-white/20">
+                  <span className="px-4 py-1.5 bg-white/90 backdrop-blur-md shadow-sm text-xs font-bold tracking-widest uppercase rounded-lg text-blue-900 border border-white/20">
                     {galleryCategories.find(c => c.id === image.category)?.name}
                   </span>
                 </div>
@@ -382,7 +382,7 @@ const Gallery = () => {
               <p className="text-blue-100 text-lg mb-4 font-light leading-relaxed">{selectedImage.description}</p>
 
               <div className="flex justify-center items-center space-x-6">
-                <span className="px-4 py-1.5 bg-yellow-400/20 text-yellow-300 border border-yellow-400/30 backdrop-blur-sm rounded-md text-sm font-bold uppercase tracking-widest">
+                <span className="px-4 py-1.5 bg-yellow-400/20 text-yellow-300 border border-yellow-400/30 backdrop-blur-sm rounded-lg text-sm font-bold uppercase tracking-widest">
                   {galleryCategories.find(c => c.id === selectedImage.category)?.name}
                 </span>
                 <span className="text-sm font-medium text-slate-400 tracking-widest">

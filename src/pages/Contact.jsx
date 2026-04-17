@@ -102,7 +102,7 @@ const Contact = () => {
         />
 
         {/* Main Header Section - Premium Redesign */}
-        <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[3rem] shadow-xl border-b border-slate-100">
+        <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[40px] md:rounded-b-[100px] shadow-xl border-b border-slate-100">
           <div className="absolute inset-0 z-0">
             <img
               src={ContactImage}
@@ -252,7 +252,7 @@ const Contact = () => {
                     >
                       {isSubmitting ? (
                         <>
-                          <div className="w-5 h-5 border-2 border-white/50 border-t-white rounded-lg animate-spin"></div>
+                          <div className="w-5 h-5 border-2 border-white/50 border-t-white rounded-full animate-spin"></div>
                           <span>Sending...</span>
                         </>
                       ) : (

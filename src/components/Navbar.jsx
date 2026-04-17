@@ -85,6 +85,12 @@ const Navbar = () => {
           description: 'Financial accountability and our commitment to donors.',
           icon: <FiPieChart className="w-5 h-5" />
         },
+        { 
+          name: 'Our Team', 
+          path: '/team', 
+          description: 'Meet the passionate professionals behind our mission.',
+          icon: <FiUsers className="w-5 h-5" />
+        },
       ]
     },    
     { name: 'Our Programs', path: '/programs' },

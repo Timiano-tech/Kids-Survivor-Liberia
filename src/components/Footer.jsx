@@ -266,7 +266,7 @@ const Footer = () => {
                     to={`/counties/${county.id}`}
                     className="text-slate-400 hover:text-yellow-400 transition-colors duration-300 flex items-center group font-medium"
                   >
-                    <span className="w-1.5 h-1.5 rounded-lg bg-slate-700 mr-2 group-hover:bg-yellow-400 transition-colors"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-slate-700 mr-2 group-hover:bg-yellow-400 transition-colors"></span>
                     <span className="group-hover:translate-x-1 transform transition-transform duration-300">{county.name}</span>
                   </Link>
                 ) : (
@@ -275,7 +275,7 @@ const Footer = () => {
                     onClick={(e) => { e.preventDefault(); showComingSoon(county.name); }}
                     className="text-slate-500 hover:text-slate-400 transition-colors duration-300 flex items-center group font-medium text-left"
                   >
-                    <span className="w-1.5 h-1.5 rounded-lg bg-slate-800 mr-2 transition-colors group-hover:bg-slate-600"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-slate-800 mr-2 transition-colors group-hover:bg-slate-600"></span>
                     <span>{county.name} (Coming Soon)</span>
                   </button>
                 );

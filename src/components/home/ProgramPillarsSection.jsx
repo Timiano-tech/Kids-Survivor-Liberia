@@ -143,7 +143,7 @@ export const ProgramPillarsSection = () => {
                       "Active community participation"
                     ].map((item, i) => (
                       <div key={i} className="flex items-center text-slate-700 bg-slate-50 p-3 rounded-lg border border-slate-100">
-                        <div className="w-2.5 h-2.5 bg-yellow-400 rounded-lg mr-4 shrink-0 shadow-sm"></div>
+                        <div className="w-2.5 h-2.5 bg-yellow-400 rounded-full mr-4 shrink-0 shadow-sm"></div>
                         <span className="font-medium">{item}</span>
                       </div>
                     ))}

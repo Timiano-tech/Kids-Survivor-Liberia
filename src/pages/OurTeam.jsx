@@ -18,7 +18,7 @@ import HeaderImage from '../assets/Talking to children.jpeg';
 import Mr_Steve from '../assets/team/Mr_Steve.png';
 import Mrs_Fiona from '../assets/team/Mrs_Fiona.png';
 import Mrs_Silvia from '../assets/team/Mrs_Silvia2.png';
-import CEO from '../assets/team/CEO.png';
+import CEO from '../assets/team/CEO.jpeg';
 import Mrs_Tawah from '../assets/team/Mrs. Tawah B. John.png';
 import Mrs_julie from '../assets/team/Julie Hennings.png';
 import Mr_Sebastian from '../assets/team/Mr. Sebastian Stephney.png';
@@ -211,7 +211,7 @@ const OurTeam = () => {
     <>
       <div className="min-h-screen bg-white">
         {/* Main Header Section - Premium Redesign */}
-        <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[3rem] shadow-xl border-b border-slate-100">
+        <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[40px] md:rounded-b-[100px] shadow-xl border-b border-slate-100">
           <div className="absolute inset-0 z-0">
             <img
               src={HeaderImage}
@@ -281,7 +281,7 @@ const OurTeam = () => {
                     {/* Image Container */}
                     <div className="relative aspect-[4/5] bg-slate-50 overflow-hidden">
                       <div className="absolute top-4 right-4 z-20">
-                        <span className={`inline-flex items-center px-4 py-1.5 rounded-md text-[11px] font-bold uppercase tracking-widest shadow-sm border backdrop-blur-sm ${getColorClasses(getDepartmentColor(member.department))}`}>
+                        <span className={`inline-flex items-center px-4 py-1.5 rounded-lg text-[11px] font-bold uppercase tracking-widest shadow-sm border backdrop-blur-sm ${getColorClasses(getDepartmentColor(member.department))}`}>
                           <span className="mr-1">{member.department.split(' ')[0]}</span>
                         </span>
                       </div>

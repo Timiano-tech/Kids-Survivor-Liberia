@@ -108,7 +108,7 @@ const Donate = () => {
     <>
       <div className="min-h-screen bg-slate-50">
         {/* Main Header Section - Premium Redesign */}
-        <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[3rem] shadow-xl">
+        <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[40px] md:rounded-b-[100px] shadow-xl">
           <div className="absolute inset-0 z-0">
             <img
               src={DonateImage}
@@ -295,7 +295,7 @@ const Donate = () => {
                               <select
                                 value={currency}
                                 onChange={(e) => setCurrency(e.target.value)}
-                                className="w-full px-3.5 py-2.5 text-sm border border-gray-200 rounded-xl bg-gray-50/80 focus:bg-white focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 border-transparent transition-all outline-none"
+                                className="w-full px-3.5 py-2.5 text-sm border border-gray-200 rounded-lg bg-gray-50/80 focus:bg-white focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 border-transparent transition-all outline-none"
                                 required
                               >
                                 {currencies.map((cur) => (
@@ -321,7 +321,7 @@ const Donate = () => {
                                   min="1"
                                   step="0.01"
                                   required
-                                  className="w-full pl-8 pr-4 py-2.5 text-sm border border-gray-200 rounded-xl bg-gray-50/80 focus:bg-white focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all outline-none"
+                                  className="w-full pl-8 pr-4 py-2.5 text-sm border border-gray-200 rounded-lg bg-gray-50/80 focus:bg-white focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all outline-none"
                                   placeholder="0.00"
                                 />
                               </div>
@@ -339,7 +339,7 @@ const Donate = () => {
                               value={paymentDetails.name}
                               onChange={handleInputChange}
                               required
-                              className="w-full px-3.5 py-2.5 text-sm border border-gray-200 rounded-xl bg-gray-50/80 focus:bg-white focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all outline-none placeholder:text-gray-400"
+                              className="w-full px-3.5 py-2.5 text-sm border border-gray-200 rounded-lg bg-gray-50/80 focus:bg-white focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all outline-none placeholder:text-gray-400"
                               placeholder="John Doe"
                             />
                           </div>
@@ -355,7 +355,7 @@ const Donate = () => {
                               value={paymentDetails.email}
                               onChange={handleInputChange}
                               required
-                              className="w-full px-3.5 py-2.5 text-sm border border-gray-200 rounded-xl bg-gray-50/80 focus:bg-white focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all outline-none placeholder:text-gray-400"
+                              className="w-full px-3.5 py-2.5 text-sm border border-gray-200 rounded-lg bg-gray-50/80 focus:bg-white focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all outline-none placeholder:text-gray-400"
                               placeholder="you@example.com"
                             />
                           </div>
@@ -370,7 +370,7 @@ const Donate = () => {
                               name="phone"
                               value={paymentDetails.phone}
                               onChange={handleInputChange}
-                              className="w-full px-3.5 py-2.5 text-sm border border-gray-200 rounded-xl bg-gray-50/80 focus:bg-white focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all outline-none placeholder:text-gray-400"
+                              className="w-full px-3.5 py-2.5 text-sm border border-gray-200 rounded-lg bg-gray-50/80 focus:bg-white focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all outline-none placeholder:text-gray-400"
                               placeholder="+231 ..."
                             />
                           </div>
@@ -379,7 +379,7 @@ const Donate = () => {
                           <button
                             type="submit"
                             disabled={isProcessing}
-                            className="w-full mt-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-semibold py-3 px-4 rounded-xl shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/30 transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed disabled:shadow-none"
+                            className="w-full mt-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-semibold py-3 px-4 rounded-lg shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/30 transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed disabled:shadow-none"
                           >
                             {isProcessing ? (
                               <>

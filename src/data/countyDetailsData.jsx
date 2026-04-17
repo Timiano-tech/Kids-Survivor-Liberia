@@ -1,6 +1,7 @@
 import { FiTarget, FiUsers, FiShield, FiBookOpen, FiActivity, FiBriefcase, FiHeart, FiTrendingUp, FiCheckCircle, FiPlusCircle, FiStar } from 'react-icons/fi';
 
 // Asset Imports for Featured Activities
+import montserradoImg from '../assets/mons.jpeg';
 import CampaignImage from '../assets/Campaign3.jpeg';
 import MedicalImage from '../assets/Free_Medicals9.jpeg';
 import KSL_School_Img from '../assets/KSL_School.jpeg';

@@ -8,7 +8,7 @@ import {
   FiX
 } from 'react-icons/fi';
 import NoToDrugs from '../assets/Say no to drugs.jpeg'
-import HeaderImage from '../assets/Talking to children.jpeg';
+import HeaderImage from '../assets/Team_discussion2.jpeg';
 import BlogImage1 from '../assets/Students Impacted.jpeg';
 import BlogImage2 from '../assets/Youth_Community_Outreach.jpeg';
 import BlogImage3 from '../assets/Helping Children.jpeg';
@@ -144,7 +144,6 @@ const Blog = () => {
   return (
     <>
       <div className="min-h-screen bg-white">
-        {/* Main Header Section */}
         {/* Main Header Section */}
         <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[40px] md:rounded-b-[100px] shadow-xl border-b border-slate-100">
           <div className="absolute inset-0 z-0">
@@ -320,10 +319,6 @@ const Blog = () => {
                       <p className="text-slate-600 text-lg mb-8 leading-relaxed line-clamp-3 flex-grow">
                         {post.excerpt}
                       </p>
-                      <button className="inline-flex items-center font-bold text-sm uppercase tracking-wider text-slate-900 group-hover:text-blue-600 transition-colors duration-300 self-start mt-auto">
-                        Read Article
-                        <FiArrowRight className="ml-2 group-hover:translate-x-2 transition-transform duration-300" />
-                      </button>
                     </div>
                   </motion.article>
                 ))}
@@ -331,7 +326,7 @@ const Blog = () => {
             </div>
 
             {/* Newsletter - Premium */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -364,7 +359,7 @@ const Blog = () => {
                   <p className="text-blue-200/60 text-xs mt-4 font-medium">We respect your privacy. Unsubscribe at any time.</p>
                 </form>
               </div>
-            </motion.div>
+            </motion.div> */}
           </div>
         </main>
       </div>

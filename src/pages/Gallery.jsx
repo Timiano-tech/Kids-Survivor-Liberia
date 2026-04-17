@@ -71,6 +71,28 @@ import SchoolAssembly from "../assets/School assembly.jpeg";
 import Students3 from '../assets/Students3.jpeg';
 import TalkingToChildren from "../assets/Talking to children.jpeg";
 import Treatment from '../assets/Treatment.jpeg';
+import GirlsEmp from '../assets/Girls_Emp.png';
+import Campaign1 from '../assets/Campaign.jpeg';
+import Campaign2_new from '../assets/Campaign2.jpeg';
+import Campaign3 from '../assets/Campaign3.jpeg';
+import Campaign4 from '../assets/Campaign4.jpeg';
+import Campaign5 from '../assets/Campaign5.jpeg';
+import Campaign6 from '../assets/Campaign6.jpeg';
+import Campaign7 from '../assets/Campaign7.jpeg';
+import Campaign8 from '../assets/Campaign8.jpeg';
+import FreeMedical1 from '../assets/Free_Medicals.jpeg';
+import FreeMedical2 from '../assets/Free_Medicals2.jpeg';
+import FreeMedical3 from '../assets/Free_Medicals3.jpeg';
+import FreeMedical4 from '../assets/Free_Medicals4.jpeg';
+import FreeMedical5 from '../assets/Free_Medicals5.jpeg';
+import FreeMedical6 from '../assets/Free_Medicals6.jpeg';
+import FreeMedical7 from '../assets/Free_Medicals7.jpeg';
+import FreeMedical8 from '../assets/Free_Medicals8.jpeg';
+import FreeMedical9 from '../assets/Free_Medicals9.jpeg';
+import FreeMedical10 from '../assets/Free_Medicals10.jpeg';
+import FreeMedical11 from '../assets/Free_Medicals11.jpeg';
+import StudentsLatest from '../assets/Students_Latest.jpeg';
+import ChildrenImpact from '../assets/ChildrenImpact.jpg';
 
 
 
@@ -89,6 +111,8 @@ const Gallery = () => {
     { id: 'all', name: 'All Photos' },
     { id: 'education', name: 'Education' },
     { id: 'community', name: 'Community Outreach' },
+    { id: 'health', name: 'Health & Medical' },
+    { id: 'campaigns', name: 'Awareness Campaigns' },
     { id: 'teams', name: 'Teams' },
   ];
 
@@ -169,6 +193,35 @@ const Gallery = () => {
     { id: 71, src: CEO4, category: 'teams', title: 'The CEO', description: 'Kids Survivor Liberia CEO on outreach' },
     { id: 72, src: CEO_IN_ANOTHER_COUNTY, category: 'teams', title: 'CEO in Another County', description: 'CEO expanding KSL reach to other counties' },
     { id: 73, src: CEO_IN_ANOTHER_COUNTY2, category: 'teams', title: 'CEO in Another County', description: 'CEO expanding KSL reach to other counties' },
+
+    // --- Health & Medical ---
+    { id: 74, src: FreeMedical1, category: 'health', title: 'Medical Outreach', description: 'Providing essential health services' },
+    { id: 75, src: FreeMedical2, category: 'health', title: 'Health Screening', description: 'Mobile clinic activities in rural areas' },
+    { id: 76, src: FreeMedical3, category: 'health', title: 'Community Wellness', description: 'Supporting community health and recovery' },
+    { id: 77, src: FreeMedical4, category: 'health', title: 'Medical Support', description: 'Targeted medical intervention for youth' },
+    { id: 78, src: FreeMedical5, category: 'health', title: 'Health Education', description: 'Teaching basic health and hygiene' },
+    { id: 79, src: FreeMedical6, category: 'health', title: 'Medical Team', description: 'KSL medical team in the field' },
+    { id: 80, src: FreeMedical7, category: 'health', title: 'Outreach Clinic', description: 'Providing care in hard-to-reach zones' },
+    { id: 81, src: FreeMedical8, category: 'health', title: 'Patient Care', description: 'Personalized care for vulnerable individuals' },
+    { id: 82, src: FreeMedical9, category: 'health', title: 'Medical Mission', description: 'Consolidated health outreach success' },
+    { id: 83, src: FreeMedical10, category: 'health', title: 'Healthcare Access', description: 'Bridging the gap in medical services' },
+    { id: 84, src: FreeMedical11, category: 'health', title: 'Medical Supplies', description: 'Providing necessary medicine and tools' },
+
+    // --- Awareness Campaigns ---
+    { id: 85, src: Campaign1, category: 'campaigns', title: 'Action Campaign', description: 'Urban awareness for children rights' },
+    { id: 86, src: Campaign2_new, category: 'campaigns', title: 'Community Dialogue', description: 'Engaging communities on key issues' },
+    { id: 87, src: Campaign3, category: 'campaigns', title: 'Awareness Walk', description: 'Public advocacy for social change' },
+    { id: 88, src: Campaign4, category: 'campaigns', title: 'Mobilization', description: 'Youth-led community transformation' },
+    { id: 89, src: Campaign5, category: 'campaigns', title: 'Advocacy Day', description: 'Speaking up for vulnerable populations' },
+    { id: 90, src: Campaign6, category: 'campaigns', title: 'Public Education', description: 'Widespread awareness through sessions' },
+    { id: 91, src: Campaign7, category: 'campaigns', title: 'Strategic Outreach', description: 'Coordinated awareness campaigns' },
+    { id: 92, src: Campaign8, category: 'campaigns', title: 'Impact Drive', description: 'Finalizing major campaign efforts' },
+
+    // --- Additional Impact ---
+    { id: 93, src: GirlsEmp, category: 'community', title: 'Girls Empowerment', description: 'Empowering adolescent girls through skills' },
+    { id: 94, src: StudentsLatest, category: 'education', title: 'Recent Students', description: 'Lates group of students in KSL programs' },
+    { id: 95, src: ChildrenImpact, category: 'community', title: 'Children Impact', description: 'Children thriving under KSL protection' },
+    { id: 96, src: ChildrenImpact, category: 'community', title: 'Direct Support', description: 'Mobilizing direct care for children' },
   ];
 
   const filteredImages = activeCategory === 'all'

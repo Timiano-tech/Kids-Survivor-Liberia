@@ -3,10 +3,8 @@ import { motion } from 'framer-motion';
 import {
   FiCopy,
   FiCheck,
-  FiCreditCard,
   FiDollarSign
 } from 'react-icons/fi';
-import { useFlutterwave, closePaymentModal } from 'flutterwave-react-v3';
 import DonateImage from '../assets/Children5.jpeg';
 
 const Donate = () => {
@@ -23,86 +21,11 @@ const Donate = () => {
     currency: "USD"
   };
 
-  // Card payment state
-  const [paymentDetails, setPaymentDetails] = useState({
-    amount: '',
-    email: '',
-    name: '',
-    phone: ''
-  });
-  const [currency, setCurrency] = useState('USD'); // default currency
-  const [isProcessing, setIsProcessing] = useState(false);
-  const [paymentSuccess, setPaymentSuccess] = useState(false);
-
-  // Flutterwave configuration
-  const flutterwaveConfig = {
-    /* public_key: process.env.REACT_APP_FLW_PUBLIC_KEY, */ // Your public key from .env
-    tx_ref: Date.now().toString(),
-    amount: parseFloat(paymentDetails.amount) || 0,
-    currency: currency, // use selected currency
-    payment_options: 'card',
-    customer: {
-      email: paymentDetails.email,
-      name: paymentDetails.name,
-      phone_number: paymentDetails.phone,
-    },
-    customizations: {
-      title: 'Donation to Kids Survivor Liberia',
-      description: 'Support vulnerable children in Liberia',
-      logo: '/KSL Logo.png',
-    },
-    callback: (response) => {
-      // Handle successful payment
-      if (response.status === 'successful') {
-        setPaymentSuccess(true);
-        // You can also send the transaction details to your backend here
-      }
-      setIsProcessing(false);
-      closePaymentModal(); // close the modal
-    },
-    onClose: () => {
-      setIsProcessing(false);
-    },
-  };
-
-  const handleFlutterPayment = useFlutterwave(flutterwaveConfig);
-
-  const handleCardPayment = (e) => {
-    e.preventDefault();
-    // Basic validation
-    if (!paymentDetails.amount || !paymentDetails.email || !paymentDetails.name) {
-      alert('Please fill in amount, email and name');
-      return;
-    }
-    setIsProcessing(true);
-    handleFlutterPayment({
-      callback: (response) => {
-        flutterwaveConfig.callback(response);
-      },
-      onClose: flutterwaveConfig.onClose,
-    });
-  };
-
-  const handleInputChange = (e) => {
-    setPaymentDetails({
-      ...paymentDetails,
-      [e.target.name]: e.target.value
-    });
-  };
-
   const handleCopyAccountNumber = () => {
     navigator.clipboard.writeText(bankAccount.accountNumber);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
-
-  // Available currencies
-  const currencies = [
-    { code: 'USD', name: 'US Dollar', symbol: '$' },
-    { code: 'LRD', name: 'Liberian Dollar', symbol: 'L$' },
-    { code: 'EUR', name: 'Euro', symbol: '€' },
-    { code: 'GBP', name: 'British Pound', symbol: '£' }
-  ];
 
   return (
     <>
@@ -157,16 +80,16 @@ const Donate = () => {
               </p>
             </motion.div>
 
-            {/* Two donation options side by side */}
-            <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
+            {/* donation options centered */}
+            <div className="max-w-2xl mx-auto mb-16">
               {/* Option 1: Bank Transfer */}
               <motion.div
-                initial={{ opacity: 0, x: -40 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <div className="bg-white rounded-lg shadow-xl border border-gray-100 overflow-hidden h-full">
+                <div className="bg-white rounded-lg shadow-xl border border-gray-100 overflow-hidden h-full transform hover:scale-[1.01] transition-transform duration-300">
                   {/* Sleek header */}
                   <div className="bg-gradient-to-br from-blue-600 to-blue-700 px-6 py-5">
                     <div className="flex items-center gap-3">
@@ -246,168 +169,6 @@ const Donate = () => {
                   </div>
                 </div>
               </motion.div>
-
-              {/* Option 2: Card Payment with Currency Selector */}
-              <motion.div
-                initial={{ opacity: 0, x: 40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-              >
-                <div className="bg-white rounded-lg shadow-xl border border-gray-100 overflow-hidden h-full">
-                  {/* Sleek header */}
-                  <div className="bg-gradient-to-br from-emerald-600 to-teal-600 px-6 py-5">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center">
-                        <FiCreditCard className="w-5 h-5 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-semibold text-white tracking-tight">Card Payment</h3>
-                        <p className="text-emerald-100/90 text-sm">Secure online payment</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="p-6">
-                    {paymentSuccess ? (
-                      <div className="text-center py-10">
-                        <div className="w-14 h-14 bg-emerald-50 rounded-lg flex items-center justify-center mx-auto mb-5 ring-4 ring-emerald-100">
-                          <FiCheck className="w-7 h-7 text-emerald-600" />
-                        </div>
-                        <h4 className="text-lg font-semibold text-gray-800 mb-2">Thank You!</h4>
-                        <p className="text-gray-500 text-sm">Your donation has been processed successfully.</p>
-                        <button
-                          onClick={() => setPaymentSuccess(false)}
-                          className="mt-5 text-emerald-600 hover:text-emerald-700 font-medium text-sm transition-colors"
-                        >
-                          Make another donation
-                        </button>
-                      </div>
-                    ) : (
-                      <form onSubmit={handleCardPayment}>
-                        <div className="space-y-5">
-                          {/* Currency + Amount row */}
-                          <div className="grid grid-cols-2 gap-4">
-                            <div>
-                              <label className="block text-gray-600 text-xs font-medium uppercase tracking-wider mb-2">
-                                Currency
-                              </label>
-                              <select
-                                value={currency}
-                                onChange={(e) => setCurrency(e.target.value)}
-                                className="w-full px-3.5 py-2.5 text-sm border border-gray-200 rounded-lg bg-gray-50/80 focus:bg-white focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 border-transparent transition-all outline-none"
-                                required
-                              >
-                                {currencies.map((cur) => (
-                                  <option key={cur.code} value={cur.code}>
-                                    {cur.name} ({cur.symbol})
-                                  </option>
-                                ))}
-                              </select>
-                            </div>
-                            <div>
-                              <label className="block text-gray-600 text-xs font-medium uppercase tracking-wider mb-2">
-                                Amount *
-                              </label>
-                              <div className="relative">
-                                <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-sm font-medium">
-                                  {currencies.find(c => c.code === currency)?.symbol || '$'}
-                                </span>
-                                <input
-                                  type="number"
-                                  name="amount"
-                                  value={paymentDetails.amount}
-                                  onChange={handleInputChange}
-                                  min="1"
-                                  step="0.01"
-                                  required
-                                  className="w-full pl-8 pr-4 py-2.5 text-sm border border-gray-200 rounded-lg bg-gray-50/80 focus:bg-white focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all outline-none"
-                                  placeholder="0.00"
-                                />
-                              </div>
-                            </div>
-                          </div>
-
-                          {/* Full Name */}
-                          <div>
-                            <label className="block text-gray-600 text-xs font-medium uppercase tracking-wider mb-2">
-                              Full Name *
-                            </label>
-                            <input
-                              type="text"
-                              name="name"
-                              value={paymentDetails.name}
-                              onChange={handleInputChange}
-                              required
-                              className="w-full px-3.5 py-2.5 text-sm border border-gray-200 rounded-lg bg-gray-50/80 focus:bg-white focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all outline-none placeholder:text-gray-400"
-                              placeholder="John Doe"
-                            />
-                          </div>
-
-                          {/* Email */}
-                          <div>
-                            <label className="block text-gray-600 text-xs font-medium uppercase tracking-wider mb-2">
-                              Email *
-                            </label>
-                            <input
-                              type="email"
-                              name="email"
-                              value={paymentDetails.email}
-                              onChange={handleInputChange}
-                              required
-                              className="w-full px-3.5 py-2.5 text-sm border border-gray-200 rounded-lg bg-gray-50/80 focus:bg-white focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all outline-none placeholder:text-gray-400"
-                              placeholder="you@example.com"
-                            />
-                          </div>
-
-                          {/* Phone (optional) */}
-                          <div>
-                            <label className="block text-gray-600 text-xs font-medium uppercase tracking-wider mb-2">
-                              Phone <span className="text-gray-400 font-normal normal-case">(optional)</span>
-                            </label>
-                            <input
-                              type="tel"
-                              name="phone"
-                              value={paymentDetails.phone}
-                              onChange={handleInputChange}
-                              className="w-full px-3.5 py-2.5 text-sm border border-gray-200 rounded-lg bg-gray-50/80 focus:bg-white focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all outline-none placeholder:text-gray-400"
-                              placeholder="+231 ..."
-                            />
-                          </div>
-
-                          {/* Submit Button */}
-                          <button
-                            type="submit"
-                            disabled={isProcessing}
-                            className="w-full mt-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-semibold py-3 px-4 rounded-lg shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/30 transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed disabled:shadow-none"
-                          >
-                            {isProcessing ? (
-                              <>
-                                <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                                </svg>
-                                <span>Processing...</span>
-                              </>
-                            ) : (
-                              <>
-                                <FiCreditCard className="w-5 h-5" />
-                                <span>Pay with Card</span>
-                              </>
-                            )}
-                          </button>
-                        </div>
-
-                        {/* Security note */}
-                        <p className="text-xs text-gray-400 text-center mt-5 flex items-center justify-center gap-1.5">
-                          <span className="inline-block w-3.5 h-3.5 rounded-lg bg-gray-200 flex items-center justify-center text-[10px]">🔒</span>
-                          Secure payment by Flutterwave. Card details are not stored.
-                        </p>
-                      </form>
-                    )}
-                  </div>
-                </div>
-              </motion.div>
             </div>
 
             {/* Other Ways to Support - Premium */}
@@ -424,21 +185,18 @@ const Donate = () => {
                   {
                     title: 'Monthly Giving',
                     description: 'Become a sustaining donor with monthly bank transfers.',
-                    icon: '🔄'
+
                   },
                   {
                     title: 'Corporate Partnership',
                     description: 'Partner with your company for matched donations.',
-                    icon: '🤝'
                   },
                   {
                     title: 'In-Kind Donations',
                     description: 'Donate supplies, equipment, or professional services.',
-                    icon: '📦'
                   }
                 ].map((item, index) => (
                   <div key={index} className="bg-white p-8 rounded-lg shadow-sm border border-slate-100 hover:shadow-[0_10px_30px_rgb(0,0,0,0.08)] transition-all duration-300 group">
-                    <div className="text-4xl mb-6 group-hover:scale-110 transition-transform duration-300 inline-block">{item.icon}</div>
                     <h4 className="font-bold text-slate-900 mb-3 text-lg">{item.title}</h4>
                     <p className="text-slate-600 text-sm leading-relaxed">{item.description}</p>
                   </div>

@@ -163,7 +163,7 @@ const CountyDetail = () => {
               </motion.div>
             </div>
           </section>
-          
+
           {/* Featured Field Report - NEW SECTION (Homepage Sync) */}
           {featuredActivities.length > 0 && (
             <section className="mb-24 lg:mb-32">
@@ -175,7 +175,7 @@ const CountyDetail = () => {
                   Featured Activities in {county.name}
                 </h2>
               </div>
-              
+
               <div className="grid md:grid-cols-2 gap-10">
                 {featuredActivities.map((activity, idx) => (
                   <motion.div
@@ -187,9 +187,9 @@ const CountyDetail = () => {
                     className="group bg-white rounded-xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 flex flex-col h-full"
                   >
                     <div className="relative h-64 overflow-hidden">
-                      <img 
-                        src={activity.image} 
-                        alt={activity.title} 
+                      <img
+                        src={activity.image}
+                        alt={activity.title}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       />
                       <div className="absolute top-4 left-4">
@@ -221,38 +221,6 @@ const CountyDetail = () => {
               </div>
             </section>
           )}
-
-          {/* Strategic Impact Alignment - NEW SECTION */}
-          <section className="mb-24 lg:mb-32 bg-slate-900 rounded-2xl p-10 sm:p-16 relative overflow-hidden shadow-2xl">
-            <div className="absolute inset-0 bg-[url('/assets/pattern-bg.png')] opacity-10 mix-blend-overlay"></div>
-            <div className="relative z-10 grid lg:grid-cols-[1fr,1.5fr] gap-12 items-center">
-              <div>
-                <span className="text-yellow-400 font-bold tracking-widest uppercase text-xs mb-4 block">National Alignment</span>
-                <h2 className="text-3xl sm:text-4xl font-black text-white mb-6 tracking-tight leading-tight">
-                  {county.name} Strategic Impact
-                </h2>
-                <p className="text-blue-100 text-lg font-light leading-relaxed">
-                  Our interventions in {county.name} are precisely aligned with Liberia's national frameworks for youth transformation and drug demand reduction.
-                </p>
-              </div>
-              <div className="grid sm:grid-cols-2 gap-6">
-                <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-xl hover:bg-white/10 transition-colors">
-                  <FiAward className="text-yellow-400 w-10 h-10 mb-6" />
-                  <h4 className="text-white font-bold text-xl mb-3">YTEI Alignment</h4>
-                  <p className="text-blue-100/70 text-sm leading-relaxed">
-                    Contributing to the Youth Transformation & Empowerment Initiative through localized skills training.
-                  </p>
-                </div>
-                <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-xl hover:bg-white/10 transition-colors">
-                  <FiActivity className="text-blue-400 w-10 h-10 mb-6" />
-                  <h4 className="text-white font-bold text-xl mb-3">NADAP 2025</h4>
-                  <p className="text-blue-100/70 text-sm leading-relaxed">
-                    Implementing drug demand reduction and community prevention as per the National Action Plan.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
 
           {/* Focus areas - Premium */}
           <section className="mb-24 lg:mb-32">
@@ -358,9 +326,9 @@ const CountyDetail = () => {
                   >
                     <div className="lg:w-[40%] relative min-h-[300px] lg:min-h-full">
                       {story.image ? (
-                        <img 
-                          src={story.image} 
-                          alt={story.name} 
+                        <img
+                          src={story.image}
+                          alt={story.name}
                           className="absolute inset-0 w-full h-full object-cover"
                         />
                       ) : (
@@ -374,7 +342,7 @@ const CountyDetail = () => {
                         <p className="text-blue-200 text-xs font-black tracking-widest uppercase">{story.category}</p>
                       </div>
                     </div>
-                    
+
                     <div className="lg:w-[60%] p-10 lg:p-16 flex flex-col justify-center relative">
                       <div className="absolute top-10 right-10 opacity-[0.03] pointer-events-none">
                         <FiHeart size={200} className="text-blue-600" />
@@ -397,7 +365,6 @@ const CountyDetail = () => {
               </div>
             </section>
           )}
-
 
           {/* County Office & Operations */}
           <section className="mb-24 lg:mb-32">
@@ -475,82 +442,6 @@ const CountyDetail = () => {
                 </div>
               </motion.div>
             )}
-          </section>
-
-          {/* Partnerships section - Premium */}
-          <section className="mb-16 lg:mb-20">
-            <div className="grid lg:grid-cols-[1.5fr,1fr] gap-10 items-stretch">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="bg-blue-50/70 border border-blue-100 rounded-xl p-8 lg:p-12 relative overflow-hidden"
-              >
-                <div className="flex items-center gap-5 mb-8 relative z-10">
-                  <div className="w-14 h-14 rounded-lg bg-white text-blue-700 flex items-center justify-center shadow-sm">
-                    <FiActivity className="w-7 h-7" />
-                  </div>
-                  <div>
-                    <span className="text-blue-700 font-bold tracking-widest uppercase text-xs mb-1 block">
-                      County Partnerships
-                    </span>
-                    <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-                      Working Together
-                    </h2>
-                  </div>
-                </div>
-                <p className="text-slate-700 text-lg leading-relaxed mb-8 relative z-10 font-medium max-w-2xl">
-                  KSL works alongside county-level stakeholders to ensure that interventions are
-                  coordinated, inclusive, and sustainable. Partnerships put communities at the center
-                  of planning, implementation, and monitoring.
-                </p>
-                <ul className="space-y-4 text-base font-semibold text-slate-800 relative z-10">
-                  {partners.map((partner) => (
-                    <li key={partner} className="flex items-start gap-3 bg-white/50 p-4 rounded-lg backdrop-blur-sm border border-white/50">
-                      <span className="mt-1 w-2 h-2 rounded-sm bg-blue-600 shrink-0" />
-                      <span>{partner}</span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="bg-white border border-slate-100 rounded-xl p-8 lg:p-10 shadow-sm flex flex-col justify-center"
-              >
-                <span className="text-blue-600 font-bold tracking-widest uppercase text-xs mb-3 block">
-                  Get in Touch
-                </span>
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-6 tracking-tight">
-                  Explore Collaboration
-                </h3>
-                <p className="text-slate-600 text-[15px] leading-relaxed mb-8 font-medium">
-                  Organisations, community structures, and county authorities interested in
-                  collaborating with Kids Survivor Liberia in <strong className="text-slate-900">{county.name}</strong> can connect through our
-                  national office for detailed discussions and joint planning.
-                </p>
-                <div className="space-y-4">
-                  <a
-                    href="mailto:support@ksliberia.org"
-                    className="flex justify-between items-center w-full px-6 py-4 bg-slate-50 border border-slate-100 hover:border-blue-100 hover:bg-white hover:text-blue-600 text-slate-700 font-bold rounded-lg transition-all duration-300 shadow-sm hover:shadow-md group"
-                  >
-                    <span>support@ksliberia.org</span>
-                    <span className="text-blue-600 group-hover:translate-x-1 transition-transform">→</span>
-                  </a>
-                  <Link
-                    to="/contact"
-                    className="flex justify-between items-center w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg shadow-blue-600/20 group"
-                  >
-                    <span>Contact Us via Form</span>
-                    <span className="group-hover:translate-x-1 transition-transform">→</span>
-                  </Link>
-                </div>
-              </motion.div>
-            </div>
           </section>
 
           {/* Back link at bottom for mobile users */}

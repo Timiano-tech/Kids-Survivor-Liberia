@@ -14,7 +14,7 @@ import {
   FiShield,
   FiStar
 } from 'react-icons/fi';
-import HeaderImage from '../assets/Talking to children.jpeg';
+import HeaderImage from '../assets/Team_meeting.jpeg';
 import Mr_Steve from '../assets/team/Mr_Steve.png';
 import Mrs_Fiona from '../assets/team/Mrs_Fiona.png';
 import Mrs_Silvia from '../assets/team/Mrs_Silvia2.png';

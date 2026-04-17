@@ -4,10 +4,10 @@ import { FiShield, FiHeart, FiUsers, FiBook, FiGlobe } from 'react-icons/fi';
 import HeaderImage from '../assets/Team_discussion.jpeg';
 import DrugPreventionImg from '../assets/Say no to drugs.jpeg';
 import RehabilitationImg from '../assets/Drug_Recovered.jpeg';
-import YouthEmpowermentImg from '../assets/Youth_Community_Outreach.jpeg';
-import WidowsSupportImg from '../assets/Community_Outreach.jpeg';
+import YouthEmpowermentImg from '../assets/Girls_Emp.png';
+import WidowsSupportImg from '../assets/Women_in_community4.jpeg';
 import PeacebuildingImg from '../assets/Community Leaders.jpeg';
-import ChildProtectionImg from '../assets/Children on the assembly.jpeg';
+import ChildProtectionImg from '../assets/Students3.jpeg';
 
 const Projects = () => {
   useEffect(() => {
@@ -247,4 +247,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default Projects;

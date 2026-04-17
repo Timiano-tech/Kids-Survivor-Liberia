@@ -14,11 +14,6 @@ import sinoeMap from '../assets/maps/Sinoe_County_Flag__60253.jpg';
 import gbarpoluMap from '../assets/maps/Gbarpolu_County_Flag__71750.jpg';
 import bomiMap from '../assets/maps/Bomi_County_Flag__77534.jpg';
 
-export const HEADQUARTERS = {
-  address: 'City of Light Community, Barclay Avenue, 15th Street, Sinkor, Monrovia, Montserrado',
-  keyFunctions: 'National program coordination, policy alignment, and strategic leadership.',
-};
-
 export const COUNTIES = [
   {
     id: 'montserrado',

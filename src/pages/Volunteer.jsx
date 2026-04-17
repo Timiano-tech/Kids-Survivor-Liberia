@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiShield, FiHeart, FiTarget, FiUsers, FiAward, FiMessageSquare, FiGlobe } from 'react-icons/fi';
-import KSLCompany from '../assets/KSL Company.jpeg';
+import TeamImg from '../assets/Team.jpeg';
 import { Link } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -88,7 +88,7 @@ const Volunteer = () => {
         <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[40px] md:rounded-b-[100px] shadow-xl">
           <div className="absolute inset-0 z-0">
             <img
-              src={KSLCompany}
+              src={TeamImg}
               alt="KSL Background"
               className="w-full h-full object-cover"
               fetchPriority="high"

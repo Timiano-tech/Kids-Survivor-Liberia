@@ -227,7 +227,7 @@ const Impact = () => {
         <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[40px] md:rounded-b-[100px] shadow-xl">
           <div className="absolute inset-0 z-0">
             <img
-              src={HeaderImage}
+              src={StudentsImpact}
               alt="Impact Background"
               className="w-full h-full object-cover"
               fetchPriority="high"

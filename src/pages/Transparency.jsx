@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FiCheckCircle, FiFileText, FiShield, FiTrendingUp } from 'react-icons/fi';
-import HeaderImage from '../assets/Talking to children.jpeg';
+import HeaderImage from '../assets/KSL_Team.jpeg';
 
 const Transparency = () => {
   useEffect(() => {

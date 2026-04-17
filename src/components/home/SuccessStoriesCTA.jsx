@@ -38,11 +38,11 @@ export const SuccessStoriesCTA = () => {
     },
     {
       id: 3,
-      name: "David Sumo",
-      role: "Peace Ambassador",
-      quote: "Through KSL's community peacebuilding workshops, I learned that true leadership means bringing people together. I now volunteer to mentor adolescent boys, steering them away from crime.",
+      name: "Andrew Monger",
+      role: "Transformation Graduate",
+      quote: "Andrew Monger overcame drug and alcohol addiction through faith in Jesus Christ, transforming his life from hopelessness to purpose and peace. His story illustrates that change is possible with support and guidance. Kids Survivor Liberia shares this message, offering young people a second chance to build a brighter future. The note concludes with a location and date: Gompa City, Nimba County, April 10, 2026.",
       image: Community,
-      program: "Community Engagement"
+      program: "Rehabilitation & Social Reintegration"
     }
   ];
 

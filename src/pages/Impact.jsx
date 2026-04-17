@@ -19,6 +19,10 @@ import Education from '../assets/Education.jpg';
 import SayNoToDrugs from '../assets/Say no to drugs.jpeg';
 import Sharing_Food from '../assets/Sharing_Food.jpg';
 import JohnHoward from '../assets/Success_Story.jpeg';
+import Franklin_Mondor from '../assets/Success_story2.jpeg';
+import Samuel_Meaway from '../assets/Success_Story3.jpeg';
+import SuccessStory4 from '../assets/Success_Story4.jpeg';
+import SlumRecoveryImg from '../assets/Community_Children.jpeg';
 
 // Animated Counter Component
 const AnimatedCounter = ({ end, duration = 2, prefix = '', suffix = '' }) => {
@@ -129,6 +133,34 @@ const Impact = () => {
       story: 'Kids Survivor Liberia operates a medical team that provides free health services to at-risk youth across multiple counties. These services are offered completely free, supporting the recovery and well-being of vulnerable individuals in alignment with NADAP objectives.',
       category: 'Health Services',
       location: 'Multiple Counties'
+    },
+    {
+      name: 'Franklin Mondor',
+      image: Franklin_Mondor,
+      story: 'Franklin Mondor, a 41-year-old former drug dealer from Nimba County, spent over 13 years dealing drugs and opposing outreach programs like Kids Survivor Liberia. On January 2, 2026, he transformed his life, was taken in by the organization, and is now seeking paths for professional reintegration.',
+      category: 'Rehabilitation & Social Reintegration',
+      location: 'Nimba County'
+    },
+    {
+      name: 'Samuel Meaway',
+      image: Samuel_Meaway,
+      story: 'Samuel Meaway, formerly known as "50," spent over a year in a corrections facility before a KSL outreach offered him guidance. This turning point helped him break free from addiction and crime, and he is now rebuilding his life with purpose and hope.',
+      category: 'Rehabilitation & Social Reintegration',
+      location: 'Nimba County'
+    },
+    {
+      name: 'Andrew Monger',
+      image: SuccessStory4,
+      story: 'Andrew Monger overcame drug and alcohol addiction, transforming his life from hopelessness to purpose and peace. His story illustrates that change is possible with support and guidance, offering a message of hope to other young people.',
+      category: 'Rehabilitation & Social Reintegration',
+      location: 'Nimba County'
+    },
+    {
+      name: 'Monrovia Slum Recovery',
+      image: SlumRecoveryImg,
+      story: 'Our urban outreach in high-density communities like Clara Town and West Point has successfully reintegrated over 150 youth back into productive life through vocational training and health interventions.',
+      category: 'Urban Intervention',
+      location: 'Montserrado County'
     },
   ];
 

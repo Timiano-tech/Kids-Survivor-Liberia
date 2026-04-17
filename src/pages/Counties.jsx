@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiMapPin, FiHome, FiUser, FiShield, FiArrowRight, FiPhone } from 'react-icons/fi';
-import { COUNTIES, HEADQUARTERS } from '../data/counties';
+import { COUNTIES } from '../data/counties';
 import ScrollToTopButton from '../components/ScrollToTop';
 import { showComingSoon } from '../components/ComingSoonModal';
 import HeaderImage from '../assets/map.jpg';

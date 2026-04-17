@@ -1,7 +1,7 @@
 import { FiTarget, FiUsers, FiShield, FiBookOpen, FiActivity, FiBriefcase, FiHeart, FiTrendingUp, FiCheckCircle, FiPlusCircle, FiStar } from 'react-icons/fi';
 
 // Asset Imports for Featured Activities
-import montserradoImg from '../assets/mons.jpeg';
+import montserradoImg from '../assets/mons.png';
 import CampaignImage from '../assets/Campaign3.jpeg';
 import MedicalImage from '../assets/Free_Medicals9.jpeg';
 import KSL_School_Img from '../assets/KSL_School.jpeg';
@@ -91,7 +91,8 @@ export const countySpecificData = {
         name: 'Monrovia Slum Recovery',
         category: 'Urban Intervention',
         story: 'Our urban outreach has successfully reintegrated over 150 youth from high-density communities back into productive life through vocational training.',
-        icon: <FiStar className="w-6 h-6" />
+        icon: <FiStar className="w-6 h-6" />,
+        image: montserradoImg
       }
     ],
     featuredActivities: [

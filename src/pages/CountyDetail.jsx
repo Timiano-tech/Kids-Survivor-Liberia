@@ -12,7 +12,8 @@ import {
   FiArrowRight,
   FiStar,
   FiCheckCircle,
-  FiAward
+  FiAward,
+  FiUser
 } from 'react-icons/fi';
 import { useCountyDetail } from '../hooks/useCountyDetail';
 
@@ -49,7 +50,7 @@ const CountyDetail = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Main Header Section - matches all other pages */}
-      <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[5rem] shadow-xl border-b border-slate-100">
+      <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[40px] md:rounded-b-[100px] shadow-2xl border-b border-slate-100">
         <div className="absolute inset-0 z-0">
           {county.mapImage ? (
             <img
@@ -397,60 +398,6 @@ const CountyDetail = () => {
             </section>
           )}
 
-          {/* Photo gallery - Premium */}
-          <section className="mb-24 lg:mb-32">
-            <div className="mb-16 text-center max-w-3xl mx-auto">
-              <span className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-3 block">
-                Photo Documentation
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6 tracking-tight">
-                Visual Highlights from {county.name}
-              </h2>
-              <p className="text-slate-600 text-lg leading-relaxed">
-                {county.images && county.images.length > 0
-                  ? `Impactful moments capturing our work and partnerships in ${county.name}.`
-                  : `Explore moments from our work in ${county.name}. (Placeholder images waiting to be replaced with real activity photos).`}
-              </p>
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-              {county.images && county.images.length > 0 ? (
-                county.images.map((imgSrc, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="relative aspect-[4/3] rounded-xl overflow-hidden bg-slate-100 shadow-sm border border-slate-100 group"
-                  >
-                    <img
-                      src={imgSrc}
-                      alt={`KSL activity in ${county.name} - ${index + 1}`}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </motion.div>
-                ))
-              ) : (
-                [1, 2, 3, 4, 5, 6].map((slot, index) => (
-                  <motion.div
-                    key={slot}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="relative aspect-[4/3] rounded-xl border-2 border-dashed border-slate-300 bg-slate-50 flex items-center justify-center px-6 text-center group hover:bg-slate-100 transition-colors duration-300 cursor-pointer"
-                  >
-                    <p className="text-sm font-medium text-slate-500 leading-relaxed group-hover:text-slate-700 transition-colors">
-                      <span className="block mb-2 font-bold text-slate-400">Photo Slot {slot}</span>
-                      Awaiting imagery from recent <strong className="text-slate-600">{county.name}</strong> activities.
-                    </p>
-                  </motion.div>
-                ))
-              )}
-            </div>
-          </section>
 
           {/* County Office & Operations */}
           <section className="mb-24 lg:mb-32">

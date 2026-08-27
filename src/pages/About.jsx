@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import Team from '../components/Teams';
+import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import {
   FiTarget,
@@ -28,7 +29,7 @@ const About = () => {
     {
       icon: <FiShield />,
       title: "Drug Abuse Prevention & Public Awareness",
-      description: "Community and school-based prevention campaigns, youth-led advocacy, and 'Say No to Drugs' initiatives aligned with national and global frameworks.",
+      description: "Community and school based prevention campaigns, youth led advocacy, and 'Say No to Drugs' initiatives aligned with national and global frameworks.",
       color: "bg-blue-500"
     },
     {
@@ -59,10 +60,10 @@ const About = () => {
 
   // Strategic Objectives aligned with organizational purpose
   const objectives = [
-    "Prevent drug abuse initiation among children, adolescents, and youth through community-driven interventions.",
+    "Prevent drug abuse initiation among children, adolescents, and youth through community driven interventions.",
     "Provide comprehensive rehabilitation and reintegration services for drug-affected individuals.",
     "Empower vulnerable populations with education, life skills, and livelihood opportunities.",
-    "Strengthen gender-inclusive protection systems for adolescent girls, widows, and elderly men.",
+    "Strengthen gender inclusive protection systems for adolescent girls, widows, and elderly men.",
     "Build community resilience and contribute to crime reduction and peacebuilding.",
     "Advance national commitments under NADAP 2025-2030 and YTEI frameworks."
   ];
@@ -97,7 +98,7 @@ const About = () => {
   const guidingValues = [
     {
       title: "Inclusion & Equity",
-      description: "Ensuring all interventions are inclusive, rights-based, and promote equitable access for vulnerable populations."
+      description: "Ensuring all interventions are inclusive, rights based, and promote equitable access for vulnerable populations."
     },
     {
       title: "Dignity & Protection",
@@ -109,7 +110,7 @@ const About = () => {
     },
     {
       title: "Partnership & Participation",
-      description: "Fostering community-driven approaches through active participation and strategic partnerships."
+      description: "Fostering community driven approaches through active participation and strategic partnerships."
     },
     {
       title: "Integrity & Accountability",
@@ -119,6 +120,12 @@ const About = () => {
 
   return (
     <>
+      <SEO
+        title="About Kids Survivor Liberia — Our Mission & Vision"
+        description="Learn about Kids Survivor Liberia (KSL), our mission, vision, programmatic pillars, and alignment with YTEI and NADAP 2025-2030."
+        canonical="/about"
+        keywords={['About Kids Survivor Liberia', 'KSL mission', 'KSL vision', 'Liberia NGO about', 'child protection NGO Liberia']}
+      />
       <div className="min-h-screen bg-white">
         {/* Main Header Section */}
         <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[40px] md:rounded-b-[100px] shadow-xl border-b border-slate-100">
@@ -130,7 +137,7 @@ const About = () => {
               fetchPriority="high"
             />
             <div className="absolute inset-0 bg-blue-900/50 mix-blend-multiply"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent"></div>
+            <div className="absolute inset-0 bg-slate-950/80"></div>
           </div>
 
           <div className="relative z-10 container mx-auto px-6 text-center">
@@ -180,10 +187,10 @@ const About = () => {
                   <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 tracking-tight">Kids Survivor Liberia (KSL)</h2>
                   <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
                     <p>
-                      <strong className="text-slate-900">Kids Survivor Liberia (KSL)</strong> is a national-based, non-profit organization dedicated to the prevention of drug abuse and the protection, rehabilitation, and empowerment of vulnerable populations, particularly children, adolescents, youth, adolescent girls, widows, and vulnerable elderly men.
+                      <strong className="text-slate-900">Kids Survivor Liberia (KSL)</strong> is a national based, non-profit organization dedicated to the prevention of drug abuse and the protection, rehabilitation, and empowerment of vulnerable populations, particularly children, adolescents, youth, adolescent girls, widows, and vulnerable elderly men.
                     </p>
                     <p>
-                      We implement inclusive, rights-based, and community-driven interventions that promote education, life skills, psychosocial recovery, livelihood development, and social reintegration, while contributing to crime reduction, peacebuilding, and community resilience.
+                      We implement inclusive, rights based, and community driven interventions that promote education, life skills, psychosocial recovery, livelihood development, and social reintegration, while contributing to crime reduction, peacebuilding, and community resilience.
                     </p>
                     <p>
                       Our work is fully aligned with the <span className="text-slate-900 font-medium">Youth Transformation & Empowerment Initiative (YTEI)</span> and the <span className="text-slate-900 font-medium">National Anti-Drugs Action Plan (NADAP) 2025-2030</span>, supporting national and global commitments to youth development, drug demand reduction, gender equality, and social protection.
@@ -211,7 +218,7 @@ const About = () => {
                     <h3 className="text-3xl font-bold tracking-tight">Our Mission</h3>
                   </div>
                   <p className="text-lg leading-relaxed text-slate-300 mb-8">
-                    Kids Survivor Liberia (KSL) is a national-based, non-profit organization dedicated to the prevention of drug abuse and the protection, rehabilitation, and empowerment of vulnerable populations, particularly children, adolescents, youth, adolescent girls, widows, and vulnerable elderly men.
+                    Kids Survivor Liberia (KSL) is a national based, non-profit organization dedicated to the prevention of drug abuse and the protection, rehabilitation, and empowerment of vulnerable populations, particularly children, adolescents, youth, adolescent girls, widows, and vulnerable elderly men.
                   </p>
                   <div className="pt-8 border-t border-slate-700/50">
                     <p className="text-sm font-medium text-blue-300 uppercase tracking-wider">
@@ -231,7 +238,7 @@ const About = () => {
                     <h3 className="text-3xl font-bold text-slate-900 tracking-tight">Our Vision</h3>
                   </div>
                   <p className="text-lg leading-relaxed text-slate-600">
-                    A drug-free, safe, inclusive, and resilient Liberia, where children, adolescent girls, youth, widows, and elderly men live in dignity, have equitable access to education and economic opportunities, are protected from drugs, violence, and exploitation, and actively contribute to sustainable development and social cohesion.
+                    A drug free, safe, inclusive, and resilient Liberia, where children, adolescent girls, youth, widows, and elderly men live in dignity, have equitable access to education and economic opportunities, are protected from drugs, violence, and exploitation, and actively contribute to sustainable development and social cohesion.
                   </p>
                 </div>
               </div>
@@ -246,7 +253,7 @@ const About = () => {
               className="mb-24 max-w-7xl mx-auto"
             >
             <div className="bg-slate-900 rounded-lg p-10 md:p-16 text-white relative overflow-hidden shadow-2xl">
-                <div className="absolute top-0 right-0 w-[50rem] h-[50rem] bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-blue-700/20 via-slate-900/5 to-transparent rounded-full -translate-y-1/2 translate-x-1/3"></div>
+                <div className="absolute top-0 right-0 w-96 h-96 bg-blue-800/15 rounded-full -translate-y-1/2 translate-x-1/3"></div>
                 <div className="relative z-10 grid md:grid-cols-12 gap-10 items-center">
                   <div className="md:col-span-5">
                     <div className="flex items-center gap-5 mb-4">
@@ -392,7 +399,7 @@ const About = () => {
               viewport={{ once: true }}
               className="mb-24 max-w-7xl mx-auto"
             >
-                <div className="bg-gradient-to-t from-blue-700 to-blue-900 rounded-lg p-10 md:p-14 shadow-2xl relative overflow-hidden">
+                <div className="bg-blue-900 rounded-lg p-10 md:p-14 shadow-2xl relative overflow-hidden">
                   <div className="absolute inset-0 bg-[url('/assets/pattern-bg.png')] opacity-10 mix-blend-overlay"></div>
 
                   <h2 className="text-3xl md:text-5xl font-bold text-white mb-12 text-center tracking-tight drop-shadow-sm relative z-10">Strategic Impact & Alignment</h2>
@@ -439,7 +446,7 @@ const About = () => {
                       <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-emerald-500 rounded-l-xl"></div>
                       <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-emerald-600 transition-colors">National Anti-Drugs Action Plan <span className="text-emerald-500">(NADAP) 2025–2030</span></h3>
                       <p className="text-slate-600 leading-relaxed text-sm md:text-base">
-                        KSL directly contributes to NADAP implementation through drug use prevention and awareness, early intervention and rehabilitation, national-based approaches to drug demand reduction, and broad advocacy promoting public health and social reintegration.
+                        KSL directly contributes to NADAP implementation through drug use prevention and awareness, early intervention and rehabilitation, national based approaches to drug demand reduction, and broad advocacy promoting public health and social reintegration.
                       </p>
                     </div>
                   </div>

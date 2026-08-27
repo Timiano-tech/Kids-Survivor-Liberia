@@ -69,7 +69,7 @@ export const NationalAlignmentSection = () => {
                 </li>
                 <li className="flex items-start">
                   <FiCheckCircle className="w-5 h-5 text-green-500 mr-3 mt-1 shrink-0" />
-                  <span>Supporting psychosocial well-being and positive development</span>
+                  <span>Supporting psychosocial wellbeing and positive development</span>
                 </li>
                 <li className="flex items-start">
                   <FiCheckCircle className="w-5 h-5 text-green-500 mr-3 mt-1 shrink-0" />
@@ -99,7 +99,7 @@ export const NationalAlignmentSection = () => {
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <FiCheckCircle className="w-5 h-5 text-blue-500 mr-3 mt-1 shrink-0" />
-                  <span>Community and school-based drug prevention</span>
+                  <span>Community and school based drug prevention</span>
                 </li>
                 <li className="flex items-start">
                   <FiCheckCircle className="w-5 h-5 text-blue-500 mr-3 mt-1 shrink-0" />

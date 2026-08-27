@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiShield, FiHeart, FiUsers, FiBook, FiGlobe } from 'react-icons/fi';
+import SEO from '../components/SEO';
+import RelatedContent from '../components/RelatedContent';
 import HeaderImage from '../assets/Team_discussion.jpeg';
 import DrugPreventionImg from '../assets/Say no to drugs.jpeg';
 import RehabilitationImg from '../assets/Drug_Recovered.jpeg';
@@ -42,7 +44,7 @@ const Projects = () => {
       id: 2,
       title: 'Psychosocial Rehabilitation',
       category: 'rehabilitation',
-      description: 'Counseling and reintegration for drug-affected individuals',
+      description: 'Counseling and reintegration for drug affected individuals',
       status: 'ongoing',
       progress: 70,
       beneficiaries: '8,000+',
@@ -106,6 +108,12 @@ const Projects = () => {
 
   return (
     <>
+      <SEO
+        title="Ongoing Projects & Initiatives in Liberia — KSL"
+        description="Discover active community projects by Kids Survivor Liberia in drug abuse prevention, youth empowerment, child rehabilitation, and widows support."
+        canonical="/projects"
+        keywords={['KSL projects', 'Liberia youth projects', 'drug prevention initiatives Liberia', 'widows support Liberia']}
+      />
       <div className="min-h-screen bg-slate-50">
         {/* Main Header Section - Premium Redesign */}
         <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[40px] md:rounded-b-[100px] shadow-xl">
@@ -117,7 +125,7 @@ const Projects = () => {
               fetchPriority="high"
             />
             <div className="absolute inset-0 bg-slate-900/50 mix-blend-multiply"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent"></div>
+            <div className="absolute inset-0 bg-slate-950/70"></div>
           </div>
 
           <div className="relative z-10 container mx-auto px-6 text-center">
@@ -132,7 +140,7 @@ const Projects = () => {
                 Our Projects
               </h1>
               <p className="text-xl md:text-2xl text-blue-100 font-light leading-relaxed max-w-3xl mx-auto border-l-4 border-yellow-400 pl-6 text-left md:text-center md:border-l-0 md:pl-0">
-                A community-based organization dedicated to preventing drug abuse and protecting vulnerable populations through YTEI and NADAP-aligned interventions
+                A community based organization dedicated to preventing drug abuse and protecting vulnerable populations through YTEI and NADAP aligned interventions
               </p>
             </motion.div>
           </div>
@@ -186,7 +194,7 @@ const Projects = () => {
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/30 to-transparent"></div>
+                    <div className="absolute inset-0 bg-slate-950/50"></div>
                     {/* Category badge on image */}
                     <div className="absolute top-4 left-4">
                       <span className="px-3 py-1.5 bg-white/20 backdrop-blur-md text-white text-xs font-bold uppercase tracking-wider rounded-md border border-white/20">
@@ -242,6 +250,7 @@ const Projects = () => {
             </div>
           </div>
         </main>
+        <RelatedContent />
       </div>
     </>
   );

@@ -1,6 +1,8 @@
 import { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
+import SEO from '../components/SEO';
+import RelatedContent from '../components/RelatedContent';
 import {
   FiTrendingUp,
   FiTarget,
@@ -130,7 +132,7 @@ const Impact = () => {
     {
       name: 'Medical Support',
       image: Treatment,
-      story: 'Kids Survivor Liberia operates a medical team that provides free health services to at-risk youth across multiple counties. These services are offered completely free, supporting the recovery and well-being of vulnerable individuals in alignment with NADAP objectives.',
+      story: 'Kids Survivor Liberia operates a medical team that provides free health services to at risk youth across multiple counties. These services are offered completely free, supporting the recovery and wellbeing of vulnerable individuals in alignment with NADAP objectives.',
       category: 'Health Services',
       location: 'Multiple Counties'
     },
@@ -196,7 +198,7 @@ const Impact = () => {
   const impactAreas = [
     {
       title: 'NADAP 2025-2030 Implementation',
-      description: 'Direct contribution to National Anti-Drugs Action Plan goals through community-based interventions',
+      description: 'Direct contribution to National Anti-Drugs Action Plan goals through community based interventions',
       icon: <FiTarget className="w-6 h-6" />,
       stats: '3 Pillars Addressed'
     },
@@ -214,7 +216,7 @@ const Impact = () => {
     },
     {
       title: 'Community Resilience',
-      description: 'Building sustainable support systems for long-term impact and recovery',
+      description: 'Building sustainable support systems for long term impact and recovery',
       icon: <FiUsers className="w-6 h-6" />,
       stats: '120+ Communities'
     }
@@ -222,6 +224,12 @@ const Impact = () => {
 
   return (
     <>
+      <SEO
+        title="Our Community Impact across Liberia — KSL"
+        description="Discover the measurable impact of Kids Survivor Liberia, reaching over 12,000 vulnerable individuals across 15 Liberian counties."
+        canonical="/impact"
+        keywords={['KSL impact', 'Liberia child protection impact', 'Liberia youth numbers', 'NADAP results Liberia']}
+      />
       <div className="min-h-screen bg-slate-50">
         {/* Main Header Section -  Redesign */}
         <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[40px] md:rounded-b-[100px] shadow-xl">
@@ -233,7 +241,7 @@ const Impact = () => {
               fetchPriority="high"
             />
             <div className="absolute inset-0 bg-slate-900/50 mix-blend-multiply"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent"></div>
+            <div className="absolute inset-0 bg-slate-950/80"></div>
           </div>
 
           <div className="relative z-10 container mx-auto px-6 text-center">
@@ -315,7 +323,7 @@ const Impact = () => {
                       whileInView={{ width: "100%" }}
                       transition={{ delay: 1 + (index * 0.2), duration: 1.5, ease: "easeOut" }}
                       viewport={{ once: true }}
-                      className="h-1.5 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto mt-6 rounded-lg relative z-10 opacity-50 group-hover:opacity-100"
+                      className="h-1.5 bg-blue-600 mx-auto mt-6 rounded-lg relative z-10 opacity-50 group-hover:opacity-100"
                     />
                   </motion.div>
                 ))}
@@ -420,7 +428,7 @@ const Impact = () => {
                     className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md border border-slate-100 transition-all duration-500 group"
                   >
                     <div className="relative h-72 overflow-hidden bg-slate-100">
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent z-10"></div>
+                      <div className="absolute inset-0 bg-slate-950/50 z-10"></div>
                       <img
                         src={story.image}
                         alt={story.name}
@@ -520,6 +528,7 @@ const Impact = () => {
             </section>
           </div>
         </main>
+        <RelatedContent />
       </div>
     </>
   );

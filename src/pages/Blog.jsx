@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+import SEO from '../components/SEO';
+import RelatedContent from '../components/RelatedContent';
 import {
   FiCalendar,
   FiUser,
@@ -31,7 +33,7 @@ const Blog = () => {
     {
       id: 1,
       title: 'Meaningful Awareness Campaign in Gbarnga, Bong County',
-      excerpt: "Kids Survivor Liberia (KSL) recently conducted a high-impact awareness campaign in Gbarnga, Bong County, focusing on the fundamental rights and safety of children. The initiative featured a series of interactive town-hall meetings and school-based workshops that reached hundreds of families. By addressing critical issues like substance abuse, educational barriers, and community protection, the team fostered a culture of vigilance and support.",
+      excerpt: "Kids Survivor Liberia (KSL) recently conducted a high impact awareness campaign in Gbarnga, Bong County, focusing on the fundamental rights and safety of children. The initiative featured a series of interactive town hall meetings and school based workshops that reached hundreds of families. By addressing critical issues like substance abuse, educational barriers, and community protection, the team fostered a culture of vigilance and support.",
       author: 'KSL Team',
       date: 'Apr 15, 2026',
       category: 'Community Outreach',
@@ -58,7 +60,7 @@ const Blog = () => {
     {
       id: 4,
       title: 'Protecting Your Future: The Dangers of Drug Abuse',
-      excerpt: 'An enlightening guide for students on the physical and social risks of substance use and why staying drug-free is the key to success.',
+      excerpt: 'An enlightening guide for students on the physical and social risks of substance use and why staying drug free is the key to success.',
       author: 'KSL Team',
       date: 'Jan 19, 2026',
       category: 'Drug Prevention',
@@ -97,7 +99,7 @@ const Blog = () => {
     {
       id: 'video1',
       title: 'Enlightening Students on Drug Abuse Risks',
-      description: 'Watch how we educate students about the dangers of drug abuse and promote a drug-free lifestyle.',
+      description: 'Watch how we educate students about the dangers of drug abuse and promote a drug free lifestyle.',
       date: 'Jan 19, 2026',
       duration: '0:52',
       thumbnail: NoToDrugs,
@@ -106,7 +108,7 @@ const Blog = () => {
     {
       id: 'video2',
       title: 'Youth Community Outreach Success Story',
-      description: 'Watch this inspiring story of youth-led community outreach and empowerment in Liberia.',
+      description: 'Watch this inspiring story of youth led community outreach and empowerment in Liberia.',
       date: 'Jan 19, 2026',
       duration: '2:27',
       thumbnail: SuccessStoryThumb,
@@ -143,6 +145,12 @@ const Blog = () => {
 
   return (
     <>
+      <SEO
+        title="KSL News & Articles — Stories of Hope in Liberia"
+        description="Stay updated with news, articles, and video stories on Kids Survivor Liberia drug abuse prevention and youth empowerment campaigns."
+        canonical="/blog"
+        keywords={['KSL news', 'Kids Survivor Liberia blog', 'Liberia youth news', 'Gbarnga outreach', 'Buchanan medical outreach']}
+      />
       <div className="min-h-screen bg-white">
         {/* Main Header Section */}
         <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[40px] md:rounded-b-[100px] shadow-xl border-b border-slate-100">
@@ -154,7 +162,7 @@ const Blog = () => {
               fetchPriority="high"
             />
             <div className="absolute inset-0 bg-blue-900/50 mix-blend-multiply"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent"></div>
+            <div className="absolute inset-0 bg-slate-950/80"></div>
           </div>
 
           <div className="relative z-10 container mx-auto px-6 text-center">
@@ -224,7 +232,7 @@ const Blog = () => {
                             className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                             loading="lazy"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent flex items-center justify-center">
+                          <div className="absolute inset-0 bg-slate-950/70 flex items-center justify-center">
                             <button
                               onClick={() => handleVideoPlay(video.id)}
                               className="w-20 h-20 bg-white/20 backdrop-blur-md hover:bg-yellow-400 hover:text-blue-900 text-white rounded-lg flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 shadow-[0_8px_30px_rgb(0,0,0,0.2)] border border-white/30"
@@ -325,43 +333,10 @@ const Blog = () => {
               </div>
             </div>
 
-            {/* Newsletter - Premium */}
-            {/* <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-gradient-to-br from-blue-700 to-indigo-800 rounded-lg p-10 sm:p-16 text-center text-white shadow-2xl relative overflow-hidden mb-10"
-            >
-              <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-10 mix-blend-overlay"></div>
-              <div className="relative z-10">
-                <span className="inline-block px-4 py-1.5 bg-white/10 text-yellow-300 rounded-lg text-xs font-bold tracking-widest uppercase mb-6 backdrop-blur-sm border border-white/10">
-                  Stay Informed
-                </span>
-                <h3 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">Subscribe for Updates</h3>
-                <p className="text-blue-100 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light leading-relaxed">
-                  Join our newsletter to receive the latest news on our drug prevention and youth empowerment work across Liberia.
-                </p>
-                <form className="max-w-xl mx-auto" onSubmit={(e) => e.preventDefault()}>
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <input
-                      type="email"
-                      placeholder="Your email address..."
-                      className="flex-1 px-6 py-4 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:bg-white/20 focus:border-white/40 text-white placeholder-blue-200 transition-all font-medium"
-                      required
-                    />
-                    <button
-                      type="submit"
-                      className="px-8 py-4 bg-yellow-400 hover:bg-yellow-300 text-blue-900 font-bold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 whitespace-nowrap"
-                    >
-                      Subscribe Now
-                    </button>
-                  </div>
-                  <p className="text-blue-200/60 text-xs mt-4 font-medium">We respect your privacy. Unsubscribe at any time.</p>
-                </form>
-              </div>
-            </motion.div> */}
+
           </div>
         </main>
+        <RelatedContent />
       </div>
     </>
   );

@@ -29,7 +29,7 @@ export const HeroSection = () => {
       id: 2,
       title: "Youth Transformation & Empowerment",
       subtitle: "Creating Pathways to Sustainable Development",
-      description: "Strengthening youth leadership, expanding education access, and supporting psychosocial well-being for positive youth development.",
+      description: "Strengthening youth leadership, expanding education access, and supporting psychosocial wellbeing for positive youth development.",
       imagePlaceholder: Education,
       stats: "Supporting YTEI Priorities"
     },
@@ -37,9 +37,9 @@ export const HeroSection = () => {
       id: 3,
       title: "Inclusive Community Resilience",
       subtitle: "Protecting Children, Adolescent Girls, Youth & Vulnerable Elderly",
-      description: "Implementing rights-based interventions that promote social reintegration, peacebuilding, and community resilience.",
+      description: "Implementing rights based interventions that promote social reintegration, peacebuilding, and community resilience.",
       imagePlaceholder: Community,
-      stats: "Community-Driven Interventions"
+      stats: "Community Driven Interventions"
     },
     {
       id: 4,
@@ -122,9 +122,8 @@ export const HeroSection = () => {
             )}
           </motion.div>
 
-          {/* Premium Multi-layer Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/80 to-transparent z-10 w-[85%] sm:w-[70%] lg:w-[60%]"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-slate-900/40 z-10"></div>
+          {/* Solid Dark Overlay for Text Contrast */}
+          <div className="absolute inset-0 bg-slate-950/70 z-10"></div>
 
           {/* Content Area */}
           <div className="relative h-full flex items-center pt-20 sm:pt-24 z-20">

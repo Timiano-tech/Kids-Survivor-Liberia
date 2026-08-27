@@ -12,6 +12,7 @@ import {
 } from 'react-icons/fi';
 import HeaderImage from '../assets/Partner_Header.jpeg';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const Partnership = () => {
   useEffect(() => {
@@ -21,12 +22,12 @@ const Partnership = () => {
   const partnershipTypes = [
     {
       title: "Drug Abuse Prevention",
-      description: "Support community and school-based prevention campaigns and youth-led advocacy initiatives",
+      description: "Support community and school based prevention campaigns and youth led advocacy initiatives",
       icon: <FiTarget />
     },
     {
       title: "Rehabilitation & Recovery",
-      description: "Fund psychosocial support and reintegration pathways for drug-affected individuals",
+      description: "Fund psychosocial support and reintegration pathways for drug affected individuals",
       icon: <FiHeart />
     },
     {
@@ -58,12 +59,19 @@ const Partnership = () => {
     "Promote social inclusion and community resilience",
     "Receive detailed impact measurement reports",
     "Enhance corporate social responsibility alignment",
-    "Join community-driven sustainable development",
+    "Join community driven sustainable development",
     "Receive official partnership recognition and certificates"
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <SEO
+        title="Strategic Partnerships — Kids Survivor Liberia"
+        description="Partner with Kids Survivor Liberia in drug abuse prevention, youth empowerment, child rehabilitation, and community protection across Liberia."
+        canonical="/partnership"
+        keywords={['KSL partnerships', 'Liberia NGO partner', 'corporate sponsorship Liberia', 'NADAP partner Liberia']}
+      />
+      <div className="min-h-screen bg-white">
       {/* Main Header Section - Premium Redesign */}
       <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[40px] md:rounded-b-[100px] shadow-xl border-b border-slate-100">
         <div className="absolute inset-0 z-0">
@@ -74,7 +82,7 @@ const Partnership = () => {
             fetchPriority="high"
           />
           <div className="absolute inset-0 bg-blue-900/50 mix-blend-multiply"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent"></div>
+          <div className="absolute inset-0 bg-slate-950/70"></div>
         </div>
 
         <div className="relative z-10 container mx-auto px-6 text-center">
@@ -195,7 +203,7 @@ const Partnership = () => {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-white to-blue-50/50 rounded-lg border border-blue-100 p-10 shadow-sm hover:shadow-sm transition-all duration-300 relative overflow-hidden group"
+                className="bg-slate-50/50 rounded-lg border border-blue-100 p-10 shadow-sm hover:shadow-sm transition-all duration-300 relative overflow-hidden group"
               >
                 <div className="w-14 h-14 rounded-lg bg-blue-100/50 text-blue-600 flex items-center justify-center mb-6">
                   <FiUsers className="w-6 h-6" />
@@ -212,7 +220,7 @@ const Partnership = () => {
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-white to-blue-50/50 rounded-lg border border-blue-100 p-10 shadow-sm hover:shadow-sm transition-all duration-300 relative overflow-hidden group"
+                className="bg-slate-50/50 rounded-lg border border-blue-100 p-10 shadow-sm hover:shadow-sm transition-all duration-300 relative overflow-hidden group"
               >
                 <div className="w-14 h-14 rounded-lg bg-blue-100/50 text-blue-600 flex items-center justify-center mb-6">
                   <FiShield className="w-6 h-6" />
@@ -222,7 +230,7 @@ const Partnership = () => {
                 </h3>
                 <p className="text-slate-600 text-lg leading-relaxed">
                   Contributing to drug demand reduction through prevention, early intervention, rehabilitation,
-                  and community-based approaches that promote public health and social reintegration.
+                  and community based approaches that promote public health and social reintegration.
                 </p>
               </motion.div>
             </div>
@@ -234,7 +242,7 @@ const Partnership = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-r from-blue-700 to-indigo-800 rounded-lg p-10 sm:p-16 text-center text-white shadow-2xl relative overflow-hidden"
+              className="bg-blue-900 rounded-lg p-10 sm:p-16 text-center text-white shadow-2xl relative overflow-hidden"
             >
               <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-10 mix-blend-overlay"></div>
               <div className="relative z-10">
@@ -245,7 +253,7 @@ const Partnership = () => {
                   Join Our Strategic Partnership Network
                 </h2>
                 <p className="text-blue-100 text-xl max-w-3xl mx-auto mb-10 leading-relaxed font-light">
-                  Partner with us to implement community-driven interventions that prevent drug abuse, protect
+                  Partner with us to implement community driven interventions that prevent drug abuse, protect
                   vulnerable populations, promote education, develop livelihoods, and build resilient communities
                   aligned with national development goals.
                 </p>
@@ -269,7 +277,8 @@ const Partnership = () => {
         </div>
       </main>
     </div>
-  );
+  </>
+);
 };
 
 export default Partnership;

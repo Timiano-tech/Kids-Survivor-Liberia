@@ -9,7 +9,7 @@ export const HomeFAQSection = () => {
     {
       id: 1,
       question: "How is KSL aligned with Liberia's National Anti-Drugs Action Plan (NADAP)?",
-      answer: "KSL implements NADAP 2025-2030 through national-based drug use prevention, early intervention, rehabilitation, and reintegration programs. Our work focuses on drug demand reduction, stigma reduction, and promoting public health approaches to substance abuse.",
+      answer: "KSL implements NADAP 2025-2030 through national based drug use prevention, early intervention, rehabilitation, and reintegration programs. Our work focuses on drug demand reduction, stigma reduction, and promoting public health approaches to substance abuse.",
       open: false,
       links: [
         { text: "Learn about our NADAP alignment", path: "/programs" },
@@ -19,7 +19,7 @@ export const HomeFAQSection = () => {
     {
       id: 2,
       question: "What populations does KSL specifically serve?",
-      answer: "KSL focuses on vulnerable populations including children, adolescents, youth, adolescent girls, widows, and vulnerable elderly men. Our interventions are inclusive, rights-based, and community-driven, addressing intersecting challenges of drug abuse, poverty, and gender vulnerability.",
+      answer: "KSL focuses on vulnerable populations including children, adolescents, youth, adolescent girls, widows, and vulnerable elderly men. Our interventions are inclusive, rights based, and community driven, addressing intersecting challenges of drug abuse, poverty, and gender vulnerability.",
       open: false,
       links: [
         { text: "See our target populations", path: "/programs" },
@@ -49,7 +49,7 @@ export const HomeFAQSection = () => {
     {
       id: 5,
       question: "How does KSL ensure community ownership of programs?",
-      answer: "We implement community-driven interventions through partnerships with traditional leaders, local authorities, and civil society. Our programs emphasize volunteer training, community ownership, and social cohesion initiatives that contribute to crime reduction and peacebuilding.",
+      answer: "We implement community driven interventions through partnerships with traditional leaders, local authorities, and civil society. Our programs emphasize volunteer training, community ownership, and social cohesion initiatives that contribute to crime reduction and peacebuilding.",
       open: false,
       links: [
         { text: "Learn about community partnerships", path: "/partnerships" },
@@ -59,7 +59,7 @@ export const HomeFAQSection = () => {
     {
       id: 6,
       question: "What cross-cutting themes guide KSL's work?",
-      answer: "Our programs integrate: Child & Youth Safeguarding, Gender Equality & Social Inclusion (GESI), Human Rights & Dignity, Community Ownership & Sustainability, and Accountability & Transparency. These ensure comprehensive, rights-based approaches to all interventions.",
+      answer: "Our programs integrate: Child & Youth Safeguarding, Gender Equality & Social Inclusion (GESI), Human Rights & Dignity, Community Ownership & Sustainability, and Accountability & Transparency. These ensure comprehensive, rights based approaches to all interventions.",
       open: false,
       links: [
         { text: "Learn about our values", path: "/about" },

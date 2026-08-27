@@ -14,7 +14,7 @@ import SuccessStory3 from '../assets/Success_Story3.jpeg';
 
 export const baseFocusAreas = [
   'Drug abuse prevention and public awareness campaigns',
-  'Youth leadership, mentorship, and life-skills development',
+  'Youth leadership, mentorship, and life skills development',
   'Protection and empowerment of adolescent girls and young women',
   'Support to widows, elderly men, and other highly vulnerable groups',
   'Community mobilization, peacebuilding, and social cohesion',
@@ -72,7 +72,7 @@ export const countySpecificData = {
       {
         icon: <FiActivity className="w-5 h-5" />,
         title: 'Monrovia Slum Recovery Initiative',
-        description: 'Direct health interventions and community-based safe spaces for youth in transition from substance use in Clara Town, West Point, and surrounding areas.'
+        description: 'Direct health interventions and community based safe spaces for youth in transition from substance use in Clara Town, West Point, and surrounding areas.'
       },
       {
         icon: <FiBriefcase className="w-5 h-5" />,
@@ -98,7 +98,7 @@ export const countySpecificData = {
     featuredActivities: [
       {
         title: 'Monrovia Slum Recovery Initiative',
-        excerpt: 'Transforming lives in Clara Town and West Point through direct health interventions and community-based support.',
+        excerpt: 'Transforming lives in Clara Town and West Point through direct health interventions and community based support.',
         image: SlumRecoveryImg,
         date: 'Ongoing 2026',
         category: 'Urban Outreach'
@@ -107,7 +107,7 @@ export const countySpecificData = {
   },
   'margibi': {
     focusAreas: [
-      'Intensive school-based drug prevention programs',
+      'Intensive school based drug prevention programs',
       'Holistic family strengthening and psychosocial counseling',
       'Adolescent peer-to-peer mentorship and leadership development',
       'PTA mobilization for community-led prevention'
@@ -126,7 +126,7 @@ export const countySpecificData = {
     ],
     stats: [
       { label: 'Schools engaged', value: '22+', helper: 'Active partnerships across the district school system.' },
-      { label: 'Families counseled', value: '250+', helper: 'Through community engagement and home-based support.' },
+      { label: 'Families counseled', value: '250+', helper: 'Through community engagement and home based support.' },
       { label: 'Student ambassadors', value: '120+', helper: 'Trained to lead peer awareness and anti-drug advocacy.' }
     ],
     partners: ['Margibi School Board', 'Traditional Leaders Council', 'County Health Team'],
@@ -156,7 +156,7 @@ export const countySpecificData = {
       {
         icon: <FiUsers className="w-5 h-5" />,
         title: 'Agri-Impact Youth Hub',
-        description: 'Linking agricultural mentorship with life-skills training to provide sustainable alternatives to negative influences.'
+        description: 'Linking agricultural mentorship with life skills training to provide sustainable alternatives to negative influences.'
       }
     ],
     stats: [
@@ -401,7 +401,7 @@ export const countySpecificData = {
   'sinoe': {
     focusAreas: [
       'Drug demand reduction in concession areas',
-      'Youth life-skills and vocational programming',
+      'Youth life skills and vocational programming',
       'Community-led natural resource management education'
     ],
     programs: [
@@ -471,7 +471,7 @@ export const countySpecificData = {
   'grand-kru': {
     focusAreas: [
       'Protection of isolated and hard-to-reach rural communities',
-      'Life-skills training for community-based youth groups',
+      'Life skills training for community based youth groups',
       'Strengthening rural health referral and support mechanisms',
       'Agricultural resilience as a foundation for youth empowerment'
     ],

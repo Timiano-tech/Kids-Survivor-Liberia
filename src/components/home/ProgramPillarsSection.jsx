@@ -29,7 +29,7 @@ export const ProgramPillarsSection = () => {
     {
       id: 1,
       title: "Drug Abuse Prevention & Public Awareness",
-      description: "Community and school-based prevention campaigns, youth-led advocacy, and 'Say No to Drugs' initiatives aligned with national frameworks.",
+      description: "Community and school based prevention campaigns, youth led advocacy, and 'Say No to Drugs' initiatives aligned with national frameworks.",
       imagePlaceholder: NoToDrugs,
       icon: <FiShield className="w-8 h-8" />,
       color: "bg-blue-500"
@@ -37,7 +37,7 @@ export const ProgramPillarsSection = () => {
     {
       id: 2,
       title: "Rehabilitation & Social Reintegration",
-      description: "Psychosocial support, skills development, and reintegration pathways for drug-affected individuals with stigma reduction initiatives.",
+      description: "Psychosocial support, skills development, and reintegration pathways for drug affected individuals with stigma reduction initiatives.",
       imagePlaceholder: Children3,
       icon: <FiHeart className="w-8 h-8" />,
       color: "bg-yellow-500"
@@ -97,7 +97,7 @@ export const ProgramPillarsSection = () => {
                   </div>
                   <h3 className="text-3xl font-bold text-slate-900 mb-6 tracking-tight">Mission</h3>
                   <p className="text-slate-600 text-lg leading-relaxed mb-8">
-                    Kids Survivor Liberia (KSL) is a national-based, non-profit organization dedicated to the prevention of drug abuse and the protection, rehabilitation, and empowerment of vulnerable populations, particularly children, adolescents, youth, adolescent girls, widows, and vulnerable elderly men.
+                    Kids Survivor Liberia (KSL) is a national based, non-profit organization dedicated to the prevention of drug abuse and the protection, rehabilitation, and empowerment of vulnerable populations, particularly children, adolescents, youth, adolescent girls, widows, and vulnerable elderly men.
                   </p>
                   <div className="space-y-4">
                     <h4 className="font-semibold text-slate-900 text-sm uppercase tracking-wider mb-2">Pillars of Action</h4>
@@ -105,7 +105,7 @@ export const ProgramPillarsSection = () => {
                       "Drug Abuse Prevention & Awareness",
                       "Rehabilitation & Social Reintegration",
                       "Education & Life Skills Development",
-                      "Gender-Inclusive Protection Systems"
+                      "Gender Inclusive Protection Systems"
                     ].map((item, i) => (
                       <div key={i} className="flex items-center text-slate-700 bg-slate-50 p-3 rounded-lg border border-slate-100">
                         <FiCheckCircle className="w-5 h-5 text-blue-500 mr-3 shrink-0" />
@@ -132,12 +132,12 @@ export const ProgramPillarsSection = () => {
                   </div>
                   <h3 className="text-3xl font-bold text-slate-900 mb-6 tracking-tight">Vision</h3>
                   <p className="text-slate-600 text-lg leading-relaxed mb-8">
-                    A drug-free, safe, inclusive, and resilient Liberia, where children, adolescent girls, youth, widows, and elderly men live in dignity, have equitable access to education and economic opportunities, are protected from drugs, violence, and exploitation, and actively contribute to sustainable development and social cohesion.
+                    A drug free, safe, inclusive, and resilient Liberia, where children, adolescent girls, youth, widows, and elderly men live in dignity, have equitable access to education and economic opportunities, are protected from drugs, violence, and exploitation, and actively contribute to sustainable development and social cohesion.
                   </p>
                   <div className="space-y-4">
                     <h4 className="font-semibold text-slate-900 text-sm uppercase tracking-wider mb-2">Core Outcomes</h4>
                     {[
-                      "Drug-free and safe communities",
+                      "Drug free and safe communities",
                       "Equitable access to opportunities",
                       "Protection from exploitation",
                       "Active community participation"
@@ -170,7 +170,7 @@ export const ProgramPillarsSection = () => {
               Our Programmatic Pillars
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
-              Comprehensive, rights-based approaches aligned with national strategies to address the root causes of vulnerability and empower communities.
+              Comprehensive, rights based approaches aligned with national strategies to address the root causes of vulnerability and empower communities.
             </p>
           </motion.div>
 
@@ -205,8 +205,8 @@ export const ProgramPillarsSection = () => {
                         </span>
                       </div>
                     )}
-                    {/* Refined Gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent"></div>
+                    {/* Refined Solid Overlay */}
+                    <div className="absolute inset-0 bg-slate-950/50"></div>
 
                     {/* Content integrated into image bottom */}
                     <div className="absolute bottom-0 left-0 w-full p-8">
@@ -267,7 +267,7 @@ export const ProgramPillarsSection = () => {
                   <div className="bg-white/5 p-6 rounded-lg backdrop-blur-sm border border-white/5 hover:bg-white/10 transition-colors group">
                     <h4 className="font-bold text-xl mb-3 text-white">Community Ownership</h4>
                     <p className="text-slate-400 group-hover:text-slate-300 transition-colors">
-                      Empowering local actors through intensive volunteer training and community-driven program implementation.
+                      Empowering local actors through intensive volunteer training and community driven program implementation.
                     </p>
                   </div>
                   <div className="bg-white/5 p-6 rounded-lg backdrop-blur-sm border border-white/5 hover:bg-white/10 transition-colors group">
@@ -286,7 +286,7 @@ export const ProgramPillarsSection = () => {
 
                 <div className="mt-12 flex flex-wrap gap-5">
                   <Link to="/partnership">
-                    <button className="bg-blue-600 text-white px-8 py-4 rounded-lg font-bold hover:bg-blue-500 transition-all shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.6)]">
+                    <button className="bg-blue-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-blue-800 transition-all shadow-md hover:shadow-lg">
                       Partner With Us
                     </button>
                   </Link>

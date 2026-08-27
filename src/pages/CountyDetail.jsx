@@ -16,6 +16,7 @@ import {
   FiUser
 } from 'react-icons/fi';
 import { useCountyDetail } from '../hooks/useCountyDetail';
+import SEO from '../components/SEO';
 
 
 const CountyDetail = () => {
@@ -48,7 +49,14 @@ const CountyDetail = () => {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <SEO
+        title={`${county.name} Operations — Kids Survivor Liberia`}
+        description={`Learn about Kids Survivor Liberia programs, field activities, statistics, and impact in ${county.name}, Liberia.`}
+        canonical={`/counties/${county.id}`}
+        keywords={[`KSL ${county.name}`, `${county.name} Liberia NGO`, 'child protection Liberia']}
+      />
+      <div className="min-h-screen bg-white">
       {/* Main Header Section - matches all other pages */}
       <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[40px] md:rounded-b-[100px] shadow-2xl border-b border-slate-100">
         <div className="absolute inset-0 z-0">
@@ -63,7 +71,7 @@ const CountyDetail = () => {
             <div className="w-full h-full bg-slate-800"></div>
           )}
           <div className="absolute inset-0 bg-blue-900/50 mix-blend-multiply"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent"></div>
+          <div className="absolute inset-0 bg-slate-950/80"></div>
         </div>
 
         <div className="relative z-10 container mx-auto px-6 text-center">
@@ -124,7 +132,7 @@ const CountyDetail = () => {
                   <p>
                     Through county-level programming, we contribute to the <span className="text-blue-600 font-bold">Youth Transformation &amp;
                       Empowerment Initiative (YTEI)</span> and the <span className="text-blue-600 font-bold">National Anti-Drugs Action Plan (NADAP)
-                        2025-2030</span>, ensuring interventions are community-driven and sustainable.
+                        2025-2030</span>, ensuring interventions are community driven and sustainable.
                   </p>
                 </div>
               </motion.div>
@@ -336,7 +344,7 @@ const CountyDetail = () => {
                           <FiUser className="w-24 h-24 text-white/20" />
                         </div>
                       )}
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+                      <div className="absolute inset-0 bg-slate-950/50"></div>
                       <div className="absolute bottom-8 left-8">
                         <h4 className="text-2xl font-bold text-white mb-1">{story.name}</h4>
                         <p className="text-blue-200 text-xs font-black tracking-widest uppercase">{story.category}</p>
@@ -457,7 +465,8 @@ const CountyDetail = () => {
         </div>
       </main>
     </div>
-  );
+  </>
+);
 };
 
 export default CountyDetail;

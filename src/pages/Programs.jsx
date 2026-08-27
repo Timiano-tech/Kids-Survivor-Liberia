@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import SEO from '../components/SEO';
+import RelatedContent from '../components/RelatedContent';
 import {
   FiShield,
   FiHeart,
@@ -33,8 +35,8 @@ const Programs = () => {
       image: PreventionImage,
       description: 'Community and school-based prevention campaigns aligned with NADAP 2025-2030.',
       components: [
-        'School-Based Prevention Programs',
-        'Youth-Led Advocacy Campaigns',
+        'School Based Prevention Programs',
+        'Youth Led Advocacy Campaigns',
         'Peer Education Networks',
         'Community Awareness Sessions'
       ],
@@ -98,7 +100,7 @@ const Programs = () => {
         'Multi-Stakeholder Partnerships',
         'Crime Prevention Programs'
       ],
-      alignment: 'Community-Driven'
+      alignment: 'Community Driven'
     }
   ];
 
@@ -110,8 +112,8 @@ const Programs = () => {
       color: 'blue',
       details: [
         'Drug use prevention and awareness at community and school levels',
-        'Early intervention, rehabilitation, and reintegration for drug-affected individuals',
-        'Community-based approaches to drug demand reduction and relapse prevention',
+        'Early intervention, rehabilitation, and reintegration for drug affected individuals',
+        'Community based approaches to drug demand reduction and relapse prevention',
         'Advocacy that promotes public health, dignity, and social reintegration'
       ],
       keyFocus: [
@@ -129,7 +131,7 @@ const Programs = () => {
       details: [
         'Strengthening youth leadership, civic engagement, and life skills',
         'Expanding education access, vocational training, and entrepreneurship pathways',
-        'Supporting psychosocial well-being and positive youth development',
+        'Supporting psychosocial wellbeing and positive youth development',
         'Positioning young people as agents of change and community role models'
       ],
       keyFocus: [
@@ -150,6 +152,12 @@ const Programs = () => {
 
   return (
     <>
+      <SEO
+        title="Our Programs in Liberia — Child Protection & Youth Empowerment"
+        description="Explore Kids Survivor Liberia strategic programs in drug abuse prevention, child protection, youth empowerment, and gender inclusion across Liberia."
+        canonical="/programs"
+        keywords={['KSL programs', 'child protection Liberia', 'youth empowerment Liberia', 'NADAP Liberia', 'YTEI Liberia']}
+      />
       <div className="min-h-screen bg-white">
         {/* Premium Header */}
         <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[40px] md:rounded-b-[100px] shadow-2xl">
@@ -161,7 +169,7 @@ const Programs = () => {
               fetchPriority="high"
             />
             <div className="absolute inset-0 bg-slate-900/50 mix-blend-multiply"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent"></div>
+            <div className="absolute inset-0 bg-slate-950/70"></div>
           </div>
           <div className="relative z-10 container mx-auto px-6 text-center">
             <motion.div
@@ -269,7 +277,7 @@ const Programs = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
-                className="mt-16 bg-gradient-to-br from-blue-700 to-blue-900 rounded-lg p-10 md:p-14 text-white shadow-2xl relative overflow-hidden"
+                className="mt-16 bg-blue-900 rounded-lg p-10 md:p-14 text-white shadow-2xl relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-[url('/assets/pattern-bg.png')] opacity-10 mix-blend-overlay"></div>
 
@@ -337,7 +345,7 @@ const Programs = () => {
                           alt={pillar.title}
                           className="w-full h-80 md:h-96 object-cover group-hover:scale-105 transition-transform duration-700"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                        <div className="absolute inset-0 bg-slate-950/40"></div>
                         <div className="absolute bottom-6 left-6">
                           <div className={`inline-flex items-center gap-3 px-5 py-2.5 ${index % 2 === 0 ? 'bg-blue-600' : 'bg-yellow-500'
                             } text-white rounded-lg text-sm font-bold tracking-wider shadow-lg backdrop-blur-sm`}>
@@ -391,6 +399,7 @@ const Programs = () => {
 
           </div>
         </main>
+        <RelatedContent />
       </div>
     </>
   );

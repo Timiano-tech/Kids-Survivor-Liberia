@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiShield, FiHeart, FiTarget, FiUsers, FiAward, FiMessageSquare, FiGlobe } from 'react-icons/fi';
+import SEO from '../components/SEO';
 import TeamImg from '../assets/Team.jpeg';
 import { Link } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
@@ -17,19 +18,19 @@ const Volunteer = () => {
     {
       pillar: "Pillar 1",
       title: "Drug Abuse Prevention & Public Awareness",
-      description: "Lead community and school-based prevention campaigns, youth advocacy, and 'Say No to Drugs' initiatives aligned with NADAP 2025-2030",
+      description: "Lead community and school based prevention campaigns, youth advocacy, and 'Say No to Drugs' initiatives aligned with NADAP 2025-2030",
       icon: <FiShield className="w-6 h-6" />
     },
     {
       pillar: "Pillar 2",
       title: "Rehabilitation & Social Reintegration",
-      description: "Provide psychosocial support, assist with skills development, and support reintegration pathways for drug-affected individuals",
+      description: "Provide psychosocial support, assist with skills development, and support reintegration pathways for drug affected individuals",
       icon: <FiHeart className="w-6 h-6" />
     },
     {
       pillar: "Pillar 3",
       title: "Education & Skills Development",
-      description: "Support education programs, vocational training, and life-skills development for youth, adolescent girls, and vulnerable populations",
+      description: "Support education programs, vocational training, and life skills development for youth, adolescent girls, and vulnerable populations",
       icon: <FiAward className="w-6 h-6" />
     },
     {
@@ -83,6 +84,12 @@ const Volunteer = () => {
 
   return (
     <>
+      <SEO
+        title="Volunteer with Kids Survivor Liberia — Join Our Mission"
+        description="Become a volunteer with Kids Survivor Liberia. Join youth leadership, drug prevention education, and community support initiatives across Liberia."
+        canonical="/volunteer"
+        keywords={['Volunteer Kids Survivor Liberia', 'KSL volunteer Liberia', 'youth advocate Liberia', 'NGO volunteering Monrovia']}
+      />
       <div className="min-h-screen bg-white">
         {/* Main Header Section - Premium Redesign */}
         <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[40px] md:rounded-b-[100px] shadow-xl">
@@ -94,7 +101,7 @@ const Volunteer = () => {
               fetchPriority="high"
             />
             <div className="absolute inset-0 bg-blue-900/50 mix-blend-multiply"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent"></div>
+            <div className="absolute inset-0 bg-slate-950/70"></div>
           </div>
 
           <div className="relative z-10 container mx-auto px-6 text-center">
@@ -109,7 +116,7 @@ const Volunteer = () => {
                 Volunteer With KSL
               </h1>
               <p className="text-xl md:text-2xl text-blue-100 font-light leading-relaxed max-w-3xl mx-auto border-l-4 border-yellow-400 pl-6 text-left md:text-center md:border-l-0 md:pl-0">
-                Join us in transforming lives and building a drug-free, empowered Liberia through strategic volunteerism aligned with national initiatives.
+                Join us in transforming lives and building a drug free, empowered Liberia through strategic volunteerism aligned with national initiatives.
               </p>
             </motion.div>
           </div>
@@ -128,7 +135,7 @@ const Volunteer = () => {
                 viewport={{ once: true }}
                 className="h-full"
               >
-                <div className="bg-gradient-to-br from-white to-slate-50 rounded-lg p-10 lg:p-12 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] h-full flex flex-col relative overflow-hidden group hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-shadow duration-500">
+                <div className="bg-slate-50 rounded-lg p-10 lg:p-12 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] h-full flex flex-col relative overflow-hidden group hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-shadow duration-500">
                   <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none">
                     <FiShield className="w-32 h-32 text-blue-600" />
                   </div>
@@ -156,7 +163,7 @@ const Volunteer = () => {
                 viewport={{ once: true }}
                 className="h-full"
               >
-                <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg p-10 lg:p-12 border border-blue-500 shadow-[0_8px_30px_rgb(37,99,235,0.2)] h-full flex flex-col relative overflow-hidden group hover:shadow-[0_20px_40px_rgb(37,99,235,0.3)] transition-shadow duration-500">
+                <div className="bg-blue-700 rounded-lg p-10 lg:p-12 border border-blue-600 shadow-[0_8px_30px_rgb(37,99,235,0.15)] h-full flex flex-col relative overflow-hidden group hover:shadow-[0_20px_40px_rgb(37,99,235,0.25)] transition-shadow duration-500">
                   <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
                     <FiGlobe className="w-32 h-32 text-white" />
                   </div>
@@ -272,7 +279,7 @@ const Volunteer = () => {
                             </li>
                             <li className="flex items-center gap-3">
                               <FiUsers className="text-purple-400 w-5 h-5 shrink-0" />
-                              Community-based approach
+                              Community based approach
                             </li>
                           </ul>
                         </div>
@@ -318,7 +325,7 @@ const Volunteer = () => {
               </div>
               <div className="max-w-3xl mx-auto space-y-6">
                 {[
-                  { q: "How does KSL align with national initiatives?", a: "All volunteer work supports Youth Transformation & Empowerment Initiative (YTEI) and National Anti-Drugs Action Plan (NADAP) 2025-2030 priorities through community-driven interventions." },
+                  { q: "How does KSL align with national initiatives?", a: "All volunteer work supports Youth Transformation & Empowerment Initiative (YTEI) and National Anti-Drugs Action Plan (NADAP) 2025-2030 priorities through community driven interventions." },
                   { q: "What training is provided to volunteers?", a: "We provide comprehensive training in drug prevention, psychosocial support, child protection, and community engagement methodologies aligned with our strategic pillars." },
                   { q: "Can I volunteer remotely?", a: "Most roles require community presence, but some advocacy and awareness campaign support can be done remotely. Contact us to discuss options." },
                   { q: "What's the impact measurement process?", a: "We use participatory monitoring systems tracking outcomes aligned with YTEI and NADAP indicators, with regular feedback from community stakeholders." }
@@ -361,7 +368,7 @@ const Volunteer = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-r from-blue-700 to-indigo-800 rounded-lg p-10 sm:p-16 text-center text-white shadow-2xl relative overflow-hidden"
+                className="bg-blue-900 rounded-lg p-10 sm:p-16 text-center text-white shadow-2xl relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-10 mix-blend-overlay"></div>
                 <div className="relative z-10">

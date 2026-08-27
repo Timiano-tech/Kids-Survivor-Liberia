@@ -18,6 +18,10 @@ import Gallery from './pages/Gallery';
 import Projects from './pages/Projects'; 
 import Partnership from './pages/Partnership';
 import Programs from './pages/Programs';
+import ChildProtection from './pages/programs/ChildProtection';
+import VulnerableChildren from './pages/programs/VulnerableChildren';
+import YouthDevelopment from './pages/programs/YouthDevelopment';
+import ChildrensRights from './pages/programs/ChildrensRights';
 import Blog from './pages/Blog';
 import OurTeam from './pages/OurTeam';
 import Counties from './pages/Counties';
@@ -53,6 +57,10 @@ function App() {
                 <Route path="/volunteer" element={<Layout><Volunteer /></Layout>} />  
                 <Route path="/partnership" element={<Layout><Partnership /></Layout>} />  
                 <Route path="/programs" element={<Layout><Programs /></Layout>} />  
+                <Route path="/programs/child-protection" element={<Layout><ChildProtection /></Layout>} />
+                <Route path="/programs/vulnerable-children" element={<Layout><VulnerableChildren /></Layout>} />
+                <Route path="/programs/youth-development" element={<Layout><YouthDevelopment /></Layout>} />
+                <Route path="/programs/childrens-rights" element={<Layout><ChildrensRights /></Layout>} />
                 <Route path="/blog" element={<Layout><Blog /></Layout>} />  
                 <Route path="/counties" element={<Layout><Counties /></Layout>} />
                 <Route path="/counties/:countyId" element={<Layout><CountyDetail /></Layout>} />

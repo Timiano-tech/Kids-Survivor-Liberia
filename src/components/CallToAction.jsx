@@ -67,7 +67,7 @@ const CallToAction = () => {
               </div>
 
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-6 leading-[1.15] tracking-tight">
-                Empower a <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">Drug-Free</span> Liberia
+                Empower a <span className="text-blue-600">Drug-Free</span> Liberia
               </h2>
 
               <p className="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed max-w-xl font-medium">

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiMapPin, FiHome, FiUser, FiShield, FiArrowRight, FiPhone } from 'react-icons/fi';
+import SEO from '../components/SEO';
 import { COUNTIES } from '../data/counties';
 import ScrollToTopButton from '../components/ScrollToTop';
 import { showComingSoon } from '../components/ComingSoonModal';
@@ -19,7 +20,14 @@ const Counties = () => {
     : COUNTIES;
 
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <SEO
+        title="County Operations in Liberia — Kids Survivor Liberia"
+        description="Explore Kids Survivor Liberia county operations across Montserrado, Grand Bassa, Bong, Nimba, Lofa, and all 15 Liberian counties."
+        canonical="/counties"
+        keywords={['KSL counties', 'Liberia county operations', 'Montserrado KSL', 'Grand Bassa KSL', 'Nimba KSL', 'Bong KSL']}
+      />
+      <div className="min-h-screen bg-white">
       {/* Main Header Section */}
       <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[40px] md:rounded-b-[100px] shadow-xl border-b border-slate-100">
         <div className="absolute inset-0 z-0">
@@ -30,7 +38,7 @@ const Counties = () => {
             fetchPriority="high"
           />
           <div className="absolute inset-0 bg-blue-900/50 mix-blend-multiply"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent"></div>
+          <div className="absolute inset-0 bg-slate-950/80"></div>
         </div>
 
         <div className="relative z-10 container mx-auto px-6 text-center">
@@ -99,7 +107,7 @@ const Counties = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.9 }}
                     transition={{ duration: 0.4, delay: index * 0.05 }}
-                    className={`group h-full flex flex-col bg-white rounded-xl border border-slate-100 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-blue-900/10 hover:-translate-y-2 ${!county.isActive && 'grayscale-[0.5] opacity-80'
+                    className={`group h-full flex flex-col bg-white rounded-xl border border-slate-100 overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-slate-900/10 hover:-translate-y-2 ${!county.isActive && 'grayscale-[0.5] opacity-80'
                       }`}
                   >
                     {/* Visual Header */}
@@ -115,7 +123,7 @@ const Counties = () => {
                           <FiMapPin className="w-16 h-16" />
                         </div>
                       )}
-                      <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent"></div>
+                      <div className="absolute bottom-0 inset-x-0 h-px bg-slate-100"></div>
 
                       {/* Status Badge */}
                       <div className="absolute top-6 left-6">
@@ -172,7 +180,7 @@ const Counties = () => {
                         {county.isActive ? (
                           <Link
                             to={`/counties/${county.id}`}
-                            className="w-full inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-black py-4 rounded-xl transition-all duration-300 shadow-lg shadow-blue-500/20 group-hover:shadow-blue-500/30"
+                            className="w-full inline-flex items-center justify-center gap-2 bg-blue-700 hover:bg-blue-800 text-white font-black py-4 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg group-hover:shadow-slate-900/20"
                           >
                             VIEW OPERATIONS
                             <FiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -197,7 +205,8 @@ const Counties = () => {
 
       <ScrollToTopButton />
     </div>
-  );
+  </>
+);
 };
 
 export default Counties;

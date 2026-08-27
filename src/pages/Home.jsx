@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import SEO from '../components/SEO';
 
 // Components
 import HeroSection from '../components/home/HeroSection';
@@ -17,6 +18,13 @@ const Home = () => {
 
   return (
     <div className="overflow-hidden">
+      <SEO
+        title="Kids Survivor Liberia — Empowering Vulnerable Children & Youth"
+        description="Kids Survivor Liberia (KSL) protects vulnerable children, empowers youth, and advocates for child rights across Liberian communities."
+        canonical="/"
+        keywords={['Kids Survivor Liberia', 'KSL Liberia', 'child protection Liberia', 'vulnerable children Liberia', 'youth development Liberia']}
+      />
+
       {/* Hero Carousel Section */}
       <HeroSection />
 

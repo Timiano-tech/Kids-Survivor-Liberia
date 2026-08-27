@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import SEO from '../components/SEO';
 import {
   FiUser,
   FiMail,
@@ -209,6 +210,12 @@ const OurTeam = () => {
 
   return (
     <>
+      <SEO
+        title="Our Leadership & Staff — Kids Survivor Liberia Team"
+        description="Meet the dedicated leadership, program leads, and field staff behind Kids Survivor Liberia, protecting children and empowering communities across Liberia."
+        canonical="/team"
+        keywords={['Kids Survivor Liberia team', 'KSL leadership', 'Billy Jones KSL', 'Liberia NGO staff']}
+      />
       <div className="min-h-screen bg-white">
         {/* Main Header Section - Premium Redesign */}
         <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[40px] md:rounded-b-[100px] shadow-xl border-b border-slate-100">
@@ -220,7 +227,7 @@ const OurTeam = () => {
               fetchPriority="high"
             />
             <div className="absolute inset-0 bg-blue-900/50 mix-blend-multiply"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent"></div>
+            <div className="absolute inset-0 bg-slate-950/70"></div>
           </div>
 
           <div className="relative z-10 container mx-auto px-6 text-center">
@@ -294,10 +301,10 @@ const OurTeam = () => {
                             className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
                             loading='lazy'
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                          <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
                       ) : (
-                        <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200">
+                        <div className="w-full h-full flex items-center justify-center bg-slate-100">
                           <FiUser className="w-24 h-24 text-slate-300" />
                         </div>
                       )}

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import SEO from '../components/SEO';
 import {
   FiCopy,
   FiCheck,
@@ -29,6 +30,12 @@ const Donate = () => {
 
   return (
     <>
+      <SEO
+        title="Donate to Kids Survivor Liberia — Support Children"
+        description="Donate to Kids Survivor Liberia. Your financial contributions fund drug abuse prevention, education, and child protection programs across Liberia."
+        canonical="/donate"
+        keywords={['Donate Kids Survivor Liberia', 'KSL donations', 'bank transfer KSL', 'support Liberia children']}
+      />
       <div className="min-h-screen bg-slate-50">
         {/* Main Header Section - Premium Redesign */}
         <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[40px] md:rounded-b-[100px] shadow-xl">
@@ -40,7 +47,7 @@ const Donate = () => {
               fetchPriority="high"
             />
             <div className="absolute inset-0 bg-slate-900/50 mix-blend-multiply"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent"></div>
+            <div className="absolute inset-0 bg-slate-950/80"></div>
           </div>
           <div className="relative z-10 container mx-auto px-6 text-center">
             <motion.div
@@ -91,7 +98,7 @@ const Donate = () => {
               >
                 <div className="bg-white rounded-lg shadow-xl border border-gray-100 overflow-hidden h-full transform hover:scale-[1.01] transition-transform duration-300">
                   {/* Sleek header */}
-                  <div className="bg-gradient-to-br from-blue-600 to-blue-700 px-6 py-5">
+                  <div className="bg-blue-900 px-6 py-5">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center">
                         <FiDollarSign className="w-5 h-5 text-white" />

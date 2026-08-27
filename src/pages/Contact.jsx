@@ -8,6 +8,7 @@ import {
 } from 'react-icons/fi';
 import ContactImage from '../assets/About Picture.jpeg';
 import emailjs from '@emailjs/browser';
+import SEO from '../components/SEO';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -86,6 +87,12 @@ const Contact = () => {
 
   return (
     <>
+      <SEO
+        title="Contact Kids Survivor Liberia — Get in Touch"
+        description="Contact Kids Survivor Liberia headquarters in Monrovia. Reach out for partnerships, volunteering, drug prevention inquiries, or general support."
+        canonical="/contact"
+        keywords={['Contact Kids Survivor Liberia', 'KSL Monrovia office', 'KSL phone number', 'Liberia NGO contact']}
+      />
       <div className="min-h-screen bg-white">
         {/* Toast Container */}
         <ToastContainer
@@ -111,7 +118,7 @@ const Contact = () => {
               fetchPriority="high"
             />
             <div className="absolute inset-0 bg-blue-900/50 mix-blend-multiply"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent"></div>
+            <div className="absolute inset-0 bg-slate-950/80"></div>
           </div>
 
           <div className="relative z-10 container mx-auto px-6 text-center">
@@ -167,7 +174,7 @@ const Contact = () => {
               <div className="bg-white rounded-lg shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 p-8 sm:p-12 lg:p-16 relative overflow-hidden">
 
                 <div className="flex flex-col sm:flex-row items-start sm:items-center mb-10 gap-6 relative z-10">
-                  <div className="bg-linear-to-br from-blue-50 to-blue-100/50 p-4 rounded-lg border border-blue-100 text-blue-600 shadow-sm">
+                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-100 text-blue-600 shadow-sm">
                     <FiMessageSquare className="w-8 h-8" />
                   </div>
                   <div>
@@ -247,7 +254,7 @@ const Contact = () => {
                       disabled={isSubmitting}
                       className={`flex items-center justify-center space-x-3 text-white px-10 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl w-full sm:w-auto ${isSubmitting
                         ? 'bg-slate-400 cursor-not-allowed'
-                        : 'bg-linear-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 hover:-translate-y-1'
+                        : 'bg-blue-700 hover:bg-blue-800 hover:-translate-y-1'
                         }`}
                     >
                       {isSubmitting ? (

@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FiCheckCircle, FiFileText, FiShield, FiTrendingUp } from 'react-icons/fi';
+import SEO from '../components/SEO';
 import HeaderImage from '../assets/KSL_Team.jpeg';
 
 const Transparency = () => {
@@ -27,7 +28,14 @@ const Transparency = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white pb-20">
+    <>
+      <SEO
+        title="Transparency & Governance — Kids Survivor Liberia"
+        description="Kids Survivor Liberia holds the highest standards of financial integrity, child safeguarding, anti-fraud, and ethical governance across Liberia."
+        canonical="/transparency"
+        keywords={['KSL transparency', 'Liberia NGO accountability', 'child safeguarding policy', 'financial integrity KSL']}
+      />
+      <div className="min-h-screen bg-white pb-20">
       {/* Header - Premium Redesign */}
       <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[40px] md:rounded-b-[100px] shadow-xl border-b border-slate-100">
         <div className="absolute inset-0 z-0">
@@ -38,7 +46,7 @@ const Transparency = () => {
             fetchPriority="high"
           />
           <div className="absolute inset-0 bg-slate-900/50 mix-blend-multiply"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent"></div>
+          <div className="absolute inset-0 bg-slate-950/70"></div>
         </div>
 
         <div className="container mx-auto px-6 relative z-10 text-center max-w-4xl">
@@ -141,7 +149,7 @@ const Transparency = () => {
         </div>
 
         {/* Reports & Downloads - Premium */}
-        <section className="bg-gradient-to-r from-blue-900 to-indigo-900 rounded-lg p-10 sm:p-16 max-w-5xl mx-auto mb-16 shadow-2xl relative overflow-hidden">
+        <section className="bg-slate-900 rounded-lg p-10 sm:p-16 max-w-5xl mx-auto mb-16 shadow-2xl relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-10 mix-blend-overlay"></div>
 
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10">
@@ -165,7 +173,8 @@ const Transparency = () => {
 
       </main>
     </div>
-  );
+  </>
+);
 };
 
 export default Transparency;

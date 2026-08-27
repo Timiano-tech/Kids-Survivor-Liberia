@@ -82,7 +82,7 @@ export const LatestNewsSection = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                  <div className="absolute inset-0 bg-slate-950/40"></div>
                   <div className="absolute top-4 left-4">
                     <span className="bg-blue-600/90 backdrop-blur-sm text-white px-4 py-1.5 rounded-lg text-xs font-bold tracking-wider uppercase shadow-sm">
                       {news.category}

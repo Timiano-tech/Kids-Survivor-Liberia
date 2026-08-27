@@ -77,8 +77,8 @@ export const SuccessStoriesCTA = () => {
                   alt="Verifiable Success Story"
                   className="w-full h-full object-cover"
                 />
-                {/* Lighter Gradient Overlay so picture is clearer */}
-                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent"></div>
+                {/* Solid overlay for high accessibility text contrast */}
+                <div className="absolute inset-0 bg-slate-950/50"></div>
 
                 <div className="absolute bottom-6 left-6 right-6">
                   <div className="flex gap-1 mb-3">
@@ -127,7 +127,7 @@ export const SuccessStoriesCTA = () => {
             </AnimatePresence>
 
             <Link to="/impact">
-              <button className="group relative overflow-hidden rounded-lg bg-blue-600 px-8 py-4 transition-all duration-300 hover:bg-blue-500 hover:shadow-[0_0_30px_rgba(37,99,235,0.6)] w-full sm:w-auto border border-blue-400/50">
+              <button className="group relative overflow-hidden rounded-lg bg-blue-700 px-8 py-4 transition-all duration-300 hover:bg-blue-800 hover:shadow-lg w-full sm:w-auto border border-blue-600/50">
                 <span className="relative z-10 flex items-center justify-center gap-2 text-white font-bold tracking-wider uppercase text-sm">
                   View Our Impact
                   <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1.5 w-5 h-5" />

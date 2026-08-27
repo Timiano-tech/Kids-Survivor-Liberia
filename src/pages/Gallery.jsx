@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiChevronLeft, FiChevronRight, FiX, FiDownload } from 'react-icons/fi';
+import SEO from '../components/SEO';
 import Education1 from '../assets/Students2.jpeg';
 import Community from '../assets/Treatment_of_wounds.jpeg';
 import Education2 from '../assets/Students.jpeg';
@@ -259,7 +260,14 @@ const Gallery = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <SEO
+        title="Photo Gallery — Kids Survivor Liberia Impact in Action"
+        description="Explore photo gallery highlighting Kids Survivor Liberia education, community outreach, health screenings, anti-drug campaigns, and field activities."
+        canonical="/gallery"
+        keywords={['KSL gallery', 'Liberia NGO photos', 'community outreach pictures', 'child protection gallery']}
+      />
+      <div className="min-h-screen bg-white">
       {/* Main Header Section - Premium Redesign */}
       <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[40px] md:rounded-b-[100px] shadow-xl border-b border-slate-100">
         <div className="absolute inset-0 z-0">
@@ -270,7 +278,7 @@ const Gallery = () => {
             fetchPriority="high"
           />
           <div className="absolute inset-0 bg-blue-900/50 mix-blend-multiply"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent"></div>
+          <div className="absolute inset-0 bg-slate-950/80"></div>
         </div>
 
         <div className="relative z-10 container mx-auto px-6 text-center">
@@ -341,8 +349,8 @@ const Gallery = () => {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     loading="lazy"
                   />
-                  {/* Premium Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  {/* Premium Solid Overlay */}
+                  <div className="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
 
                 {/* Content Reveal Overlay */}
@@ -463,7 +471,8 @@ const Gallery = () => {
         </motion.div>
       )}
     </div>
-  );
+  </>
+);
 };
 
 export default Gallery;

@@ -1,9 +1,16 @@
 import { Link } from 'react-router-dom';
 import { FiHome, FiAlertTriangle } from 'react-icons/fi';
+import SEO from '../components/SEO';
 
 const NotFound = () => {
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center px-4">
+    <>
+      <SEO
+        title="404 — Page Not Found"
+        description="The requested page could not be found on Kids Survivor Liberia."
+        noindex={true}
+      />
+      <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center px-4">
       <div className="max-w-md w-full text-center">
         {/* Icon */}
         <div className="mb-8 flex justify-center">
@@ -54,7 +61,8 @@ const NotFound = () => {
         </div>
       </div>
     </div>
-  );
+  </>
+);
 };
 
 export default NotFound;

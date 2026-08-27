@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kdam+Thmor+Pro&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
 @import "tailwindcss";
 
 
 body {
-  font-family: "Outfit", sans-serif;
+  font-family: "Karla", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f8fafc;
@@ -56,13 +56,14 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Base headings */
+/* Headings use Fraunces */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
+  font-family: "Fraunces", serif;
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   letter-spacing: -0.02em;
 }

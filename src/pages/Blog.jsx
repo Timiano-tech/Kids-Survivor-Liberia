@@ -1,6 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import SEO from '../components/SEO';
+import PageHeader from '../components/PageHeader';
+import SectionHeading from '../components/SectionHeading';
+import CTABanner from '../components/CTABanner';
 import RelatedContent from '../components/RelatedContent';
 import {
   FiCalendar,
@@ -147,61 +150,45 @@ const Blog = () => {
     <>
       <SEO
         title="KSL News & Articles — Stories of Hope in Liberia"
-        description="Stay updated with news, articles, and video stories on Kids Survivor Liberia drug abuse prevention and youth empowerment campaigns."
+        description="Stay updated with news, articles, and video stories on Kids Survivor Liberia drug abuse prevention, community outreach, and youth empowerment campaigns across Liberia."
         canonical="/blog"
-        keywords={['KSL news', 'Kids Survivor Liberia blog', 'Liberia youth news', 'Gbarnga outreach', 'Buchanan medical outreach']}
+        keywords={[
+          'Kids Survivor Liberia news',
+          'KSL blog',
+          'Liberia youth news',
+          'drug prevention news Liberia',
+          'community outreach stories Liberia',
+          'Gbarnga outreach KSL',
+          'Buchanan medical outreach',
+          'Liberia NGO blog',
+          'child protection news Liberia',
+        ]}
+        breadcrumbs={[{ name: 'Blog & Media', url: '/blog' }]}
       />
       <div className="min-h-screen bg-white">
-        {/* Main Header Section */}
-        <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[40px] md:rounded-b-[100px] shadow-xl border-b border-slate-100">
-          <div className="absolute inset-0 z-0">
-            <img
-              src={HeaderImage}
-              alt="Media & Resources"
-              className="w-full h-full object-cover"
-              fetchPriority="high"
-            />
-            <div className="absolute inset-0 bg-blue-900/50 mix-blend-multiply"></div>
-            <div className="absolute inset-0 bg-slate-950/80"></div>
-          </div>
-
-          <div className="relative z-10 container mx-auto px-6 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="max-w-4xl mx-auto"
-            >
-              <span className="text-yellow-400 font-bold tracking-widest uppercase text-sm mb-4 block drop-shadow-md">Media & Resources</span>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 tracking-tight drop-shadow-xl">
-                Blog & Media
-              </h1>
-              <p className="text-xl md:text-2xl text-blue-100 font-light leading-relaxed max-w-3xl mx-auto border-l-4 border-yellow-400 pl-6 text-left md:text-center md:border-l-0 md:pl-0">
-                Stay updated with the latest articles and videos on our drug prevention and youth empowerment initiatives.
-              </p>
-            </motion.div>
-          </div>
-        </header>
-
-        <main className="py-12">
-          <div className="container mx-auto px-4 max-w-6xl">
-
-            {/* Videos Section - Premium */}
-            <div className="mb-24">
-              <div className="text-center mb-16">
-                <span className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-3 block">Media Updates</span>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">
-                  Featured Videos
-                </h2>
-              </div>
-              <div className="grid md:grid-cols-2 gap-10">
+        <PageHeader
+          eyebrow="Media & Resources"
+          title="Blog & Media"
+          description="Stay updated with the latest articles and videos on our drug prevention and youth empowerment initiatives."
+          image={HeaderImage}
+          alt="Kids Survivor Liberia media and resources"
+        />
+        <main className="py-16 lg:py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            {/* Videos Section */}
+            <section className="mb-20">
+              <SectionHeading
+                eyebrow="Media Updates"
+                title="Featured Videos"
+              />
+              <div className="mt-12 grid md:grid-cols-2 gap-8">
                 {videoPosts.map((video) => (
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     key={video.id}
-                    className="bg-white rounded-lg border border-slate-100 overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.1)] transition-all duration-500 group"
+                    className="bg-white border border-slate-200 hover:border-blue-300 transition-colors overflow-hidden shadow-sm group flex flex-col h-full"
                   >
                     <div className="relative h-72 overflow-hidden bg-slate-900">
                       {playingVideoId === video.id ? (
@@ -218,7 +205,7 @@ const Blog = () => {
                           </video>
                           <button
                             onClick={handleVideoClose}
-                            className="absolute top-4 right-4 bg-black/60 backdrop-blur-md text-white p-2 rounded-lg hover:bg-red-500 transition-colors z-20 border border-white/20"
+                            className="absolute top-4 right-4 bg-slate-950/80 text-white p-2 hover:bg-slate-900 transition-colors z-20 border border-white/20"
                             aria-label="Close video"
                           >
                             <FiX size={20} />
@@ -229,31 +216,31 @@ const Blog = () => {
                           <img
                             src={video.thumbnail}
                             alt={video.title}
-                            className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                            className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700"
                             loading="lazy"
                           />
                           <div className="absolute inset-0 bg-slate-950/70 flex items-center justify-center">
                             <button
                               onClick={() => handleVideoPlay(video.id)}
-                              className="w-20 h-20 bg-white/20 backdrop-blur-md hover:bg-yellow-400 hover:text-blue-900 text-white rounded-lg flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 shadow-[0_8px_30px_rgb(0,0,0,0.2)] border border-white/30"
+                              className="w-16 h-16 bg-yellow-500 hover:bg-yellow-400 text-slate-900 flex items-center justify-center transition-colors"
                               aria-label="Play video"
                             >
-                              <FiPlay size={32} className="ml-1" />
+                              <FiPlay size={28} className="ml-1" />
                             </button>
                           </div>
-                          <div className="absolute bottom-4 right-4 bg-slate-900/70 backdrop-blur-md text-white font-medium text-xs px-3 py-1.5 rounded-lg border border-white/10">
+                          <div className="absolute bottom-4 right-4 bg-slate-950/80 text-white text-xs font-medium px-3 py-1.5 border border-white/20">
                             {video.duration}
                           </div>
                         </>
                       )}
                     </div>
 
-                    <div className="p-8">
+                    <div className="p-8 flex flex-col flex-grow">
                       <div className="flex items-center text-sm font-semibold text-blue-600 mb-4 tracking-wide">
                         <FiCalendar className="mr-2" size={16} />
                         {video.date}
                       </div>
-                      <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight group-hover:text-blue-600 transition-colors duration-300 line-clamp-2">
+                      <h3 className="text-2xl font-semibold text-slate-900 mb-4 tracking-tight group-hover:text-blue-600 transition-colors line-clamp-2">
                         {video.title}
                       </h3>
                       <p className="text-slate-600 text-lg mb-6 leading-relaxed line-clamp-2">
@@ -261,38 +248,36 @@ const Blog = () => {
                       </p>
                       <button
                         onClick={() => handleVideoPlay(video.id)}
-                        className={`inline-flex items-center font-bold text-sm uppercase tracking-wider group/btn ${playingVideoId === video.id ? 'text-emerald-500' : 'text-slate-900 hover:text-blue-600'
-                          } transition-colors duration-300`}
+                        className={`inline-flex items-center font-semibold text-sm uppercase tracking-wider mt-auto ${playingVideoId === video.id ? 'text-blue-600' : 'text-slate-900 hover:text-blue-600'
+                          } transition-colors`}
                         disabled={playingVideoId === video.id}
                       >
                         {playingVideoId === video.id ? 'Now Playing' : 'Watch Video'}
                         {playingVideoId !== video.id && (
-                          <FiArrowRight className="ml-2 group-hover/btn:translate-x-2 transition-transform duration-300" />
+                          <FiArrowRight className="ml-2" />
                         )}
                       </button>
                     </div>
                   </motion.div>
                 ))}
               </div>
-            </div>
+            </section>
 
-            {/* Articles Section - Premium */}
-            <div className="mb-24">
-              <div className="text-center mb-16">
-                <span className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-3 block">Latest Insights</span>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">
-                  Recent Articles
-                </h2>
-              </div>
-              <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-10">
+            {/* Articles Section */}
+            <section>
+              <SectionHeading
+                eyebrow="Latest Insights"
+                title="Recent Articles"
+              />
+              <div className="mt-12 grid md:grid-cols-2 gap-8">
                 {blogPosts.map((post, index) => (
                   <motion.article
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: index * 0.1, duration: 0.5 }}
+                    transition={{ delay: index * 0.05, duration: 0.4 }}
                     key={post.id}
-                    className="bg-white rounded-lg border border-slate-100 overflow-hidden shadow-sm hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2 group flex flex-col h-full"
+                    className="bg-white border border-slate-200 hover:border-blue-300 transition-colors overflow-hidden shadow-sm group flex flex-col h-full"
                   >
                     <div className="h-72 overflow-hidden relative">
                       <img
@@ -302,7 +287,7 @@ const Blog = () => {
                         loading="lazy"
                       />
                       <div className="absolute top-4 left-4">
-                        <span className="inline-block px-4 py-1.5 bg-white/90 backdrop-blur-sm text-blue-700 rounded-lg text-xs font-bold tracking-widest uppercase shadow-sm">
+                        <span className="inline-block bg-blue-700 text-white px-3 py-1 text-xs font-semibold tracking-widest uppercase">
                           {post.category}
                         </span>
                       </div>
@@ -319,9 +304,9 @@ const Blog = () => {
                             {post.author}
                           </div>
                         </div>
-                        <span className="text-slate-400 bg-slate-50 px-2 py-1 rounded-lg">{post.readTime}</span>
+                        <span className="bg-slate-100 px-2 py-1 text-xs font-medium text-slate-500">{post.readTime}</span>
                       </div>
-                      <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight group-hover:text-blue-600 transition-colors duration-300 line-clamp-2">
+                      <h3 className="text-2xl font-semibold text-slate-900 mb-4 tracking-tight group-hover:text-blue-600 transition-colors line-clamp-2">
                         {post.title}
                       </h3>
                       <p className="text-slate-600 text-lg mb-8 leading-relaxed line-clamp-3 flex-grow">
@@ -331,11 +316,16 @@ const Blog = () => {
                   </motion.article>
                 ))}
               </div>
-            </div>
-
-
+            </section>
           </div>
         </main>
+        <CTABanner
+          title="Help us reach more young people"
+          description="Your support keeps KSL's drug prevention education, school programs, and community outreach growing across Liberia."
+          primaryLabel="Donate Now"
+          secondaryLabel="Explore Our Programs"
+          secondaryTo="/programs"
+        />
         <RelatedContent />
       </div>
     </>

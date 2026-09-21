@@ -3,17 +3,18 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import SEO from '../components/SEO';
 import RelatedContent from '../components/RelatedContent';
+import PageHeader from '../components/PageHeader';
+import SectionHeading from '../components/SectionHeading';
+import CTABanner from '../components/CTABanner';
 import {
   FiTrendingUp,
   FiTarget,
   FiMap,
-  FiPlay,
   FiUsers,
   FiHeart,
   FiCheckCircle
 } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
-import HeaderImage from '../assets/School_Students.jpeg';
 import StudentsImpact from '../assets/Students Impacted.jpeg';
 import ChildrenImpact2 from '../assets/ChildrenImpact.jpg';
 import Treatment from '../assets/Treatment.jpeg';
@@ -71,8 +72,6 @@ const Impact = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const [activeVideo, setActiveVideo] = useState(0);
 
   // Impact Statistics - updated to use numbers instead of strings
   const impactStats = [
@@ -225,63 +224,41 @@ const Impact = () => {
   return (
     <>
       <SEO
-        title="Our Community Impact across Liberia — KSL"
-        description="Discover the measurable impact of Kids Survivor Liberia, reaching over 12,000 vulnerable individuals across 15 Liberian counties."
+        title="Our Impact — Kids Survivor Liberia Results & Numbers"
+        description="See Kids Survivor Liberia's measurable impact: 13,000+ children reached, 12,500+ drug sessions, 3,000+ households engaged across 15 Liberian counties. Real results, real lives changed."
         canonical="/impact"
-        keywords={['KSL impact', 'Liberia child protection impact', 'Liberia youth numbers', 'NADAP results Liberia']}
+        keywords={[
+          'KSL impact Liberia',
+          'child protection impact numbers',
+          'Liberia youth statistics',
+          'NADAP results Liberia',
+          'drug prevention reach Liberia',
+          'community impact KSL',
+          'NGO outcomes Liberia',
+          'measurable impact Liberia children',
+        ]}
+        breadcrumbs={[{ name: 'Our Impact', url: '/impact' }]}
       />
-      <div className="min-h-screen bg-slate-50">
-        {/* Main Header Section -  Redesign */}
-        <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[40px] md:rounded-b-[100px] shadow-xl">
-          <div className="absolute inset-0 z-0">
-            <img
-              src={StudentsImpact}
-              alt="Impact Background"
-              className="w-full h-full object-cover"
-              fetchPriority="high"
-            />
-            <div className="absolute inset-0 bg-slate-900/50 mix-blend-multiply"></div>
-            <div className="absolute inset-0 bg-slate-950/80"></div>
-          </div>
-
-          <div className="relative z-10 container mx-auto px-6 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="max-w-4xl mx-auto"
-            >
-              <span className="text-yellow-400 font-bold tracking-widest uppercase text-sm mb-4 block drop-shadow-md">Measurable Results</span>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 tracking-tight drop-shadow-xl">
-                Our Impact & Results
-              </h1>
-              <p className="text-xl md:text-2xl text-blue-100 font-light leading-relaxed max-w-3xl mx-auto border-l-4 border-yellow-400 pl-6 text-left md:text-center md:border-l-0 md:pl-0">
-                Transforming lives and communities through NADAP and YTEI-aligned interventions
-              </p>
-            </motion.div>
-          </div>
-        </header>
+      <div className="min-h-screen bg-white">
+        <PageHeader
+          eyebrow="Measurable Results"
+          title="Our Impact & Results"
+          description="Transforming lives and communities through NADAP and YTEI-aligned interventions"
+          image={StudentsImpact}
+          alt="Impact Background"
+        />
 
         {/* Main Content */}
-        <main className="py-20 relative">
-          <div className="container mx-auto px-4 relative z-10">
-            {/* Impact Statistics with Counting Animation -  */}
-            <section className="mb-24">
-              <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="text-center mb-16"
-              >
-                <span className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-3 block">Quantifiable Change</span>
-                <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
-                  Impact by Numbers
-                </h2>
-                <p className="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
-                  Tracking progress and measuring success across our strategic interventions
-                </p>
-              </motion.div>
+        <main className="py-16 lg:py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            {/* Impact Statistics with Counting Animation */}
+            <section className="mb-20 lg:mb-24">
+              <SectionHeading
+                eyebrow="Quantifiable Change"
+                title="Impact by Numbers"
+                description="Tracking progress and measuring success across our strategic interventions"
+                className="mb-12"
+              />
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {impactStats.map((stat, index) => (
@@ -291,17 +268,15 @@ const Impact = () => {
                     whileInView={{ opacity: 1, scale: 1, y: 0 }}
                     transition={{ delay: index * 0.1, duration: 0.5 }}
                     viewport={{ once: true }}
-                    className="bg-white rounded-lg shadow-sm p-8 text-center hover:shadow-md border border-slate-100 transition-all duration-500 group relative overflow-hidden"
+                    className="bg-white border border-slate-200 shadow-sm p-8 text-center"
                   >
-                    <div className="absolute top-0 right-0 w-24 h-24 bg-blue-50/50 rounded-bl-2xl -mx-4 -my-4 transition-transform group-hover:scale-125 duration-700 ease-out z-0"></div>
-
-                    <div className="flex justify-center mb-6 relative z-10">
-                      <div className="p-4 bg-blue-50 text-blue-600 rounded-lg group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500 shadow-sm inline-flex items-center justify-center">
+                    <div className="flex justify-center mb-6">
+                      <div className="p-4 bg-blue-50 text-blue-700 border border-blue-200 inline-flex items-center justify-center">
                         {stat.icon}
                       </div>
                     </div>
 
-                    <div className="text-4xl md:text-5xl font-black text-slate-900 mb-3 min-h-14 flex items-center justify-center tracking-tight group-hover:text-blue-600 transition-colors relative z-10">
+                    <div className="text-4xl md:text-5xl font-semibold text-slate-900 mb-3 min-h-14 flex items-center justify-center tracking-tight">
                       <AnimatedCounter
                         end={stat.number}
                         duration={2 + (index * 0.3)}
@@ -309,22 +284,13 @@ const Impact = () => {
                       />
                     </div>
 
-                    <div className="text-slate-800 font-bold text-lg mb-2 relative z-10">
+                    <div className="text-slate-800 font-semibold text-lg mb-2">
                       {stat.label}
                     </div>
 
-                    <div className="text-slate-500 text-sm leading-relaxed relative z-10">
+                    <div className="text-slate-500 text-sm leading-relaxed">
                       {stat.description}
                     </div>
-
-                    {/* Animated progress indicator */}
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: "100%" }}
-                      transition={{ delay: 1 + (index * 0.2), duration: 1.5, ease: "easeOut" }}
-                      viewport={{ once: true }}
-                      className="h-1.5 bg-blue-600 mx-auto mt-6 rounded-lg relative z-10 opacity-50 group-hover:opacity-100"
-                    />
                   </motion.div>
                 ))}
               </div>
@@ -335,36 +301,27 @@ const Impact = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
                 viewport={{ once: true }}
-                className="mt-16 text-center"
+                className="mt-14 text-center"
               >
-                <div className="inline-flex items-center px-8 py-4 bg-white shadow-md border border-slate-100 text-slate-700 rounded-lg text-base font-medium hover:shadow-lg transition-shadow">
-                  <div className="p-1.5 bg-blue-100 rounded-lg mr-3 text-blue-600">
+                <div className="inline-flex items-center px-6 py-3 bg-slate-50 border border-slate-200 text-slate-700 text-base font-medium">
+                  <div className="p-1.5 bg-blue-50 border border-blue-200 mr-3 text-blue-700">
                     <FiCheckCircle className="w-5 h-5" />
                   </div>
                   <span>
-                    Growing impact across <span className="font-bold text-blue-600">15 counties</span> in Liberia
+                    Growing impact across <span className="font-semibold text-blue-700">15 counties</span> in Liberia
                   </span>
                 </div>
               </motion.div>
             </section>
 
-            {/* Strategic Impact Areas -  */}
-            <section className="mb-24">
-              <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="text-center mb-16"
-              >
-                <span className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-3 block">Sustainable Approach</span>
-                <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
-                  Strategic Impact Areas
-                </h2>
-                <p className="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
-                  Focused interventions creating sustainable change across Liberia
-                </p>
-              </motion.div>
+            {/* Strategic Impact Areas */}
+            <section className="mb-20 lg:mb-24">
+              <SectionHeading
+                eyebrow="Sustainable Approach"
+                title="Strategic Impact Areas"
+                description="Focused interventions creating sustainable change across Liberia"
+                className="mb-12"
+              />
 
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {impactAreas.map((area, index) => (
@@ -374,20 +331,20 @@ const Impact = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1, duration: 0.5 }}
                     viewport={{ once: true }}
-                    className="bg-white rounded-lg shadow-sm p-8 border border-slate-100 hover:shadow-[0_20px_40px_rgb(0,0,0,0.1)] transition-all duration-500 group flex flex-col h-full"
+                    className="bg-white border border-slate-200 shadow-sm p-8 hover:border-blue-300 transition-colors flex flex-col h-full"
                   >
                     <div className="flex items-center mb-6">
-                      <div className="p-3 bg-blue-50 text-blue-600 rounded-lg mr-4 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 shadow-sm">
+                      <div className="p-3 bg-blue-50 text-blue-700 border border-blue-200 mr-4">
                         {area.icon}
                       </div>
-                      <h3 className="text-xl font-bold text-slate-900 leading-tight group-hover:text-blue-600 transition-colors">{area.title}</h3>
+                      <h3 className="text-xl font-semibold text-slate-900 leading-tight">{area.title}</h3>
                     </div>
                     <p className="text-slate-600 text-sm leading-relaxed mb-8 flex-grow">
                       {area.description}
                     </p>
-                    <div className="flex items-center justify-between mt-auto pt-5 border-t border-slate-100">
-                      <span className="text-slate-900 font-bold text-sm bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-100">{area.stats}</span>
-                      <Link to="/programs" className="text-blue-600 hover:text-blue-700 text-sm font-bold flex items-center group-hover:translate-x-1 transition-transform">
+                    <div className="flex items-center justify-between mt-auto pt-5 border-t border-slate-200">
+                      <span className="text-slate-800 font-semibold text-sm bg-slate-50 border border-slate-200 px-3 py-1.5">{area.stats}</span>
+                      <Link to="/programs" className="text-blue-700 hover:text-blue-800 text-sm font-semibold flex items-center">
                         Learn more <span className="ml-1 tracking-tighter">→</span>
                       </Link>
                     </div>
@@ -397,25 +354,13 @@ const Impact = () => {
             </section>
 
             {/* Lives Impacted Stories */}
-            <section className="mb-24">
-              <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="text-center mb-16"
-              >
-                <div className="inline-flex items-center px-5 py-2.5 bg-red-50 text-red-600 rounded-lg text-xs font-bold tracking-widest uppercase mb-6 shadow-sm border border-red-100">
-                  <FiHeart className="mr-2 w-4 h-4 fill-current" />
-                  Success Stories
-                </div>
-                <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
-                  Lives We've Transformed
-                </h2>
-                <p className="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
-                  Real stories of hope, recovery, and empowerment from communities across Liberia
-                </p>
-              </motion.div>
+            <section className="mb-20 lg:mb-24">
+              <SectionHeading
+                eyebrow="Success Stories"
+                title="Lives We've Transformed"
+                description="Real stories of hope, recovery, and empowerment from communities across Liberia"
+                className="mb-12"
+              />
 
               <div className="grid md:grid-cols-2 gap-10">
                 {livesImpacted.map((story, index) => (
@@ -425,30 +370,30 @@ const Impact = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1, duration: 0.5 }}
                     viewport={{ once: true }}
-                    className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md border border-slate-100 transition-all duration-500 group"
+                    className="bg-white border border-slate-200 shadow-sm"
                   >
-                    <div className="relative h-72 overflow-hidden bg-slate-100">
+                    <div className="relative h-72 bg-slate-100">
                       <div className="absolute inset-0 bg-slate-950/50 z-10"></div>
                       <img
                         src={story.image}
                         alt={story.name}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
+                        className="w-full h-full object-cover"
                         loading="lazy"
                       />
                       <div className="absolute bottom-6 left-6 z-20">
-                        <span className="bg-blue-600 text-white px-4 py-1.5 rounded-lg text-xs font-bold tracking-widest uppercase shadow-md backdrop-blur-sm">
+                        <span className="bg-blue-700 text-white px-4 py-1.5 text-xs font-bold tracking-widest uppercase">
                           {story.category}
                         </span>
                       </div>
                     </div>
 
-                    <div className="p-8 lg:p-10 relative">
-                      <div className="flex items-center text-sm font-bold tracking-wider uppercase text-slate-400 mb-4">
-                        <FiMap className="mr-2 text-blue-400" />
+                    <div className="p-8 lg:p-10">
+                      <div className="flex items-center text-sm font-semibold tracking-wider uppercase text-slate-500 mb-4">
+                        <FiMap className="mr-2 text-blue-600" />
                         {story.location}
                       </div>
 
-                      <h3 className="text-2xl font-bold text-slate-900 mb-5 tracking-tight group-hover:text-blue-600 transition-colors">
+                      <h3 className="text-2xl font-semibold text-slate-900 mb-5 tracking-tight">
                         {story.name}
                       </h3>
 
@@ -461,26 +406,14 @@ const Impact = () => {
               </div>
             </section>
 
-            {/* Video Impact Stories -  */}
-            <section className="mb-20">
-              <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="text-center mb-16"
-              >
-                <div className="inline-flex items-center px-5 py-2.5 bg-slate-900 text-white rounded-lg text-xs font-bold tracking-widest uppercase mb-6 shadow-md shadow-slate-900/20">
-                  <FiPlay className="mr-2 w-4 h-4 fill-current" />
-                  Video Documentaries
-                </div>
-                <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
-                  Impact in Action
-                </h2>
-                <p className="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
-                  Watch our programs transforming lives and communities across Liberia through these short documentaries.
-                </p>
-              </motion.div>
+            {/* Video Impact Stories */}
+            <section>
+              <SectionHeading
+                eyebrow="Video Documentaries"
+                title="Impact in Action"
+                description="Watch our programs transforming lives and communities across Liberia through these short documentaries."
+                className="mb-12"
+              />
 
               <div className="grid md:grid-cols-3 gap-8">
                 {videoStories.map((video, index) => (
@@ -490,18 +423,18 @@ const Impact = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1, duration: 0.5 }}
                     viewport={{ once: true }}
-                    className="bg-white rounded-lg shadow-[0_4px_20px_rgb(0,0,0,0.06)] overflow-hidden hover:shadow-md border border-slate-100 transition-all duration-500 group flex flex-col h-full"
+                    className="bg-white border border-slate-200 shadow-sm flex flex-col h-full"
                   >
-                    <div className="relative h-56 bg-slate-900 overflow-hidden">
+                    <div className="relative h-56 bg-slate-900">
                       <video
                         controls
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+                        className="w-full h-full object-cover"
                         poster={video.poster}
                       >
                         <source src={video.videoSrc} type="video/mp4" />
                       </video>
                       <div className="absolute top-4 right-4 pointer-events-none">
-                        <span className="bg-black/60 backdrop-blur-md text-white px-3 py-1.5 rounded-lg text-xs font-bold tracking-wider shadow-sm">
+                        <span className="bg-slate-900 text-white px-3 py-1.5 text-xs font-bold tracking-wider">
                           {video.duration}
                         </span>
                       </div>
@@ -509,12 +442,12 @@ const Impact = () => {
 
                     <div className="p-8 flex-grow flex flex-col">
                       <div className="flex items-center mb-4">
-                        <span className="bg-blue-50 text-blue-600 px-3 py-1.5 rounded-lg text-xs font-bold tracking-widest uppercase border border-blue-100">
+                        <span className="bg-blue-50 text-blue-700 border border-blue-200 px-3 py-1.5 text-xs font-bold tracking-widest uppercase">
                           {video.category}
                         </span>
                       </div>
 
-                      <h3 className="text-xl font-bold text-slate-900 mb-4 tracking-tight group-hover:text-blue-600 transition-colors">
+                      <h3 className="text-xl font-semibold text-slate-900 mb-4 tracking-tight">
                         {video.title}
                       </h3>
 
@@ -528,6 +461,15 @@ const Impact = () => {
             </section>
           </div>
         </main>
+
+        <CTABanner
+          title="Every gift creates measurable impact"
+          description="Join us in transforming lives across Liberia — your donation supports prevention, rehabilitation, education, and protection services."
+          primaryLabel="Support Our Work"
+          primaryTo="/donate"
+          secondaryLabel="Explore Our Programs"
+          secondaryTo="/programs"
+        />
         <RelatedContent />
       </div>
     </>

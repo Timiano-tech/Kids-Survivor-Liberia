@@ -1,7 +1,10 @@
 import { useEffect } from 'react';
+import { motion } from 'framer-motion';
 import Team from '../components/Teams';
 import SEO from '../components/SEO';
-import { motion } from 'framer-motion';
+import PageHeader from '../components/PageHeader';
+import SectionHeading from '../components/SectionHeading';
+import CTABanner from '../components/CTABanner';
 import {
   FiTarget,
   FiEye,
@@ -122,69 +125,60 @@ const About = () => {
     <>
       <SEO
         title="About Kids Survivor Liberia — Our Mission & Vision"
-        description="Learn about Kids Survivor Liberia (KSL), our mission, vision, programmatic pillars, and alignment with YTEI and NADAP 2025-2030."
+        description="Learn about Kids Survivor Liberia (KSL), our mission, vision, values, and alignment with Liberia's NADAP 2025-2030 and YTEI national frameworks for child protection and youth empowerment."
         canonical="/about"
-        keywords={['About Kids Survivor Liberia', 'KSL mission', 'KSL vision', 'Liberia NGO about', 'child protection NGO Liberia']}
+        keywords={[
+          'About Kids Survivor Liberia',
+          'KSL mission and vision',
+          'Liberia child protection NGO',
+          'child-focused non-profit Liberia',
+          'registered NGO Liberia',
+          'drug abuse prevention organization Liberia',
+          'NADAP 2025-2030 Liberia',
+          'YTEI Liberia',
+          'KSL leadership Liberia',
+        ]}
+        breadcrumbs={[{ name: 'About', url: '/about' }]}
       />
       <div className="min-h-screen bg-white">
-        {/* Main Header Section */}
-        <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[40px] md:rounded-b-[100px] shadow-xl border-b border-slate-100">
-          <div className="absolute inset-0 z-0">
-            <img
-              src={KSLCompany}
-              alt="Media & Resources"
-              className="w-full h-full object-cover"
-              fetchPriority="high"
-            />
-            <div className="absolute inset-0 bg-blue-900/50 mix-blend-multiply"></div>
-            <div className="absolute inset-0 bg-slate-950/80"></div>
-          </div>
-
-          <div className="relative z-10 container mx-auto px-6 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="max-w-4xl mx-auto"
-            >
-              <span className="text-yellow-400 font-bold tracking-widest uppercase text-sm mb-4 block drop-shadow-md">Discover Our Story</span>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 tracking-tight drop-shadow-xl">
-                About Kids Survivor Liberia
-              </h1>
-              <p className="text-xl md:text-2xl text-blue-100 font-light leading-relaxed max-w-3xl mx-auto border-l-4 border-yellow-400 pl-6 text-left md:text-center md:border-l-0 md:pl-0">
-                A national-based organization dedicated to preventing drug abuse and protecting vulnerable populations through incredibly impactful YTEI and NADAP-aligned interventions.
-              </p>
-            </motion.div>
-          </div>
-        </header>
+        <PageHeader
+          eyebrow="Discover Our Story"
+          title="About Kids Survivor Liberia"
+          description="A national-based organization dedicated to preventing drug abuse and protecting vulnerable populations through incredibly impactful YTEI and NADAP-aligned interventions."
+          image={KSLCompany}
+          alt="Media & Resources"
+        />
 
         {/* Main Content */}
-        <main className="py-24 relative overflow-hidden">
-          <div className="container mx-auto px-4 relative z-10">
+        <main className="py-16 lg:py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             {/* Organization Overview */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="mb-24 max-w-7xl mx-auto"
+              className="mb-20 lg:mb-24"
             >
-              <div className="grid lg:grid-cols-2 gap-16 items-center">
-                <div className="relative group">
-                  <div className="absolute inset-0 bg-blue-600 rounded-lg -translate-x-4 translate-y-4 opacity-10 group-hover:-translate-x-6 group-hover:translate-y-6 transition-transform duration-500"></div>
-                  <div className="bg-slate-100 rounded-lg p-2 relative z-10 shadow-xl overflow-hidden">
+              <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div className="relative">
+                  <div className="bg-slate-100 border border-slate-200 p-2">
                     <img
                       src={KSL_Teams}
                       alt="Kids Survivor Liberia Team"
-                      className="w-full h-[31.25rem] object-cover rounded-lg group-hover:scale-105 transition-transform duration-700"
-                      loading='lazy'
+                      className="w-full h-[31.25rem] object-cover"
+                      loading="lazy"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <span className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-3 block">Who We Are</span>
-                  <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 tracking-tight">Kids Survivor Liberia (KSL)</h2>
+                  <SectionHeading
+                    align="left"
+                    eyebrow="Who We Are"
+                    title="Kids Survivor Liberia (KSL)"
+                    className="mb-8"
+                  />
                   <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
                     <p>
                       <strong className="text-slate-900">Kids Survivor Liberia (KSL)</strong> is a national based, non-profit organization dedicated to the prevention of drug abuse and the protection, rehabilitation, and empowerment of vulnerable populations, particularly children, adolescents, youth, adolescent girls, widows, and vulnerable elderly men.
@@ -200,42 +194,41 @@ const About = () => {
               </div>
             </motion.div>
 
-            {/* Mission & Vision - Premium Redesign */}
+            {/* Mission & Vision */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="grid md:grid-cols-2 gap-10 mb-24 max-w-7xl mx-auto"
+              className="mb-20 lg:mb-24"
             >
-              {/* Mission */}
-            <div className="bg-slate-900 text-white rounded-lg p-10 md:p-14 shadow-2xl relative overflow-hidden group">
-                <div className="relative z-10">
+              <SectionHeading eyebrow="Purpose & Direction" title="Our Mission & Vision" className="mb-12" />
+              <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
+                {/* Mission */}
+                <div className="bg-slate-950 border border-slate-800 p-10 md:p-12 text-white shadow-md">
                   <div className="flex items-center mb-8">
-                    <div className="bg-white/10 p-4 rounded-lg mr-5 backdrop-blur-md border border-white/10 shadow-xl">
+                    <div className="bg-white/10 border border-slate-700 p-4 mr-5">
                       <FiTarget className="w-8 h-8 text-blue-300" />
                     </div>
-                    <h3 className="text-3xl font-bold tracking-tight">Our Mission</h3>
+                    <h3 className="text-2xl md:text-3xl font-semibold tracking-tight text-white">Our Mission</h3>
                   </div>
                   <p className="text-lg leading-relaxed text-slate-300 mb-8">
                     Kids Survivor Liberia (KSL) is a national based, non-profit organization dedicated to the prevention of drug abuse and the protection, rehabilitation, and empowerment of vulnerable populations, particularly children, adolescents, youth, adolescent girls, widows, and vulnerable elderly men.
                   </p>
-                  <div className="pt-8 border-t border-slate-700/50">
-                    <p className="text-sm font-medium text-blue-300 uppercase tracking-wider">
+                  <div className="pt-8 border-t border-slate-700">
+                    <p className="text-sm font-semibold text-blue-300 uppercase tracking-wider">
                       Aligned with YTEI and NADAP 2025–2030.
                     </p>
                   </div>
                 </div>
-              </div>
 
-              {/* Vision */}
-            <div className="bg-white rounded-lg p-10 md:p-14 shadow-sm border border-slate-200 relative overflow-hidden group hover:shadow-md transition-shadow duration-500">
-                <div className="relative z-10">
+                {/* Vision */}
+                <div className="bg-white border border-slate-200 p-10 md:p-12 shadow-sm">
                   <div className="flex items-center mb-8">
-                    <div className="bg-yellow-50 p-4 rounded-lg mr-5 border border-yellow-100 shadow-sm">
-                      <FiEye className="w-8 h-8 text-yellow-600" />
+                    <div className="bg-yellow-500 p-4 mr-5">
+                      <FiEye className="w-8 h-8 text-slate-900" />
                     </div>
-                    <h3 className="text-3xl font-bold text-slate-900 tracking-tight">Our Vision</h3>
+                    <h3 className="text-2xl md:text-3xl font-semibold text-slate-900 tracking-tight">Our Vision</h3>
                   </div>
                   <p className="text-lg leading-relaxed text-slate-600">
                     A drug free, safe, inclusive, and resilient Liberia, where children, adolescent girls, youth, widows, and elderly men live in dignity, have equitable access to education and economic opportunities, are protected from drugs, violence, and exploitation, and actively contribute to sustainable development and social cohesion.
@@ -244,30 +237,29 @@ const About = () => {
               </div>
             </motion.div>
 
-            {/* Strategic Purpose - Premium */}
+            {/* Strategic Purpose */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
-              className="mb-24 max-w-7xl mx-auto"
+              className="mb-20 lg:mb-24"
             >
-            <div className="bg-slate-900 rounded-lg p-10 md:p-16 text-white relative overflow-hidden shadow-2xl">
-                <div className="absolute top-0 right-0 w-96 h-96 bg-blue-800/15 rounded-full -translate-y-1/2 translate-x-1/3"></div>
-                <div className="relative z-10 grid md:grid-cols-12 gap-10 items-center">
+              <div className="bg-slate-950 border border-slate-800 p-10 md:p-14 text-white">
+                <div className="grid md:grid-cols-12 gap-10 items-center">
                   <div className="md:col-span-5">
                     <div className="flex items-center gap-5 mb-4">
-                      <div className="bg-blue-600/20 p-4 rounded-lg backdrop-blur-md border border-blue-500/30">
-                        <FiCrosshair className="w-8 h-8 text-blue-400" />
+                      <div className="bg-blue-700 p-4">
+                        <FiCrosshair className="w-8 h-8 text-slate-900" />
                       </div>
                       <div>
-                        <span className="text-blue-400 font-semibold tracking-wider uppercase text-sm block mb-1">Why We Exist</span>
-                        <h3 className="text-3xl md:text-4xl font-bold tracking-tight">Strategic Purpose</h3>
+                        <span className="text-blue-300 font-semibold uppercase tracking-wider text-sm block mb-1">Why We Exist</span>
+                        <h3 className="text-3xl md:text-4xl font-semibold tracking-tight text-white">Strategic Purpose</h3>
                       </div>
                     </div>
                   </div>
                   <div className="md:col-span-7">
-                    <p className="text-xl leading-relaxed text-slate-300 font-light border-l-2 border-slate-700 pl-8">
+                    <p className="text-xl leading-relaxed text-slate-300 border-l-2 border-slate-700 pl-8">
                       KSL exists to address the intersecting challenges of drug abuse, poverty, gender vulnerability, youth marginalization, and age-related neglect through integrated <span className="text-white font-medium">prevention, protection, rehabilitation, and empowerment</span> strategies rooted in community partnership and national policy alignment.
                     </p>
                   </div>
@@ -275,176 +267,156 @@ const About = () => {
               </div>
             </motion.div>
 
-            {/* Programmatic Pillars - Premium */}
+            {/* Programmatic Pillars */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
-              className="mb-24 max-w-7xl mx-auto"
+              className="mb-20 lg:mb-24"
             >
-              <div className="text-center mb-16">
-                <span className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-3 block">Areas of Action</span>
-                <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">Our Programmatic Pillars</h2>
-                <p className="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
-                  Comprehensive approaches expertly aligned with NADAP 2025-2030 and YTEI frameworks driving grassroots change.
-                </p>
-              </div>
+              <SectionHeading
+                eyebrow="Areas of Action"
+                title="Our Programmatic Pillars"
+                description="Comprehensive approaches expertly aligned with NADAP 2025-2030 and YTEI frameworks driving grassroots change."
+                className="mb-12"
+              />
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {programPillars.map((pillar, index) => (
                   <div
                     key={index}
-                    className="group bg-white rounded-lg p-8 shadow-sm hover:shadow-md border border-slate-100 transition-all duration-500 flex flex-col h-full relative overflow-hidden"
+                    className="bg-white border border-slate-200 p-8 shadow-sm hover:border-blue-300 transition-colors flex flex-col h-full"
                   >
-                    <div className="absolute top-0 right-0 p-8 opacity-5 text-9xl font-black text-slate-900 -translate-y-8 translate-x-8 mix-blend-overlay group-hover:opacity-10 transition-opacity duration-500 pointer-events-none">
-                      {index + 1}
-                    </div>
-                    <div className="bg-slate-50 text-blue-600 w-16 h-16 rounded-lg flex items-center justify-center mb-6 shadow-sm border border-slate-100 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500">
+                    <div className="bg-blue-50 text-blue-700 w-16 h-16 flex items-center justify-center mb-6 border border-slate-200">
                       {pillar.icon}
                     </div>
 
-                    <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-xl font-semibold text-slate-900 mb-4 tracking-tight">
                       {pillar.title}
                     </h3>
                     <p className="text-slate-600 leading-relaxed flex-1">
                       {pillar.description}
                     </p>
 
-                    <div className="mt-8 pt-6 border-t border-slate-100">
-                      <span className="text-sm font-bold text-blue-600 uppercase tracking-wider">Pillar {index + 1}</span>
+                    <div className="mt-8 pt-6 border-t border-slate-200">
+                      <span className="text-sm font-semibold text-blue-700 uppercase tracking-wider">Pillar {index + 1}</span>
                     </div>
                   </div>
                 ))}
               </div>
             </motion.div>
 
-
-
-            {/* Guiding Values - Premium */}
+            {/* Guiding Values */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
               viewport={{ once: true }}
-              className="mb-24 max-w-7xl mx-auto"
+              className="mb-20 lg:mb-24"
             >
-              <div className="text-center mb-16">
-                <span className="text-yellow-500 font-semibold tracking-wider uppercase text-sm mb-3 block">Organizational Core</span>
-                <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">Our Guiding Values</h2>
-                <p className="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
-                  The unwavering principles that shape our operational approach and drive our decision-making.
-                </p>
-              </div>
+              <SectionHeading
+                eyebrow="Organizational Core"
+                title="Our Guiding Values"
+                description="The unwavering principles that shape our operational approach and drive our decision-making."
+                className="mb-12"
+              />
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {guidingValues.map((value, index) => (
                   <div
                     key={index}
-                    className="group bg-white rounded-lg p-8 shadow-sm hover:shadow-md border border-slate-100 transition-all duration-300 relative overflow-hidden"
+                    className="bg-white border border-slate-200 p-8 shadow-sm hover:border-blue-300 transition-colors"
                   >
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-400/5 rounded-bl-full -mr-8 -mt-8 transition-transform duration-500 group-hover:scale-110"></div>
-                    <div className="relative z-10">
-                      <div className="w-12 h-1 bg-yellow-400 mb-6 rounded-lg group-hover:w-16 transition-all duration-300"></div>
-                      <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight group-hover:text-blue-600 transition-colors">
-                        {value.title}
-                      </h3>
-                      <p className="text-slate-600 leading-relaxed">
-                        {value.description}
-                      </p>
-                    </div>
+                    <div className="w-10 h-1 bg-yellow-400 mb-6"></div>
+                    <h3 className="text-xl font-semibold text-slate-900 mb-4 tracking-tight">
+                      {value.title}
+                    </h3>
+                    <p className="text-slate-600 leading-relaxed">
+                      {value.description}
+                    </p>
                   </div>
                 ))}
               </div>
             </motion.div>
 
-            {/* Strategic Objectives - Premium */}
+            {/* Strategic Objectives */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
               viewport={{ once: true }}
-              className="mb-24 max-w-7xl mx-auto"
+              className="mb-20 lg:mb-24"
             >
-                  <div className="bg-slate-900 rounded-lg p-10 md:p-16 shadow-2xl relative overflow-hidden">
-                    <div className="absolute inset-0 bg-[url('/assets/pattern-bg.png')] opacity-5 mix-blend-overlay"></div>
+              <div className="bg-slate-950 border border-slate-800 p-10 md:p-14">
+                <SectionHeading tone="dark" eyebrow="Our Goals" title="Strategic Objectives" className="mb-12" />
 
-                    <div className="relative z-10">
-                      <span className="text-blue-400 font-semibold tracking-wider uppercase text-sm mb-3 block text-center">Our Goals</span>
-                      <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 text-center tracking-tight">Strategic Objectives</h2>
-
-                      <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-                        {objectives.map((objective, index) => (
-                          <div key={index} className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10 hover:bg-white/10 transition-colors duration-300 group">
-                            <div className="flex items-start gap-5">
-                              <div className="bg-blue-600/30 p-3 rounded-lg border border-blue-500/30 shrink-0 group-hover:bg-blue-500/50 transition-colors">
-                            <FiCheckCircle className="w-6 h-6 text-white" />
-                          </div>
-                          <p className="text-slate-200 leading-relaxed text-lg font-light">{objective}</p>
+                <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+                  {objectives.map((objective, index) => (
+                    <div key={index} className="bg-slate-900 border border-slate-700 p-6">
+                      <div className="flex items-start gap-5">
+                        <div className="bg-blue-700 p-3 shrink-0">
+                          <FiCheckCircle className="w-6 h-6 text-slate-900" />
                         </div>
+                        <p className="text-slate-200 leading-relaxed text-lg">{objective}</p>
                       </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Meet Our Team Section - Premium Redesign */}
-            <Team />
-            {/* Our Impact Section - Premium Redesign */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.9 }}
-              viewport={{ once: true }}
-              className="mb-24 max-w-7xl mx-auto"
-            >
-                <div className="bg-blue-900 rounded-lg p-10 md:p-14 shadow-2xl relative overflow-hidden">
-                  <div className="absolute inset-0 bg-[url('/assets/pattern-bg.png')] opacity-10 mix-blend-overlay"></div>
-
-                  <h2 className="text-3xl md:text-5xl font-bold text-white mb-12 text-center tracking-tight drop-shadow-sm relative z-10">Strategic Impact & Alignment</h2>
-
-                  <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 relative z-10">
-                    {impactHighlights.map((highlight, index) => (
-                      <div key={index} className="bg-white/10 backdrop-blur-md rounded-lg p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:-translate-y-2 group">
-                        <div className="bg-white/10 w-16 h-16 rounded-lg flex items-center justify-center mb-6 shadow-md border border-white/10 group-hover:scale-110 transition-transform duration-300">
-                        <div className="text-yellow-400 text-2xl">
-                          {highlight.icon}
-                        </div>
-                      </div>
-                      <h4 className="text-xl font-bold text-white mb-3 tracking-tight">{highlight.title}</h4>
-                      <p className="text-blue-100 text-sm leading-relaxed">{highlight.description}</p>
                     </div>
                   ))}
                 </div>
               </div>
             </motion.div>
 
-            {/* National Policy Alignment Section - Premium */}
+            {/* Meet Our Team */}
+            <Team />
+
+            {/* Strategic Impact & Alignment */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.9 }}
+              viewport={{ once: true }}
+              className="mb-20 lg:mb-24"
+            >
+              <div className="bg-slate-950 border border-slate-800 p-10 md:p-14">
+                <SectionHeading tone="dark" eyebrow="Impact Highlights" title="Strategic Impact & Alignment" className="mb-12" />
+
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                  {impactHighlights.map((highlight, index) => (
+                    <div key={index} className="bg-slate-900 border border-slate-700 p-8">
+                      <div className="bg-yellow-400 w-16 h-16 flex items-center justify-center mb-6 text-slate-900 text-2xl">
+                        {highlight.icon}
+                      </div>
+                      <h4 className="text-lg font-semibold text-white mb-3 tracking-tight">{highlight.title}</h4>
+                      <p className="text-slate-400 text-sm leading-relaxed">{highlight.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+
+            {/* National Policy Alignment */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.0 }}
               viewport={{ once: true }}
-              className="mb-24 max-w-7xl mx-auto"
             >
-              <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                 <div className="order-2 lg:order-1">
-                  <span className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-3 block">Strategic Framework</span>
-                  <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 tracking-tight">National Policy Alignment</h2>
+                  <SectionHeading align="left" eyebrow="Strategic Framework" title="National Policy Alignment" className="mb-8" />
 
                   <div className="space-y-8">
-                    <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-100 hover:shadow-md transition-shadow duration-300 relative overflow-hidden group">
-                      <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-blue-500 rounded-l-xl"></div>
-                      <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">Youth Transformation & Empowerment Initiative <span className="text-blue-500">(YTEI)</span></h3>
+                    <div className="bg-white border border-slate-200 p-6 pl-8 shadow-sm hover:border-blue-300 transition-colors relative">
+                      <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-blue-500"></div>
+                      <h3 className="text-xl font-semibold text-slate-900 mb-3">Youth Transformation & Empowerment Initiative <span className="text-blue-600">(YTEI)</span></h3>
                       <p className="text-slate-600 leading-relaxed text-sm md:text-base">
                         KSL advances YTEI priorities by strengthening youth leadership and civic engagement, expanding education access and vocational pathways, supporting psychosocial well-being, and positioning young people as crucial agents of change.
                       </p>
                     </div>
 
-                    <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-100 hover:shadow-md transition-shadow duration-300 relative overflow-hidden group">
-                      <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-emerald-500 rounded-l-xl"></div>
-                      <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-emerald-600 transition-colors">National Anti-Drugs Action Plan <span className="text-emerald-500">(NADAP) 2025–2030</span></h3>
+                    <div className="bg-white border border-slate-200 p-6 pl-8 shadow-sm hover:border-blue-300 transition-colors relative">
+                      <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-yellow-500"></div>
+                      <h3 className="text-xl font-semibold text-slate-900 mb-3">National Anti-Drugs Action Plan <span className="text-yellow-600">(NADAP) 2025–2030</span></h3>
                       <p className="text-slate-600 leading-relaxed text-sm md:text-base">
                         KSL directly contributes to NADAP implementation through drug use prevention and awareness, early intervention and rehabilitation, national based approaches to drug demand reduction, and broad advocacy promoting public health and social reintegration.
                       </p>
@@ -452,21 +424,29 @@ const About = () => {
                   </div>
                 </div>
 
-                <div className="order-1 lg:order-2 h-[31.25rem] w-full relative group">
-                  <div className="absolute inset-0 bg-blue-600 rounded-lg translate-x-4 translate-y-4 opacity-10 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform duration-500"></div>
-                  <img
-                    src={KSL_Teams2}
-                    alt="KSL Team in Action"
-                    className="w-full h-full object-cover rounded-lg shadow-2xl relative z-10"
-                    loading="lazy"
-                  />
+                <div className="order-1 lg:order-2">
+                  <div className="bg-slate-100 border border-slate-200 p-2">
+                    <img
+                      src={KSL_Teams2}
+                      alt="KSL Team in Action"
+                      className="w-full h-[31.25rem] object-cover"
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
               </div>
             </motion.div>
-
-
           </div>
         </main>
+
+        <CTABanner
+          title="Help us build a safer, healthier Liberia"
+          description="Your support funds drug abuse prevention, rehabilitation, education, and protection programs for Liberia's most vulnerable children and youth."
+          primaryLabel="Donate Now"
+          primaryTo="/donate"
+          secondaryLabel="Volunteer With Us"
+          secondaryTo="/volunteer"
+        />
       </div>
     </>
   );

@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import {
   FiMail,
   FiSend,
@@ -9,6 +8,27 @@ import {
 import ContactImage from '../assets/About Picture.jpeg';
 import emailjs from '@emailjs/browser';
 import SEO from '../components/SEO';
+
+const CONTACT_JSON_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: 'Contact Kids Survivor Liberia',
+  url: 'https://ksliberia.org/contact',
+  mainEntity: {
+    '@type': 'NGO',
+    name: 'Kids Survivor Liberia',
+    telephone: '+231887291599',
+    email: 'support@ksliberia.org',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Monrovia',
+      addressRegion: 'Montserrado',
+      addressCountry: 'LR',
+    },
+  },
+};
+import PageHeader from '../components/PageHeader';
+import SectionHeading from '../components/SectionHeading';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -85,13 +105,25 @@ const Contact = () => {
     });
   };
 
+  const inputClasses = "w-full px-5 py-3.5 bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:bg-white transition-colors disabled:opacity-70 disabled:cursor-not-allowed outline-none";
+
   return (
     <>
       <SEO
         title="Contact Kids Survivor Liberia — Get in Touch"
-        description="Contact Kids Survivor Liberia headquarters in Monrovia. Reach out for partnerships, volunteering, drug prevention inquiries, or general support."
+        description="Contact Kids Survivor Liberia headquarters in Monrovia. Reach out for partnerships, volunteering, drug prevention inquiries, or general support. Call +231 887 291 599."
         canonical="/contact"
-        keywords={['Contact Kids Survivor Liberia', 'KSL Monrovia office', 'KSL phone number', 'Liberia NGO contact']}
+        keywords={[
+          'Contact Kids Survivor Liberia',
+          'KSL Monrovia office',
+          'KSL phone number Liberia',
+          'Liberia NGO contact',
+          'partnership inquiries Liberia',
+          'volunteer with KSL Liberia',
+          'donate to KSL Liberia',
+        ]}
+        breadcrumbs={[{ name: 'Contact', url: '/contact' }]}
+        jsonLd={CONTACT_JSON_LD}
       />
       <div className="min-h-screen bg-white">
         {/* Toast Container */}
@@ -108,82 +140,38 @@ const Contact = () => {
           theme="colored"
         />
 
-        {/* Main Header Section - Premium Redesign */}
-        <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[40px] md:rounded-b-[100px] shadow-xl border-b border-slate-100">
-          <div className="absolute inset-0 z-0">
-            <img
-              src={ContactImage}
-              alt="Contact Kids Survivor Liberia"
-              className="w-full h-full object-cover"
-              fetchPriority="high"
-            />
-            <div className="absolute inset-0 bg-blue-900/50 mix-blend-multiply"></div>
-            <div className="absolute inset-0 bg-slate-950/80"></div>
-          </div>
-
-          <div className="relative z-10 container mx-auto px-6 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="max-w-4xl mx-auto"
-            >
-              <span className="text-yellow-400 font-bold tracking-widest uppercase text-sm mb-4 block drop-shadow-md">Get In Touch</span>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 tracking-tight drop-shadow-xl">
-                Contact Us
-              </h1>
-              <p className="text-xl md:text-2xl text-blue-100 font-light leading-relaxed max-w-3xl mx-auto border-l-4 border-yellow-400 pl-6 text-left md:text-center md:border-l-0 md:pl-0">
-                We're here to assist you. Reach out with any questions, partnership inquiries, or support needs.
-              </p>
-            </motion.div>
-          </div>
-        </header>
+        <PageHeader
+          eyebrow="Get In Touch"
+          title="Contact Us"
+          description="We're here to assist you. Reach out with any questions, partnership inquiries, or support needs."
+          image={ContactImage}
+          alt="Contact Kids Survivor Liberia"
+        />
 
         {/* Main Content */}
-        <main className="py-20 relative">
-          <div className="container mx-auto px-4 sm:px-6 relative z-10">
-            {/* Contact Introduction - Premium */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-center mb-16 max-w-4xl mx-auto"
-            >
-              <div className="flex items-center justify-center gap-3 mb-4">
-                 <div className="w-8 h-1 bg-yellow-400 rounded-lg"></div>
-                 <span className="text-blue-600 font-extrabold tracking-widest uppercase text-sm">Reach Out</span>
-                 <div className="w-8 h-1 bg-yellow-400 rounded-lg"></div>
-              </div>
-              <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight">Let's Connect</h2>
-              <p className="text-slate-600 text-lg leading-relaxed">
-                We're here to help and answer any questions you might have.
-                Whether you want to volunteer, partner with us, or learn more about our programs,
-                we look forward to hearing from you.
-              </p>
-            </motion.div>
+        <main className="py-16 lg:py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <SectionHeading
+              eyebrow="Reach Out"
+              title="Let's Connect"
+              description="We're here to help and answer any questions you might have. Whether you want to volunteer, partner with us, or learn more about our programs, we look forward to hearing from you."
+              className="mb-16"
+            />
 
-            {/* Contact Form - Premium */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="max-w-4xl mx-auto"
-            >
-              <div className="bg-white rounded-lg shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 p-8 sm:p-12 lg:p-16 relative overflow-hidden">
-
-                <div className="flex flex-col sm:flex-row items-start sm:items-center mb-10 gap-6 relative z-10">
-                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-100 text-blue-600 shadow-sm">
+            {/* Contact Form */}
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-white border border-slate-200 p-8 sm:p-12">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center mb-10 gap-6">
+                  <div className="bg-blue-50 text-blue-700 rounded-sm p-3">
                     <FiMessageSquare className="w-8 h-8" />
                   </div>
                   <div>
-                    <h2 className="text-3xl font-bold text-slate-900 mb-2 tracking-tight">Send us a Message</h2>
+                    <h2 className="text-2xl font-semibold text-slate-900 mb-1">Send us a Message</h2>
                     <p className="text-slate-500 font-medium">We typically respond within 24 hours</p>
                   </div>
                 </div>
 
-                <form onSubmit={handleSubmit} ref={form} className="space-y-8 relative z-10">
+                <form onSubmit={handleSubmit} ref={form} className="space-y-8">
                   <div className="grid md:grid-cols-2 gap-8">
                     <div className="group">
                       <label className="block text-slate-700 mb-2 font-semibold text-sm tracking-wide uppercase">Name</label>
@@ -196,7 +184,7 @@ const Contact = () => {
                           onChange={handleChange}
                           required
                           disabled={isSubmitting}
-                          className="w-full pl-12 pr-4 py-4 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:bg-white transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed outline-none"
+                          className={`${inputClasses} pl-11`}
                           placeholder="Your full name"
                         />
                       </div>
@@ -213,7 +201,7 @@ const Contact = () => {
                           onChange={handleChange}
                           required
                           disabled={isSubmitting}
-                          className="w-full pl-12 pr-4 py-4 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:bg-white transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed outline-none"
+                          className={`${inputClasses} pl-11`}
                           placeholder="your@email.com"
                         />
                       </div>
@@ -229,7 +217,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       disabled={isSubmitting}
-                      className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:bg-white transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed outline-none"
+                      className={inputClasses}
                       placeholder="How can we help you?"
                     />
                   </div>
@@ -243,7 +231,7 @@ const Contact = () => {
                       required
                       rows="6"
                       disabled={isSubmitting}
-                      className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:bg-white transition-all duration-300 resize-none disabled:opacity-70 disabled:cursor-not-allowed outline-none"
+                      className={`${inputClasses} resize-none`}
                       placeholder="Please provide details about your inquiry..."
                     ></textarea>
                   </div>
@@ -252,16 +240,13 @@ const Contact = () => {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className={`flex items-center justify-center space-x-3 text-white px-10 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl w-full sm:w-auto ${isSubmitting
-                        ? 'bg-slate-400 cursor-not-allowed'
-                        : 'bg-blue-700 hover:bg-blue-800 hover:-translate-y-1'
+                      className={`inline-flex items-center justify-center space-x-3 px-8 py-3.5 font-semibold transition-colors w-full sm:w-auto ${isSubmitting
+                        ? 'bg-slate-400 cursor-not-allowed text-white'
+                        : 'bg-blue-700 hover:bg-blue-800 text-white'
                         }`}
                     >
                       {isSubmitting ? (
-                        <>
-                          <div className="w-5 h-5 border-2 border-white/50 border-t-white rounded-full animate-spin"></div>
-                          <span>Sending...</span>
-                        </>
+                        <span>Sending...</span>
                       ) : (
                         <>
                           <FiSend className="w-5 h-5" />
@@ -275,21 +260,14 @@ const Contact = () => {
                   </div>
                 </form>
               </div>
-            </motion.div>
+            </div>
 
-            {/* Map Section - Premium */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="mt-24 max-w-5xl mx-auto"
-            >
-              <div className="bg-white rounded-lg shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 overflow-hidden relative group">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-400/20 rounded-bl-2xl -z-10 group-hover:bg-yellow-400/30 transition-colors duration-500"></div>
-                <div className="p-10 border-b border-slate-100 flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
+            {/* Map Section */}
+            <div className="mt-20 max-w-5xl mx-auto">
+              <div className="bg-white border border-slate-200">
+                <div className="p-8 sm:p-10 border-b border-slate-200 flex flex-col md:flex-row md:items-center justify-between gap-6">
                   <div>
-                    <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2 tracking-tight">Visit Our Headquarters</h2>
+                    <h2 className="text-2xl font-semibold text-slate-900 mb-2">Visit Our Headquarters</h2>
                     <p className="text-slate-600 font-medium">15th Street, Barclay Avenue, Sinkor, Monrovia, Liberia</p>
                   </div>
                   <div className="shrink-0">
@@ -297,7 +275,7 @@ const Contact = () => {
                       href="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=15TH%20STREET,%20BARCLAY%20AVENUE,%20SINKOR,%20MONTSERRADO%20COUNTRY+(Kids%20Survivor%20Liberia)"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center px-6 py-3 bg-slate-50 border border-slate-200 text-slate-700 hover:text-blue-600 hover:bg-white hover:border-blue-200 rounded-lg font-semibold transition-all shadow-sm"
+                      className="inline-flex items-center justify-center px-6 py-3 bg-slate-50 border border-slate-300 text-slate-700 hover:text-blue-600 hover:bg-white hover:border-blue-500 font-semibold transition-colors shadow-sm"
                     >
                       Get Directions
                     </a>
@@ -317,7 +295,7 @@ const Contact = () => {
                   ></iframe>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </main>
       </div>

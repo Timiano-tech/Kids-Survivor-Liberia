@@ -1,4 +1,18 @@
+# robots.txt for Kids Survivor Liberia — https://ksliberia.org
 User-agent: *
+Allow: /
+
+# Search & AI crawlers are welcome so our mission reaches more people
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
 Allow: /
 
 Sitemap: https://ksliberia.org/sitemap.xml

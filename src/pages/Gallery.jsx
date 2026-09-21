@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiChevronLeft, FiChevronRight, FiX, FiDownload } from 'react-icons/fi';
 import SEO from '../components/SEO';
+import PageHeader from '../components/PageHeader';
+import SectionHeading from '../components/SectionHeading';
+import CTABanner from '../components/CTABanner';
 import Education1 from '../assets/Students2.jpeg';
 import Community from '../assets/Treatment_of_wounds.jpeg';
 import Education2 from '../assets/Students.jpeg';
@@ -262,83 +265,72 @@ const Gallery = () => {
   return (
     <>
       <SEO
-        title="Photo Gallery — Kids Survivor Liberia Impact in Action"
-        description="Explore photo gallery highlighting Kids Survivor Liberia education, community outreach, health screenings, anti-drug campaigns, and field activities."
+        title="Photo Gallery — Kids Survivor Liberia in Action"
+        description="Browse photos of Kids Survivor Liberia community outreach, drug prevention campaigns, education programs, and child protection activities across Liberia."
         canonical="/gallery"
-        keywords={['KSL gallery', 'Liberia NGO photos', 'community outreach pictures', 'child protection gallery']}
+        keywords={[
+          'KSL photo gallery',
+          'Liberia NGO photos',
+          'child protection pictures Liberia',
+          'community outreach gallery',
+          'drug prevention campaign photos',
+          'KSL youth programs images',
+          'Liberia charity photos',
+          'Gbarnga outreach gallery',
+        ]}
+        breadcrumbs={[{ name: 'Gallery', url: '/gallery' }]}
       />
       <div className="min-h-screen bg-white">
-      {/* Main Header Section - Premium Redesign */}
-      <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[40px] md:rounded-b-[100px] shadow-xl border-b border-slate-100">
-        <div className="absolute inset-0 z-0">
-          <img
-            src={KSL}
-            alt="KSL Background"
-            className="w-full h-full object-cover"
-            fetchPriority="high"
-          />
-          <div className="absolute inset-0 bg-blue-900/50 mix-blend-multiply"></div>
-          <div className="absolute inset-0 bg-slate-950/80"></div>
-        </div>
-
-        <div className="relative z-10 container mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto"
-          >
-            <span className="text-yellow-400 font-bold tracking-widest uppercase text-sm mb-4 block drop-shadow-md">Our Visual Journey</span>
-            <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight drop-shadow-xl">
-              Photo Gallery
-            </h1>
-            <p className="text-xl md:text-2xl text-blue-100 font-light leading-relaxed max-w-3xl mx-auto border-l-4 border-yellow-400 pl-6 text-left md:text-center md:border-l-0 md:pl-0">
-              A collection of moments capturing our impact on children and communities in Liberia.
-            </p>
-          </motion.div>
-        </div>
-      </header>
+      <PageHeader
+        eyebrow="Our Visual Journey"
+        title="Photo Gallery"
+        description="A collection of moments capturing our impact on children and communities in Liberia."
+        image={KSL}
+        alt="KSL Background"
+      />
 
       {/* Main Content */}
-      <main className="py-16">
-        <div className="container mx-auto px-4">
-          {/* Category Filter - Premium Redesign */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="mb-16 flex justify-center"
-          >
-            <div className="inline-flex flex-wrap justify-center gap-3 bg-slate-50 p-2 rounded-lg border border-slate-200 shadow-sm max-w-full">
+      <main className="py-16 lg:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* Section Intro */}
+          <SectionHeading
+            eyebrow="Gallery"
+            title="Moments from the Field"
+            description="A collection of photographs from our education, community outreach, health, and awareness campaign work across Liberia."
+          />
+
+          {/* Category Filter */}
+          <div className="mb-12 flex justify-center">
+            <div className="inline-flex flex-wrap justify-center gap-2">
               {galleryCategories.map((category) => (
                 <button
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
-                  className={`px-6 py-3 rounded-lg text-sm font-bold tracking-wide transition-all duration-300 whitespace-nowrap ${activeCategory === category.id
-                    ? 'bg-blue-600 text-white shadow-md shadow-blue-500/30 -translate-y-0.5'
-                    : 'bg-transparent text-slate-600 hover:bg-white hover:text-blue-600 hover:shadow-sm'
+                  className={`px-4 py-2 text-sm font-semibold transition-colors whitespace-nowrap ${activeCategory === category.id
+                    ? 'bg-blue-700 text-white'
+                    : 'bg-white border border-slate-300 text-slate-600 hover:border-blue-500'
                     }`}
                 >
                   {category.name}
                 </button>
               ))}
             </div>
-          </motion.div>
+          </div>
 
-          {/* Gallery Grid - Premium */}
+          {/* Gallery Grid */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6"
           >
             {filteredImages.map((image, index) => (
               <motion.div
                 key={image.id}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: index * 0.05 }}
-                whileHover={{ y: -8 }}
-                className="relative group cursor-pointer overflow-hidden rounded-lg shadow-sm hover:shadow-md bg-white border border-slate-100"
+                className="relative group cursor-pointer overflow-hidden bg-white border border-slate-200 hover:border-blue-300 transition-colors"
                 onClick={() => handleImageClick(image, index)}
               >
                 {/* Image Container */}
@@ -354,14 +346,14 @@ const Gallery = () => {
                 </div>
 
                 {/* Content Reveal Overlay */}
-                <div className="absolute inset-x-0 bottom-0 p-6 text-white transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 z-20">
-                  <h3 className="font-bold text-xl mb-2 tracking-tight drop-shadow-md">{image.title}</h3>
+                <div className="absolute inset-x-0 bottom-0 p-5 text-white translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 z-20 bg-slate-950/70">
+                  <h3 className="font-semibold text-lg mb-1 tracking-tight">{image.title}</h3>
                   <p className="text-sm text-blue-100 font-medium line-clamp-2">{image.description}</p>
                 </div>
 
                 {/* Category Badge */}
                 <div className="absolute top-4 left-4 z-20">
-                  <span className="px-4 py-1.5 bg-white/90 backdrop-blur-md shadow-sm text-xs font-bold tracking-widest uppercase rounded-lg text-blue-900 border border-white/20">
+                  <span className="px-3 py-1 bg-blue-700 text-white text-xs font-semibold tracking-widest uppercase">
                     {galleryCategories.find(c => c.id === image.category)?.name}
                   </span>
                 </div>
@@ -372,33 +364,35 @@ const Gallery = () => {
           {/* No Images Message */}
           {filteredImages.length === 0 && (
             <div className="text-center py-16">
-              <p className="text-gray-500 text-lg">No images found in this category.</p>
+              <p className="text-slate-500 text-lg">No images found in this category.</p>
             </div>
           )}
         </div>
       </main>
+      <CTABanner
+        title="See more impact in person"
+        description="Every photo represents a real life changed. Join us in expanding education, health, and protection programs across Liberia."
+        primaryLabel="Donate Now"
+        secondaryLabel="Volunteer With Us"
+        secondaryTo="/volunteer"
+      />
 
-      {/* Lightbox Modal - Premium */}
+      {/* Lightbox Modal */}
       {selectedImage && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/95 backdrop-blur-xl p-4 sm:p-8"
-        >
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/95 p-4 sm:p-8">
           <div className="relative w-full max-w-6xl mx-auto flex flex-col items-center">
             {/* Top Bar Navigation */}
             <div className="absolute top-0 right-0 left-0 flex justify-between items-center p-4 z-20 pointer-events-none">
               <button
                 onClick={() => handleDownload(selectedImage.src)}
-                className="p-3 bg-white/10 hover:bg-white/20 text-white rounded-lg backdrop-blur-md transition-all duration-300 pointer-events-auto border border-white/10 hover:scale-110"
+                className="p-3 bg-slate-900 hover:bg-slate-800 text-white transition-colors pointer-events-auto border border-slate-700"
                 aria-label="Download image"
               >
                 <FiDownload size={22} />
               </button>
               <button
                 onClick={handleCloseModal}
-                className="p-3 bg-white/10 hover:bg-red-500/80 text-white rounded-lg backdrop-blur-md transition-all duration-300 pointer-events-auto border border-white/10 hover:scale-110"
+                className="p-3 bg-slate-900 hover:bg-slate-800 text-white transition-colors pointer-events-auto border border-slate-700"
                 aria-label="Close modal"
               >
                 <FiX size={24} />
@@ -408,42 +402,34 @@ const Gallery = () => {
             {/* Navigation Buttons */}
             <button
               onClick={(e) => { e.stopPropagation(); handlePrev(); }}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 p-4 bg-white/5 hover:bg-white/20 text-white rounded-lg backdrop-blur-md transition-all duration-300 z-20 border border-white/10 hover:scale-110 group hidden sm:flex"
+              className="absolute left-4 top-1/2 -translate-y-1/2 p-4 bg-slate-900 hover:bg-slate-800 text-white transition-colors z-20 border border-slate-700 hidden sm:flex"
             >
-              <FiChevronLeft size={32} className="group-hover:-translate-x-1 transition-transform" />
+              <FiChevronLeft size={32} />
             </button>
             <button
               onClick={(e) => { e.stopPropagation(); handleNext(); }}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 p-4 bg-white/5 hover:bg-white/20 text-white rounded-lg backdrop-blur-md transition-all duration-300 z-20 border border-white/10 hover:scale-110 group hidden sm:flex"
+              className="absolute right-4 top-1/2 -translate-y-1/2 p-4 bg-slate-900 hover:bg-slate-800 text-white transition-colors z-20 border border-slate-700 hidden sm:flex"
             >
-              <FiChevronRight size={32} className="group-hover:translate-x-1 transition-transform" />
+              <FiChevronRight size={32} />
             </button>
 
             {/* Image Display */}
             <div className="relative mt-16 sm:mt-0 max-h-[75vh] w-full flex justify-center items-center">
-              <motion.img
+              <img
                 key={selectedImage.id}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4 }}
                 src={selectedImage.src}
                 alt={selectedImage.title}
-                className="max-w-full max-h-[75vh] object-contain rounded-lg shadow-2xl ring-1 ring-white/10"
+                className="max-w-full max-h-[75vh] object-contain border border-slate-800"
               />
             </div>
 
             {/* Image Info Panel */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="mt-8 text-center w-full max-w-2xl bg-slate-800/50 backdrop-blur-md rounded-lg p-6 border border-white/10"
-            >
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-3 tracking-tight">{selectedImage.title}</h3>
-              <p className="text-blue-100 text-lg mb-4 font-light leading-relaxed">{selectedImage.description}</p>
+            <div className="mt-8 text-center w-full max-w-2xl bg-slate-900 p-6 border border-slate-800">
+              <h3 className="text-2xl sm:text-3xl font-semibold text-white mb-3 tracking-tight">{selectedImage.title}</h3>
+              <p className="text-blue-100 text-lg mb-4 leading-relaxed">{selectedImage.description}</p>
 
-              <div className="flex justify-center items-center space-x-6">
-                <span className="px-4 py-1.5 bg-yellow-400/20 text-yellow-300 border border-yellow-400/30 backdrop-blur-sm rounded-lg text-sm font-bold uppercase tracking-widest">
+              <div className="flex justify-center items-center gap-6">
+                <span className="px-3 py-1 bg-yellow-400 text-slate-900 text-sm font-semibold uppercase tracking-widest">
                   {galleryCategories.find(c => c.id === selectedImage.category)?.name}
                 </span>
                 <span className="text-sm font-medium text-slate-400 tracking-widest">
@@ -452,23 +438,25 @@ const Gallery = () => {
               </div>
 
               {/* Mobile Navigation */}
-              <div className="flex justify-center gap-6 mt-6 sm:hidden">
+              <div className="flex justify-center gap-4 mt-6 sm:hidden">
                 <button
                   onClick={handlePrev}
-                  className="p-3 bg-white/10 text-white rounded-lg"
+                  className="p-3 bg-slate-900 border border-slate-700 text-white"
+                  aria-label="Previous image"
                 >
                   <FiChevronLeft size={24} />
                 </button>
                 <button
                   onClick={handleNext}
-                  className="p-3 bg-white/10 text-white rounded-lg"
+                  className="p-3 bg-slate-900 border border-slate-700 text-white"
+                  aria-label="Next image"
                 >
                   <FiChevronRight size={24} />
                 </button>
               </div>
-            </motion.div>
+            </div>
           </div>
-        </motion.div>
+        </div>
       )}
     </div>
   </>

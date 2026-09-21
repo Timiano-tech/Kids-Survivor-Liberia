@@ -42,73 +42,69 @@ export const LatestNewsSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-slate-50 relative">
-      <div className="absolute inset-0 bg-[url('/assets/pattern-bg.png')] opacity-5 mix-blend-multiply"></div>
-      <div className="container mx-auto px-4 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
+    <section className="py-20 bg-slate-50">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<motion.div
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
-          <div className="inline-flex items-center px-4 py-2 bg-blue-100/50 text-blue-700 rounded-lg text-sm font-bold tracking-wide uppercase mb-4 shadow-sm border border-blue-100">
+          <span className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-700 border border-blue-100 text-button tracking-wide uppercase mb-4">
             <FiMessageSquare className="mr-2" />
-            PROGRAM UPDATES & INSIGHTS
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
-            Latest from Our Programs
-          </h2>
-          <p className="text-slate-600 max-w-2xl mx-auto text-lg">
+            Program Updates & Insights
+          </span>
+          <h2 className="text-[1.5rem] sm:text-display-md lg:text-display-lg font-medium text-slate-900">Latest from Our Programs</h2>
+          <p className="mt-3 md:mt-4 text-[0.9rem] md:text-body-md text-slate-600 max-w-2xl mx-auto">
             Updates on our NADAP and YTEI-aligned initiatives and their impact
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-16 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 mb-12 max-w-6xl mx-auto">
           {latestNews.map((news, index) => (
             <motion.div
               key={news.id}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
               className="group"
             >
-              <div className="bg-white rounded-lg shadow-sm hover:shadow-md border border-slate-100 overflow-hidden transition-all duration-300 h-full flex flex-col">
-                <div className="relative h-60 overflow-hidden">
+              <div className="bg-white border border-slate-200 hover:border-blue-300 transition-colors h-full flex flex-col">
+                <div className="relative h-56 overflow-hidden">
                   <img
                     src={news.image}
                     alt={news.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-cover"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-slate-950/40"></div>
                   <div className="absolute top-4 left-4">
-                    <span className="bg-blue-600/90 backdrop-blur-sm text-white px-4 py-1.5 rounded-lg text-xs font-bold tracking-wider uppercase shadow-sm">
+                    <span className="bg-blue-700 text-white px-3.5 py-1.5 text-caption tracking-wider uppercase">
                       {news.category}
                     </span>
                   </div>
                 </div>
 
-                <div className="p-8 flex-1 flex flex-col">
-                  <div className="flex items-center text-xs font-semibold uppercase tracking-wider text-slate-500 mb-4">
-                    <FiCalendar className="mr-2 shrink-0 text-blue-500" />
+                <div className="p-7 flex-1 flex flex-col">
+                  <div className="flex items-center text-caption font-semibold uppercase tracking-wider text-slate-500 mb-4">
+                    <FiCalendar className="mr-2 shrink-0 text-blue-600" />
                     {news.date}
                     <span className="mx-3 text-slate-300">•</span>
-                    <FiUser className="mr-2 shrink-0 text-blue-500" />
+                    <FiUser className="mr-2 shrink-0 text-blue-600" />
                     {news.author}
                   </div>
 
-                  <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors line-clamp-3 leading-snug">
+                  <h3 className="text-heading-md font-medium text-slate-900 mb-3 leading-snug group-hover:text-blue-700 transition-colors line-clamp-3">
                     {news.title}
                   </h3>
 
-                  <p className="text-slate-600 mb-6 flex-1 line-clamp-3 leading-relaxed">
+                  <p className="text-slate-600 text-body-md mb-6 flex-1 line-clamp-3 leading-relaxed">
                     {news.excerpt}
                   </p>
 
-                  <div className="flex justify-start items-center pt-6 border-t border-slate-100">
-                    <Link to={news.link} className="inline-flex items-center text-blue-600 hover:text-blue-700 font-bold group/link">
+                  <div className="flex justify-start items-center pt-5 border-t border-slate-100">
+                    <Link to={news.link} className="inline-flex items-center text-button text-blue-700 hover:text-blue-800 group/link">
                       Read Story
                       <FiArrowRight className="ml-2 group-hover/link:translate-x-1 transition-transform" />
                     </Link>
@@ -119,20 +115,12 @@ export const LatestNewsSection = () => {
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <Link to="/blog">
-            <button className="inline-flex items-center px-6 py-3 bg-white text-blue-600 border-2 border-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-300 hover:scale-105">
-              <span>View All Program Updates</span>
-              <FiArrowRight className="ml-2" />
-            </button>
+        <div className="text-center">
+          <Link to="/blog" className="inline-flex items-center px-6 py-3 bg-white text-blue-700 border border-blue-700 text-button hover:bg-blue-50 transition-colors">
+            <span>View All Program Updates</span>
+            <FiArrowRight className="ml-2" />
           </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -1,277 +1,254 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
+import { FiArrowRight, FiPause, FiPlay } from 'react-icons/fi';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiChevronLeft, FiChevronRight, FiPlay, FiPause, FiArrowRight } from 'react-icons/fi';
 
-import Education from '../../assets/Children on the assembly.jpeg';
-import NoToDrugs from '../../assets/Say no to drugs.jpeg';
-import Community from '../../assets/Community.jpeg';
-import CommunityOutreach from '../../assets/Community_Children_outreach.jpeg';
-import WomenCommunity from '../../assets/Women_in_community.jpeg';
-import EducationSkills from '../../assets/School_Students.jpeg';
+import HeroImage1 from '../../assets/Say no to drugs.jpeg';
+import HeroImage2 from '../../assets/Children.jpeg';
+import HeroImage3 from '../../assets/Community_Children.jpeg';
+import HeroImage4 from '../../assets/Education.jpg';
+import HeroImage5 from '../../assets/Success_Story.jpeg';
+
+const slides = [
+  {
+    id: 1,
+    image: HeroImage1,
+    badge: 'Making an Impact',
+    title: ['Building a Brighter Future for', "Liberia's Most Vulnerable"],
+    description: 'Kids Survivor Liberia protects vulnerable children, promotes education, and empowers young people through drug abuse prevention, rehabilitation, and community-driven programs.',
+    ctaText: 'Donate Now',
+    ctaLink: '/donate',
+    secondaryCtaText: 'Our Programs',
+    secondaryCtaLink: '/programs',
+    stat: { number: '13,000+', label: 'Lives touched' }
+  },
+  {
+    id: 2,
+    image: HeroImage2,
+    badge: 'Every Child Matters',
+    title: ['Every Child Deserves', 'a Chance to Thrive'],
+    description: 'Through our child protection programs, we provide safe spaces, psychosocial support, and educational opportunities for children affected by poverty and exploitation.',
+    ctaText: 'Sponsor a Child',
+    ctaLink: '/donate',
+    secondaryCtaText: 'Learn More',
+    secondaryCtaLink: '/programs',
+    stat: { number: '12,500+', label: 'In prevention programs' }
+  },
+  {
+    id: 3,
+    image: HeroImage3,
+    badge: 'Community First',
+    title: ['Strong Communities', 'Build Strong Futures'],
+    description: 'We work with local leaders, families, and community organizations to create sustainable solutions that address the root causes of child vulnerability.',
+    ctaText: 'Join Our Movement',
+    ctaLink: '/volunteer',
+    secondaryCtaText: 'See Our Impact',
+    secondaryCtaLink: '/impact',
+    stat: { number: '15', label: 'Counties covered' }
+  },
+  {
+    id: 4,
+    image: HeroImage4,
+    badge: 'Education Changes Lives',
+    title: ['Unlocking Potential', 'Through Education'],
+    description: 'From early childhood to vocational training, our education programs equip Liberias next generation with the knowledge and skills to break the cycle of poverty.',
+    ctaText: 'Support Education',
+    ctaLink: '/donate',
+    secondaryCtaText: 'Our Programs',
+    secondaryCtaLink: '/programs',
+    stat: { number: '3,000+', label: 'Households engaged' }
+  },
+  {
+    id: 5,
+    image: HeroImage5,
+    badge: 'Real Stories, Real Impact',
+    title: ['From Survival to', 'Success: Our Champions'],
+    description: 'Hear directly from the youth whose lives have been transformed through KSL programs. Their resilience and achievements inspire everything we do.',
+    ctaText: 'Read Their Stories',
+    ctaLink: '/impact',
+    secondaryCtaText: 'Get Involved',
+    secondaryCtaLink: '/volunteer',
+    stat: { number: '100+', label: 'Youth reintegrated' }
+  }
+];
 
 export const HeroSection = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [autoPlay, setAutoPlay] = useState(true);
-  const [imageError, setImageError] = useState({});
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(true);
 
+  const nextSlide = useCallback(() => {
+    setCurrentIndex((prev) => (prev + 1) % slides.length);
+  }, []);
 
-  const heroSlides = [
-    {
-      id: 1,
-      title: "Building a Brighter Future",
-      subtitle: "For Liberia's Vulnerable Communities",
-      description: "Kids Survivor Liberia is committed to protecting vulnerable children, promoting education, and empowering young people to build a brighter future across communities in Liberia.",
-      imagePlaceholder: NoToDrugs,
-      stats: "Protecting, Educating, Empowering"
-    },
-    {
-      id: 2,
-      title: "Youth Transformation & Empowerment",
-      subtitle: "Creating Pathways to Sustainable Development",
-      description: "Strengthening youth leadership, expanding education access, and supporting psychosocial wellbeing for positive youth development.",
-      imagePlaceholder: Education,
-      stats: "Supporting YTEI Priorities"
-    },
-    {
-      id: 3,
-      title: "Inclusive Community Resilience",
-      subtitle: "Protecting Children, Adolescent Girls, Youth & Vulnerable Elderly",
-      description: "Implementing rights based interventions that promote social reintegration, peacebuilding, and community resilience.",
-      imagePlaceholder: Community,
-      stats: "Community Driven Interventions"
-    },
-    {
-      id: 4,
-      title: "Reaching Every Child in Liberia",
-      subtitle: "Nationwide Drug Prevention & Protection Programs",
-      description: "Through grassroots community outreach across all 15 counties, KSL works hand-in-hand with families, schools, and local leaders to shield children from drug abuse, exploitation, and neglect — ensuring no child is left behind.",
-      imagePlaceholder: CommunityOutreach,
-      stats: "Active Across 7 Counties & Expanding"
-    },
-    {
-      id: 5,
-      title: "Empowering Women & Girls",
-      subtitle: "Education, Skills & Leadership for a Stronger Liberia",
-      description: "KSL invests in the education and empowerment of women, adolescent girls, and widows — providing skills training, psychosocial support, and safe spaces to help them lead change in their communities.",
-      imagePlaceholder: WomenCommunity,
-      stats: "Gender Equity & Inclusion"
-    },
-    {
-      id: 6,
-      title: "Education & Skills Development",
-      subtitle: "Unlocking Potential Through Learning & Vocational Training",
-      description: "KSL provides access to quality education, literacy programs, and hands-on vocational training — equipping children, youth, and young adults with the knowledge and skills they need to break the cycle of poverty and build self-sufficient livelihoods.",
-      imagePlaceholder: EducationSkills,
-      stats: "Building Future Leaders"
-    }
-  ];
-
-  // Auto-slide functionality
   useEffect(() => {
-    if (!autoPlay) return;
-
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 5000);
-
+    if (!isPlaying) return;
+    const interval = setInterval(nextSlide, 5500);
     return () => clearInterval(interval);
-  }, [autoPlay, heroSlides.length]);
+  }, [isPlaying, nextSlide]);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+  const current = slides[currentIndex];
+
+  const imageVariants = {
+    enter: { opacity: 0, scale: 1.05 },
+    center: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: 'easeOut' } },
+    exit: { opacity: 0, scale: 1.02, transition: { duration: 0.5, ease: 'easeOut' } }
   };
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
-  };
-
-  const handleImageError = (id) => {
-    setImageError(prev => ({ ...prev, [id]: true }));
+  const textVariants = {
+    enter: { opacity: 0, y: 20 },
+    center: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+    exit: { opacity: 0, y: -15, transition: { duration: 0.35, ease: 'easeOut' } }
   };
 
   return (
-    <section className="relative h-screen w-full bg-slate-900 overflow-hidden">
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={currentSlide}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.2, ease: "easeInOut" }}
-          className="absolute inset-0"
-        >
-          {/* Background Image with Cinematic Slow Zoom (Ken Burns Effect) */}
-          <motion.div
-            initial={{ scale: 1.15 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 12, ease: "easeOut" }}
-            className="absolute inset-0 z-0"
-          >
-            {!imageError[`hero-${currentSlide}`] ? (
-              <img
-                src={heroSlides[currentSlide].imagePlaceholder}
-                alt={heroSlides[currentSlide].title}
-                className="w-full h-full object-cover"
-                onError={() => handleImageError(`hero-${currentSlide}`)}
-                loading={currentSlide === 0 ? "eager" : "lazy"}
-                fetchPriority={currentSlide === 0 ? "high" : "auto"}
-              />
-            ) : (
-              <div className="w-full h-full bg-slate-800"></div>
-            )}
-          </motion.div>
+    <section className="relative min-h-[520px] md:min-h-[600px] lg:min-h-[680px] bg-slate-950 overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0 z-0">
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={current.id}
+            src={current.image}
+            alt=""
+            className="w-full h-full object-cover"
+            fetchPriority="high"
+            variants={imageVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+          />
+        </AnimatePresence>
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/80 to-slate-950/50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+      </div>
 
-          {/* Solid Dark Overlay for Text Contrast */}
-          <div className="absolute inset-0 bg-slate-950/70 z-10"></div>
-
-          {/* Content Area */}
-          <div className="relative h-full flex items-center pt-20 sm:pt-24 z-20">
-            <div className="container mx-auto px-6 sm:px-8 md:px-12 lg:px-16 max-w-7xl">
-              <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={{
-                  hidden: { opacity: 0 },
-                  visible: {
-                    opacity: 1,
-                    transition: {
-                      staggerChildren: 0.15,
-                      delayChildren: 0.4
-                    }
-                  }
-                }}
-                className="max-w-3xl"
+      {/* Content */}
+      <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-6 lg:px-8 pt-16 pb-20 md:pt-20 md:pb-24 lg:pt-24 lg:pb-28 flex flex-col justify-center min-h-[520px] md:min-h-[600px] lg:min-h-[680px]">
+        <div className="max-w-2xl lg:max-w-[55%]">
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.div key={current.id} variants={textVariants} initial="initial" animate="center" exit="exit">
+              {/* Eyebrow */}
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="mb-3 md:mb-4 flex items-center gap-2 text-eyebrow text-yellow-400"
               >
-                {/* Subtle Kicker / Pre-Title */}
-                <motion.div
-                  variants={{
-                    hidden: { opacity: 0, x: -30 },
-                    visible: { opacity: 1, x: 0, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } }
-                  }}
-                  className="flex items-center mb-6"
-                >
-                  <div className="h-0.5 w-12 bg-yellow-400 mr-4"></div>
-                  <span className="text-yellow-400 uppercase tracking-[0.2em] text-xs sm:text-sm font-bold">
-                    Making an Impact
+                <span className="h-px w-6 md:w-8 bg-yellow-400" aria-hidden="true" />
+                {current.badge}
+              </motion.p>
+
+              {/* Heading — responsive sizes, not oversized */}
+              <motion.h1
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="text-[1.75rem] leading-[1.15] sm:text-[2rem] md:text-[2.5rem] lg:text-[2.75rem] font-medium text-white tracking-tight"
+              >
+                {current.title.map((line, i) => (
+                  <span key={i} className="block">
+                    {i === 1 ? <span className="text-yellow-400">{line}</span> : line}
                   </span>
-                </motion.div>
+                ))}
+              </motion.h1>
 
-                {/* Main Headline */}
-                <motion.h1
-                  variants={{
-                    hidden: { opacity: 0, y: 40 },
-                    visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] } }
-                  }}
-                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-[1.05] tracking-tight drop-shadow-2xl"
-                >
-                  {heroSlides[currentSlide].title}
-                </motion.h1>
+              {/* Description */}
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.35 }}
+                className="mt-4 md:mt-5 max-w-lg text-[0.95rem] md:text-body-md text-slate-300/90 leading-relaxed"
+              >
+                {current.description}
+              </motion.p>
 
-                {/* Subtitle / Objective */}
-                <motion.h2
-                  variants={{
-                    hidden: { opacity: 0, y: 30 },
-                    visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] } }
-                  }}
-                  className="text-xl sm:text-2xl lg:text-3xl text-blue-100 font-light tracking-wide mb-8 drop-shadow-lg max-w-2xl border-l-4 border-blue-500 pl-4 py-1"
+              {/* CTAs */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.45 }}
+                className="mt-6 md:mt-8 flex flex-wrap items-center gap-3 md:gap-4"
+              >
+                <Link
+                  to={current.ctaLink}
+                  className="group inline-flex items-center gap-2 bg-yellow-500 hover:bg-yellow-400 px-5 py-2.5 md:px-7 md:py-3 text-button text-slate-900 transition-all duration-200"
                 >
-                  {heroSlides[currentSlide].subtitle}
-                </motion.h2>
-
-                {/* Description Paragraph */}
-                <motion.p
-                  variants={{
-                    hidden: { opacity: 0, y: 30 },
-                    visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] } }
-                  }}
-                  className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl mb-10 font-medium drop-shadow-md"
+                  {current.ctaText}
+                  <FiArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                </Link>
+                <Link
+                  to={current.secondaryCtaLink}
+                  className="inline-flex items-center border border-white/30 hover:bg-white/10 px-5 py-2.5 md:px-7 md:py-3 text-button text-white/80 hover:text-white transition-colors duration-200"
                 >
-                  {heroSlides[currentSlide].description}
-                </motion.p>
-
-                {/* Call to Actions (CTAs) */}
-                <motion.div
-                  variants={{
-                    hidden: { opacity: 0, y: 30 },
-                    visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] } }
-                  }}
-                  className="flex flex-wrap items-center gap-3 sm:gap-4 mb-10"
-                >
-                  <Link to="/donate">
-                    <button className="group relative overflow-hidden rounded-lg bg-yellow-500 px-6 py-3 sm:px-8 sm:py-3.5 transition-all duration-300 hover:bg-yellow-400 hover:shadow-md hover:-translate-y-1">
-                      <span className="relative z-10 flex items-center justify-center gap-2 text-slate-900 font-bold text-sm sm:text-base tracking-wide whitespace-nowrap">
-                        Support Our Mission
-                        <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1 w-4 h-4 sm:w-5 sm:h-5" />
-                      </span>
-                    </button>
-                  </Link>
-                  <Link to="/programs">
-                    <button className="group rounded-lg bg-white/5 border border-white/20 px-6 py-3 sm:px-8 sm:py-3.5 backdrop-blur-md transition-all duration-300 hover:bg-white/10 hover:border-white/40">
-                      <span className="text-white font-semibold text-sm sm:text-base tracking-wide whitespace-nowrap">
-                        Explore Programs
-                      </span>
-                    </button>
-                  </Link>
-                </motion.div>
-
-                {/* Status Indicator Pill */}
-                <motion.div
-                  variants={{
-                    hidden: { opacity: 0, scale: 0.8 },
-                    visible: { opacity: 1, scale: 1, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } }
-                  }}
-                  className="inline-flex items-center bg-black/40 backdrop-blur-md border border-white/10 px-5 py-2.5 rounded-lg"
-                >
-                  <div className="relative flex h-3 w-3 mr-3">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
-                  </div>
-                  <span className="text-xs sm:text-sm font-semibold text-slate-200 tracking-wider uppercase">
-                    {heroSlides[currentSlide].stats}
-                  </span>
-                </motion.div>
+                  {current.secondaryCtaText}
+                </Link>
               </motion.div>
-            </div>
-          </div>
-        </motion.div>
-      </AnimatePresence>
 
-      {/* Floating Carousel Controls - Premium Aesthetic */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 sm:bottom-10 sm:left-auto sm:-translate-x-0 sm:right-10 z-30 flex items-center justify-center gap-2 sm:gap-4 w-full sm:w-auto px-4">
-        <div className="flex items-center gap-2 sm:gap-3 bg-black/40 backdrop-blur-md px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg border border-white/10">
-          {heroSlides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              aria-label={`Go to slide ${index + 1}`}
-              className={`transition-all duration-500 rounded-lg h-1.5 sm:h-2 ${index === currentSlide ? 'w-6 sm:w-8 bg-yellow-400' : 'w-3 sm:w-4 bg-white/40 hover:bg-white/70'
-                }`}
-            />
-          ))}
+              {/* Stat — shown inline on mobile, separate on desktop */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.55 }}
+                className="mt-6 md:mt-8 flex items-baseline gap-3 lg:hidden"
+              >
+                <span className="text-display-md font-medium text-yellow-400 leading-none">
+                  {current.stat.number}
+                </span>
+                <span className="text-body-sm text-slate-400">{current.stat.label}</span>
+              </motion.div>
+            </motion.div>
+          </AnimatePresence>
         </div>
 
-        <div className="flex items-center gap-1 sm:gap-1.5 bg-black/40 backdrop-blur-md p-1 rounded-lg border border-white/10 shrink-0">
-          <button
-            onClick={prevSlide}
-            aria-label="Previous slide"
-            className="p-2 sm:p-2.5 rounded-lg text-white hover:bg-white/20 transition-colors focus:outline-none"
+        {/* Stat — desktop only, positioned to the right */}
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.div
+            key={current.id}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0, transition: { duration: 0.6, delay: 0.4 } }}
+            exit={{ opacity: 0, x: 20, transition: { duration: 0.3 } }}
+            className="hidden lg:block absolute right-8 lg:right-12 top-1/2 -translate-y-1/2 text-right"
           >
-            <FiChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
-          </button>
+            <span className="block text-display-lg font-medium text-yellow-400 leading-none">
+              {current.stat.number}
+            </span>
+            <span className="block mt-2 text-body-sm text-slate-400">{current.stat.label}</span>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Bottom bar */}
+        <div className="absolute bottom-5 md:bottom-8 left-5 sm:left-6 lg:left-8 right-5 sm:right-6 lg:right-8 flex items-center justify-between">
+          {/* Dots */}
+          <div className="flex items-center gap-2" role="tablist" aria-label="Hero slides">
+            {slides.map((slide, index) => (
+              <button
+                key={slide.id}
+                onClick={() => setCurrentIndex(index)}
+                role="tab"
+                aria-selected={index === currentIndex}
+                aria-label={`Go to slide ${index + 1}: ${slide.badge}`}
+                className="relative h-2 rounded-full transition-all duration-300 overflow-hidden"
+                style={{ width: index === currentIndex ? 28 : 8 }}
+              >
+                <span className={`absolute inset-0 rounded-full ${index === currentIndex ? 'bg-yellow-400' : 'bg-white/30 hover:bg-white/50'}`} />
+                {index === currentIndex && isPlaying && (
+                  <motion.span
+                    className="absolute inset-y-0 left-0 rounded-full bg-white/40"
+                    initial={{ width: '0%' }}
+                    animate={{ width: '100%' }}
+                    transition={{ duration: 5.5, ease: 'linear' }}
+                  />
+                )}
+              </button>
+            ))}
+          </div>
+
+          {/* Pause/Play */}
           <button
-            onClick={() => setAutoPlay(!autoPlay)}
-            aria-label={autoPlay ? "Pause slideshow" : "Play slideshow"}
-            className="p-2 sm:p-2.5 rounded-lg text-white hover:bg-white/20 transition-colors focus:outline-none"
+            onClick={() => setIsPlaying(!isPlaying)}
+            className="p-2 bg-white/10 hover:bg-white/20 text-white/70 hover:text-white transition-colors"
+            aria-label={isPlaying ? 'Pause autoplay' : 'Resume autoplay'}
           >
-            {autoPlay ? <FiPause className="w-4 h-4 sm:w-5 sm:h-5" /> : <FiPlay className="w-4 h-4 sm:w-5 sm:h-5" />}
-          </button>
-          <button
-            onClick={nextSlide}
-            aria-label="Next slide"
-            className="p-2 sm:p-2.5 rounded-lg text-white hover:bg-white/20 transition-colors focus:outline-none"
-          >
-            <FiChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
+            {isPlaying ? <FiPause className="w-3.5 h-3.5" /> : <FiPlay className="w-3.5 h-3.5" />}
           </button>
         </div>
       </div>

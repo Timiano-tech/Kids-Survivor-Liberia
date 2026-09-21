@@ -33,7 +33,7 @@ export const HomeFAQSection = () => {
       open: false,
       links: [
         { text: "Explore our youth programs", path: "/programs" },
-        { text: "Learn about YTEI alignment", path: "/Programs" }
+        { text: "Learn about YTEI alignment", path: "/programs" }
       ]
     },
     {
@@ -52,7 +52,7 @@ export const HomeFAQSection = () => {
       answer: "We implement community driven interventions through partnerships with traditional leaders, local authorities, and civil society. Our programs emphasize volunteer training, community ownership, and social cohesion initiatives that contribute to crime reduction and peacebuilding.",
       open: false,
       links: [
-        { text: "Learn about community partnerships", path: "/partnerships" },
+        { text: "Learn about community partnerships", path: "/partnership" },
         { text: "See our community impact", path: "/impact" }
       ]
     },
@@ -87,25 +87,23 @@ export const HomeFAQSection = () => {
   }, [faqItems]);
 
   return (
-    <section className="py-24 bg-white relative">
-      <div className="container mx-auto px-4 relative z-10">
+    <section className="py-20 bg-white">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
-          <span className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-3 block">Got Questions?</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-slate-600 max-w-2xl mx-auto text-lg">
+          <p className="mb-3 text-eyebrow text-blue-700">Got Questions?</p>
+          <h2 className="text-[1.5rem] sm:text-display-md lg:text-display-lg font-medium text-slate-900">Frequently Asked Questions</h2>
+          <p className="mt-3 md:mt-4 text-[0.9rem] md:text-body-md text-slate-600 max-w-2xl mx-auto">
             Learn more about our NADAP and YTEI-aligned approach to drug prevention and youth empowerment
           </p>
         </motion.div>
 
-        <div className="max-w-3xl mx-auto space-y-6">
+        <div className="max-w-3xl mx-auto space-y-4">
           {faqItems.map((faq, index) => (
             <motion.div
               key={faq.id}
@@ -113,15 +111,14 @@ export const HomeFAQSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white rounded-lg border border-slate-100 p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow group cursor-pointer"
+              className="bg-white border border-slate-200 hover:border-blue-300 transition-colors cursor-pointer"
               onClick={() => toggleFAQ(faq.id)}
             >
-              <div className="flex justify-between items-center">
-                <h3 className="font-bold text-slate-900 text-lg group-hover:text-blue-600 transition-colors flex items-start gap-3">
-                  <span className="text-blue-400 mt-1 flex-shrink-0">Q.</span>
+              <div className="flex justify-between items-center p-6 lg:p-7">
+                <h3 className="text-heading-md font-semibold text-slate-900 flex items-start gap-3">
                   {faq.question}
                 </h3>
-                <span className="text-blue-600 font-bold ml-4">{faq.open ? '−' : '+'}</span>
+                <span className="text-blue-700 font-bold ml-4 shrink-0">{faq.open ? '−' : '+'}</span>
               </div>
 
               <motion.div
@@ -130,9 +127,8 @@ export const HomeFAQSection = () => {
                 transition={{ duration: 0.3 }}
                 className="overflow-hidden"
               >
-                <div className="pl-7 mt-3">
-                  <p className="text-slate-600 leading-relaxed">
-                    <span className="text-slate-400 font-bold mr-2 hidden sm:inline">A.</span>
+                <div className="px-6 lg:px-7 pb-6">
+                  <p className="text-slate-600 text-body-md leading-relaxed">
                     {faq.answer}
                   </p>
 
@@ -142,11 +138,9 @@ export const HomeFAQSection = () => {
                         <Link
                           key={linkIndex}
                           to={link.path}
-                          className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold group"
+                          className="inline-flex items-center text-button text-blue-700 hover:text-blue-800 group"
                         >
-                          <span className="relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-blue-600 after:scale-x-0 group-hover:after:scale-x-100 after:transition-transform after:origin-left">
-                            {link.text}
-                          </span>
+                          {link.text}
                           <FiChevronRight className="ml-1.5 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </Link>
                       ))}

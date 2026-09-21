@@ -3,7 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import { FiUsers, FiHome, FiShield, FiActivity, FiCheckCircle } from 'react-icons/fi';
 
 // Counter Component
-const Counter = ({ end, duration = 2, label, icon }) => {
+const Counter = ({ end, duration = 2 }) => {
   const [count, setCount] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef(null);
@@ -35,21 +35,10 @@ const Counter = ({ end, duration = 2, label, icon }) => {
     }
   }, [isInView, hasAnimated, end, duration]);
 
-  return (
-    <div ref={ref} className="text-center">
-      <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">
-        {count.toLocaleString()}+
-      </div>
-      <div className="flex items-center justify-center text-gray-600">
-        <span className="mr-2">{icon}</span>
-        {label}
-      </div>
-    </div>
-  );
+  return <span ref={ref}>{count.toLocaleString()}+</span>;
 };
 
 export const QuickStats = () => {
-  // Impact Statistics Data aligned with organizational focus
   const impactStats = [
     { end: 12000, label: "Vulnerable Individuals Reached", icon: <FiUsers />, duration: 2.5 },
     { end: 120, label: "Communities Engaged", icon: <FiHome />, duration: 2 },
@@ -58,66 +47,53 @@ export const QuickStats = () => {
   ];
 
   return (
-    <section className="py-24 bg-slate-900 relative">
-      {/* Subtle dot grid overlay — no gradient */}
-      <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='1' fill='white'/%3E%3C/svg%3E\")", backgroundRepeat: 'repeat' }}></div>
-      <div className="container mx-auto px-4 relative z-10">
+    <section className="py-20 bg-slate-950">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
-          <span className="text-yellow-500 font-semibold tracking-wider uppercase text-sm mb-3 block">Measurable Impact</span>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+          <p className="mb-3 text-eyebrow text-yellow-400">Measurable Impact</p>
+          <h2 className="text-[1.5rem] sm:text-display-md lg:text-display-lg font-medium tracking-tight text-white">
             Driven by Data, Defined by <span className="text-blue-400">Impact</span>
           </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto text-lg">
+          <p className="mt-3 md:mt-4 text-[0.9rem] md:text-body-md text-slate-400 max-w-2xl mx-auto">
             Tracking our progress towards achieving NADAP 2025-2030 and YTEI goals through targeted, community-driven interventions.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-8 max-w-6xl mx-auto">
           {impactStats.map((stat, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="text-center group"
+              className="text-center border border-slate-800 p-8"
             >
               <div className="flex justify-center mb-6">
-                <div className="bg-slate-800/50 p-5 rounded-lg text-blue-400 border border-slate-700/50 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-500 transition-all duration-300">
+                <div className="bg-slate-800 p-4 text-blue-400 border border-slate-700">
                   {stat.icon}
                 </div>
               </div>
-              <div className="text-4xl md:text-5xl font-extrabold text-white mb-3 tracking-tight">
-                <Counter
-                  end={stat.end}
-                  duration={stat.duration}
-                  label=""
-                  icon={null}
-                />
+              <div className="text-display-md md:text-display-lg font-medium text-white tracking-tight">
+                <Counter end={stat.end} duration={stat.duration} />
               </div>
-              <p className="text-slate-400 font-medium uppercase tracking-wider text-sm mt-2">{stat.label}</p>
+              <p className="text-slate-400 font-medium uppercase tracking-wider text-caption mt-3">{stat.label}</p>
             </motion.div>
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          viewport={{ once: true }}
-          className="mt-16 text-center"
-        >
-          <div className="inline-flex items-center px-6 py-3 bg-blue-900/50 text-blue-300 border border-blue-800/50 rounded-lg text-sm font-medium backdrop-blur-sm">
-            <FiCheckCircle className="mr-3 w-5 h-5 text-blue-400" />
+        <div className="mt-14 text-center">
+          <p className="inline-flex items-center gap-3 px-6 py-3 bg-blue-950 text-blue-200 border border-blue-900 text-sm font-medium">
+            <FiCheckCircle className="w-5 h-5 text-blue-400" />
             Operating across multiple counties with NADAP-aligned programs
-          </div>
-        </motion.div>
+          </p>
+        </div>
       </div>
     </section>
   );

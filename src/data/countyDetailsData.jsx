@@ -1,4 +1,4 @@
-import { FiTarget, FiUsers, FiShield, FiBookOpen, FiActivity, FiBriefcase, FiHeart, FiTrendingUp, FiCheckCircle, FiPlusCircle, FiStar } from 'react-icons/fi';
+import { FiTarget, FiUsers, FiShield, FiBookOpen, FiActivity, FiBriefcase, FiHeart, FiTrendingUp, FiStar } from 'react-icons/fi';
 
 // Asset Imports for Featured Activities
 import montserradoImg from '../assets/mons.png';

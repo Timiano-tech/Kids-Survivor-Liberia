@@ -38,7 +38,7 @@ const ComingSoonModal = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-[200]"
+            className="fixed inset-0 bg-slate-950/75 z-[200]"
             onClick={handleClose}
           />
           <motion.div
@@ -46,19 +46,19 @@ const ComingSoonModal = () => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-sm bg-slate-900 text-white rounded-xl shadow-2xl z-[201] overflow-hidden flex flex-col p-8 items-center text-center border border-slate-800"
+            className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-sm bg-slate-900 text-white shadow-lg z-[201] overflow-hidden flex flex-col p-8 items-center text-center border border-slate-800"
           >
             {/* Header Accent Line */}
             <div className="absolute top-0 left-0 w-full h-1 bg-yellow-400"></div>
 
             <button
               onClick={handleClose}
-              className="absolute top-4 right-4 p-2 text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-slate-800"
+              className="absolute top-4 right-4 p-2 text-slate-400 hover:text-white transition-colors rounded-sm hover:bg-slate-800"
             >
               <FiX className="w-5 h-5" />
             </button>
 
-            <div className="w-14 h-14 bg-yellow-500/10 text-yellow-400 rounded-xl flex items-center justify-center shadow-inner mb-5 relative z-10 border border-yellow-500/20">
+            <div className="w-14 h-14 bg-yellow-500/10 text-yellow-400 flex items-center justify-center mb-5 relative z-10 border border-yellow-500/20">
               <FiClock className="w-7 h-7" />
             </div>
 
@@ -77,7 +77,7 @@ const ComingSoonModal = () => {
 
             <button 
               onClick={handleClose}
-              className="w-full bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-bold py-3.5 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg relative z-10 text-sm"
+              className="w-full bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-bold py-3.5 px-6 transition-colors duration-200 relative z-10 text-sm"
             >
               Understand & Close
             </button>

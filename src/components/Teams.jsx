@@ -48,8 +48,8 @@ const Teams = () => {
           className="mb-20"
         >
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Leadership & Team</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-medium text-slate-900 mb-4">Leadership & Team</h2>
+            <p className="text-slate-600 max-w-2xl mx-auto">
               Committed professionals driving NADAP and YTEI-aligned interventions
             </p>
           </div>
@@ -58,9 +58,9 @@ const Teams = () => {
             {teamMembers.map((member, index) => (
               <div
                 key={index}
-                className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                className="bg-white border border-slate-200 hover:border-blue-300 transition-colors overflow-hidden"
               >
-                <div className="h-auto bg-gray-100 flex items-center justify-center">
+                <div className="h-auto bg-slate-100 flex items-center justify-center">
                   <img
                     src={member.teamImage}
                     alt={member.name}
@@ -70,9 +70,9 @@ const Teams = () => {
                 </div>
 
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-800 mb-1">{member.name}</h3>
-                  <p className="text-blue-600 font-medium mb-3">{member.position}</p>
-                  <p className="text-gray-600 text-sm mb-4">{member.bio}</p>
+                  <h3 className="text-xl font-semibold text-slate-900 mb-1">{member.name}</h3>
+                  <p className="text-blue-700 font-semibold mb-3">{member.position}</p>
+                  <p className="text-slate-600 text-sm mb-4">{member.bio}</p>
                 </div>
               </div>
             ))}

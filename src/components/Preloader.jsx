@@ -52,9 +52,9 @@ const Preloader = ({ onFinish }) => {
           </motion.p>
 
           {/* Simple progress bar */}
-          <div className="w-48 h-1 bg-slate-200 rounded-full overflow-hidden">
+          <div className="w-48 h-1 bg-slate-200 overflow-hidden">
             <div
-              className="h-full rounded-full bg-blue-600 transition-all duration-75"
+              className="h-full bg-blue-600 transition-all duration-75"
               style={{ width: `${progress}%` }}
             />
           </div>

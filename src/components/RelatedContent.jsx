@@ -10,7 +10,7 @@ const DEFAULT_ITEMS = [
     path: '/programs/child-protection',
     category: 'Program Pillar',
     icon: FiShield,
-    badgeBg: 'bg-amber-100 text-amber-800'
+    badgeBg: 'bg-yellow-50 text-yellow-800'
   },
   {
     id: 'vulnerable-children',
@@ -19,7 +19,7 @@ const DEFAULT_ITEMS = [
     path: '/programs/vulnerable-children',
     category: 'Care Initiative',
     icon: FiHeart,
-    badgeBg: 'bg-rose-100 text-rose-800'
+    badgeBg: 'bg-blue-50 text-blue-800'
   },
   {
     id: 'youth-development',
@@ -28,7 +28,7 @@ const DEFAULT_ITEMS = [
     path: '/programs/youth-development',
     category: 'Youth Pillar',
     icon: FiBookOpen,
-    badgeBg: 'bg-blue-100 text-blue-800'
+    badgeBg: 'bg-slate-100 text-slate-700'
   },
   {
     id: 'childrens-rights',
@@ -37,7 +37,7 @@ const DEFAULT_ITEMS = [
     path: '/programs/childrens-rights',
     category: 'Advocacy',
     icon: FiAward,
-    badgeBg: 'bg-emerald-100 text-emerald-800'
+    badgeBg: 'bg-blue-50 text-blue-800'
   }
 ];
 
@@ -71,11 +71,11 @@ export default function RelatedContent({ currentId, title = "Explore Related Pro
             return (
               <div
                 key={item.id}
-                className="bg-white rounded-xl p-6 shadow-sm border border-slate-200 hover:shadow-md hover:border-blue-300 transition-all flex flex-col justify-between"
+                className="bg-white p-6 border border-slate-200 hover:border-blue-300 transition-colors flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${item.badgeBg || 'bg-slate-100 text-slate-700'}`}>
+                    <span className={`text-xs font-semibold px-2.5 py-1 rounded-sm ${item.badgeBg || 'bg-slate-100 text-slate-700'}`}>
                       {item.category}
                     </span>
                     <Icon className="w-5 h-5 text-slate-400" />

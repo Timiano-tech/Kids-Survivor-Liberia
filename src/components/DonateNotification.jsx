@@ -57,7 +57,7 @@ const DonateNotification = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 30 }}
           transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed bottom-6 right-6 z-[100] max-w-md w-[calc(100%-3rem)] bg-slate-900 text-white rounded-lg shadow-xl border border-slate-800 p-6 overflow-hidden"
+          className="fixed bottom-6 right-6 z-[100] max-w-md w-[calc(100%-3rem)] bg-slate-900 text-white shadow-lg border border-slate-800 p-6 overflow-hidden"
         >
           {/* Top Row: Label & Close */}
           <div className="flex items-center justify-between mb-3 border-b border-slate-800 pb-3">
@@ -88,7 +88,7 @@ const DonateNotification = () => {
             <Link
               to="/donate"
               onClick={handleClose}
-              className="flex-1 inline-flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-slate-950 text-sm font-bold py-3 px-4 rounded-md transition-colors shadow-sm"
+              className="flex-1 inline-flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-slate-950 text-sm font-bold py-3 px-4 transition-colors"
             >
               <span>Support This Cause</span>
               <FiArrowRight className="w-4 h-4" />

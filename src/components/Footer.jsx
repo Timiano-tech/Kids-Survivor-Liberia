@@ -211,7 +211,7 @@ const Footer = () => {
               <span className="block text-slate-500 text-sm mt-1">
                 Developed by{' '}
                 <a
-                  href="https://www.linkedin.com/in/oluwatimileyin-ajayi-140350277"
+                  href="https://timiano-dev.vercel.app"
                   className="hover:text-white transition"
                 >
                   Timiano.dev

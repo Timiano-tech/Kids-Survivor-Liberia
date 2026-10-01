@@ -5,96 +5,84 @@ import { FiArrowRight, FiShield, FiHeart, FiBookOpen, FiAward } from 'react-icon
 const DEFAULT_ITEMS = [
   {
     id: 'child-protection',
-    title: 'Child Protection in Liberia',
+    title: 'Child protection in Liberia',
     description: 'Safeguarding children from abuse, neglect, and exploitation through community networks.',
     path: '/programs/child-protection',
     category: 'Program Pillar',
     icon: FiShield,
-    badgeBg: 'bg-yellow-50 text-yellow-800'
   },
   {
     id: 'vulnerable-children',
-    title: 'Vulnerable Children Support',
-    description: 'Providing emergency care, orphan support, and family reunification across communities.',
+    title: 'Vulnerable children support',
+    description: 'Emergency care, orphan support, and family reunification across communities.',
     path: '/programs/vulnerable-children',
     category: 'Care Initiative',
     icon: FiHeart,
-    badgeBg: 'bg-blue-50 text-blue-800'
   },
   {
     id: 'youth-development',
-    title: 'Youth Development & Skills',
+    title: 'Youth development & skills',
     description: 'Vocational training, computer literacy, and leadership mentorship for Liberian youth.',
     path: '/programs/youth-development',
     category: 'Youth Pillar',
     icon: FiBookOpen,
-    badgeBg: 'bg-slate-100 text-slate-700'
   },
   {
     id: 'childrens-rights',
-    title: 'Children’s Rights Advocacy',
-    description: 'Championing legal rights, education access, and policy reforms for children.',
+    title: 'Children’s rights advocacy',
+    description: 'Championing legal rights, education access, and policy reform for children.',
     path: '/programs/childrens-rights',
     category: 'Advocacy',
     icon: FiAward,
-    badgeBg: 'bg-blue-50 text-blue-800'
-  }
+  },
 ];
 
-export default function RelatedContent({ currentId, title = "Explore Related Programs & Impact", items = DEFAULT_ITEMS }) {
-  const filteredItems = items.filter(item => item.id !== currentId).slice(0, 3);
+export default function RelatedContent({ currentId, title = 'Explore related programs', items = DEFAULT_ITEMS }) {
+  const filteredItems = items.filter((item) => item.id !== currentId).slice(0, 3);
 
   return (
-    <section className="py-12 bg-slate-50 border-t border-slate-200">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 gap-4">
+    <section className="border-t border-slate-200 bg-slate-50 py-20 lg:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-12 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
-              {title}
-            </h2>
-            <p className="text-slate-600 mt-1 text-sm sm:text-base">
-              Discover how Kids Survivor Liberia works across communities to protect and empower youth.
+            <p className="text-caption uppercase tracking-[0.18em] text-blue-700">Keep exploring</p>
+            <h2 className="mt-3 text-heading-lg text-slate-900">{title}</h2>
+            <p className="mt-3 max-w-md text-body-sm text-slate-600">
+              How Kids Survivor Liberia works across communities to protect and empower youth.
             </p>
           </div>
           <Link
             to="/programs"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 transition-colors group shrink-0"
+            className="group inline-flex shrink-0 items-center gap-2 text-caption font-semibold uppercase tracking-[0.14em] text-blue-700 transition-colors hover:text-blue-900"
           >
-            View All Programs
-            <FiArrowRight className="transition-transform group-hover:translate-x-1" />
+            All programs
+            <FiArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
           {filteredItems.map((item) => {
             const Icon = item.icon || FiShield;
             return (
-              <div
-                key={item.id}
-                className="bg-white p-6 border border-slate-200 hover:border-blue-300 transition-colors flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className={`text-xs font-semibold px-2.5 py-1 rounded-sm ${item.badgeBg || 'bg-slate-100 text-slate-700'}`}>
-                      {item.category}
-                    </span>
-                    <Icon className="w-5 h-5 text-slate-400" />
-                  </div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2 hover:text-blue-600 transition-colors">
-                    <Link to={item.path}>{item.title}</Link>
-                  </h3>
-                  <p className="text-slate-600 text-sm leading-relaxed mb-6">
-                    {item.description}
-                  </p>
+              <article key={item.id} className="group flex flex-col border-t border-slate-200 pt-5">
+                <div className="mb-4 flex items-center justify-between">
+                  <span className="text-caption uppercase tracking-[0.18em] text-blue-700">{item.category}</span>
+                  <Icon className="h-4 w-4 text-slate-300 transition-colors group-hover:text-yellow-500" />
                 </div>
+                <h3 className="text-heading-md text-slate-900">
+                  <Link to={item.path} className="transition-colors hover:text-blue-700">
+                    {item.title}
+                  </Link>
+                </h3>
+                <p className="mt-3 text-body-sm leading-relaxed text-slate-600">{item.description}</p>
                 <Link
                   to={item.path}
-                  className="inline-flex items-center gap-2 text-xs font-bold text-blue-600 hover:text-blue-800 uppercase tracking-wider group"
+                  className="mt-5 inline-flex items-center gap-2 text-caption font-semibold uppercase tracking-[0.14em] text-blue-700 transition-colors hover:text-blue-900"
                 >
-                  Learn More
-                  <FiArrowRight className="transition-transform group-hover:translate-x-1" />
+                  Learn more
+                  <FiArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
                 </Link>
-              </div>
+              </article>
             );
           })}
         </div>

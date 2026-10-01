@@ -1,66 +1,84 @@
 import { useEffect } from 'react';
-import {
-  FiUsers,
-  FiHeart,
-  FiBook,
-  FiActivity,
-  FiShield,
-  FiTarget,
-  FiUserCheck
-} from 'react-icons/fi';
-import HeaderImage from '../assets/Partner_Header.jpeg';
 import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
 import SectionHeading from '../components/SectionHeading';
 import CTABanner from '../components/CTABanner';
+import ProcessSteps from '../components/visuals/ProcessSteps';
+import PhotoCards from '../components/visuals/PhotoCards';
+import RuleList from '../components/visuals/RuleList';
+import HeaderImage from '../assets/Partner_Header.jpeg';
+import PreventionCampaign from '../assets/Against_drug_abuse.jpeg';
+import RecoveryProgram from '../assets/Drug_Recovered.jpeg';
+import YouthSkills from '../assets/Girls_Emp.png';
+import WomenInclusion from '../assets/Women_in_community4.jpeg';
+import SchoolAccess from '../assets/KSL_School.jpeg';
+import CommunityForum from '../assets/Community_Speech3.jpeg';
 
 const Partnership = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const partnershipTypes = [
+  const partnershipMeta = [
+    { value: 6, label: 'Funding Areas' },
+    { value: 6, label: 'Partner Types' },
+    { value: 15, label: 'Counties' },
+    { value: 2, label: 'National Frameworks' },
+  ];
+
+  const areas = [
     {
       title: 'Drug Abuse Prevention',
-      description: 'Support community and school based prevention campaigns and youth led advocacy initiatives',
-      icon: <FiTarget />
+      tag: 'Area 01',
+      image: PreventionCampaign,
+      description: 'School and community campaigns, and youth-led advocacy.',
     },
     {
       title: 'Rehabilitation & Recovery',
-      description: 'Fund psychosocial support and reintegration pathways for drug affected individuals',
-      icon: <FiHeart />
+      tag: 'Area 02',
+      image: RecoveryProgram,
+      description: 'Psychosocial support and reintegration pathways.',
     },
     {
       title: 'Youth Empowerment',
-      description: 'Sponsor vocational training, life skills, and entrepreneurship programs for vulnerable youth',
-      icon: <FiUsers />
+      tag: 'Area 03',
+      image: YouthSkills,
+      description: 'Vocational training, life skills, and entrepreneurship.',
     },
     {
       title: 'Gender & Protection',
-      description: 'Support targeted empowerment of adolescent girls, widows, and vulnerable elderly men',
-      icon: <FiShield />
+      tag: 'Area 04',
+      image: WomenInclusion,
+      description: 'Adolescent girls, widows, and elderly support.',
     },
     {
       title: 'Education Access',
-      description: 'Provide scholarships and non-formal learning opportunities for marginalized populations',
-      icon: <FiBook />
+      tag: 'Area 05',
+      image: SchoolAccess,
+      description: 'Scholarships and non-formal learning centres.',
     },
     {
       title: 'Community Resilience',
-      description: 'Partner in peacebuilding, crime prevention, and social cohesion initiatives',
-      icon: <FiActivity />
-    }
+      tag: 'Area 06',
+      image: CommunityForum,
+      description: 'Peacebuilding, crime prevention, and cohesion work.',
+    },
   ];
 
-  const benefits = [
-    "Contribute to national priorities (YTEI & NADAP 2025–2030)",
-    "Support drug abuse prevention and rehabilitation",
-    "Empower vulnerable children, youth, and women",
-    "Promote social inclusion and community resilience",
-    "Receive detailed impact measurement reports",
-    "Enhance corporate social responsibility alignment",
-    "Join community driven sustainable development",
-    "Receive official partnership recognition and certificates"
+  const partnerJourney = [
+    { kicker: 'Stage 01', title: 'Conversation', description: 'We map the outcomes you want to fund and who you want to reach.' },
+    { kicker: 'Stage 02', title: 'Co-Design', description: 'The intervention is mapped to KSL pillars, NADAP and YTEI targets, and a county rollout.' },
+    { kicker: 'Stage 03', title: 'Agreement', description: 'Scope, reporting cadence, safeguarding duties, and disbursement are agreed.' },
+    { kicker: 'Stage 04', title: 'Deliver & Report', description: 'Programmes run in the field and you receive documented impact reporting.' },
+  ];
+
+  const partnerTypes = [
+    { title: 'Corporate Sponsors', note: 'CSR funding, matched giving, and employee volunteering days.' },
+    { title: 'Foundations & Trusts', note: 'Multi-year grants for prevention, rehabilitation, and education.' },
+    { title: 'Government & Ministries', note: 'Delivery support against national anti-drugs and youth frameworks.' },
+    { title: 'Faith & Community Groups', note: 'Congregation outreach, mobilisation, and local volunteers.' },
+    { title: 'NGOs & Coalitions', note: 'Joint programming and shared safeguarding standards.' },
+    { title: 'Diaspora Communities', note: 'Long-distance giving directed to a named county or school.' },
   ];
 
   return (
@@ -81,123 +99,61 @@ const Partnership = () => {
         ]}
         breadcrumbs={[{ name: 'Partnership', url: '/partnership' }]}
       />
-      <div className="min-h-screen bg-white">
-        <PageHeader
-          eyebrow="Collaborate With Us"
-          title="Strategic Partnership"
-          description="Join Kids Survivor Liberia in implementing integrated prevention, protection, rehabilitation, and empowerment strategies for children, adolescents, youth, widows, and vulnerable populations."
-          image={HeaderImage}
-          alt="Strategic Partnership"
-        />
 
-        <main>
-          {/* Introduction */}
-          <section className="bg-white py-16 lg:py-20">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <SectionHeading
-                eyebrow="Why Partner With Us"
-                title="Partner in Our Mission to Prevent Drug Abuse and Protect Vulnerable Populations"
-                description="Join Kids Survivor Liberia in implementing integrated prevention, protection, rehabilitation, and empowerment strategies for children, adolescents, youth, adolescent girls, widows, and vulnerable elderly men. Together, we contribute to national priorities under the Youth Transformation & Empowerment Initiative (YTEI) and National Anti-Drugs Action Plan (NADAP) 2025–2030."
-              />
-            </div>
-          </section>
+      <PageHeader
+        eyebrow="Collaborate With Us"
+        title="Fund work that protects children"
+        description="Six programme areas, one partner network, and reporting you can audit."
+        image={HeaderImage}
+        meta={partnershipMeta}
+      />
 
-          {/* Partnership Types */}
-          <section className="bg-slate-50 border-y border-slate-200 py-16 lg:py-20">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <SectionHeading
-                eyebrow="Opportunities"
-                title="Strategic Partnership Areas"
-                className="mb-12"
-              />
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                {partnershipTypes.map((type, index) => (
-                  <div
-                    key={index}
-                    className="bg-white border border-slate-200 p-8 shadow-sm hover:border-blue-300 transition-colors"
-                  >
-                    <div className="w-14 h-14 bg-blue-50 text-blue-700 border border-blue-200 rounded-sm flex items-center justify-center mb-6 text-2xl">
-                      {type.icon}
-                    </div>
-                    <h3 className="text-lg font-semibold text-slate-900 mb-3">{type.title}</h3>
-                    <p className="text-slate-600 leading-relaxed text-sm">{type.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
+      <main>
+        <section className="bg-white py-20 lg:py-24">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <SectionHeading
+              eyebrow="Where Funding Goes"
+              title="Six areas partners fund"
+              description="Direct every contribution into one of these programme areas."
+              className="mb-14"
+            />
+            <PhotoCards items={areas} columns="sm:grid-cols-2 lg:grid-cols-3" />
+          </div>
+        </section>
 
-          {/* Benefits */}
-          <section className="bg-white py-16 lg:py-20">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <SectionHeading
-                eyebrow="What You Gain"
-                title="Partnership Benefits"
-                className="mb-12"
-              />
-              <div className="bg-slate-950 px-6 py-12 sm:px-12">
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                  {benefits.map((benefit, index) => (
-                    <div
-                      key={index}
-                      className="flex items-start gap-4"
-                    >
-                      <span className="w-10 h-10 bg-blue-700 text-white flex items-center justify-center shrink-0">
-                        <FiUserCheck className="w-5 h-5" />
-                      </span>
-                      <span className="text-slate-300 text-sm leading-relaxed mt-1 font-medium">{benefit}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </section>
+        <section className="bg-slate-50 border-y border-slate-200 py-20 lg:py-24">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <SectionHeading
+              eyebrow="How It Works"
+              title="From first call to impact report"
+              className="mb-14"
+            />
+            <ProcessSteps steps={partnerJourney} />
+          </div>
+        </section>
 
-          {/* National Alignment */}
-          <section className="bg-slate-50 border-y border-slate-200 py-16 lg:py-20">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <SectionHeading
-                eyebrow="Policy Alignment"
-                title="Aligned with National Priorities"
-                className="mb-12"
-              />
-              <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-                <div className="bg-white border border-slate-200 p-8 sm:p-10 shadow-sm">
-                  <div className="w-12 h-12 bg-blue-50 text-blue-700 border border-blue-200 rounded-sm flex items-center justify-center mb-6">
-                    <FiUsers className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-4">
-                    Youth Transformation & Empowerment Initiative (YTEI)
-                  </h3>
-                  <p className="text-slate-600 leading-relaxed">
-                    Strengthening youth leadership, expanding education access, supporting psychosocial well-being, and positioning young people as agents of change in their communities.
-                  </p>
-                </div>
-                <div className="bg-white border border-slate-200 p-8 sm:p-10 shadow-sm">
-                  <div className="w-12 h-12 bg-blue-50 text-blue-700 border border-blue-200 rounded-sm flex items-center justify-center mb-6">
-                    <FiShield className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-4">
-                    National Anti-Drugs Action Plan (NADAP) 2025–2030
-                  </h3>
-                  <p className="text-slate-600 leading-relaxed">
-                    Contributing to drug demand reduction through prevention, early intervention, rehabilitation, and community based approaches that promote public health and social reintegration.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
+        <section className="bg-slate-950 py-20 lg:py-24">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <SectionHeading
+              tone="dark"
+              eyebrow="Who We Work With"
+              title="Types of partners"
+              className="mb-14"
+            />
+            <RuleList items={partnerTypes} tone="dark" columns="sm:grid-cols-2 lg:grid-cols-3" />
+          </div>
+        </section>
+      </main>
 
-          <CTABanner
-            title="Join Our Strategic Partnership Network"
-            description="Partner with us to implement community driven interventions that prevent drug abuse, protect vulnerable populations, promote education, develop livelihoods, and build resilient communities aligned with national development goals."
-            primaryLabel="Contact Partnership Team"
-            primaryTo="/contact"
-            secondaryLabel="Partner via Email"
-            secondaryHref="mailto:support@ksliberia.org"
-          />
-        </main>
-      </div>
+      <CTABanner
+        eyebrow="Work With Us"
+        title="Join our partnership network"
+        description="Partner with us to implement community-driven interventions across Liberia."
+        primaryLabel="Contact Partnership Team"
+        primaryTo="/contact"
+        secondaryLabel="Email support@ksliberia.org"
+        secondaryHref="mailto:support@ksliberia.org"
+      />
     </>
   );
 };

@@ -1,8 +1,16 @@
 import { Link } from 'react-router-dom';
-import { FiHome, FiAlertTriangle } from 'react-icons/fi';
+import { FiArrowLeft, FiArrowUpRight } from 'react-icons/fi';
 import SEO from '../components/SEO';
+import NotFoundImage from '../assets/Community_Outreach_Children.jpeg';
 
 const NotFound = () => {
+  const links = [
+    { label: 'Our Programs', to: '/programs' },
+    { label: 'Impact & Reports', to: '/impact' },
+    { label: 'Get Involved', to: '/volunteer' },
+    { label: 'Contact Us', to: '/contact' },
+  ];
+
   return (
     <>
       <SEO
@@ -10,55 +18,62 @@ const NotFound = () => {
         description="The requested page could not be found on Kids Survivor Liberia."
         noindex={true}
       />
-      <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center px-4">
-        <div className="max-w-md w-full text-center">
-          {/* Icon */}
-          <div className="mb-8 flex justify-center">
-            <div className="bg-yellow-400 p-6">
-              <FiAlertTriangle className="w-16 h-16 text-slate-900" />
+      <div className="grid min-h-screen bg-white lg:grid-cols-2">
+        <div className="relative order-2 min-h-[40vh] lg:order-1 lg:min-h-screen">
+          <img
+            src={NotFoundImage}
+            alt="Children supported by Kids Survivor Liberia"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-slate-950/45" />
+          <div className="absolute inset-x-0 bottom-0 p-8 lg:p-12">
+            <p className="text-caption uppercase tracking-[0.2em] text-yellow-400">Kids Survivor Liberia</p>
+            <p className="mt-3 max-w-xs text-body-md text-slate-200">
+              Every child deserves to be found.
+            </p>
+          </div>
+        </div>
+
+        <div className="order-1 flex items-center px-6 py-20 sm:px-10 lg:order-4 lg:px-20">
+          <div className="w-full max-w-lg">
+            <p className="font-serif text-[7rem] leading-none text-slate-900 sm:text-[9rem]">404</p>
+            <h1 className="mt-4 text-heading-xl text-slate-900">Page not found</h1>
+            <p className="mt-5 text-body-md text-slate-600">
+              The page you are looking for may have been moved, renamed, or taken down.
+            </p>
+
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Link
+                to="/"
+                className="inline-flex items-center justify-center gap-2 bg-yellow-500 px-7 py-3.5 text-body-sm font-semibold text-slate-900 transition-colors hover:bg-yellow-400"
+              >
+                Back to home
+              </Link>
+              <button
+                onClick={() => window.history.back()}
+                className="inline-flex items-center justify-center gap-2 border border-slate-300 px-7 py-3.5 text-body-sm font-semibold text-slate-700 transition-colors hover:border-slate-900 hover:text-slate-900"
+              >
+                <FiArrowLeft className="h-4 w-4" />
+                Go back
+              </button>
             </div>
-          </div>
 
-          {/* Title */}
-          <h1 className="text-6xl font-semibold text-slate-900 mb-4">404</h1>
-
-          {/* Subtitle */}
-          <h2 className="text-2xl font-semibold text-slate-800 mb-4">
-            Page Not Found
-          </h2>
-
-          {/* Message */}
-          <p className="text-slate-600 mb-8">
-            The page you are looking for might have been removed, had its name changed,
-            or is temporarily unavailable.
-          </p>
-
-          {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/"
-              className="inline-flex items-center justify-center gap-2 bg-yellow-500 hover:bg-yellow-400 text-slate-900 font-bold px-6 py-3 transition-colors"
-            >
-              <FiHome className="w-5 h-5" />
-              Back to Home
-            </Link>
-
-            <button
-              onClick={() => window.history.back()}
-              className="inline-flex items-center justify-center bg-white border border-slate-300 text-slate-700 hover:border-blue-500 font-semibold px-6 py-3 transition-colors"
-            >
-              Go Back
-            </button>
-          </div>
-
-          {/* Additional Info */}
-          <div className="mt-12 pt-8 border-t border-slate-200">
-            <p className="text-slate-500 text-sm">
-              If you believe this is an error, please contact support
-            </p>
-            <p className="text-slate-400 text-xs mt-2">
-              Error Code: 404 - Page Not Found
-            </p>
+            <div className="mt-14 border-t border-slate-200 pt-8">
+              <p className="text-caption uppercase tracking-[0.18em] text-slate-500">Popular destinations</p>
+              <ul className="mt-5 grid gap-x-8 gap-y-3 sm:grid-cols-2">
+                {links.map((link) => (
+                  <li key={link.to}>
+                    <Link
+                      to={link.to}
+                      className="group inline-flex items-center gap-2 text-body-sm font-medium text-slate-700 transition-colors hover:text-blue-700"
+                    >
+                      {link.label}
+                      <FiArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>

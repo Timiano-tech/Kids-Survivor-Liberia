@@ -1,20 +1,12 @@
 import { useEffect } from 'react';
-import { motion } from 'framer-motion';
 import SEO from '../components/SEO';
-import {
-  FiUser,
-  FiAward,
-  FiUsers,
-  FiTarget,
-  FiHeart,
-  FiBriefcase,
-  FiBookOpen,
-  FiShield,
-  FiStar
-} from 'react-icons/fi';
 import PageHeader from '../components/PageHeader';
 import SectionHeading from '../components/SectionHeading';
+import CTABanner from '../components/CTABanner';
+import BarList from '../components/visuals/BarList';
+import RuleList from '../components/visuals/RuleList';
 import HeaderImage from '../assets/Team_meeting.jpeg';
+import TeamImage from '../assets/KSL_Team.jpeg';
 import Mr_Steve from '../assets/team/Mr_Steve.png';
 import Mrs_Fiona from '../assets/team/Mrs_Fiona.png';
 import Mrs_Silvia from '../assets/team/Mrs_Silvia2.png';
@@ -35,173 +27,114 @@ const OurTeam = () => {
     {
       id: 1,
       name: 'Mr. Billy Jones',
-      position: 'Chief Executive Officer (CEO)',
+      position: 'Chief Executive Officer',
       department: 'Executive Leadership',
-      bio: "Provides visionary leadership and strategic oversight for KSL's national initiatives, including NADAP-aligned drug abuse prevention, child protection, and youth empowerment programs. Champions child safeguarding, ethical governance, and inclusive development across Liberia.",
-      expertise: ['Strategic Leadership', 'Policy Development', 'Community Engagement'],
-      social: {
-        linkedin: '#',
-        twitter: '#',
-        email: 'billy.jones@ksl.org'
-      },
+      bio: 'Leads the national strategy and the safeguarding commitment.',
+      expertise: ['Strategic Leadership', 'Policy'],
       image: CEO,
-      icon: <FiUser className="w-6 h-6" />,
-      color: 'blue'
     },
     {
       id: 2,
       name: 'Mr. Steve Darwin Wald',
-      position: 'Director of Countries Operations',
-      department: 'Operations & Administration',
-      bio: "Leads operational coordination and implementation oversight across KSL's areas of intervention. Translates strategic objectives into effective community-responsive programs, ensuring consistent delivery of drug demand reduction, prevention, and rehabilitation initiatives.",
-      expertise: ['Operations Management', 'Program Coordination', 'Community Response'],
+      position: 'Director of Country Operations',
+      department: 'Operations',
+      bio: 'Runs operations across every area of intervention.',
+      expertise: ['Operations', 'Coordination'],
       image: Mr_Steve,
-      icon: <FiBriefcase className="w-6 h-6" />,
-      color: 'blue'
     },
     {
       id: 3,
       name: 'Mrs. Fiona A. Etong',
       position: 'Nigeria Representative & Social Media Manager',
       department: 'Communications',
-      bio: "Leads digital communications and regional representation, amplifying KSL's mission through innovative online outreach. Strengthens public engagement for drug abuse prevention, youth empowerment, and child protection across borders.",
-      expertise: ['Digital Communications', 'Social Media Strategy', 'Regional Advocacy'],
+      bio: 'Handles communications and regional representation.',
+      expertise: ['Digital Communications', 'Advocacy'],
       image: Mrs_Fiona,
-      icon: <FiUsers className="w-6 h-6" />,
-      color: 'blue'
     },
     {
       id: 4,
       name: 'Mrs. Silvia T. Willie Dongon',
       position: 'Operational Advisor',
       department: 'Programs',
-      bio: "Provides strategic guidance for gender-sensitive protection programs targeting adolescent girls, widows, and vulnerable elderly men. Supports operational planning and integration of best practices in social inclusion and community engagement.",
-      expertise: ['Gender-Sensitive Programming', 'Social Inclusion', 'Community Engagement'],
+      bio: 'Advises on gender-sensitive protection work.',
+      expertise: ['Gender', 'Social Inclusion'],
       image: Mrs_Silvia,
-      icon: <FiTarget className="w-6 h-6" />,
-      color: 'blue'
     },
     {
       id: 5,
       name: 'Mrs. Tawah B. John',
       position: 'Head of the Widows Team',
       department: 'Programs',
-      bio: "Leads initiatives promoting dignity, resilience, and socio-economic empowerment for widows and vulnerable women. Successfully organized 125 widows (ages 50-68) into structured livelihood programs including agriculture, soap making, tie-dye, and handicraft production.",
-      expertise: ['Women Empowerment', 'Livelihood Development', 'Community Mobilization'],
+      bio: 'Organised 125 widows into livelihood programmes.',
+      expertise: ['Livelihoods', 'Women’s Empowerment'],
       image: Mrs_Tawah,
-      icon: <FiShield className="w-6 h-6" />,
-      color: 'blue'
     },
     {
       id: 6,
       name: 'Miss Julie Hennings',
-      position: 'Adolescent Girls Program Lead',
+      position: 'Adolescent Girls Programme Lead',
       department: 'Programs',
-      bio: "Provides mentorship and leadership to adolescent girls across Liberia, focusing on empowerment, life skills, personal agency, and protection awareness. Guides activities that address social, economic, and protection-related vulnerabilities affecting young girls.",
-      expertise: ['Girls Empowerment', 'Life Skills Training', 'Youth Protection'],
+      bio: 'Leads mentorship and life skills for adolescent girls.',
+      expertise: ['Girls’ Empowerment', 'Life Skills'],
       image: Mrs_julie,
-      icon: <FiHeart className="w-6 h-6" />,
-      color: 'blue'
     },
     {
       id: 7,
       name: 'Mr. Sebastian Stephney',
       position: 'Community Engagement & Education Advisor',
       department: 'Programs',
-      bio: "Provides strategic guidance on community outreach, stakeholder engagement, and youth-centered educational initiatives. Supports partnerships with communities and schools while promoting awareness and preventive education for youth empowerment and drug abuse prevention.",
-      expertise: ['Community Outreach', 'Educational Initiatives', 'Stakeholder Engagement'],
+      bio: 'Advises on community outreach and school initiatives.',
+      expertise: ['Community Outreach', 'Education'],
       image: Mr_Sebastian,
-      icon: <FiAward className="w-6 h-6" />,
-      color: 'yellow'
     },
     {
       id: 8,
       name: 'Ms. Josephine P. Wreyou',
       position: 'Adolescent Girls Initiatives Lead',
       department: 'Programs',
-      bio: "Leads programs promoting the protection, empowerment, and personal development of vulnerable girls. Focuses on life skills development, mentorship, confidence building, and awareness initiatives addressing risks affecting adolescent girls.",
-      expertise: ['Girls Protection', 'Mentorship', 'Life Skills Development'],
+      bio: 'Runs girls’ protection and confidence-building initiatives.',
+      expertise: ['Girls’ Protection', 'Mentorship'],
       image: Mrs_Josephine,
-      icon: <FiUsers className="w-6 h-6" />,
-      color: 'blue'
     },
     {
       id: 9,
       name: 'Mr. Moses Dahn',
-      position: 'Principal, KSL Scholar Learning Program | Finance & Governance Advisor',
+      position: 'Principal, KSL Scholar Programme',
       department: 'Programs',
-      bio: "Oversees free educational support for vulnerable children aged 4-17, providing learning materials, uniforms, and feeding support. Also advises on financial oversight, accountability, and institutional strengthening for organizational sustainability.",
-      expertise: ['Educational Programs', 'Financial Oversight', 'Governance'],
+      bio: 'Runs free schooling for 4–17s and advises on finance.',
+      expertise: ['Education', 'Governance'],
       image: Mr_Moses,
-      icon: <FiBookOpen className="w-6 h-6" />,
-      color: 'blue'
     },
     {
       id: 10,
       name: 'Mr. Paul Bennie',
-      position: 'City Program Coordinator – Gbarnga',
+      position: 'City Coordinator, Gbarnga',
       department: 'Field Operations',
-      bio: "Coordinates all KSL program activities in Gbarnga, Bong County, overseeing implementation, monitoring, and alignment with organizational objectives. Supports community engagement, local partnerships, and operational oversight for youth protection and education programs.",
-      expertise: ['Program Coordination', 'Community Engagement', 'Field Operations'],
+      bio: 'Coordinates programmes in Bong County.',
+      expertise: ['Field Operations', 'Community'],
       image: Mr_Paul,
-      icon: <FiUsers className="w-6 h-6" />,
-      color: 'blue'
-    }
+    },
   ];
 
-  const departments = [
-    {
-      name: 'Executive Leadership',
-      count: 1,
-      icon: <FiStar className="w-5 h-5" />,
-      color: 'blue'
-    },
-    {
-      name: 'Programs Management',
-      count: 4,
-      icon: <FiTarget className="w-5 h-5" />,
-      color: 'blue'
-    },
-    {
-      name: 'Operations & Administration',
-      count: 1,
-      icon: <FiBriefcase className="w-5 h-5" />,
-      color: 'blue'
-    },
-    {
-      name: 'Communications',
-      count: 1,
-      icon: <FiUsers className="w-5 h-5" />,
-      color: 'blue'
-    },
-    {
-      name: 'Monitoring & Evaluation',
-      count: 1,
-      icon: <FiAward className="w-5 h-5" />,
-      color: 'blue'
-    },
-    {
-      name: 'Field Operations',
-      count: 1,
-      icon: <FiBookOpen className="w-5 h-5" />,
-      color: 'blue'
-    }
+  const departments = teamMembers.reduce((acc, member) => {
+    const existing = acc.find((dept) => dept.name === member.department);
+    if (existing) existing.count += 1;
+    else acc.push({ name: member.department, count: 1 });
+    return acc;
+  }, []);
+
+  const teamMeta = [
+    { value: teamMembers.length, label: 'Team Members' },
+    { value: departments.length, label: 'Departments' },
+    { value: 7, label: 'Field Offices' },
+    { value: 125, label: 'Widows Organised' },
   ];
 
-  // Function to get color classes based on color name
-  const getColorClasses = (color) => {
-    const colorMap = {
-      blue: 'bg-blue-50 text-blue-700 border-blue-200',
-      yellow: 'bg-yellow-50 text-yellow-700 border-yellow-200',
-      slate: 'bg-slate-100 text-slate-700 border-slate-200'
-    };
-    return colorMap[color] || colorMap.blue;
-  };
-
-  const getDepartmentColor = (deptName) => {
-    const dept = departments.find(d => d.name === deptName);
-    return dept?.color || 'blue';
-  };
+  const commitments = [
+    { title: 'Field embedded', note: 'Coordinators live in the counties they support.' },
+    { title: 'Safeguarding led', note: 'Child protection sits with executive leadership.' },
+    { title: 'Skills on the roster', note: 'Protection, education, governance, and communications.' },
+  ];
 
   return (
     <>
@@ -221,92 +154,94 @@ const OurTeam = () => {
         ]}
         breadcrumbs={[{ name: 'Our Team', url: '/team' }]}
       />
-      <div className="min-h-screen bg-white">
-        <PageHeader
-          eyebrow="The People Behind KSL"
-          title="Our Dedicated Team"
-          description="Passionate professionals committed to transforming lives and building resilient communities across Liberia."
-          image={HeaderImage}
-          alt="KSL Team Background"
-        />
 
-        {/* Main Content */}
-        <main className="py-16 lg:py-20">
+      <PageHeader
+        eyebrow="The People Behind KSL"
+        title="Ten people, five counties, one commitment"
+        description="A small national leadership group with specialists and coordinators in the field."
+        image={HeaderImage}
+        meta={teamMeta}
+      />
+
+      <main>
+        <section className="bg-white py-20 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            {/* Team Members Grid */}
             <SectionHeading
               eyebrow="Leadership & Staff"
-              title="Meet Our Experts"
-              description="Experienced professionals dedicated to creating positive change, advocating for child protection, and educating communities in Liberia."
+              title="Meet the team"
               className="mb-14"
             />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-              {teamMembers.map((member, index) => (
-                <motion.div
-                  key={member.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.05 }}
-                  viewport={{ once: true }}
-                  className="flex flex-col bg-white border border-slate-200 shadow-sm hover:border-blue-300 transition-colors overflow-hidden"
-                >
-                  {/* Image Container */}
-                  <div className="relative aspect-[4/5] bg-slate-50 overflow-hidden">
-                    <div className="absolute top-4 right-4 z-20">
-                      <span className={`inline-flex items-center px-3 py-1 text-[11px] font-semibold uppercase tracking-widest border ${getColorClasses(getDepartmentColor(member.department))}`}>
-                        {member.department.split(' ')[0]}
-                      </span>
-                    </div>
-
-                    {member.image ? (
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className="w-full h-full object-cover object-top"
-                        loading="lazy"
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center bg-slate-100">
-                        <FiUser className="w-24 h-24 text-slate-300" />
-                      </div>
-                    )}
+            <div className="grid grid-cols-2 gap-x-6 gap-y-12 lg:grid-cols-3 lg:gap-x-8 xl:grid-cols-5">
+              {teamMembers.map((member) => (
+                <article key={member.id} className="group">
+                  <div className="overflow-hidden bg-slate-100">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="aspect-[4/5] w-full object-cover object-top transition-transform duration-[900ms] group-hover:scale-105"
+                      loading="lazy"
+                    />
                   </div>
-
-                  {/* Member Info */}
-                  <div className="p-8 flex flex-col flex-grow relative">
-                    <div className="absolute -top-6 right-6 w-12 h-12 bg-white border border-slate-200 flex items-center justify-center text-blue-700 z-10">
-                      {member.icon}
-                    </div>
-
-                    <div className="mb-4 pr-10">
-                      <h3 className="text-xl font-semibold text-slate-900 leading-tight mb-1">{member.name}</h3>
-                      <p className="text-blue-700 text-sm font-semibold uppercase tracking-wide leading-snug">{member.position}</p>
-                    </div>
-
-                    <p className="text-slate-600 text-[15px] mb-6 line-clamp-4 leading-relaxed flex-grow">
-                      {member.bio}
+                  <div className="mt-5 border-t border-slate-200 pt-4">
+                    <h3 className="text-heading-md leading-snug text-slate-900">{member.name}</h3>
+                    <p className="mt-2 text-caption uppercase leading-relaxed tracking-wider text-blue-700">
+                      {member.position}
                     </p>
-
-                    <div className="mt-auto border-t border-slate-200 pt-5">
-                      <div className="flex flex-wrap gap-2">
-                        {member.expertise.slice(0, 2).map((skill, idx) => (
-                          <span
-                            key={idx}
-                            className="px-3 py-1 bg-slate-50 border border-slate-200 text-[11px] font-medium tracking-wider uppercase text-slate-600 truncate max-w-full"
-                          >
-                            {skill}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
+                    <p className="mt-3 text-body-sm leading-relaxed text-slate-600">{member.bio}</p>
                   </div>
-                </motion.div>
+                </article>
               ))}
             </div>
           </div>
-        </main>
-      </div>
+        </section>
+
+        <section className="bg-slate-50 border-y border-slate-200 py-20 lg:py-24">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-14 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
+              <div>
+                <SectionHeading
+                  eyebrow="Team Structure"
+                  title="Where the team sits"
+                  description="Programmes make up the largest group, supported by executive oversight, operations, communications, and field coordination."
+                  className="mb-12"
+                />
+                <BarList
+                  items={departments.map((dept) => ({
+                    label: dept.name,
+                    value: dept.count,
+                    helper: `${dept.count} ${dept.count === 1 ? 'person' : 'people'}`,
+                  }))}
+                />
+              </div>
+
+              <div className="relative min-h-[22rem]">
+                <img
+                  src={TeamImage}
+                  alt="Kids Survivor Liberia team in the field"
+                  className="absolute inset-0 h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-slate-950 py-20 lg:py-24">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <SectionHeading tone="dark" eyebrow="How We Work" title="Three commitments" className="mb-14" />
+            <RuleList items={commitments} tone="dark" columns="sm:grid-cols-2 lg:grid-cols-3" />
+          </div>
+        </section>
+      </main>
+
+      <CTABanner
+        eyebrow="Work With Us"
+        title="Meet the team, then join them"
+        description="Our staff live in the counties they serve. Your support keeps that field presence funded."
+        secondaryLabel="Volunteer With Us"
+        secondaryTo="/volunteer"
+      />
     </>
   );
 };

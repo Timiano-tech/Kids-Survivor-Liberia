@@ -1,11 +1,8 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiShield, FiHeart, FiUsers, FiBook, FiGlobe } from 'react-icons/fi';
 import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
-import SectionHeading from '../components/SectionHeading';
 import CTABanner from '../components/CTABanner';
-import RelatedContent from '../components/RelatedContent';
 import HeaderImage from '../assets/Team_discussion.jpeg';
 import DrugPreventionImg from '../assets/Say no to drugs.jpeg';
 import RehabilitationImg from '../assets/Drug_Recovered.jpeg';
@@ -21,13 +18,20 @@ const Projects = () => {
 
   const [activeFilter, setActiveFilter] = useState('all');
 
-  const projectCategories = [
-    { id: 'all', name: 'All Pillars' },
-    { id: 'prevention', name: 'Drug Prevention' },
+  const projectMeta = [
+    { value: 6, label: 'Active Interventions' },
+    { value: 120, suffix: '+', label: 'Communities' },
+    { value: 12000, suffix: '+', label: 'Beneficiaries' },
+    { value: 15, label: 'Counties' },
+  ];
+
+  const filters = [
+    { id: 'all', name: 'All' },
+    { id: 'prevention', name: 'Prevention' },
     { id: 'rehabilitation', name: 'Rehabilitation' },
     { id: 'education', name: 'Education' },
-    { id: 'inclusion', name: 'Social Inclusion' },
-    { id: 'community', name: 'Community' }
+    { id: 'inclusion', name: 'Inclusion' },
+    { id: 'community', name: 'Community' },
   ];
 
   const projects = [
@@ -35,79 +39,59 @@ const Projects = () => {
       id: 1,
       title: 'Drug Prevention Campaigns',
       category: 'prevention',
-      description: 'School and community awareness aligned with NADAP 2025-2030',
-      status: 'ongoing',
+      description: 'School and community awareness sessions aligned with NADAP 2025–2030.',
       progress: 85,
       beneficiaries: '10,000+',
-      icon: <FiShield />,
-      target: 'Youth & Adolescents',
-      image: DrugPreventionImg
+      image: DrugPreventionImg,
     },
     {
       id: 2,
       title: 'Psychosocial Rehabilitation',
       category: 'rehabilitation',
-      description: 'Counseling and reintegration for drug affected individuals',
-      status: 'ongoing',
+      description: 'Counselling, skills training, and family reintegration.',
       progress: 70,
       beneficiaries: '8,000+',
-      icon: <FiHeart />,
-      target: 'Individuals & Families',
-      image: RehabilitationImg
+      image: RehabilitationImg,
     },
     {
       id: 3,
       title: 'Youth & Girls Empowerment',
       category: 'education',
-      description: 'Skills training and leadership development aligned with YTEI',
-      status: 'ongoing',
+      description: 'Leadership development and life skills aligned to YTEI.',
       progress: 75,
       beneficiaries: '1,200+',
-      icon: <FiUsers />,
-      target: 'Youth & Adolescent Girls',
-      image: YouthEmpowermentImg
+      image: YouthEmpowermentImg,
     },
     {
       id: 4,
       title: 'Widows & Elderly Support',
       category: 'inclusion',
-      description: 'Economic inclusion and social protection for vulnerable groups',
-      status: 'ongoing',
+      description: 'Livelihood groups and social protection for the most vulnerable.',
       progress: 65,
       beneficiaries: '500+',
-      icon: <FiHeart />,
-      target: 'Widows & Elderly',
-      image: WidowsSupportImg
+      image: WidowsSupportImg,
     },
     {
       id: 5,
       title: 'Community Peacebuilding',
       category: 'community',
-      description: 'Strengthening community resilience and partnerships',
-      status: 'ongoing',
+      description: 'Social cohesion work with leaders, councils, and residents.',
       progress: 80,
       beneficiaries: '120+',
-      icon: <FiGlobe />,
-      target: 'Communities',
-      image: PeacebuildingImg
+      image: PeacebuildingImg,
     },
     {
       id: 6,
       title: 'Child Protection & Education',
       category: 'education',
-      description: 'Integrated education support and child safeguarding',
-      status: 'ongoing',
+      description: 'Integrated safeguarding, school places, and learning materials.',
       progress: 90,
       beneficiaries: '3,000+',
-      icon: <FiBook />,
-      target: 'Children',
-      image: ChildProtectionImg
-    }
+      image: ChildProtectionImg,
+    },
   ];
 
-  const filteredProjects = activeFilter === 'all'
-    ? projects
-    : projects.filter(project => project.category === activeFilter);
+  const visible = activeFilter === 'all' ? projects : projects.filter((p) => p.category === activeFilter);
 
   return (
     <>
@@ -127,113 +111,90 @@ const Projects = () => {
         ]}
         breadcrumbs={[{ name: 'Our Projects', url: '/projects' }]}
       />
-      <div className="min-h-screen bg-white">
-        <PageHeader
-          eyebrow="Active Interventions"
-          title="Our Projects"
-          description="A community based organization dedicated to preventing drug abuse and protecting vulnerable populations through YTEI and NADAP aligned interventions."
-          image={HeaderImage}
-          alt="KSL projects background"
-        />
 
-        <main className="py-16 lg:py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            {/* Vision / Intro */}
-            <SectionHeading
-              eyebrow="Real-World Action"
-              title="Strategic Impact"
-              description="Our projects are strategically designed to align with Liberia's National Drug Action Plan (NADAP) 2025-2030 and the Youth, Technology, Education, and Innovation (YTEI) framework, driving tangible change across communities."
-            />
+      <PageHeader
+        eyebrow="Active Interventions"
+        title="Work in progress, county by county"
+        description="Six live programmes, each tracked against a published target."
+        image={HeaderImage}
+        meta={projectMeta}
+      />
 
-            {/* Filter */}
-            <div className="mt-12 mb-12 flex flex-wrap justify-center gap-2">
-              {projectCategories.map((category) => (
-                <button
-                  key={category.id}
-                  onClick={() => setActiveFilter(category.id)}
-                  className={`px-4 py-2 text-sm font-semibold tracking-wide uppercase transition-colors ${activeFilter === category.id
-                    ? 'bg-blue-700 text-white'
-                    : 'bg-white border border-slate-300 text-slate-600 hover:border-blue-500'
-                    }`}
-                >
-                  {category.name}
-                </button>
-              ))}
-            </div>
-
-            {/* Projects Grid with Images */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredProjects.map((project, index) => (
-                <motion.div
-                  key={project.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.05, duration: 0.5 }}
-                  className="bg-white border border-slate-200 hover:border-blue-300 transition-colors shadow-sm group relative overflow-hidden flex flex-col"
-                >
-                  {/* Project Image */}
-                  <div className="relative h-52 overflow-hidden">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-slate-950/50"></div>
-                    {/* Category badge on image */}
-                    <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 bg-blue-700 text-white text-xs font-semibold uppercase tracking-wider">
-                        {project.category}
-                      </span>
-                    </div>
-                    {/* Icon overlay on image */}
-                    <div className="absolute bottom-4 right-4 bg-blue-700 text-white p-2.5">
-                      {project.icon}
-                    </div>
-                  </div>
-
-                  {/* Card Content */}
-                  <div className="p-8 flex flex-col flex-grow">
-                    <h3 className="text-xl font-semibold text-slate-900 leading-tight mb-4">{project.title}</h3>
-                    <p className="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-2">{project.description}</p>
-
-                    {/* Target */}
-                    <div className="mb-6 bg-slate-50 p-4 border border-slate-200">
-                      <div className="text-xs font-semibold tracking-wider uppercase text-slate-500 mb-1">Target Group</div>
-                      <div className="text-sm font-semibold text-slate-800">{project.target}</div>
-                    </div>
-
-                    {/* Progress */}
-                    <div className="mb-6 mt-auto">
-                      <div className="flex justify-between text-xs font-semibold tracking-wider uppercase text-slate-500 mb-2">
-                        <span>Progress</span>
-                        <span className="text-blue-600">{project.progress}%</span>
-                      </div>
-                      <div className="h-2 bg-slate-200">
-                        <div className="h-full bg-blue-600" style={{ width: `${project.progress}%` }}></div>
-                      </div>
-                    </div>
-
-                    {/* Footer */}
-                    <div className="flex items-center text-sm pt-4 border-t border-slate-200">
-                      <span className="font-semibold text-lg text-slate-900 mr-1">{project.beneficiaries}</span>
-                      <span className="text-slate-600">beneficiaries</span>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+      <main className="bg-white py-20 lg:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap items-center gap-x-8 gap-y-4 border-b border-slate-200 pb-6">
+            {filters.map((filter) => (
+              <button
+                key={filter.id}
+                type="button"
+                onClick={() => setActiveFilter(filter.id)}
+                className={`text-caption uppercase tracking-[0.18em] transition-colors ${
+                  activeFilter === filter.id ? 'text-blue-700' : 'text-slate-400 hover:text-slate-700'
+                }`}
+              >
+                {filter.name}
+                <span
+                  className={`mt-2 block h-px w-full transition-colors ${
+                    activeFilter === filter.id ? 'bg-blue-700' : 'bg-transparent'
+                  }`}
+                  aria-hidden="true"
+                />
+              </button>
+            ))}
           </div>
-        </main>
-        <CTABanner
-          title="Support a project today"
-          description="Help KSL scale drug prevention, youth empowerment, and community protection initiatives across Liberia."
-          primaryLabel="Donate Now"
-          secondaryLabel="Partner With Us"
-          secondaryTo="/partnership"
-        />
-        <RelatedContent />
-      </div>
+
+          <div className="mt-14 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+            {visible.map((project, index) => (
+              <motion.article
+                key={project.id}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.55, delay: index * 0.06 }}
+                className="group"
+              >
+                <div className="relative overflow-hidden bg-slate-100">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="h-64 w-full object-cover transition-transform duration-[900ms] group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <span className="absolute top-0 left-0 bg-slate-950/85 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-yellow-400">
+                    {project.category}
+                  </span>
+                </div>
+
+                <div className="mt-5 border-t border-slate-200 pt-5">
+                  <h2 className="text-heading-lg leading-snug text-slate-900">{project.title}</h2>
+                  <p className="mt-3 text-body-sm leading-relaxed text-slate-600">{project.description}</p>
+
+                  <div className="mt-6">
+                    <div className="flex items-baseline justify-between text-caption uppercase tracking-widest text-slate-500">
+                      <span>Progress</span>
+                      <span className="text-blue-700">{project.progress}%</span>
+                    </div>
+                    <div className="mt-2 h-px w-full bg-slate-200">
+                      <div className="h-px bg-blue-700" style={{ width: `${project.progress}%` }} />
+                    </div>
+                  </div>
+
+                  <p className="mt-5 font-serif text-stat-sm leading-none text-slate-900 tabular-nums">
+                    {project.beneficiaries}
+                  </p>
+                  <p className="mt-2 text-caption uppercase tracking-widest text-slate-500">Beneficiaries</p>
+                </div>
+              </motion.article>
+            ))}
+          </div>
+        </div>
+      </main>
+
+      <CTABanner
+        title="Support a project today"
+        description="Help KSL scale drug prevention, youth empowerment, and community protection across Liberia."
+        secondaryLabel="Partner With Us"
+      />
     </>
   );
 };

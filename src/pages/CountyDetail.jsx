@@ -1,20 +1,21 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import {
-  FiArrowLeft,
-  FiGlobe,
-  FiHome,
-  FiPhone,
-  FiHeart,
-  FiCalendar,
-  FiArrowRight,
-  FiUser
-} from 'react-icons/fi';
+import { FiArrowLeft, FiPhone, FiCalendar } from 'react-icons/fi';
 import { useCountyDetail } from '../hooks/useCountyDetail';
 import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
 import SectionHeading from '../components/SectionHeading';
 import CTABanner from '../components/CTABanner';
+import BarList from '../components/visuals/BarList';
+import RuleList from '../components/visuals/RuleList';
+import PhotoBand from '../components/visuals/PhotoBand';
+import AnimatedNumber from '../components/visuals/AnimatedNumber';
+import { COUNTIES } from '../data/counties';
+
+const leadingNumber = (value) => {
+  const match = String(value).match(/\d+/);
+  return match ? parseInt(match[0], 10) : 0;
+};
 
 
 const CountyDetail = () => {
@@ -71,62 +72,71 @@ const CountyDetail = () => {
           title={county.name}
           description={county.tagline}
           image={county.mapImage}
-          alt={`${county.name} flag`}
+          meta={[
+            ...(county.isActive && county.office
+              ? [{ value: county.office.coordinator, label: 'County Coordinator' }]
+              : [{ value: 'Planned', label: 'Expansion Status' }]),
+            { value: stats.length, label: 'Annual Targets' },
+            { value: focusAreas.length, label: 'Focus Areas' },
+            { value: programs.length, label: 'Activity Types' },
+          ]}
         >
           <Link
             to="/counties"
-            className="mt-8 inline-flex items-center border border-white/40 text-white font-semibold text-sm px-5 py-2.5 transition-colors hover:bg-white/10"
+            className="group mt-8 inline-flex items-center gap-2 text-caption uppercase tracking-[0.16em] text-white/80 transition-colors hover:text-white"
           >
-            <FiArrowLeft className="w-4 h-4 mr-2" />
-            Back to All Counties
+            <FiArrowLeft className="h-3.5 w-3.5 transition-transform group-hover:-translate-x-1" />
+            Back to all counties
           </Link>
         </PageHeader>
 
       {/* Main content */}
-      <main className="py-16 lg:py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <main className="py-20 lg:py-24">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
 
           {/* Overview + key stats */}
-          <section className="mb-20">
-            <div className="grid lg:grid-cols-[1.5fr,1fr] gap-12 lg:gap-16 items-start">
+          <section className="mb-24">
+            <div className="grid gap-12 lg:grid-cols-[1.5fr,1fr] lg:gap-16">
               <div>
-                <span className="text-blue-600 font-semibold tracking-wider uppercase text-sm mb-3 block">
+                <p className="text-caption uppercase tracking-[0.18em] text-blue-700">
                   County Overview
-                </span>
-                <h2 className="text-3xl sm:text-4xl font-semibold text-slate-900 mb-6 tracking-tight">
+                </p>
+                <h2 className="mt-4 text-heading-lg text-slate-900">
                   Our work in {county.name}
                 </h2>
-                <div className="text-slate-600 leading-relaxed">
-                  <p className="mb-6">
-                    Kids Survivor Liberia (KSL) collaborates with communities, local leaders, and
-                    government stakeholders in <strong className="text-slate-900">{county.name}</strong> to prevent drug abuse, strengthen
-                    protection systems, and expand opportunities for children, adolescents, youth,
-                    widows, and elderly men.
+                <div className="mt-6 text-body-md leading-relaxed text-slate-600">
+                  <p className="mb-5">
+                    Kids Survivor Liberia works with communities, local leaders, and government
+                    stakeholders in <strong className="text-slate-900">{county.name}</strong> to prevent
+                    drug abuse, strengthen protection systems, and expand opportunities for children,
+                    adolescents, youth, widows, and elderly men.
                   </p>
                   <p>
-                    Through county-level programming, we contribute to the <span className="text-blue-600 font-semibold">Youth Transformation &amp;
-                      Empowerment Initiative (YTEI)</span> and the <span className="text-blue-600 font-semibold">National Anti-Drugs Action Plan (NADAP)
-                        2025-2030</span>, ensuring interventions are community driven and sustainable.
+                    County programming feeds the{' '}
+                    <span className="font-medium text-blue-700">Youth Transformation &amp; Empowerment
+                      Initiative (YTEI)</span> and the{' '}
+                    <span className="font-medium text-blue-700">National Anti-Drugs Action Plan (NADAP)
+                      2025&ndash;2030</span>, keeping interventions community driven.
                   </p>
                 </div>
               </div>
 
-              <div className="bg-white border border-slate-200 shadow-sm p-8 lg:p-10">
-                <h3 className="text-lg font-semibold uppercase tracking-widest text-slate-900 mb-8 pb-4 border-b border-slate-200">
-                  At a Glance
+              <div className="bg-slate-950 px-7 py-9 sm:px-9">
+                <h3 className="text-caption uppercase tracking-[0.18em] text-yellow-400">
+                  At a glance
                 </h3>
-                <dl className="space-y-6">
+                <dl className="mt-7 divide-y divide-slate-800">
                   {stats.map((item) => (
-                    <div key={item.label} className="flex items-start justify-between gap-4">
-                      <dt className="text-base font-semibold text-slate-700 leading-tight pt-1">
+                    <div key={item.label} className="flex items-start justify-between gap-4 py-4">
+                      <dt className="pt-1 text-body-sm font-medium leading-tight text-slate-300">
                         {item.label}
                       </dt>
                       <dd className="text-right">
-                        <p className="text-3xl sm:text-4xl font-semibold text-blue-700 tracking-tight">
-                          {item.value}
+                        <p className="font-serif text-stat-sm text-white">
+                          <AnimatedNumber end={leadingNumber(item.value)} unit={String(item.value).replace(/[\d\s]/g, '')} />
                         </p>
                         {item.helper && (
-                          <p className="text-xs font-medium text-slate-500 mt-1 uppercase tracking-wider">
+                          <p className="mt-1.5 text-caption uppercase tracking-widest text-slate-500">
                             {item.helper}
                           </p>
                         )}
@@ -138,117 +148,172 @@ const CountyDetail = () => {
             </div>
           </section>
 
+          {/* Reach At a Glance */}
+          {stats.length > 0 && (
+            <section className="mb-24 border-t border-slate-200 pt-16">
+              <SectionHeading
+                eyebrow="Annual Targets"
+                title={`Programme reach in ${county.name}`}
+                description="Planning targets for the current programme year, set with county stakeholders and tracked through participatory monitoring."
+                className="mb-10"
+              />
+              <div className="max-w-3xl">
+                <BarList
+                  items={stats.map((item) => ({
+                    label: item.label,
+                    value: leadingNumber(item.value),
+                    suffix: String(item.value).replace(/[\d\s]/g, ''),
+                    helper: item.helper,
+                  }))}
+                />
+              </div>
+            </section>
+          )}
+
+          {/* National Context */}
+          <section className="mb-24">
+            <div className="bg-slate-950 px-6 py-12 sm:px-12 lg:px-16">
+              <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.1fr]">
+                <div>
+                  <p className="text-eyebrow text-yellow-400 mb-4">National Context</p>
+                  <h3 className="text-heading-lg text-white mb-5">
+                    {county.name} within KSL's national footprint
+                  </h3>
+                  <p className="text-slate-400 leading-relaxed">
+                    KSL works across all {COUNTIES.length} Liberian counties. This page covers the work
+                    coordinated locally in <strong className="text-white">{county.name}</strong> alongside
+                    national programme frameworks.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-2 gap-px bg-slate-800">
+                  <div className="bg-slate-950 p-7">
+                    <p className="font-serif text-stat-sm text-white mb-2">
+                      <AnimatedNumber end={COUNTIES.filter((c) => c.isActive).length} />
+                    </p>
+                    <p className="text-caption uppercase tracking-widest text-yellow-400 mb-2">Active Counties</p>
+                    <p className="text-caption text-slate-500 leading-relaxed">Field offices running programmes today.</p>
+                  </div>
+                  <div className="bg-slate-950 p-7">
+                    <p className="font-serif text-stat-sm text-white mb-2">
+                      <AnimatedNumber end={COUNTIES.length} />
+                    </p>
+                    <p className="text-caption uppercase tracking-widest text-yellow-400 mb-2">Total Counties</p>
+                    <p className="text-caption text-slate-500 leading-relaxed">Active plus planned expansion.</p>
+                  </div>
+                  <div className="bg-slate-950 p-7">
+                    <p className="font-serif text-stat-sm text-white mb-2">
+                      <AnimatedNumber end={focusAreas.length} />
+                    </p>
+                    <p className="text-caption uppercase tracking-widest text-yellow-400 mb-2">Focus Areas</p>
+                    <p className="text-caption text-slate-500 leading-relaxed">Local intervention priorities.</p>
+                  </div>
+                  <div className="bg-slate-950 p-7">
+                    <p className="font-serif text-stat-sm text-white mb-2">
+                      <AnimatedNumber end={programs.length} />
+                    </p>
+                    <p className="text-caption uppercase tracking-widest text-yellow-400 mb-2">Activity Types</p>
+                    <p className="text-caption text-slate-500 leading-relaxed">Implemented in this county.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* Featured Field Report */}
           {featuredActivities.length > 0 && (
-            <section className="mb-20">
+            <section className="mb-24 border-t border-slate-200 pt-16">
               <SectionHeading
                 align="left"
                 eyebrow="Latest Field Report"
-                title={`Featured Activities in ${county.name}`}
+                title={`Featured activities in ${county.name}`}
+                className="mb-10"
               />
 
-              <div className="mt-10 grid md:grid-cols-2 gap-8">
+              <div className="grid gap-10 md:grid-cols-2">
                 {featuredActivities.map((activity, idx) => (
-                  <motion.div
+                  <motion.article
                     key={idx}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: idx * 0.1 }}
-                    className="group bg-white border border-slate-200 hover:border-blue-300 transition-colors shadow-sm flex flex-col h-full"
+                    transition={{ delay: idx * 0.1, duration: 0.55 }}
+                    className="group flex flex-col"
                   >
-                    <div className="relative h-64 overflow-hidden">
+                    <div className="relative h-64 overflow-hidden bg-slate-100">
                       <img
                         src={activity.image}
                         alt={activity.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        className="h-full w-full object-cover transition-transform duration-[900ms] group-hover:scale-105"
+                        loading="lazy"
                       />
-                      <div className="absolute top-4 left-4">
-                        <span className="bg-blue-700 text-white px-3 py-1 text-[10px] font-semibold tracking-widest uppercase">
-                          {activity.category}
-                        </span>
-                      </div>
+                      <span className="absolute left-0 bottom-0 bg-slate-950/85 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-yellow-400">
+                        {activity.category}
+                      </span>
                     </div>
-                    <div className="p-8 flex flex-col flex-grow">
-                      <div className="flex items-center text-xs font-semibold text-slate-500 mb-4 uppercase tracking-widest">
+                    <div className="mt-5 flex flex-1 flex-col border-t border-slate-200 pt-5">
+                      <div className="mb-3 flex items-center text-caption uppercase tracking-widest text-slate-400">
                         <FiCalendar className="mr-2 text-blue-600" />
                         {activity.date}
                       </div>
-                      <h3 className="text-2xl font-semibold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors line-clamp-2 leading-tight">
+                      <h3 className="text-heading-lg line-clamp-2 leading-snug text-slate-900">
                         {activity.title}
                       </h3>
-                      <p className="text-slate-600 leading-relaxed mb-8 line-clamp-3">
+                      <p className="mt-3 line-clamp-3 text-body-sm leading-relaxed text-slate-600">
                         {activity.excerpt}
                       </p>
-                      <div className="mt-auto pt-6 border-t border-slate-200">
-                        <span className="inline-flex items-center text-blue-600 font-semibold text-sm tracking-widest uppercase gap-2">
-                          Read Full Update
-                          <FiArrowRight />
-                        </span>
-                      </div>
                     </div>
-                  </motion.div>
+                  </motion.article>
                 ))}
               </div>
             </section>
           )}
 
           {/* Focus areas */}
-          <section className="mb-20">
+          <section className="mb-24 border-t border-slate-200 pt-16">
             <SectionHeading
               eyebrow="Focus Areas"
-              title={`Key Interventions in ${county.name}`}
+              title={`Key interventions in ${county.name}`}
               description="Activities are adapted with county stakeholders to reflect local realities while maintaining KSL's strategic pillars on prevention, protection, rehabilitation, and empowerment."
+              className="mb-10"
             />
-            <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {focusAreas.map((area, index) => (
+            <RuleList
+              items={focusAreas.map((area, index) => ({
+                label: String(index + 1).padStart(2, '0'),
+                title: area,
+              }))}
+            />
+          </section>
+
+          {/* Program highlights */}
+          <section className="mb-24 border-t border-slate-200 pt-16">
+            <SectionHeading
+              eyebrow="County Activities"
+              title="Sample program activities"
+              description={`Examples of the activity types implemented or planned with partners in ${county.name}. Specific activities are tailored with county authorities and community structures.`}
+              className="mb-10"
+            />
+            <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2">
+              {programs.map((program, index) => (
                 <motion.article
-                  key={area}
+                  key={program.title}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  className="bg-slate-50 border border-slate-200 p-6 lg:p-8 hover:bg-white hover:border-blue-300 transition-colors group"
+                  className="group flex items-start gap-5 border-t border-slate-200 pt-6"
                 >
-                  <div className="flex items-start gap-4">
-                    <span className="w-12 h-12 bg-blue-100 text-blue-600 flex items-center justify-center shrink-0 group-hover:bg-blue-700 group-hover:text-white transition-colors">
-                      <FiGlobe className="w-6 h-6" />
-                    </span>
-                    <p className="text-slate-700 text-base font-medium leading-relaxed pt-1">{area}</p>
-                  </div>
-                </motion.article>
-              ))}
-            </div>
-          </section>
-
-          {/* Program highlights */}
-          <section className="mb-20">
-            <SectionHeading
-              eyebrow="County Activities"
-              title="Sample Program Activities"
-              description={`Below are examples of the types of activities implemented or planned with partners in ${county.name}. Specific activities are tailored with county authorities and community structures.`}
-            />
-            <div className="mt-10 grid sm:grid-cols-2 gap-8">
-              {programs.map((program, index) => (
-                <motion.article
-                  key={program.title}
-                  initial={{ opacity: 0, scale: 0.97 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.05 }}
-                  className="bg-white border border-slate-200 p-8 shadow-sm hover:border-blue-300 transition-colors flex flex-col group"
-                >
-                  <div className="flex items-center gap-5 mb-6">
-                    <div className="w-14 h-14 bg-blue-50 border border-blue-100 text-blue-600 flex items-center justify-center shrink-0 group-hover:bg-blue-700 group-hover:text-white transition-colors">
-                      {program.icon}
-                    </div>
-                    <h3 className="text-xl font-semibold text-slate-900 tracking-tight group-hover:text-blue-600 transition-colors">
+                  <span className="mt-1 flex h-11 w-11 shrink-0 items-center justify-center bg-slate-950 text-yellow-400 transition-colors group-hover:bg-yellow-500 group-hover:text-slate-900">
+                    {program.icon}
+                  </span>
+                  <div>
+                    <h3 className="text-heading-md text-slate-900">
                       {program.title}
                     </h3>
+                    <p className="mt-2 text-body-sm leading-relaxed text-slate-600">
+                      {program.description}
+                    </p>
                   </div>
-                  <p className="text-slate-600 font-medium leading-relaxed">
-                    {program.description}
-                  </p>
                 </motion.article>
               ))}
             </div>
@@ -256,49 +321,48 @@ const CountyDetail = () => {
 
           {/* Success Stories Section */}
           {successStories.length > 0 && (
-            <section className="mb-20">
+            <section className="mb-24 border-t border-slate-200 pt-16">
               <SectionHeading
                 eyebrow="Impact Stories"
-                title={`Lives Transformed in ${county.name}`}
-                description="Direct testimonies from individuals whose lives have been positively impacted by KSL programs in this region."
+                title={`Lives transformed in ${county.name}`}
+                description="Direct testimonies from individuals positively impacted by KSL programmes in this region."
+                className="mb-10"
               />
-              <div className="mt-10 space-y-10">
+              <div className="space-y-12">
                 {successStories.map((story, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="bg-white border border-slate-200 shadow-sm overflow-hidden flex flex-col lg:flex-row min-h-[400px]"
+                    className="grid lg:grid-cols-[40%_1fr]"
                   >
-                    <div className="lg:w-[40%] relative min-h-[300px] lg:min-h-full">
+                    <div className="relative min-h-[280px] overflow-hidden bg-slate-100 lg:min-h-full">
                       {story.image ? (
                         <img
                           src={story.image}
                           alt={story.name}
-                          className="absolute inset-0 w-full h-full object-cover"
+                          className="absolute inset-0 h-full w-full object-cover"
+                          loading="lazy"
                         />
                       ) : (
-                        <div className="absolute inset-0 bg-blue-700 flex items-center justify-center">
-                          <FiUser className="w-24 h-24 text-white/20" />
-                        </div>
+                        <div className="absolute inset-0 bg-slate-900"></div>
                       )}
-                      <div className="absolute inset-0 bg-slate-950/50"></div>
-                      <div className="absolute bottom-8 left-8">
-                        <h4 className="text-2xl font-semibold text-white mb-1">{story.name}</h4>
-                        <p className="text-blue-200 text-xs font-semibold tracking-widest uppercase">{story.category}</p>
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 to-transparent" />
+                      <div className="absolute bottom-6 left-6">
+                        <h4 className="text-heading-md text-white">{story.name}</h4>
+                        <p className="mt-1 text-caption uppercase tracking-[0.18em] text-yellow-400">
+                          {story.category}
+                        </p>
                       </div>
                     </div>
 
-                    <div className="lg:w-[60%] p-10 lg:p-16 flex flex-col justify-center">
-                      <div className="w-12 h-12 bg-blue-50 border border-blue-100 text-blue-600 flex items-center justify-center mb-8">
-                        {story.icon || <FiHeart className="w-6 h-6" />}
-                      </div>
-                      <p className="text-xl md:text-2xl text-slate-800 italic leading-relaxed mb-8">
-                        "{story.story}"
+                    <div className="flex flex-col justify-center border-t border-slate-200 pt-8 lg:border-t-0 lg:border-l lg:pl-12 lg:pt-0">
+                      <p className="text-heading-lg font-normal italic leading-snug text-slate-800">
+                        &ldquo;{story.story}&rdquo;
                       </p>
-                      <div className="flex items-center gap-4 text-slate-500">
-                        <div className="h-px w-10 bg-blue-300"></div>
+                      <div className="mt-6 flex items-center gap-4 text-slate-500">
+                        <div className="h-px w-10 bg-yellow-500"></div>
                         <span className="text-[10px] font-semibold tracking-[0.2em] uppercase">Verified Testimony</span>
                       </div>
                     </div>
@@ -309,13 +373,14 @@ const CountyDetail = () => {
           )}
 
           {/* County Office & Operations */}
-          <section className="mb-20">
+          <section className="mb-24 border-t border-slate-200 pt-16">
             <SectionHeading
               eyebrow="County Operations"
-              title="Local Office & Coordination"
+              title="Local office & coordination"
               description={county.office
                 ? `Our operational presence in ${county.name} enables localized, NADAP and YTEI-aligned program delivery.`
                 : `${county.name} is part of our planned expansion strategy to strengthen localized program delivery across Liberia.`}
+              className="mb-10"
             />
 
             {county.office ? (
@@ -323,68 +388,79 @@ const CountyDetail = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="max-w-2xl mx-auto"
+                className="max-w-3xl bg-slate-950 px-7 py-9 sm:px-10"
               >
-                <div className="bg-white border border-slate-200 shadow-sm p-8 lg:p-10 group">
-
-                  <div className="flex items-center gap-5 mb-8 pb-6 border-b border-slate-200">
-                    <div className="w-14 h-14 bg-blue-50 border border-blue-100 text-blue-600 flex items-center justify-center group-hover:bg-blue-700 group-hover:text-white transition-colors">
-                      <FiHome className="w-7 h-7" />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-semibold text-slate-900 tracking-tight">{county.office.name}</h3>
-                      <span className="bg-blue-700 text-white text-xs font-semibold px-3 py-1 mt-1 inline-block">Active Office</span>
-                    </div>
-                  </div>
-
-                  <dl className="grid sm:grid-cols-2 gap-6">
-                    <div className="bg-slate-50 border border-slate-200 p-5">
-                      <dt className="text-xs text-slate-500 mb-1 uppercase tracking-wider font-semibold">Focus Area</dt>
-                      <dd className="text-slate-800 font-semibold text-lg">{county.office.focusArea}</dd>
-                    </div>
-                    <div className="bg-slate-50 border border-slate-200 p-5">
-                      <dt className="text-xs text-slate-500 mb-1 uppercase tracking-wider font-semibold">County Coordinator</dt>
-                      <dd className="text-slate-800 font-semibold">{county.office.coordinator}</dd>
-                    </div>
-                    <div className="bg-slate-50 border border-slate-200 p-5 sm:col-span-2">
-                      <dt className="text-xs text-slate-500 mb-1 uppercase tracking-wider font-semibold">Contact</dt>
-                      <dd className="flex items-center gap-2">
-                        <FiPhone className="w-4 h-4 text-blue-600" />
-                        <a href={`tel:${county.office.phone}`} className="text-blue-600 font-semibold text-lg hover:text-blue-700 transition-colors">
-                          {county.office.phone}
-                        </a>
-                      </dd>
-                    </div>
-                  </dl>
+                <div className="flex flex-wrap items-center gap-4 border-b border-slate-800 pb-5">
+                  <h3 className="text-heading-md text-white">{county.office.name}</h3>
+                  <span className="bg-yellow-500 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-900">
+                    Active Office
+                  </span>
                 </div>
+
+                <dl className="mt-6 divide-y divide-slate-800">
+                  <div className="flex flex-col gap-1 py-4 sm:flex-row sm:items-center sm:gap-8">
+                    <dt className="text-caption uppercase tracking-widest text-slate-500 sm:w-40">Focus Area</dt>
+                    <dd className="text-body-md text-white">{county.office.focusArea}</dd>
+                  </div>
+                  <div className="flex flex-col gap-1 py-4 sm:flex-row sm:items-center sm:gap-8">
+                    <dt className="text-caption uppercase tracking-widest text-slate-500 sm:w-40">County Coordinator</dt>
+                    <dd className="text-body-md text-white">{county.office.coordinator}</dd>
+                  </div>
+                  <div className="flex flex-col gap-1 py-4 sm:flex-row sm:items-center sm:gap-8">
+                    <dt className="text-caption uppercase tracking-widest text-slate-500 sm:w-40">Contact</dt>
+                    <dd className="flex items-center gap-2">
+                      <FiPhone className="h-4 w-4 text-yellow-400" />
+                      <a href={`tel:${county.office.phone}`} className="text-body-md text-white hover:text-yellow-400 transition-colors">
+                        {county.office.phone}
+                      </a>
+                    </dd>
+                  </div>
+                </dl>
               </motion.div>
             ) : (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="max-w-2xl mx-auto"
+                className="max-w-3xl border-l-2 border-slate-200 pl-8"
               >
-                <div className="bg-slate-50 border-2 border-dashed border-slate-300 p-10 text-center">
-                  <div className="w-14 h-14 bg-white border border-slate-200 text-slate-400 flex items-center justify-center mx-auto mb-6">
-                    <FiHome className="w-7 h-7" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-slate-700 mb-3">Planned Expansion</h3>
-                  <p className="text-slate-500 leading-relaxed max-w-md mx-auto">
-                    A dedicated county office for <strong className="text-slate-700">{county.name}</strong> is part of our strategic expansion plan. Programs are currently coordinated through our national headquarters.
-                  </p>
-                </div>
+                <h3 className="text-heading-md text-slate-900">Planned expansion</h3>
+                <p className="mt-3 max-w-xl text-body-sm leading-relaxed text-slate-500">
+                  A dedicated county office for <strong className="text-slate-700">{county.name}</strong> is
+                  part of our strategic expansion plan. Programs are currently coordinated through our
+                  national headquarters.
+                </p>
               </motion.div>
             )}
           </section>
 
+          {/* Field Gallery */}
+          {featuredActivities.length > 0 && (
+            <section className="mb-24 border-t border-slate-200 pt-16">
+              <SectionHeading
+                eyebrow="Field Gallery"
+                title="Recent activity imagery"
+                description="Photographic documentation of recent programme activity in this county."
+                className="mb-10"
+              />
+              <PhotoBand
+                photos={featuredActivities.map((activity) => ({
+                  src: activity.image,
+                  caption: activity.title,
+                  meta: activity.category,
+                }))}
+                columns="sm:grid-cols-2 lg:grid-cols-3"
+              />
+            </section>
+          )}
+
           {/* Back link at bottom for mobile users */}
-          <div className="mt-12 mb-4 border-t border-slate-200 pt-8 flex justify-center">
+          <div className="flex justify-center border-t border-slate-200 pt-12">
             <Link
               to="/counties"
-              className="inline-flex items-center bg-blue-700 hover:bg-blue-800 text-white font-semibold px-6 py-3 transition-colors"
+              className="group inline-flex items-center gap-2 text-caption uppercase tracking-[0.16em] text-slate-600 transition-colors hover:text-blue-700"
             >
-              <FiArrowLeft className="w-5 h-5 mr-3" />
+              <FiArrowLeft className="h-3.5 w-3.5 transition-transform group-hover:-translate-x-1" />
               Back to all counties
             </Link>
           </div>

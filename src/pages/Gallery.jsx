@@ -283,33 +283,39 @@ const Gallery = () => {
       <div className="min-h-screen bg-white">
       <PageHeader
         eyebrow="Our Visual Journey"
-        title="Photo Gallery"
+        title="Photo gallery"
         description="A collection of moments capturing our impact on children and communities in Liberia."
         image={KSL}
-        alt="KSL Background"
+        meta={[
+          { value: galleryImages.length, label: 'Photographs' },
+          { value: galleryCategories.length - 1, label: 'Categories' },
+          { value: 7, label: 'Counties Documented' },
+        ]}
       />
 
       {/* Main Content */}
-      <main className="py-16 lg:py-20">
+      <main className="py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Section Intro */}
           <SectionHeading
             eyebrow="Gallery"
-            title="Moments from the Field"
-            description="A collection of photographs from our education, community outreach, health, and awareness campaign work across Liberia."
+            title="Moments from the field"
+            description="Photographs from education, community outreach, health, and awareness campaign work across Liberia."
+            className="mb-10"
           />
 
           {/* Category Filter */}
-          <div className="mb-12 flex justify-center">
-            <div className="inline-flex flex-wrap justify-center gap-2">
+          <div className="mb-14 border-b border-slate-200">
+            <div className="flex flex-wrap gap-x-8 gap-y-2">
               {galleryCategories.map((category) => (
                 <button
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
-                  className={`px-4 py-2 text-sm font-semibold transition-colors whitespace-nowrap ${activeCategory === category.id
-                    ? 'bg-blue-700 text-white'
-                    : 'bg-white border border-slate-300 text-slate-600 hover:border-blue-500'
-                    }`}
+                  className={`-mb-px border-b-2 pb-4 text-caption uppercase tracking-widest transition-colors whitespace-nowrap ${
+                    activeCategory === category.id
+                      ? 'border-yellow-500 text-slate-900'
+                      : 'border-transparent text-slate-500 hover:text-slate-900'
+                  }`}
                 >
                   {category.name}
                 </button>
@@ -322,42 +328,34 @@ const Gallery = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6"
+            className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4"
           >
             {filteredImages.map((image, index) => (
-              <motion.div
+              <motion.button
                 key={image.id}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: index * 0.05 }}
-                className="relative group cursor-pointer overflow-hidden bg-white border border-slate-200 hover:border-blue-300 transition-colors"
+                type="button"
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: Math.min(index * 0.03, 0.4), duration: 0.4 }}
+                className="group relative block w-full overflow-hidden bg-slate-100 text-left"
                 onClick={() => handleImageClick(image, index)}
               >
-                {/* Image Container */}
-                <div className="aspect-[4/5] bg-slate-100 overflow-hidden relative">
+                <div className="aspect-[4/5] overflow-hidden">
                   <img
                     src={image.src}
                     alt={image.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="h-full w-full object-cover transition-transform duration-[900ms] group-hover:scale-105"
                     loading="lazy"
                   />
-                  {/* Premium Solid Overlay */}
-                  <div className="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-
-                {/* Content Reveal Overlay */}
-                <div className="absolute inset-x-0 bottom-0 p-5 text-white translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 z-20 bg-slate-950/70">
-                  <h3 className="font-semibold text-lg mb-1 tracking-tight">{image.title}</h3>
-                  <p className="text-sm text-blue-100 font-medium line-clamp-2">{image.description}</p>
-                </div>
-
-                {/* Category Badge */}
-                <div className="absolute top-4 left-4 z-20">
-                  <span className="px-3 py-1 bg-blue-700 text-white text-xs font-semibold tracking-widest uppercase">
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="absolute inset-x-0 bottom-0 translate-y-3 p-5 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                  <span className="text-[10px] uppercase tracking-[0.18em] text-yellow-400">
                     {galleryCategories.find(c => c.id === image.category)?.name}
                   </span>
+                  <h3 className="mt-2 text-heading-md text-white">{image.title}</h3>
                 </div>
-              </motion.div>
+              </motion.button>
             ))}
           </motion.div>
 
@@ -382,17 +380,17 @@ const Gallery = () => {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/95 p-4 sm:p-8">
           <div className="relative w-full max-w-6xl mx-auto flex flex-col items-center">
             {/* Top Bar Navigation */}
-            <div className="absolute top-0 right-0 left-0 flex justify-between items-center p-4 z-20 pointer-events-none">
+            <div className="absolute top-0 right-0 left-0 z-20 flex items-center justify-between p-4">
               <button
                 onClick={() => handleDownload(selectedImage.src)}
-                className="p-3 bg-slate-900 hover:bg-slate-800 text-white transition-colors pointer-events-auto border border-slate-700"
+                className="inline-flex items-center gap-2 p-3 text-white/80 transition-colors hover:text-white"
                 aria-label="Download image"
               >
-                <FiDownload size={22} />
+                <FiDownload size={20} />
               </button>
               <button
                 onClick={handleCloseModal}
-                className="p-3 bg-slate-900 hover:bg-slate-800 text-white transition-colors pointer-events-auto border border-slate-700"
+                className="inline-flex items-center gap-2 p-3 text-white/80 transition-colors hover:text-white"
                 aria-label="Close modal"
               >
                 <FiX size={24} />
@@ -402,53 +400,57 @@ const Gallery = () => {
             {/* Navigation Buttons */}
             <button
               onClick={(e) => { e.stopPropagation(); handlePrev(); }}
-              className="absolute left-4 top-1/2 -translate-y-1/2 p-4 bg-slate-900 hover:bg-slate-800 text-white transition-colors z-20 border border-slate-700 hidden sm:flex"
+              className="absolute left-2 top-1/2 z-20 hidden -translate-y-1/2 p-3 text-white/70 transition-colors hover:text-white sm:flex"
+              aria-label="Previous image"
             >
-              <FiChevronLeft size={32} />
+              <FiChevronLeft size={36} />
             </button>
             <button
               onClick={(e) => { e.stopPropagation(); handleNext(); }}
-              className="absolute right-4 top-1/2 -translate-y-1/2 p-4 bg-slate-900 hover:bg-slate-800 text-white transition-colors z-20 border border-slate-700 hidden sm:flex"
+              className="absolute right-2 top-1/2 z-20 hidden -translate-y-1/2 p-3 text-white/70 transition-colors hover:text-white sm:flex"
+              aria-label="Next image"
             >
-              <FiChevronRight size={32} />
+              <FiChevronRight size={36} />
             </button>
 
             {/* Image Display */}
-            <div className="relative mt-16 sm:mt-0 max-h-[75vh] w-full flex justify-center items-center">
+            <div className="relative mt-16 flex max-h-[75vh] w-full items-center justify-center sm:mt-0">
               <img
                 key={selectedImage.id}
                 src={selectedImage.src}
                 alt={selectedImage.title}
-                className="max-w-full max-h-[75vh] object-contain border border-slate-800"
+                className="max-h-[75vh] max-w-full object-contain"
               />
             </div>
 
             {/* Image Info Panel */}
-            <div className="mt-8 text-center w-full max-w-2xl bg-slate-900 p-6 border border-slate-800">
-              <h3 className="text-2xl sm:text-3xl font-semibold text-white mb-3 tracking-tight">{selectedImage.title}</h3>
-              <p className="text-blue-100 text-lg mb-4 leading-relaxed">{selectedImage.description}</p>
+            <div className="mt-8 w-full max-w-2xl text-center">
+              <h3 className="text-heading-lg text-white">{selectedImage.title}</h3>
+              <p className="mx-auto mt-3 max-w-xl text-body-sm leading-relaxed text-slate-400">
+                {selectedImage.description}
+              </p>
 
-              <div className="flex justify-center items-center gap-6">
-                <span className="px-3 py-1 bg-yellow-400 text-slate-900 text-sm font-semibold uppercase tracking-widest">
+              <div className="mt-6 flex items-center justify-center gap-6">
+                <span className="text-caption uppercase tracking-[0.18em] text-yellow-400">
                   {galleryCategories.find(c => c.id === selectedImage.category)?.name}
                 </span>
-                <span className="text-sm font-medium text-slate-400 tracking-widest">
-                  {currentIndex + 1} <span className="text-slate-600 mx-1">/</span> {filteredImages.length}
+                <span className="text-caption tracking-widest text-slate-500">
+                  {currentIndex + 1} <span className="mx-1 text-slate-600">/</span> {filteredImages.length}
                 </span>
               </div>
 
               {/* Mobile Navigation */}
-              <div className="flex justify-center gap-4 mt-6 sm:hidden">
+              <div className="mt-6 flex justify-center gap-8 sm:hidden">
                 <button
                   onClick={handlePrev}
-                  className="p-3 bg-slate-900 border border-slate-700 text-white"
+                  className="p-3 text-white/80"
                   aria-label="Previous image"
                 >
                   <FiChevronLeft size={24} />
                 </button>
                 <button
                   onClick={handleNext}
-                  className="p-3 bg-slate-900 border border-slate-700 text-white"
+                  className="p-3 text-white/80"
                   aria-label="Next image"
                 >
                   <FiChevronRight size={24} />

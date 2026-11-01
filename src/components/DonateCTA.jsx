@@ -22,7 +22,7 @@ const DonateCTA = ({
         className="absolute inset-0 w-full h-full object-cover opacity-25"
         loading="lazy"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/92 to-slate-950/70" />
+      <div className="absolute inset-0 bg-linear-to from-slate-950 via-slate-950/92 to-slate-950/70" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
         <div className="max-w-2xl">

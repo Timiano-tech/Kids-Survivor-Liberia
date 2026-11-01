@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import DonateNotification from './DonateNotification';
 
 const Layout = ({ children }) => {
   return (
@@ -11,7 +10,6 @@ const Layout = ({ children }) => {
       className="grow relative"
     >
       {children}
-      <DonateNotification />
     </motion.main>
   );
 };

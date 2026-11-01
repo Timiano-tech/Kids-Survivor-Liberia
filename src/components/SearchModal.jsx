@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { FiSearch, FiX, FiMapPin, FiFileText, FiClock, FiTrendingUp } from 'react-icons/fi';
 import { COUNTIES } from '../data/counties';
 import { searchIndex } from '../data/searchIndex';
-import { showComingSoon } from './ComingSoonModal';
 import { useDebounce } from '../hooks/useDebounce';
 import { useSearchHistory } from '../hooks/useSearchHistory';
 
@@ -16,7 +15,7 @@ const highlightMatch = (text, query) => {
   const parts = text.split(new RegExp(`(${query})`, 'gi'));
   return parts.map((part, i) => 
     part.toLowerCase() === query.toLowerCase() 
-      ? <mark key={i} className="bg-yellow-300 text-slate-900 rounded-sm px-0.5">{part}</mark> 
+      ? <mark key={i} className="bg-blue-100 text-blue-900 rounded-sm px-0.5">{part}</mark> 
       : part
   );
 };
@@ -104,15 +103,8 @@ const SearchModal = ({ isOpen, onClose }) => {
     addRecentSearch(debouncedQuery);
     onClose();
     
-    if (result.isCounty) {
-      if (result.isActive) {
-        navigate(result.path);
-      } else {
-        showComingSoon(result.title);
-      }
-    } else {
-      navigate(result.path);
-    }
+    // Counties without a detail page yet fall back to the counties overview
+    navigate(result.isCounty && !result.isActive ? '/counties' : result.path);
   };
 
   const handleSuggestionClick = (suggestion) => {

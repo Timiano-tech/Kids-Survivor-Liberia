@@ -18,7 +18,7 @@ const FlowChain = ({ steps = [], tone = 'light', className = '' }) => {
         >
           <span
             className={`block font-serif text-2xl leading-none mb-4 ${
-              isDark ? 'text-yellow-400' : 'text-blue-700'
+              isDark ? 'text-sky-300' : 'text-blue-700'
             }`}
             aria-hidden="true"
           >

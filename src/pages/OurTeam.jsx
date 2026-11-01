@@ -3,8 +3,6 @@ import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
 import SectionHeading from '../components/SectionHeading';
 import CTABanner from '../components/CTABanner';
-import BarList from '../components/visuals/BarList';
-import RuleList from '../components/visuals/RuleList';
 import HeaderImage from '../assets/Team_meeting.jpeg';
 import TeamImage from '../assets/KSL_Team.jpeg';
 import Mr_Steve from '../assets/team/Mr_Steve.png';
@@ -55,7 +53,7 @@ const OurTeam = () => {
       id: 4,
       name: 'Mrs. Silvia T. Willie Dongon',
       position: 'Operational Advisor',
-      department: 'Programs',
+      department: 'Programmes',
       bio: 'Advises on gender-sensitive protection work.',
       expertise: ['Gender', 'Social Inclusion'],
       image: Mrs_Silvia,
@@ -64,7 +62,7 @@ const OurTeam = () => {
       id: 5,
       name: 'Mrs. Tawah B. John',
       position: 'Head of the Widows Team',
-      department: 'Programs',
+      department: 'Programmes',
       bio: 'Organised 125 widows into livelihood programmes.',
       expertise: ['Livelihoods', 'Women’s Empowerment'],
       image: Mrs_Tawah,
@@ -73,7 +71,7 @@ const OurTeam = () => {
       id: 6,
       name: 'Miss Julie Hennings',
       position: 'Adolescent Girls Programme Lead',
-      department: 'Programs',
+      department: 'Programmes',
       bio: 'Leads mentorship and life skills for adolescent girls.',
       expertise: ['Girls’ Empowerment', 'Life Skills'],
       image: Mrs_julie,
@@ -82,7 +80,7 @@ const OurTeam = () => {
       id: 7,
       name: 'Mr. Sebastian Stephney',
       position: 'Community Engagement & Education Advisor',
-      department: 'Programs',
+      department: 'Programmes',
       bio: 'Advises on community outreach and school initiatives.',
       expertise: ['Community Outreach', 'Education'],
       image: Mr_Sebastian,
@@ -91,7 +89,7 @@ const OurTeam = () => {
       id: 8,
       name: 'Ms. Josephine P. Wreyou',
       position: 'Adolescent Girls Initiatives Lead',
-      department: 'Programs',
+      department: 'Programmes',
       bio: 'Runs girls’ protection and confidence-building initiatives.',
       expertise: ['Girls’ Protection', 'Mentorship'],
       image: Mrs_Josephine,
@@ -100,7 +98,7 @@ const OurTeam = () => {
       id: 9,
       name: 'Mr. Moses Dahn',
       position: 'Principal, KSL Scholar Programme',
-      department: 'Programs',
+      department: 'Programmes',
       bio: 'Runs free schooling for 4–17s and advises on finance.',
       expertise: ['Education', 'Governance'],
       image: Mr_Moses,
@@ -116,25 +114,7 @@ const OurTeam = () => {
     },
   ];
 
-  const departments = teamMembers.reduce((acc, member) => {
-    const existing = acc.find((dept) => dept.name === member.department);
-    if (existing) existing.count += 1;
-    else acc.push({ name: member.department, count: 1 });
-    return acc;
-  }, []);
-
-  const teamMeta = [
-    { value: teamMembers.length, label: 'Team Members' },
-    { value: departments.length, label: 'Departments' },
-    { value: 7, label: 'Field Offices' },
-    { value: 125, label: 'Widows Organised' },
-  ];
-
-  const commitments = [
-    { title: 'Field embedded', note: 'Coordinators live in the counties they support.' },
-    { title: 'Safeguarding led', note: 'Child protection sits with executive leadership.' },
-    { title: 'Skills on the roster', note: 'Protection, education, governance, and communications.' },
-  ];
+  const departments = [...new Set(teamMembers.map((member) => member.department))];
 
   return (
     <>
@@ -156,21 +136,15 @@ const OurTeam = () => {
       />
 
       <PageHeader
-        eyebrow="The People Behind KSL"
-        title="Ten people, five counties, one commitment"
-        description="A small national leadership group with specialists and coordinators in the field."
+        title="Our Team"
+        description="KSL is run by a small national leadership team, supported by programme specialists and coordinators in the field."
         image={HeaderImage}
-        meta={teamMeta}
       />
 
       <main>
         <section className="bg-white py-20 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <SectionHeading
-              eyebrow="Leadership & Staff"
-              title="Meet the team"
-              className="mb-14"
-            />
+            <SectionHeading title="Leadership and Staff" className="mb-14" />
 
             <div className="grid grid-cols-2 gap-x-6 gap-y-12 lg:grid-cols-3 lg:gap-x-8 xl:grid-cols-5">
               {teamMembers.map((member) => (
@@ -185,7 +159,7 @@ const OurTeam = () => {
                   </div>
                   <div className="mt-5 border-t border-slate-200 pt-4">
                     <h3 className="text-heading-md leading-snug text-slate-900">{member.name}</h3>
-                    <p className="mt-2 text-caption uppercase leading-relaxed tracking-wider text-blue-700">
+                    <p className="mt-1.5 text-body-sm font-medium leading-snug text-blue-700">
                       {member.position}
                     </p>
                     <p className="mt-3 text-body-sm leading-relaxed text-slate-600">{member.bio}</p>
@@ -198,24 +172,23 @@ const OurTeam = () => {
 
         <section className="bg-slate-50 border-y border-slate-200 py-20 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid gap-14 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
+            <div className="grid gap-14 lg:grid-cols-[1fr_1.1fr] lg:gap-20 items-center">
               <div>
                 <SectionHeading
-                  eyebrow="Team Structure"
-                  title="Where the team sits"
-                  description="Programmes make up the largest group, supported by executive oversight, operations, communications, and field coordination."
-                  className="mb-12"
+                  title="How Our Team Is Organised"
+                  description="Most of our staff work on programmes. They are supported by the executive leadership, operations, communications, and field coordinators based in the counties where we work."
                 />
-                <BarList
-                  items={departments.map((dept) => ({
-                    label: dept.name,
-                    value: dept.count,
-                    helper: `${dept.count} ${dept.count === 1 ? 'person' : 'people'}`,
-                  }))}
-                />
+                <ul className="mt-8 space-y-3">
+                  {departments.map((dept) => (
+                    <li key={dept} className="flex items-start gap-3 text-slate-700">
+                      <span className="w-1.5 h-1.5 bg-blue-700 mt-2.5 shrink-0" aria-hidden="true" />
+                      <span className="text-body-md">{dept}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
-              <div className="relative min-h-[22rem]">
+              <div className="relative min-h-[22rem] h-full">
                 <img
                   src={TeamImage}
                   alt="Kids Survivor Liberia team in the field"
@@ -226,19 +199,11 @@ const OurTeam = () => {
             </div>
           </div>
         </section>
-
-        <section className="bg-slate-950 py-20 lg:py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <SectionHeading tone="dark" eyebrow="How We Work" title="Three commitments" className="mb-14" />
-            <RuleList items={commitments} tone="dark" columns="sm:grid-cols-2 lg:grid-cols-3" />
-          </div>
-        </section>
       </main>
 
       <CTABanner
-        eyebrow="Work With Us"
-        title="Meet the team, then join them"
-        description="Our staff live in the counties they serve. Your support keeps that field presence funded."
+        title="Work With Us"
+        description="Many of our staff live in the counties they serve. Your support helps us keep them working in the field."
         secondaryLabel="Volunteer With Us"
         secondaryTo="/volunteer"
       />

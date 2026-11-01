@@ -7,7 +7,7 @@ import FlowChain from '../components/visuals/FlowChain';
 import RuleList from '../components/visuals/RuleList';
 import Accordion from '../components/visuals/Accordion';
 import DonateImage from '../assets/Children5.jpeg';
-import GivingImage from '../assets/Sharing_Food.jpg';
+import GivingImage from '../assets/Food_sharing2.jpeg';
 
 const Donate = () => {
   useEffect(() => {
@@ -28,23 +28,16 @@ const Donate = () => {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const donateMeta = [
-    { value: 'USD', label: 'Transfer Currency' },
-    { value: 4, label: 'Giving Steps' },
-    { value: 3, label: 'Other Ways to Give' },
-    { value: 15, label: 'Counties Funded' },
-  ];
-
   const accountRows = [
     { label: 'Bank', value: bankAccount.bankName },
-    { label: 'Account Name', value: bankAccount.accountName },
+    { label: 'Account name', value: bankAccount.accountName },
     { label: 'Currency', value: bankAccount.currency },
   ];
 
   const completionSteps = [
-    { kicker: 'Step 01', title: 'Transfer', description: 'Send the amount to the account on this page.' },
-    { kicker: 'Step 02', title: 'Reference', description: 'Include your name so we can identify the gift.' },
-    { kicker: 'Step 03', title: 'Receipt', description: 'Email your receipt to donate@ksliberia.org.' },
+    { kicker: 'Step 1', title: 'Transfer', description: 'Send your donation to the account above.' },
+    { kicker: 'Step 2', title: 'Reference', description: 'Include your name so we can identify the gift.' },
+    { kicker: 'Step 3', title: 'Receipt', description: 'Email your receipt to donate@ksliberia.org.' },
   ];
 
   const supports = [
@@ -54,17 +47,10 @@ const Donate = () => {
     { title: 'Protection work', note: 'Safeguarding for girls, widows, and elderly men.' },
   ];
 
-  const givingSteps = [
-    { kicker: 'Stage 01', title: 'You Give', description: 'Transfer directly into the KSL account.' },
-    { kicker: 'Stage 02', title: 'We Confirm', description: 'Your receipt is recorded against your name.' },
-    { kicker: 'Stage 03', title: 'It Reaches Programmes', description: 'Funds move through internal controls to field work.' },
-    { kicker: 'Stage 04', title: 'Impact Is Reported', description: 'Tracked within the annual independent audit cycle.' },
-  ];
-
   const otherWays = [
-    { title: 'Monthly giving', note: 'Recurring transfers give programmes a predictable base.' },
-    { title: 'Corporate partnership', note: 'Matched donations and employee volunteering days.' },
-    { title: 'In-kind donations', note: 'School supplies, equipment, and professional services.' },
+    { title: 'Monthly giving', note: 'Set up a regular transfer to support our programmes throughout the year.' },
+    { title: 'Corporate partnership', note: 'Businesses can match staff donations or support a specific project.' },
+    { title: 'In-kind donations', note: 'We welcome school supplies, equipment, and professional services.' },
   ];
 
   const faqs = [
@@ -112,11 +98,9 @@ const Donate = () => {
       />
 
       <PageHeader
-        eyebrow="Make An Impact"
-        title="Give directly, see where it lands"
-        description="One bank account, a named receipt, and reports you can audit."
+        title="Donate to Kids Survivor Liberia"
+        description="Your donation helps us protect, educate, and care for vulnerable children and young people across Liberia."
         image={DonateImage}
-        meta={donateMeta}
       />
 
       <main>
@@ -125,9 +109,8 @@ const Donate = () => {
             <div className="grid gap-12 lg:grid-cols-5 lg:gap-16">
               <div className="lg:col-span-3">
                 <SectionHeading
-                  eyebrow="Ways To Give"
-                  title="Bank transfer"
-                  description="KSL receives donations by direct transfer into the account below."
+                  title="How to Give"
+                  description="You can donate by bank transfer to the Kids Survivor Liberia account below."
                   className="mb-12"
                 />
 
@@ -135,12 +118,12 @@ const Donate = () => {
                   <dl className="divide-y divide-slate-800">
                     {accountRows.map((row) => (
                       <div key={row.label} className="flex flex-col gap-1 py-4 sm:flex-row sm:items-center sm:gap-8 sm:py-5">
-                        <dt className="text-caption uppercase tracking-widest text-slate-500 sm:w-36">{row.label}</dt>
+                        <dt className="text-body-sm text-slate-400 sm:w-36">{row.label}</dt>
                         <dd className="text-body-md text-white">{row.value}</dd>
                       </div>
                     ))}
                     <div className="flex flex-col gap-3 py-5 sm:flex-row sm:items-center sm:gap-8">
-                      <dt className="text-caption uppercase tracking-widest text-slate-500 sm:w-36">Account Number</dt>
+                      <dt className="text-body-sm text-slate-400 sm:w-36">Account number</dt>
                       <dd className="flex flex-wrap items-center justify-between gap-4">
                         <span className="font-mono text-heading-lg tracking-wide text-white tabular-nums">
                           {bankAccount.accountNumber}
@@ -148,7 +131,7 @@ const Donate = () => {
                         <button
                           type="button"
                           onClick={handleCopyAccountNumber}
-                          className="inline-flex items-center gap-2 border border-white/25 px-4 py-2 text-caption uppercase tracking-widest text-white transition-colors hover:border-yellow-400 hover:text-yellow-400"
+                          className="inline-flex items-center gap-2 border border-white/25 px-4 py-2 text-body-sm text-white transition-colors hover:border-white hover:text-white"
                         >
                           {copied ? <FiCheck className="h-3.5 w-3.5" /> : <FiCopy className="h-3.5 w-3.5" />}
                           {copied ? 'Copied' : 'Copy'}
@@ -167,13 +150,13 @@ const Donate = () => {
                 <div className="relative h-full min-h-[24rem]">
                   <img
                     src={GivingImage}
-                    alt="Children sharing a meal supported by KSL"
+                    alt="KSL staff sharing food with children during a community outreach"
                     className="h-full w-full object-cover"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-8">
-                    <p className="text-caption uppercase tracking-[0.18em] text-yellow-400">What Your Gift Supports</p>
+                    <p className="text-body-sm font-semibold text-sky-300">What your gift supports</p>
                     <ul className="mt-5 space-y-3">
                       {supports.map((item) => (
                         <li key={item.title} className="border-t border-white/20 pt-3">
@@ -189,44 +172,22 @@ const Donate = () => {
           </div>
         </section>
 
-        <section className="bg-slate-50 border-y border-slate-200 py-20 lg:py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <SectionHeading
-              eyebrow="Your Donation"
-              title="How a contribution moves"
-              description="Four stages, the same path for every gift."
-              className="mb-14"
-            />
-            <FlowChain steps={givingSteps} />
-          </div>
-        </section>
-
         <section className="bg-slate-950 py-20 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <SectionHeading
-              tone="dark"
-              eyebrow="Give Differently"
-              title="Other ways to support"
-              className="mb-14"
-            />
+            <SectionHeading tone="dark" title="Other Ways to Help" className="mb-14" />
             <RuleList items={otherWays} tone="dark" columns="sm:grid-cols-2 lg:grid-cols-3" />
 
             <div className="mt-20 border-t border-slate-800 pt-16">
-              <SectionHeading
-                tone="dark"
-                eyebrow="Donor Support"
-                title="Donation questions"
-                className="mb-12"
-              />
+              <SectionHeading tone="dark" title="Frequently Asked Questions" className="mb-12" />
               <div className="max-w-3xl">
                 <Accordion items={faqs} tone="dark" />
               </div>
               <p className="mt-12 max-w-3xl text-body-sm text-slate-400">
-                Still deciding? Email{' '}
-                <a href="mailto:donate@ksliberia.org" className="font-medium text-yellow-400 hover:underline">
+                If you have any other questions, please email{' '}
+                <a href="mailto:donate@ksliberia.org" className="font-medium text-sky-300 hover:underline">
                   donate@ksliberia.org
                 </a>{' '}
-                and the donation team will advise on the best way to give.
+                and a member of our team will get back to you.
               </p>
             </div>
           </div>

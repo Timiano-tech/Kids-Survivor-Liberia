@@ -13,14 +13,14 @@ const BarList = ({ items = [], tone = 'light', unit = '', max: maxProp, classNam
     <div ref={ref} className={`space-y-7 ${className}`}>
       {items.map((item, index) => {
         const percent = Math.max((item.value / max) * 100, 2);
-        const barColor = item.color || (index % 2 === 0 ? 'bg-blue-600' : 'bg-yellow-500');
+        const barColor = item.color || (index % 2 === 0 ? 'bg-blue-600' : 'bg-sky-400');
 
         return (
           <div key={item.label}>
             <div className="flex items-end justify-between gap-6 mb-2.5">
               <div className="flex items-center gap-3 min-w-0">
                 {item.icon && (
-                  <span className={`shrink-0 ${isDark ? 'text-yellow-400' : 'text-blue-600'}`}>{item.icon}</span>
+                  <span className={`shrink-0 ${isDark ? 'text-sky-300' : 'text-blue-600'}`}>{item.icon}</span>
                 )}
                 <span
                   className={`text-sm font-semibold truncate ${isDark ? 'text-slate-200' : 'text-slate-800'}`}

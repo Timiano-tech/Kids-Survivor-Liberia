@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FiMessageSquare, FiCalendar, FiUser, FiArrowRight } from 'react-icons/fi';
+import { FiCalendar, FiUser, FiArrowRight } from 'react-icons/fi';
+import SectionHeading from '../SectionHeading';
 
 import BlogImage1 from '../../assets/Campaign3.jpeg';
 import KSL_School from '../../assets/KSL_School.jpeg';
@@ -31,8 +32,8 @@ export const LatestNewsSection = () => {
     },
     {
       id: 3,
-      title: "KIDS SURVIVOR LIBERIA PRIMARY & ELEMENTARY SCHOOL (KSL)",
-      excerpt: "KIDS SURVIVOR LIBERIA Primary & Elementary School (KSL) is located in Wee Statutory District, Compound #3, Grand Bassa County, Liberia. In alignment with our mission, KSL provides free educational opportunities for children from marginalized communities, especially those from low-income families who cannot afford the high cost of school fees. Many of these children are left without access to education due to financial hardship. Through our program, we aim to bridge this gap by offering free learning opportunities, giving every child a chance to learn, grow, and build a better future. We are committed to empowering the next generation through education, regardless of their background or economic status.",
+      title: "Kids Survivor Liberia Primary & Elementary School",
+      excerpt: "Kids Survivor Liberia Primary & Elementary School (KSL) is located in Wee Statutory District, Compound #3, Grand Bassa County, Liberia. In alignment with our mission, KSL provides free educational opportunities for children from marginalized communities, especially those from low-income families who cannot afford the high cost of school fees. Many of these children are left without access to education due to financial hardship. Through our program, we aim to bridge this gap by offering free learning opportunities, giving every child a chance to learn, grow, and build a better future. We are committed to empowering the next generation through education, regardless of their background or economic status.",
       category: "Education",
       date: "Apr 04, 2026",
       author: "KSL Team",
@@ -42,26 +43,23 @@ export const LatestNewsSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-slate-50">
+    <section className="py-20 lg:py-24 bg-slate-50 border-t border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-<motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-14"
-        >
-          <span className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-700 border border-blue-100 text-button tracking-wide uppercase mb-4">
-            <FiMessageSquare className="mr-2" />
-            Program Updates & Insights
-          </span>
-          <h2 className="text-[1.5rem] sm:text-display-md lg:text-display-lg font-medium text-slate-900">Latest from Our Programs</h2>
-          <p className="mt-3 md:mt-4 text-[0.9rem] md:text-body-md text-slate-600 max-w-2xl mx-auto">
-            Updates on our NADAP and YTEI-aligned initiatives and their impact
-          </p>
-        </motion.div>
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+          <SectionHeading
+            title="Latest News"
+            description="Recent updates from our programmes and community activities."
+          />
+          <Link
+            to="/blog"
+            className="group inline-flex items-center gap-2 text-button text-blue-700 hover:text-blue-800"
+          >
+            View all news
+            <FiArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+          </Link>
+        </div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-12 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6">
           {latestNews.map((news, index) => (
             <motion.div
               key={news.id}
@@ -80,14 +78,14 @@ export const LatestNewsSection = () => {
                     loading="lazy"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="bg-blue-700 text-white px-3.5 py-1.5 text-caption tracking-wider uppercase">
+                    <span className="bg-blue-700 text-white px-3 py-1 text-caption font-semibold">
                       {news.category}
                     </span>
                   </div>
                 </div>
 
                 <div className="p-7 flex-1 flex flex-col">
-                  <div className="flex items-center text-caption font-semibold uppercase tracking-wider text-slate-500 mb-4">
+                  <div className="flex items-center text-caption text-slate-500 mb-4">
                     <FiCalendar className="mr-2 shrink-0 text-blue-600" />
                     {news.date}
                     <span className="mx-3 text-slate-300">•</span>
@@ -105,7 +103,7 @@ export const LatestNewsSection = () => {
 
                   <div className="flex justify-start items-center pt-5 border-t border-slate-100">
                     <Link to={news.link} className="inline-flex items-center text-button text-blue-700 hover:text-blue-800 group/link">
-                      Read Story
+                      Read more
                       <FiArrowRight className="ml-2 group-hover/link:translate-x-1 transition-transform" />
                     </Link>
                   </div>
@@ -113,13 +111,6 @@ export const LatestNewsSection = () => {
               </div>
             </motion.div>
           ))}
-        </div>
-
-        <div className="text-center">
-          <Link to="/blog" className="inline-flex items-center px-6 py-3 bg-white text-blue-700 border border-blue-700 text-button hover:bg-blue-50 transition-colors">
-            <span>View All Program Updates</span>
-            <FiArrowRight className="ml-2" />
-          </Link>
         </div>
       </div>
     </section>

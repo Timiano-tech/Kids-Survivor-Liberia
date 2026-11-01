@@ -45,7 +45,7 @@ export default function RelatedContent({ currentId, title = 'Explore related pro
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-caption uppercase tracking-[0.18em] text-blue-700">Keep exploring</p>
+            <p className="text-caption uppercase tracking-wider text-blue-700">Keep exploring</p>
             <h2 className="mt-3 text-heading-lg text-slate-900">{title}</h2>
             <p className="mt-3 max-w-md text-body-sm text-slate-600">
               How Kids Survivor Liberia works across communities to protect and empower youth.
@@ -53,7 +53,7 @@ export default function RelatedContent({ currentId, title = 'Explore related pro
           </div>
           <Link
             to="/programs"
-            className="group inline-flex shrink-0 items-center gap-2 text-caption font-semibold uppercase tracking-[0.14em] text-blue-700 transition-colors hover:text-blue-900"
+            className="group inline-flex shrink-0 items-center gap-2 text-caption font-semibold uppercase tracking-wider text-blue-700 transition-colors hover:text-blue-900"
           >
             All programs
             <FiArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
@@ -66,8 +66,8 @@ export default function RelatedContent({ currentId, title = 'Explore related pro
             return (
               <article key={item.id} className="group flex flex-col border-t border-slate-200 pt-5">
                 <div className="mb-4 flex items-center justify-between">
-                  <span className="text-caption uppercase tracking-[0.18em] text-blue-700">{item.category}</span>
-                  <Icon className="h-4 w-4 text-slate-300 transition-colors group-hover:text-yellow-500" />
+                  <span className="text-caption uppercase tracking-wider text-blue-700">{item.category}</span>
+                  <Icon className="h-4 w-4 text-slate-300 transition-colors group-hover:text-blue-700" />
                 </div>
                 <h3 className="text-heading-md text-slate-900">
                   <Link to={item.path} className="transition-colors hover:text-blue-700">
@@ -77,7 +77,7 @@ export default function RelatedContent({ currentId, title = 'Explore related pro
                 <p className="mt-3 text-body-sm leading-relaxed text-slate-600">{item.description}</p>
                 <Link
                   to={item.path}
-                  className="mt-5 inline-flex items-center gap-2 text-caption font-semibold uppercase tracking-[0.14em] text-blue-700 transition-colors hover:text-blue-900"
+                  className="mt-5 inline-flex items-center gap-2 text-caption font-semibold uppercase tracking-wider text-blue-700 transition-colors hover:text-blue-900"
                 >
                   Learn more
                   <FiArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />

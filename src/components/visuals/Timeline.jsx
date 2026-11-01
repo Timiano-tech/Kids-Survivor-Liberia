@@ -22,7 +22,7 @@ const Timeline = ({ items = [], tone = 'light', className = '' }) => {
           <span
             className={`absolute left-0 top-0 w-14 h-14 flex items-center justify-center border ${
               isDark
-                ? 'bg-slate-900 border-slate-600 text-yellow-400'
+                ? 'bg-slate-900 border-slate-600 text-sky-300'
                 : 'bg-white border-blue-200 text-blue-700'
             }`}
           >
@@ -31,7 +31,7 @@ const Timeline = ({ items = [], tone = 'light', className = '' }) => {
 
           {item.period && (
             <div
-              className={`text-[10px] font-bold uppercase tracking-[0.2em] mb-2 ${isDark ? 'text-yellow-400' : 'text-blue-700'}`}
+              className={`text-[10px] font-bold uppercase tracking-wider mb-2 ${isDark ? 'text-sky-300' : 'text-blue-700'}`}
             >
               {item.period}
             </div>

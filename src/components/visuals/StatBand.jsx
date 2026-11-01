@@ -38,7 +38,7 @@ const StatBand = ({ stats = [], tone = 'light', divided = false, size = 'md', cl
           </div>
 
           <div
-            className={`text-caption uppercase tracking-widest ${isDark ? 'text-slate-400' : 'text-slate-500'}`}
+            className={`text-caption uppercase tracking-wider ${isDark ? 'text-slate-400' : 'text-slate-500'}`}
           >
             {stat.label}
           </div>

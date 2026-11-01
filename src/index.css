@@ -87,10 +87,10 @@
   --text-tagline--letter-spacing: 0.15em;
   --text-tagline--font-weight: 600;
 
-  --text-eyebrow: 0.75rem;
+  --text-eyebrow: 0.875rem;
   --text-eyebrow--line-height: 1.4;
-  --text-eyebrow--letter-spacing: 0.2em;
-  --text-eyebrow--font-weight: 700;
+  --text-eyebrow--letter-spacing: 0.01em;
+  --text-eyebrow--font-weight: 600;
 }
 
 html {

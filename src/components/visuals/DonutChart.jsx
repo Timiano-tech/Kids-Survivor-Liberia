@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import AnimatedNumber from './AnimatedNumber';
 
-const PALETTE = ['#1d4ed8', '#eab308', '#0f172a', '#60a5fa', '#f59e0b', '#94a3b8'];
+const PALETTE = ['#1d4ed8', '#0ea5e9', '#0f172a', '#60a5fa', '#cbd5e1', '#94a3b8'];
 
 const DonutChart = ({
   segments = [],
@@ -71,7 +71,7 @@ const DonutChart = ({
           </span>
           {centerLabel && (
             <span
-              className={`mt-1 text-[10px] font-bold uppercase tracking-[0.2em] ${isDark ? 'text-slate-400' : 'text-slate-500'}`}
+              className={`mt-1 text-[10px] font-bold uppercase tracking-wider ${isDark ? 'text-slate-400' : 'text-slate-500'}`}
             >
               {centerLabel}
             </span>

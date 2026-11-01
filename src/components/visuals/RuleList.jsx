@@ -16,7 +16,7 @@ const RuleList = ({ items = [], columns = 'sm:grid-cols-2 lg:grid-cols-3', tone 
         >
           {item.label && (
             <p
-              className={`text-caption uppercase tracking-[0.18em] ${isDark ? 'text-yellow-400' : 'text-blue-700'}`}
+              className={`text-caption uppercase tracking-wider ${isDark ? 'text-sky-300' : 'text-blue-700'}`}
             >
               {item.label}
             </p>

@@ -29,8 +29,7 @@ const StatementBand = ({
           className="max-w-3xl"
         >
           {eyebrow && (
-            <p className="flex items-center gap-3 text-eyebrow text-yellow-400">
-              <span className="h-px w-8 bg-yellow-400" aria-hidden="true" />
+            <p className="flex items-center gap-3 text-eyebrow text-sky-300">
               {eyebrow}
             </p>
           )}
@@ -40,13 +39,13 @@ const StatementBand = ({
           </p>
 
           {attribution && (
-            <p className="mt-7 text-caption uppercase tracking-widest text-slate-400">{attribution}</p>
+            <p className="mt-7 text-caption uppercase tracking-wider text-slate-400">{attribution}</p>
           )}
 
           {linkLabel && linkTo && (
             <Link
               to={linkTo}
-              className="group mt-9 inline-flex items-center gap-2 border-b border-yellow-500 pb-1 text-button font-semibold text-yellow-400 transition-colors hover:text-yellow-300"
+              className="group mt-9 inline-flex items-center gap-2 border-b border-sky-400 pb-1 text-button font-semibold text-sky-300 transition-colors hover:text-white"
             >
               {linkLabel}
               <FiArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />

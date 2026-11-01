@@ -29,7 +29,7 @@ const programmes = [
     slug: '/programs/youth-development',
     title: 'Youth Development',
     description:
-      'Digital literacy, vocational trades, and leadership mentorship that turn youth energy into livelihoods.',
+      'Digital literacy, vocational trades, and leadership mentoring that help young people find work.',
     image: YouthDevelopmentImage,
     alt: 'Youth in a KSL digital skills class',
   },
@@ -48,9 +48,8 @@ export const ProgramGridSection = () => {
     <section className="bg-slate-50 border-y border-slate-200 py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          eyebrow="What We Do"
-          title="Four Programmes, One Goal"
-          description="Each programme addresses a different part of the cycle that keeps children and young people vulnerable. Together they move a child from immediate risk to long-term stability."
+          title="Our Programmes"
+          description="KSL runs four programmes for children and young people at risk, covering protection and care, education and skills training, and advocacy for children's rights."
           className="mb-12"
         />
 
@@ -74,8 +73,8 @@ export const ProgramGridSection = () => {
                 <p className="text-body-sm text-slate-600 leading-relaxed flex-1">
                   {programme.description}
                 </p>
-                <span className="mt-6 inline-flex items-center gap-2 text-caption font-semibold uppercase tracking-wider text-blue-700">
-                  Explore
+                <span className="mt-6 inline-flex items-center gap-2 text-body-sm font-semibold text-blue-700">
+                  Learn more
                   <FiArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                 </span>
               </div>

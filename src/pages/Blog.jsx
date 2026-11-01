@@ -23,25 +23,19 @@ const Blog = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const blogMeta = [
-    { value: 7, label: 'Articles' },
-    { value: 4, label: 'Videos' },
-    { value: 5, label: 'Topics' },
-    { value: 'Apr 2026', label: 'Latest Update' },
-  ];
 
   const articles = [
     {
       title: 'Awareness Campaign in Gbarnga',
       image: CampaignImage,
       meta: 'Community Outreach · Apr 15, 2026',
-      description: 'Town hall meetings and school workshops across Bong County.',
+      description: 'Town hall meetings and school workshops held across Bong County.',
     },
     {
       title: 'Free Medical Outreach in Buchanan',
       image: MedicalImage,
       meta: 'Health & Wellbeing · Apr 15, 2026',
-      description: '175 at-risk young people treated with partners on the ground.',
+      description: '175 at-risk young people received free medical care, together with our local partners.',
     },
     {
       title: 'KSL Primary & Elementary School',
@@ -53,42 +47,42 @@ const Blog = () => {
       title: 'Protecting Your Future: Drug Risks',
       image: StudentsLatest,
       meta: 'Prevention · Jan 19, 2026',
-      description: 'What substance use costs students, in their own language.',
+      description: 'Helping students understand the health and social risks of drug use.',
     },
     {
       title: 'A Look At Our School Programme',
       image: StudentsImpact,
       meta: 'Education · Jan 19, 2026',
-      description: 'How sponsorship keeps children in classrooms.',
+      description: 'How sponsorship helps children stay in school.',
     },
     {
       title: 'Youth-Led Community Outreach',
       image: OutreachImage,
       meta: 'Community · Jan 19, 2026',
-      description: 'Young people leading the outreach in their own counties.',
+      description: 'Young people leading outreach activities in their own communities.',
     },
     {
       title: "Supporting Children's Wellbeing",
       image: ChildrenImage,
       meta: 'Health · Jan 19, 2026',
-      description: 'Care and protection for children who have no safety net.',
+      description: 'Care and protection for vulnerable children.',
     },
   ];
 
   const videos = [
     {
-      title: 'Drug Abuse Risks, Explained',
+      title: 'The Risks of Drug Abuse',
       meta: 'Prevention · 0:52',
       poster: NoToDrugs,
       videoSrc: '/videos/KSL_video.mp4',
-      description: 'Students hear the health and social cost first-hand.',
+      description: 'Students learn about the health and social effects of drug use.',
     },
     {
       title: 'Youth Outreach: A Success Story',
-      meta: 'Field Report · 2:27',
+      meta: 'Story · 2:27',
       poster: SuccessStoryThumb,
       videoSrc: '/videos/Succes_story.mp4',
-      description: 'What changed when young people took the lead.',
+      description: 'A success story from our youth outreach work.',
     },
     {
       title: 'Say No To Drugs',
@@ -102,7 +96,7 @@ const Blog = () => {
       meta: 'Campaign · 2:16',
       poster: Thumbnail2,
       videoSrc: '/videos/Blog_Video_5.mp4',
-      description: 'A year of prevention messaging in review.',
+      description: 'Highlights from our 2026 awareness activities.',
     },
   ];
 
@@ -127,11 +121,9 @@ const Blog = () => {
       />
 
       <PageHeader
-        eyebrow="Media & Resources"
-        title="Stories from the field"
-        description="Campaigns, outreach, and recoveries reported by the teams doing the work."
+        title="News and Stories"
+        description="Updates, videos, and stories from our programmes and communities across Liberia."
         image={HeaderImage}
-        meta={blogMeta}
       />
 
       <main>
@@ -139,8 +131,7 @@ const Blog = () => {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
               tone="dark"
-              eyebrow="Watch"
-              title="Field documentaries"
+              title="Videos"
               className="mb-14"
             />
             <VideoCards items={videos} tone="dark" />
@@ -150,9 +141,8 @@ const Blog = () => {
         <section className="bg-white py-20 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
-              eyebrow="Read"
-              title="Recent articles"
-              description="Short reports from counties and programme teams."
+              title="Latest News"
+              description="Reports from our county and programme teams."
               className="mb-14"
             />
             <PhotoCards items={articles} columns="sm:grid-cols-2 lg:grid-cols-3" imageHeight="h-64" />

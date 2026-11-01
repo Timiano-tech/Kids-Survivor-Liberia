@@ -6,8 +6,8 @@ import NotFoundImage from '../assets/Community_Outreach_Children.jpeg';
 const NotFound = () => {
   const links = [
     { label: 'Our Programs', to: '/programs' },
-    { label: 'Impact & Reports', to: '/impact' },
-    { label: 'Get Involved', to: '/volunteer' },
+    { label: 'Our Impact', to: '/impact' },
+    { label: 'Volunteer', to: '/volunteer' },
     { label: 'Contact Us', to: '/contact' },
   ];
 
@@ -25,27 +25,21 @@ const NotFound = () => {
             alt="Children supported by Kids Survivor Liberia"
             className="absolute inset-0 h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-slate-950/45" />
-          <div className="absolute inset-x-0 bottom-0 p-8 lg:p-12">
-            <p className="text-caption uppercase tracking-[0.2em] text-yellow-400">Kids Survivor Liberia</p>
-            <p className="mt-3 max-w-xs text-body-md text-slate-200">
-              Every child deserves to be found.
-            </p>
-          </div>
+          <div className="absolute inset-0 bg-slate-950/20" />
         </div>
 
-        <div className="order-1 flex items-center px-6 py-20 sm:px-10 lg:order-4 lg:px-20">
+        <div className="order-1 flex items-center px-6 py-20 sm:px-10 lg:order-2 lg:px-20">
           <div className="w-full max-w-lg">
             <p className="font-serif text-[7rem] leading-none text-slate-900 sm:text-[9rem]">404</p>
             <h1 className="mt-4 text-heading-xl text-slate-900">Page not found</h1>
             <p className="mt-5 text-body-md text-slate-600">
-              The page you are looking for may have been moved, renamed, or taken down.
+              Sorry, we could not find the page you were looking for. It may have been moved, or the link may be incorrect.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
                 to="/"
-                className="inline-flex items-center justify-center gap-2 bg-yellow-500 px-7 py-3.5 text-body-sm font-semibold text-slate-900 transition-colors hover:bg-yellow-400"
+                className="inline-flex items-center justify-center gap-2 bg-blue-700 px-7 py-3.5 text-body-sm font-semibold text-white transition-colors hover:bg-blue-800"
               >
                 Back to home
               </Link>
@@ -59,7 +53,7 @@ const NotFound = () => {
             </div>
 
             <div className="mt-14 border-t border-slate-200 pt-8">
-              <p className="text-caption uppercase tracking-[0.18em] text-slate-500">Popular destinations</p>
+              <p className="text-body-sm font-medium text-slate-900">You may find these pages helpful:</p>
               <ul className="mt-5 grid gap-x-8 gap-y-3 sm:grid-cols-2">
                 {links.map((link) => (
                   <li key={link.to}>

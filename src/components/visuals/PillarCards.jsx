@@ -28,8 +28,8 @@ const PillarCards = ({ pillars = [], tone = 'light', columns = 'md:grid-cols-2',
           <div className={`mt-5 border-t pt-5 ${isDark ? 'border-slate-700' : 'border-slate-200'}`}>
             {pillar.tag && (
               <p
-                className={`text-caption uppercase tracking-[0.18em] ${
-                  isDark ? 'text-yellow-400' : 'text-blue-700'
+                className={`text-caption uppercase tracking-wider ${
+                  isDark ? 'text-sky-300' : 'text-blue-700'
                 }`}
               >
                 {pillar.tag}
@@ -61,7 +61,7 @@ const PillarCards = ({ pillars = [], tone = 'light', columns = 'md:grid-cols-2',
                     }`}
                   >
                     <span
-                      className={`mt-2 h-1.5 w-1.5 shrink-0 ${isDark ? 'bg-yellow-400' : 'bg-blue-700'}`}
+                      className={`mt-2 h-1.5 w-1.5 shrink-0 ${isDark ? 'bg-sky-400' : 'bg-blue-700'}`}
                       aria-hidden="true"
                     />
                     {point}

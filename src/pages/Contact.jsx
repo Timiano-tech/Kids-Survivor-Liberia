@@ -5,12 +5,12 @@ import {
   FiUser,
   FiPhone,
   FiArrowUpRight,
+  FiArrowRight,
 } from 'react-icons/fi';
 import emailjs from '@emailjs/browser';
 import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
 import SectionHeading from '../components/SectionHeading';
-import StatBand from '../components/visuals/StatBand';
 import { COUNTIES } from '../data/counties';
 import ContactImage from '../assets/About Picture.jpeg';
 import OfficeImage from '../assets/Team_meeting.jpeg';
@@ -55,44 +55,35 @@ const Contact = () => {
   const activeCounties = COUNTIES.filter((county) => county.isActive);
   const activeOffices = activeCounties.filter((county) => county.office);
 
-  const contactMeta = [
-    { value: activeCounties.length, label: 'Active Counties' },
-    { value: 24, suffix: 'h', label: 'Response Window' },
-    { value: COUNTIES.length, label: 'Counties Covered' },
-    { value: 1, label: 'Head Office' },
-  ];
-
   const channels = [
     {
-      title: 'Headquarters',
+      title: 'Phone',
       value: HQ_PHONE_DISPLAY,
       href: `tel:${HQ_PHONE}`,
-      note: 'Monrovia team, Liberian business hours.',
+      note: 'Head office in Monrovia, during office hours.',
+      action: 'Call us',
     },
     {
-      title: 'General Support',
+      title: 'General enquiries',
       value: 'support@ksliberia.org',
       href: 'mailto:support@ksliberia.org',
-      note: 'Safeguarding concerns and programme questions.',
+      note: 'Programme questions and safeguarding concerns.',
+      action: 'Send an email',
     },
     {
-      title: 'Donations & Receipts',
+      title: 'Donations',
       value: 'donate@ksliberia.org',
       href: 'mailto:donate@ksliberia.org',
-      note: 'Giving questions and transfer receipts.',
+      note: 'Questions about giving and transfer receipts.',
+      action: 'Send an email',
     },
     {
-      title: 'Partnerships & Grants',
-      value: 'Start a partnership',
+      title: 'Partnerships',
+      value: 'Partner with us',
       to: '/partnership',
-      note: 'Matched giving and multi-year grant arrangements.',
+      note: 'For organisations interested in working with KSL.',
+      action: 'Learn more',
     },
-  ];
-
-  const contactStats = [
-    { value: activeCounties.length, label: 'Active Counties', description: 'Field teams coordinating local enquiries.' },
-    { value: 24, label: 'Hour Response Window', description: 'Target reply time for written enquiries.' },
-    { value: COUNTIES.length, label: 'Counties Covered', description: 'Where partners can request programme support.' },
   ];
 
   const handleSubmit = (e) => {
@@ -170,29 +161,27 @@ const Contact = () => {
       />
 
       <PageHeader
-        eyebrow="Get In Touch"
-        title="Talk to a human"
-        description="One office in Monrovia, seven field teams in counties, and a reply within a day."
+        title="Contact Us"
+        description="Get in touch with our head office in Monrovia or one of our county offices. We are happy to answer your questions."
         image={ContactImage}
-        meta={contactMeta}
       />
 
       <main>
         <section className="bg-white py-20 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <SectionHeading
-              eyebrow="Reach Out"
-              title="Four ways to reach us"
-              className="mb-14"
-            />
+            <SectionHeading title="Get in Touch" className="mb-14" />
 
             <ul className="grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
               {channels.map((channel) => {
                 const inner = (
                   <>
-                    <p className="text-caption uppercase tracking-[0.18em] text-blue-700">{channel.title}</p>
-                    <p className="mt-4 text-heading-md text-slate-900 break-words">{channel.value}</p>
+                    <p className="text-body-sm font-semibold text-blue-700">{channel.title}</p>
+                    <p className="mt-3 text-heading-md text-slate-900 break-words">{channel.value}</p>
                     <p className="mt-2 text-body-sm text-slate-600">{channel.note}</p>
+                    <span className="mt-4 inline-flex items-center gap-1.5 text-body-sm font-semibold text-slate-900 group-hover:text-blue-700">
+                      {channel.action}
+                      <FiArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                    </span>
                   </>
                 );
 
@@ -201,28 +190,16 @@ const Contact = () => {
                     {channel.to ? (
                       <Link to={channel.to} className="block">
                         {inner}
-                        <span className="mt-4 inline-flex items-center gap-2 text-caption font-bold uppercase tracking-widest text-slate-900">
-                          Open page
-                          <FiArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-                        </span>
                       </Link>
                     ) : (
                       <a href={channel.href} className="block">
                         {inner}
-                        <span className="mt-4 inline-flex items-center gap-2 text-caption font-bold uppercase tracking-widest text-slate-900">
-                          Contact
-                          <FiArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-                        </span>
                       </a>
                     )}
                   </li>
                 );
               })}
             </ul>
-
-            <div className="mt-20 border-t border-slate-200 pt-14">
-              <StatBand stats={contactStats} tone="light" divided />
-            </div>
           </div>
         </section>
 
@@ -231,16 +208,15 @@ const Contact = () => {
             <div className="grid lg:grid-cols-[1.1fr_1fr] gap-14 lg:gap-20">
               <div>
                 <SectionHeading
-                  eyebrow="Send A Message"
-                  title="Write to the team"
-                  description="We typically respond within 24 hours."
+                  title="Send Us a Message"
+                  description="Fill in the form below and a member of our team will reply as soon as possible."
                   className="mb-12"
                 />
 
                 <form onSubmit={handleSubmit} ref={form} className="space-y-8">
                   <div className="grid gap-8 sm:grid-cols-2">
                     <div>
-                      <label htmlFor="contact-name" className="block text-caption uppercase tracking-widest text-slate-500">
+                      <label htmlFor="contact-name" className="block text-body-sm font-medium text-slate-700">
                         Name
                       </label>
                       <input
@@ -257,7 +233,7 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <label htmlFor="contact-email" className="block text-caption uppercase tracking-widest text-slate-500">
+                      <label htmlFor="contact-email" className="block text-body-sm font-medium text-slate-700">
                         Email
                       </label>
                       <input
@@ -275,7 +251,7 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="contact-subject" className="block text-caption uppercase tracking-widest text-slate-500">
+                    <label htmlFor="contact-subject" className="block text-body-sm font-medium text-slate-700">
                       Subject
                     </label>
                     <input
@@ -292,7 +268,7 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="contact-message" className="block text-caption uppercase tracking-widest text-slate-500">
+                    <label htmlFor="contact-message" className="block text-body-sm font-medium text-slate-700">
                       Message
                     </label>
                     <textarea
@@ -340,7 +316,7 @@ const Contact = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/10 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-8">
-                  <p className="text-caption uppercase tracking-[0.18em] text-yellow-400">Headquarters</p>
+                  <p className="text-body-sm font-semibold text-sky-300">Head office</p>
                   <p className="mt-3 font-serif text-heading-xl leading-snug text-white">
                     15th Street, Barclay Avenue, Sinkor, Monrovia
                   </p>
@@ -348,7 +324,7 @@ const Contact = () => {
                     href={`https://maps.google.com/maps?hl=en&q=${encodeURIComponent(MAP_QUERY)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-5 inline-flex items-center gap-2 border-b border-yellow-500 pb-1 text-caption font-bold uppercase tracking-widest text-yellow-400 transition-colors hover:text-yellow-300"
+                    className="mt-5 inline-flex items-center gap-2 border-b border-sky-400 pb-1 text-body-sm font-semibold text-sky-300 transition-colors hover:text-white"
                   >
                     Get directions
                     <FiArrowUpRight className="h-3.5 w-3.5" />
@@ -363,9 +339,8 @@ const Contact = () => {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
               tone="dark"
-              eyebrow="Field Presence"
-              title="County offices"
-              description="Each active county is coordinated by a named office."
+              title="County Offices"
+              description="You can also contact our offices in the counties where we work."
               className="mb-14"
             />
 
@@ -379,13 +354,13 @@ const Contact = () => {
                     <span className="font-serif text-heading-lg text-white">{county.office.name}</span>
                     <span className="text-body-sm text-slate-400">{county.office.focusArea}</span>
                     <span className="flex items-center gap-2 text-body-sm text-slate-400">
-                      <FiUser className="h-3.5 w-3.5 shrink-0 text-yellow-400" />
+                      <FiUser className="h-3.5 w-3.5 shrink-0 text-sky-300" />
                       {county.office.coordinator}
                     </span>
                     <span className="flex items-center gap-2 text-body-sm text-slate-400 md:justify-end">
                       {isRealPhone(county.office.phone) ? (
                         <>
-                          <FiPhone className="h-3.5 w-3.5 shrink-0 text-yellow-400" />
+                          <FiPhone className="h-3.5 w-3.5 shrink-0 text-sky-300" />
                           {county.office.phone}
                         </>
                       ) : (

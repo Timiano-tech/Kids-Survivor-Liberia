@@ -7,13 +7,9 @@ const SectionHeading = ({ eyebrow, title, description, align = 'left', tone = 'l
       {eyebrow && (
         <p
           className={`flex items-center gap-3 text-eyebrow ${centered ? 'justify-center' : ''} ${
-            isDark ? 'text-yellow-400' : 'text-blue-700'
+            isDark ? 'text-sky-300' : 'text-blue-700'
           }`}
         >
-          <span
-            className={`h-px w-8 shrink-0 ${isDark ? 'bg-yellow-400' : 'bg-blue-700'}`}
-            aria-hidden="true"
-          />
           {eyebrow}
         </p>
       )}

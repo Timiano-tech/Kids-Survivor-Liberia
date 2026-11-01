@@ -6,7 +6,6 @@ import { FiArrowRight } from 'react-icons/fi';
 import HeroImage from '../../assets/Community_Speech.jpeg';
 import HeroImageAlt from '../../assets/Children on the assembly.jpeg';
 import HeroImageThree from '../../assets/Students Impacted.jpeg';
-import AnimatedNumber from '../visuals/AnimatedNumber';
 
 export const HeroSection = () => {
   return (
@@ -24,25 +23,13 @@ export const HeroSection = () => {
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-28 lg:py-32">
         <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-12 lg:gap-16 items-center">
           <div>
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              className="text-eyebrow text-yellow-400 flex items-center gap-3"
-            >
-              <span className="h-px w-8 bg-yellow-400" aria-hidden="true" />
-              Kids Survivor Liberia
-            </motion.p>
-
             <motion.h1
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="mt-5 text-display-lg lg:text-display-xl text-white leading-[1.05] tracking-tight max-w-3xl"
+              className="text-display-lg lg:text-display-xl text-white leading-[1.05] tracking-tight max-w-3xl"
             >
-              Protecting Children.{' '}
-              <span className="text-yellow-400">Ending Drug Abuse.</span>{' '}
-              Rebuilding Communities.
+              Protecting children and young people across Liberia
             </motion.h1>
 
             <motion.p
@@ -75,20 +62,6 @@ export const HeroSection = () => {
               >
                 Our Programmes
               </Link>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="mt-10 pt-8 border-t border-white/15 flex items-baseline gap-3"
-            >
-              <span className="font-serif text-stat-sm text-yellow-400 leading-none">
-                <AnimatedNumber end={12000} duration={2.2} suffix="+" />
-              </span>
-              <span className="text-body-sm text-slate-400">
-                Vulnerable individuals reached
-              </span>
             </motion.div>
           </div>
 

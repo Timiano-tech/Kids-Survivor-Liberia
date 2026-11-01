@@ -32,7 +32,7 @@ const PhotoBand = ({ photos = [], tone = 'dark', columns = 'sm:grid-cols-2 lg:gr
             >
               <p className="text-sm font-semibold leading-snug">{photo.caption}</p>
               {photo.meta && (
-                <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.18em] text-yellow-400">{photo.meta}</p>
+                <p className="mt-1 text-xs text-slate-300">{photo.meta}</p>
               )}
             </figcaption>
           )}

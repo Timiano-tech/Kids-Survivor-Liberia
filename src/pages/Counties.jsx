@@ -10,8 +10,6 @@ import StatBand from '../components/visuals/StatBand';
 import CountyCoverage from '../components/visuals/CountyCoverage';
 import PhotoBand from '../components/visuals/PhotoBand';
 import { COUNTIES } from '../data/counties';
-import ScrollToTopButton from '../components/ScrollToTop';
-import { showComingSoon } from '../components/ComingSoonModal';
 import HeaderImage from '../assets/map.jpg';
 import FieldMonrovia from '../assets/Community_Outreach.jpeg';
 import FieldBong from '../assets/Community_Speech3.jpeg';
@@ -33,20 +31,18 @@ const Counties = () => {
 
   const activeCounties = COUNTIES.filter(c => c.isActive);
   const plannedCounties = COUNTIES.filter(c => !c.isActive);
-  const distinctFocusAreas = new Set(activeCounties.map(c => c.office?.focusArea).filter(Boolean)).size;
 
   const coverageStats = [
-    { value: activeCounties.length, label: 'Active Counties', description: 'Field offices currently running programmes.' },
-    { value: plannedCounties.length, label: 'Planned Expansion', description: 'Counties in the expansion pipeline.' },
-    { value: COUNTIES.length, label: 'Total Coverage', description: 'Every Liberian county, active or planned.' },
-    { value: distinctFocusAreas, label: 'Focus Areas', description: 'Distinct programme emphases across active counties.' },
+    { value: activeCounties.length, label: 'Active counties', description: 'Counties with a KSL office running programs.' },
+    { value: plannedCounties.length, label: 'Planned counties', description: 'Counties where we plan to start work.' },
+    { value: COUNTIES.length, label: 'Counties in Liberia', description: 'Our long-term aim is to work in every county.' },
   ];
 
   const fieldPhotos = [
     { src: FieldMonrovia, caption: 'Monrovia (Sinkor) office', meta: 'Montserrado' },
     { src: FieldBong, caption: 'Gbarnga city operations', meta: 'Bong' },
     { src: FieldNimba, caption: 'Sanniquellie youth engagement', meta: 'Nimba' },
-    { src: FieldBassa, caption: 'Buchanan inclusion programmes', meta: 'Grand Bassa' },
+    { src: FieldBassa, caption: 'Buchanan inclusion programs', meta: 'Grand Bassa' },
     { src: FieldLofa, caption: 'Voinjama partnerships', meta: 'Lofa' },
     { src: FieldGedeh, caption: 'Zwedru community outreach', meta: 'Grand Gedeh' },
   ];
@@ -72,16 +68,9 @@ const Counties = () => {
       />
       <div className="min-h-screen bg-white">
         <PageHeader
-          eyebrow="Our Presence in Liberia"
-          title="County operations"
-          description="Kids Survivor Liberia works with partners, communities, and young people across all 15 counties to prevent drug abuse, protect vulnerable groups, and build resilient communities."
+          title="Where We Work"
+          description="Kids Survivor Liberia works with local partners, communities, and young people in counties across Liberia to prevent drug abuse and protect vulnerable children and families."
           image={HeaderImage}
-          meta={[
-            { value: activeCounties.length, label: 'Active Counties' },
-            { value: plannedCounties.length, label: 'Planned Expansion' },
-            { value: COUNTIES.length, label: 'Total Coverage' },
-            { value: distinctFocusAreas, label: 'Focus Areas' },
-          ]}
         />
 
       {/* Main content */}
@@ -90,9 +79,8 @@ const Counties = () => {
           {/* Coverage Overview */}
           <section>
             <SectionHeading
-              eyebrow="Coverage Overview"
-              title="Where we operate today"
-              description="Seven counties have active field offices today, with the remaining eight positioned for planned expansion."
+              title="Our County Offices"
+              description="We currently have offices in seven counties and plan to expand to the remaining eight."
               className="mb-12"
             />
             <StatBand stats={coverageStats} tone="light" divided className="mb-16" />
@@ -102,24 +90,23 @@ const Counties = () => {
           {/* Filtering & Grid Header */}
           <div className="mt-24 flex flex-col gap-6 border-t border-slate-200 pt-16 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="text-caption uppercase tracking-[0.18em] text-blue-700">Regional Directory</p>
-              <h3 className="mt-3 text-heading-lg text-slate-900">Every county, one standard</h3>
+              <h3 className="text-heading-lg text-slate-900">All Counties</h3>
               <p className="mt-3 max-w-md text-body-sm text-slate-500">
-                Explore our specific programs and leadership in each county.
+                Find out about our programs and coordinators in each county.
               </p>
             </div>
 
             <div className="flex gap-x-8 border-b border-slate-200">
               {[
                 { id: 'all', label: 'All Counties' },
-                { id: 'active', label: 'Active Operations' },
+                { id: 'active', label: 'Active Counties' },
               ].map((option) => (
                 <button
                   key={option.id}
                   onClick={() => setFilter(option.id)}
-                  className={`-mb-px border-b-2 pb-3 text-caption uppercase tracking-widest transition-colors ${
+                  className={`-mb-px border-b-2 pb-3 text-body-sm font-medium transition-colors ${
                     filter === option.id
-                      ? 'border-yellow-500 text-slate-900'
+                      ? 'border-blue-700 text-slate-900'
                       : 'border-transparent text-slate-500 hover:text-slate-900'
                   }`}
                 >
@@ -164,13 +151,13 @@ const Counties = () => {
                       {/* Status Badge */}
                       <div className="absolute top-4 left-4">
                         {county.isActive ? (
-                          <span className="inline-flex items-center gap-1.5 bg-slate-950/85 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-white">
-                            <span className="h-1.5 w-1.5 bg-yellow-400" />
-                            Active Area
+                          <span className="inline-flex items-center gap-1.5 bg-slate-950/85 px-2.5 py-1 text-caption font-medium text-white">
+                            <span className="h-1.5 w-1.5 bg-sky-400" />
+                            Active
                           </span>
                         ) : (
-                          <span className="bg-slate-950/85 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-300">
-                            Planned Expansion
+                          <span className="bg-slate-950/85 px-2.5 py-1 text-caption font-medium text-slate-300">
+                            Planned
                           </span>
                         )}
                       </div>
@@ -188,13 +175,13 @@ const Counties = () => {
                       {county.isActive && county.office && (
                         <dl className="mt-6 space-y-3">
                           <div className="flex items-baseline gap-3">
-                            <dt className="w-24 shrink-0 text-[10px] font-semibold uppercase tracking-wider text-slate-400">
+                            <dt className="w-24 shrink-0 text-caption text-slate-500">
                               Coordinator
                             </dt>
                             <dd className="text-body-sm font-medium text-slate-800">{county.office.coordinator}</dd>
                           </div>
                           <div className="flex items-baseline gap-3">
-                            <dt className="w-24 shrink-0 text-[10px] font-semibold uppercase tracking-wider text-slate-400">
+                            <dt className="w-24 shrink-0 text-caption text-slate-500">
                               Focus
                             </dt>
                             <dd className="line-clamp-1 text-body-sm font-medium text-slate-800">{county.office.focusArea}</dd>
@@ -207,18 +194,15 @@ const Counties = () => {
                         {county.isActive ? (
                           <Link
                             to={`/counties/${county.id}`}
-                            className="group/link inline-flex items-center gap-2 text-caption uppercase tracking-[0.14em] font-semibold text-blue-700 transition-colors hover:text-blue-900"
+                            className="group/link inline-flex items-center gap-1.5 text-body-sm font-semibold text-blue-700 transition-colors hover:text-blue-900"
                           >
-                            View Operations
+                            Learn more
                             <FiArrowRight className="h-3.5 w-3.5 transition-transform group-hover/link:translate-x-1" />
                           </Link>
                         ) : (
-                          <button
-                            onClick={(e) => { e.preventDefault(); showComingSoon(county.name); }}
-                            className="text-caption uppercase tracking-[0.14em] text-slate-400 transition-colors hover:text-blue-600"
-                          >
-                            Notify Me of Launch
-                          </button>
+                          <span className="text-body-sm text-slate-400">
+                            Launching Soon
+                          </span>
                         )}
                       </div>
                     </div>
@@ -231,9 +215,8 @@ const Counties = () => {
           {/* Field Photography */}
           <section className="mt-24 border-t border-slate-200 pt-16">
             <SectionHeading
-              eyebrow="On The Ground"
-              title="Life across our counties"
-              description="Programmes delivered by county teams with local coordinators, partners, and community leaders."
+              title="Photos From Our Counties"
+              description="Our county teams work with local coordinators, partners, and community leaders."
               className="mb-12"
             />
             <PhotoBand photos={fieldPhotos} columns="sm:grid-cols-2 lg:grid-cols-3" />
@@ -242,13 +225,12 @@ const Counties = () => {
       </main>
 
       <CTABanner
-        title="Bring our work to all 15 counties"
+        title="Help us reach more counties"
         description="Support KSL's expansion of drug prevention and child protection programs across Liberia."
         primaryLabel="Donate Now"
         secondaryLabel="Get Involved"
         secondaryTo="/partnership"
       />
-      <ScrollToTopButton />
     </div>
   </>
 );

@@ -16,13 +16,13 @@ const ImageFeature = ({
   const isDark = tone === 'dark';
 
   const classes = {
-    eyebrow: isDark ? 'text-yellow-400' : 'text-eyebrow',
-    rule: isDark ? 'bg-yellow-400' : 'bg-blue-700',
+    eyebrow: isDark ? 'text-sky-300' : 'text-eyebrow',
+    rule: isDark ? 'bg-sky-400' : 'bg-blue-700',
     title: isDark ? 'text-white' : 'text-slate-900',
     description: isDark ? 'text-slate-400' : 'text-slate-600',
     point: isDark ? 'text-slate-300' : 'text-slate-700',
-    statBox: isDark ? 'bg-yellow-500 text-slate-900' : 'bg-blue-700 text-white',
-    statLabel: isDark ? 'text-slate-900' : 'text-blue-100',
+    statBox: isDark ? 'bg-blue-700 text-white' : 'bg-blue-700 text-white',
+    statLabel: isDark ? 'text-blue-100' : 'text-blue-100',
   };
 
   return (
@@ -48,7 +48,7 @@ const ImageFeature = ({
               <div className="font-serif text-3xl sm:text-4xl font-medium tracking-tight leading-none">
                 {stat.value}
               </div>
-              <div className={`mt-2 text-[10px] font-bold uppercase tracking-[0.18em] ${classes.statLabel}`}>
+              <div className={`mt-2 text-[10px] font-bold uppercase tracking-wider ${classes.statLabel}`}>
                 {stat.label}
               </div>
             </div>
@@ -78,7 +78,7 @@ const ImageFeature = ({
           <ul className="mt-8 grid sm:grid-cols-2 gap-4">
             {points.map((point) => (
               <li key={point} className={`flex items-start gap-3 text-sm font-medium ${classes.point}`}>
-                <span className="w-1.5 h-1.5 mt-2 shrink-0 bg-yellow-500"></span>
+                <span className="w-1.5 h-1.5 mt-2 shrink-0 bg-blue-700"></span>
                 {point}
               </li>
             ))}

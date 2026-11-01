@@ -1,16 +1,13 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FiShield } from 'react-icons/fi';
 import SEO from '../../components/SEO';
 import PageHeader from '../../components/PageHeader';
 import SectionHeading from '../../components/SectionHeading';
 import RelatedContent from '../../components/RelatedContent';
 import DonateCTA from '../../components/DonateCTA';
-import RuleList from '../../components/visuals/RuleList';
 import PillarCards from '../../components/visuals/PillarCards';
 import ProcessSteps from '../../components/visuals/ProcessSteps';
 import Timeline from '../../components/visuals/Timeline';
-import StatBand from '../../components/visuals/StatBand';
 import ImageFeature from '../../components/visuals/ImageFeature';
 import HeaderImage from '../../assets/Campaign.jpeg';
 import EducationRights from '../../assets/School assembly.jpeg';
@@ -24,92 +21,71 @@ const pillars = [
   {
     title: 'Right to Free & Quality Education',
     image: EducationRights,
-    tag: 'Focus 01',
     description:
-      'Campaigning against illegal school fees, promoting girl-child enrollment, and partnering with schools to ensure safe, violence-free learning environments.',
-    points: ['Opposition to illegal school fees', 'Girl-child enrollment drives', 'Safe school partnerships'],
+      'Campaigning against illegal school fees, encouraging girls to enrol in school, and working with schools to make them safe and free from violence.',
+    points: ['Opposition to illegal school fees', 'Girl-child enrolment drives', 'Safe school partnerships'],
   },
   {
     title: 'Right to Identity & Birth Registration',
     image: IdentityRights,
-    tag: 'Focus 02',
     description:
-      'Assisting rural families with birth certificate registration so children can access formal healthcare, education, and legal protection.',
-    points: ['Birth certificate registration support', 'Access to formal healthcare', 'Legal protection unlocked'],
+      'Helping rural families register births so children can access healthcare, education, and legal protection.',
+    points: ['Birth registration support', 'Access to healthcare', 'Access to legal protection'],
   },
   {
     title: 'Protection Against Gender-Based Violence',
     image: ProtectionRights,
-    tag: 'Focus 03',
     description:
-      'Educating communities on child sexual exploitation, early marriage prevention, and gender equity through radio programs and town hall meetings.',
-    points: ['Child sexual exploitation awareness', 'Early marriage prevention', 'Gender equity sensitization'],
+      'Educating communities on child sexual exploitation, early marriage, and gender equality through radio programmes and town hall meetings.',
+    points: ['Child sexual exploitation awareness', 'Early marriage prevention', 'Gender equality sensitization'],
   },
   {
     title: 'Youth Voice & Child Rights Clubs',
     image: YouthVoice,
-    tag: 'Focus 04',
     description:
-      'Establishing student-led Child Rights Clubs in schools to teach youth how to advocate for their rights, speak out against bullying, and report violations safely.',
+      'Setting up student-led Child Rights Clubs in schools where children learn about their rights, speak out against bullying, and report violations safely.',
     points: ['Student-led rights clubs', 'Safe reporting channels', 'Anti-bullying peer education'],
   },
 ];
 
 const advocacyPath = [
   {
-    kicker: 'Stage 01',
     title: 'Listen',
-    description: 'Community and school listening sessions surface where children’s rights are being denied in practice.',
+    description: 'Listening sessions in communities and schools show us where children’s rights are not being respected.',
   },
   {
-    kicker: 'Stage 02',
     title: 'Educate',
-    description: 'Radio programming and town hall meetings teach children and caregivers the rights they hold.',
+    description: 'Radio programmes and town hall meetings help children and caregivers understand their rights.',
   },
   {
-    kicker: 'Stage 03',
     title: 'Document',
-    description: 'Violations are documented with evidence and routed to traditional leaders, ministries, and law enforcement.',
+    description: 'Violations are recorded and referred to traditional leaders, ministries, and law enforcement.',
   },
   {
-    kicker: 'Stage 04',
-    title: 'Change',
-    description: 'Policy advocacy and public pressure convert documented violations into enforced protections.',
+    title: 'Advocate',
+    description: 'We raise documented cases with decision-makers and push for existing protections to be enforced.',
   },
 ];
 
 const legalMilestones = [
   {
-    period: 'International Framework',
+    period: 'International',
     title: 'UN Convention on the Rights of the Child',
     description:
-      'Establishes the baseline rights every child holds: education, protection, healthcare, identity, and participation. It is the reference point for all KSL child rights programming.',
+      'Sets out the rights every child holds, including education, protection, healthcare, identity, and participation. All KSL child rights work is based on it.',
   },
   {
-    period: 'National Law',
+    period: 'National law',
     title: '2011 Liberian Children’s Law',
     description:
-      'Codifies children’s rights in Liberian law, including the right to free primary education and protection from abuse and exploitation.',
+      'Sets out children’s rights in Liberian law, including the right to free primary education and protection from abuse and exploitation.',
   },
   {
-    period: 'National Development',
+    period: 'National development',
     title: 'Pro-Poor Agenda for Prosperity and Development',
     description:
-      'KSL aligns child rights advocacy to the PAPD, linking rights protection to poverty reduction, education access, and gender equality.',
+      'KSL aligns its child rights work with the PAPD, which links children’s rights to poverty reduction, access to education, and gender equality.',
   },
-  {
-    period: 'KSL Practice',
-    title: 'Grassroots enforcement partnerships',
-    description:
-      'KSL works alongside ministries, traditional leaders, civil society, and international partners so rights protections are enforced in local community life.',
-  },
-];
-
-const reach = [
-  { value: 4, label: 'Rights Focus Areas', description: 'Education, identity, protection, and youth voice.' },
-  { value: 2, label: 'Legal Instruments', description: 'UNCRC and the 2011 Liberian Children’s Law.' },
-  { value: 3, label: 'Advocacy Channels', description: 'Schools, radio, and community town halls.' },
-  { value: 15, label: 'Counties Reached', description: 'Rights work delivered with county stakeholders.' },
 ];
 
 export default function ChildrensRights() {
@@ -140,41 +116,32 @@ export default function ChildrensRights() {
       />
 
       <PageHeader
-        eyebrow="Legal & Human Rights"
-        title="Children's Rights Advocacy in Liberia"
-        description="Promoting the fundamental rights of every Liberian child to education, protection, healthcare, identity, and active participation."
+        title="Children's Rights"
+        description="Promoting the rights of every Liberian child to education, protection, healthcare, identity, and participation."
         image={HeaderImage}
       />
 
       <main>
         <section className="bg-white py-20 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-5xl">
-              <SectionHeading
-                eyebrow="The Framework"
-                title="Advocacy for children's rights"
-                description="The United Nations Convention on the Rights of the Child (UNCRC) and the 2011 Liberian Children’s Law establish unambiguous rights for all children. Yet in practice, systemic barriers—such as birth registration gaps, lack of free primary schooling, gender discrimination, and harmful traditional practices—continue to violate the rights of children in Liberia."
-                align="left"
-              />
-              <p className="mt-8 text-body-md leading-relaxed text-slate-600">
-                <span className="font-semibold text-slate-900">Kids Survivor Liberia (KSL)</span> serves as a robust grassroots voice for child rights. We work alongside government ministries, traditional leaders, civil society organizations, and international partners to ensure laws protecting children are fully enforced and integrated into local community life.
-              </p>
-            </div>
-
-            <div className="mt-16 bg-slate-950 p-10 lg:p-14">
-              <div className="flex items-center gap-5 mb-10">
-                <span className="w-14 h-14 bg-blue-700 text-white flex items-center justify-center shrink-0">
-                  <FiShield className="w-7 h-7" />
-                </span>
-                <div>
-                  <p className="text-eyebrow text-yellow-400">Legal Foundations</p>
-                  <h3 className="text-3xl font-semibold text-white tracking-tight">
-                    The instruments we hold ourselves to
-                  </h3>
-                </div>
+            <div className="max-w-3xl">
+              <SectionHeading title="About this programme" />
+              <div className="mt-6 space-y-5 text-body-md leading-relaxed text-slate-600">
+                <p>
+                  The UN Convention on the Rights of the Child (UNCRC) and the 2011 Liberian Children&rsquo;s Law set
+                  out clear rights for all children. In practice, many children in Liberia are still denied these
+                  rights because of gaps in birth registration, school fees, gender discrimination, and harmful
+                  traditional practices.
+                </p>
+                <p>
+                  Kids Survivor Liberia (KSL) speaks up for children&rsquo;s rights at community level. We work with
+                  government ministries, traditional leaders, civil society organisations, and international partners
+                  so that the laws protecting children are respected in everyday community life.
+                </p>
               </div>
 
-              <Timeline items={legalMilestones} tone="dark" />
+              <h3 className="mt-14 mb-8 text-heading-lg text-slate-900">Legal framework</h3>
+              <Timeline items={legalMilestones} />
             </div>
           </div>
         </section>
@@ -182,9 +149,8 @@ export default function ChildrensRights() {
         <section className="bg-slate-50 border-y border-slate-200 py-20 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
-              eyebrow="Focus Areas"
-              title="Key areas of rights advocacy"
-              description="Four focus areas that convert legal rights into everyday protection for Liberian children."
+              title="What we do"
+              description="Our children's rights work covers four areas."
               className="mb-12"
             />
             <PillarCards pillars={pillars} columns="sm:grid-cols-2" />
@@ -194,9 +160,8 @@ export default function ChildrensRights() {
         <section className="bg-white py-20 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
-              eyebrow="Our Approach"
-              title="How advocacy creates change"
-              description="Rights work only matters if a denied right becomes an enforced one. KSL advocacy runs through four stages."
+              title="How we work"
+              description="Our advocacy work follows these steps."
               className="mb-14"
             />
             <ProcessSteps steps={advocacyPath} />
@@ -207,30 +172,27 @@ export default function ChildrensRights() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-20 lg:space-y-28">
             <ImageFeature
               image={RadioProgramme}
-              eyebrow="Community Education"
-              title="Rights awareness, in the languages people listen to"
-              description="Rights are only meaningful when people understand them. KSL delivers child rights education through radio programming, school assemblies, and town hall meetings, so that children, caregivers, and leaders all understand what the law already guarantees them."
+              title="Community education"
+              description="We share information on children's rights through radio programmes, school assemblies, and town hall meetings, so that children, caregivers, and community leaders know what the law guarantees."
               imagePosition="left"
               points={[
                 'Radio programmes on child rights and protection',
                 'Town hall meetings open to the whole community',
-                'Traditional leaders engaged as rights allies',
-                'School assemblies used as awareness platforms',
+                'Working with traditional leaders',
+                'Awareness sessions at school assemblies',
               ]}
             />
 
             <ImageFeature
               image={CommunityForum}
-              eyebrow="Youth Participation"
-              title="Young people advocating for their own rights"
-              description="Student-led Child Rights Clubs teach children to speak out about bullying, abuse, and discrimination, and give them safe channels for reporting violations they witness."
+              title="Child Rights Clubs"
+              description="Student-led Child Rights Clubs help children speak out about bullying, abuse, and discrimination, and give them safe ways to report problems."
               imagePosition="right"
-              stat={{ value: '4', label: 'Rights Focus Areas' }}
               points={[
-                'Child Rights Clubs established in schools',
-                'Structured safe reporting pathways',
-                'Peer-to-peer anti-bullying education',
-                'Youth representatives at community forums',
+                'Clubs set up in schools',
+                'Safe ways to report concerns',
+                'Peer education on bullying',
+                'Young people represented at community forums',
               ]}
             />
           </div>
@@ -238,37 +200,29 @@ export default function ChildrensRights() {
 
         <section className="bg-white py-20 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-5xl">
-              <SectionHeading
-                eyebrow="Governance"
-                title="National policy alignment and transparency"
-                align="left"
-              />
+            <div className="max-w-3xl">
+              <SectionHeading title="Policy and accountability" />
               <p className="mt-6 text-body-md leading-relaxed text-slate-600">
-                KSL aligns its child rights programs with Liberia's Pro-Poor Agenda for Prosperity and Development (PAPD) and international human rights frameworks. Review our financial stewardship on our <Link to="/transparency" className="text-blue-600 hover:underline font-semibold">Transparency Page</Link> or collaborate on legal advocacy via our <Link to="/partnership" className="text-blue-600 hover:underline font-semibold">Partnership Page</Link>.
+                KSL aligns its child rights work with Liberia&rsquo;s Pro-Poor Agenda for Prosperity and Development
+                (PAPD) and international human rights frameworks, and all of our activities are governed by a zero
+                tolerance child safeguarding policy. You can review our finances on the{' '}
+                <Link to="/transparency" className="text-blue-700 hover:underline font-semibold">
+                  Transparency page
+                </Link>{' '}
+                or work with us on advocacy through the{' '}
+                <Link to="/partnership" className="text-blue-700 hover:underline font-semibold">
+                  Partnership page
+                </Link>
+                .
               </p>
-
-              <div className="mt-14">
-                <StatBand stats={reach} tone="light" divided />
-              </div>
-
-              <RuleList
-                items={[
-                  { label: 'Aligned', title: 'UNCRC', note: 'Every focus area maps to a Convention on the Rights of the Child article.' },
-                  { label: 'Reach', title: 'Radio', note: 'National and community radio used for rights education.' },
-                  { label: 'First', title: 'Safeguarding', note: 'A zero tolerance child safeguarding policy governs all KSL activity.' },
-                ]}
-                className="mt-14"
-              />
             </div>
           </div>
         </section>
       </main>
 
       <DonateCTA
-        eyebrow="Rights Advocacy"
-        title="Stand up for children's rights"
-        description="Partner with KSL to fund rights training, policy advocacy, and community outreach across Liberia."
+        title="Support children's rights in Liberia"
+        description="Partner with KSL to fund rights training, advocacy, and community outreach across Liberia."
         primaryLabel="Partner With KSL"
         primaryTo="/partnership"
         secondaryLabel="Read Our Policies"

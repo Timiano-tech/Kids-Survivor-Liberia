@@ -19,10 +19,8 @@ const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
 
   const projectMeta = [
-    { value: 6, label: 'Active Interventions' },
     { value: 120, suffix: '+', label: 'Communities' },
     { value: 12000, suffix: '+', label: 'Beneficiaries' },
-    { value: 15, label: 'Counties' },
   ];
 
   const filters = [
@@ -40,7 +38,6 @@ const Projects = () => {
       title: 'Drug Prevention Campaigns',
       category: 'prevention',
       description: 'School and community awareness sessions aligned with NADAP 2025–2030.',
-      progress: 85,
       beneficiaries: '10,000+',
       image: DrugPreventionImg,
     },
@@ -49,7 +46,6 @@ const Projects = () => {
       title: 'Psychosocial Rehabilitation',
       category: 'rehabilitation',
       description: 'Counselling, skills training, and family reintegration.',
-      progress: 70,
       beneficiaries: '8,000+',
       image: RehabilitationImg,
     },
@@ -58,7 +54,6 @@ const Projects = () => {
       title: 'Youth & Girls Empowerment',
       category: 'education',
       description: 'Leadership development and life skills aligned to YTEI.',
-      progress: 75,
       beneficiaries: '1,200+',
       image: YouthEmpowermentImg,
     },
@@ -66,8 +61,7 @@ const Projects = () => {
       id: 4,
       title: 'Widows & Elderly Support',
       category: 'inclusion',
-      description: 'Livelihood groups and social protection for the most vulnerable.',
-      progress: 65,
+      description: 'Livelihood groups and social support for widows and vulnerable elderly people.',
       beneficiaries: '500+',
       image: WidowsSupportImg,
     },
@@ -76,16 +70,15 @@ const Projects = () => {
       title: 'Community Peacebuilding',
       category: 'community',
       description: 'Social cohesion work with leaders, councils, and residents.',
-      progress: 80,
       beneficiaries: '120+',
+      reachLabel: 'communities engaged',
       image: PeacebuildingImg,
     },
     {
       id: 6,
       title: 'Child Protection & Education',
       category: 'education',
-      description: 'Integrated safeguarding, school places, and learning materials.',
-      progress: 90,
+      description: 'Safeguarding, school places, and learning materials for children.',
       beneficiaries: '3,000+',
       image: ChildProtectionImg,
     },
@@ -113,9 +106,8 @@ const Projects = () => {
       />
 
       <PageHeader
-        eyebrow="Active Interventions"
-        title="Work in progress, county by county"
-        description="Six live programmes, each tracked against a published target."
+        title="Our Projects"
+        description="Current projects run by Kids Survivor Liberia with communities across the country."
         image={HeaderImage}
         meta={projectMeta}
       />
@@ -128,8 +120,8 @@ const Projects = () => {
                 key={filter.id}
                 type="button"
                 onClick={() => setActiveFilter(filter.id)}
-                className={`text-caption uppercase tracking-[0.18em] transition-colors ${
-                  activeFilter === filter.id ? 'text-blue-700' : 'text-slate-400 hover:text-slate-700'
+                className={`text-body-sm font-medium transition-colors ${
+                  activeFilter === filter.id ? 'text-blue-700' : 'text-slate-500 hover:text-slate-800'
                 }`}
               >
                 {filter.name}
@@ -160,29 +152,15 @@ const Projects = () => {
                     className="h-64 w-full object-cover transition-transform duration-[900ms] group-hover:scale-105"
                     loading="lazy"
                   />
-                  <span className="absolute top-0 left-0 bg-slate-950/85 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-yellow-400">
-                    {project.category}
-                  </span>
                 </div>
 
                 <div className="mt-5 border-t border-slate-200 pt-5">
                   <h2 className="text-heading-lg leading-snug text-slate-900">{project.title}</h2>
                   <p className="mt-3 text-body-sm leading-relaxed text-slate-600">{project.description}</p>
-
-                  <div className="mt-6">
-                    <div className="flex items-baseline justify-between text-caption uppercase tracking-widest text-slate-500">
-                      <span>Progress</span>
-                      <span className="text-blue-700">{project.progress}%</span>
-                    </div>
-                    <div className="mt-2 h-px w-full bg-slate-200">
-                      <div className="h-px bg-blue-700" style={{ width: `${project.progress}%` }} />
-                    </div>
-                  </div>
-
-                  <p className="mt-5 font-serif text-stat-sm leading-none text-slate-900 tabular-nums">
-                    {project.beneficiaries}
+                  <p className="mt-4 text-body-sm text-slate-500">
+                    <span className="font-semibold text-slate-900 tabular-nums">{project.beneficiaries}</span>{' '}
+                    {project.reachLabel || 'people reached'}
                   </p>
-                  <p className="mt-2 text-caption uppercase tracking-widest text-slate-500">Beneficiaries</p>
                 </div>
               </motion.article>
             ))}
@@ -191,8 +169,8 @@ const Projects = () => {
       </main>
 
       <CTABanner
-        title="Support a project today"
-        description="Help KSL scale drug prevention, youth empowerment, and community protection across Liberia."
+        title="Support a project"
+        description="Your support helps KSL continue its drug prevention, youth empowerment, and child protection work across Liberia."
         secondaryLabel="Partner With Us"
       />
     </>

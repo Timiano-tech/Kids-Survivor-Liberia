@@ -19,57 +19,45 @@ const Partnership = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const partnershipMeta = [
-    { value: 6, label: 'Funding Areas' },
-    { value: 6, label: 'Partner Types' },
-    { value: 15, label: 'Counties' },
-    { value: 2, label: 'National Frameworks' },
-  ];
 
   const areas = [
     {
       title: 'Drug Abuse Prevention',
-      tag: 'Area 01',
       image: PreventionCampaign,
       description: 'School and community campaigns, and youth-led advocacy.',
     },
     {
       title: 'Rehabilitation & Recovery',
-      tag: 'Area 02',
       image: RecoveryProgram,
       description: 'Psychosocial support and reintegration pathways.',
     },
     {
       title: 'Youth Empowerment',
-      tag: 'Area 03',
       image: YouthSkills,
       description: 'Vocational training, life skills, and entrepreneurship.',
     },
     {
       title: 'Gender & Protection',
-      tag: 'Area 04',
       image: WomenInclusion,
       description: 'Adolescent girls, widows, and elderly support.',
     },
     {
       title: 'Education Access',
-      tag: 'Area 05',
       image: SchoolAccess,
       description: 'Scholarships and non-formal learning centres.',
     },
     {
       title: 'Community Resilience',
-      tag: 'Area 06',
       image: CommunityForum,
       description: 'Peacebuilding, crime prevention, and cohesion work.',
     },
   ];
 
   const partnerJourney = [
-    { kicker: 'Stage 01', title: 'Conversation', description: 'We map the outcomes you want to fund and who you want to reach.' },
-    { kicker: 'Stage 02', title: 'Co-Design', description: 'The intervention is mapped to KSL pillars, NADAP and YTEI targets, and a county rollout.' },
-    { kicker: 'Stage 03', title: 'Agreement', description: 'Scope, reporting cadence, safeguarding duties, and disbursement are agreed.' },
-    { kicker: 'Stage 04', title: 'Deliver & Report', description: 'Programmes run in the field and you receive documented impact reporting.' },
+    { kicker: 'Step 1', title: 'Conversation', description: 'We discuss your goals and the communities you would like to support.' },
+    { kicker: 'Step 2', title: 'Planning', description: 'Together we plan the project, aligned with KSL programmes and national NADAP and YTEI targets.' },
+    { kicker: 'Step 3', title: 'Agreement', description: 'We agree the scope, reporting schedule, safeguarding responsibilities, and funding arrangements.' },
+    { kicker: 'Step 4', title: 'Delivery and Reporting', description: 'Our teams carry out the work and send you regular progress reports.' },
   ];
 
   const partnerTypes = [
@@ -101,20 +89,17 @@ const Partnership = () => {
       />
 
       <PageHeader
-        eyebrow="Collaborate With Us"
-        title="Fund work that protects children"
-        description="Six programme areas, one partner network, and reporting you can audit."
+        title="Partner With Us"
+        description="We work with businesses, foundations, government, and community groups to protect and support children and young people in Liberia."
         image={HeaderImage}
-        meta={partnershipMeta}
       />
 
       <main>
         <section className="bg-white py-20 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
-              eyebrow="Where Funding Goes"
-              title="Six areas partners fund"
-              description="Direct every contribution into one of these programme areas."
+              title="Areas of Work"
+              description="Partners can support any of the following programme areas."
               className="mb-14"
             />
             <PhotoCards items={areas} columns="sm:grid-cols-2 lg:grid-cols-3" />
@@ -124,8 +109,7 @@ const Partnership = () => {
         <section className="bg-slate-50 border-y border-slate-200 py-20 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
-              eyebrow="How It Works"
-              title="From first call to impact report"
+              title="How Partnerships Work"
               className="mb-14"
             />
             <ProcessSteps steps={partnerJourney} />
@@ -136,8 +120,7 @@ const Partnership = () => {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
               tone="dark"
-              eyebrow="Who We Work With"
-              title="Types of partners"
+              title="Who We Work With"
               className="mb-14"
             />
             <RuleList items={partnerTypes} tone="dark" columns="sm:grid-cols-2 lg:grid-cols-3" />
@@ -146,9 +129,8 @@ const Partnership = () => {
       </main>
 
       <CTABanner
-        eyebrow="Work With Us"
-        title="Join our partnership network"
-        description="Partner with us to implement community-driven interventions across Liberia."
+        title="Become a Partner"
+        description="To discuss a partnership, please contact our team."
         primaryLabel="Contact Partnership Team"
         primaryTo="/contact"
         secondaryLabel="Email support@ksliberia.org"

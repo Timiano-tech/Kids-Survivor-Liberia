@@ -6,25 +6,17 @@ import CTABanner from '../components/CTABanner';
 import ProcessSteps from '../components/visuals/ProcessSteps';
 import PhotoCards from '../components/visuals/PhotoCards';
 import RuleList from '../components/visuals/RuleList';
-import { COUNTIES } from '../data/counties';
 import TeamImg from '../assets/Team.jpeg';
 import PreventionImage from '../assets/Say no to drugs.jpeg';
 import RecoveryImage from '../assets/Drug_Recovered.jpeg';
 import ClassroomImage from '../assets/Class Room.jpeg';
 import OutreachImage from '../assets/Youth_Community_Outreach.jpeg';
-import 'react-toastify/dist/ReactToastify.css';
 
 const Volunteer = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const volunteerMeta = [
-    { value: 4, label: 'Volunteer Roles' },
-    { value: 3, suffix: ' mo', label: 'Minimum Commitment' },
-    { value: COUNTIES.filter((c) => c.isActive).length, label: 'Active Counties' },
-    { value: 15, label: 'Counties Covered' },
-  ];
 
   const roles = [
     {
@@ -54,10 +46,10 @@ const Volunteer = () => {
   ];
 
   const journey = [
-    { kicker: 'Stage 01', title: 'Apply', description: 'Tell us your skills, your county, and the pillar you want to support.' },
-    { kicker: 'Stage 02', title: 'Orientation', description: 'Safeguarding and code of conduct briefing before any community contact.' },
-    { kicker: 'Stage 03', title: 'Training', description: 'Role-specific training in prevention, psychosocial support, or education.' },
-    { kicker: 'Stage 04', title: 'Deploy', description: 'Join a programme team with your impact tracked through participatory monitoring.' },
+    { kicker: 'Step 1', title: 'Apply', description: 'Contact us with your skills, your county, and the programme you would like to support.' },
+    { kicker: 'Step 2', title: 'Orientation', description: 'Safeguarding and code of conduct briefing before any community contact.' },
+    { kicker: 'Step 3', title: 'Training', description: 'Role-specific training in prevention, psychosocial support, or education.' },
+    { kicker: 'Step 4', title: 'Deploy', description: 'Begin working with a programme team in your county.' },
   ];
 
   const expectations = [
@@ -87,20 +79,17 @@ const Volunteer = () => {
       />
 
       <PageHeader
-        eyebrow="Join The Team"
-        title="Volunteer where the work happens"
-        description="Four roles, fifteen counties, one shared commitment: keep young Liberians safe from drugs and exploitation."
+        title="Volunteer With Us"
+        description="Volunteers help us reach children and young people in communities across Liberia. We welcome people who want to give their time and skills."
         image={TeamImg}
-        meta={volunteerMeta}
       />
 
       <main>
         <section className="bg-white py-20 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
-              eyebrow="Opportunities"
-              title="Where you can help"
-              description="Every role is trained, supervised, and matched to a county team."
+              title="Volunteer Roles"
+              description="All volunteers receive training and work alongside one of our county teams."
               className="mb-14"
             />
             <PhotoCards items={roles} columns="sm:grid-cols-2 lg:grid-cols-4" imageHeight="h-56" />
@@ -110,8 +99,7 @@ const Volunteer = () => {
         <section className="bg-slate-50 border-y border-slate-200 py-20 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
-              eyebrow="How To Join"
-              title="Four steps from interest to deployment"
+              title="How to Apply"
               className="mb-14"
             />
             <ProcessSteps steps={journey} />
@@ -122,8 +110,7 @@ const Volunteer = () => {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
               tone="dark"
-              eyebrow="Good To Know"
-              title="What volunteering looks like"
+              title="What to Expect"
               className="mb-14"
             />
             <RuleList items={expectations} tone="dark" columns="sm:grid-cols-2 lg:grid-cols-4" />
@@ -132,10 +119,10 @@ const Volunteer = () => {
       </main>
 
       <CTABanner
-        title="Fund the volunteers who deliver this"
-        description="Every field session, shelter placement, and counselling hour depends on trained volunteers."
+        title="Interested in volunteering?"
+        description="Contact our team to find out about current opportunities, or support our work with a donation."
         primaryLabel="Donate Now"
-        secondaryLabel="Contact Volunteer Coordinator"
+        secondaryLabel="Contact Us"
         secondaryTo="/contact"
       />
     </>

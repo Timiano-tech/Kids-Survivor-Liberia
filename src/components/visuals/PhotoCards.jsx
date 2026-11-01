@@ -16,7 +16,7 @@ const PhotoCards = ({ items = [], columns = 'sm:grid-cols-2 lg:grid-cols-3', ima
                 loading="lazy"
               />
               {item.tag && (
-                <span className="absolute top-0 left-0 bg-slate-950/85 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-yellow-400">
+                <span className="absolute top-0 left-0 bg-slate-950/85 px-3 py-2 text-xs font-semibold text-white">
                   {item.tag}
                 </span>
               )}
@@ -25,13 +25,13 @@ const PhotoCards = ({ items = [], columns = 'sm:grid-cols-2 lg:grid-cols-3', ima
             <div className="mt-5 border-t border-slate-200 pt-5">
               <h3 className="text-heading-lg text-slate-900 leading-snug">{item.title}</h3>
               {item.meta && (
-                <p className="mt-2 text-caption uppercase tracking-widest text-slate-500">{item.meta}</p>
+                <p className="mt-2 text-body-sm text-slate-500">{item.meta}</p>
               )}
               {item.description && (
                 <p className="mt-3 text-body-sm leading-relaxed text-slate-600">{item.description}</p>
               )}
               {item.linkLabel && (
-                <span className="mt-5 inline-flex items-center gap-2 text-caption font-bold uppercase tracking-widest text-blue-700">
+                <span className="mt-5 inline-flex items-center gap-2 text-body-sm font-semibold text-blue-700">
                   {item.linkLabel}
                   <FiArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
                 </span>

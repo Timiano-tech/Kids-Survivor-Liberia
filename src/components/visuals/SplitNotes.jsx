@@ -15,9 +15,8 @@ const SplitNotes = ({ items = [], tone = 'light', className = '' }) => {
           className={`md:border-l md:pl-10 ${isDark ? 'md:border-slate-700' : 'md:border-slate-200'}`}
         >
           <p
-            className={`flex items-center gap-3 text-eyebrow ${isDark ? 'text-yellow-400' : 'text-blue-700'}`}
+            className={`flex items-center gap-3 text-eyebrow ${isDark ? 'text-sky-300' : 'text-blue-700'}`}
           >
-            <span className={`h-px w-8 ${isDark ? 'bg-yellow-400' : 'bg-blue-700'}`} aria-hidden="true" />
             {item.eyebrow}
           </p>
           <h3 className={`mt-6 text-display-sm ${isDark ? 'text-white' : 'text-slate-900'}`}>{item.title}</h3>

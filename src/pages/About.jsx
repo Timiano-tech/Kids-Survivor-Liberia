@@ -5,7 +5,6 @@ import SectionHeading from '../components/SectionHeading';
 import DonateCTA from '../components/DonateCTA';
 import PhotoMosaic from '../components/visuals/PhotoMosaic';
 import PhotoCards from '../components/visuals/PhotoCards';
-import SplitNotes from '../components/visuals/SplitNotes';
 import StatementBand from '../components/visuals/StatementBand';
 import RuleList from '../components/visuals/RuleList';
 import KSLCompany from '../assets/KSL Company.jpeg';
@@ -28,7 +27,6 @@ const About = () => {
     { value: 12000, suffix: '+', label: 'People Reached' },
     { value: 15, label: 'Counties Covered' },
     { value: 7, label: 'Field Offices' },
-    { value: 5, label: 'Programme Pillars' },
   ];
 
   const leadershipPhotos = [
@@ -52,42 +50,37 @@ const About = () => {
   const pillars = [
     {
       title: 'Drug Abuse Prevention',
-      tag: 'Pillar 01',
       image: Prevention,
       description: 'School and community campaigns that build refusal skills before experimentation starts.',
     },
     {
       title: 'Rehabilitation & Reintegration',
-      tag: 'Pillar 02',
       image: Recovery,
       description: 'Psychosocial support, skills training, and family reintegration for people recovering from addiction.',
     },
     {
       title: 'Education & Skills',
-      tag: 'Pillar 03',
       image: Classroom,
       description: 'Scholarships, non-formal learning, and vocational training for children and young people.',
     },
     {
       title: 'Gender & Social Inclusion',
-      tag: 'Pillar 04',
       image: Inclusion,
       description: 'Protection and economic inclusion for adolescent girls, widows, and vulnerable elderly men.',
     },
     {
       title: 'Community & Peacebuilding',
-      tag: 'Pillar 05',
       image: CommunityOutreach,
       description: 'Traditional leaders, schools, and local authorities working alongside us in every county.',
     },
   ];
 
   const values = [
-    { title: 'Inclusion & Equity', note: 'Rights-based work with no group left out.' },
-    { title: 'Dignity & Protection', note: 'Every child protected from abuse and exploitation.' },
-    { title: 'Prevention First', note: 'Stop drug use before it starts, not after.' },
-    { title: 'Community Led', note: 'Designed and owned locally, with local leaders.' },
-    { title: 'Accountability', note: 'Independent audit, transparent reporting.' },
+    { title: 'Inclusion & Equity', note: 'We serve children and adults regardless of gender, age, or background.' },
+    { title: 'Dignity & Protection', note: 'We treat everyone with respect and put the safety of children first.' },
+    { title: 'Prevention First', note: 'We work in schools and communities to prevent drug use early.' },
+    { title: 'Community Led', note: 'We plan and deliver programmes with local leaders and families.' },
+    { title: 'Accountability', note: 'Our accounts are independently audited every year and we report openly on our work.' },
   ];
 
   return (
@@ -111,9 +104,8 @@ const About = () => {
       />
 
       <PageHeader
-        eyebrow="Who We Are"
-        title="A Liberian organisation built to protect its youngest citizens"
-        description="Kids Survivor Liberia prevents drug abuse, protects vulnerable children, and rebuilds the communities that carry them."
+        title="About Kids Survivor Liberia"
+        description="Kids Survivor Liberia is a Liberian non-profit working to prevent drug abuse, protect vulnerable children, and support families and communities."
         image={KSLCompany}
         meta={aboutMeta}
       />
@@ -121,12 +113,20 @@ const About = () => {
       <main>
         <section className="bg-white py-20 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-[1fr_1.25fr] gap-10 lg:gap-16 items-start mb-16">
-              <SectionHeading
-                eyebrow="Our Story"
-                title="Prevention, protection, and a way forward"
-                description="We are a national non-profit working with children, adolescents, youth, adolescent girls, widows, and vulnerable elderly men. Our programmes run in fifteen counties, alongside schools, traditional leaders, and local authorities, and every one of them is measured against the National Anti-Drugs Action Plan and the Youth Transformation & Empowerment Initiative."
-              />
+            <div className="grid lg:grid-cols-[1fr_1.25fr] gap-6 lg:gap-16 items-start mb-16">
+              <SectionHeading title="Our Story" />
+              <div className="space-y-5 text-body-lg leading-relaxed text-slate-600 lg:mt-5">
+                <p>
+                  Kids Survivor Liberia (KSL) is a national non-profit working with children,
+                  adolescents, youth, adolescent girls, widows, and vulnerable elderly men. Our
+                  programmes run in fifteen counties, alongside schools, traditional leaders, and
+                  local authorities.
+                </p>
+                <p>
+                  Our work is aligned with the National Anti-Drugs Action Plan (NADAP) and the Youth
+                  Transformation &amp; Empowerment Initiative (YTEI).
+                </p>
+              </div>
             </div>
 
             <PhotoMosaic photos={leadershipPhotos} />
@@ -135,43 +135,36 @@ const About = () => {
 
         <StatementBand
           image={CommunitySpeech}
-          eyebrow="Why We Exist"
-          statement="Drug abuse, poverty, and neglect pull at the same families. We meet all three at once, in the community where they live."
-          attribution="Aligned with NADAP 2025–2030 and YTEI"
+          statement="Drug abuse, poverty, and neglect often affect the same families. We work with these families in their own communities."
         />
 
         <section className="bg-white py-20 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <SectionHeading
-              eyebrow="Purpose & Direction"
-              title="Where we are going"
-              className="mb-14"
-            />
-            <SplitNotes
-              items={[
-                {
-                  eyebrow: 'Our Mission',
-                  title: 'Keep young Liberians free from drugs and safe from harm',
-                  text: 'Prevent drug abuse, protect and rehabilitate vulnerable people, and open real routes into education and work.',
-                  note: 'Child-centred, community-driven, rights-based.',
-                },
-                {
-                  eyebrow: 'Our Vision',
-                  title: 'A drug-free Liberia where nobody is left behind',
-                  text: 'Children, girls, youth, widows, and elderly men living in dignity, with the education and economic opportunities to hold it.',
-                  note: 'Measured against NADAP and YTEI outcomes.',
-                },
-              ]}
-            />
+            <SectionHeading title="Our Mission and Vision" className="mb-12" />
+            <div className="grid gap-10 md:grid-cols-2 md:gap-16">
+              <div className="md:border-l md:border-slate-200 md:pl-10">
+                <h3 className="text-heading-lg text-slate-900">Our Mission</h3>
+                <p className="mt-4 text-body-lg leading-relaxed text-slate-600">
+                  To prevent drug abuse, protect and rehabilitate vulnerable people, and help
+                  children and young people in Liberia stay safe and access education and work.
+                </p>
+              </div>
+              <div className="md:border-l md:border-slate-200 md:pl-10">
+                <h3 className="text-heading-lg text-slate-900">Our Vision</h3>
+                <p className="mt-4 text-body-lg leading-relaxed text-slate-600">
+                  A drug-free Liberia where children, girls, youth, widows, and elderly men live in
+                  dignity, with access to education and economic opportunity.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
         <section className="bg-slate-50 border-y border-slate-200 py-20 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
-              eyebrow="Areas of Action"
-              title="Five pillars, one approach"
-              description="Every programme we run sits under one of these five pillars."
+              title="What We Do"
+              description="Our programmes are organised into five areas of work."
               className="mb-14"
             />
             <PhotoCards items={pillars} columns="sm:grid-cols-2 lg:grid-cols-3" />
@@ -180,20 +173,15 @@ const About = () => {
 
         <section className="bg-white py-20 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <SectionHeading
-              eyebrow="How We Work"
-              title="Five commitments we do not bend"
-              className="mb-14"
-            />
+            <SectionHeading title="Our Values" className="mb-14" />
             <RuleList items={values} columns="sm:grid-cols-2 lg:grid-cols-3" />
           </div>
         </section>
       </main>
 
       <DonateCTA
-        eyebrow="Support Our Work"
-        title="Fund the next community we reach"
-        description="Your support pays for prevention sessions, rehabilitation care, school places, and protection work across Liberia."
+        title="Support Our Work"
+        description="Your support pays for prevention sessions, rehabilitation care, school places, and child protection work across Liberia."
         primaryLabel="Donate Now"
         secondaryLabel="Meet the Team"
         secondaryTo="/team"

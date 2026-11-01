@@ -5,9 +5,7 @@ import SectionHeading from '../components/SectionHeading';
 import CTABanner from '../components/CTABanner';
 import PhotoMosaic from '../components/visuals/PhotoMosaic';
 import PhotoCards from '../components/visuals/PhotoCards';
-import RuleList from '../components/visuals/RuleList';
 import VideoCards from '../components/visuals/VideoCards';
-import StatBand from '../components/visuals/StatBand';
 import StudentsImpact from '../assets/Students Impacted.jpeg';
 import Assembly from '../assets/Children on the assembly.jpeg';
 import FieldMedical from '../assets/Free_Medicals9.jpeg';
@@ -27,48 +25,48 @@ const Impact = () => {
 
 
   const impactStats = [
-    { value: 12000, suffix: '+', label: 'People Reached', description: 'Children, youth, widows, and vulnerable elderly.' },
-    { value: 120, suffix: '+', label: 'Communities Engaged', description: 'Across 15 Liberian counties.' },
-    { value: 10000, suffix: '+', label: 'Youth in Prevention', description: 'NADAP-aligned drug prevention work.' },
-    { value: 8000, suffix: '+', label: 'In Rehabilitation', description: 'Recovery and reintegration support.' },
+    { value: 12000, suffix: '+', label: 'People Reached' },
+    { value: 120, suffix: '+', label: 'Communities Engaged' },
+    { value: 10000, suffix: '+', label: 'Youth in Prevention' },
+    { value: 8000, suffix: '+', label: 'In Rehabilitation' },
   ];
 
   const stories = [
     {
-      name: 'John Howard',
+      title: 'John Howard',
       image: JohnHoward,
       meta: 'Lofa County · Rehabilitation',
-      description: 'Reached in July 2025 after years on the streets. Now the sole survivor of his original group, rebuilding his life.',
+      description: 'Reached in July 2025 after years on the streets. He is the only survivor of his original group and is now rebuilding his life.',
     },
     {
-      name: 'Franklin Mondor',
+      title: 'Franklin Mondor',
       image: Franklin_Mondor,
       meta: 'Nimba County · Rehabilitation',
-      description: 'Thirteen years dealing drugs and opposing outreach. Transformed on 2 January 2026 and now seeking professional reintegration.',
+      description: 'After thirteen years dealing drugs and resisting outreach, he joined the programme on 2 January 2026 and is now working towards reintegration.',
     },
     {
-      name: 'Samuel Meaway',
+      title: 'Samuel Meaway',
       image: Samuel_Meaway,
       meta: 'Nimba County · Rehabilitation',
-      description: 'Spent a year in corrections before a KSL outreach offered him a way out. He is rebuilding his life with purpose.',
+      description: 'Spent a year in corrections before joining KSL through an outreach session. He is now rebuilding his life.',
     },
     {
-      name: 'Monrovia Slum Recovery',
+      title: 'Clara Town & West Point Outreach',
       image: CommunityChildren,
-      meta: 'Montserrado · Urban Intervention',
+      meta: 'Montserrado County · Outreach',
       description: 'Outreach in Clara Town and West Point reintegrated more than 150 young people through vocational training and care.',
     },
     {
-      name: 'Free Medical Outreach',
+      title: 'Free Medical Outreach',
       image: ChildrenImpact,
-      meta: 'Grand Bassa · Child Protection',
-      description: 'Community outreach meeting basic needs so children feel valued, protected, and able to grow.',
+      meta: 'Grand Bassa County · Child Protection',
+      description: 'Community outreach providing free medical care and basic needs for children.',
     },
     {
-      name: 'Students Impacted',
+      title: 'School Awareness Sessions',
       image: StudentsImpact,
       meta: 'Schools Nationwide · Prevention',
-      description: 'Awareness sessions that leave students with knowledge, confidence, and a clear vision for their future.',
+      description: 'Drug awareness sessions held with students in schools.',
     },
   ];
 
@@ -96,17 +94,10 @@ const Impact = () => {
     },
   ];
 
-  const focusAreas = [
-    { label: 'NADAP Implementation', note: 'Community-based delivery against national anti-drugs goals.' },
-    { label: 'Multi-County Reach', note: 'Field presence across Liberia, active and planned.' },
-    { label: 'Youth Transformation', note: 'Prevention, rehabilitation, and empowerment in one programme.' },
-    { label: 'Community Resilience', note: 'Support systems designed to hold after we leave.' },
-  ];
-
   const fieldPhotos = [
-    { src: StudentsImpact, caption: 'School awareness sessions', meta: 'Prevention' },
-    { src: Assembly, caption: 'Children at a KSL assembly', meta: 'Education' },
-    { src: FieldMedical, caption: 'Free medical outreach', meta: 'Health' },
+    { src: StudentsImpact, caption: 'School awareness sessions' },
+    { src: Assembly, caption: 'Children at a KSL assembly' },
+    { src: FieldMedical, caption: 'Free medical outreach' },
   ];
 
   return (
@@ -129,20 +120,18 @@ const Impact = () => {
       />
 
       <PageHeader
-        eyebrow="Measurable Results"
-        title="Twelve thousand lives, and counting"
-        description="Prevention sessions, rehabilitation care, school places, and protection work delivered with communities across Liberia."
+        title="Our Impact"
+        description="Drug prevention, rehabilitation, education, and child protection work carried out with communities across Liberia."
         image={StudentsImpact}
-        meta={impactStats.map((stat) => ({ value: stat.value, suffix: stat.suffix, label: stat.label }))}
+        meta={impactStats}
       />
 
       <main>
         <section className="bg-white py-20 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
-              eyebrow="Lives Changed"
-              title="Recovery, in their own words"
-              description="Six stories from the counties where we work."
+              title="Stories of change"
+              description="Some of the people and communities we have worked with."
               className="mb-14"
             />
             <PhotoCards items={stories} columns="sm:grid-cols-2 lg:grid-cols-3" imageHeight="h-72" />
@@ -152,8 +141,7 @@ const Impact = () => {
         <section className="bg-slate-50 border-y border-slate-200 py-20 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
-              eyebrow="On The Ground"
-              title="What the work looks like"
+              title="In the field"
               className="mb-14"
             />
             <PhotoMosaic photos={fieldPhotos} />
@@ -164,35 +152,19 @@ const Impact = () => {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
               tone="dark"
-              eyebrow="Impact In Action"
-              title="Watch the short documentaries"
-              description="Field footage from prevention, education, and nutrition programmes."
+              title="Videos"
+              description="Short videos from our prevention, education, and nutrition work."
               className="mb-14"
             />
 
             <VideoCards items={videos} tone="dark" />
           </div>
         </section>
-
-        <section className="bg-white py-20 lg:py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <SectionHeading
-              eyebrow="Where We Focus"
-              title="Four commitments behind the numbers"
-              className="mb-14"
-            />
-            <RuleList items={focusAreas} columns="sm:grid-cols-2 lg:grid-cols-4" />
-
-            <div className="mt-20 border-t border-slate-200 pt-14">
-              <StatBand stats={impactStats} tone="light" divided />
-            </div>
-          </div>
-        </section>
       </main>
 
       <CTABanner
-        title="Every gift becomes a session, a school place, or a recovery"
-        description="Join us in protecting children and young people across Liberia."
+        title="Support our work"
+        description="Your gift helps us protect and support children and young people across Liberia."
       />
     </>
   );

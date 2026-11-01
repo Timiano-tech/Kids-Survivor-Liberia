@@ -31,12 +31,12 @@ const VideoCards = ({ items = [], tone = 'light', columns = 'sm:grid-cols-2 lg:g
                 loading="lazy"
               />
               <span className="absolute inset-0 flex items-center justify-center bg-slate-950/30 transition-colors duration-500 group-hover:bg-slate-950/15">
-                <span className="flex h-14 w-14 items-center justify-center bg-yellow-500 text-slate-900 transition-transform duration-500 group-hover:scale-105">
+                <span className="flex h-14 w-14 items-center justify-center bg-blue-700 text-white transition-transform duration-500 group-hover:scale-105">
                   <FiPlay className="ml-0.5 h-6 w-6" />
                 </span>
               </span>
               {item.meta && (
-                <span className="absolute bottom-0 left-0 bg-slate-950/85 px-3 py-2 text-[10px] uppercase tracking-[0.18em] text-yellow-400">
+                <span className="absolute bottom-0 left-0 bg-slate-950/85 px-3 py-2 text-xs text-white">
                   {item.meta}
                 </span>
               )}
@@ -65,7 +65,7 @@ const VideoCards = ({ items = [], tone = 'light', columns = 'sm:grid-cols-2 lg:g
             <button
               type="button"
               onClick={() => setActiveSrc(null)}
-              className="absolute -top-10 right-0 inline-flex items-center gap-2 text-caption uppercase tracking-widest text-slate-300 transition-colors hover:text-white"
+              className="absolute -top-10 right-0 inline-flex items-center gap-2 text-caption uppercase tracking-wider text-slate-300 transition-colors hover:text-white"
             >
               <FiX className="h-4 w-4" />
               Close

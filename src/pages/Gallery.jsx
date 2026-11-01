@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { FiChevronLeft, FiChevronRight, FiX, FiDownload } from 'react-icons/fi';
 import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
-import SectionHeading from '../components/SectionHeading';
 import CTABanner from '../components/CTABanner';
 import Education1 from '../assets/Students2.jpeg';
 import Community from '../assets/Treatment_of_wounds.jpeg';
@@ -223,7 +222,7 @@ const Gallery = () => {
 
     // --- Additional Impact ---
     { id: 93, src: GirlsEmp, category: 'community', title: 'Girls Empowerment', description: 'Empowering adolescent girls through skills' },
-    { id: 94, src: StudentsLatest, category: 'education', title: 'Recent Students', description: 'Lates group of students in KSL programs' },
+    { id: 94, src: StudentsLatest, category: 'education', title: 'Recent Students', description: 'Latest group of students in KSL programs' },
     { id: 95, src: ChildrenImpact, category: 'community', title: 'Children Impact', description: 'Children thriving under KSL protection' },
     { id: 96, src: ChildrenImpact, category: 'community', title: 'Direct Support', description: 'Mobilizing direct care for children' },
   ];
@@ -282,28 +281,14 @@ const Gallery = () => {
       />
       <div className="min-h-screen bg-white">
       <PageHeader
-        eyebrow="Our Visual Journey"
-        title="Photo gallery"
-        description="A collection of moments capturing our impact on children and communities in Liberia."
+        title="Photo Gallery"
+        description="Photos from our work with children, families, and communities across Liberia."
         image={KSL}
-        meta={[
-          { value: galleryImages.length, label: 'Photographs' },
-          { value: galleryCategories.length - 1, label: 'Categories' },
-          { value: 7, label: 'Counties Documented' },
-        ]}
       />
 
       {/* Main Content */}
       <main className="py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          {/* Section Intro */}
-          <SectionHeading
-            eyebrow="Gallery"
-            title="Moments from the field"
-            description="Photographs from education, community outreach, health, and awareness campaign work across Liberia."
-            className="mb-10"
-          />
-
           {/* Category Filter */}
           <div className="mb-14 border-b border-slate-200">
             <div className="flex flex-wrap gap-x-8 gap-y-2">
@@ -311,9 +296,9 @@ const Gallery = () => {
                 <button
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
-                  className={`-mb-px border-b-2 pb-4 text-caption uppercase tracking-widest transition-colors whitespace-nowrap ${
+                  className={`-mb-px border-b-2 pb-4 text-body-sm font-medium transition-colors whitespace-nowrap ${
                     activeCategory === category.id
-                      ? 'border-yellow-500 text-slate-900'
+                      ? 'border-blue-700 text-slate-900'
                       : 'border-transparent text-slate-500 hover:text-slate-900'
                   }`}
                 >
@@ -350,7 +335,7 @@ const Gallery = () => {
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 <div className="absolute inset-x-0 bottom-0 translate-y-3 p-5 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                  <span className="text-[10px] uppercase tracking-[0.18em] text-yellow-400">
+                  <span className="text-caption text-sky-300">
                     {galleryCategories.find(c => c.id === image.category)?.name}
                   </span>
                   <h3 className="mt-2 text-heading-md text-white">{image.title}</h3>
@@ -368,8 +353,8 @@ const Gallery = () => {
         </div>
       </main>
       <CTABanner
-        title="See more impact in person"
-        description="Every photo represents a real life changed. Join us in expanding education, health, and protection programs across Liberia."
+        title="Support our work"
+        description="Your support helps us continue our education, health, and child protection programs across Liberia."
         primaryLabel="Donate Now"
         secondaryLabel="Volunteer With Us"
         secondaryTo="/volunteer"
@@ -431,10 +416,10 @@ const Gallery = () => {
               </p>
 
               <div className="mt-6 flex items-center justify-center gap-6">
-                <span className="text-caption uppercase tracking-[0.18em] text-yellow-400">
+                <span className="text-body-sm text-sky-300">
                   {galleryCategories.find(c => c.id === selectedImage.category)?.name}
                 </span>
-                <span className="text-caption tracking-widest text-slate-500">
+                <span className="text-caption tracking-wider text-slate-500">
                   {currentIndex + 1} <span className="mx-1 text-slate-600">/</span> {filteredImages.length}
                 </span>
               </div>

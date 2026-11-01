@@ -7,6 +7,8 @@ import { COUNTIES } from '../../data/counties';
 
 import FieldImage from '../../assets/Zwedru_City.jpeg';
 import SchoolImage from '../../assets/KSL_School.jpeg';
+import GiveImage from '../../assets/Food_sharing2.jpeg';
+import PartnersImage from '../../assets/Community Leaders.jpeg';
 
 export const WhereWeWorkSection = () => {
   const active = COUNTIES.filter((county) => county.isActive);
@@ -17,9 +19,8 @@ export const WhereWeWorkSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="order-2 lg:order-1">
             <SectionHeading
-              eyebrow="Where We Work"
-              title="Community Led, County by County"
-              description="We do not parachute in. Each programme is designed with the communities who live it, delivered alongside county authorities, and built to continue after our teams step back."
+              title="Where We Work"
+              description="KSL works with communities, schools, and county authorities to plan and deliver each programme locally, so that the work can continue when our teams move on."
             />
 
             <div className="mt-9 grid grid-cols-3 gap-4">
@@ -28,7 +29,7 @@ export const WhereWeWorkSection = () => {
                   <AnimatedNumber end={COUNTIES.length} duration={1.6} />
                 </p>
                 <p className="mt-2 text-caption uppercase tracking-wider text-slate-500">
-                  Counties in footprint
+                  Counties in Liberia
                 </p>
               </div>
               <div className="border border-blue-700 px-4 py-5 text-center bg-blue-700">
@@ -36,7 +37,7 @@ export const WhereWeWorkSection = () => {
                   <AnimatedNumber end={active.length} duration={1.6} />
                 </p>
                 <p className="mt-2 text-caption uppercase tracking-wider text-blue-100">
-                  Active now
+                  Active counties
                 </p>
               </div>
               <div className="border border-slate-200 px-4 py-5 text-center">
@@ -84,10 +85,10 @@ export const GetInvolvedSection = () => {
       to: '/donate',
       title: 'Give',
       description:
-        'Bank transfer or mobile money. Every contribution funds meals, shelter, school fees, and counselling.',
+        'Donate by bank transfer or mobile money. Donations pay for meals, shelter, school fees, and counselling.',
       action: 'Donate now',
-      image: FieldImage,
-      alt: 'Supporting a KSL outreach',
+      image: GiveImage,
+      alt: 'Food distribution at a KSL outreach',
     },
     {
       to: '/volunteer',
@@ -104,7 +105,7 @@ export const GetInvolvedSection = () => {
       description:
         'Align a foundation, corporate, or NGO programme with our six focus areas under NADAP and YTEI.',
       action: 'Partner with us',
-      image: FieldImage,
+      image: PartnersImage,
       alt: 'KSL community partnership meeting',
     },
   ];
@@ -113,15 +114,14 @@ export const GetInvolvedSection = () => {
     <section className="bg-slate-950 py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
-          <div>
-            <p className="text-eyebrow text-yellow-400">Get Involved</p>
-            <h2 className="mt-3 text-display-md lg:text-display-lg text-white max-w-2xl leading-tight">
-              Three ways to change a child&apos;s trajectory
-            </h2>
-          </div>
+          <SectionHeading
+            tone="dark"
+            title="Get Involved"
+            description="You can support our work by donating, volunteering, or partnering with KSL."
+          />
           <p className="text-body-md text-slate-400 md:max-w-sm">
-            Contributions and partnerships are tracked internally and covered by our
-            annual independent external audit.
+            All contributions and partnerships are recorded and included in our annual
+            independent external audit.
           </p>
         </div>
 
@@ -130,7 +130,7 @@ export const GetInvolvedSection = () => {
             <Link
               key={way.title}
               to={way.to}
-              className="group flex flex-col bg-slate-900 border border-slate-800 hover:border-yellow-500 transition-colors"
+              className="group flex flex-col bg-slate-900 border border-slate-800 hover:border-sky-400 transition-colors"
             >
               <div className="h-44 overflow-hidden">
                 <img
@@ -145,7 +145,7 @@ export const GetInvolvedSection = () => {
                 <p className="text-body-sm text-slate-400 leading-relaxed flex-1">
                   {way.description}
                 </p>
-                <span className="mt-6 inline-flex items-center gap-2 text-caption font-semibold uppercase tracking-wider text-yellow-400">
+                <span className="mt-6 inline-flex items-center gap-2 text-body-sm font-semibold text-sky-300">
                   {way.action}
                   <FiArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                 </span>

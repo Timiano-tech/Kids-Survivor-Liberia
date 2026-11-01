@@ -12,8 +12,7 @@ export const AboutSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
             <SectionHeading
-              eyebrow="Who We Are"
-              title="A National Non-Profit Built by Liberian Communities"
+              title="About Kids Survivor Liberia"
               description="Kids Survivor Liberia (KSL) is a community-driven organisation focused on the wellbeing of Liberia's most vulnerable populations. We work alongside traditional leaders, schools, and local authorities so that programmes are designed locally and owned locally."
             />
 
@@ -26,7 +25,7 @@ export const AboutSection = () => {
                 'Gender inclusion and economic empowerment of widows',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-slate-700">
-                  <span className="w-1.5 h-1.5 bg-yellow-500 mt-2.5 shrink-0" aria-hidden="true" />
+                  <span className="w-1.5 h-1.5 bg-blue-700 mt-2.5 shrink-0" aria-hidden="true" />
                   <span className="text-body-md">{item}</span>
                 </li>
               ))}

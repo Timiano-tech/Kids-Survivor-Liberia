@@ -22,7 +22,7 @@ const PhotoMosaic = ({ photos = [], className = '' }) => {
         <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 to-transparent p-6 sm:p-8">
           <p className="text-white text-heading-md leading-snug">{lead.caption}</p>
           {lead.meta && (
-            <p className="mt-2 text-caption uppercase tracking-widest text-yellow-400">{lead.meta}</p>
+            <p className="mt-2 text-body-sm text-slate-300">{lead.meta}</p>
           )}
         </figcaption>
       </motion.figure>
@@ -46,7 +46,7 @@ const PhotoMosaic = ({ photos = [], className = '' }) => {
             <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 to-transparent p-5">
               <p className="text-white text-body-sm font-semibold leading-snug">{photo.caption}</p>
               {photo.meta && (
-                <p className="mt-1 text-[10px] uppercase tracking-widest text-yellow-400">{photo.meta}</p>
+                <p className="mt-1 text-xs text-slate-300">{photo.meta}</p>
               )}
             </figcaption>
           </motion.figure>

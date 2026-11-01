@@ -10,7 +10,6 @@ import {
   FiLinkedin
 } from 'react-icons/fi';
 import { COUNTIES } from '../data/counties';
-import { showComingSoon } from './ComingSoonModal';
 
 const Footer = () => {
   const navItems = [
@@ -76,7 +75,7 @@ const Footer = () => {
               <li key={subItem.name}>
                 <Link
                   to={subItem.path}
-                  className="text-body-sm text-slate-400 transition-colors duration-200 hover:text-yellow-400"
+                  className="text-body-sm text-slate-400 transition-colors duration-200 hover:text-white"
                 >
                   {subItem.name}
                 </Link>
@@ -88,7 +87,7 @@ const Footer = () => {
         <li key={item.name}>
           <Link
             to={item.path}
-            className="text-body-sm font-medium text-slate-300 transition-colors duration-200 hover:text-yellow-400"
+            className="text-body-sm font-medium text-slate-300 transition-colors duration-200 hover:text-white"
           >
             {item.name}
           </Link>
@@ -162,7 +161,7 @@ const Footer = () => {
                   <a
                     key={index}
                     href={social.href}
-                    className="border border-slate-800 p-2.5 text-slate-400 transition-colors duration-200 hover:border-yellow-400 hover:text-yellow-400"
+                    className="border border-slate-800 p-2.5 text-slate-400 transition-colors duration-200 hover:border-white hover:text-white"
                     aria-label={social.label}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -187,20 +186,19 @@ const Footer = () => {
                 <Link
                   key={county.id}
                   to={`/counties/${county.id}`}
-                  className="flex items-center text-body-sm font-medium text-slate-300 transition-colors duration-200 hover:text-yellow-400"
+                  className="flex items-center text-body-sm font-medium text-slate-300 transition-colors duration-200 hover:text-white"
                 >
                   <span className="w-1.5 h-1.5 bg-slate-700 mr-2"></span>
                   {county.name}
                 </Link>
               ) : (
-                <button
+                <span
                   key={county.id}
-                  onClick={(e) => { e.preventDefault(); showComingSoon(county.name); }}
-                  className="flex items-center text-left text-body-sm font-medium text-slate-500 transition-colors duration-200 hover:text-slate-300"
+                  className="flex items-center text-body-sm font-medium text-slate-500"
                 >
                   <span className="w-1.5 h-1.5 bg-slate-800 mr-2"></span>
                   <span>{county.name} (Coming Soon)</span>
-                </button>
+                </span>
               );
             })}
           </div>
@@ -208,15 +206,6 @@ const Footer = () => {
           <div className="border-t border-slate-800 pt-6 mt-10">
             <p className="text-center text-body-sm text-slate-400">
               &copy; {currentYear} Kids Survivor Liberia. All rights reserved.
-              <span className="mt-1 block text-body-sm text-slate-500">
-                Developed by{' '}
-                <a
-                  href="https://timiano-dev.vercel.app"
-                  className="hover:text-white transition"
-                >
-                  Timiano.dev
-                </a>
-              </span>
             </p>
           </div>
         </div>

@@ -8,7 +8,7 @@ import AboutSection from '../components/home/AboutSection';
 import ProgramGridSection from '../components/home/ProgramGridSection';
 import { WhereWeWorkSection, GetInvolvedSection } from '../components/home/EngagementSections';
 import LatestNewsSection from '../components/home/LatestNewsSection';
-import CallToAction from '../components/CallToAction';
+import CTABanner from '../components/CTABanner';
 
 const ORGANIZATION_JSON_LD = {
   '@context': 'https://schema.org',
@@ -64,7 +64,13 @@ const Home = () => {
       <WhereWeWorkSection />
       <GetInvolvedSection />
       <LatestNewsSection />
-      <CallToAction />
+      <CTABanner
+        title="Support Our Work"
+        description="Your donation supports drug abuse prevention, child protection, education, and rehabilitation for children and young people across Liberia."
+        primaryLabel="Donate Now"
+        secondaryLabel="Volunteer With Us"
+        secondaryTo="/volunteer"
+      />
     </div>
   );
 };
